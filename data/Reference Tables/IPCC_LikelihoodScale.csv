@@ -1,0 +1,8 @@
+Term,Likelihood,Colour
+Virtually Certain,99-100%,Dark Green
+Very Likely,90-100%,Dark Green
+Likely,66-100%,Light Green
+About As Likely As Not,33-66%,White
+Unlikely,0-33%,Light Pink
+Very Unlikely,0-10%,Dark Pink
+Exceptionally Unlikely,0-1%,Dark Pink

@@ -1,0 +1,12 @@
+﻿Type,Label,Description
+Estimation,Time-varying parameters?,"Can incorporate time-varying parameters (e.g. fecundity, capacity, variance, productivity)"
+Estimation,Uncertainty in SR model fits?,"Explicitly accounts for uncertainty in SR model fits that arises from natural process variation and observation (i.e., measurement) error"
+Estimation,Outcome uncertainty?,Can explicitly incorporate differences between target and actual escapement or exploitation rates?
+Estimation,Productivity covariation?,Can explicitly incorporate observed or alternative future covariation in productivity among stocks?
+Estimation,Bias in parameter estimates?,"Can bias in Smsy, Umsy, the Ricker alpha, and the Ricker beta parameters be explicitly evaluated?  For example, as a function of number of data points, average stock productivity, time variation in productivity, and previous harvest rates (the last two variables affect contrast in data), etc."
+Outcome,Can get abundance-based Agg RP?,Can produce an abundance-based aggregate reference point?
+Outcome,Can test state dependent HCR?,Can this method produce and test harvest control rules that respond to changing conditions?
+Outcome,Data-deficient stocks?,Can this method account for stocks currently without SR data?
+Outcome,Allows taking into account component stocks?,Explicitly provides estimates of current or future biological status of component populations and other stock-specific information so that decision makers can evaluate trade-offs?
+Implement-ation,Can be easily operationalized?,"Easily operationalized in bilateral and domestic management setting. For example, does it align with Limit Reference Points under the Fisheries Act (DFO 2022)?"
+Implement-ation,Time requirements,"Implementation time frame after data review and SR model fitting. Short = short-term is possible (can calculate from SR parameters immediately), Medium = medium-term process required (at least 6 months), Long = multi-year process required."

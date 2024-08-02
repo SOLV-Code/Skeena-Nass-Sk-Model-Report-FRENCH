@@ -1,0 +1,1142 @@
+\clearpage
+# METHODS
+
+This chapter describes the six steps of our analyses: 
+
+- *Review of spawner-recruit (SR) data*: summarizes data review, run reconstruction, age composition assumptions, and available SR data by stock.
+- *Enhanced production review*: briefly describes the data sources and compilation of available information for the BLDP-enhanced stocks (Pinkut and Fulton).
+- *SR model fitting*: describes alternative model forms, Bayesian implementation, and criteria for identifying candidate models for each stock, depending on available data.
+- *Productivity scenarios*: describes how parameter sets were sampled from shortlisted SR model fits to represent long-term average, recent, high, and low productivity scenarios for each stock.
+- *Biological benchmarks*: describes how standard benchmarks (e.g., Smsy) were calculated for each stock, given alternative productivity assumptions.
+- *Management reference points (MRP)* (Section \@ref(AnalysisOverview)): describes alternative approaches for developing MRPs (e.g., equilibrium profiles, forward simulations) given alternative productivity assumptions and various examples of management objectives, and rationale for the examples provided in this Research Document.  
+
+
+## DATA SOURCES {#DataSources}
+
+
+
+### Data Review {#DataReview}
+
+The type and quality of available data shape the type and quality of scientific advice that can be developed regarding salmon management strategies [e.g., @AdkisonData]. The importance of developing an up-to-date and agreed-upon set of spawner-recruit data was a recurring topic in TWG discussions and the scoping workshop. Therefore, the TWG allocated a substantial part of project effort to an in-depth data review for Skeena and Nass Sockeye, which is documented in a stand-alone report [@SkeenaNassSkDataRep] and briefly summarized here.  The updated SR data has established a solid foundation for future work and the review process helped streamline the workflow for future data updates.
+
+The data review addressed the first objective of the escapement goal review (Section \@ref(EGProcess)) and covered key components of the spawner-recruit data: spawner estimates for indicator systems and associated expansions, in-river run reconstructions (incl. adult return timing assumptions), First Nations catch estimates, and age composition estimates. Several other relevant reviews and data set updates have been occurring concurrently, including a review of the Northern Boundary Sockeye Run Reconstruction (NBSRR) model and a comprehensive review of the Nass salmon abundance estimation programs. We used the latest available information from these reviews as of December 2021, up through the 2019 return year.
+
+The data review included six steps: (1) a review of stock structure for Skeena and Nass Sockeye populations, (2) updates to source data to incorporate all available information, (3) automated data processing, (4) automated data checks focused on contrast, changes over time, and potential outliers, (5) working with the TWG to generate data notes for each stock, and (6) extensive sensitivity testing (e.g., retrospective estimates of biological benchmarks using simple deterministic Ricker parameter estimates).
+
+
+
+
+
+
+
+
+\clearpage
+### Spawner Estimates {#SpnEst}
+
+Estimates of spawner abundance for Skeena and Nass Sockeye come from a combination of assessment programs conducted throughout both watersheds. Stock assessment programs include fishwheels on the lower Nass and a test fishery on the lower Skeena, which generate estimates of abundance and age and stock composition for the two aggregates. High-accuracy census counts are conducted for the largest systems in each basin (Meziadin fishway for the Nass, Babine weir for the Skeena). Spawning ground enumeration programs, including weir counts, aerial surveys, mark-recapture programs, and stream walks, generate spawner counts for indicator systems, which are expanded to estimate the total escapement for each stock.
+
+Babine Sockeye have been counted at the Babine weir downstream of Nilkitkwa Lake annually since 1949. The Babine weir which is currently operated by Lake Babine Nation, under contract to Fisheries and Oceans Canada, provides daily counts for all salmon species from the middle of July until the end of September and encompasses most of the Sockeye return. The weir operation has been extended to the end of November in some years. The weir program is assumed to provide a complete count for most years, but adjusted in some years for estimated passage during times when the fence was not operational.
+
+Visual escapement estimates of up to 30 wild Babine Sockeye spawning tributaries are conducted annually by foot or aerial surveys led by DFO and Lake Babine Nation. Estimates from visual escapement surveys for wild Babine systems are adjusted to account for underestimation bias using methods described in Wood (1995). Annual stream counts for individual Babine systems are maintained in the Fisheries and Oceans Canada [NuSEDS database](https://open.canada.ca/data/en/dataset/c48669a3-045b-400d-b730-48aafe8c5ee6).  The raw spawner estimates for the different wild Babine systems are expanded and combined into adjusted estimates for the early, mid and wild run timing components using a run-reconstruction procedure described by @WoodLifeHist1995.
+
+DFO completed an extensive review of spawner estimates for Skeena and Nass indicator streams. All available stream escapement information from local and regional data holdings were compiled and reviewed to assess whether any additional data were available for indicator streams and years that were identified as missing in previous versions of the NCCDSB database, and to check the accuracy of published NuSEDS estimates. For years that individual stream count data were available (1998 onwards for most systems), escapement estimates were recalculated and compared with the NuSEDS data to identify any discrepancies. 
+
+\clearpage
+### Estimating Biological Surplus of Enhanced Pinkut and Fulton {#SurplusEst}
+
+Enhanced Babine Sockeye spawners are counted through weirs below Pinkut Creek and Fulton River, and as they enter the spawning channels. Wild spawners are enumerated by visual counts which are conducted by foot and aerial surveys to generate Area-Under-the-Curve (AUC) estimates for the wild tributaries. Wild Babine Sockeye are assigned to three groups (early, mid, and late) based on adult run timing.
+
+The Babine fence count usually exceeds the sum of escapements to enhancement facilities and visual escapement estimates for wild systems, which are typically underestimated in visual surveys. The unaccounted difference between the fence count and escapement estimates is largely considered surplus production. The surplus may account for a large proportion of Babine Sockeye returns each year. Dive surveys in the 1990s confirmed that these additional fish are not successful lake spawners missed by the stream surveys. 
+
+
+
+@WoodLifeHist1995 developed a reconstruction procedure to estimate the surplus production after correcting visual escapement estimates for wild tributaries groups for underestimation bias, which were updated in @Woodetal1998Babine and @CoxRogersSpilsted2012Babine and maintained in a DFO database. @Woodetal1998Babine and @CoxRogersSpilsted2012Babine describe the rationale for these adjustments. The equations are provided in Appendix Table 2 of @CoxRogersSpilsted2012Babine and the calculations are summarized in Appendix C.3 of @SkeenaNassSkDataRep. Briefly, the adjustments are calculated in the following steps:
+
+* Jacks (sub-adult males, age 3) are assumed to contribute very little to the spawning population, so jack counts at Babine fence are excluded from the estimates. However, jack Sockeye counts from the Babine weir are incorporated into estimates of the total Skeena aggregate return and estimates of age composition.
+* Spawner counts for the wild tributaries are combined by timing group (early, mid, and late) into unadjusted counts for the 3 wild stocks (early, mid and late).
+* Effective spawners for the enhanced systems are estimated as the sum of fish that passed through the Pinkut and Fulton weirs, and the estimated capacity of natural spawning grounds below the channel (5,000 for Pinkut, 40,000 for Fulton).
+* The combined estimates for wild tributaries are expanded to account for the underestimation bias of visual counts. [@Woodetal1998Babine], and the adjusted estimate is apportioned by wild timing group  based on their relative abundance in the visual surveys.
+* The Babine enhanced surplus is calculated as the difference between the Babine weir count, adjusted wild spawners, effective enhanced spawners, and harvest above the Babine weir. These additional adults, which do not spawn are considered a biological surplus which contribute nutrients to Babine Lake but are excluded from the estimates of spawner abundance. They are, however, included in estimates of run size.
+
+### Catch Estimates
+
+
+Catch estimates are derived from numerous marine and in-river catch monitoring programs that record the number of fish harvested in the different fisheries, some of which are sampled for age and stock composition, using variation in scale patterns or genetic allele frequencies.
+
+Estimates of catch in Canadian and Alaskan fisheries, exploitation rates, and total returns for the Skeena and Nass aggregate population have been estimated by the Pacific Salmon Commission Northern Boundary Technical Committee using the Northern Boundary Sockeye Run Reconstruction model since 1982. 
+
+First Nations harvests, which are aggregated by fishing area, are incorporated into in-river models that estimate the total exploitation rate for aggregate and for component stocks. Indigenous groups harvest Sockeye throughout the Skeena and Nass watersheds. Their fisheries differ by area, timing, and gear type, and have different management and catch reporting requirements. TWG members worked with DFO fishery managers and Skeena and Nass First Nations groups to update catch estimates for each fishing area.
+
+
+### Age Composition Estimates
+
+
+Age composition estimates, which are used to estimate recruitment by brood year, are available from scale and otolith sampling programs. Annual age composition estimates are available for both aggregates, but not for most of the individual Skeena and Nass stocks, which have been infrequently sampled.
+
+#### Aggregate age composition data
+
+Annual estimates of age composition for aggregate Skeena and Nass Sockeye stocks come from aggregate test fishery programs including Tyee Test Fishery (Skeena, 1955–present), the Nisga’a Fish Wheels (1992-present) and the Monkley Dump Test Fishery (Nass, prior to 1992), and from Canada and U.S. marine commercial fisheries (Skeena and Nass, until the late 1990s). Scale samples from commercial and test fisheries have been aged by Alaska Department of Fish and Game since 2000, and by Fisheries and Oceans Canada (for Canadian fisheries) in years prior. 
+
+Adjustments are made to account for size selective fisheries at the test fisheries. For the Skeena, age samples are collected from large Sockeye at the Tyee Test Fishery to determine the proportion of the major age classes, which are applied to the total escapement of large fish to apportion the return of large fish into the major age classes. The return of Age–3 Sockeye from terminal fence counts are added to the total return, and the annual return for each age class are recalculated to estimate the proportions of all age classes in the total return. For the Nass aggregate, annual estimates for jack Sockeye are developed  by expanding the total catch of jacks at the fishwheels using the annual adult mark rate that is adjusted to account for the assumption of a higher mark rate for the smaller fish. 
+
+#### Stock-specific age composition data
+
+Annual age composition data are not available for most component Skeena and Nass Sockeye stocks, except for Meziadin Sockeye. Most of these samples with some exceptions (below) were aged at the DFO scale ageing lab at Pacific Biological Station, and the data are stored in a regional database (PADS) in digitized records of individual age readings (1989-2019) or as scanned scale/otolith age cards (prior to 1989). 
+
+We  reviewed and updated available age data for all Skeena and Nass Sockeye stocks to ensure that all available data were incorporated into SR analyses. All available age records for Skeena and Nass Sockeye stocks were downloaded from PADS. For years prior to 1989, the number of fish from each age class were tallied from scanned age cards for each stock/year for which data were available. Age proportions for each stream/year were calculated as the number of each age class divided by the total number of samples for that year, excluding partial ages or unreadable samples. 
+
+Given the available data, recruitment calculations for most stocks are currently based on an average age composition (Table \@ref(tab:Age2Stock)). Stock-specific age composition estimates were used for most Nass stocks, but for most Skeena stocks, including the five Babine stocks, we relied on average aggregate Skeena age composition. Annual estimates of age composition were used for Lower Nass Sea/River types (Table 3).
+
+Using average age composition can introduce bias in spawner recruitment parameters [@Zabelagecomp]. In addition to our review of age data to ensure that all available age data were incorporated into spawner recruit analyses, we conducted  sensitivity tests to assess the effect of using average rather than annual age composition were conducted as part of the data review [@SkeenaNassSkDataRep].  For stocks where annual age data were available, including Meziadin, Kwinageese, and the Babine stocks, we recalculated recruitment estimates both annual and average age composition, and estimated the differences in the resulting spawner-recruitment parameters. For these stocks, the difference in Smsy that resulted from using average compared with annual age composition data varied, ranging from -2 to 31%.  
+
+ 
+
+\clearpage
+(ref:Age2Stock) Stock-specific age composition estimates used in the recruitment calculations. Tables \@ref(tab:StockOverview) and \@ref(tab:DataOverviewSkeena) show the full stock names and list the number of brood years with spawner-recruit data, based on the matched age compositions from this table.
+
+```{r Age2Stock, echo = FALSE, results = "asis"}
+
+
+ages.match <- read.csv("data/Reference Tables/Match_Age2Stock.csv",stringsAsFactors = FALSE) %>%
+                  left_join(stock.info %>% select(Stock, LHAZShort,LHAZSeq, Watershed, StkNmS), by= "Stock") %>%
+                     arrange(LHAZSeq, Watershed, StkNmS) 
+
+
+ages.match$LHAZShort[duplicated(ages.match$LHAZShort)] <- ""
+ages.match$Watershed[duplicated(ages.match$Watershed)] <- ""
+avg.idx <- grepl("Avg",ages.match$AgeComp)
+ages.match$Type <- NA
+ages.match$Type[avg.idx] <- "Avg"
+ages.match$Type[!avg.idx] <- "Annual"
+
+ages.match$AgeComp <- gsub("Avg","",gsub("Annual","",ages.match$AgeComp))
+ages.match$AgeComp <- gsub("Babine","Skeena",ages.match$AgeComp)
+
+ages.match <- ages.match %>% select(LHAZShort, Watershed, StkNmS, Type, AgeComp) %>%
+               dplyr::rename(Stock= StkNmS, LHAZ = LHAZShort)
+
+ages.match %>% 
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10, align = "l",
+                  caption = "(ref:Age2Stock)") %>%
+   kableExtra::row_spec(c(1,6,7,13,22,30), hline_after = TRUE) %>%
+   kableExtra::row_spec(c(3:5,9:12,18,20,21,23:27), extra_latex_after = "\\cmidrule(l){2-5}") 
+
+```
+
+
+ 
+ 
+ 
+\clearpage
+### Lake Surveys
+
+Rearing lakes for Skeena and Nass Sockeye are assessed regularly or periodically. Surveys include: 	
+
+* *Juvenile surveys*: Rotating juvenile surveys with hydroacoustic transects and biological sampling to assess fry abundance and biomass in Skeena and Nass Sockeye rearing lakes. Except for Babine Lake, all the major lakes have been surveyed multiple times since the late 1990s. Where available, fry abundance data provides a cross-check for reconstructed spawner escapement estimates derived from visual surveys (i.e., whether the estimated spawner abundance is realistic compared with the observed fry abundance for a given brood year).
+* *Productivity assessments*: Periodic assessments of lake productivity have been conducted for most Skeena and Nass Sockeye rearing lakes using photosynthetic rates to estimate freshwater rearing capacity for each lake (PR Capacity estimates). PR capacity estimates provide useful information about the limits of freshwater rearing capacity that can be used directly to estimate optimal spawner abundances for a given system, or incorporated in spawner recruitment modeling as priors on rearing capacity. Note that most PR-Capacity estimates for Skeena and Nass Sockeye rearing lakes have not been updated since the mid-2000s.
+
+
+### Run Reconstructions {#RunReconEst}
+
+
+
+Long-established and well-documented methods are used to combine catch and escapement data for Skeena and Nass Sockeye information into consistent estimates of spawner abundance, run size and exploitation rates for the two stock aggregates and for most of the component stocks. Skeena Sockeye production data, maintained by DFO-North Coast Stock Assessment Division, incorporate catch and escapement information from different sources. Total catches, exploitation rates and run sizes for Skeena and Nass Sockeye have been estimated annually since 1982 by the bilateral Northern Boundary Technical Committee using the Northern Boundary Sockeye Run Reconstruction Model (NBSRR) (Gazey 2000, English 2004). Further details are provided in Appendix C of @SkeenaNassSkDataRep. Stock-specific exploitation rates for component Skeena and Nass Sockeye stocks, including Babine Sockeye are derived from in-river models [i.e., @Englishetal2017SSIRR] which combine data from in-river harvests and stock-specific run timing with NBSRR outputs to generate annual estimates of total returns for each stock, as summarized in Appendix C of @SkeenaNassSkDataRep.  
+
+
+Methods and assumptions for the run reconstruction models are documented in a series of technical reports [e.g., @Englishetal2006CSAFW; @Englishetal2012CUInd; @Englishetal2013StAD; @Englishetal2004NBRR; @Englishetal2019NCCReview]. 
+
+
+The key analytical steps for the Skeena and Nass Sockeye run reconstructions are:
+
+* Expansion of spawner estimates to estimate the total number of spawners based on the number observed in the surveys. These expansions account for fish that were not counted (depends on survey method and annual implementation), as well as fish from systems that were not surveyed.
+* For Babine stocks, additional spawner calculations are performed to account for (1) the difference between aggregate counts at the Babine fence and spawning ground estimates, and (2) effective capacity of the channels and natural spawning habitat. Effective spawner abundance for the enhanced systems is the number of spawners let into the enhanced channels and stream sections plus any gross escapement *up to* the estimated capacity of natural spawning grounds downstream of the enhancement facilities. Additional adult returns that do not spawn in the wild Babine tributaries are considered a biological surplus, and are excluded from the estimates of spawner abundance, but are included in estimates of run size.
+* Run reconstructions for the two stock aggregates, which account for Canadian and U.S. marine catches in approach waters [@GazeyEnglish2000NBRR; @Englishetal2004NBRR; @NBRRDeck2018]. Aggregate run reconstructions are bilaterally developed each year through the PSC Northern Boundary Technical Committee (NBTC) process.
+* Run reconstructions for the component stocks in each basin, which account for in-river catches and stock-specific run timing 
+
+
+In-river harvests represent an important component of the total Canadian harvest for Skeena and Nass Sockeye. Estimates of in-river harvest, exploitation rates, and total run size for the different stocks are calculated using different approaches for Skeena Sockeye and Nass Sockeye. 
+
+For Skeena River fisheries, the *Skeena Sockeye In-river Run Reconstruction* (SSIRR) model [@Englishetal2013StAD; @Englishetal2017SSIRR] combines information from in-river harvests (timing and abundance), escapement and run timing to apportion catches to stocks based on run timing and fishery location. The SSIRR model uses the same approach as the peer-reviewed run reconstruction model for Fraser River Chinook [@English2007FrSkRR]. The SSIRR model builds run size estimates forwards along the upriver migration through the fisheries, starting from the Tyee test fishery estimates. It models in-river harvests for 12 Aboriginal in-river fishing areas throughout the Skeena watershed in daily time steps derived from daily aggregate run size estimates for Skeena Sockeye from the Tyee Test fishery in the Lower Skeena. 
+
+For Nass Sockeye, annual in-river harvest rates for the aggregate Nass stock (i.e., total in-river harvest divided by the run size entering the Nass River) were applied equally across all Nass Sockeye sub-stocks. This approach was considered appropriate for Nass Sockeye stocks because the vast majority of in-river harvest occurs in the lower Nass where all stocks are vulnerable. In-river harvest rates are combined with marine exploitation rates from the NBSRR to estimate the total exploitation rate for the different substocks. 
+
+In-river run reconstructions are done at the stock level. In some cases, stocks are modelled as a group, because current methods in genetic stock  identification cannot differentiate the component stocks to estimate individual run timing curves. The model therefore assumes equal run timing for the components. At present, the SSIRR models 20 Skeena Sockeye stocks and the annual in-river harvest rates for the aggregrate Nass Sockeye stock are applied to each of 10 Nass sub-stocks.  The same number of stocks were used by @Englishetal2019NCCReview, with some changes to stock groupings (e.g., Brown Bear/Cranberry, Gingit/Zolzap, and the addition of Strohn Creek). 
+
+The NCCDSB was updated in 2021 to incorporate reviews of spawner estimates for indicator systems, age composition data for the aggregates and individual stocks and timing assumptions for Skeena and Nass substocks, using updated GSI data collected from 2000-2020 at the Tyee Test Fishery and Nass fish wheel programs, marine and in-river harvests for Skeena First Nations; and additional years of data to the 2019 return year.
+
+
+### Recruitment Estimates
+
+We applied age composition estimates and calculated brood-year recruitment for each stock (aggregate and component stocks). We used recruitment estimates based on the major age classes (i.e., ages that have contributed more than 2% of the run at least once). 
+
+Spawner recruit data for the wild component of the Skeena aggregate (Skeena Wild aggregate data) were derived by subtracting the calculated spawners and run sizes for Pinkut and Fulton Sockeye from the aggregate estimates, then using the annual aggregate age composition to recalculate recruits.
+
+Updates to the aggregate and stock-level recruit estimates were the result of updates to the run reconstructions and age composition estimates described above.
+
+
+### Data Checks and Sensitivity Tests
+
+Data quality metrics were calculated for each stock looking at the entire time series and at individual observations [@SkeenaNassSkDataRep]. Potential data concerns were identified if metric values fell below, above, or outside the range of user-specified trigger values, depending on the metric. Trigger values were selected based on published guidance where available, or based on TWG consensus. 
+
+The following metrics were used to conduct a systematic review of these considerations for the 31 Skeena and Nass Sockeye stocks:
+
+* *Contrast*: low contrast in spawner data is flagged if $Max(Spn)/Min(Spn) < 4$, using the threshold from @Clarketal2014PercBM.  
+* *Number of observations*: insufficient data for fitting SR models is flagged if the number of brood years with estimates of both spawners and recruits is less than 10. This trigger value was selected based on general experience with other Sockeye stocks. This is intended to identify stocks with "little" data using a consistent definition.
+* *Large/small estimates not in model fit*: large estimates of spawners or recruits outside of the SR data set are flagged if the largest observed value is more than double the largest value for the brood years with estimates of both spawners and recruits. Small estimates of spawners or recruits outside of the SR data set are flagged if the smallest observed value is less than half the largest value for the brood years with estimates of both spawners and recruits. These trigger values were selected to identify extreme values.
+* *Large expansion factor*: the expansion from index spawners to total spawner estimate were flagged if the average expansion for the whole time series is larger than 3 (i.e., observations are multiplied by more than 3).
+
+Qualitative commentaries  were compiled to describe spawner data, catch data, age composition data, recruitment estimates, and lake survey data, and included the following considerations for each of these categories:
+
+* *Indicator quality*: commentary on quality of spawner surveys (i.e., sum of estimates from indicator streams), based on survey types and coverage. Weirs and fishways were generally categorized as highly accurate, but if they capture multiple stocks then quality of stock composition estimates and relative abundance of the component stocks was also considered. 
+* *Expansions*: categorizes the total expansion factor applied to the estimate from indicator streams into 4 categories. Expansion factors were taken from the previously published run reconstruction estimates [e.g., @Englishetal2019NCCReview].
+* *Total spawner estimate quality*: Commentary on overall quality of the spawner estimate, considering the quality of the index estimate and the expansion factor.
+* *Overall rating for spawner estimate*: The quality of spawner estimates was assessed on a 5-point scale from Very Good to Very Poor, based on the commentary for *TotalSpn*.
+
+
+Quality of catch estimates by stock: 
+
+
+* *Marine*: commentary on whether the marine migration route for the stock is likely similar to the aggregate migration route used in the NBSRR model, considering life history (e.g., sea type vs. lake type) and stock size (i.e., the model better captures they dynamics of major stocks: Meziadin on Nass and Babine stocks on the Skeena); this in turn affects whether the proportion of aggregate marine catch in the major fisheries for this stock is likely similar to the stock composition in the lower river assessment project (i.e., Nass fishwheels, Tyee test fishery), considering migration behaviour and stock size.
+* *In-river*: commentary covering 2 considerations: (1) the quality of run timing and migration speed estimates; and (2) quality of catch estimates in different modelled river sections.
+* *Total catch estimate quality*: commentary on overall quality of the total catch estimates, considering the quality of the above components 
+* *Overall rating for catch estimate*: The quality of catch estimates was assessed on a 5-point scale from Very Good to Very Poor, based on the commentary for *TotalCt*.
+
+
+Quality of recruitment estimates by stock: 
+
+* *Run rating*: Describes the quality of run size estimates on a 5-point scale from Very Good to Very Poor, based on the commentary ratings for expanded spawner estimates and total catch estimates, and the relative magnitude of catch and spawner abundance (e.g., very poor catch estimate has little effect on quality of run size estimate if catches are very small).
+* *Age structure*: categorizes the age structure of the stock as either *stable* (very little change from one year to the next), *variable* (some change on relative proportions, but consistent dominant age class), or *highly variable* (dominant age class varies). 
+* *Age data*: categorizes the age composition estimates as either *Annual* (estimates available for most years), *Infill* (estimates available for many years, and remaining years infilled with average), or *Average* (a few years of data, using average for all years).
+* *Total recruitment estimate quality*: commentary on overall quality of the recruitment estimates, considering the quality of the estimates for total run size and age composition.
+* *Overall rating for recruitment estimate*: The quality of recruitment estimates was assessed on a 5-point scale from Very Good to Very Poor, based on the commentary for *TotalRec*.
+
+Sensitivity tests were used to assess whether the potential data issues identified in the previous section were likely to affect estimates of standard biological benchmarks (e.g., $S_{MSY}$, $S_{MAX}$), in order to assist model scoping and  to identify which priority areas of uncertainty that will need to be considered in subsequent analyses [@SkeenaNassSkDataRep]. 
+
+We performed three sets of sensitivity tests: data variations, uncertainty in the data (bootstrap), and uncertainty in the model fit (Bayesian estimates). Sensitivity tests were implemented with the *RapidRicker* package [@RapidRicker], which iterates through a comprehensive set of data variations to calculate standard biological benchmarks. Model fits and benchmark calculations are generated using both a simple linear regression fit and a Bayesian fit using JAGS code adapted from @MillerPestalTakuSk. 
+
+The results from these initial sensitivity tests of SR model fitting, documented in the data report [@SkeenaNassSkDataRep],  were used to identify analytical priorities for this Research Document (Section \@ref(EGProcess)).
+
+### Available Spawner-Recruit Data {#AvailableSRData}
+
+
+Complete time series of spawners and recruits are available for the Nass aggregate since 1982 and for the Skeena aggregate since 1970. Stock-level run reconstructions for the Skeena are available back to 1960.
+
+The 31 stocks were organized into three groups based on relative abundance and available data. Group 1 includes 14 larger stocks with long time series of spawner-recruit data which account for about 98% of the combined total returns for Nass and Skeena Sockeye, Group 2 includes 9 smaller stocks with some spawner-recruit data which together account for about 2% of combined total returns, and Group 3 includes 8 stocks without any spawner-recruit data.
+
+Nass and Skeena Sockeye were organized into 31 stocks (Table \@ref(tab:StockOverview)), including 7 Nass and 24 Skeena stocks [@SkeenaNassSkDataRep]. Stocks can be grouped together based on life history  and adaptive zone (*LHAZ*), as well as watershed. Life history variations include lake type (*LT*), river-type (*RT*), and sea-type (*ST*). Exploitation rates are estimated for indicator systems (stocks or stock groups with similar run timing and reliable estimates of catch and spawner abundance). Under the Wild Salmon Policy [@WSP], Canadian anadromous salmon are grouped into distinct conservation units (CU). For Nass and Skeena Sockeye, most of the stocks match 
+up with a single CU. Some of the smaller stocks combine 2-3 CUs, either because they rear in cojoined lakes, or they are assessed together and data can't be separated. Babine/Nilkitkwa, the largest Skeena CU, was divided into 5 distinct stocks based on enhancement and run timing.
+
+The length and quality of spawner-recruit time series vary across stocks (Table \@ref(tab:DataOverviewSkeena), Figure \@ref(fig:SRDataOverview)). Larger stocks generally have more years of higher quality data. The TWG developed a consistent quality rating for spawner, run size, and recruitment estimates based on the types of data and calculations @SkeenaNassSkDataRep. Spawner estimate ratings incorporate the quality of the index survey as well as the expansion factor (e.g., a fence-based census of all spawners is rated as *very good*, but an aerial survey covering less than 1/5th of the stock is rated as poor).  Run size estimates ratings consider whether a stock is well represented in the catch accounting and run reconstruction analyses (e.g., a major stock with reliable stock identification and resulting timing estimates is rated as *good*, but a small stock uncertain timing is rated as *poor*). Recruitment estimate ratings combine quality of the run size estimate with considerations of the quality and amount of age composition data (e.g., stock-specific annual age data vs. average age composition from a proxy stock).
+
+We filtered out implausible spawner-recruit observations and infilled gaps to allow fitting model forms that require complete time series. Specifically, we excluded brood years where estimated recruits/spawner exceeded 45, infilled 1-yr gaps in spawner estimates using the average of previous and subsequent estimates, infilled the corresponding run size using the year-specific exploitation rate estimate from the run reconstruction models, and then used the infilled data in the recruit calculation. Filtering and infilling procedures were only applied to some stocks (Table \@ref(tab:DataOverviewSkeena), Figure \@ref(fig:SRDataOverview)). We tested the effect of these data treatment steps using the basic Ricker model: Removing outliers through filtering generally had a larger effect on the parameter estimates than the infilling step (Appendix \@ref(AltSRTest)).
+
+New information has recently become available for some stocks, which has not been incorporated into the current version of the analyses, but we consider these a high priority for updating in future work:
+
+* *Bowser*: Bowser Lake was likely a major contributor to the Nass aggregate Sockeye return in some years. Visual escapement estimates, which are confounded by high glacial turbidity, have not been regularly conducted for Bowser Lake Sockeye, which are primarily a lakeshore spawning population. Previous abundance estimates for Bowser Sockeye have been derived using different methods including stock identification using scale pattern analyses, and more recently, GSI applied to Nass aggregate escapements. The different methods have produced divergent estimates for some years, and further assessment is required to reconcile these estimates before spawner recruit time series can be developed. 
+* *Bear/Azuklotz*: Preliminary results from a new assessment program (video weir installed in 2021 on Bear River downstream of Bear Lake) suggest that the combined visual spawner escapements based on aerial surveys may underestimate the actual spawning population by a much larger factor than what has been accounted for in the expansion factors that are currently used in run reconstruction procedures. For our analyses, we used the existing time series of reconstructed abundances that do not account for new information from the camera weir program, with the understanding that these data may change in the near future.
+* *Skeena river-type*: This stock is currently considered data deficient, because there is not enough information about spawning abundance or distribution of Skeena river-type Sockeye to estimate total watershed abundance for these populations. While there are  small persistent river-type spawning populations that are enumerated annually in the Kispiox watershed and Bulkley River, it is not known whether these populations account for most or only a small portion of river-type spawners in the Skeena watershed. Anecdotal information from historic and recent surveys suggest that persistent or ephemeral populations are also present in Upper Skeena tributaries. The population structure of river-type spawners in the Skeena watershed is unclear, with few samples in the genetic baseline and poor differentiation between some Skeena and Nass river-type populations. It is not known whether Skeena river-types represent one or multiple populations, or a single population for Skeena and Upper Nass river-types. 
+
+
+
+
+
+\clearpage
+(ref:StockOverview) Nass and Skeena Sockeye population structure. The 31 stocks fall into 7 distinct groups based on life history type and freshwater adaptive zone (LHAZ) and 21 watersheds. We use short stock labels (Stock) for tables and figures throughout the Research Document. Exploitation rate indicators (ERInd) are available for most of the stocks. Stocks match up with one or more conservation units (CU). Babine is currently designated as a single CU, but assessed and analyzed as five distinct stocks (marked with *).
+
+```{r StockOverview, echo = FALSE, results = "asis"}
+
+n.nass <- sum(stock.info$Basin == "Nass")
+n.skeena <- sum(stock.info$Basin == "Skeena")
+
+table.in <- stock.info %>% #dplyr::filter(Basin == "Nass") %>%
+   select(LHAZShort,Watershed,Stock,StkNmS,ERInd,NumCU) %>%
+   dplyr::rename(LHAZ = LHAZShort, Label = StkNmS,CU= NumCU)
+
+table.in[table.in$Watershed == "Babine","CU"] <- "*"
+
+
+table.in$LHAZ[duplicated(table.in$LHAZ)] <- ""
+table.in$Watershed[duplicated(table.in$Watershed)] <- ""
+   
+table.in %>%   
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+#   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l","l","l","r"),
+                  caption = "(ref:StockOverview)") %>%
+   kableExtra::row_spec(rep(n.nass,2), hline_after = TRUE) %>%
+      kableExtra::row_spec(c(1,6,13,22,30), hline_after = TRUE) %>%
+    kableExtra::row_spec(c(2,4,5,9:12,14,16,17,23:25,28,29), extra_latex_after = "\\cmidrule(l){2-6}") 
+
+```
+
+
+
+
+
+\clearpage
+
+(ref:DataOverviewSkeena) Summary of available spawner-recruit data by stock. Stocks are sorted based on relative size (pSpn), calculated as the the percent of cumulative spawner abundance since 2000 across both stock aggregates. Quality ratings for spawner (Spn), run (Run), and recruit (Rec) estimates on a 5-point scale from *very poor* (VP) to *very good* (VG) are based on TWG consensus using a set of qualitative criteria [@SkeenaNassSkDataRep].  nS is the number of spawner estimates. The number of brood years with spawner-recruit data varies based on data treatment for some stocks: Orig = original data set from @SkeenaNassSkDataRep, Filter  = number of brood years filtered due to R/S > 45, Infill = number of years for which a 1-yr gap in estimates of spawners and run size could be infilled, Use = number of brood years with spawner and recruit estimates after filtering and infilling.
+
+```{r DataOverviewSkeena, echo = FALSE, results = "asis"}
+
+
+
+table.in <- stock.info %>% arrange(desc(PercEffSpn)) %>%
+   left_join(data.notes.tab %>%  select(Stock,SpnRating,RunRating,RecRating), by= "Stock") %>%
+   left_join(alt.sr.data %>% dplyr::filter(Label == "Main") %>% group_by(Stock) %>%
+   summarize(Orig = sum(!is.na(RpS))), by = "Stock") %>%
+      left_join(alt.sr.data %>% dplyr::filter(Label == "Filter45_Infill") %>% group_by(Stock) %>%
+   summarize(Use = sum(!is.na(RpS)),NumFiltered = sum(Filter), NumInfilled = sum(Infill)), by = "Stock") %>%
+   # left_join(table.in <- alt.sr.test1 %>% dplyr::filter(DataVersion == "Main") %>% mutate_all(as.character) %>%
+    #         dplyr::rename(nSRo = NumBrYr) %>% select(Stock, nSRo), by = "Stock") %>%
+   #left_join(table.in <- alt.sr.test1 %>% dplyr::filter(DataVersion == "Filter45_Infill") %>% mutate_all(as.character) %>%
+   #          dplyr::rename(nSR = NumBrYr) %>% select(Stock, NumFiltered,NumInfilled,nSR), by = "Stock") %>%
+   select(LHAZShort,StkNmS,PercSpnLabel, NumSpn, SpnRating,RunRating,RecRating,
+          Orig, NumFiltered,NumInfilled, Use) %>%
+   dplyr::rename(LHAZ = LHAZShort, Stock = StkNmS,pSpn =  PercSpnLabel, nS = NumSpn, 
+                 Spn = SpnRating,Run = RunRating,Rec =RecRating,Filter = NumFiltered,
+                 Infill =NumInfilled)
+
+table.in[table.in == "Data Deficient"] <- "DD"
+table.in[table.in == "Good"] <- "G"
+table.in[table.in == "Moderate"] <- "M"
+table.in[table.in == "Poor"] <- "P"
+table.in[table.in == "Very Good"] <- "VG"
+table.in[table.in == "Good to V. Gd"] <- "G to VG"
+table.in[table.in == "Very poor"] <- "VP"
+
+
+table.in[is.na(table.in)] <- "-"
+table.in[table.in == "NA"] <- "-"
+ 
+table.in %>% 
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+#   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10, align = c("l","l","r","r","l","l","l","r","r","r","r"),
+                  caption = "(ref:DataOverviewSkeena)") %>%
+   add_header_above(c(" " = 4, "Quality" = 3, "SR Data" = 4),bold=TRUE) #%>% 
+    # kableExtra::row_spec(c(6,15,23), hline_after = TRUE) %>%
+     #kableExtra::column_spec(3, width = "10em") %>%
+        #kableExtra::row_spec(c(1:5,7:14,16:22), extra_latex_after = "\\cmidrule(l){2-8}") 
+
+```
+
+
+
+
+
+
+
+\clearpage
+(ref:SRDataOverview) Spawner-recruit data availability - By stock. Timeline of available data by brood year, with stocks grouped based on life history and adaptive zone. Dark blue circles are brood years with both spawner and recruit estimates. Light blue points are brood years with only spawner estimates. Light red diamonds mark brood years where a 1yr gap in spawner estimates was infilled. Dark red diamonds mark infilled brood years where a corresponding recruit estimate could be calculated. Red "x" mark filtered observations (R/S > 45) that could not be infilled. Numbers in brackets are the share of cumulative spawner abundance since 2000 across both stock aggregates.
+
+```{r SRDataOverview,  out.width= 415, fig.cap="(ref:SRDataOverview)"}
+include_graphics("data/DataOverview_ResDoc_Filter45Infill.png")
+```
+
+
+
+
+\clearpage
+## SPAWNER-RECRUIT MODEL FITTING {#SRFitting}
+
+### Ricker Model Forms {#ModelForms}
+
+Sockeye population dynamics are commonly modelled with the Ricker curve, which assumes that productivity, expressed as ln(Rec/Spn), decreases as the abundance of spawners increases, resulting in a dome-shaped relationship between spawners and total recruits. Key milestones in previous work on Skeena and Nass Sockeye (Table \@ref(tab:PastWorkTable)) all used the Ricker curve, but implementation details varied widely across these analyses:
+
+* @BockingetalMeziadinBM used a deterministic Ricker model for a single stock (Meziadin, the largest Nass stock). 
+* @Waltersetal2008ISRP and @Hawkshaw2018Diss developed state-space Ricker models for 9 Skeena CUs.
+* @Hawkshaw2018Diss also modeled Skeena Sockeye as a single stock with Ricker dynamics in a multi-species simulation.
+* @CoxRogersetal2010 used nursery lake capacity estimates based on photosynthetic rate to develop Ricker parameters for 28 nursery lakes, with Babine treated as a single stock. 
+* @KormanEnglish2013 used hierarchical Bayesian Ricker fits for 17 Skeena conservation units, splitting Babine into one enhanced and three wild CUs, and using PR-based lake rearing capacity as priors for Smax for all CUs except for Babine-Nilkitkwa. 
+* @PacificSalmonExplorer updated the @KormanEnglish2013 analysis, but modified the Babine split to one enhanced and two wild CUs, and added four Nass Sockeye CUs.
+* @Atlasetal2021HabitatDyn used Hierarchical Bayesian Ricker model fit to SR data for 54 North Coast Sockeye CUs (1 model for each biogeoclimactic zone).
+
+
+@Fleischmanetal2013CJFASStateSpace observed that "*The Ricker model is, by far, the most common choice for Pacific
+salmon SR analyses, probably because (i) it can accommodate overcompensation, which is evident in many Pacific salmon data
+sets, and (ii) it is conservative with respect to optimal escapement levels (for fixed values of the productivity parameter and carrying capacity, SMSY is always higher under the assumption of a Ricker model than under a Beverton–Holt model).*"
+
+We used three alternative model forms for the Ricker SR relationship to assess the sensitivity of biological benchmark estimates to alternative assumptions about observed residuals.
+
+*Basic Ricker (BR)*
+
+A standard Bayesian Ricker fit, based on a fixed linear relationship between $ln(R/S)$ (productivity) and $S$ (spawner abundance). The basic Ricker model, like any basic linear regression, assumes that residuals have a random normal distribution $N$ with mean 0 and sample-based variance, without any pattern in the deviations over time.  The basic Ricker fit serves as a good baseline, even if the observed pattern in productivity violates that assumption (i.e., What would benchmark estimates look like if changes over time were disregarded?). For brood year $i$
+
+\begin{equation} 
+  ln(R_{i}/S_{i}) = ln(\alpha) - \beta * S_{i} + \varepsilon_{i}
+  (\#eq:BasicRicker)
+\end{equation} 
+
+\begin{equation} 
+  \epsilon_i \sim N(0,\sigma^2)
+  (\#eq:BasicRickerResid)
+\end{equation} 
+
+
+
+*Ricker with lag-1 autocorrelation (AR1)*
+
+An extension to the Ricker model, which is again based on fixed linear relationship between $ln(R/S)$ (productivity) and $S$ (spawner abundance), but also looks for an underlying pattern in the residuals (i.e., estimate a specific residual for each brood year $i$) 
+
+\begin{equation} 
+  ln(R_{i}/S_{i}) = ln(\alpha) - \beta * S_{i} + \varepsilon_{i}
+  (\#eq:AR1Ricker)
+\end{equation} 
+
+
+\begin{equation} 
+  \varepsilon_i = \phi \varepsilon_{i-1} + \nu_i
+  (\#eq:AR1RickerResid1)
+\end{equation} 
+
+\begin{equation} 
+  \nu_i \sim N(0,\sigma_{\nu}^2)
+  (\#eq:AR1RickerResid2)
+\end{equation} 
+
+
+
+*Ricker with Time Varying Productivity (TVP)* 
+
+An extension to the Ricker model, which is based on a *time-varying* linear relationship between $ln(R/S)$ (productivity) and $S$ (spawner abundance) [e.g., @PetermanPyperGrout2000ParEst;  @PetermanPyperMacGregor2003KF; @HoltMichielsens2020RecBayes; @Freshwateretal2020Selectivity; @FraserSkRPASAR; @Huangetal2021FraserSkRPA]. For each brood year, the productivity parameter $ln(\alpha)$ is estimated based on the observed productivity for that year and the estimated $ln(\alpha)$ for the previous brood year, to generate a more or less smooth series of $\alpha$ parameters. 
+
+
+\begin{equation} 
+  ln(R_{i}/S_{i}) = ln(\alpha)_i - \beta * S + \varepsilon_{i}
+  (\#eq:RecBayesRicker1)
+\end{equation} 
+
+\begin{equation} 
+  ln(\alpha)_{i} = n(\alpha)_{i-1} + \omega_{i}
+  (\#eq:RecBayesRicker2)
+\end{equation} 
+
+
+\begin{equation} 
+  \omega_i \sim N(0,\sigma_{\omega}^2)
+  (\#eq:RecBayesRicker3)
+\end{equation} 
+
+\begin{equation} 
+  \epsilon_i \sim N(0,\sigma^2)
+  (\#eq:RecBayesRicker4)
+\end{equation} 
+
+Two alternative approaches for fitting a time-varying productivity Ricker model have been applied for Pacific salmon data, (1) Kalman Filter [@PetermanPyperGrout2000ParEst;  @PetermanPyperMacGregor2003KF] and (2) Recursive Bayes [@HoltMichielsens2020RecBayes; @Freshwateretal2020Selectivity; @FraserSkRPASAR; @Huangetal2021FraserSkRPA]. While the mathematical structure of these models are the same (Eq. \@ref(eq:RecBayesRicker1),  \@ref(eq:RecBayesRicker4)), the computational implementation of the estimation step is very different. A key difference is that the Kalman Filter implementations included a smoothing step, whereas the Recursive Bayes implementations did not.  
+
+The TVP model described here uses the Recursive Bayes version, consistent with recent work on Fraser Sockeye [@FraserSkRPASAR; @Huangetal2021FraserSkRPA].
+
+
+*Summary*
+
+The Basic Ricker and AR1 Ricker both fit a single spawner-recruit relationship which is assumed to describe inherent properties of the stock that remain constant over time. The AR1 model form has previously been used in escapement goal analyses for Alaskan and northern transboundary Sockeye stocks [e.g., @MillerPestalTakuSk; @Connorsetal2022]. The time-varying productivity version of the Ricker model assumes that there are real changes in productivity over time, and tries to extract a more-or-less smoothed pattern, identifying high and low productivity periods. The time-varying productivity model has been used for some northern transboundary salmon stocks [e.g., @PestalJohnstonTakuCo] and in several Fraser Sockeye applications [e.g., @FrSkWSPBM;@Huangetal2021FraserSkRPA; @PetermanDorner2011Fraser].
+
+
+### Bayesian Parameter Estimation Using Markov Chain Monte Carlo (MCMC) 
+
+We derived parameter estimates with Bayesian methods for candidate stock-level and aggregate-level SR models with Markov chain Monte Carlo (MCMC) using the JAGS sampling engine [@Plummer03jags] via the *jags()* function from the *R2jags* package [@R2jags]. Appendix \@ref(SingleStockSRFits)  describes the code set-up and  lists the JAGS code for the three model forms.
+
+MCMC estimation combines prior assumptions about each parameter with the likelihood of different parameter values based on the data to generate a posterior sample of parameter values. Prior assumptions can be uninformative (e.g., productivity for the stocks can be anywhere from very high to very low, and we don't specify a preference) or informative (e.g., we think productivity of the stock is similar to the average productivity from several near-by stocks with similar life history).
+
+The sampling engine starts with some random values sampled from the prior distribution, then searches through variations of all the parameters to identify values that plausibly link the observed data to the specified relationship (e.g., a Ricker function). Sampling should be set up such that parameter values stabilize (*convergence*), and earlier parts of the sampling chain are discarded (*burn-in*).
+
+MCMC implementations require careful testing of prior assumptions and verification of sampling behaviour to assess the quality of resulting estimates. We compiled a checklist of MCMC diagnostics and used it to select a short-list of SR model fits for each stock (Sec. \@ref(ModelSelection)).
+
+
+### Priors {#Priors}
+
+Bayesian fits for all three model forms (Basic Ricker, AR1 Ricker, and time-varying productivity Ricker require prior distributions for the productivity parameter $ln(\alpha)$  and the capacity parameter $S_{max}$.
+
+We used uninformative productivity priors for all single-stock SR model fits, implemented as a normal distribution with a mean of 0 and a very wide spread:
+
+\begin{equation} 
+  ln.alpha \sim normal(0,100)
+  (\#eq:ProductivityPrior)
+\end{equation} 
+
+For the capacity prior, we tested uniform and lognormal prior distributions for $S_{max}$, with either wide (Scalar = 3) or capped (Scalar = 1.5) upper bounds:
+
+\begin{equation} 
+  Smax \sim uniform(0,Spn_{ref}*Scalar)
+  (\#eq:UniformCapacityPrior)
+\end{equation} 
+
+\begin{equation} 
+  Smax \sim lognormal(Spn_{ref},CV) [0,Spn_{ref} * Scalar]
+  (\#eq:LognormalCapacityPrior)
+\end{equation} 
+
+Informative capacity priors based on the photosynthetic rate observed in rearing lakes can improve the precision of capacity estimates (i.e., narrower posterior distribution of Smax)  for stocks where they are appropriate given the life history, lake properties, number of stocks rearing in a lake, and plausibility of the PR-based Smax estimate [e.g., @Bodtkeretal2007; @Atlasetal2021HabitatDyn; @Atlasetal2020Limno]. We used lake-based capacity estimates as the initial stock-specific values for $Spn_{ref}$ where available and applicable, and used the largest observed spawner abundance as the reference value for the remaining stocks. 
+
+\clearpage
+@SkeenaNassSkDataRep compiled published and unpublished PR-based Smax estimates for 26 Sockeye rearing lakes in the Skeena and Nass basins (their Appendix B.4), and we used the estimates for 20 of the lakes to specify informative $Spn_{ref}$ values for 15 stocks (Table \@ref(tab:PRPriorsTable)), based on the following considerations:
+
+* Informative capacity priors using the sum of PR-based Smax estimates for major rearing lakes are not applicable for aggregate-level model fits, given the mixture of life histories and lake properties across the component stocks.
+* PR-based capacity priors are not applicable to river type or sea type Sockeye, which do not rear in a lake.
+* We did not use PR-based capacity priors for Babine stocks, due to (1) the size of the lake and (2) the challenge of allocating lake capacity estimates among five stocks, including the two channel-enhanced stocks (Pinkut, Fulton).
+* For stocks with multiple rearing lakes, we generally summed the available PR-based Smax estimates for the main spawning lakes (Bear / Azuklotz, Fred Wright / Kwinageese, Swan / Stephens / Club, Sustut / Johansen). For Mcdonell, we used only the Mcdonell lake capacity estimate, but excluded Aldrich and Dennis, because all spawners observed surveys rear in Mcdonell Lake. The Slamgeesh stock includes Slamgeesh and Damshilgwit lakes, but PR-based estimates are only available for Slamgeesh. 
+* For some stocks with PR-based capacity priors there is insufficient data for fitting single-stock SR models (Bowser).
+* Capacity priors for some stocks were adjusted based on a review of posterior distributions from preliminary model fits.
+
+Overall, we tested four alternative capacity priors (Table \@ref(tab:AltCapPriorsTable)) and used the *capped uniform* prior as the base case for the model fits reported in this paper. 
+
+Where PR-based capacity estimates were available, these were used to bound the SR model fit, but in a bounded uniform prior the lake-based estimate carries less weight than in a lognormal prior, unless the lognormal prior is used with a large CV, in which case it behaves almost like a uniform prior. We chose to downweight the lake-based information this way because (1) most of the available PR-based estimates are from 20 or more years ago, and (2) a consistent stock-by-stock review of limiting factors has not been completed for Skeena and Nass Sockeye.
+
+The potential issues with using PR-based capacity estimates are illustrated by Kitwanga Sockeye: The PR-based estimate of  $S_{max}$ from 2003 is 36,984 (Table \@ref(tab:PRPriorsTable)), but median observed spawner abundance since 1960 is 1,258. The largest observed spawner abundance was 20,804 in 2010, and the second largest was 13,699 in 2014. All other observations have been below 6,000 spawners. There are several potential explanations for this discrepancy: Either the spawner-recruit data is biased low, or the capacity estimate is biased high, or the stock has been severely depleted since before 1960, or Kitwanga production is not lake-limited. In addition, lake conditions have likely changed in the 20 years since the estimate was generated. In an escapement goal review focusing on one or two stocks, these alternative hypotheses could be explored and weighed to determine whether the PR-based capacity estimate is valid. However, this was not feasible here, given the number of stocks covered in the current analysis.  
+
+
+
+\clearpage
+
+(ref:PRPriorsTable) PR-based Smax estimates used to specify informative capacity priors. Table lists the year of the last limnological survey (*LastLim*) used to derive the PR-based Smax (*Est*). 95% confidence intervals (*Lower*, *Upper*) were based on assumed 20% coefficient of variation and a normal distribution (Cox-Rogers and Hume, pers. comm., DFO, 2012). Estimates for Skeena lakes are from Cox-Rogers and Hume (pers. comm., DFO, 2012, from datasets maintained by Cultus Lake Salmon Research Laboratory), which include lake-specific adjustments for non-Sockeye competitors (e.g., stickleback) and juvenile competition. Estimates for Nass lakes are from @Atlasetal2020Limno,  which do not include adjustments. However, adjustments would likely be small for the Nass nursery lakes. Updates or sensitivity tests of the PR-based Smax capacity estimates developed in the 1990s and early 2000s (e.g., the 20% CV assumption) were outside the scope of the current project.
+
+```{r PRPriorsTable, echo = FALSE, results = "asis"}
+
+
+table.in <- read.csv("data/Reference Tables/PRbasedPrior_Info.csv",stringsAsFactors = FALSE, fileEncoding = "UTF-8-BOM") %>% arrange(Basin,Stock,-Smax_Spn) %>% select(-CV, - Cap) %>%
+   mutate(Smax_Spn = prettyNum(round(Smax_Spn),big.mark = ",")) %>%
+   mutate(Smax_Spn_Lower = prettyNum(round(Smax_Spn_Lower),big.mark = ",")) %>%
+   mutate(Smax_Spn_Upper = prettyNum(round(Smax_Spn_Upper),big.mark = ",")) %>%
+   #mutate(Cap = prettyNum(round(Cap),big.mark = ",")) %>%
+   dplyr::rename(Est = Smax_Spn,Lower = Smax_Spn_Lower,Upper = Smax_Spn_Upper) #%>% 
+   #select(-EstCV)
+   
+
+table.in$Basin[duplicated(table.in$Basin)] <- ""
+table.in$Stock[duplicated(table.in$Stock)] <- ""
+table.in[is.na(table.in)] <- ""
+table.in[table.in == "NA"] <- ""
+   
+table.in %>% 
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+#   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10, align = c("l","l","l","r","r","r","r","r"),
+                  caption = "(ref:PRPriorsTable)") %>%
+add_header_above(c(" " = 4, "PR-based Smax" = 3),bold=TRUE) %>%
+        kableExtra::row_spec(c(5), hline_after = TRUE) %>%
+       kableExtra::row_spec(c(1,4,6,9:17,20), extra_latex_after = "\\cmidrule(l){2-7}") 
+
+```
+
+
+\clearpage
+
+(ref:AltCapPriorsTable) Alternative priors for the capacity parameter Smax. All four versions were tested with the Basic Ricker model fit, and the two versions of the uniform prior were tested with the AR1 and TVP Ricker model fits. The capped uniform prior (*CU*) was selected as the default for results presented in this paper.
+
+```{r AltCapPriorsTable, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/Reference Tables/AltCapPriors.csv")
+   
+table.in %>% 
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+#   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10, align = c("l","l","l","r","r","r","r","r"),
+                  caption = "(ref:AltCapPriorsTable)") %>%
+        kableExtra::row_spec(2:dim(table.in)[1]-1, hline_after = TRUE) %>%
+	kableExtra::column_spec(3, width = "31em") 
+
+```
+
+
+\clearpage
+### Candidate Aggregate Spawner-Recruit Model Fits {#CandidateAggModels}
+
+
+Key considerations for spawner-recruit modeling for the two aggregate stocks are time-varying productivity and the contribution of channel-enhanced stocks to Skeena Sockeye returns. Because long time series of continuous SR data are available for both the Skeena and Nass aggregates, all three candidate model forms (Section \@ref(ModelForms)) can be applied, which allows for an explicit evaluation of changes in productivity over time. The main challenge for aggregate-level SR fits is determining whether the analysis method is appropriate at that scale.
+
+*Nass aggregate*
+
+For most of the available time series, Meziadin accounts for most of the total spawner abundance. The aggregate data set has good contrast overall, but the early part of the time series accounts for most of the contrast in the data. Since the mid-1990s contrast has been much lower (<4), but this is partly due to changing stock composition, specifically the recent increase in the abundance and relative contribution of Lower Nass Sea and River Type Sockeye. Given their different life histories, we consider it more appropriate to fit SR models separately to these two main stocks, but included the aggregate model fits for comparison.
+
+
+*Skeena aggregate*
+
+Limited contrast in spawner data and noisy scatter of data points create large uncertainty in SR model fits, because a high proportion of the aggregate originates from the BLDP enhancement facilities. It is inappropriate to fit a density-dependent SR relationship to the resulting data, because the fit is highly sensitive to small changes in the data treatment choices (e.g., including or excluding a few earlier or recent brood years; Figure \@ref(fig:AltFitPlotSkeena)). Bayesian priors can used to force the model fit to a particular productivity or capacity considered plausible, but we have here chosen to exclude the enhanced stocks and fit SR models to the wild component of the aggregate (Section \@ref(DataSources)). An overview of available information on enhanced production is provided in Section \@ref(ChannelReview).
+
+
+\clearpage
+(ref:AltFitPlotSkeena) Simple deterministic Ricker fits for total Skeena aggregate, including enhanced Pinkut and Fulton, using all available brood years compared to various subsets of the data. The regression fit varies drastically and even reverses direction, depending on whether the 1994 and 2013 brood years are included in the analysis. Solid points are the data used for the model fit. Open circles are the excluded observations. Fits might be more stable if additional information can be incorporated, such as environmental covariates (e.g., ocean conditions during smolt outmigration) or covariation in productivity across river systems. However, this simple illustration shows that the SR data by themselves provide little information about a density-dependent relationship between spawners and productivity.  
+
+```{r AltFitPlotSkeena,   fig.cap="(ref:AltFitPlotSkeena)"}
+include_graphics("data/CaseSpecificExtraPlots/SkeenaScatterVariations.PNG")
+```
+
+
+
+
+
+\clearpage
+### Candidate Single-Stock Spawner-Recruit Model Fits  {#CandidateStockModels}
+
+Key considerations for SR modeling for each of the Skeena and Nass Sockeye stocks include stock characteristics, available data, and observed changes over time (e.g., data quality, productivity). We developed a checklist of considerations to identify an initial set of candidate SR model variations for each stock (Figure \@ref(fig:CandidateModels)). 
+
+The minimum number of SR data points required for model fitting was discussed during the peer review process. If there are relatively few SR data points, then parameter estimates and resulting biological benchmarks can be highly uncertain and systematically biased, particularly where observation error is relatively high and there is strong year-to-year correlation in survival. A consensus was reached that the threshold should be at least 10, because it was participants' experience that SR model fits to fewer than 10 observations are vulnerable to severe biases in parameter estimates and resulting benchmarks. Participants also considered a higher threshold based on unpublished work by Brendan Connors (pers. comm., DFO, 2022, documented in a [github repository](https://github.com/brendanmichaelconnors/PSE-pop-SAC/blob/master/How-many-data-points/2020-07-30_How-many-SR-pairs-are-too_few.pdf)), who explored the amount of bias in estimates of Smsy for various numbers of data points included in the analysis and found that at least 13 years of stock-recruitment data pairs are needed, in general, to get unbiased Smsy estimates. Most concerning was that fewer than 13 points generally produced underestimates of Smsy, with the largest bias produced by the least productive populations. This bias in Smsy was generally smaller in an HBM analysis than in the single-CU analyses. 
+
+We maintained the threshold of at least 10 data points as part of the checklist in Figure \@ref(fig:CandidateModels), but the higher threshold of at least 13 data points would not affect our analyses (Table \@ref(tab:DataOverviewSkeena)). Upper Skeena RT with 4 brood years of data are excluded regardless, and all the other stocks have more than 13 brood years of data. Slamgeesh and Johnston have 14 brood years through 2019 return data, and will have 16 as soon as the next update of the run reconstruction (up to the 2022 return year) is implemented. 
+
+
+SR model fits were only applied to *wild* stocks with at least 10 brood years of SR data:
+
+* For eight stocks with gaps in the data series (after filter and infill, Section \@ref(AvailableSRData)) only the Basic Ricker model was fitted. 
+* For 12 stocks with at least 25 continuous brood years of SR data, all three model forms were fitted (Basic, AR1, TVP). 
+* The two enhanced stocks (Pinkut, Fulton) were excluded because of fitting issues as illustrated in Figure \@ref(fig:AltFitPlotSkeena) for the Skeena aggregate. 
+* The eight data-deficient stocks were also excluded. Note that for one of the stocks that are here considered to be data deficient, Bowser (Nass), there is on-going discussion regarding the usability of available estimates, and it may be included in future updates to this analysis. 
+
+\clearpage
+
+(ref:CandidateModels) Checklist for identifying a base set of candidate models for single-stock SR model fits. We focused on Ricker model variations for wild stocks with at least 10 brood years of spawner-recruit data after infilling any 1-year gaps in spawner abundance or run size. For stocks with at least 25 continuous brood years of spawner-recruit data we tested three alternative model forms. For stocks not meeting that requirement we fitted only a basic Ricker model.
+
+
+```{r CandidateModels,  fig.cap="(ref:CandidateModels)"}
+include_graphics("diagrams/Diagram_CandidateModels_REV.PNG")
+```
+
+\clearpage
+
+We completed two sets of sensitivity tests for the Basic Ricker fit:
+
+* *Full vs. truncated data*: Compare fits using all available data to fits with truncated data, excluding earlier brood years. The cut-off for the truncated data differed  by stock, but we generally used the mid- to late 1990s. For example, Alastair has SR data back to to 1960, but the truncated model fit uses only brood years starting in 1998. Note that for Kitsumkalum we used SR data truncated at 1990 as the base case, and all years of data in a sensitivity test, due to the observed drastic changes in production dynamics since a spawning channel was built in the late 1980s. Note that the Kitsumkalum channel differs from Pinkut and Fulton because spawner abundances are not actively managed to a target, and data since 1990 show a clear density-dependent pattern.
+* *Alternative capacity priors*: Compare benchmark estimates using four alternative capacity priors: capped uniform, wide uniform, capped lognormal, wide lognormal (Section \@ref(Priors). Where  available and applicable we used capacity estimates based on lake photosynthetic rate to bound the capacity priors. 
+
+
+### Exploration of Hierarchical Spawner-Recruit Model Fit for Skeena Sockeye Stocks  {#HBMExploration}
+
+As part of the TWG process, McAllister and Challenger (Appendix \@ref(app:HBMFits)) updated the hierarchical Bayesian model (HBM) fitting approach for Skeena Sockeye stocks from @KormanEnglish2013 to provide a comparison of previous estimates generated using the same methodology but with an updated spawner-recruit data set. An advantage of hierarchical Bayesian models is that information can be shared between stocks, drawing on similarities in the available data to extract shared underlying patterns (e.g., similar intrinsic productivity across stocks with similar life history, common patterns in changing productivity), which may improve the precision of estimates for stocks with noisy or missing data.
+
+Details of the HBM methods, model fits, and results are provided in Appendix \@ref(app:HBMFits). Briefly, the approach is to model stock-level productivity with two components: (1) a common underlying distribution with a shared central tendency across the stocks (called a *hyperparameter*), and (2) a stock-specific deviation from that shared distribution. For stocks with highly informative data, the resulting productivity estimates can shift further away from the common productivity parameter. For stocks with noisy or missing data, the parameter estimate will get pulled more strongly towards the overall centre of the distribution for the group of stocks. This *shrinkage* occurs for all stocks whose productivity parameters differ from the mean productivity of the group of stocks that was included in the HBM, but the level of shrinkage differs by stock depending on how strong the signal in the data is (Section \@ref(HBMShrinkage)).
+
+Known challenges for hierarchical Bayesian fits include:
+
+* *Model complexity*: Many parameters are being estimated simultaneously. Parameter estimates may be highly sensitive to alternative settings and unexpected interactions could skew the results. While this is the case for all Bayesian model fits, the potential issue grows with the number of parameters.
+* *Assumed similarities between stocks*: In its simplest form, an HBM implementation estimates productivity for all component stocks relative to a single underlying hyperparameter, but more nuanced stock structures can be incorporated (e.g., group stocks to match the spatial structure of the basin). Given that information is exchanged between stocks, it is important to consider the life histories and observed productivity patterns of stocks linked together in a hierarchical model structure.
+
+
+In addition to providing a comparison with estimates that were previously developed using a similar modeling framework for Skeena Sockeye, the updated HBM model results confirm the overall pattern of basin-wide declines in productivity for Skeena Sockeye in the shape of the shared year effect curve, and the HBM results reported in Appendix \@ref(app:HBMFits) also support other objectives for this Research Document, including:
+
+* Contributing a fully independent cross-check of the single-stock parameter estimates for Skeena Sockeye stocks (Objective 3)
+* Providing an opportunity to explore sources of observed differences (i.e., model form, prior assumptions) (Objective 6)
+
+To support these objectives,  the HBM was implemented using  the same data sets and incorporated some sensitivity tests designed to be similar to the single-stock implementation. The intent was that observed differences in results should be mostly due to the hierarchical structure, but it was challenging to clearly isolate the effect of the hierarchical assumption from other methodological nuances for the stocks where differences between single stock and HBM model outputs were observed.
+
+## SINGLE-STOCK SR MODEL SELECTION AND PRODUCTIVITY SCENARIOS {#ModelSelection}
+
+We fit a total number of 163 candidate model fits, due to the alternative model forms (Basic, AR1, TVP), sensitivity testing (i.e., alternative priors, full vs. truncated time series), and large number of stocks (20 wild, 2 enhanced, 3 versions of aggregate fit). To improve consistency, we developed guidelines for first selecting a short list of model fits for each stock or aggregate and then developing alternative productivity scenarios based on the short-listed model fits (Figure \@ref(fig:ModelSelection)).
+
+Given that *"all models are wrong but some are useful"* [@BoxModelsWrong], the approach for short-listing model fits needs to be adapted to their purpose. For example, in applied SR analyses for the same stocks of Fraser River Sockeye, using the same data, the annual forecasting process [e.g., @Grantetal2013FC] uses a different set of candidate models and a different model selection approach than the simulation used for a recovery potential assessment [@Huangetal2021FraserSkRPA]. Both approaches combine quantitative criteria for model selection (e.g., MCMC convergence, mean absolute percent error from a retrospective test) with expert judgment regarding the plausibility and usefulness of the candidate SR model fits.
+
+For the Skeena and Nass Sockeye escapement goal review, the TWG and independent reviewers identified changes in productivity over time, and differences in productivity between stocks, as the main analytical priorities (Section \@ref(PaperObj)). Accordingly, we framed the fundamental question for model selection as *"Of the SR model fits that converged on biologically plausible parameter estimates, which ones are useful for describing alternative productivity scenarios that are relevant to subsequent decision processes"*, where we define "useful" as  *"helping to demonstrate the magnitude of changes in  biological benchmarks and subsequent analyses resulting from different productivity assumptions"*. This emphasizes the contrast between productivity scenarios, and is a very different approach from looking for the single model with the "best" fit. These productivity scenarios are not predictions or recommendations for the best model fit per se. Upcoming decision processes will need to identify scenarios they consider plausible, and then evaluate the implications for the specific building blocks they choose to focus on (e.g., status assessments vs. equilibrium profiles vs. harvest strategy simulations).
+
+We used three steps to short-list candidate model fits for each stock (Figure \@ref(fig:ModelSelection)):
+
+1. *Statistical considerations*: Models that fit very poorly or didn't converge, using the criteria listed in Table \@ref(tab:MCMCDiagnostics) were screened out. 
+2. *Capacity considerations*: We compared capacity estimates across model fits to screen out any that were considered highly implausible. If the remaining plausible alternative were substantially different, we examined whether the difference was most likely explained by model form, choice of informative/uninformative capacity prior, data truncation, or scatter of data points, and made case-specific choices. Where available, we generally selected model fits with uniform capacity priors capped based on lake photosynthetic rate.
+3. *Productivity considerations*: We compared productivity estimates across model fits for a stock, and across stocks, to screen out any that were considered implausible. Where AR1 and TVP models could be fitted, we compared the time-varying parameter estimates to Basic Ricker estimates and made case-specific choices. We generally selected model fits using all available data unless there were clear data issues. Where data and model fits indicated recent changes in population dynamics, we generally selected AR1 or TVP fits over Basic Ricker fits, and fits using all available data rather than truncated data.
+
+The following general guidelines were used to generate alternative productivity scenarios based on subsampling the posterior distributions from the short-listed model fits (Figure \@ref(fig:ModelSelection)):
+
+* To describe long-term average productivity, we sampled from AR1 fit where available, and from Basic Ricker fit otherwise. Using the TVP fit would require averaging or subsampling across all brood years, and so we considered it more appropriate to just use the AR1 parameter estimates, if both AR1 and TVP were available.
+* To describe recent productivity and high/low productivity bookends, we sampled from the TVP fit where available, and from the Basic Ricker fit otherwise.
+   * Where a TVP fit was available, we subsampled from the annual ln.alpha samples for a full generation, using the most recent generation for the recent productivity scenario, and the generation centred on the lowest/highest productivity for the bookends. As a sensitivity test, we also generated two alternative versions of the recent productivity scenario, using the last two or three full generations (i.e., 8 and 12 brood years for a stock with mainly age 4 returns).
+   * Where only a Basic Ricker fit was available, we checked the pattern of Ricker residuals and identified a rough productivity adjustment in terms of a percentile of the posterior. Then we selected half the sample from above and below that percentile to generate a recent scenario. For high/low bookends, we subsampled such that the median ln.alpha corresponds to the 10th and 90th percentiles of the original posterior distribution.
+   
+\clearpage
+(ref:ModelSelection) Considerations for model selection and guidelines for generating productivity scenarios. 
+
+```{r ModelSelection,   fig.cap="(ref:ModelSelection)", out.width = "90%"}
+include_graphics("diagrams/Diagram_ModelSelection.PNG")
+```
+
+
+
+\clearpage
+
+(ref:MCMCDiagnostics) Checklist of MCMC diagnostics. The following standard diagnostics were used to assess MCMC sampling and model fit. Table adapted and expanded from @PestalJohnstonTakuCo. 
+
+```{r MCMCDiagnostics, echo = FALSE, results = "asis"}
+
+
+table.in <- read.csv("data/Reference Tables/MCMC_Diagnostics.csv",
+                     stringsAsFactors = FALSE, fileEncoding = "UTF-8-BOM")
+
+table.in$Examples <- gsub("None","-",table.in$Examples)
+
+   
+table.in %>% 
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+#   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10, align = c("l","l","l","l"),
+                  caption = "(ref:MCMCDiagnostics)") %>%
+    kableExtra::column_spec(1, width = "7em") %>%
+       kableExtra::column_spec(2, width = "10em") %>%
+       kableExtra::column_spec(3, width = "17em") %>%
+       kableExtra::column_spec(4, width = "5em") %>%
+     kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) 
+
+```
+
+
+
+
+\clearpage
+## BIOLOGICAL BENCHMARKS AND STATUS BENCHMARKS {#BMMethods}
+
+We calculated four standard biological benchmarks and  two related WSP status benchmarks (Table \@ref(tab:BMDefs)). Preliminary benchmark estimates were reviewed through the TWG process to identify potential errors and anomalies. During the first pass through the TWG review process, Sgen values were flagged as seeming too low for several of the stocks. This triggered a detailed review and testing of all the benchmark calculation steps.
+
+Smax and Seq can be calculated directly from the SR parameters. Smsy and Sgen require a more complex solution, and we tested four alternative implementations for each. Based on the tests summarized in Appendix \@ref(BMCalcTest), we decided to use (1) the  @Scheuerell2016 method for Smsy, because it is the only exact solution, and (2) the @Connorsetal2022 version of the Sgen optimizer, because it was the only optimization approach that generated solutions for all tested combinations of parameters (Table \@ref(tab:BMCalcs)).  Appendix \@ref(BMFuns) shows the corresponding R code.
+
+Some previous escapement goal analyses have used a log-normal bias correction on the productivity parameter (Table \@ref(tab:BMCalcs)), but implementation has varied between agencies, regions, and projects. WSP status assessments  used benchmarks without the bias correction [@FrSkWSPStatus2012; @FrSkWSPStatus2017; @SBCCkWSPStatus2012SAR;@IFCohoWSPStatus2013SAR]. Alaskan escapement goal analyses typically included the bias correction  [@EggersBernard2011Alsek; @FleishmanEvenson2010; @McPhersonetal2010; @Fairetal2011]. Escapement goal analyses for northern transboundary salmon stocks used to include both versions a few years ago [e.g., @PestalJohnstonTakuCo] but have recently shifted to only reporting the bias-corrected version [@Connorsetal2022; @MillerPestalTakuSk]. 
+
+This is not unique to Pacific salmon. In their review of stock-recruit modelling,  @Subbeyetal2014SRReview note that both versions have been widely used and that the choice for a particular applications should consider how the estimates are used afterwards. The general guidelines are:
+
+* Use values *with* bias correction when the management objective is defined in terms of mean values  (e.g., mean Smsy).
+* Use values *without* bias correction when the management objective is defined in terms of median values (e.g., median Smsy) or when using the parameter estimates as inputs to other models (e.g., forward simulation).
+
+
+Systematic testing of Skeena and Nass Sockeye SR data (Appendix \@ref(BiasCorrtest)) demonstrated that the effect of bias correction is generally small for productive stocks with good SR model fits (i.e., sigma is small relative to ln.alpha), but can be substantial for stocks with low productivity and poor SR model fits (i.e., sigma is larger relative to ln.alpha). The bias correction generally increases Smsy estimates and decreases Sgen estimates.
+
+Given these observed effects, and the differences in approach over recent years, we chose to report medians and percentiles of posterior parameter estimate without log-normal bias correction throughout this paper, but included the bias-corrected version in Appendix \@ref(BiasCorrectedBM). 
+ 
+
+
+\clearpage
+(ref:BMDefs) Definition of standard biological benchmarks and Wild Salmon Policy status benchmarks for the relative abundance metric. Note that we define benchmarks in terms of median recruits and median yield, and therefore present benchmark estimates without log-normal bias correction throughout most of the paper. Bias-corrected mean estimates of biological benchmarks are included as Appendix \@ref(BiasCorrectedBM).
+
+
+```{r BMDefs, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/Reference Tables/BM_Definitions.csv")
+
+table.in$Type[duplicated(table.in$Type)] <- ""
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:BMDefs)")  %>%
+	kableExtra::row_spec(4, hline_after = TRUE) %>%
+   #  kableExtra::column_spec(1, width = "8em") %>%
+   #     kableExtra::column_spec(2, width = "8em") %>%
+        kableExtra::column_spec(3, width = "30em") %>%
+   kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+(ref:BMCalcs) Calculation approach for biological benchmarks.
+
+```{r BMCalcs, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/Reference Tables/BM_Calc_Equations.csv")
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:BMCalcs)")  #%>%
+	#kableExtra::row_spec(4, hline_after = TRUE) %>%
+     #kableExtra::column_spec(1, width = "8em") %>%
+       # kableExtra::column_spec(2, width = "8em") %>%
+        #kableExtra::column_spec(3, width = "30em") %>%
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+(ref:BiasCorrCalcs) Log-normal bias correction for the productivity parameter by model form.
+
+```{r BiasCorrCalcs, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/Reference Tables/Bias_Corr_Equations.csv")
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:BiasCorrCalcs)") %>%
+	kableExtra::row_spec(1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "12em")  %>%
+       kableExtra::column_spec(2, width = "12em") %>%
+        kableExtra::column_spec(3, width = "20em")# %>%
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+
+
+
+
+\clearpage
+
+## ALTERNATIVE APPROACHES FOR DEVELOPING MANAGEMENT REFERENCE POINTS FOR STOCK AGGREGATES {#AltApproachesComp}
+
+### Overview of Alternative Approaches
+
+This paper and the underlying R code were structured to clearly separate the steps of (1) biological analyses to fit SR models and generate alternative productivity scenarios, and (2) using the SR parameter sets to develop management reference points for the Skeena and Nass Sockeye stock aggregates. These steps are fundamentally different in terms of the information and process they require. Keeping the analyses modular has allowed us to set up a framework for future updates and collaborative processes. 
+
+We provide worked examples of eight alternative aggregation approaches for the second step, and a rationale for why these examples are included in this paper in Section \@ref(AnalysisOverview). These examples use the specific SR fits and productivity scenarios described above, but can be quickly regenerated with alternative parameter sets (e.g., if participants in a planning workshop suggest a different productivity scenario, or contribute alternative SR parameter sets based on alternative analyses).
+
+Table \@ref(tab:TableAltApproaches) summarizes the alternative approaches and defines the short labels we use throughout the rest of the paper. The approaches are presented in order of increasing complexity, where complexity can be due to analytical requirements, process requirements, or both. The simplest approaches directly use estimates of biological benchmarks like Smsy or Umsy (Agg Smsy, Sum Smsy, Umsy Comp). Next are approaches that can be calculated directly from  SR parameters using assumptions about long-term equilibrium (Equ. Prof, Agg TradeOff). Aggregation approaches that explicitly consider stock status (Status, Log Reg), are computationally simple but require a collaborative process to agree on status criteria. Forward simulation (Sim) is the most complex approach, because in addition to the SR fitting, many iterations of scoping, prototyping, and review need to occur through a collaborative process. To provide worked examples for each approach, we assumed quantitative objectives, and used examples consistent with previous work (Table \@ref(tab:TableAltApprObj)).   
+
+Six of the eight alternative approaches have been previously used for Skeena or Nass Sockeye analyses (Table \@ref(tab:PastWorkTable)):
+
+* *Agg Smsy*: The current escapement goals for Skeena and Nass Sockeye are based on aggregate-level Smsy estimates developed in 1958 for the Skeena, prior to the implementation of Babine spawning channels, and in the 1990s for the Nass. 
+* *Sum Smsy*: In 2016, the Skeena First Nations Technical Committee recommended increasing the limit reference point for aggregate Skeena Sockeye from 400,000 to 600,000 based on the sum of stock-level Smsy estimates and the observed stock composition [@NCIFMP2019]. 
+* *Umsy Comp*: @Waltersetal2008ISRP included a comparison of stock-specific estimates of Fmax, the maximum exploitation rates (ER) that can be applied sustainably
+without causing extinction (their Figure 14). The worked example we include here compares stock-specific estimates of an ER benchmark. 
+* *Equ. Prof*: These have not been previously published for Skeena or Nass Sockeye, but are a standard output for the escapement goal reviews completed for northern transboundary stocks [e.g., @MillerPestalTakuSk].
+* *Agg Tradeoff*: This was a key result of @Waltersetal2008ISRP, and triggered changes to the Canadian domestic harvest management approach. 
+* *Status*: @KormanEnglish2013 and  @PacificSalmonExplorer included synoptic, or “first-cut”, status assessments taking a broad-brush and consistent approach based on a single status metric. While this approach does not cover all the considerations captured in the integrated multi-criteria status assessments completed under WSP [@FrSkWSPStatus2012; @FrSkWSPStatus2017; @SBCCkWSPStatus2012SAR; @IFCohoWSPStatus2013SAR], it uses the same benchmarks for the relative abundance metric (Sgen, 80% Smsy), and gives comparable results for those CUs where integrated status assessments were driven by that metric.
+* *Log Reg*:  This is one of two candidate approaches described for developing limit reference points (LRP) for stock management units (SMU) under the modernized *Fisheries Act* (2019). @LRPGuidelinesSAR summarizes three case studies and concludes that *"Logistic regression LRPs’ have several limitations and should only be used when (i) supplemental aggregate abundance LRPs are required and (ii) all assumptions of the logistic regression model can be met"*. We included a worked example for this method to check whether the challenges identified by @LRPGuidelinesSAR are encountered for Skeena and Nass Sockeye.
+* *Sim*: @CoxRogersetal2010 tested the effect of different harvest rates (i.e., *open loop*) over 15 years (*short simulation*) and 100 years (*long simulation*).  @Hawkshaw2018Diss used optimization techniques (*long simulation*) to compare alternative harvest strategy types (*open* and *closed* loop). The harvest rates in @CoxRogersetal2010 were applied equally to all stocks.  @Hawkshaw2018Diss explored alternative harvest control rules and fishing plans for multi-species mixed-stock fishery (i.e., 5 Pacific salmon species and steelhead, each modeled as a single stock).
+
+
+
+
+
+
+
+\clearpage
+(ref:TableAltApproaches) Alternative Approaches for Developing Aggregate Biological Reference Points. 
+
+```{r TableAltApproaches, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/AggregationApproachTables/AggregationTable_AltApproaches.csv")
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableAltApproaches)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "8em") %>%
+     kableExtra::column_spec(2, width = "6em") %>%
+     kableExtra::column_spec(3, width = "32em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+\clearpage
+
+(ref:TableAltApprObj) Objectives used in the worked examples for each aggregation approach. 
+
+```{r TableAltApprObj, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/AggregationApproachTables/AggregationTable_ExampleObjectives.csv")
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableAltApprObj)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "8em") %>%
+     kableExtra::column_spec(2, width = "38em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+\clearpage
+### Evaluation of Alternative Approaches
+
+There are advantages and disadvantages for each of the different approaches for developing management reference points described here. For example, calculating Smsy for aggregate stocks using the full time series of available data is the most computationally straightforward method to produce a single estimate and comparatively simple to implement in a management framework, but may not meet conservation objective for smaller, less productive stocks within each aggregate. A status-based approach, which may better address WSP or other Canadian legislative requirements, does not provide explicit target abundances as reference points and may not meet requirements for developing international harvest sharing agreements. Although simulation modeling is the most computationally intense approach, it may better address considerations about variability in future productivity than the sum of lower benchmarks developed assuming average long-term productivity for the different stocks.  
+
+The initial version of this Research Document did not make a clear recommendation for which approach should be used to inform aggregate escapement goals for Skeena and Nass Sockeye. Likewise, the CSAS review committee did not reach a consensus during the Regional Peer Review. A subgroup of participants was convened in a follow-up process to develop this advice, which included (1) identifying criteria for evaluating the alternative approaches, (2) completing a detailed evaluation of each approach, and (3) generating a summary table of comparisons, along with an overview of practical challenges for the alternative approaches. This structured comparison of approaches is a key product of the peer review process.
+
+11 evaluation criteria were identified and grouped into three types (Table \@ref(tab:TableCriteria)). Five of the criteria relate to parameter estimation, four relate to the type of outcome the approach produces, and two reflect practical considerations for implementation. In a virtual workshop, we scored each approach against all 11 criteria (Table \@ref(tab:TableSummary)) and drafted a brief rationale for each score (Appendix \@ref(AggregationAppendix)). Key challenges for each approach were also identified (Table \@ref(tab:TableChallenges)).
+
+Appropriate aggregation approaches can be selected depending on which criteria are identified as critical for a specific application. For example:
+
+* If abundance-based aggregate escapement goals that consider stock level diversity are required, then the only approaches that meet these criteria are aggregate equilibrium tradeoff plots, logistic regression, and a forward simulation approach. 
+* Logistic regression is not  appropriate for Nass stocks, because past aggregate abundance was found to be not correlated with stock-level performance measures. 
+* This leaves the aggregate equilibrium tradeoff plots and forward simulation as the only viable options within this example. 
+* Of these, closed loop forward simulation within a Management Strategy Evaluation (MSE) framework is the only aggregation approach identified that meets all of the criteria identified by CSAS review committee, while the aggregate equilibrium trade-off approach can be implemented within a relatively short time frame.
+
+The aggregate equilibrium trade-off approach was recommended for evaluating alternative goals and harvest management rules for Skeena Sockeye in the report prepared by the 2008 Skeena Independent Science Review Panel (ISRP) (Walters et al. 2008). At the time, the ISRP report and preliminary trade-off analyses led to changes in the harvest rule for Canadian marine commercial fisheries for Skeena Sockeye implemented in 2009, which substantially reduced the harvest rate in these fisheries.
+
+A full simulation model and associated MSE framework and process would require a considerable investment of time to develop (1) agreed-upon objectives, (2) agreed-upon model scope, and (3) agreed-upon scenarios for testing through a structured process. Depending on the available time to select an escapement goal, evaluating aggregate tradeoff plots may be the best option for developing an aggregate escapement goal in the short term. If a full MSE is not feasible within the available time frame, a simplified forward simulation can also be used to provide a complementary set of results for aggregate tradeoff considerations in a relatively short period of time.
+
+
+
+\clearpage
+
+(ref:TableCriteria) Description of criteria for evaluating the alternative approaches described in Table \@ref(tab:TableAltApproaches). An initial list of criteria was identified during the peer review meeting, then modified as the evaluations were being filled in during the follow-up process. Criteria can be grouped into three distinct types: Estimation criteria are relevant to SR model fitting or simulation model scoping. Outcome criteria relate to the type of end-product generated by the aggregation method. Implementation criteria relate to how the end-product can be used, and when it could be available.
+
+```{r TableCriteria, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/AggregationApproachTables/AggregationTable_Criteria.csv")
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableCriteria)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "4em") %>%
+     kableExtra::column_spec(2, width = "14em") %>%
+     kableExtra::column_spec(3, width = "28em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+\clearpage
+
+(ref:TableSummary) Summary of characteristics of 8 alternative methods for developing aggregate reference points. The peer-review process compared alternative approaches for developing aggregate reference points (Table \@ref(tab:TableAltApproaches)) based on a set of 10 criteria (Table \@ref(tab:TableCriteria)). A YES/NO/MAYBE rating was assigned for each criterion to provide a comparison of aggregation methods. YES identifies that the aggregation approach meets the criterion. MAYBE means that current approach could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.  The Critical column values are provided by the review participants and identify criteria that are critical (Yes) or to be determined (TBD). Appendix \@ref(AggregationAppendix) briefly summarizes the rationale for each rating.
+
+\begin{landscapepage}
+
+
+
+```{r TableSummary, echo = FALSE, results = "asis"}
+
+
+
+table.in <- read_csv("data/AggregationApproachTables/AggregationTable_Summary.csv")
+
+col.names.use <- c("Criterion","Crit?","Agg\nSmsy","Sum\nSmsy","Umsy\nComp","Equ.\nProf",
+"Agg\nEqu.\nProf.","Status","Log\nReg","Sim")
+
+
+#table.cols <- table.in
+#table.cols[,] <- "white"
+#table.cols[table.in == "YES"] <- "green" 
+#table.cols[table.in == "NO"] <- "orange" 
+
+col3.cols <- rep("white", 11)
+col3.cols[table.in[,3]  == "YES"]  <- '#b8e186'
+#col3.cols[table.in[,3]  == "NO"] 	 <- '#d01c8b'
+col3.cols[table.in[,3]  == "MAYBE"] 	 <- "#F1CF31"	  #'#f1b6da'
+
+col4.cols <- rep("white", 11)
+col4.cols[table.in[,4]  == "YES"]  <- '#b8e186'
+col4.cols[table.in[,4]  == "MAYBE"] 	 <- "#F1CF31"	 
+
+col5.cols <- rep("white", 11)
+col5.cols[table.in[,5]  == "YES"]  <- '#b8e186'
+col5.cols[table.in[,5]  == "MAYBE"] 	 <- "#F1CF31"	 
+
+col6.cols <- rep("white", 11)
+col6.cols[table.in[,6]  == "YES"]  <- '#b8e186'
+col6.cols[table.in[,6]  == "MAYBE"] 	 <- "#F1CF31"	 
+
+col7.cols <- rep("white", 11)
+col7.cols[table.in[,7]  == "YES"]  <- '#b8e186'
+col7.cols[table.in[,7]  == "MAYBE"] 	 <- "#F1CF31"	
+	
+col8.cols <- rep("white", 11)
+col8.cols[table.in[,8]  == "YES"]  <- '#b8e186'
+col8.cols[table.in[,8]  == "MAYBE"] 	 <- "#F1CF31"	
+	
+col9.cols <- rep("white", 11)
+col9.cols[table.in[,9]  == "YES"]  <- '#b8e186'
+col9.cols[table.in[,9]  == "MAYBE"] 	 <- "#F1CF31"	
+	
+col10.cols <- rep("white", 11)
+col10.cols[table.in[,10]  == "YES"]  <- '#b8e186'
+col10.cols[table.in[,10]  == "MAYBE"] 	 <- "#F1CF31"	
+	
+#col11.cols <- rep("white", 11)
+#col11.cols[table.in[,11]  == "YES"]  <- '#b8e186'
+#col11.cols[table.in[,11]  == "MAYBE"] 	 <- "#F1CF31"	
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = "l",
+              col.names = linebreak(col.names.use), #landscape = TRUE,
+                  caption = "(ref:TableSummary)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "20em") %>%
+  kableExtra::column_spec(3, background =  col3.cols) %>%
+  kableExtra::column_spec(4, background =  col4.cols) %>%
+	  kableExtra::column_spec(5, background =  col5.cols) %>%
+	  kableExtra::column_spec(6, background =  col6.cols) %>%
+	  kableExtra::column_spec(7, background =  col7.cols) %>%
+	  kableExtra::column_spec(8, background =  col8.cols) %>%
+	  kableExtra::column_spec(9, background =  col9.cols) %>%
+	  kableExtra::column_spec(10, background =  col10.cols) #%>%
+	  #kableExtra::column_spec(11, background =  col11.cols)
+	
+	
+	
+	
+	
+	
+	
+	#table.cols[,3]) #%>%	
+
+# COLOR NOT WORKING! WHY??????
+
+
+```
+
+\end{landscapepage}
+
+\clearpage
+(ref:TableChallenges) Key challenges for alternative aggregation approaches. Aggregation approaches are grouped into 4 types based on their fundamental ingredient (i.e., benchmarks, status, equilibrium profiles, or forward simulations).
+
+```{r TableChallenges, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/AggregationApproachTables/AggregationTable_KeyChallenges.csv")
+
+
+table.in$Type[duplicated(table.in$Type)] <- ""
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 9,align = "l",
+              #col.names = linebreak(col.names.use),
+                  caption = "(ref:TableChallenges)")  %>%
+	kableExtra::row_spec(c(3,5,7), hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "8em") %>%
+         kableExtra::column_spec(2, width = "15em") %>%
+        kableExtra::column_spec(3, width = "20 em") %>%
+	kableExtra::row_spec(c(1,2,4,6,8), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+
+
+
+
+\clearpage
+
+## IMPLEMENTATION OF ALTERNATIVE APPROACHES FOR DEVELOPING MANAGEMENT REFERENCE POINTS FOR STOCK AGGREGATES {#AltApproachesMethods}
+
+
+This section briefly describes the implementation of the alternative approaches for developing management reference points that were discussed in the initial version of this Research Document and during the CSAS RPR.
+
+### Aggregate Estimates of Biological Benchmarks (Agg Smsy)
+
+This approach simply calculates Smsy estimates for aggregate-level SR model fits (Sec. \@ref(CandidateAggModels)). 
+
+
+### Sum of Stock-Level Biological Benchmarks for Abundance (Sum Smsy)
+
+Calculate the sum of Smsy estimtes for wild stocks. For the example presented here, we compare the sum of mean and median Smsy and Smax estimates across modelled stocks to the corresponding estimates for aggregate-level SR model fits. Percentiles of the distributions are shown for the single-stock and aggregate fits. If percentiles for the sum of stock-level estimates are required, they can be calculated by summing the individual MCMC samples, then calculating the percentiles. 
+
+### Compare Stock-level Biological Benchmarks for Exploitation Rate (Umsy Comp)
+
+Although estimates of Umsy cannot be summed across stocks, but it is informative to compare them. We include two types of comparison:
+
+* Visual comparison of posterior distributions for stock-level and aggregate-level Umsy estimates. 
+* Frequency distribution of median Umsy across stocks, adapting the approach from Figure 14 in @Waltersetal2008ISRP.
+
+### Calculation of Spawner-based Equilibrium Profiles (Equ. Prof) {#EqProfilesMethods}
+
+Recent escapement goal analyses for Alaskan salmon stocks have equilibrium  probability profiles as a standard part of the results. Initial applications focused on yield profiles that capture the notion of “pretty good yield” (PGY) as defined by @HilbornPGY, but other types of profiles have also been explored (e.g., recovery profiles). While implementation methods continue to evolve, these profiles were generated with the same basic approach.
+
+For example, the "80-60 range" for a yield profile is derived as follows:
+
+* specify a reference value $Ref$ for yield at 60% of MSY.
+*  for each spawner abundance $S_i$, calculate the percent of MCMC samples for which the expected number of recruits is at least $S_i + Ref$, which captures the expected yield under equilibrium conditions if the stock were managed to a fixed escapement goal at $S_i$ and all returns above $S_i$ were harvested. 
+* Identify the range of $S_i$ for which the percent of samples meeting the criterion is at least 80%.
+
+Examples include summer Chum Salmon in the East Fork of the Andreafksy River (Fleishman and Evenson 2010), Taku River Chinook Salmon (McPherson et al. 2010), Alsek River Sockeye (Eggers and Bernard 2011), and salmon stocks in the Copper and Bering rivers (Fair et al. 2011). Equilibrium probability profiles have also been included in recent escapement goal analyses for northern transboundary salmon stocks [e.g., @PestalJohnstonTakuCo; @MillerPestalTakuSk].
+
+We implemented the yield profiles as follows: at each increment of spawner abundance, we compare the distribution of yields (Rec-Spn) across parameter samples to the specified % of the median yield at median Smsy, and count the proportion that are larger. The resulting profile shows the probability of meeting or exceeding this average target, which is an anchor point for subsequent planning processes tasked with choosing spawning goals. 
+
+These yield profiles differ from the version included in recent ADFG and transboundary analyses [e.g., @EggersBernard2011Alsek; @MillerPestalTakuSk], which plot the probability of meeting the implied target for each parameter set (i.e., at each spawner increment, compare yield to a chosen % of MSY for that parameter set). @PestalJohnstonTakuCo compared the two approaches. Both have the same intent, and we consider them equally valid. They simply differ in the details of the calculation. We did not include a side-by-side comparison in this paper, but the alternate version can easily be calculated if a future planning process requests it.
+
+We included three alternative yield profiles to illustrate the importance of specifying the exact objectives:
+
+* Probability that equilibrium yield > 80% MSY
+* Probability that equilibrium yield > 60% MSY
+* Probability that equilibrium yield > stock-specific reference value (e.g., 1,000, 10,000, etc.)
+
+For each profile, we show two curves corresponding to the long-term average and recent productivity scenarios, using the *same* reference value (i.e., both are compared to the long-term average MSY). The intent is to highlight the difference in expected yield between the two productivity scenarios.
+ 
+
+### Calculation of ER-based Equilibrium Profiles (Agg Tradeoff)
+
+
+Using the approach by Walters et al. (2008), the equilibrium state for each component stock was calculated at different levels of fixed exploitation rate (i.e., what spawner abundance and catch would the stock eventually settle down to, if each ER were applied for many years, in the absence of inter-annual variation?). Equilibrium spawner abundances and catches were then summed across stocks to calculate aggregate equilibrium spawners and catch under the assumption that all component stocks are harvested at the same fixed ER, and all are at equilibrium. This simplifying assumption allows the aggregate trade-off profiles to be calculated directly from the SR parameter estimates.  This approach is described in Section 2.3 of Walters and Martell (2004), Walters et al. (2019), Staton et al. (2020), and Connors et al. (2020).
+
+At a fixed exploitation rate $U_q$ the equilibrium calculation for spawner abundance $S_{q}$  is:
+
+
+\begin{equation}
+S_{q} = S_{\mathrm{MSY}} \frac{U_{MSY} - \ln\left(\frac{1 - U_{MSY}}{1 - U_{q}}\right)}{U_{MSY}}
+\end{equation}
+
+and for equilibrium harvest ($H_{q}$) is:
+
+\begin{equation}
+H_{q} = \frac{U_{q}S_{q}}{1 - U_{q}}
+\end{equation}
+
+Appendix \@ref(EquProfFuns) shows the corresponding R code.
+
+### Status-based Aggregate Limit Reference Points (Status) {#StatusMethods}
+
+Canada's modernized *Fisheries Act* (2019) requires that limit reference points (LRP) are developed for stock management units (SMU). Pacific salmon present a challenge due to their complex population structure, and guidelines for developing aggregate salmon LRPs were just published [@LRPGuidelinesSAR]. The recommended approach is to assess status of the CUs in the SMU according to WSP criteria, and then determine whether an SMU meets the LRP based on the CU statuses (i.e., number of CUs in the red status zone, changes in CU statuses over time).
+
+Status assessments under the WSP integrate multiple metrics, where available [@Holtetal2009BM]: 
+
+* abundance relative to biological benchmarks (Sgen, 80% Smsy), where available
+* absolute abundance relative to a small population threshold of 1,000 spawners, for consistency with COSEWIC criteria [@CosewicMetrics2021]
+* long-term trend
+* short-term trend (probability of decline)
+* distribution of spawners across sites
+
+Integrated WSP status assessments have been completed for Fraser River Sockeye [@FrSkWSPStatus2012; @FrSkWSPStatus2017], Southern BC Chinook [@SBCCkWSPStatus2012SAR], and Interior Fraser Coho [@IFCohoWSPStatus2013SAR]. Each of these status assessments was a multi-year process, culminating in a multi-day workshop where 30-40 experts reviewed available information (quality-controlled data, biological benchmarks, status metrics) and assigned a consensus status designation to each CU. This process has not been completed for Skeena and Nass Sockeye, but considering stock status in harvest management decisions is required under the WSP [@WSPImplementation]. 
+
+Ongoing work to develop an algorithm-based rapid approximation of the expert status designations will use the data and biological benchmarks generated through the Skeena and Nass Sockeye escapement goal review process. Pending completion of these multi-criteria status assessments for Skeena and Nass Sockeye, we illustrate the building blocks of the status-based approach using one of the status metrics, but we do not attempt to complete a comprehensive status assessment here.
+
+Specifically, we compared the running generational geometric mean of spawner abundance to the lower benchmark at Sgen and the upper benchmark at 80% Smsy, then summarized the annual proportion of stocks in the red, amber, and green status zones *on that single metric*.  We used the median Sgen and Smsy values for the long-term average productivity scenario (Section \@ref(ModelSelection)), which is consistent with the benchmarks used in past WSP status assessments (Section \@ref(BMMethods)).
+
+
+### Aggregate Abundance Reference Points Based on Logistic Regression (Log Reg)
+
+A candidate approach for developing aggregate abundance reference points is to define a success/failure criterion, plot observed success/failure vs. observed aggregate abundance, fit a logistic regression, and select a reference point based on a chosen probability threshold [@LRPGuidelinesSAR]. This approach is only applicable under certain conditions, and formal guidelines for its use in the development of limit reference points have not been finalized. 
+
+We include an example of this approach using a criterion linked to the lower WSP benchmark for the relative abundance metric, which is Sgen. Specifically, we defined success as *"At least 80% of the stocks in the aggregate are above Sgen"*.  We used the median Sgen value for the long-term average productivity scenario, which is consistent with the benchmarks used in past WSP status assessments (Section \@ref(BMMethods)).

@@ -1,0 +1,184 @@
+
+### Simulation-based Aggregate Abundance Reference Points (Sim) {#SimMethodsGeneral}
+
+
+Forward simulation can be used to explore how different management actions perform over a range of alternative assumptions about future conditions, with risk quantified using the resulting escapement trajectories as part of a formal decision analysis [e.g., @HilbornPeterman1996PrecApp; @deYoungetal1999UncertainWorld; @PuntetalMSEBestPractices].
+
+The key benefit of building forward simulation models is that they allow us to compare the expected performance of alternative strategies and identify strategies that are more robust to uncertainty [e.g., @PuntetalMSEBestPractices], which has been characterized as searching for a *"safe-fail"* strategy that avoids catastrophic outcomes even when things go wrong, rather than identifying a strategy that is optimal under very specific assumptions and conditions (Ann-Marie Huang, DFO, and Mike Staley, pers. comm, 2010).
+
+Building a fully functional simulation model to support Skeena and Nass Sockeye planning will require that many choices be made regarding model scope, biological assumptions, management assumptions,  objectives, and performance measures. 
+
+We include a worked example to illustrate potential benefits and expected challenges, and to initiate the development process for a more comprehensive model. We consider this an urgent first step, because  recently published guidelines [@LRPGuidelinesSAR] identify forward simulations as one of the candidate approaches for developing aggregate reference points for stock management units, and the on-going Canadian domestic consultation process has also focused on simulation results. In addition, the development of a formal management strategy evaluation (MSE) model was identified as an important future step by the two independent reviewers for the escapement goal review process. We describe the current version of the simulation model in the next section.
+
+
+## IMPLEMENTATION OF FORWARD SIMULATION APPROACH {#SimMethodsImplementation}
+
+### Model Structure
+
+
+```{r num.stocks.calc, echo = FALSE, results = "asis"}
+
+tmp.df <- read_csv("data/Sims/Generated_StockInfo_SimUsed.csv")
+
+num.nass <- sum(tmp.df$MU == "Nass")
+num.skeenawild <-  sum(tmp.df$MU == "SkeenaWild")
+
+
+```
+
+This simulation example explores the range of near-term responses to alternative harvest strategies under alternative productivity assumptions, starting from recent spawner abundances (i.e., not simulating a long time into the future to explore equilibrium conditions).
+
+This simulation example includes only the  `r  num.nass + num.skeenawild` wild stocks for which spawner-recruit models were fitted in the current round of work (`r num.nass` Nass stocks, `r num.skeenawild` Skeena stocks). Simulations start with the last 8 years of spawner abundance (2012-2019). For a few stocks, missing estimates in this time window were infilled with the mean of available observations. 
+
+Forward simulations generate one 20-yr trajectory for each parameter set sampled from the parameter distributions selected for each productivity scenario (Section \@ref(ModelSelection)).
+
+For each simulated year (Figure \@ref(fig:SimModelFlowchart)):
+
+* calculate stock run size based on recruits by age
+* apply the candidate harvest strategy to each aggregate
+* calculate the resulting spawner abundance by stock
+* calculate the total recruits for each stock based on SR parameter set for the candidate productivity scenario (includes a random error, and a cap on recruitment set at 20% larger than the largest observed recruitment) 
+* distribute the recruits across return years based on median observed age composition
+
+Total run size $Run$ for each aggregate $agg$ in year $yr$ with parameter set $par$ is the sum across ages and stocks, with age-specific recruits for each stock from corresponding brood years (e.g., age 4 fish from 4 years ago, age 5 fish from 5 years ago):
+
+\begin{equation} 
+  Run_{agg,yr,par} =  \sum_{ages}\sum_{stocks} Rec_{age,stock,yr-age,par}
+\end{equation} 
+
+Exploitation rate for each stock is a calculated based on the aggregate run, an aggregate harvest control rule $HCR$, aggregate-level outcome uncertainty $AggOU$, and stock-specific outcome uncertainty $StkOU$:
+ 
+\begin{equation} 
+  ER_{stock,yr,par} = fn(Run_{agg,yr,arp}, HCR, AggOU, StkOU)
+\end{equation}
+
+Catch $Ct$ and spawner abundance $Spn$ for each stock are then calculated as:
+
+\begin{equation} 
+  Ct_{stock,yr,par} = Run_{stock,yr,par} * ( ER_{stock,yr,par}) 
+\end{equation}
+
+\begin{equation} 
+  Spn_{stock,yr,par} = Run_{stock,yr,par} * (1 - ER_{stock,yr,par}) 
+\end{equation}
+
+Finally, total recruits $Rec$ for each stock are calculated as:
+
+\begin{equation} 
+  Rec_{stock,yr,par} =  Spn_{stock,yr,par} * exp(ln.alpha_{stock,par} -  beta_{stock,par} * Spn_{stock,yr,par}) 
+\end{equation}
+
+
+The same model structure and code base were used for the Recovery Potential Assessment (RPA) of Fraser River Sockeye [@Huangetal2021FraserSkRPA].  The code is designed for computing efficiency in R, using array calculations and pre-filled arrays where possible. For example, age proportions are pre-generated as a 4- dimensional array (Stocks x  MCMC parameter sets x Simulation Years x Age Classes), and for each simulated brood year the corresponding 3-dimensional sub-array  of age proportions is multiplied with a 2-dimensional slice of the recruitment array (Stock x MCMC parameter sets) to populate a subset of a 3-dimensional run size array (Stocks x  MCMC parameter sets x [Brood Year + Min Age]:[Brood Year + Max Age]). The pre-generated arrays allow maximum flexibility for exploring alternative assumptions (e.g., variable or changing age composition).
+
+\clearpage
+(ref:SimModelFlowchart) Simulation model components.  The biological submodel simulates stock-specific population dynamics to generate adult returns for each stock for each brood year and resulting aggregate runs by calendar year. The harvest submodel then determines a target ER given a harvest rule and applies it with outcome uncertainty to calculate harvest and spawner abundance. One example of a harvest rule is a fixed escapement target of 300,000 combined with a minimum ER of 10% and a maximum ER of 65%. Alternative simulations can then test the effect of changing components of the harvest rule, such as varying the maximum ER from 20% to 80% in increments of 10%.
+
+
+```{r SimModelFlowchart,  fig.cap="(ref:SimModelFlowchart)"}
+include_graphics("diagrams/Diagram_SimModelStructure_REV.PNG")
+```
+
+
+
+\clearpage
+
+Three extensions of the Fraser Sockeye RPA model were implemented for Skeena and Nass Sockeye:
+
+* *Aggregate harvest strategies*: The purpose of the RPA model was to test different levels of fixed exploitation rate, but for Skeena and Nass Sockeye the focus is on testing alternative types of harvest strategies (i.e., fixed aggregate escapement goal, abundance-based rule).
+* *Outcome uncertainty*: This captures the difference between management targets and actual realized outcomes, caused by mechanisms like: (1) uncertain estimates of abundance and run timing, (2) physical and biological processes that change the availability of fish to fishing gear within a season, (3) non-compliance with fishing regulations, (4) inappropriate choices of regulations, (5) errors in their implementation [e.g., @HoltPetermanOutcomeUnc]. We model outcome uncertainty in two steps, first as the difference between the aggregate ER target and the actual aggregate ER, and then as the difference between actual aggregate ER and stock-specific ER (Appendix \@ref(OutcomeUncApp)).
+* *Covariation in productivity*: This captures the observation that productivity is not independent across salmon stocks, because shared environmental factors affect their life cycle [e.g., @CkCov2017]. While it is very hard to identify the specific biological mechanisms at work on a specific group of stocks, we can identify patterns in the resulting overall productivity (Recruits/Spawner) and reflect that in the forward simulation by sampling the annual random error with covariation, such that better-than-expected recruitment for Stock A tends to happen in the same year as better-than-expected recruitment for Stock B. We model covariation in productivity based on simplified correlations of log-residuals from the Basic Ricker fit within and between groups of stocks with similar life history spawning in a shared freshwater adaptive zone (Appendix \@ref(CovarProdApp)). 
+
+Additional mechanisms could be added to the model, such as:
+
+* en-route or pre-spawn mortality (i.e., not all fish that escape past the fisheries spawn successfully)
+* changes over time in productivity (for now, the productivity scenarios differ from each other, but each is assumed to persist over the 20-yr simulation)
+* changes over time in age composition of recruits for each stock
+
+Each of these additions has a potentially large effect on the simulation results, but addressing them properly is a complex challenge, and not purely a technical one. Participants in the planning process will have to consider which of them need to be explored, and how to bound the explorations, if the choice is made to pursue simulation-based aggregate reference points.
+
+
+
+
+
+\clearpage
+
+### Types of Harvest Control Rules
+
+In the current model structure, two types of alternative harvest strategies can be specified for each of the two aggregates (Nass, SkeenaWild):
+
+* *FixedER*: Apply a fixed exploitation rate from 0% to 90% in 10% increments to both aggregates, assuming that all component stocks are harvested at the same rate. 
+
+* *FixedEsc*: Simple abundance-based harvest rule for each aggregate, where target exploitation rate is based on aggregate abundance above the escapement goal, with optional specifications for a minimum ER at low abundance and upper cap on ER at larger abundances. Alternative escapement targets were set at 25% to 250% of the interim escapement goal for Nass at 200,000 and the interim aggregate escapement goal for SkeenaWild at 300,000 (Table \@ref(tab:FixedEscHCR)). These escapement targets were combined with lower bounds on ER of 0%, 10%, or 20%, and upper bounds of 60% or 80%.
+
+
+(ref:FixedEscHCR) Fixed Escapement Strategy: Alternative Scenarios. Scenarios were specified relative to the interim escapement goals currently in use, so that *Esc100* matches the interim goal, *Esc50* is half the interim goal, and *Esc200* is double the interim goal. Note that the interim goal for the SkeenaWild aggregate was set at 1/3 of total Skeena interim target of 900,000, based on average observed proportion of wild spawners in the total spawner abundance since 2000.
+
+
+```{r FixedEscHCR, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/Sims/FixedEscMin10Max80ER_Variations.csv") %>% 
+	mutate(ScenarioValue = as.numeric(gsub("Esc","",Scenario))) %>%
+	arrange(ScenarioValue) %>%
+	select(Scenario,MU,spn.goal) %>%
+	dplyr::rename(SpnGoal = spn.goal) %>%
+	mutate(SpnGoal = prettyNum(round(SpnGoal*10^6,0),big.mark=",",scientific=F) )  %>% 
+	pivot_wider(id_cols = Scenario,names_from = MU, values_from = SpnGoal)
+
+
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","r","r"),
+                  caption = "(ref:FixedEscHCR)")  %>%
+	kableExtra::row_spec(3:4, hline_after = TRUE) %>%
+	kableExtra::row_spec(4, bold = TRUE) 
+
+
+```
+
+
+
+
+
+
+### Scenarios {#SimScenarios}
+
+What makes forward simulations so powerful is the ability to test many different scenarios and bring the results into a collaborative planning process where plausible outcomes under alternative assumptions can be debated. However, this flexibility also creates the biggest challenge for using simulation models in a decision support setting: how to bound the explorations?
+
+With the current model structure, we have so far explored the following options for key model components:
+
+* *Productivity*: six alternative scenarios (Section \@ref(ModelSelection))
+* *Harvest Strategy*: Two main types (Fixed ER vs. Fixed Esc), 10 different levels for each, plus alternative combinations of ER floor and cap for the Fixed Esc strategies (0-90% ER, 10-80%, 20-80%, 20-60%), for a total of 50 alternative strategies
+* *Aggregate outcome uncertainty*: Three alternatives - none, narrow, wide (Appendix \@ref(OutcomeUncApp))
+* *Stock-specific outcome uncertainty*: Three alternatives - none, all years, 1995-2013 brood years (Appendix \@ref(OutcomeUncApp))
+* *Covariation in productivity*: Four alternatives - none, simplified covariation 1984-2013 brood years, simplified covariation 1999-2013 brood years, detailed pairwise covariation 1984-2013 brood years  (Appendix \@ref(CovarProdApp))
+
+Just these model components already yield 6x50x3x3x4 = 10,800 alternative scenarios. Because these components interact (e.g., the effect of the covariation assumption may differ depending on the harvest strategy), we would ideally run and compare all of the alternative scenarios, but in practice this is usually an iterative process guided by participants in a broader planning exercise [e.g., @PuntetalMSEBestPractices].
+
+In this paper we present examples of results for 40 of the alternative scenarios, as well as a high-level summary of sensitivity tests completed so far. The intent is to illustrate the type of information that can be generated by a full-scale implementation of a management strategy evaluation and
+set the stage for future rounds of model refinement and scenario exploration. The forty scenarios are:
+
+* 10 levels of fixed ER (0-90%) under long-term average productivity
+* 10 levels of fixed ER (0-90%) under recent productivity (1 generation)
+* 10 levels of fixed escapement, ranging from 1/4 to 2.5 times the interim EG, with a 10% ER floor and an 80% ER cap, under long-term average productivity
+* 10 levels of fixed escapement, ranging from 1/4 to 2.5 times the interim EG, with a 10% ER floor and an 80% ER cap, under recent productivity (1 generation)
+
+We ran these scenarios for 3 generations (15 years), starting with 2020 as the first simulated year. All scenarios used the wide version of the aggregate outcome uncertainty, the 1995-2013 version of the stock-specific outcome uncertainty, and the simplified productivity covariation observed over 1999-2013 brood years. These settings were used as the base case for model explorations following the peer review process in April 2022.
+
+### Objectives, Performance Measures, and Diagnostic Plots
+
+To convert the simulation trajectories into meaningful summaries of expected outcomes, we need to identify aggregate-level and stock-level objectives and develop quantitative performance measures for them. For this illustration, we defined a general aggregate objective as *"most stocks should meet their stock-specific conservation objectives"*, and translated this into a quantitative objective that "*16 of the 20 modelled stocks (80%) should have at least 80% probability of spawner abundance exceeding the upper WSP benchmark for the relative abundance metric, which is set at 80% Smsy, after 3 generations (simulation years 11-15)"*. These objectives are examples selected for this illustration, and are not intended as a recommendation of which management objectives should be evaluated by upcoming planning processes. 
+
+We used the median Smsy value for the long-term average productivity scenario (Section \@ref(ModelSelection)) in this performance measure, which is consistent with the benchmarks used in past WSP status assessments (Section \@ref(BMMethods)). Simulation trajectories based on the current productivity scenario and the high/low productivity bookend scenarios were also compared to the same benchmark, to make results comparable across scenarios and to emphasize how different the outcomes under the different scenarios are compared to expectations based long-term average properties.
+
+As with the other components of this simple illustration, the challenging work of developing an agreed-upon suite of objectives and performance measures specifically for the current management context of Skeena and Nass Sockeye will start in the next phase of the project, which is an engagement process with rights holders and stakeholders. Once this takes shape, additional performance measures can easily be calculated and presented for the simulation trajectories (e.g., probability that aggregate catch meets some minimum level, variability in catch associated with different types of harvest strategy).
+
+
+
+
+

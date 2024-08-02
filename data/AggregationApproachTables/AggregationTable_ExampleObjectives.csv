@@ -1,0 +1,9 @@
+Approach,Objectives
+Agg Smsy,"Maximum sustainable yield  (MSY), median over the long-term under stable conditions. Also implied choices: Fixed Esc strategy, manage to aggregate MSY, focus on largest stocks. "
+Sum Smsy,"Maximum sustainable yield  (MSY), median over the long term under stable conditions. Also implied choices: Fixed Esc strategy, manage to aggregate MSY, focus on largest stocks. "
+Umsy Comp,"Sustainable exploitation rate (Umsy) under long-term and recent productivity scenario to compare stock productivities, to identify upper bounds on aggregate ER."
+Equ. Prof,"Implied: fixed Esc strategy, equilibrium conditions. Sample Objective: 80% prob of achieving 60% of MSY  (yield-focused)."
+Agg TradeOff,"CONSERVATION: Number of stocks harvested at or below their estimated sustainable rate (Umsy) , HARVEST: Maximize aggregate harvest under equilibrium conditions."
+Status,Define Red/Amber/Green status for relative abundance metric based on Sgen and 80% Smsy from long-term average productivity scenario. Sample objectives:  No more than x CUs in Red status zones.
+Log Reg,Sample objective: 80% of stocks above Median Sgen from Long-term average productivity scenario. 
+Sim,"CONSERVATION: Number of stocks with at least 80% probability of generational average spawner abundance exceeding a benchmark (Sgen and 80% Smsy from long-term average productivity scenario, 10th percentile of observed spawner abundance since 1990). HARVEST: Median total harvest over 3 generations."

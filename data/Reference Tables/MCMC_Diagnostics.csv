@@ -1,0 +1,9 @@
+﻿Consideration,Diagnostic,Thresholds,Examples
+Convergence,Rhat statistic (Gelman and Rubin 1992),"Largest Rhat across all tracked nodes (ln.alpha,beta, Smax) is less than 1.05",None
+Convergence,Effective sample size,"Aiming for at least 1,000 on all tracked variables.",None
+Convergence,Trace plot (sequence of sampled values) for ln.alpha and beta variables,Visual assessment of overlaid pattern for the 2 chains (check for adequate mixing),None
+Convergence,Gelman-Rubin GR Statistic  (Gelman and Rubin 1992),"Check whether the 2 chains converge before the end of the burn-in, such that GR over the length of the retained sample is between 0.9 and 1.1.",Grant et al. (2011)
+Convergence,Geweke statistic G (Geweke 1992),"Check whether G falls within the range [-2, 2]. If not, then the earlier part of the MCMC chain differs from the later part and the samples didn’t converge (G is a z score and values in this range indicate that early and late sample means fall within 2 standard deviations).",Grant et al. (2011)
+Parameter Estimates,Shape of posteriors,Check whether posterior distributions are smooth and whether they bump up against the limits imposed by the priors (i.e. appear cut off),None
+Parameter Estimates,"Standardized Interquartile Range (SIQR)= (p75-p25)/p50, which is the range that covers the middle half of the samples (i.e. the width of the box in standard boxplots), rescaled by median",Relative comparison,None
+Relative model fit,Deviance Information Criterion DIC (Spiegelhalter et al. 2002; Gelman et al. 2004),"Check relative difference in DIC to compare alternative model fits. Lowest DIC indicates best fit among the models considered, but does not show whether any of the models fit well or poorly. Not applicable for comparing model fits to different data subsets (i.e., all years vs. truncated data).","Grant et al. (2011), Korman and Tompkins (2014)"

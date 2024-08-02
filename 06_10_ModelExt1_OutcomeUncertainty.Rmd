@@ -1,0 +1,264 @@
+# SIMULATION MODEL EXTENSIONS  {#ModelExt}
+
+Outcome uncertainty and covariation in productivity were identified as key revisions during the peer review meeting in April 2022, and then developed with feedback from the independent reviewers for the overall escapement goal review process (Sec. \@ref(EGProcess)). The specific implementations summarized in the appendices have not been formally peer-reviewed  through the CSAS process, but helped show the potential magnitude of effects on simulation results for the worked examples.  
+ 
+## OUTCOME UNCERTAINTY {#OutcomeUncApp}
+
+### Introduction
+
+
+Within a simulation model, all the variables can be known exactly, and harvest strategies can be implemented perfectly. In practice, however, perfect control of the outcome is not possible. Target harvest and ER for the aggregate can differ from what the target should be, if run size were known perfectly. Actual harvest and ER will also differ from target ER due to factors such as physical and biological variables that affect the vulnerability of fish to fishing gear (e.g., river conditions, depth of fish in the water column, migration routes, migration timing), enroute mortality, and non-compliance with fishing regulations. Finally, ER for component stocks differ from the aggregate ER, depending on timing and area of fisheries relative to migration routes and timing.
+
+Outcome uncertainty was not included in the simulation model described in initial version of this Research Document which was presented for peer review in April 2022, but was subsequently approximated in the current model implementation based on historical ER patterns. More complex mechanisms could be implemented in the future, which would bring this model closer to a full management strategy evaluation (MSE).
+
+### Historical Patterns in Aggregate Exploitation Rate and Harvest
+
+To investigate historical patterns, we generated time series of aggregate run size (catch plus number of spawners), spawner abundance, harvest, and ER by summing the estimates from the run reconstructions for component stocks.
+
+The total amount harvested and the percent of the run that were harvested (ER) have declined for both aggregates since the mid-1990s (Figure \@ref(fig:OutUncPlotAggErHarv)). The time series can be split into three distinct periods:
+
+* *Pre-1995*: For both aggregates, harvest amounts were highly variable, but ER was fairly stable in the range of 50%-70%.
+* *1995-2009*: For the Skeena Wild aggregate, the mid-1990s are a clear breakpoint, with lower harvests and ER following (1) a large-scale fleet reduction in 1996 (the Mifflin Plan), (2) the introduction of gear restrictions to reduce interceptions of non-target species such as Coho and Steelhead (i.e., limiting fishing activity to daylight hours, mandatory weed lines and shorter length and set times for gillnets), and (3) the implementation of the 1999 PST Chapter 2 Annex, which introduced the Week 30/31 provisions for the District 104 purse seine fishery to reduce U.S. interceptions of Skeena Sockeye in July. For the Nass aggregate, ER stayed similar to the earlier time period until 2007, and harvest amounts were at or above the 1980s harvests.
+* *2010+*:  For both aggregates, ER and harvest amount were much reduced compared to earlier years. Reasons for this change include (1) the implementation around 2009/2010 of the current Canadian domestic harvest rule for Skeena Sockeye following the work of the Independent Science Review Panel [@Waltersetal2008ISRP], (2) shifting of Canadian fishing effort later to avoid early-timed stocks, and (3) low returns for many years during the recent time period. 
+
+By comparing annual ER and harvest to run size, we can approximate the overall harvest approach across all fisheries (Figure \@ref(fig:OutUncPlotAggFit), Figure \@ref(tab:OutUncTabAggFit)). This is the overall outcome at the end of the fishing season, which reflects environmental conditions, all the fishery-specific pre-season planning, in-season decision-making based on uncertain and rapidly changing information, and actual behaviour of fish and harvesters. Clear abundance-based patterns emerge for both aggregates:
+
+* *SkeenaWild*: Aggregate ER tended to be lower for years with run size near or below the current assumed interim escapement goal of 500,000 (Figure \@ref(fig:OutUncPlotAggFit), Panel A). However, even at run sizes below the assumed current interim goal, the aggregate ER was highly variable, and as high as 60% for some early years with low run size. The aggregate harvest amount has declined with run size, and annual harvests cluster tightly around a fitted regression line for each time period (Figure \@ref(fig:OutUncPlotAggFit), Panel B). The slope for the most recent time period is shallower (i.e., amount of additional harvest for each incremental increase in run size is less in recent years than it was in earlier years).
+* *Nass*: Aggregate ER tended to be lower for years with run size near the current assumed interim escapement goal of 200,000 (Figure \@ref(fig:OutUncPlotAggFit), Panel C), and aggregate run size in the reconstructions from 1982-2009 has never fallen below the interim goal. The aggregate harvest amount has declined with run size, and annual harvests cluster tightly around a fitted regression line for each time period (Figure \@ref(fig:OutUncPlotAggFit), Panel D). The slope for the recent time periods is shallower than in earlier years.
+
+### Estimating Aggregate-level Outcome Uncertainty from Historical Patterns
+
+Using the approach by @Collieetal2012RiskFW we can use the fitted regression lines in Panels B and D of Figure \@ref(fig:OutUncPlotAggFit) to estimate two properties of the historical harvest outcomes (Table \@ref(tab:OutUncTabAggFit)):
+
+1.	*No Fishing Point*: Extrapolate the harvest amounts to the lower run sizes lower than any observed and identify the implied run size below which there would have been no harvest (i.e., point of no fishing or the lower management reference point, which is the x intercept of the fitted line). Note that these empirically derived estimates of the implied no-fishing point reflect the net outcome of all sources of variation in catch for a given run size, and hence are not the same as the limit reference points that managers may have had in mind at the time. 
+2.	*Outcome Uncertainty*: Use the scatter of points around the fitted line to estimate the overall outcome uncertainty (i.e., assuming that the fitted line represents the actual strategy, how far off was the outcome in each year?). Statistically, this is estimated as the coefficient of variation (CV) based on the Root Mean Square Error (RMSE) scaled by Mean Harvest. A lower CV means that actual outcomes are closer to the estimated strategy (i.e., lower outcome uncertainty).
+
+*Skeena Wild Aggregate*
+
+Mean run size and harvest have declined over time, from a run size of over 1 million  and 650,000 harvested in the years before 1995, to 470,000 run size and 150,000 harvested for 2010-2019 (Figure \@ref(tab:OutUncTabAggFit)). The implied no fishing point is basically the same for all three time periods, at a run size of about 150,000. Outcome uncertainty was lower in earlier years (CV = 11%), then almost doubled in recent years (CV= 18%), but still much lower than the 30-50% CV for four Alaskan Chum stocks analyzed by @Collieetal2012RiskFW.
+
+Based on the implied no-fishing point of 150,000 fish for Skeena Wild, we can infer a lower reference point that was used for the total Skeena aggregate in the past. Total Skeena Sockeye escapement (wild plus enhanced) has averaged about 3 times larger than the wild-stock escapement alone, ranging from 2 to 5 times larger. This roughly translates into an average historical lower reference point (i.e., no fishing point) of about 450,000 total Skeena run size, with a range from 300,000 to 750,000 total Skeena run size.
+
+*Nass Aggregate*
+
+Mean run size and harvest have declined in recent years, from more than 600,000 run size and more than 400,000 harvest in the two earlier time periods, to 350,000 run size and  170,000 harvest for 2010-2019 (Figure \@ref(tab:OutUncTabAggFit)). The implied no fishing point has roughly doubled over time, from about 59,000 before 1995 to about 116,000 since 2010. Outcome uncertainty was similar to Skeena Wild in earlier years (CV = 11%), then dropped (CV= 7-8%), again much lower than the 30-50% CV for four Alaskan Chum stocks analyzed by @Collieetal2012RiskFW.
+
+
+*Magnitude of observed aggregate-level outcome uncertainty*
+
+The outcome uncertainty described by the CVs for the linear fits in parts B and D of Figure \@ref(fig:OutUncPlotAggFit) appears small, but when translated into variation in ER across years for a given run size (Figure \@ref(fig:OutUncPlotAggFit), panels A and C), the result is a very large range in % ER. For instance, for the Skeena, a run size of roughly 0.5 million resulted in anywhere from a 25% to 50% ER in the 1995-2009 period and over 60% pre-1995. For low-productivity stocks, the high end of this ER range is potentially detrimental.
+
+
+\clearpage
+(ref:OutUncPlotAggErHarv) Time series of aggregate exploitation rate (ER) and harvest for two aggregates. Aggregate spawners, harvest, and run size were calculated as the sum of stock-specific run reconstructions. The time series are split into three time periods that roughly line up with major changes in the management approach. 
+
+```{r OutUncPlotAggErHarv,  out.width= 440,  fig.cap="(ref:OutUncPlotAggErHarv)"}
+include_graphics("data/OutcomeUncertainty/ERandHarvest_4Panels.png")
+```
+
+
+
+
+
+
+
+\clearpage
+(ref:OutUncPlotAggFit) Annual aggregate exploitation rate and harvest as a function of run size. These plots summarize the overall outcome of annual stock-specific and fishery-specific management actions and physical/biological conditions, and can be used to approximate the underlying harvest strategy that was in place. In Panels A and C, various shapes of harvest control rule could be fitted to the observed data (e.g., a curvilinear function like Eqtn. 1 in @HoltPetermanOutcomeUnc, a hockey stick, or a step function with incremental increases in ER), but this would require either specifying or estimating various shape parameters for the functions (e.g., slopes, inflection points, breakpoints). In panels B and D, however, strong linear relationships between total harvest and total run size emerge (coefficient of determination $r^2$, adjusted for the number of observations and number of parameters is larger than 0.9 for all time periods for both aggregates; Table \@ref(tab:OutUncTabAggFit)). 
+
+```{r OutUncPlotAggFit,  out.width= 440, fig.cap="(ref:OutUncPlotAggFit)"}
+include_graphics("data/OutcomeUncertainty/OutcomeUncertainty_4Panels.png")
+```
+
+
+
+
+
+\clearpage
+(ref:OutUncTabAggFit) Summary of estimated historical harvest strategy. For each aggregate and time period, table shows the mean run, mean harvest, estimated no fishing  point (i.e., x-intercept for linear regression fit in Figure \@ref(fig:OutUncPlotAggFit) ), estimated exploitation rate (i.e., slope of the fitted line), and associated adjusted $r^2$ and CV.
+
+
+```{r OutUncTabAggFit, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/OutcomeUncertainty/Harvest_CV_Calcs_Report.csv") 
+
+table.in$Aggregate[duplicated(table.in$Aggregate)] <- ""
+
+table.in$Mean.Run <- prettyNum(round(table.in$Mean.Run), big.mark=",")
+table.in$Mean.Harvest <- prettyNum(round(table.in$Mean.Harvest), big.mark=",")	
+table.in$NoFishingPoint <- prettyNum(round(table.in$NoFishingPoint), big.mark=",")
+
+table.in$TimeWindow <- recode(table.in$TimeWindow, "pre95" = "Up to 1994",
+															"from95to2009" = "1995 to 2009",
+															"since2010" = "Since 2010",
+															"allyears" = "All years")
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","r","r","r","r","r","r"),
+                  caption = "(ref:OutUncTabAggFit)" ,
+   					 col.names = c('Agg', 'Time\nWindow', 'Run', 'Harvest', 'No\nFishing','ER','Adj $r^2$','CV')
+   					 )  %>%
+	kableExtra::row_spec(2:dim(table.in)[1]-1, hline_after = TRUE) %>%
+	kableExtra::column_spec(8, bold = TRUE,background = "lightgray") 
+
+
+```
+
+
+\clearpage
+### Historical Differences between Aggregate-level and Stock-level ER
+
+To investigate observed differences in annual ER between stocks, we generated various diagnostic plots of stock-level ER and aggregate-level ER, where aggregate-level ER was calculated from the sum of stock-level run reconstructions. Specifically, we examined the ratio of stock and aggregate-level ERs and their differences over time and relative to aggregate ER. Ratios of stock-level ER and aggregate ER have changed substantially for many stocks since the mid-1990s, consistent with the observed changes in aggregate ER and harvest highlighted above.
+
+Figure \@ref(fig:StkERDiffMorice) shows one example for Morice Sockeye in the SkeenaWild aggregate. Figure \@ref(fig:StkERDiffComp)  summarizes the mean and spread of ratios across stocks, for two different time periods. Tables \@ref(tab:OutUncTabStkScalars95) and \@ref(tab:OutUncTabStkScalarsAll) list the corresponding values. Some notable observations:
+
+* Nass stocks tend to return earlier than the bulk of the Skeena run.
+* Nass stocks tend to have very similar ER, with a mean ratio near 1 and a narrower spread than observed for the Skeena stocks.
+* The latest-timed Skeena stocks (i.e., Babine LW) generally have higher ER (due to Week 31 provision and later-timed Canadian fisheries), while the earlier-timed stocks generally have lower ER. This difference is more pronounced when looking at more recent data only (starting 1995) than for all years of data.
+* *Lakelse* and *Mcdonell*: These are the earliest SkeenaWild stocks, and they have the lowest ER.
+* *Babine* stocks: Mean ER is similar for the three component wild stocks, but the link between run timing and estimated ER is still clear. Babine Early Wild has the lowest mean ER, which almost matches the aggregate ER. Babine Mid Wild migrate later and have a slightly higher mean ER than the aggregate.  Babine Late Wild have the latest migration among the wild Skeena stocks, and have the highest mean ER (except for Sustut, see below).
+* *Sustut*: Estimated exploitation rates for Sustut are a clear outlier among the SkeenaWild stocks. While escapement data for the Sustut stock comes from a weir count and is considered to be reliable, there is a terminal FSC fishery just downstream of the weir facility with an average reported harvest of 682 (min = 135, max = 1,954) since 1994, when the current fishery started (road access to the site was only established in the early 1990s). This terminal harvest, which is additional to the harvests in mixed stock fisheries in the mainstem Skeena and marine fisheries that affect all other Skeena stocks, may explain the higher and more variable ERs observed for this stock.
+
+
+\clearpage
+(ref:StkERDiffMorice) Example of ER diagnostics – Morice Sockeye (Middle Skeena Lake Type). Plot shows ratios and differences, both over time and relative to aggregate ER. For many stocks, these patterns show a break point in the mid-1990s, so data are split into earlier years up through 1994, and more recent years starting in 1995. Before 1995, Morice ER and aggregate SkeenaWild ER are very similar (ratio around 1, differences around 0), but have increasingly diverged in recent years. ER values in the panels on the right are in %. For example, if aggregate ER was 45% and Morice ER was 32%, then the ratio was 0.71 and the difference was -13.
+
+```{r StkERDiffMorice,  out.width= 415, fig.cap="(ref:StkERDiffMorice)"}
+include_graphics("data/OutcomeUncertainty/ER_DiagnosticPlots_Morice_3_AdjustmentDiagnostics.png")
+```
+
+
+
+\clearpage
+(ref:StkERDiffComp) Stock-specific scalars for exploitation rate (ER) estimated for two alternative time periods. Estimates are based on the observed ratio of stock-specific ER and aggregate ER. Points and whiskers show the mean ± 2 SD. Stocks are grouped by aggregate, and sorted based on spawning location within each aggregate, from the mouth of the river to upstream locations. Stocks are also assigned to one of five timing groups, from 1 = earliest to 5 = latest. Peak timing and run duration of stocks relative to each other vary by year and differ by area (e.g., Alaskan fisheries, Canadian marine fisheries, in-river fisheries). Timing assignments are rough groupings based on long-term average peak migration through lower river assessment projects (Tyee test fishery for the Skeena, and Nass fish wheels). Tables \@ref(tab:OutUncTabStkScalars95) and \@ref(tab:OutUncTabStkScalarsAll) list the corresponding values.
+
+```{r StkERDiffComp,  out.width= 400, fig.cap="(ref:StkERDiffComp)"}
+include_graphics("data/OutcomeUncertainty/ER_Scalars_byStock.png")
+```
+
+
+
+
+\clearpage
+(ref:OutUncTabStkScalars95) Distribution parameters for stock-level ER scalars based on observed differences to aggregate ER using data since 1995. *n* is the number of years with stock-specific ER estimates from the run reconstruction. Mean values larger than 1.1 or smaller than 0.9 are highlighted and marked with an asterisk (i.e., stocks where the mean ER differs by more than 10% from the aggregate ER). Note that these scalars are relative to the aggregate ER, so that a scalar of 1.1 (a 10% difference) means an Agg ER of 30% becomes a stock-level ER of 33%, not a stock-level ER of 40%. Stocks are grouped by life history and adaptive zone (LHAZ).
+
+```{r OutUncTabStkScalars95, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/OutcomeUncertainty/Generated_ER_Scalars_ByStock.csv") %>%
+							dplyr::filter(Version == "Starting 1995") %>%
+							select(MU, LHAZ,StkNmS,n,mean, sd,p10,p25,p50,p75,p90) %>%
+							mutate(across(c(mean, sd,p10,p25,p50,p75,p90),~format(round(.x, 2), nsmall = 2)))
+							
+
+table.in$MU[duplicated(table.in$MU)] <- ""
+table.in$LHAZ[duplicated(table.in$LHAZ)] <- ""
+
+cols.mean <- rep("white",dim(table.in)[1])
+cols.mean[table.in$mean < 0.9] <- "cyan"
+cols.mean[table.in$mean > 1.1] <- "orange"
+
+
+table.in$mean[table.in$mean < 0.9] <- paste0("*",table.in$mean[table.in$mean < 0.9])
+table.in$mean[table.in$mean > 1.1] <- paste0("*",table.in$mean[table.in$mean > 1.1])
+
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","r","r","r","r","r","r"),
+                  caption = "(ref:OutUncTabStkScalars95)" ,
+   					 col.names = c('Agg', 'LHAZ','Stock', 'n', 'mean', 'sd','p10','p25','p50','p75','p90')
+   					 )  %>%
+  kableExtra::row_spec(c(4), hline_after = TRUE) %>%
+  kableExtra::row_spec(c(1,9,15), extra_latex_after = "\\cmidrule(l){2-11}") %>%
+  kableExtra::row_spec(c(2:3,5:8,10:14, 16:19), extra_latex_after = "\\cmidrule(l){3-11}") %>%
+  kableExtra::column_spec(5, background =  cols.mean)
+
+
+
+
+```
+
+
+\clearpage
+(ref:OutUncTabStkScalarsAll) Distribution parameters for stock-level ER scalars based on observed differences to aggregate ER using all available data. *n* is the number of years with stock-specific ER estimates from the run reconstruction. Mean values larger than 1.1 or smaller than 0.9 are highlighted (i.e., stocks where the mean ER differs by more than 10% from the aggregate ER). Note that these scalars are relative to the aggregate ER, so that a scalar of 1.1 (a 10% difference) means an Agg ER of 30% becomes a stock-level ER of 33%, not a stock-level ER of 40%.
+
+```{r OutUncTabStkScalarsAll, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/OutcomeUncertainty/Generated_ER_Scalars_ByStock.csv") %>%
+							dplyr::filter(Version == "All Years") %>%
+							select(MU, LHAZ, StkNmS,n,mean, sd,p10,p25,p50,p75,p90) %>%
+							mutate(across(c(mean, sd,p10,p25,p50,p75,p90),~format(round(.x, 2), nsmall = 2)))
+							
+
+table.in$MU[duplicated(table.in$MU)] <- ""
+table.in$LHAZ[duplicated(table.in$LHAZ)] <- ""
+
+cols.mean <- rep("white",dim(table.in)[1])
+cols.mean[table.in$mean < 0.9] <- "cyan"
+cols.mean[table.in$mean > 1.1] <- "orange"
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","r","r","r","r","r","r"),
+                  caption = "(ref:OutUncTabStkScalarsAll)" ,
+   					 col.names = c('Agg', 'LHAZ', 'Stock', 'n', 'mean', 'sd','p10','p25','p50','p75','p90')
+   					 )  %>%
+  kableExtra::row_spec(c(4), hline_after = TRUE) %>%
+  kableExtra::row_spec(c(1,9,15), extra_latex_after = "\\cmidrule(l){2-11}") %>%
+  kableExtra::row_spec(c(2:3,5:8,10:14, 16:19), extra_latex_after = "\\cmidrule(l){3-11}") %>%
+  kableExtra::column_spec(5, background =  cols.mean)
+
+
+
+
+```
+
+
+\clearpage
+
+### Model Implementation of Aggregate and Stock-level ER Scalars
+
+Given the observed patterns summarized above, we decided to simulate outcome uncertainty in the current model as 2 multiplicative scalars, rather than additive variation. Specifically, for Stock *i* in aggregate *j*, for year *k* in simulated trajectory *l*:
+
+
+\begin{equation} 
+	Stk.ER_{i,j,k,l} = Target.ER_{j,k,l} * Agg.Scalar_{j,k,l} * Stk.Scalar_{i,j,k,l}
+\end{equation} 
+
+
+For example:
+
+* If the ER Target for the Skeena Wild aggregate is 10% and the randomly sampled aggregate scalar for Skeena Wild is  0.94, then the actual ER for the Skeena Wild aggregate is 9.4%.
+* If the randomly sampled scalar for Alastair is 0.51, then the actual ER for Alastair is 4.8% (10 * 0.94 * 0.51). 
+
+This approach for the aggregate scalar is analogous to the approach by @HoltPetermanOutcomeUnc, who estimated aggregate-level multiplicative scalars for each component of an abundance-based harvest rule that had three inputs (maximum ER, Run size below which the ER is 0, and a shape parameter).
+
+The second step of also applying a stock-specific scalar captures two important properties. Simulated outcomes in terms ER will differ between stocks, but they will be correlated with each other, and with the aggregate (i.e., there is random variation around each ER value, but for a simulated year with larger target ER for the aggregate, all the component stocks will also tend to have larger ER).
+
+The parameterization of these distributions of scalars is critical. To be useful, the modeling approach needs to approximately reflect the mean magnitude of the scalar, as well as variation around that mean. Even if the specifics are wrong, but the overall properties are right, the model will give useful guidance. 
+ We created the following alternative scenarios for sensitivity testing:
+ 
+*	*Aggregate Scalars*:  Three variations that cover the observed range (Table \@ref(tab:OutUncTabAggFit)). *None* =  no difference between aggregate target ER and aggregate ER outcome; *Narrow* = normal distribution with CV= 5%; *Wide* = normal distribution with CV= 15%. 
+* *Stock-level Scalars*: Three variations. None = no difference between aggregate ER and stock-level ER; All year and Starting 1995 = use the sample distributions (Figure \@ref(fig:StkERDiffComp), Tables \@ref(tab:OutUncTabStkScalars95) and \@ref(tab:OutUncTabStkScalarsAll)).
+
+Together this gives 3 x 3 = 9 alternative scenarios of outcome uncertainty to be tested against alternative productivity assumptions, alternative harvest strategies, and alternative assumptions about covariation in productivity.
+
+Three fundamental questions need to be considered:
+
+1.	*How does the model specify the target ER for the aggregate?*  The aggregate target ER in the simulation will depend on the user-specified type and specific values for the harvest rule. The current priority is to test alternative levels of a fixed escapement strategy. We are also testing alternative levels of a fixed ER strategy to show the contrast in expected performance, and provide support for the recommendation to explore various types of abundance-based rules in the future. 
+2.	*How can we capture additional properties of the aggregate scalars?* The Skeena data (Figure \@ref(fig:OutUncPlotAggFit), Panel A) show not only variation around some target nonlinear ER function, but also a bias upward in the harvest rate at low run size compared to the optimal nonlinear function that is associated with an interim escapement goal of 300,000. That bias is important to capture in order to fully reflect the conservation consequences of outcome uncertainty. However, it cannot be easily implemented and tested in the current model structure. We consider this extra level of complexity a high priority for future work, but beyond the scope of the current worked example of the simulation model.
+3.	*How can we capture additional properties of the stock-specific scalars?* Outcome uncertainty is likely correlated between stocks (e.g., ER for all the early migrating stocks in a simulated year will tend to differ from the aggregate ER in the same direction, because they pass through the same gauntlet of fisheries at the same time). This could be implemented in the current model structure, similar to the covariation in productivity, which is the second major model extension in response to the science review. However, it would take considerable effort to replicate the productivity covariation analyses with the ER differences to generate the parameters for this. We consider this extra level of complexity a high priority for future work, but beyond the scope of the current worked example of the simulation model.
+
+
+

@@ -1,0 +1,191 @@
+---
+title: "Points de référence biologiques et éléments de base pour l’établissement des objectifs de gestion pour les regroupements de saumon rouge (*Oncorhynchus nerka*) des rivières Skeena et Nass"
+author: |
+  Gottfried. P. Pestal^1^ and Charmaine Carr-Harris^2^
+author_list: "Pestal, G.P. and C. Carr-Harris"
+address: |
+  ^1^SOLV Consulting Ltd.\
+     Vancouver, B.C.\
+  ^2^Fisheries and Oceans Canada\
+     Prince Rupert, B.C.\
+month: "Month"
+year: 2024
+report_number: nnn
+region: "Pacific Region"
+isbn: "Insert ISBN"
+cat_no: "Insert Cat No"
+citation_other_language: "French citation goes here"
+abstract: |
+    Dans le cadre des dispositions du Traité sur le saumon du Pacifique (TSP) renouvelé, le Canada a accepté de réaliser une analyse approfondie des objectifs d’échappée pour les saumons rouges (*Oncorhynchus nerka*) remontant les rivières Skeena et Nass au sein de 31 stocks dont le cycle biologique et la productivité observée varient. Nous avons mis à l’essai d’autres ajustements du modèle géniteurs-recrues, élaboré des lignes directrices pour la sélection de scénarios de productivité de rechange fondés sur les ajustements du modèle et calculé des points de référence biologiques pour les scénarios retenus. Nous avons aussi comparé d’autres approches pour combiner les estimations des points de référence biologiques au niveau du stock en points de référence au niveau du regroupement. Une grande proportion des saumons rouges qui remontent la rivière Skeena vient du projet de mise en valeur à faible intensité dans le lac Babine qui consiste en une série de frayères artificielles et de tronçons gérés sur deux affluents du lac Babine (le ruisseau Pinkut et la rivière Fulton). Dans le cadre de cet examen, nous avons résumé les tendances relevées dans les données de production du projet de mise en valeur dans le lac Babine et constaté que, bien que les densités de charge des systèmes concernés soient demeurées relativement constantes au fil du temps, la productivité globale des saumons rouges de la rivière Skeena issus de la mise en valeur a diminué dans les 20 dernières années.
+
+header: "" # or "" to omit
+output:
+ csasdown::resdoc_pdf:
+   french: true
+   copy_sty: true
+   line_nums: false
+   line_nums_mod: 1
+   lot_lof: false
+# ------------
+# End of options to set
+knit: bookdown::render_book
+link-citations: true
+bibliography: bib/refs.bib
+# Any extra LaTeX code for the header:
+header-includes:
+# - \usepackage{tikz}
+ # rest is from page 4 of https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf
+ - \usepackage{booktabs} 
+ - \usepackage{longtable}
+ - \usepackage{array}
+ - \usepackage{multirow}
+ - \usepackage{wrapfig}
+ - \usepackage{float}
+ - \usepackage{colortbl}
+ - \usepackage{pdflscape}
+ - \usepackage{tabu}
+ - \usepackage{threeparttable}
+ - \usepackage{threeparttablex}
+ - \usepackage[normalem]{ulem}
+ - \usepackage{makecell}
+ - \usepackage{xcolor}
+ - \newcommand{\Smax}{$S_\textrm{max}$} 
+ - \newcommand{\Smsy}{$S_\textrm{MSY}$}
+ - \newcommand{\Umsy}{$U_\textrm{MSY}$}
+
+---
+
+```{r setup, echo=FALSE, cache=FALSE, message=FALSE, results='hide', warning=FALSE}
+library(knitr)
+if (is_latex_output()) {
+  knitr_figs_dir <- "knitr-figs-pdf/"
+  knitr_cache_dir <- "knitr-cache-pdf/"
+  fig_out_type <- "png"
+} else {
+  knitr_figs_dir <- "knitr-figs-docx/"
+  knitr_cache_dir <- "knitr-cache-docx/"
+  fig_out_type <- "png"
+}
+fig_asp <- 0.618
+fig_width <- 9
+fig_out_width <- "6in"
+fig_dpi <- 180
+fig_align <- "center"
+fig_pos <- "htb"
+opts_chunk$set(
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  comment = "#>",
+  fig.path = knitr_figs_dir,
+  cache.path = knitr_cache_dir,
+  fig.asp = fig_asp,
+  fig.width = fig_width,
+  out.width = fig_out_width,
+  echo = FALSE,
+  #  autodep = TRUE,
+  #  cache = TRUE,
+  cache.comments = FALSE,
+  dev = fig_out_type,
+  dpi = fig_dpi,
+  fig.align = fig_align,
+  fig.pos = fig_pos
+)
+options(xtable.comment = FALSE)
+options(kableExtra.latex.load_packages = FALSE)
+```
+
+```{r load-libraries, cache=FALSE}
+# `french` and `prepub` variables are extracted from the YAML headers above and
+#  are used throughout the document. To make the document all in french, change
+#  the line in the YAML header above to `french: true`
+meta <- rmarkdown::metadata$output
+if (length(grep("pdf", names(meta)))) {
+  french <- meta$`csasdown::resdoc_pdf`$french
+  prepub <- meta$`csasdown::resdoc_pdf`$prepub
+} else if (length(grep("word", names(meta)))) {
+  french <- meta$`csasdown::resdoc_word`$french
+  prepub <- meta$`csasdown::resdoc_word`$prepub
+}
+csl <- "csl/csas.csl"
+if (french) {
+  csl <- "csl/csas-french.csl"
+  options(OutDec = ",")
+}
+
+# add other packages here:
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(tibble)
+library(csasdown)
+library(tidyverse)
+library(kableExtra)
+library(rosettafish)
+
+
+# custom functions
+source("functions/FUNCTIONS_prepTable.R")
+
+
+
+# data used throughout
+
+stock.info <- read.csv("data/SR Data/StockInfo_Main.csv", 
+                       stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM") %>%
+                dplyr::rename(ERInd = ER_Indicator) %>% 
+                arrange(StkSeq) %>%
+                mutate(ContrVal = round(ContrVal,1))
+
+stock.info$NumSurvLk[stock.info$LifeHistory != "Lake"] <- NA #
+stock.info$Stock <- gsub("Motase ","Motase",stock.info$Stock)
+
+data.notes.tab <- read.csv("data/SR Data/NotesonSRDataInputs.csv", 
+                       stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM")
+data.notes.tab$Stock <- gsub("Motase ","Motase",data.notes.tab$Stock)
+
+alt.sr.data <-  read.csv("data/SR Data/SR_Data_AltVersions_MERGED.csv", 
+                       stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM")
+
+
+# BM CALC TESTS
+
+smsy.eq <- read_csv("data/Reference Tables/Smsy_Calc_Equations.csv")
+test1.table <- read.csv("data/GeneratedReportTables/BMCalc_Test1_SampleParValues.csv",
+                        stringsAsFactors = FALSE) %>% 
+                        mutate(Smsy = round(Smsy,1),Sgen = round(Sgen,1))
+
+
+test1.table$SgenCalc <- gsub("Connorsetal2022","Connorsetal2023", test1.table$SgenCalc)
+
+
+test2.vals <- read.csv("data/GeneratedReportTables/BMCalc_Test2_GridTest_CalcVersions_PercRanges.csv", stringsAsFactors = FALSE)
+
+
+test3.table <- read.csv("data/GeneratedReportTables/Test3_SpeedTest.csv", stringsAsFactors = FALSE)
+
+
+test3.table$Method<- gsub("Connorsetal2022","Connorsetal2023", test3.table$Method)
+
+# Alt SR TESTS
+
+alt.sr.test1 <- read_csv("data/ReportTable_AltSRTest_PercChange.csv")
+
+
+
+
+
+
+
+
+
+
+```
+
+
+
+
+
+---
+csl: `r csl`    
+---

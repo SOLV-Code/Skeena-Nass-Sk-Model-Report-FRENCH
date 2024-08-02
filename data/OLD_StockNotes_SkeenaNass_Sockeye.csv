@@ -1,0 +1,97 @@
+StkSeq,Basin,Watershed,Group,Stock,StkNmS,Category,Notes
+19,Skeena,Babine,1,Babine Late Wild,Bab-LW,Key Points,"Babine Late-Wild, which is part of the Babine stock complex, is the largest wild sockeye stock in the Skeena basin. These fish spawn in sections of Babine River between Babine and Nilkitkwa Lake, and downstream of Nilkitkwa Lake, and rear in Nilkitkwa Lake and the North Arm of Babine Lake. Babine LW fry exhibit a characteristic upstream migration pattern into their rearing lakes, and early-migrating smolts. All Babine sockeye have a lake-type life history with mostly 1-year old smolts and a variable proportion of age-4 and age-5 (total age) adult returns."
+19,Skeena,Babine,1,Babine Late Wild,Bab-LW,SR Estimation,"Long time series of good-quality estimates for both spawners and recruits with high contrast in the spawner estimates, both for the whole time series and for the more recent data since the early 1990s."
+19,Skeena,Babine,1,Babine Late Wild,Bab-LW,Productivity,"Observed productivity of Babine Late Wild, in terms of recruits/spawner without correcting for density dependence,  is highly variable between years but has generally declined in recent years. It is positively correlated with Babine Mid Wild as well as channel-enhanced Pinkut and Fulton"
+19,Skeena,Babine,1,Babine Late Wild,Bab-LW,Capacity Information,The most recent estimate for lake capacity for Babine Lake which includes all Babine wild and enhanced stocks is from 2002. More recent surveys were completed in 2013 and 2015 but results are not yet available.****CCH expand with productivity assessment
+19,Skeena,Babine,1,Babine Late Wild,Bab-LW,Juvenile Information,"Smolt abundance estimates are available for Babine Lake sockeye for 1950-2002, and 2013-2019. Babine LW fry, which rear in Nilkitkwa Lake and the North Arm of Babine Lake close to the lake outlet, form the earliest contingent of seaward migrating smolts from Babine Lake, which has a bimodal distribution. Recent hydroacoustic fry surveys were conducted for Babine Lake in 2013 and 2015, and in the North Arm and Nilkitkwa Lake in xxxx xxxx and xxxx to assess the abundance of Babine LW fry. "
+19,Skeena,Babine,1,Babine Late Wild,Bab-LW,Data Issues,Spawner estimates and data are generally considered to be of high quality. Escapement estimates for Babine LW are expanded using methods described in Wood et al. (1998). 
+19,Skeena,Babine,1,Babine Late Wild,Bab-LW,Sensitivity Tests,"Estimates of Smsy based on a simple deterministic Ricker fit were highly sensitive to choices regarding which brood years to include in the analysis, especially whether to include or exclude earlier data, and were also strongly affected by alternative age composition assumptions . ADD: include comment on Bootstrap and prelim Bayesian test as well"
+19,Skeena,Babine,1,Babine Late Wild,Bab-LW,Model Considerations,TEXT
+2,Nass,Meziadin,1,Meziadin,Meziadin,Key Points,"Meziadin is the largest sockeye stock in the Nass basin and includes several distinctive timing groups and ecotypes, including an earlier timed group of tributary stream spawners, and a later timed group of lakeshore spawners.  Meziadin sockeye have a lake-type life history with a mixture of one and two year old smolts and a total age ranging from four to seven years. A full census count and biosampling for Meziadin sockeye has taken place at the fishway bypassing Meziadin falls near the lake outlet since the mid-1960s. "
+2,Nass,Meziadin,1,Meziadin,Meziadin,SR Estimation,
+2,Nass,Meziadin,1,Meziadin,Meziadin,Productivity,TEXT
+2,Nass,Meziadin,1,Meziadin,Meziadin,Capacity Information,TEXT
+2,Nass,Meziadin,1,Meziadin,Meziadin,Juvenile Information,TEXT
+2,Nass,Meziadin,1,Meziadin,Meziadin,Data Issues,Nothing major?
+2,Nass,Meziadin,1,Meziadin,Meziadin,Sensitivity Tests,TEXT
+2,Nass,Meziadin,1,Meziadin,Meziadin,Model Considerations,TEXT
+1,Nass,Lower Nass Tribs,1,Lower Nass Sea & River Type,LNassSRT,Key Points,"The Lower Nass Sea and River Type stock is the portion of a larger CU (Lower Nass-Portland) River Type that spawns in the Nass catchment. This stock consists primarily of sea-type sockeye which migrate to sea in the first year after emergence, and return to spawn as three, four or five-year old adults. The Lower Nass SRT also includes some true-river type sockeye which spend a year in freshwater riverine habitats prior to the seaward migration and return mainly at age four or five. In recent years, the abundance and proportion of sea-type sockeye within the Nass aggregate has increased substantially. "
+1,Nass,Lower Nass Tribs,1,Lower Nass Sea & River Type,LNassSRT,SR Estimation,Text
+1,Nass,Lower Nass Tribs,1,Lower Nass Sea & River Type,LNassSRT,Productivity,Text
+1,Nass,Lower Nass Tribs,1,Lower Nass Sea & River Type,LNassSRT,Capacity Information,Text
+1,Nass,Lower Nass Tribs,1,Lower Nass Sea & River Type,LNassSRT,Juvenile Information,Text
+1,Nass,Lower Nass Tribs,1,Lower Nass Sea & River Type,LNassSRT,Data Issues,Text
+1,Nass,Lower Nass Tribs,1,Lower Nass Sea & River Type,LNassSRT,Sensitivity Tests,Text
+1,Nass,Lower Nass Tribs,1,Lower Nass Sea & River Type,LNassSRT,Model Considerations,Text
+21,Skeena,Babine,1,Pinkut,Pinkut,Key Points,"Pinkut is the third-largest sockeye stock in the Skeena basin, and part of the Babine stock complex. Pinkut Creek has been enhanced with an active spawning channel that was built in 1968 and active management of spawning densities in stream sections below the spawning channel. Additionally, an airlift operation was conducted in some years of high escapement between 1973 and 2007 to seed an inaccessible section of Pinkut Creek upstream of the spawning channel. All Babine sockeye have a lake-type life history with mostly 1-year old smolts and a variable proportion of age-4 and age-5 (total age) adult returns."
+21,Skeena,Babine,1,Pinkut,Pinkut,SR Estimation,"Long time series of good-quality estimates for both spawners (two fence counts) and recruits (major component of aggregate, good age data). Pinkut has been actively managed to a channel loading target, so there is very low contrast in the spawner estimates."
+21,Skeena,Babine,1,Pinkut,Pinkut,Productivity,TEXT
+21,Skeena,Babine,1,Pinkut,Pinkut,Capacity Information,TEXT
+21,Skeena,Babine,1,Pinkut,Pinkut,Juvenile Information,TEXT
+21,Skeena,Babine,1,Pinkut,Pinkut,Data Issues,Nothing major?
+21,Skeena,Babine,1,Pinkut,Pinkut,Sensitivity Tests,TEXT
+21,Skeena,Babine,1,Pinkut,Pinkut,Model Considerations,"Low Contrast in spawner data, because Pinkut is managed to the spawning channel loading target of 128,000.  Any escapement above channel target plus 5,000 estimated below-channel capacity is considered ""biological surplus"" and does not directly contribute to recruitment.  We consider it inappropriate to fit a density-dependent SR relationship to the resulting data. The issues illustrated for the Skeena Aggregate model fits apply here as well, but we do not include corresponding explorations for Pinkut in this paper. We do, however, include a brief description of the channel loading target, and identify potential future work to update the channel target."
+22,Skeena,Babine,1,Fulton,Fulton,Key Points,"Fulton is the largest sockeye stock in the Skeena basin. It has been enhanced with two active spawning channels built in 1965 and 1971. The Fulton stock includes spawners in the spawning channels, actively managed sections upstream of the spawning channels, and spawners below the channels. It is a part of the Babine stock complex, which has a lake-type life history. All Babine sockeye have a lake-type life history with mostly 1-year old smolts and a variable proportion of age-4 and age-5 (total age) adult returns."
+22,Skeena,Babine,1,Fulton,Fulton,SR Estimation,"Long time series of good-quality estimates for both spawners (two fence counts) and recruits (major component of aggregate, good age data). Fulton has been actively managed to a channel loading target, so there is very low contrast in the spawner estimates."
+22,Skeena,Babine,1,Fulton,Fulton,Productivity,TEXT
+22,Skeena,Babine,1,Fulton,Fulton,Capacity Information,TEXT
+22,Skeena,Babine,1,Fulton,Fulton,Juvenile Information,TEXT
+22,Skeena,Babine,1,Fulton,Fulton,Data Issues,Nothing major?
+22,Skeena,Babine,1,Fulton,Fulton,Sensitivity Tests,TEXT
+22,Skeena,Babine,1,Fulton,Fulton,Model Considerations,"Low Contrast in spawner data, because Fulton is managed to the combined loading target of 381,000 for two spawning channels.  Any escapement above channel target plus 45,000 estimated below-channel capacity is considered ""biological surplus"" and does not directly contribute to recruitment.  We consider it inappropriate to fit a density-dependent SR relationship to the resulting data. The issues illustrated for the Skeena Aggregate model fits apply here as well, but we do not include corresponding explorations for Fulton in this paper. We do, however, include a brief description of the channel loading targets, and identify potential future work to update the channel target."
+3,Nass,Bell-Irving,3,Bowser,Bowser,Key Points,"Bower Lake sockeye have historically been considered the second largest sockeye stock in the Nass basin, however this stock is considered data deficient because there area no recent escapement data available for this system. Visual escapement estimates for Bowser sockeye are challenged by extreme glacial turbidity and a predominantly lakeshore-spawning ecotype. Abundance estimates developed using alternative methods including proportional abundances of the terminal Nass run developed using discriminant scale pattern analyses and GSI require further review but suggest that in recent decades, Bowser sockeye escapements have ranged between 3000 and 15,000 and may covary with other Upper Nass lake type sockeye stocks such as Damdochax sockeye. The life history of Bowser Lake sockeye typically includes one or two years rearing in freshwater and 2-3 years at sea, with total ages ranging from 5 – 7 years. Fall fry abundance and PR-capacity estimates for Bowser sockeye were conducted in 2009. "
+4,Nass,Bell-Irving,3,Oweegee,Oweege,Key Points,"Oweegee Lake is the smallest sockeye stock and CU in the Nass basin. There are no recent, reliable escapement data for this system, where sockeye have been observed rarely and in low numbers during visual surveys targeting other species. No lake rearing capacity estimates or hydroacoustic fall fry surveys have been undertaken at Oweegee Lake."
+9,Skeena,Ecstall,3,Ecstall,Ecstall,Key Points,"Ecstall sockeye include sockeye that rear in Ecstall and Lower Lake, and comprise the Ecstall/Lower CU. Ecstall and Lower lakes are the smaller of three known sockeye rearing lakes in the Ecstall watershed. No recent escapement or catch information is available for this stock, which is assumed to have similar production dynamics as Johnston Lake, the largest sockeye system in the Ecstall complex."
+15,Skeena,Bulkley,3,Upper Bulkley Lakes,UBulkLk,Key Points,"The Upper Bulkley Lakes stock consists of two CUs, Maxan Lake and Bulkley Lake sockeye. Both are considered as likely to be extirpated as no sockeye have been observed spawning of lake-type sockeye in several decades. While there have been some infrequent observations of sockeye spawning in Upper Bulkley River downstream of the outlet of Bulkley Lake, these are considered to be river-type spawners. Hydroacoustic surveys of Maxan Lake in 2009 and Bulkley Lake in 2010 did not observe any sockeye fry."
+23,Skeena,Sicintine,3,Sicintine,Sicintine,Key Points,No reliable spawner or catch estimates. No other stocks in this watershed.
+29,Skeena,Kluatantan,3,Kluantantan,Kluant,Key Points,No reliable spawner or catch estimates. No other stocks in this watershed.
+30,Skeena,Kluayaz,3,Kluayaz,Kluayaz,Key Points,No reliable spawner or catch estimates. No other stocks in this watershed.
+31,Skeena,Multiple,3,Skeena River Type,Skeena RT,Key Points,"The Skeena River Type stock includes all river-type spawners in the Skeena basin that have previously been assigned to the Skeena-RT or Upper Skeena RT conservation units. This stock is considered data deficient. While there have been irregular observations of river-type spawners at several locations on the Skeena mainstem and tributaries including in the Kispiox and Bulkley watersheds, they have not been regularly surveyed. Genetic samples have been collected from several spawning locations for Skeena river-type spawners."
+12,Skeena,Kitsumkalum,1,Kitsumkalum,Kitsumk,Key Points,"Kitsumkalum sockeye rear in  Kitsumkalum Lake, a glacial system with low productivity.  Annual returns have increased substantially since the construction of an artificial spawning channel at the north end of the lake in the early 1990s. Kitsumkalum sockeye typically spend one year in freshwater and return at age 4 or 5."
+12,Skeena,Kitsumkalum,1,Kitsumkalum,Kitsumk,SR Estimation,Text
+12,Skeena,Kitsumkalum,1,Kitsumkalum,Kitsumk,Productivity,Text
+12,Skeena,Kitsumkalum,1,Kitsumkalum,Kitsumk,Capacity Information,Text
+12,Skeena,Kitsumkalum,1,Kitsumkalum,Kitsumk,Juvenile Information,Text
+12,Skeena,Kitsumkalum,1,Kitsumkalum,Kitsumk,Data Issues,Text
+12,Skeena,Kitsumkalum,1,Kitsumkalum,Kitsumk,Sensitivity Tests,Text
+12,Skeena,Kitsumkalum,1,Kitsumkalum,Kitsumk,Model Considerations,"There are two distinct periods in the SR data, with brood years before the 1990s falling along a separate line in the scatterplot of ln(R/S) vs. S. We explore SR model fits for all years vs. recent data, with and without infilling for 2 missing brood years. Future work focused more specifically on Kitsumkalum sockeye dynamics should explore time-varying capacity models, but this is outside the scope of the current project."
+6,Nass,Damdochax,2,Damdochax,Damdoch,Key Points,"The Damdochax sockeye stock includes sockeye that rear in Damdochax and the cojoined Wiminasik Lake, and spawn in stream sections between Damdochax and Wiminasik Lake and upstream of Wiiminasik Lake. Damdochax sockeye typically spend a single year in freshwater, with a total age of 4 or 5 for returning adults. Regular rotational hydroacoustic fry surveys have been conducted at both lakes since the early 2000s, and PR-capacity estimates are available for both."
+6,Nass,Damdochax,2,Damdochax,Damdoch,SR Estimation,Text
+6,Nass,Damdochax,2,Damdochax,Damdoch,Productivity,Text
+6,Nass,Damdochax,2,Damdochax,Damdoch,Capacity Information,Text
+6,Nass,Damdochax,2,Damdochax,Damdoch,Juvenile Information,Text
+6,Nass,Damdochax,2,Damdochax,Damdoch,Data Issues,Text
+6,Nass,Damdochax,2,Damdochax,Damdoch,Sensitivity Tests,Text
+6,Nass,Damdochax,2,Damdochax,Damdoch,Model Considerations,Text
+8,Skeena,Ecstall,2,Johnston,Johnston,Key Points,"Johnston Lake sockeye, which rear in Johnston Lake, are the most abundant sockeye stock in the Ecstall drainage.  Johnston Lake sockeye, which are among the earliest migrating smolts in the Skeena watershed, are also the smallest due to exceptionally high densities of fry rearing in the lake. Johnston Lake sockeye are mainly lakeshore spawners and visual spawner escapement surveys are challenging because of glacial turbidity. A PR capacity estimate is available for Johnston Lake, and hydroacoustic surveys were conducted in 2010, 2014, 2016 (and 2019 **cch check). The high abundance and density of fry observed in all years suggest that visual escapement estimates may be biased low. "
+8,Skeena,Ecstall,2,Johnston,Johnston,SR Estimation,Text
+8,Skeena,Ecstall,2,Johnston,Johnston,Productivity,Text
+8,Skeena,Ecstall,2,Johnston,Johnston,Capacity Information,Text
+8,Skeena,Ecstall,2,Johnston,Johnston,Juvenile Information,Text
+8,Skeena,Ecstall,2,Johnston,Johnston,Data Issues,Text
+8,Skeena,Ecstall,2,Johnston,Johnston,Sensitivity Tests,Text
+8,Skeena,Ecstall,2,Johnston,Johnston,Model Considerations,Text
+NA,Nass,Agg,NA,Nass,Nass,Key Points,Text
+NA,Nass,Agg,NA,Nass,Nass,SR Estimation,Text
+NA,Nass,Agg,NA,Nass,Nass,Productivity,Text
+NA,Nass,Agg,NA,Nass,Nass,Capacity Information,Text
+NA,Nass,Agg,NA,Nass,Nass,Juvenile Information,Text
+NA,Nass,Agg,NA,Nass,Nass,Data Issues,Text
+NA,Nass,Agg,NA,Nass,Nass,Sensitivity Tests,Text
+NA,Nass,Agg,NA,Nass,Nass,Model Considerations,"For most of the available data, Meziadin accounts for most of the total spawner abundance. Overall the aggregate data set has good contrast, but most of that is early in the time series. Since the mid-1990s contrast is much lower (<4), but this is partly due to changing stock composition, specifically the recent increase in the abundance and relative contribution of Lower Nass Sea and River Type. Given their different life histories, we consider it more appropriate to fit SR models separately to these two main stocks, but include the aggregate model fits for comparison. "
+NA,Skeena,Agg,NA,Skeena,Skeena,Key Points,Text
+NA,Skeena,Agg,NA,Skeena,Skeena,SR Estimation,Text
+NA,Skeena,Agg,NA,Skeena,Skeena,Productivity,Text
+NA,Skeena,Agg,NA,Skeena,Skeena,Capacity Information,Text
+NA,Skeena,Agg,NA,Skeena,Skeena,Juvenile Information,Text
+NA,Skeena,Agg,NA,Skeena,Skeena,Data Issues,Text
+NA,Skeena,Agg,NA,Skeena,Skeena,Sensitivity Tests,Text
+NA,Skeena,Agg,NA,Skeena,Skeena,Model Considerations,"Low Contrast in spawner data, because the bulk of the aggregate is from managed spawning channels. We consider it inappropriate to fit a density-dependent SR relationship to the resulting data, because the fit is highly sensitive to small changes in the data set. Bayesian priors can be used to ""force"" the model fit to a particular productivity or capacity we might consider plausible, but that is just a circuitous way of getting pre-determined results. Given on-going debate regarding alternative scales of analysis, we illustrate both of these issues."
+NA,SkeenaWild,Agg,NA,SkeenaWild,SkeenaWild,Key Points,Text
+NA,SkeenaWild,Agg,NA,SkeenaWild,SkeenaWild,SR Estimation,Text
+NA,SkeenaWild,Agg,NA,SkeenaWild,SkeenaWild,Productivity,Text
+NA,SkeenaWild,Agg,NA,SkeenaWild,SkeenaWild,Capacity Information,Text
+NA,SkeenaWild,Agg,NA,SkeenaWild,SkeenaWild,Juvenile Information,Text
+NA,SkeenaWild,Agg,NA,SkeenaWild,SkeenaWild,Data Issues,Text
+NA,SkeenaWild,Agg,NA,SkeenaWild,SkeenaWild,Sensitivity Tests,Text
+NA,SkeenaWild,Agg,NA,SkeenaWild,SkeenaWild,Model Considerations,Text

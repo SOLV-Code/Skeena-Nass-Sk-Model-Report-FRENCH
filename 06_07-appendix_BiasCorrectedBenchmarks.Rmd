@@ -1,0 +1,273 @@
+# BIAS-CORRECTED BENCHMARK ESTIMATES {#BiasCorrectedBM}
+
+
+## Nass Summary Tables - Bias Corrected
+
+### Nass Smsy
+
+(ref:SmsyLtAvgNassBC) Comparison of bias-corrected aggregate and stock-level Smsy estimates: Nass / Long-term average productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SmsyLtAvgNassBC, echo = FALSE, results = "asis"}
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Smsy.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmsyLtAvgNassBC)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+(ref:SmsyRecentNassBC) Comparison of bias-corrected aggregate and stock-level Smsy estimates: Nass / Recent productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SmsyRecentNassBC, echo = FALSE, results = "asis"}
+
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "Now",BM == "Smsy.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmsyRecentNassBC)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+\clearpage
+### Nass Sgen
+
+
+(ref:SgenLtAvgNassBC) Comparison of bias-corrected aggregate and stock-level Sgen estimates: Nass / Long-term average productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SgenLtAvgNassBC, echo = FALSE, results = "asis"}
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Sgen.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SgenLtAvgNassBC)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+(ref:SgenRecentNassBC) Comparison of bias-corrected aggregate and stock-level Sgen estimates: Nass / Recent productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SgenRecentNassBC, echo = FALSE, results = "asis"}
+
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "Now",BM == "Sgen.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SgenRecentNassBC)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+\clearpage
+
+### Nass Umsy
+
+(ref:UmsyLtAvgNassBC) Comparison of bias-corrected aggregate and stock-level Umsy estimates: Nass / Long-term average productivity.  Table also lists the range and median across stock-level estimates.
+
+```{r UmsyLtAvgNassBC, echo = FALSE, results = "asis"}
+
+table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Umsy.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:UmsyLtAvgNassBC)") %>%
+    kableExtra::row_spec(c(1,4), hline_after = TRUE) 
+
+```
+
+
+
+(ref:UmsyRecentNassBC) Comparison of bias-corrected aggregate and stock-level Umsy estimates: Nass / Recent productivity.  Table also lists the range and median across stock-level estimates.
+
+```{r UmsyRecentNassBC, echo = FALSE, results = "asis"}
+
+table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "Now",BM == "Umsy.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:UmsyRecentNassBC)") %>%
+    kableExtra::row_spec(c(1,4), hline_after = TRUE) 
+
+```
+
+
+
+
+
+\clearpage
+## Skeena Wild Summary Tables - Bias Corrected
+
+### Skeena Wild Smsy
+
+(ref:SmsyLtAvgSkeenaWildBC) Comparison of bias-corrected aggregate and stock-level Smsy estimates: Skeena Wild / Long-term average productivity. Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SmsyLtAvgSkeenaWildBC, echo = FALSE, results = "asis"}
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "LTAvg",BM == "Smsy.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmsyLtAvgSkeenaWildBC)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+\clearpage
+(ref:SmsyRecentSkeenaWildBC) Comparison of bias-corrected aggregate and stock-level Smsy estimates: Skeena Wild / Recent productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SmsyRecentSkeenaWildBC, echo = FALSE, results = "asis"}
+
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "Now",BM == "Smsy.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmsyRecentSkeenaWildBC)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+\clearpage
+### Skeena Wild Sgen
+
+
+(ref:SgenLtAvgSkeenaWildBC) Comparison of bias-corrected aggregate and stock-level Sgen estimates: Skeena Wild / Long-term average productivity. Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SgenLtAvgSkeenaWildBC, echo = FALSE, results = "asis"}
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "LTAvg",BM == "Sgen.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SgenLtAvgSkeenaWildBC)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+\clearpage
+(ref:SgenRecentSkeenaWildBC) Comparison of bias-corrected aggregate and stock-level Sgen estimates: Skeena Wild / Recent productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added.  
+
+```{r SgenRecentSkeenaWildBC, echo = FALSE, results = "asis"}
+
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "Now",BM == "Sgen.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SgenRecentSkeenaWildBC)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+
+\clearpage
+
+### Skeena Wild Umsy
+
+(ref:UmsyLtAvgSkeenaWildBC) Comparison of bias-corrected aggregate and stock-level Umsy estimates: Skeena Wild / Long-term average productivity.  Table also lists the range and median across stock-level estimates.
+
+```{r UmsyLtAvgSkeenaWildBC, echo = FALSE, results = "asis"}
+
+umsy.bm.tab.src <- read_csv("data/SummaryTables_UMSY.csv")
+
+table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "LTAvg",BM == "Umsy.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:UmsyLtAvgSkeenaWildBC)") %>%
+    kableExtra::row_spec(c(1,4), hline_after = TRUE) 
+
+```
+
+
+\clearpage
+(ref:UmsyRecentSkeenaWildBC) Comparison of bias-corrected aggregate and stock-level Umsy estimates: Skeena Wild / Recent productivity.  Table also lists the range and median across stock-level estimates.
+
+```{r UmsyRecentSkeenaWildBC, echo = FALSE, results = "asis"}
+
+table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "Now",BM == "Umsy.c") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:UmsyRecentSkeenaWildBC)") %>%
+    kableExtra::row_spec(c(1,4), hline_after = TRUE) 
+
+```
+
+

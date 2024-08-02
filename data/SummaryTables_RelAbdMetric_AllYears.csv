@@ -1,0 +1,1103 @@
+MU,Stock,Gen,UpTo,nObs,GenAvg,LBM,UBM,RatioLBM,RatioUBM,MetricStatus,MetricScore
+SkeenaWild,Kitwanga,4,1982,2,187,2957,4764,0.06,0.04,Red,1
+Nass,Lower Nass Sea & River Type,4,1982,1,2715,18270,35288,0.15,0.08,Red,1
+SkeenaWild,Kitsumkalum,5,1982,5,975,3241,11699,0.3,0.08,Red,1
+SkeenaWild,Sustut,5,1982,4,92,86,614,1.07,0.15,Amber,2
+SkeenaWild,Morice,5,1982,5,1948,2152,8318,0.91,0.23,Red,1
+SkeenaWild,Asitka,5,1982,3,182,366,671,0.5,0.27,Red,1
+SkeenaWild,Johnston,5,1982,3,1005,1004,2380,1,0.42,Amber,2
+SkeenaWild,Bear,5,1982,4,1870,656,3592,2.85,0.52,Amber,2
+SkeenaWild,Babine Mid Wild,5,1982,5,8016,4820,13796,1.66,0.58,Amber,2
+SkeenaWild,Babine Late Wild,5,1982,5,148871,92775,196144,1.6,0.76,Amber,2
+SkeenaWild,Mcdonell,5,1982,5,1969,496,1748,3.97,1.13,Green,3
+SkeenaWild,Babine Early Wild,5,1982,5,45141,17982,34350,2.51,1.31,Green,3
+SkeenaWild,Alastair,5,1982,5,12263,3324,9248,3.69,1.33,Green,3
+Nass,Damdochax,5,1982,1,5000,871,3554,5.74,1.41,Green,3
+SkeenaWild,Swan/Stephens,5,1982,4,26581,11191,16747,2.38,1.59,Green,3
+Nass,Meziadin,5,1982,1,250000,32713,124460,7.64,2.01,Green,3
+SkeenaWild,Lakelse,5,1982,5,18344,3960,7161,4.63,2.56,Green,3
+Nass,Kwinageese,4,1982,1,20000,1899,6066,10.53,3.3,Green,3
+Nass,Bowser,5,1982,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1982,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1982,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1982,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1982,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1982,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1982,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Motase,5,1982,0,NA,163,406,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1982,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1982,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1982,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,1983,1,200,2957,4764,0.07,0.04,Red,1
+SkeenaWild,Kitsumkalum,5,1983,5,836,3241,11699,0.26,0.07,Red,1
+Nass,Lower Nass Sea & River Type,4,1983,2,3840,18270,35288,0.21,0.11,Red,1
+SkeenaWild,Asitka,5,1983,2,100,366,671,0.27,0.15,Red,1
+SkeenaWild,Morice,5,1983,5,2953,2152,8318,1.37,0.36,Amber,2
+SkeenaWild,Johnston,5,1983,2,1007,1004,2380,1,0.42,Amber,2
+Nass,Damdochax,5,1983,2,1581,871,3554,1.82,0.44,Amber,2
+SkeenaWild,Bear,5,1983,3,1657,656,3592,2.53,0.46,Amber,2
+SkeenaWild,Sustut,5,1983,3,330,86,614,3.84,0.54,Amber,2
+SkeenaWild,Babine Mid Wild,5,1983,5,9440,4820,13796,1.96,0.68,Amber,2
+SkeenaWild,Babine Late Wild,5,1983,5,167345,92775,196144,1.8,0.85,Amber,2
+Nass,Kwinageese,4,1983,2,6325,1899,6066,3.33,1.04,Green,3
+SkeenaWild,Mcdonell,5,1983,5,2058,496,1748,4.15,1.18,Green,3
+SkeenaWild,Alastair,5,1983,5,11491,3324,9248,3.46,1.24,Green,3
+SkeenaWild,Babine Early Wild,5,1983,5,43613,17982,34350,2.43,1.27,Green,3
+Nass,Meziadin,5,1983,2,206155,32713,124460,6.3,1.66,Green,3
+SkeenaWild,Swan/Stephens,5,1983,5,28524,11191,16747,2.55,1.7,Green,3
+SkeenaWild,Lakelse,5,1983,5,20226,3960,7161,5.11,2.82,Green,3
+Nass,Upper Nass River Type,4,1983,1,392,NA,NA,NA,NA,None,0
+Nass,Bowser,5,1983,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1983,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1983,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1983,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1983,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1983,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Motase,5,1983,0,NA,163,406,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1983,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1983,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1983,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitsumkalum,5,1984,5,889,3241,11699,0.27,0.08,Red,1
+SkeenaWild,Asitka,5,1984,1,100,366,671,0.27,0.15,Red,1
+Nass,Lower Nass Sea & River Type,4,1984,3,6147,18270,35288,0.34,0.17,Red,1
+SkeenaWild,Bear,5,1984,3,1062,656,3592,1.62,0.3,Amber,2
+Nass,Damdochax,5,1984,3,1357,871,3554,1.56,0.38,Amber,2
+SkeenaWild,Johnston,5,1984,2,1007,1004,2380,1,0.42,Amber,2
+SkeenaWild,Morice,5,1984,5,3950,2152,8318,1.84,0.47,Amber,2
+SkeenaWild,Babine Mid Wild,5,1984,5,7740,4820,13796,1.61,0.56,Amber,2
+SkeenaWild,Sustut,5,1984,2,424,86,614,4.93,0.69,Amber,2
+SkeenaWild,Babine Late Wild,5,1984,5,149654,92775,196144,1.61,0.76,Amber,2
+SkeenaWild,Mcdonell,5,1984,5,1758,496,1748,3.54,1.01,Green,3
+Nass,Kwinageese,4,1984,3,6214,1899,6066,3.27,1.02,Green,3
+SkeenaWild,Alastair,5,1984,5,9770,3324,9248,2.94,1.06,Green,3
+SkeenaWild,Babine Early Wild,5,1984,5,39690,17982,34350,2.21,1.16,Green,3
+Nass,Meziadin,5,1984,3,181206,32713,124460,5.54,1.46,Green,3
+SkeenaWild,Swan/Stephens,5,1984,5,30816,11191,16747,2.75,1.84,Green,3
+SkeenaWild,Lakelse,5,1984,5,19162,3960,7161,4.84,2.68,Green,3
+Nass,Upper Nass River Type,4,1984,2,299,NA,NA,NA,NA,None,0
+Nass,Bowser,5,1984,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1984,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1984,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,1984,0,NA,2957,4764,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1984,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1984,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1984,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Motase,5,1984,0,NA,163,406,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1984,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1984,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1984,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitsumkalum,5,1985,5,1070,3241,11699,0.33,0.09,Red,1
+Nass,Lower Nass Sea & River Type,4,1985,4,7843,18270,35288,0.43,0.22,Red,1
+SkeenaWild,Bear,5,1985,3,1168,656,3592,1.78,0.33,Amber,2
+SkeenaWild,Sustut,5,1985,1,300,86,614,3.49,0.49,Amber,2
+SkeenaWild,Johnston,5,1985,3,1225,1004,2380,1.22,0.51,Amber,2
+SkeenaWild,Babine Mid Wild,5,1985,5,8441,4820,13796,1.75,0.61,Amber,2
+SkeenaWild,Morice,5,1985,5,5450,2152,8318,2.53,0.66,Amber,2
+Nass,Damdochax,5,1985,4,2475,871,3554,2.84,0.7,Amber,2
+SkeenaWild,Alastair,5,1985,5,7501,3324,9248,2.26,0.81,Amber,2
+SkeenaWild,Kitwanga,4,1985,1,4400,2957,4764,1.49,0.92,Amber,2
+SkeenaWild,Babine Late Wild,5,1985,5,188437,92775,196144,2.03,0.96,Amber,2
+Nass,Kwinageese,4,1985,4,7746,1899,6066,4.08,1.28,Green,3
+SkeenaWild,Mcdonell,5,1985,5,2352,496,1748,4.74,1.35,Green,3
+SkeenaWild,Babine Early Wild,5,1985,5,47238,17982,34350,2.63,1.38,Green,3
+Nass,Meziadin,5,1985,4,203576,32713,124460,6.22,1.64,Green,3
+SkeenaWild,Swan/Stephens,5,1985,5,36948,11191,16747,3.3,2.21,Green,3
+SkeenaWild,Lakelse,5,1985,5,19983,3960,7161,5.05,2.79,Green,3
+Nass,Upper Nass River Type,4,1985,3,327,NA,NA,NA,NA,None,0
+Nass,Bowser,5,1985,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1985,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1985,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1985,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1985,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1985,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Motase,5,1985,0,NA,163,406,NA,NA,None,0
+SkeenaWild,Asitka,5,1985,0,NA,366,671,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1985,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1985,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1985,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitsumkalum,5,1986,5,1355,3241,11699,0.42,0.12,Red,1
+Nass,Lower Nass Sea & River Type,4,1986,4,7843,18270,35288,0.43,0.22,Red,1
+SkeenaWild,Bear,5,1986,3,1468,656,3592,2.24,0.41,Amber,2
+SkeenaWild,Johnston,5,1986,3,1088,1004,2380,1.08,0.46,Amber,2
+SkeenaWild,Babine Mid Wild,5,1986,5,7462,4820,13796,1.55,0.54,Amber,2
+SkeenaWild,Morice,5,1986,5,6790,2152,8318,3.16,0.82,Amber,2
+SkeenaWild,Kitwanga,4,1986,1,4400,2957,4764,1.49,0.92,Amber,2
+Nass,Damdochax,5,1986,5,3272,871,3554,3.76,0.92,Amber,2
+SkeenaWild,Babine Late Wild,5,1986,5,203736,92775,196144,2.2,1.04,Green,3
+SkeenaWild,Babine Early Wild,5,1986,5,42335,17982,34350,2.35,1.23,Green,3
+SkeenaWild,Alastair,5,1986,5,12260,3324,9248,3.69,1.33,Green,3
+Nass,Kwinageese,4,1986,4,8190,1899,6066,4.31,1.35,Green,3
+Nass,Meziadin,5,1986,5,181773,32713,124460,5.56,1.46,Green,3
+SkeenaWild,Mcdonell,5,1986,5,2702,496,1748,5.45,1.55,Green,3
+SkeenaWild,Swan/Stephens,5,1986,5,38525,11191,16747,3.44,2.3,Green,3
+SkeenaWild,Lakelse,5,1986,5,17805,3960,7161,4.5,2.49,Green,3
+Nass,Upper Nass River Type,4,1986,3,327,NA,NA,NA,NA,None,0
+Nass,Bowser,5,1986,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1986,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1986,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1986,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1986,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1986,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Motase,5,1986,0,NA,163,406,NA,NA,None,0
+SkeenaWild,Asitka,5,1986,0,NA,366,671,NA,NA,None,0
+SkeenaWild,Sustut,5,1986,0,NA,86,614,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1986,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1986,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1986,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitsumkalum,5,1987,5,1801,3241,11699,0.56,0.15,Red,1
+SkeenaWild,Asitka,5,1987,1,100,366,671,0.27,0.15,Red,1
+Nass,Lower Nass Sea & River Type,4,1987,4,6595,18270,35288,0.36,0.19,Red,1
+SkeenaWild,Johnston,5,1987,3,1156,1004,2380,1.15,0.49,Amber,2
+SkeenaWild,Bear,5,1987,4,2439,656,3592,3.72,0.68,Amber,2
+SkeenaWild,Babine Mid Wild,5,1987,5,9457,4820,13796,1.96,0.69,Amber,2
+Nass,Damdochax,5,1987,5,2724,871,3554,3.13,0.77,Amber,2
+SkeenaWild,Morice,5,1987,5,7192,2152,8318,3.34,0.86,Amber,2
+SkeenaWild,Kitwanga,4,1987,1,4400,2957,4764,1.49,0.92,Amber,2
+SkeenaWild,Babine Early Wild,5,1987,5,35387,17982,34350,1.97,1.03,Green,3
+SkeenaWild,Babine Late Wild,5,1987,5,220577,92775,196144,2.38,1.12,Green,3
+Nass,Meziadin,5,1987,5,162783,32713,124460,4.98,1.31,Green,3
+SkeenaWild,Alastair,5,1987,5,12386,3324,9248,3.73,1.34,Green,3
+SkeenaWild,Sustut,5,1987,1,900,86,614,10.47,1.47,Green,3
+SkeenaWild,Lakelse,5,1987,5,12581,3960,7161,3.18,1.76,Green,3
+Nass,Kwinageese,4,1987,4,11398,1899,6066,6,1.88,Green,3
+SkeenaWild,Mcdonell,5,1987,5,3366,496,1748,6.79,1.93,Green,3
+SkeenaWild,Swan/Stephens,5,1987,5,44160,11191,16747,3.95,2.64,Green,3
+SkeenaWild,Motase,5,1987,1,1500,163,406,9.2,3.69,Green,3
+Nass,Upper Nass River Type,4,1987,2,299,NA,NA,NA,NA,None,0
+Nass,Bowser,5,1987,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1987,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1987,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1987,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1987,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1987,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1987,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1987,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1987,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1988,4,4250,18270,35288,0.23,0.12,Red,1
+SkeenaWild,Asitka,5,1988,1,100,366,671,0.27,0.15,Red,1
+SkeenaWild,Kitsumkalum,5,1988,5,2259,3241,11699,0.7,0.19,Red,1
+SkeenaWild,Johnston,5,1988,4,1215,1004,2380,1.21,0.51,Amber,2
+SkeenaWild,Morice,5,1988,5,5450,2152,8318,2.53,0.66,Amber,2
+SkeenaWild,Babine Mid Wild,5,1988,5,11479,4820,13796,2.38,0.83,Amber,2
+SkeenaWild,Bear,5,1988,5,3008,656,3592,4.59,0.84,Amber,2
+SkeenaWild,Kitwanga,4,1988,1,4400,2957,4764,1.49,0.92,Amber,2
+SkeenaWild,Motase,5,1988,2,387,163,406,2.37,0.95,Amber,2
+Nass,Damdochax,5,1988,5,3594,871,3554,4.13,1.01,Green,3
+SkeenaWild,Babine Early Wild,5,1988,5,38746,17982,34350,2.15,1.13,Green,3
+SkeenaWild,Sustut,5,1988,2,704,86,614,8.19,1.15,Green,3
+Nass,Meziadin,5,1988,5,151058,32713,124460,4.62,1.21,Green,3
+SkeenaWild,Babine Late Wild,5,1988,5,261651,92775,196144,2.82,1.33,Green,3
+SkeenaWild,Alastair,5,1988,5,12386,3324,9248,3.73,1.34,Green,3
+Nass,Kwinageese,4,1988,4,9157,1899,6066,4.82,1.51,Green,3
+SkeenaWild,Lakelse,5,1988,5,11133,3960,7161,2.81,1.55,Green,3
+SkeenaWild,Mcdonell,5,1988,5,2802,496,1748,5.65,1.6,Green,3
+SkeenaWild,Swan/Stephens,5,1988,5,51587,11191,16747,4.61,3.08,Green,3
+Nass,Upper Nass River Type,4,1988,1,392,NA,NA,NA,NA,None,0
+Nass,Bowser,5,1988,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1988,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1988,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1988,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1988,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1988,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1988,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1988,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1988,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1989,4,2899,18270,35288,0.16,0.08,Red,1
+SkeenaWild,Asitka,5,1989,1,100,366,671,0.27,0.15,Red,1
+SkeenaWild,Kitsumkalum,5,1989,5,2919,3241,11699,0.9,0.25,Red,1
+SkeenaWild,Johnston,5,1989,5,1057,1004,2380,1.05,0.44,Amber,2
+SkeenaWild,Morice,5,1989,5,6175,2152,8318,2.87,0.74,Amber,2
+SkeenaWild,Babine Mid Wild,5,1989,5,11374,4820,13796,2.36,0.82,Amber,2
+SkeenaWild,Sustut,5,1989,3,563,86,614,6.55,0.92,Amber,2
+SkeenaWild,Motase,5,1989,3,391,163,406,2.4,0.96,Amber,2
+Nass,Meziadin,5,1989,5,122945,32713,124460,3.76,0.99,Amber,2
+SkeenaWild,Bear,5,1989,5,3662,656,3592,5.58,1.02,Green,3
+SkeenaWild,Babine Early Wild,5,1989,5,36024,17982,34350,2,1.05,Green,3
+SkeenaWild,Babine Late Wild,5,1989,5,239934,92775,196144,2.59,1.22,Green,3
+Nass,Damdochax,5,1989,5,4959,871,3554,5.69,1.4,Green,3
+SkeenaWild,Lakelse,5,1989,5,10665,3960,7161,2.69,1.49,Green,3
+Nass,Kwinageese,4,1989,4,9157,1899,6066,4.82,1.51,Green,3
+SkeenaWild,Alastair,5,1989,5,14033,3324,9248,4.22,1.52,Green,3
+SkeenaWild,Mcdonell,5,1989,5,3600,496,1748,7.26,2.06,Green,3
+SkeenaWild,Swan/Stephens,5,1989,5,49816,11191,16747,4.45,2.97,Green,3
+Nass,Bowser,5,1989,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1989,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1989,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1989,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,1989,0,NA,2957,4764,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1989,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1989,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1989,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1989,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1989,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1989,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1990,4,2474,18270,35288,0.14,0.07,Red,1
+SkeenaWild,Kitwanga,4,1990,1,1000,2957,4764,0.34,0.21,Red,1
+SkeenaWild,Asitka,5,1990,2,161,366,671,0.44,0.24,Red,1
+SkeenaWild,Kitsumkalum,5,1990,5,3636,3241,11699,1.12,0.31,Amber,2
+SkeenaWild,Johnston,5,1990,5,922,1004,2380,0.92,0.39,Red,1
+SkeenaWild,Motase,5,1990,4,245,163,406,1.5,0.6,Amber,2
+SkeenaWild,Sustut,5,1990,4,417,86,614,4.85,0.68,Amber,2
+SkeenaWild,Babine Mid Wild,5,1990,5,9604,4820,13796,1.99,0.7,Amber,2
+SkeenaWild,Babine Early Wild,5,1990,5,27965,17982,34350,1.56,0.81,Amber,2
+SkeenaWild,Morice,5,1990,5,6697,2152,8318,3.11,0.81,Amber,2
+Nass,Meziadin,5,1990,5,103314,32713,124460,3.16,0.83,Amber,2
+SkeenaWild,Lakelse,5,1990,5,6338,3960,7161,1.6,0.89,Amber,2
+SkeenaWild,Babine Late Wild,5,1990,5,190904,92775,196144,2.06,0.97,Amber,2
+SkeenaWild,Bear,5,1990,5,3529,656,3592,5.38,0.98,Amber,2
+Nass,Damdochax,5,1990,5,3807,871,3554,4.37,1.07,Green,3
+Nass,Kwinageese,4,1990,4,7921,1899,6066,4.17,1.31,Green,3
+SkeenaWild,Alastair,5,1990,5,14674,3324,9248,4.41,1.59,Green,3
+SkeenaWild,Mcdonell,5,1990,5,4324,496,1748,8.72,2.47,Green,3
+SkeenaWild,Swan/Stephens,5,1990,5,49646,11191,16747,4.44,2.96,Green,3
+Nass,Bowser,5,1990,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1990,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1990,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1990,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1990,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1990,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1990,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1990,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1990,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1990,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1991,4,2111,18270,35288,0.12,0.06,Red,1
+SkeenaWild,Kitwanga,4,1991,1,1000,2957,4764,0.34,0.21,Red,1
+SkeenaWild,Asitka,5,1991,3,240,366,671,0.66,0.36,Red,1
+SkeenaWild,Kitsumkalum,5,1991,5,4529,3241,11699,1.4,0.39,Amber,2
+SkeenaWild,Johnston,5,1991,5,1030,1004,2380,1.03,0.43,Amber,2
+SkeenaWild,Motase,5,1991,5,255,163,406,1.56,0.63,Amber,2
+Nass,Damdochax,5,1991,5,2993,871,3554,3.44,0.84,Amber,2
+Nass,Kwinageese,4,1991,4,5692,1899,6066,3,0.94,Amber,2
+SkeenaWild,Babine Early Wild,5,1991,5,32699,17982,34350,1.82,0.95,Amber,2
+SkeenaWild,Lakelse,5,1991,5,6873,3960,7161,1.74,0.96,Amber,2
+Nass,Meziadin,5,1991,5,120558,32713,124460,3.69,0.97,Amber,2
+SkeenaWild,Sustut,5,1991,5,605,86,614,7.03,0.99,Amber,2
+SkeenaWild,Babine Mid Wild,5,1991,5,13942,4820,13796,2.89,1.01,Green,3
+SkeenaWild,Babine Late Wild,5,1991,5,230813,92775,196144,2.49,1.18,Green,3
+SkeenaWild,Morice,5,1991,5,9787,2152,8318,4.55,1.18,Green,3
+SkeenaWild,Bear,5,1991,5,4569,656,3592,6.96,1.27,Green,3
+SkeenaWild,Alastair,5,1991,5,14811,3324,9248,4.46,1.6,Green,3
+SkeenaWild,Mcdonell,5,1991,5,3134,496,1748,6.32,1.79,Green,3
+SkeenaWild,Swan/Stephens,5,1991,5,52709,11191,16747,4.71,3.15,Green,3
+Nass,Bowser,5,1991,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1991,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1991,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1991,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1991,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1991,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1991,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1991,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1991,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1991,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1992,4,1562,18270,35288,0.09,0.04,Red,1
+SkeenaWild,Kitwanga,4,1992,1,1000,2957,4764,0.34,0.21,Red,1
+SkeenaWild,Johnston,5,1992,4,989,1004,2380,0.99,0.42,Red,1
+SkeenaWild,Motase,5,1992,5,205,163,406,1.26,0.5,Amber,2
+SkeenaWild,Kitsumkalum,5,1992,5,5977,3241,11699,1.84,0.51,Amber,2
+SkeenaWild,Asitka,5,1992,3,479,366,671,1.31,0.71,Amber,2
+SkeenaWild,Babine Mid Wild,5,1992,5,12297,4820,13796,2.55,0.89,Amber,2
+Nass,Damdochax,5,1992,5,3519,871,3554,4.04,0.99,Amber,2
+SkeenaWild,Babine Early Wild,5,1992,5,34827,17982,34350,1.94,1.01,Green,3
+SkeenaWild,Bear,5,1992,5,3864,656,3592,5.89,1.08,Green,3
+SkeenaWild,Lakelse,5,1992,5,7862,3960,7161,1.99,1.1,Green,3
+Nass,Kwinageese,4,1992,4,6769,1899,6066,3.56,1.12,Green,3
+Nass,Meziadin,5,1992,5,159961,32713,124460,4.89,1.29,Green,3
+SkeenaWild,Sustut,5,1992,5,860,86,614,10,1.4,Green,3
+SkeenaWild,Babine Late Wild,5,1992,5,276238,92775,196144,2.98,1.41,Green,3
+SkeenaWild,Morice,5,1992,5,12482,2152,8318,5.8,1.5,Green,3
+SkeenaWild,Alastair,5,1992,5,16270,3324,9248,4.89,1.76,Green,3
+SkeenaWild,Mcdonell,5,1992,5,3471,496,1748,7,1.99,Green,3
+SkeenaWild,Swan/Stephens,5,1992,5,53347,11191,16747,4.77,3.19,Green,3
+Nass,Bowser,5,1992,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1992,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1992,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1992,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1992,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1992,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1992,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1992,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1992,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1992,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1993,4,1163,18270,35288,0.06,0.03,Red,1
+SkeenaWild,Kitwanga,4,1993,1,1000,2957,4764,0.34,0.21,Red,1
+SkeenaWild,Johnston,5,1993,3,879,1004,2380,0.88,0.37,Red,1
+SkeenaWild,Motase,5,1993,5,270,163,406,1.66,0.67,Amber,2
+SkeenaWild,Kitsumkalum,5,1993,5,8504,3241,11699,2.62,0.73,Amber,2
+SkeenaWild,Asitka,5,1993,4,527,366,671,1.44,0.79,Amber,2
+SkeenaWild,Babine Early Wild,5,1993,5,28882,17982,34350,1.61,0.84,Amber,2
+SkeenaWild,Babine Mid Wild,5,1993,5,12136,4820,13796,2.52,0.88,Amber,2
+SkeenaWild,Bear,5,1993,5,3662,656,3592,5.58,1.02,Green,3
+Nass,Kwinageese,4,1993,4,6402,1899,6066,3.37,1.06,Green,3
+SkeenaWild,Lakelse,5,1993,5,8297,3960,7161,2.1,1.16,Green,3
+Nass,Damdochax,5,1993,5,4661,871,3554,5.35,1.31,Green,3
+Nass,Meziadin,5,1993,5,204550,32713,124460,6.25,1.64,Green,3
+SkeenaWild,Babine Late Wild,5,1993,5,330742,92775,196144,3.56,1.69,Green,3
+SkeenaWild,Alastair,5,1993,5,16743,3324,9248,5.04,1.81,Green,3
+SkeenaWild,Sustut,5,1993,5,1222,86,614,14.21,1.99,Green,3
+SkeenaWild,Morice,5,1993,5,20163,2152,8318,9.37,2.42,Green,3
+SkeenaWild,Mcdonell,5,1993,5,4522,496,1748,9.12,2.59,Green,3
+SkeenaWild,Swan/Stephens,5,1993,5,50336,11191,16747,4.5,3.01,Green,3
+Nass,Bowser,5,1993,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1993,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1993,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1993,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1993,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1993,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1993,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1993,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1993,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1993,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1994,4,1736,18270,35288,0.1,0.05,Red,1
+SkeenaWild,Johnston,5,1994,2,1061,1004,2380,1.06,0.45,Amber,2
+SkeenaWild,Motase,5,1994,4,245,163,406,1.5,0.6,Amber,2
+Nass,Kwinageese,4,1994,4,4109,1899,6066,2.16,0.68,Amber,2
+SkeenaWild,Asitka,5,1994,4,527,366,671,1.44,0.79,Amber,2
+SkeenaWild,Babine Mid Wild,5,1994,5,12091,4820,13796,2.51,0.88,Amber,2
+SkeenaWild,Babine Early Wild,5,1994,5,30734,17982,34350,1.71,0.89,Amber,2
+SkeenaWild,Lakelse,5,1994,5,6928,3960,7161,1.75,0.97,Amber,2
+SkeenaWild,Kitsumkalum,5,1994,5,12214,3241,11699,3.77,1.04,Green,3
+Nass,Damdochax,5,1994,5,4430,871,3554,5.09,1.25,Green,3
+SkeenaWild,Bear,5,1994,5,5041,656,3592,7.68,1.4,Green,3
+SkeenaWild,Babine Late Wild,5,1994,5,330610,92775,196144,3.56,1.69,Green,3
+SkeenaWild,Alastair,5,1994,5,16285,3324,9248,4.9,1.76,Green,3
+Nass,Meziadin,5,1994,5,257479,32713,124460,7.87,2.07,Green,3
+SkeenaWild,Swan/Stephens,5,1994,5,38743,11191,16747,3.46,2.31,Green,3
+SkeenaWild,Mcdonell,5,1994,4,4821,496,1748,9.72,2.76,Green,3
+SkeenaWild,Morice,5,1994,5,24305,2152,8318,11.29,2.92,Green,3
+SkeenaWild,Sustut,5,1994,5,1951,86,614,22.69,3.18,Green,3
+Nass,Bowser,5,1994,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1994,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1994,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1994,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,1994,0,NA,2957,4764,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1994,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1994,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1994,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1994,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1994,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1994,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1995,4,2357,18270,35288,0.13,0.07,Red,1
+Nass,Kwinageese,4,1995,4,3558,1899,6066,1.87,0.59,Amber,2
+SkeenaWild,Babine Mid Wild,5,1995,5,11803,4820,13796,2.45,0.86,Amber,2
+Nass,Damdochax,5,1995,5,3380,871,3554,3.88,0.95,Amber,2
+SkeenaWild,Motase,5,1995,3,391,163,406,2.4,0.96,Amber,2
+SkeenaWild,Asitka,5,1995,3,667,366,671,1.82,0.99,Amber,2
+SkeenaWild,Babine Early Wild,5,1995,5,40004,17982,34350,2.22,1.16,Green,3
+SkeenaWild,Kitsumkalum,5,1995,5,15461,3241,11699,4.77,1.32,Green,3
+SkeenaWild,Babine Late Wild,5,1995,5,267922,92775,196144,2.89,1.37,Green,3
+SkeenaWild,Lakelse,5,1995,5,11025,3960,7161,2.78,1.54,Green,3
+SkeenaWild,Johnston,5,1995,2,3883,1004,2380,3.87,1.63,Green,3
+SkeenaWild,Bear,5,1995,5,6903,656,3592,10.52,1.92,Green,3
+SkeenaWild,Alastair,5,1995,5,18109,3324,9248,5.45,1.96,Green,3
+SkeenaWild,Swan/Stephens,5,1995,5,36586,11191,16747,3.27,2.18,Green,3
+Nass,Meziadin,5,1995,5,286372,32713,124460,8.75,2.3,Green,3
+SkeenaWild,Mcdonell,5,1995,3,5646,496,1748,11.38,3.23,Green,3
+SkeenaWild,Morice,5,1995,5,34584,2152,8318,16.07,4.16,Green,3
+SkeenaWild,Sustut,5,1995,5,2850,86,614,33.14,4.64,Green,3
+Nass,Bowser,5,1995,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1995,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1995,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1995,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,1995,0,NA,2957,4764,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1995,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1995,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1995,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1995,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1995,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1995,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1996,4,3445,18270,35288,0.19,0.1,Red,1
+Nass,Kwinageese,4,1996,4,2380,1899,6066,1.25,0.39,Amber,2
+SkeenaWild,Motase,5,1996,3,271,163,406,1.66,0.67,Amber,2
+SkeenaWild,Babine Mid Wild,5,1996,5,9394,4820,13796,1.95,0.68,Amber,2
+Nass,Damdochax,5,1996,5,2959,871,3554,3.4,0.83,Amber,2
+SkeenaWild,Babine Late Wild,5,1996,5,214807,92775,196144,2.32,1.1,Green,3
+SkeenaWild,Asitka,5,1996,2,748,366,671,2.04,1.11,Green,3
+SkeenaWild,Babine Early Wild,5,1996,5,40298,17982,34350,2.24,1.17,Green,3
+SkeenaWild,Kitsumkalum,5,1996,5,16210,3241,11699,5,1.39,Green,3
+SkeenaWild,Lakelse,5,1996,5,12345,3960,7161,3.12,1.72,Green,3
+SkeenaWild,Bear,5,1996,5,6730,656,3592,10.26,1.87,Green,3
+SkeenaWild,Swan/Stephens,5,1996,5,32156,11191,16747,2.87,1.92,Green,3
+SkeenaWild,Alastair,5,1996,5,18577,3324,9248,5.59,2.01,Green,3
+Nass,Meziadin,5,1996,5,268779,32713,124460,8.22,2.16,Green,3
+SkeenaWild,Morice,5,1996,5,34755,2152,8318,16.15,4.18,Green,3
+SkeenaWild,Johnston,5,1996,2,11208,1004,2380,11.16,4.71,Green,3
+SkeenaWild,Sustut,5,1996,4,2893,86,614,33.64,4.71,Green,3
+SkeenaWild,Mcdonell,5,1996,2,12247,496,1748,24.69,7.01,Green,3
+Nass,Bowser,5,1996,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1996,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1996,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1996,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,1996,0,NA,2957,4764,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1996,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1996,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1996,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1996,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1996,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1996,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1997,4,6703,18270,35288,0.37,0.19,Red,1
+Nass,Kwinageese,4,1997,4,2214,1899,6066,1.17,0.36,Amber,2
+SkeenaWild,Motase,5,1997,3,206,163,406,1.26,0.51,Amber,2
+Nass,Damdochax,5,1997,5,2729,871,3554,3.13,0.77,Amber,2
+SkeenaWild,Babine Late Wild,5,1997,5,159110,92775,196144,1.72,0.81,Amber,2
+SkeenaWild,Babine Mid Wild,5,1997,5,12464,4820,13796,2.59,0.9,Amber,2
+SkeenaWild,Swan/Stephens,5,1997,5,16448,11191,16747,1.47,0.98,Amber,2
+SkeenaWild,Asitka,5,1997,1,700,366,671,1.91,1.04,Green,3
+SkeenaWild,Babine Early Wild,5,1997,5,45131,17982,34350,2.51,1.31,Green,3
+SkeenaWild,Kitsumkalum,5,1997,5,15915,3241,11699,4.91,1.36,Green,3
+SkeenaWild,Lakelse,5,1997,5,9899,3960,7161,2.5,1.38,Green,3
+Nass,Meziadin,5,1997,5,206548,32713,124460,6.31,1.66,Green,3
+SkeenaWild,Bear,5,1997,5,6355,656,3592,9.69,1.77,Green,3
+SkeenaWild,Alastair,5,1997,5,20147,3324,9248,6.06,2.18,Green,3
+SkeenaWild,Sustut,5,1997,3,2379,86,614,27.66,3.87,Green,3
+SkeenaWild,Morice,5,1997,5,33946,2152,8318,15.77,4.08,Green,3
+SkeenaWild,Johnston,5,1997,3,10093,1004,2380,10.05,4.24,Green,3
+SkeenaWild,Mcdonell,5,1997,1,15000,496,1748,30.24,8.58,Green,3
+Nass,Bowser,5,1997,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1997,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1997,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1997,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,1997,0,NA,2957,4764,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1997,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1997,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1997,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1997,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1997,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1997,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1998,4,7384,18270,35288,0.4,0.21,Red,1
+Nass,Kwinageese,4,1998,4,2440,1899,6066,1.28,0.4,Amber,2
+SkeenaWild,Motase,5,1998,3,222,163,406,1.36,0.55,Amber,2
+SkeenaWild,Babine Late Wild,5,1998,5,110887,92775,196144,1.2,0.57,Amber,2
+SkeenaWild,Swan/Stephens,5,1998,5,12447,11191,16747,1.11,0.74,Amber,2
+Nass,Damdochax,5,1998,5,2731,871,3554,3.14,0.77,Amber,2
+SkeenaWild,Babine Mid Wild,5,1998,5,11778,4820,13796,2.44,0.85,Amber,2
+SkeenaWild,Lakelse,5,1998,5,8196,3960,7161,2.07,1.14,Green,3
+Nass,Meziadin,5,1998,5,172798,32713,124460,5.28,1.39,Green,3
+SkeenaWild,Kitsumkalum,5,1998,5,16264,3241,11699,5.02,1.39,Green,3
+SkeenaWild,Babine Early Wild,5,1998,5,54597,17982,34350,3.04,1.59,Green,3
+SkeenaWild,Bear,5,1998,5,5919,656,3592,9.02,1.65,Green,3
+SkeenaWild,Alastair,5,1998,5,21010,3324,9248,6.32,2.27,Green,3
+SkeenaWild,Morice,5,1998,5,26178,2152,8318,12.16,3.15,Green,3
+SkeenaWild,Sustut,5,1998,2,2055,86,614,23.9,3.35,Green,3
+SkeenaWild,Johnston,5,1998,4,10293,1004,2380,10.25,4.32,Green,3
+Nass,Bowser,5,1998,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1998,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1998,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1998,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Mcdonell,5,1998,0,NA,496,1748,NA,NA,None,0
+SkeenaWild,Kitwanga,4,1998,0,NA,2957,4764,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1998,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1998,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1998,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Asitka,5,1998,0,NA,366,671,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1998,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1998,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1998,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,1999,4,8441,18270,35288,0.46,0.24,Red,1
+SkeenaWild,Babine Late Wild,5,1999,5,114461,92775,196144,1.23,0.58,Amber,2
+Nass,Damdochax,5,1999,5,2160,871,3554,2.48,0.61,Amber,2
+SkeenaWild,Asitka,5,1999,1,406,366,671,1.11,0.61,Amber,2
+SkeenaWild,Motase,5,1999,4,293,163,406,1.8,0.72,Amber,2
+Nass,Kwinageese,4,1999,4,4498,1899,6066,2.37,0.74,Amber,2
+SkeenaWild,Swan/Stephens,5,1999,5,15634,11191,16747,1.4,0.93,Amber,2
+SkeenaWild,Babine Mid Wild,5,1999,5,14706,4820,13796,3.05,1.07,Green,3
+SkeenaWild,Kitsumkalum,5,1999,5,15825,3241,11699,4.88,1.35,Green,3
+Nass,Meziadin,5,1999,5,177429,32713,124460,5.42,1.43,Green,3
+SkeenaWild,Lakelse,5,1999,5,10334,3960,7161,2.61,1.44,Green,3
+SkeenaWild,Bear,5,1999,5,6121,656,3592,9.33,1.7,Green,3
+SkeenaWild,Sustut,5,1999,1,1130,86,614,13.14,1.84,Green,3
+SkeenaWild,Alastair,5,1999,5,17355,3324,9248,5.22,1.88,Green,3
+SkeenaWild,Babine Early Wild,5,1999,5,65761,17982,34350,3.66,1.91,Green,3
+SkeenaWild,Morice,5,1999,5,23024,2152,8318,10.7,2.77,Green,3
+SkeenaWild,Johnston,5,1999,5,10889,1004,2380,10.85,4.58,Green,3
+Nass,Bowser,5,1999,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,1999,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,1999,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,1999,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Mcdonell,5,1999,0,NA,496,1748,NA,NA,None,0
+SkeenaWild,Kitwanga,4,1999,0,NA,2957,4764,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,1999,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,1999,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Slamgeesh,4,1999,0,NA,87,213,NA,NA,None,0
+SkeenaWild,Kluantantan,5,1999,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,1999,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,1999,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,2000,1,231,2957,4764,0.08,0.05,Red,1
+Nass,Lower Nass Sea & River Type,4,2000,4,7662,18270,35288,0.42,0.22,Red,1
+Nass,Damdochax,5,2000,5,1868,871,3554,2.14,0.53,Amber,2
+Nass,Kwinageese,4,2000,4,3783,1899,6066,1.99,0.62,Amber,2
+SkeenaWild,Asitka,5,2000,2,453,366,671,1.24,0.68,Amber,2
+SkeenaWild,Babine Late Wild,5,2000,5,139218,92775,196144,1.5,0.71,Amber,2
+SkeenaWild,Motase,5,2000,5,351,163,406,2.15,0.86,Amber,2
+SkeenaWild,Swan/Stephens,5,2000,5,15341,11191,16747,1.37,0.92,Amber,2
+SkeenaWild,Lakelse,5,2000,5,8518,3960,7161,2.15,1.19,Green,3
+Nass,Meziadin,5,2000,5,163563,32713,124460,5,1.31,Green,3
+SkeenaWild,Babine Mid Wild,5,2000,5,18379,4820,13796,3.81,1.33,Green,3
+SkeenaWild,Bear,5,2000,5,4936,656,3592,7.52,1.37,Green,3
+SkeenaWild,Kitsumkalum,5,2000,5,16326,3241,11699,5.04,1.4,Green,3
+SkeenaWild,Morice,5,2000,5,14086,2152,8318,6.55,1.69,Green,3
+SkeenaWild,Alastair,5,2000,5,15876,3324,9248,4.78,1.72,Green,3
+SkeenaWild,Babine Early Wild,5,2000,5,66547,17982,34350,3.7,1.94,Green,3
+SkeenaWild,Johnston,5,2000,5,7921,1004,2380,7.89,3.33,Green,3
+SkeenaWild,Slamgeesh,4,2000,1,949,87,213,10.91,4.46,Green,3
+Nass,Bowser,5,2000,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2000,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,2000,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,2000,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Mcdonell,5,2000,0,NA,496,1748,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2000,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2000,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sustut,5,2000,0,NA,86,614,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2000,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2000,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2000,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,2001,2,226,2957,4764,0.08,0.05,Red,1
+Nass,Lower Nass Sea & River Type,4,2001,4,5941,18270,35288,0.33,0.17,Red,1
+Nass,Kwinageese,4,2001,4,2379,1899,6066,1.25,0.39,Amber,2
+Nass,Damdochax,5,2001,5,1916,871,3554,2.2,0.54,Amber,2
+SkeenaWild,Swan/Stephens,5,2001,5,15116,11191,16747,1.35,0.9,Amber,2
+SkeenaWild,Asitka,5,2001,3,620,366,671,1.69,0.92,Amber,2
+SkeenaWild,Babine Late Wild,5,2001,5,186447,92775,196144,2.01,0.95,Amber,2
+SkeenaWild,Lakelse,5,2001,5,7302,3960,7161,1.84,1.02,Green,3
+SkeenaWild,Morice,5,2001,5,8844,2152,8318,4.11,1.06,Green,3
+SkeenaWild,Motase,5,2001,5,476,163,406,2.92,1.17,Green,3
+Nass,Meziadin,5,2001,5,149509,32713,124460,4.57,1.2,Green,3
+SkeenaWild,Bear,5,2001,5,5445,656,3592,8.3,1.52,Green,3
+SkeenaWild,Alastair,5,2001,5,14813,3324,9248,4.46,1.6,Green,3
+SkeenaWild,Kitsumkalum,5,2001,5,19493,3241,11699,6.01,1.67,Green,3
+SkeenaWild,Babine Mid Wild,5,2001,5,26296,4820,13796,5.46,1.91,Green,3
+SkeenaWild,Sustut,5,2001,1,1257,86,614,14.62,2.05,Green,3
+SkeenaWild,Babine Early Wild,5,2001,5,87014,17982,34350,4.84,2.53,Green,3
+SkeenaWild,Johnston,5,2001,5,7444,1004,2380,7.41,3.13,Green,3
+SkeenaWild,Slamgeesh,4,2001,2,901,87,213,10.36,4.23,Green,3
+Nass,Bowser,5,2001,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2001,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,2001,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,2001,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Mcdonell,5,2001,0,NA,496,1748,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2001,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2001,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2001,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2001,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2001,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,2002,3,368,2957,4764,0.12,0.08,Red,1
+Nass,Lower Nass Sea & River Type,4,2002,4,3218,18270,35288,0.18,0.09,Red,1
+Nass,Damdochax,5,2002,5,1318,871,3554,1.51,0.37,Amber,2
+Nass,Kwinageese,4,2002,4,2709,1899,6066,1.43,0.45,Amber,2
+SkeenaWild,Morice,5,2002,5,6609,2152,8318,3.07,0.79,Amber,2
+SkeenaWild,Bear,5,2002,5,3342,656,3592,5.09,0.93,Amber,2
+SkeenaWild,Babine Late Wild,5,2002,5,186663,92775,196144,2.01,0.95,Amber,2
+SkeenaWild,Asitka,5,2002,4,718,366,671,1.96,1.07,Green,3
+SkeenaWild,Alastair,5,2002,5,10308,3324,9248,3.1,1.11,Green,3
+SkeenaWild,Motase,5,2002,5,452,163,406,2.77,1.11,Green,3
+SkeenaWild,Lakelse,5,2002,5,8384,3960,7161,2.12,1.17,Green,3
+SkeenaWild,Swan/Stephens,5,2002,5,19995,11191,16747,1.79,1.19,Green,3
+Nass,Meziadin,5,2002,5,173341,32713,124460,5.3,1.39,Green,3
+SkeenaWild,Babine Mid Wild,5,2002,5,24548,4820,13796,5.09,1.78,Green,3
+SkeenaWild,Sustut,5,2002,2,1114,86,614,12.95,1.81,Green,3
+SkeenaWild,Kitsumkalum,5,2002,5,21741,3241,11699,6.71,1.86,Green,3
+SkeenaWild,Babine Early Wild,5,2002,5,69191,17982,34350,3.85,2.01,Green,3
+SkeenaWild,Johnston,5,2002,5,7112,1004,2380,7.08,2.99,Green,3
+SkeenaWild,Slamgeesh,4,2002,3,686,87,213,7.89,3.22,Green,3
+SkeenaWild,Mcdonell,5,2002,1,7072,496,1748,14.26,4.05,Green,3
+Nass,Bowser,5,2002,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2002,0,NA,NA,NA,NA,NA,None,0
+Nass,Upper Nass River Type,4,2002,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,2002,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2002,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2002,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2002,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2002,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2002,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,2003,4,2950,18270,35288,0.16,0.08,Red,1
+SkeenaWild,Kitwanga,4,2003,4,641,2957,4764,0.22,0.13,Red,1
+Nass,Damdochax,5,2003,5,947,871,3554,1.09,0.27,Amber,2
+Nass,Kwinageese,4,2003,4,1929,1899,6066,1.02,0.32,Amber,2
+SkeenaWild,Babine Late Wild,5,2003,5,187195,92775,196144,2.02,0.95,Amber,2
+SkeenaWild,Morice,5,2003,5,8305,2152,8318,3.86,1,Green,3
+SkeenaWild,Lakelse,5,2003,5,7365,3960,7161,1.86,1.03,Green,3
+SkeenaWild,Asitka,5,2003,5,778,366,671,2.13,1.16,Green,3
+SkeenaWild,Swan/Stephens,5,2003,5,21154,11191,16747,1.89,1.26,Green,3
+SkeenaWild,Bear,5,2003,5,4653,656,3592,7.09,1.3,Green,3
+SkeenaWild,Alastair,5,2003,5,12968,3324,9248,3.9,1.4,Green,3
+Nass,Meziadin,5,2003,5,179804,32713,124460,5.5,1.44,Green,3
+SkeenaWild,Motase,5,2003,5,600,163,406,3.68,1.48,Green,3
+SkeenaWild,Babine Early Wild,5,2003,5,72645,17982,34350,4.04,2.11,Green,3
+SkeenaWild,Kitsumkalum,5,2003,5,26959,3241,11699,8.32,2.3,Green,3
+SkeenaWild,Babine Mid Wild,5,2003,5,33904,4820,13796,7.03,2.46,Green,3
+SkeenaWild,Johnston,5,2003,5,6739,1004,2380,6.71,2.83,Green,3
+SkeenaWild,Slamgeesh,4,2003,4,610,87,213,7.01,2.86,Green,3
+SkeenaWild,Sustut,5,2003,3,1837,86,614,21.36,2.99,Green,3
+SkeenaWild,Mcdonell,5,2003,2,8025,496,1748,16.18,4.59,Green,3
+Nass,Upper Nass River Type,4,2003,1,275,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2003,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2003,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,2003,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2003,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2003,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2003,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2003,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2003,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,2004,4,2885,18270,35288,0.16,0.08,Red,1
+SkeenaWild,Kitwanga,4,2004,4,990,2957,4764,0.33,0.21,Red,1
+Nass,Damdochax,5,2004,5,820,871,3554,0.94,0.23,Red,1
+Nass,Kwinageese,4,2004,4,2170,1899,6066,1.14,0.36,Amber,2
+SkeenaWild,Lakelse,5,2004,5,6463,3960,7161,1.63,0.9,Amber,2
+SkeenaWild,Morice,5,2004,5,8129,2152,8318,3.78,0.98,Amber,2
+SkeenaWild,Babine Late Wild,5,2004,5,205838,92775,196144,2.22,1.05,Green,3
+SkeenaWild,Swan/Stephens,5,2004,5,19715,11191,16747,1.76,1.18,Green,3
+SkeenaWild,Bear,5,2004,5,4512,656,3592,6.88,1.26,Green,3
+SkeenaWild,Asitka,5,2004,5,859,366,671,2.35,1.28,Green,3
+Nass,Meziadin,5,2004,5,171149,32713,124460,5.23,1.38,Green,3
+SkeenaWild,Motase,5,2004,5,566,163,406,3.47,1.39,Green,3
+SkeenaWild,Alastair,5,2004,5,16016,3324,9248,4.82,1.73,Green,3
+SkeenaWild,Babine Early Wild,5,2004,5,66041,17982,34350,3.67,1.92,Green,3
+SkeenaWild,Slamgeesh,4,2004,4,455,87,213,5.23,2.14,Green,3
+SkeenaWild,Johnston,5,2004,4,5649,1004,2380,5.63,2.37,Green,3
+SkeenaWild,Kitsumkalum,5,2004,5,27923,3241,11699,8.62,2.39,Green,3
+SkeenaWild,Babine Mid Wild,5,2004,5,39892,4820,13796,8.28,2.89,Green,3
+SkeenaWild,Sustut,5,2004,4,1776,86,614,20.65,2.89,Green,3
+SkeenaWild,Mcdonell,5,2004,3,7284,496,1748,14.69,4.17,Green,3
+Nass,Upper Nass River Type,4,2004,2,584,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2004,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2004,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,2004,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2004,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2004,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2004,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2004,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2004,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,2005,4,3060,18270,35288,0.17,0.09,Red,1
+Nass,Damdochax,5,2005,5,822,871,3554,0.94,0.23,Red,1
+SkeenaWild,Kitwanga,4,2005,4,1421,2957,4764,0.48,0.3,Red,1
+Nass,Kwinageese,4,2005,4,2858,1899,6066,1.51,0.47,Amber,2
+SkeenaWild,Lakelse,5,2005,5,6170,3960,7161,1.56,0.86,Amber,2
+SkeenaWild,Swan/Stephens,5,2005,5,16438,11191,16747,1.47,0.98,Amber,2
+SkeenaWild,Bear,5,2005,5,3622,656,3592,5.52,1.01,Green,3
+SkeenaWild,Babine Late Wild,5,2005,5,200731,92775,196144,2.16,1.02,Green,3
+SkeenaWild,Asitka,5,2005,5,756,366,671,2.07,1.13,Green,3
+SkeenaWild,Motase,5,2005,5,464,163,406,2.85,1.14,Green,3
+SkeenaWild,Morice,5,2005,5,10247,2152,8318,4.76,1.23,Green,3
+Nass,Meziadin,5,2005,5,172577,32713,124460,5.28,1.39,Green,3
+SkeenaWild,Babine Early Wild,5,2005,5,51815,17982,34350,2.88,1.51,Green,3
+SkeenaWild,Slamgeesh,4,2005,4,323,87,213,3.71,1.52,Green,3
+SkeenaWild,Alastair,5,2005,5,16331,3324,9248,4.91,1.77,Green,3
+SkeenaWild,Kitsumkalum,5,2005,5,25730,3241,11699,7.94,2.2,Green,3
+SkeenaWild,Sustut,5,2005,5,1635,86,614,19.01,2.66,Green,3
+SkeenaWild,Johnston,5,2005,3,7413,1004,2380,7.38,3.11,Green,3
+SkeenaWild,Babine Mid Wild,5,2005,5,43658,4820,13796,9.06,3.16,Green,3
+SkeenaWild,Mcdonell,5,2005,4,6906,496,1748,13.92,3.95,Green,3
+Nass,Upper Nass River Type,4,2005,3,803,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2005,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2005,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,2005,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2005,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2005,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2005,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2005,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2005,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,2006,4,4067,18270,35288,0.22,0.12,Red,1
+Nass,Damdochax,5,2006,5,817,871,3554,0.94,0.23,Red,1
+Nass,Kwinageese,4,2006,4,2736,1899,6066,1.44,0.45,Amber,2
+SkeenaWild,Kitwanga,4,2006,4,2151,2957,4764,0.73,0.45,Red,1
+SkeenaWild,Lakelse,5,2006,5,4602,3960,7161,1.16,0.64,Amber,2
+SkeenaWild,Asitka,5,2006,5,451,366,671,1.23,0.67,Amber,2
+SkeenaWild,Bear,5,2006,5,2643,656,3592,4.03,0.74,Amber,2
+SkeenaWild,Babine Late Wild,5,2006,5,148684,92775,196144,1.6,0.76,Amber,2
+SkeenaWild,Motase,5,2006,5,368,163,406,2.26,0.91,Amber,2
+SkeenaWild,Swan/Stephens,5,2006,5,16457,11191,16747,1.47,0.98,Amber,2
+SkeenaWild,Babine Early Wild,5,2006,5,36589,17982,34350,2.03,1.07,Green,3
+Nass,Meziadin,5,2006,5,180878,32713,124460,5.53,1.45,Green,3
+SkeenaWild,Slamgeesh,4,2006,4,308,87,213,3.54,1.45,Green,3
+SkeenaWild,Alastair,5,2006,5,14672,3324,9248,4.41,1.59,Green,3
+SkeenaWild,Morice,5,2006,5,13488,2152,8318,6.27,1.62,Green,3
+SkeenaWild,Kitsumkalum,5,2006,5,25498,3241,11699,7.87,2.18,Green,3
+SkeenaWild,Babine Mid Wild,5,2006,5,33391,4820,13796,6.93,2.42,Green,3
+SkeenaWild,Sustut,5,2006,5,1497,86,614,17.41,2.44,Green,3
+SkeenaWild,Johnston,5,2006,2,7370,1004,2380,7.34,3.1,Green,3
+SkeenaWild,Mcdonell,5,2006,5,6593,496,1748,13.29,3.77,Green,3
+Nass,Upper Nass River Type,4,2006,4,655,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2006,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2006,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,2006,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2006,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2006,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2006,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2006,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2006,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,2007,4,5399,18270,35288,0.3,0.15,Red,1
+SkeenaWild,Kitwanga,4,2007,4,1116,2957,4764,0.38,0.23,Red,1
+Nass,Damdochax,5,2007,5,1103,871,3554,1.27,0.31,Amber,2
+Nass,Kwinageese,4,2007,4,3122,1899,6066,1.64,0.51,Amber,2
+SkeenaWild,Asitka,5,2007,5,345,366,671,0.94,0.51,Red,1
+SkeenaWild,Lakelse,5,2007,5,4497,3960,7161,1.14,0.63,Amber,2
+SkeenaWild,Babine Late Wild,5,2007,5,141140,92775,196144,1.52,0.72,Amber,2
+SkeenaWild,Bear,5,2007,5,2949,656,3592,4.5,0.82,Amber,2
+SkeenaWild,Swan/Stephens,5,2007,5,16087,11191,16747,1.44,0.96,Amber,2
+SkeenaWild,Motase,5,2007,5,411,163,406,2.52,1.01,Green,3
+Nass,Meziadin,5,2007,5,143451,32713,124460,4.39,1.15,Green,3
+SkeenaWild,Babine Early Wild,5,2007,5,41165,17982,34350,2.29,1.2,Green,3
+SkeenaWild,Slamgeesh,4,2007,4,296,87,213,3.4,1.39,Green,3
+SkeenaWild,Kitsumkalum,5,2007,5,23247,3241,11699,7.17,1.99,Green,3
+SkeenaWild,Babine Mid Wild,5,2007,5,29213,4820,13796,6.06,2.12,Green,3
+SkeenaWild,Morice,5,2007,5,19913,2152,8318,9.25,2.39,Green,3
+SkeenaWild,Alastair,5,2007,5,22280,3324,9248,6.7,2.41,Green,3
+SkeenaWild,Sustut,5,2007,5,1798,86,614,20.91,2.93,Green,3
+SkeenaWild,Mcdonell,5,2007,5,5854,496,1748,11.8,3.35,Green,3
+SkeenaWild,Johnston,5,2007,1,8333,1004,2380,8.3,3.5,Green,3
+Nass,Upper Nass River Type,4,2007,4,589,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2007,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2007,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,2007,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2007,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2007,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2007,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2007,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2007,0,NA,NA,NA,NA,NA,None,0
+Nass,Lower Nass Sea & River Type,4,2008,4,8195,18270,35288,0.45,0.23,Red,1
+SkeenaWild,Kitwanga,4,2008,4,1091,2957,4764,0.37,0.23,Red,1
+SkeenaWild,Asitka,5,2008,5,213,366,671,0.58,0.32,Red,1
+Nass,Damdochax,5,2008,5,1158,871,3554,1.33,0.33,Amber,2
+SkeenaWild,Motase,5,2008,5,208,163,406,1.28,0.51,Amber,2
+SkeenaWild,Bear,5,2008,5,2376,656,3592,3.62,0.66,Amber,2
+SkeenaWild,Babine Late Wild,5,2008,5,139354,92775,196144,1.5,0.71,Amber,2
+Nass,Kwinageese,4,2008,4,4303,1899,6066,2.27,0.71,Amber,2
+SkeenaWild,Lakelse,5,2008,5,5471,3960,7161,1.38,0.76,Amber,2
+SkeenaWild,Swan/Stephens,5,2008,5,15895,11191,16747,1.42,0.95,Amber,2
+SkeenaWild,Alastair,5,2008,5,9647,3324,9248,2.9,1.04,Green,3
+SkeenaWild,Babine Early Wild,5,2008,5,36132,17982,34350,2.01,1.05,Green,3
+Nass,Meziadin,5,2008,5,135930,32713,124460,4.16,1.09,Green,3
+SkeenaWild,Slamgeesh,4,2008,4,250,87,213,2.87,1.17,Green,3
+SkeenaWild,Babine Mid Wild,5,2008,5,20076,4820,13796,4.17,1.46,Green,3
+SkeenaWild,Sustut,5,2008,5,956,86,614,11.12,1.56,Green,3
+SkeenaWild,Kitsumkalum,5,2008,5,19736,3241,11699,6.09,1.69,Green,3
+SkeenaWild,Mcdonell,5,2008,5,3009,496,1748,6.07,1.72,Green,3
+SkeenaWild,Morice,5,2008,5,19042,2152,8318,8.85,2.29,Green,3
+Nass,Upper Nass River Type,4,2008,4,324,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2008,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2008,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Johnston,5,2008,0,NA,1004,2380,NA,NA,None,0
+SkeenaWild,Ecstall,5,2008,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2008,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2008,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2008,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2008,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2008,0,NA,NA,NA,NA,NA,None,0
+Nass,Kwinageese,4,2009,4,1715,1899,6066,0.9,0.28,Red,1
+Nass,Lower Nass Sea & River Type,4,2009,4,10282,18270,35288,0.56,0.29,Red,1
+SkeenaWild,Kitwanga,4,2009,4,1465,2957,4764,0.5,0.31,Red,1
+SkeenaWild,Asitka,5,2009,5,220,366,671,0.6,0.33,Red,1
+Nass,Damdochax,5,2009,5,1435,871,3554,1.65,0.4,Amber,2
+SkeenaWild,Motase,5,2009,5,185,163,406,1.13,0.46,Amber,2
+SkeenaWild,Babine Late Wild,5,2009,5,114612,92775,196144,1.24,0.58,Amber,2
+SkeenaWild,Bear,5,2009,5,2415,656,3592,3.68,0.67,Amber,2
+SkeenaWild,Lakelse,5,2009,5,6281,3960,7161,1.59,0.88,Amber,2
+SkeenaWild,Babine Early Wild,5,2009,5,31684,17982,34350,1.76,0.92,Amber,2
+SkeenaWild,Swan/Stephens,5,2009,5,16182,11191,16747,1.45,0.97,Amber,2
+SkeenaWild,Slamgeesh,4,2009,4,233,87,213,2.68,1.09,Green,3
+Nass,Meziadin,5,2009,5,140861,32713,124460,4.31,1.13,Green,3
+SkeenaWild,Babine Mid Wild,5,2009,5,16315,4820,13796,3.38,1.18,Green,3
+SkeenaWild,Alastair,5,2009,5,10914,3324,9248,3.28,1.18,Green,3
+SkeenaWild,Sustut,5,2009,5,769,86,614,8.94,1.25,Green,3
+SkeenaWild,Mcdonell,5,2009,5,2737,496,1748,5.52,1.57,Green,3
+SkeenaWild,Kitsumkalum,5,2009,5,19908,3241,11699,6.14,1.7,Green,3
+SkeenaWild,Morice,5,2009,5,21765,2152,8318,10.11,2.62,Green,3
+Nass,Upper Nass River Type,4,2009,4,201,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2009,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2009,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Johnston,5,2009,0,NA,1004,2380,NA,NA,None,0
+SkeenaWild,Ecstall,5,2009,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2009,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2009,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2009,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2009,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2009,0,NA,NA,NA,NA,NA,None,0
+Nass,Kwinageese,4,2010,4,1736,1899,6066,0.91,0.29,Red,1
+Nass,Lower Nass Sea & River Type,4,2010,4,12853,18270,35288,0.7,0.36,Red,1
+SkeenaWild,Kitwanga,4,2010,4,2078,2957,4764,0.7,0.44,Red,1
+SkeenaWild,Asitka,5,2010,5,302,366,671,0.83,0.45,Red,1
+SkeenaWild,Babine Late Wild,5,2010,5,97879,92775,196144,1.06,0.5,Amber,2
+SkeenaWild,Motase,5,2010,5,213,163,406,1.31,0.52,Amber,2
+Nass,Damdochax,5,2010,5,1885,871,3554,2.16,0.53,Amber,2
+SkeenaWild,Swan/Stephens,5,2010,5,13768,11191,16747,1.23,0.82,Amber,2
+SkeenaWild,Babine Mid Wild,5,2010,5,11745,4820,13796,2.44,0.85,Amber,2
+SkeenaWild,Babine Early Wild,5,2010,5,30403,17982,34350,1.69,0.89,Amber,2
+SkeenaWild,Bear,5,2010,5,3338,656,3592,5.09,0.93,Amber,2
+SkeenaWild,Sustut,5,2010,5,628,86,614,7.3,1.02,Green,3
+SkeenaWild,Lakelse,5,2010,5,7547,3960,7161,1.91,1.05,Green,3
+Nass,Meziadin,5,2010,5,143931,32713,124460,4.4,1.16,Green,3
+SkeenaWild,Slamgeesh,4,2010,4,284,87,213,3.26,1.33,Green,3
+SkeenaWild,Mcdonell,5,2010,5,2512,496,1748,5.06,1.44,Green,3
+SkeenaWild,Alastair,5,2010,5,15587,3324,9248,4.69,1.69,Green,3
+SkeenaWild,Kitsumkalum,5,2010,5,25362,3241,11699,7.83,2.17,Green,3
+SkeenaWild,Morice,5,2010,5,22930,2152,8318,10.66,2.76,Green,3
+Nass,Upper Nass River Type,4,2010,4,171,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2010,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2010,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Johnston,5,2010,0,NA,1004,2380,NA,NA,None,0
+SkeenaWild,Ecstall,5,2010,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2010,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2010,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2010,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2010,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2010,0,NA,NA,NA,NA,NA,None,0
+Nass,Kwinageese,4,2011,4,2014,1899,6066,1.06,0.33,Amber,2
+Nass,Lower Nass Sea & River Type,4,2011,4,15128,18270,35288,0.83,0.43,Red,1
+SkeenaWild,Babine Late Wild,5,2011,5,99969,92775,196144,1.08,0.51,Amber,2
+Nass,Damdochax,5,2011,5,2110,871,3554,2.42,0.59,Amber,2
+SkeenaWild,Swan/Stephens,5,2011,5,11216,11191,16747,1,0.67,Amber,2
+SkeenaWild,Motase,5,2011,5,309,163,406,1.9,0.76,Amber,2
+SkeenaWild,Kitwanga,4,2011,4,3663,2957,4764,1.24,0.77,Amber,2
+SkeenaWild,Asitka,5,2011,5,523,366,671,1.43,0.78,Amber,2
+SkeenaWild,Babine Early Wild,5,2011,5,33320,17982,34350,1.85,0.97,Amber,2
+SkeenaWild,Babine Mid Wild,5,2011,5,15041,4820,13796,3.12,1.09,Green,3
+Nass,Meziadin,5,2011,5,147752,32713,124460,4.52,1.19,Green,3
+SkeenaWild,Sustut,5,2011,5,743,86,614,8.64,1.21,Green,3
+SkeenaWild,Mcdonell,5,2011,5,2325,496,1748,4.69,1.33,Green,3
+SkeenaWild,Bear,5,2011,5,4811,656,3592,7.33,1.34,Green,3
+SkeenaWild,Slamgeesh,4,2011,4,333,87,213,3.83,1.56,Green,3
+SkeenaWild,Lakelse,5,2011,5,11817,3960,7161,2.98,1.65,Green,3
+SkeenaWild,Alastair,5,2011,5,20417,3324,9248,6.14,2.21,Green,3
+SkeenaWild,Morice,5,2011,5,19150,2152,8318,8.9,2.3,Green,3
+SkeenaWild,Kitsumkalum,5,2011,5,28480,3241,11699,8.79,2.43,Green,3
+Nass,Upper Nass River Type,4,2011,3,168,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2011,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2011,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Johnston,5,2011,0,NA,1004,2380,NA,NA,None,0
+SkeenaWild,Ecstall,5,2011,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2011,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2011,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2011,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2011,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2011,0,NA,NA,NA,NA,NA,None,0
+Nass,Kwinageese,4,2012,4,2142,1899,6066,1.13,0.35,Amber,2
+Nass,Lower Nass Sea & River Type,4,2012,4,17105,18270,35288,0.94,0.48,Red,1
+SkeenaWild,Babine Late Wild,5,2012,5,102146,92775,196144,1.1,0.52,Amber,2
+Nass,Damdochax,5,2012,5,2078,871,3554,2.39,0.58,Amber,2
+SkeenaWild,Swan/Stephens,5,2012,5,11875,11191,16747,1.06,0.71,Amber,2
+SkeenaWild,Motase,5,2012,4,312,163,406,1.91,0.77,Amber,2
+SkeenaWild,Babine Early Wild,5,2012,5,34286,17982,34350,1.91,1,Green,3
+SkeenaWild,Sustut,5,2012,5,655,86,614,7.62,1.07,Green,3
+SkeenaWild,Kitwanga,4,2012,4,5353,2957,4764,1.81,1.12,Green,3
+SkeenaWild,Asitka,5,2012,5,826,366,671,2.26,1.23,Green,3
+Nass,Meziadin,5,2012,5,157797,32713,124460,4.82,1.27,Green,3
+SkeenaWild,Mcdonell,5,2012,5,2330,496,1748,4.7,1.33,Green,3
+SkeenaWild,Morice,5,2012,5,13138,2152,8318,6.11,1.58,Green,3
+SkeenaWild,Babine Mid Wild,5,2012,5,21896,4820,13796,4.54,1.59,Green,3
+SkeenaWild,Alastair,5,2012,5,20568,3324,9248,6.19,2.22,Green,3
+SkeenaWild,Lakelse,5,2012,5,15968,3960,7161,4.03,2.23,Green,3
+SkeenaWild,Bear,5,2012,5,8346,656,3592,12.72,2.32,Green,3
+SkeenaWild,Slamgeesh,4,2012,4,527,87,213,6.06,2.47,Green,3
+SkeenaWild,Kitsumkalum,5,2012,5,34006,3241,11699,10.49,2.91,Green,3
+Nass,Upper Nass River Type,4,2012,2,205,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2012,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2012,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Johnston,5,2012,0,NA,1004,2380,NA,NA,None,0
+SkeenaWild,Ecstall,5,2012,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2012,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2012,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2012,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2012,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2012,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Babine Late Wild,5,2013,5,86083,92775,196144,0.93,0.44,Red,1
+Nass,Kwinageese,4,2013,4,2972,1899,6066,1.57,0.49,Amber,2
+SkeenaWild,Swan/Stephens,5,2013,5,8596,11191,16747,0.77,0.51,Red,1
+Nass,Lower Nass Sea & River Type,4,2013,4,18991,18270,35288,1.04,0.54,Amber,2
+Nass,Damdochax,5,2013,5,2137,871,3554,2.45,0.6,Amber,2
+SkeenaWild,Babine Early Wild,5,2013,5,27048,17982,34350,1.5,0.79,Amber,2
+SkeenaWild,Kitwanga,4,2013,4,3865,2957,4764,1.31,0.81,Amber,2
+SkeenaWild,Motase,5,2013,3,516,163,406,3.17,1.27,Green,3
+Nass,Meziadin,5,2013,5,161786,32713,124460,4.95,1.3,Green,3
+SkeenaWild,Morice,5,2013,5,11621,2152,8318,5.4,1.4,Green,3
+SkeenaWild,Babine Mid Wild,5,2013,5,19929,4820,13796,4.13,1.44,Green,3
+SkeenaWild,Sustut,5,2013,5,950,86,614,11.05,1.55,Green,3
+SkeenaWild,Asitka,5,2013,5,1173,366,671,3.2,1.75,Green,3
+SkeenaWild,Mcdonell,5,2013,5,3704,496,1748,7.47,2.12,Green,3
+SkeenaWild,Slamgeesh,4,2013,4,459,87,213,5.28,2.15,Green,3
+SkeenaWild,Bear,5,2013,5,8608,656,3592,13.12,2.4,Green,3
+SkeenaWild,Lakelse,5,2013,5,20596,3960,7161,5.2,2.88,Green,3
+SkeenaWild,Kitsumkalum,5,2013,5,37246,3241,11699,11.49,3.18,Green,3
+SkeenaWild,Alastair,5,2013,5,40866,3324,9248,12.29,4.42,Green,3
+Nass,Upper Nass River Type,4,2013,2,321,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2013,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2013,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Johnston,5,2013,0,NA,1004,2380,NA,NA,None,0
+SkeenaWild,Ecstall,5,2013,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2013,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2013,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2013,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2013,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2013,0,NA,NA,NA,NA,NA,None,0
+Nass,Kwinageese,4,2014,4,1602,1899,6066,0.84,0.26,Red,1
+SkeenaWild,Swan/Stephens,5,2014,5,6405,11191,16747,0.57,0.38,Red,1
+SkeenaWild,Babine Late Wild,5,2014,5,92419,92775,196144,1,0.47,Amber,2
+Nass,Lower Nass Sea & River Type,4,2014,4,24888,18270,35288,1.36,0.71,Amber,2
+SkeenaWild,Kitwanga,4,2014,4,3482,2957,4764,1.18,0.73,Amber,2
+Nass,Damdochax,5,2014,5,2598,871,3554,2.98,0.73,Amber,2
+SkeenaWild,Babine Early Wild,5,2014,5,27000,17982,34350,1.5,0.79,Amber,2
+Nass,Meziadin,5,2014,5,156998,32713,124460,4.8,1.26,Green,3
+SkeenaWild,Morice,5,2014,5,10599,2152,8318,4.93,1.27,Green,3
+SkeenaWild,Babine Mid Wild,5,2014,5,19066,4820,13796,3.96,1.38,Green,3
+SkeenaWild,Motase,5,2014,3,673,163,406,4.13,1.66,Green,3
+SkeenaWild,Sustut,5,2014,5,1088,86,614,12.65,1.77,Green,3
+SkeenaWild,Slamgeesh,4,2014,4,394,87,213,4.53,1.85,Green,3
+SkeenaWild,Mcdonell,5,2014,5,3795,496,1748,7.65,2.17,Green,3
+SkeenaWild,Asitka,5,2014,5,1689,366,671,4.61,2.52,Green,3
+SkeenaWild,Bear,5,2014,5,9903,656,3592,15.1,2.76,Green,3
+SkeenaWild,Kitsumkalum,5,2014,5,37605,3241,11699,11.6,3.21,Green,3
+SkeenaWild,Lakelse,5,2014,5,23636,3960,7161,5.97,3.3,Green,3
+SkeenaWild,Alastair,5,2014,5,33901,3324,9248,10.2,3.67,Green,3
+Nass,Upper Nass River Type,4,2014,2,579,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2014,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2014,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Johnston,5,2014,0,NA,1004,2380,NA,NA,None,0
+SkeenaWild,Ecstall,5,2014,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2014,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2014,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2014,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2014,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2014,0,NA,NA,NA,NA,NA,None,0
+Nass,Kwinageese,4,2015,4,1458,1899,6066,0.77,0.24,Red,1
+SkeenaWild,Babine Late Wild,5,2015,5,104978,92775,196144,1.13,0.54,Amber,2
+SkeenaWild,Swan/Stephens,5,2015,5,8995,11191,16747,0.8,0.54,Red,1
+Nass,Lower Nass Sea & River Type,4,2015,4,27829,18270,35288,1.52,0.79,Amber,2
+Nass,Damdochax,5,2015,5,3010,871,3554,3.46,0.85,Amber,2
+SkeenaWild,Kitwanga,4,2015,4,4119,2957,4764,1.39,0.86,Amber,2
+SkeenaWild,Babine Early Wild,5,2015,5,32569,17982,34350,1.81,0.95,Amber,2
+Nass,Meziadin,5,2015,5,161962,32713,124460,4.95,1.3,Green,3
+SkeenaWild,Motase,5,2015,3,536,163,406,3.29,1.32,Green,3
+SkeenaWild,Morice,5,2015,5,12487,2152,8318,5.8,1.5,Green,3
+SkeenaWild,Slamgeesh,4,2015,4,460,87,213,5.29,2.16,Green,3
+SkeenaWild,Babine Mid Wild,5,2015,5,30955,4820,13796,6.42,2.24,Green,3
+SkeenaWild,Sustut,5,2015,5,1393,86,614,16.2,2.27,Green,3
+SkeenaWild,Asitka,5,2015,5,1675,366,671,4.58,2.5,Green,3
+SkeenaWild,Kitsumkalum,5,2015,5,31702,3241,11699,9.78,2.71,Green,3
+SkeenaWild,Mcdonell,5,2015,5,4956,496,1748,9.99,2.84,Green,3
+SkeenaWild,Alastair,5,2015,5,26618,3324,9248,8.01,2.88,Green,3
+SkeenaWild,Bear,5,2015,5,11224,656,3592,17.11,3.12,Green,3
+SkeenaWild,Lakelse,5,2015,5,25189,3960,7161,6.36,3.52,Green,3
+Nass,Upper Nass River Type,4,2015,3,569,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2015,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2015,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Johnston,5,2015,0,NA,1004,2380,NA,NA,None,0
+SkeenaWild,Ecstall,5,2015,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2015,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2015,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2015,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2015,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2015,0,NA,NA,NA,NA,NA,None,0
+Nass,Kwinageese,4,2016,4,2219,1899,6066,1.17,0.37,Amber,2
+SkeenaWild,Babine Late Wild,5,2016,5,106539,92775,196144,1.15,0.54,Amber,2
+SkeenaWild,Kitwanga,4,2016,4,2758,2957,4764,0.93,0.58,Red,1
+SkeenaWild,Swan/Stephens,5,2016,5,9910,11191,16747,0.89,0.59,Red,1
+Nass,Lower Nass Sea & River Type,4,2016,4,28614,18270,35288,1.57,0.81,Amber,2
+SkeenaWild,Babine Early Wild,5,2016,5,29824,17982,34350,1.66,0.87,Amber,2
+Nass,Damdochax,5,2016,5,3114,871,3554,3.58,0.88,Amber,2
+SkeenaWild,Motase,5,2016,3,450,163,406,2.76,1.11,Green,3
+Nass,Meziadin,5,2016,5,148858,32713,124460,4.55,1.2,Green,3
+SkeenaWild,Slamgeesh,4,2016,4,336,87,213,3.86,1.58,Green,3
+SkeenaWild,Morice,5,2016,5,16555,2152,8318,7.69,1.99,Green,3
+SkeenaWild,Sustut,5,2016,5,1286,86,614,14.95,2.09,Green,3
+SkeenaWild,Babine Mid Wild,5,2016,5,30425,4820,13796,6.31,2.21,Green,3
+SkeenaWild,Asitka,5,2016,5,1611,366,671,4.4,2.4,Green,3
+SkeenaWild,Kitsumkalum,5,2016,5,29239,3241,11699,9.02,2.5,Green,3
+SkeenaWild,Alastair,5,2016,5,28883,3324,9248,8.69,3.12,Green,3
+SkeenaWild,Bear,5,2016,5,11926,656,3592,18.18,3.32,Green,3
+SkeenaWild,Mcdonell,5,2016,5,5904,496,1748,11.9,3.38,Green,3
+SkeenaWild,Lakelse,5,2016,5,26332,3960,7161,6.65,3.68,Green,3
+Nass,Upper Nass River Type,4,2016,4,832,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2016,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2016,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Johnston,5,2016,0,NA,1004,2380,NA,NA,None,0
+SkeenaWild,Ecstall,5,2016,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2016,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2016,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2016,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2016,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2016,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Motase,5,2017,4,151,163,406,0.93,0.37,Red,1
+SkeenaWild,Kitwanga,4,2017,4,2235,2957,4764,0.76,0.47,Red,1
+SkeenaWild,Babine Late Wild,5,2017,5,100718,92775,196144,1.09,0.51,Amber,2
+SkeenaWild,Swan/Stephens,5,2017,5,9019,11191,16747,0.81,0.54,Red,1
+Nass,Lower Nass Sea & River Type,4,2017,4,24428,18270,35288,1.34,0.69,Amber,2
+SkeenaWild,Babine Early Wild,5,2017,5,25531,17982,34350,1.42,0.74,Amber,2
+Nass,Kwinageese,4,2017,4,4586,1899,6066,2.41,0.76,Amber,2
+Nass,Damdochax,5,2017,5,3628,871,3554,4.17,1.02,Green,3
+Nass,Meziadin,5,2017,5,143126,32713,124460,4.38,1.15,Green,3
+SkeenaWild,Asitka,5,2017,5,1045,366,671,2.86,1.56,Green,3
+SkeenaWild,Babine Mid Wild,5,2017,5,23170,4820,13796,4.81,1.68,Green,3
+SkeenaWild,Slamgeesh,4,2017,4,473,87,213,5.44,2.22,Green,3
+SkeenaWild,Morice,5,2017,5,18619,2152,8318,8.65,2.24,Green,3
+SkeenaWild,Kitsumkalum,5,2017,5,26915,3241,11699,8.3,2.3,Green,3
+SkeenaWild,Sustut,5,2017,5,1499,86,614,17.43,2.44,Green,3
+SkeenaWild,Alastair,5,2017,5,23815,3324,9248,7.16,2.58,Green,3
+SkeenaWild,Lakelse,5,2017,5,22483,3960,7161,5.68,3.14,Green,3
+SkeenaWild,Bear,5,2017,5,13107,656,3592,19.98,3.65,Green,3
+SkeenaWild,Mcdonell,5,2017,5,6642,496,1748,13.39,3.8,Green,3
+Nass,Upper Nass River Type,4,2017,4,673,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2017,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2017,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Johnston,5,2017,0,NA,1004,2380,NA,NA,None,0
+SkeenaWild,Ecstall,5,2017,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2017,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2017,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2017,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2017,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2017,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,2018,4,1271,2957,4764,0.43,0.27,Red,1
+SkeenaWild,Motase,5,2018,5,173,163,406,1.06,0.43,Amber,2
+SkeenaWild,Swan/Stephens,5,2018,5,9368,11191,16747,0.84,0.56,Red,1
+Nass,Kwinageese,4,2018,4,4137,1899,6066,2.18,0.68,Amber,2
+SkeenaWild,Babine Late Wild,5,2018,5,138165,92775,196144,1.49,0.7,Amber,2
+SkeenaWild,Babine Early Wild,5,2018,5,27125,17982,34350,1.51,0.79,Amber,2
+Nass,Lower Nass Sea & River Type,4,2018,4,28965,18270,35288,1.59,0.82,Amber,2
+SkeenaWild,Johnston,5,2018,1,2344,1004,2380,2.33,0.98,Amber,2
+Nass,Meziadin,5,2018,5,127831,32713,124460,3.91,1.03,Green,3
+Nass,Damdochax,5,2018,5,4181,871,3554,4.8,1.18,Green,3
+SkeenaWild,Babine Mid Wild,5,2018,5,18693,4820,13796,3.88,1.35,Green,3
+SkeenaWild,Alastair,5,2018,5,15247,3324,9248,4.59,1.65,Green,3
+SkeenaWild,Asitka,5,2018,5,1206,366,671,3.3,1.8,Green,3
+SkeenaWild,Slamgeesh,4,2018,4,452,87,213,5.2,2.12,Green,3
+SkeenaWild,Kitsumkalum,5,2018,5,27492,3241,11699,8.48,2.35,Green,3
+SkeenaWild,Sustut,5,2018,5,1595,86,614,18.55,2.6,Green,3
+SkeenaWild,Lakelse,5,2018,5,18849,3960,7161,4.76,2.63,Green,3
+SkeenaWild,Morice,5,2018,5,22097,2152,8318,10.27,2.66,Green,3
+SkeenaWild,Mcdonell,5,2018,5,6680,496,1748,13.47,3.82,Green,3
+SkeenaWild,Bear,5,2018,5,15624,656,3592,23.82,4.35,Green,3
+Nass,Upper Nass River Type,4,2018,4,161,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2018,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2018,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,2018,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2018,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2018,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2018,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2018,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2018,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kitwanga,4,2019,4,515,2957,4764,0.17,0.11,Red,1
+SkeenaWild,Johnston,5,2019,2,810,1004,2380,0.81,0.34,Red,1
+SkeenaWild,Motase,5,2019,5,193,163,406,1.18,0.48,Amber,2
+SkeenaWild,Babine Late Wild,5,2019,5,126456,92775,196144,1.36,0.64,Amber,2
+SkeenaWild,Babine Early Wild,5,2019,5,21905,17982,34350,1.22,0.64,Amber,2
+Nass,Kwinageese,4,2019,4,3975,1899,6066,2.09,0.66,Amber,2
+SkeenaWild,Swan/Stephens,5,2019,5,11294,11191,16747,1.01,0.67,Amber,2
+Nass,Lower Nass Sea & River Type,4,2019,4,30503,18270,35288,1.67,0.86,Amber,2
+Nass,Meziadin,5,2019,5,115727,32713,124460,3.54,0.93,Amber,2
+Nass,Damdochax,5,2019,5,3464,871,3554,3.98,0.97,Amber,2
+SkeenaWild,Babine Mid Wild,5,2019,5,17470,4820,13796,3.62,1.27,Green,3
+SkeenaWild,Alastair,5,2019,5,12507,3324,9248,3.76,1.35,Green,3
+SkeenaWild,Asitka,5,2019,5,930,366,671,2.54,1.39,Green,3
+SkeenaWild,Slamgeesh,4,2019,3,319,87,213,3.67,1.5,Green,3
+SkeenaWild,Kitsumkalum,5,2019,4,27542,3241,11699,8.5,2.35,Green,3
+SkeenaWild,Lakelse,5,2019,5,17993,3960,7161,4.54,2.51,Green,3
+SkeenaWild,Morice,5,2019,5,23841,2152,8318,11.08,2.87,Green,3
+SkeenaWild,Sustut,5,2019,5,1911,86,614,22.22,3.11,Green,3
+SkeenaWild,Bear,5,2019,5,13237,656,3592,20.18,3.69,Green,3
+SkeenaWild,Mcdonell,5,2019,5,6664,496,1748,13.44,3.81,Green,3
+Nass,Upper Nass River Type,4,2019,4,200,NA,NA,NA,NA,None,0
+Nass,Bowser,5,2019,0,NA,NA,NA,NA,NA,None,0
+Nass,Oweegee,5,2019,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Ecstall,5,2019,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Upper Bulkley Lakes,5,2019,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Sicintine,5,2019,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluantantan,5,2019,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Kluayaz,5,2019,0,NA,NA,NA,NA,NA,None,0
+SkeenaWild,Skeena River Type,5,2019,0,NA,NA,NA,NA,NA,None,0

@@ -1,0 +1,299 @@
+StkSeq,Stock,Scenario,ModelType,ReportLabel,Sample,KFBrYr,ProdAdjPercentile
+1,Lower Nass Sea & River Type,LTAvg,AR1,AR1cu,2000,NA,NA
+1,Lower Nass Sea & River Type,Low,Kalman,KFcu,500,1985,NA
+1,Lower Nass Sea & River Type,Low,Kalman,KFcu,500,1984,NA
+1,Lower Nass Sea & River Type,Low,Kalman,KFcu,500,1983,NA
+1,Lower Nass Sea & River Type,Low,Kalman,KFcu,500,1982,NA
+1,Lower Nass Sea & River Type,High,Kalman,KFcu,500,1994,NA
+1,Lower Nass Sea & River Type,High,Kalman,KFcu,500,1993,NA
+1,Lower Nass Sea & River Type,High,Kalman,KFcu,500,1992,NA
+1,Lower Nass Sea & River Type,High,Kalman,KFcu,500,1991,NA
+1,Lower Nass Sea & River Type,Now,Kalman,KFcu,500,2015,NA
+1,Lower Nass Sea & River Type,Now,Kalman,KFcu,500,2014,NA
+1,Lower Nass Sea & River Type,Now,Kalman,KFcu,500,2013,NA
+1,Lower Nass Sea & River Type,Now,Kalman,KFcu,500,2012,NA
+2,Meziadin,LTAvg,AR1,AR1cu,2000,NA,NA
+2,Meziadin,Low,Kalman,KFcu,500,2013,NA
+2,Meziadin,Low,Kalman,KFcu,500,2012,NA
+2,Meziadin,Low,Kalman,KFcu,500,2011,NA
+2,Meziadin,Low,Kalman,KFcu,500,2010,NA
+2,Meziadin,High,Kalman,KFcu,500,1989,NA
+2,Meziadin,High,Kalman,KFcu,500,1988,NA
+2,Meziadin,High,Kalman,KFcu,500,1987,NA
+2,Meziadin,High,Kalman,KFcu,500,1986,NA
+2,Meziadin,Now,Kalman,KFcu,500,2013,NA
+2,Meziadin,Now,Kalman,KFcu,500,2012,NA
+2,Meziadin,Now,Kalman,KFcu,500,2011,NA
+2,Meziadin,Now,Kalman,KFcu,500,2010,NA
+5,Kwinageese,LTAvg,Basic,BRcu,2000,NA,NA
+5,Kwinageese,Low,Basic,BRcu,2000,NA,0.1
+5,Kwinageese,High,Basic,BRcu,2000,NA,0.9
+5,Kwinageese,Now,Basic,BRcu,2000,NA,0.1
+6,Damdochax,LTAvg,AR1,AR1cu,2000,NA,NA
+6,Damdochax,Low,Kalman,KFcu,400,1999,NA
+6,Damdochax,Low,Kalman,KFcu,400,1998,NA
+6,Damdochax,Low,Kalman,KFcu,400,1997,NA
+6,Damdochax,Low,Kalman,KFcu,400,1996,NA
+6,Damdochax,Low,Kalman,KFcu,400,1995,NA
+6,Damdochax,High,Kalman,KFcu,400,1986,NA
+6,Damdochax,High,Kalman,KFcu,400,1985,NA
+6,Damdochax,High,Kalman,KFcu,400,1984,NA
+6,Damdochax,High,Kalman,KFcu,400,1983,NA
+6,Damdochax,High,Kalman,KFcu,400,1982,NA
+6,Damdochax,Now,Kalman,KFcu,400,2010,NA
+6,Damdochax,Now,Kalman,KFcu,400,2009,NA
+6,Damdochax,Now,Kalman,KFcu,400,2008,NA
+6,Damdochax,Now,Kalman,KFcu,400,2007,NA
+6,Damdochax,Now,Kalman,KFcu,400,2006,NA
+8,Johnston,LTAvg,Basic,BRcu,2000,NA,NA
+8,Johnston,Low,Basic,BRcu,2000,NA,0.1
+8,Johnston,High,Basic,BRcu,2000,NA,0.9
+8,Johnston,Now,Basic,BRcu,2000,NA,0.9
+10,Alastair,LTAvg,AR1,AR1cu,2000,NA,NA
+10,Alastair,Low,Kalman,KFcu,400,2013,NA
+10,Alastair,Low,Kalman,KFcu,400,2012,NA
+10,Alastair,Low,Kalman,KFcu,400,2011,NA
+10,Alastair,Low,Kalman,KFcu,400,2010,NA
+10,Alastair,Low,Kalman,KFcu,400,2009,NA
+10,Alastair,High,Kalman,KFcu,400,2010,NA
+10,Alastair,High,Kalman,KFcu,400,2009,NA
+10,Alastair,High,Kalman,KFcu,400,2008,NA
+10,Alastair,High,Kalman,KFcu,400,2007,NA
+10,Alastair,High,Kalman,KFcu,400,2006,NA
+10,Alastair,Now,Kalman,KFcu,400,2013,NA
+10,Alastair,Now,Kalman,KFcu,400,2012,NA
+10,Alastair,Now,Kalman,KFcu,400,2011,NA
+10,Alastair,Now,Kalman,KFcu,400,2010,NA
+10,Alastair,Now,Kalman,KFcu,400,2009,NA
+11,Lakelse,LTAvg,AR1,AR1cu,2000,NA,NA
+11,Lakelse,Low,Kalman,KFcu,400,1970,NA
+11,Lakelse,Low,Kalman,KFcu,400,1969,NA
+11,Lakelse,Low,Kalman,KFcu,400,1968,NA
+11,Lakelse,Low,Kalman,KFcu,400,1967,NA
+11,Lakelse,Low,Kalman,KFcu,400,1966,NA
+11,Lakelse,High,Kalman,KFcu,400,1964,NA
+11,Lakelse,High,Kalman,KFcu,400,1963,NA
+11,Lakelse,High,Kalman,KFcu,400,1962,NA
+11,Lakelse,High,Kalman,KFcu,400,1961,NA
+11,Lakelse,High,Kalman,KFcu,400,1960,NA
+11,Lakelse,Now,Kalman,KFcu,400,2014,NA
+11,Lakelse,Now,Kalman,KFcu,400,2013,NA
+11,Lakelse,Now,Kalman,KFcu,400,2012,NA
+11,Lakelse,Now,Kalman,KFcu,400,2011,NA
+11,Lakelse,Now,Kalman,KFcu,400,2010,NA
+12,Kitsumkalum,LTAvg,AR1,AR1cu,2000,NA,NA
+12,Kitsumkalum,Low,Kalman,KFcu,400,1995,NA
+12,Kitsumkalum,Low,Kalman,KFcu,400,1996,NA
+12,Kitsumkalum,Low,Kalman,KFcu,400,1997,NA
+12,Kitsumkalum,Low,Kalman,KFcu,400,1998,NA
+12,Kitsumkalum,Low,Kalman,KFcu,400,1999,NA
+12,Kitsumkalum,High,Kalman,KFcu,400,2000,NA
+12,Kitsumkalum,High,Kalman,KFcu,400,2001,NA
+12,Kitsumkalum,High,Kalman,KFcu,400,2002,NA
+12,Kitsumkalum,High,Kalman,KFcu,400,2003,NA
+12,Kitsumkalum,High,Kalman,KFcu,400,2004,NA
+12,Kitsumkalum,Now,Kalman,KFcu,400,2013,NA
+12,Kitsumkalum,Now,Kalman,KFcu,400,2012,NA
+12,Kitsumkalum,Now,Kalman,KFcu,400,2011,NA
+12,Kitsumkalum,Now,Kalman,KFcu,400,2010,NA
+12,Kitsumkalum,Now,Kalman,KFcu,400,2009,NA
+13,Mcdonell,LTAvg,Basic,BRcu,2000,NA,NA
+13,Mcdonell,Low,Basic,BRcu,2000,NA,0.1
+13,Mcdonell,High,Basic,BRcu,2000,NA,0.9
+13,Mcdonell,Now,Basic,BRcu,2000,NA,NA
+14,Kitwanga,LTAvg,Basic,BR01cu,2000,NA,NA
+14,Kitwanga,Low,Basic,BR01cu,2000,NA,0.1
+14,Kitwanga,High,Basic,BR01cu,2000,NA,0.9
+14,Kitwanga,Now,Basic,BR01cu,2000,NA,0.1
+16,Morice,LTAvg,AR1,AR1cu,2000,NA,NA
+16,Morice,Now,Kalman,KFcu,400,2013,NA
+16,Morice,Now,Kalman,KFcu,400,2012,NA
+16,Morice,Now,Kalman,KFcu,400,2011,NA
+16,Morice,Now,Kalman,KFcu,400,2010,NA
+16,Morice,Now,Kalman,KFcu,400,2010,NA
+16,Morice,High,Kalman,KFcu,400,1993,NA
+16,Morice,High,Kalman,KFcu,400,1992,NA
+16,Morice,High,Kalman,KFcu,400,1991,NA
+16,Morice,High,Kalman,KFcu,400,1990,NA
+16,Morice,High,Kalman,KFcu,400,1989,NA
+16,Morice,Low,Kalman,KFcu,400,2008,NA
+16,Morice,Low,Kalman,KFcu,400,2007,NA
+16,Morice,Low,Kalman,KFcu,400,2006,NA
+16,Morice,Low,Kalman,KFcu,400,2005,NA
+16,Morice,Low,Kalman,KFcu,400,2004,NA
+17,Swan/Stephens,LTAvg,AR1,AR1cu,2000,NA,NA
+17,Swan/Stephens,Low,Kalman,KFcu,400,2010,NA
+17,Swan/Stephens,Low,Kalman,KFcu,400,2009,NA
+17,Swan/Stephens,Low,Kalman,KFcu,400,2008,NA
+17,Swan/Stephens,Low,Kalman,KFcu,400,2006,NA
+17,Swan/Stephens,Low,Kalman,KFcu,400,2007,NA
+17,Swan/Stephens,High,Kalman,KFcu,400,1985,NA
+17,Swan/Stephens,High,Kalman,KFcu,400,1984,NA
+17,Swan/Stephens,High,Kalman,KFcu,400,1983,NA
+17,Swan/Stephens,High,Kalman,KFcu,400,1982,NA
+17,Swan/Stephens,High,Kalman,KFcu,400,1981,NA
+17,Swan/Stephens,Now,Kalman,KFcu,400,2014,NA
+17,Swan/Stephens,Now,Kalman,KFcu,400,2013,NA
+17,Swan/Stephens,Now,Kalman,KFcu,400,2012,NA
+17,Swan/Stephens,Now,Kalman,KFcu,400,2011,NA
+17,Swan/Stephens,Now,Kalman,KFcu,400,2010,NA
+18,Babine Early Wild,LTAvg,AR1,AR1cu,2000,NA,NA
+18,Babine Early Wild,Low,Kalman,KFcu,400,2014,NA
+18,Babine Early Wild,Low,Kalman,KFcu,400,2013,NA
+18,Babine Early Wild,Low,Kalman,KFcu,400,2012,NA
+18,Babine Early Wild,Low,Kalman,KFcu,400,2011,NA
+18,Babine Early Wild,Low,Kalman,KFcu,400,2010,NA
+18,Babine Early Wild,High,Kalman,KFcu,400,1967,NA
+18,Babine Early Wild,High,Kalman,KFcu,400,1966,NA
+18,Babine Early Wild,High,Kalman,KFcu,400,1965,NA
+18,Babine Early Wild,High,Kalman,KFcu,400,1964,NA
+18,Babine Early Wild,High,Kalman,KFcu,400,1963,NA
+18,Babine Early Wild,Now,Kalman,KFcu,400,2014,NA
+18,Babine Early Wild,Now,Kalman,KFcu,400,2013,NA
+18,Babine Early Wild,Now,Kalman,KFcu,400,2012,NA
+18,Babine Early Wild,Now,Kalman,KFcu,400,2011,NA
+18,Babine Early Wild,Now,Kalman,KFcu,400,2010,NA
+19,Babine Late Wild,LTAvg,AR1,AR1cu,2000,NA,NA
+19,Babine Late Wild,Low,Kalman,KFcu,400,2014,NA
+19,Babine Late Wild,Low,Kalman,KFcu,400,2013,NA
+19,Babine Late Wild,Low,Kalman,KFcu,400,2012,NA
+19,Babine Late Wild,Low,Kalman,KFcu,400,2011,NA
+19,Babine Late Wild,Low,Kalman,KFcu,400,2010,NA
+19,Babine Late Wild,High,Kalman,KFcu,400,1965,NA
+19,Babine Late Wild,High,Kalman,KFcu,400,1964,NA
+19,Babine Late Wild,High,Kalman,KFcu,400,1963,NA
+19,Babine Late Wild,High,Kalman,KFcu,400,1962,NA
+19,Babine Late Wild,High,Kalman,KFcu,400,1961,NA
+19,Babine Late Wild,Now,Kalman,KFcu,400,2014,NA
+19,Babine Late Wild,Now,Kalman,KFcu,400,2013,NA
+19,Babine Late Wild,Now,Kalman,KFcu,400,2012,NA
+19,Babine Late Wild,Now,Kalman,KFcu,400,2011,NA
+19,Babine Late Wild,Now,Kalman,KFcu,400,2010,NA
+20,Babine Mid Wild,LTAvg,AR1,AR1cu,2000,NA,NA
+20,Babine Mid Wild,Low,Kalman,KFcu,400,2014,NA
+20,Babine Mid Wild,Low,Kalman,KFcu,400,2013,NA
+20,Babine Mid Wild,Low,Kalman,KFcu,400,2012,NA
+20,Babine Mid Wild,Low,Kalman,KFcu,400,2011,NA
+20,Babine Mid Wild,Low,Kalman,KFcu,400,2010,NA
+20,Babine Mid Wild,High,Kalman,KFcu,400,1965,NA
+20,Babine Mid Wild,High,Kalman,KFcu,400,1964,NA
+20,Babine Mid Wild,High,Kalman,KFcu,400,1963,NA
+20,Babine Mid Wild,High,Kalman,KFcu,400,1962,NA
+20,Babine Mid Wild,High,Kalman,KFcu,400,1961,NA
+20,Babine Mid Wild,Now,Kalman,KFcu,400,2014,NA
+20,Babine Mid Wild,Now,Kalman,KFcu,400,2013,NA
+20,Babine Mid Wild,Now,Kalman,KFcu,400,2012,NA
+20,Babine Mid Wild,Now,Kalman,KFcu,400,2011,NA
+20,Babine Mid Wild,Now,Kalman,KFcu,400,2010,NA
+21,Pinkut,LTAvg,AR1,AR1cu,2000,NA,NA
+21,Pinkut,Low,Kalman,KFcu,400,2014,NA
+21,Pinkut,Low,Kalman,KFcu,400,2013,NA
+21,Pinkut,Low,Kalman,KFcu,400,2012,NA
+21,Pinkut,Low,Kalman,KFcu,400,2011,NA
+21,Pinkut,Low,Kalman,KFcu,400,2010,NA
+21,Pinkut,High,Kalman,KFcu,400,1982,NA
+21,Pinkut,High,Kalman,KFcu,400,1981,NA
+21,Pinkut,High,Kalman,KFcu,400,1980,NA
+21,Pinkut,High,Kalman,KFcu,400,1979,NA
+21,Pinkut,High,Kalman,KFcu,400,1978,NA
+21,Pinkut,Now,Kalman,KFcu,400,2014,NA
+21,Pinkut,Now,Kalman,KFcu,400,2013,NA
+21,Pinkut,Now,Kalman,KFcu,400,2012,NA
+21,Pinkut,Now,Kalman,KFcu,400,2011,NA
+21,Pinkut,Now,Kalman,KFcu,400,2010,NA
+22,Fulton,LTAvg,AR1,AR1cu,2000,NA,NA
+22,Fulton,Low,Kalman,KFcu,400,2014,NA
+22,Fulton,Low,Kalman,KFcu,400,2013,NA
+22,Fulton,Low,Kalman,KFcu,400,2012,NA
+22,Fulton,Low,Kalman,KFcu,400,2011,NA
+22,Fulton,Low,Kalman,KFcu,400,2010,NA
+22,Fulton,High,Kalman,KFcu,400,1987,NA
+22,Fulton,High,Kalman,KFcu,400,1986,NA
+22,Fulton,High,Kalman,KFcu,400,1985,NA
+22,Fulton,High,Kalman,KFcu,400,1984,NA
+22,Fulton,High,Kalman,KFcu,400,1983,NA
+22,Fulton,Now,Kalman,KFcu,400,2014,NA
+22,Fulton,Now,Kalman,KFcu,400,2013,NA
+22,Fulton,Now,Kalman,KFcu,400,2012,NA
+22,Fulton,Now,Kalman,KFcu,400,2011,NA
+22,Fulton,Now,Kalman,KFcu,400,2010,NA
+24,Slamgeesh,LTAvg,Basic,BRcu,2000,NA,NA
+24,Slamgeesh,Low,Basic,BRcu,2000,NA,0.1
+24,Slamgeesh,High,Basic,BRcu,2000,NA,0.9
+24,Slamgeesh,Now,Basic,BRcu,2000,NA,0.9
+25,Motase ,LTAvg,Basic,BRcu,2000,NA,NA
+25,Motase ,Low,Basic,BRcu,2000,NA,0.1
+25,Motase ,High,Basic,BRcu,2000,NA,0.9
+25,Motase ,Now,Basic,BRcu,2000,NA,NA
+26,Bear,LTAvg,AR1,AR1cu,2000,NA,NA
+26,Bear,Low,Kalman,KFcu,400,2003,NA
+26,Bear,Low,Kalman,KFcu,400,2002,NA
+26,Bear,Low,Kalman,KFcu,400,2001,NA
+26,Bear,Low,Kalman,KFcu,400,2000,NA
+26,Bear,Low,Kalman,KFcu,400,1999,NA
+26,Bear,High,Kalman,KFcu,400,2014,NA
+26,Bear,High,Kalman,KFcu,400,2013,NA
+26,Bear,High,Kalman,KFcu,400,2012,NA
+26,Bear,High,Kalman,KFcu,400,2011,NA
+26,Bear,High,Kalman,KFcu,400,2010,NA
+26,Bear,Now,Kalman,KFcu,400,2014,NA
+26,Bear,Now,Kalman,KFcu,400,2013,NA
+26,Bear,Now,Kalman,KFcu,400,2012,NA
+26,Bear,Now,Kalman,KFcu,400,2011,NA
+26,Bear,Now,Kalman,KFcu,400,2010,NA
+27,Asitka,LTAvg,Basic,BRcu,2000,NA,NA
+27,Asitka,Low,Basic,BRcu,2000,NA,0.1
+27,Asitka,High,Basic,BRcu,2000,NA,0.9
+27,Asitka,Now,Basic,BRcu,2000,NA,NA
+28,Sustut,LTAvg,Basic,BRcu,2000,NA,NA
+28,Sustut,Low,Basic,BRcu,2000,NA,0.1
+28,Sustut,High,Basic,BRcu,2000,NA,0.9
+28,Sustut,Now,Basic,BRcu,2000,NA,NA
+NA,Nass,LTAvg,AR1,AR1cu,2000,NA,NA
+NA,Nass,Low,Kalman,KFcu,400,2013,NA
+NA,Nass,Low,Kalman,KFcu,400,2012,NA
+NA,Nass,Low,Kalman,KFcu,400,2011,NA
+NA,Nass,Low,Kalman,KFcu,400,2010,NA
+NA,Nass,Low,Kalman,KFcu,400,2009,NA
+NA,Nass,High,Kalman,KFcu,400,1990,NA
+NA,Nass,High,Kalman,KFcu,400,1989,NA
+NA,Nass,High,Kalman,KFcu,400,1988,NA
+NA,Nass,High,Kalman,KFcu,400,1987,NA
+NA,Nass,High,Kalman,KFcu,400,1986,NA
+NA,Nass,Now,Kalman,KFcu,400,2013,NA
+NA,Nass,Now,Kalman,KFcu,400,2012,NA
+NA,Nass,Now,Kalman,KFcu,400,2011,NA
+NA,Nass,Now,Kalman,KFcu,400,2010,NA
+NA,Nass,Now,Kalman,KFcu,400,2009,NA
+NA,Skeena,LTAvg,AR1,AR1cu,2000,NA,NA
+NA,Skeena,Low,Kalman,KFcu,400,2014,NA
+NA,Skeena,Low,Kalman,KFcu,400,2013,NA
+NA,Skeena,Low,Kalman,KFcu,400,2012,NA
+NA,Skeena,Low,Kalman,KFcu,400,2011,NA
+NA,Skeena,Low,Kalman,KFcu,400,2010,NA
+NA,Skeena,High,Kalman,KFcu,400,1983,NA
+NA,Skeena,High,Kalman,KFcu,400,1982,NA
+NA,Skeena,High,Kalman,KFcu,400,1981,NA
+NA,Skeena,High,Kalman,KFcu,400,1980,NA
+NA,Skeena,High,Kalman,KFcu,400,1979,NA
+NA,Skeena,Now,Kalman,KFcu,400,2014,NA
+NA,Skeena,Now,Kalman,KFcu,400,2013,NA
+NA,Skeena,Now,Kalman,KFcu,400,2012,NA
+NA,Skeena,Now,Kalman,KFcu,400,2011,NA
+NA,Skeena,Now,Kalman,KFcu,400,2010,NA
+NA,SkeenaWild,LTAvg,AR1,AR1cu,2000,NA,NA
+NA,SkeenaWild,Low,Kalman,KFcu,400,2014,NA
+NA,SkeenaWild,Low,Kalman,KFcu,400,2013,NA
+NA,SkeenaWild,Low,Kalman,KFcu,400,2012,NA
+NA,SkeenaWild,Low,Kalman,KFcu,400,2011,NA
+NA,SkeenaWild,Low,Kalman,KFcu,400,2010,NA
+NA,SkeenaWild,High,Kalman,KFcu,400,1985,NA
+NA,SkeenaWild,High,Kalman,KFcu,400,1984,NA
+NA,SkeenaWild,High,Kalman,KFcu,400,1983,NA
+NA,SkeenaWild,High,Kalman,KFcu,400,1982,NA
+NA,SkeenaWild,High,Kalman,KFcu,400,1981,NA
+NA,SkeenaWild,Now,Kalman,KFcu,400,2014,NA
+NA,SkeenaWild,Now,Kalman,KFcu,400,2013,NA
+NA,SkeenaWild,Now,Kalman,KFcu,400,2012,NA
+NA,SkeenaWild,Now,Kalman,KFcu,400,2011,NA
+NA,SkeenaWild,Now,Kalman,KFcu,400,2010,NA

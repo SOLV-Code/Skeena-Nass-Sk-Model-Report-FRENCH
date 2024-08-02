@@ -1,0 +1,9 @@
+BM,Method,n,Time_s
+Smsy,BruteForce,10000,41.129999999999995
+Smsy,Scheuerell2016,10000,0
+Smsy,Hilborn1985,10000,0
+Smsy,Petermanetal2000,10000,0
+Sgen,BruteForce,10000,2.9700000000000273
+Sgen,HoltOgden2013,10000,1.5199999999999818
+Sgen,samSim,10000,0.7599999999999909
+Sgen,Connorsetal2022,10000,0.5

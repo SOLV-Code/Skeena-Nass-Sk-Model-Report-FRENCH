@@ -1,0 +1,133 @@
+\clearpage
+## Test of Alternative Benchmark Calculation Approaches {#BMCalcTest}
+
+
+### Purpose
+
+
+
+This appendix summarizes results for the following tests: (1) alternative benchmark calculation approaches for a single set of $ln.a$ and $b$ parameters (e.g. Hilborn 1985 vs. Scheuerell 2016 Smsy calculations), (2) alternative benchmark calculation approaches across a grid of *ln.a* and *b* parameter values, (3) speed test for the alternative implementations.
+
+Appendix \@ref(BiasCorrtest) summarizes tests related to the bias correction on $ln.a$.
+
+
+### Alternative Smsy Calculations
+
+We implemented four alternative Smsy calculation approaches (Table \@ref(tab:SmsyCalcs)) as part of the *RapidRicker* package [@RapidRicker], including the approximations from @Hilborn1985Proxies and @PetermanPyperGrout2000ParEst, the explicit solution from @Scheuerell2016, and a brute force calculation (i.e., for each parameter set $[ln.a,b]$ calculate recruits for 3,000 increments of spawner abundance, then select the increment with the largest difference between recruits and spawners)  . The R code for all four versions is included in Appendix \@ref(BMFunsSmsy).
+
+
+(ref:SmsyCalcs) *Alternative Smsy Calculation Approaches*.
+
+```{r SmsyCalcs, echo = FALSE, results = "asis"}
+
+
+table.in <- smsy.eq
+
+
+table.in$Calculation = linebreak(table.in$Calculation)
+   
+table.in %>% 
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+#   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10, align = c("l","l"),
+                  caption = "(ref:SmsyCalcs)") #%>%
+     #kableExtra::column_spec(3, width = "10em") 
+
+
+```
+
+### Alternative Sgen Calculations
+
+
+We implemented four alternative Sgen calculation approaches as part of the *RapidRicker* package [@RapidRicker], including three versions of  optimization code [@HoltOgden2013; @samSim; @Connorsetal2022 ] and a brute force calculation (i.e., for each parameter set $[ln.a,b]$ calculate recruits for 3,000 increments of spawner abundance, then select the increment with the smallest spawner abundance for which $Rec \geq Smsy$). The R code for all four versions is included in Appendix \@ref(BMFunsSgen).
+
+Note that the @samSim version has been incorporated in the the [samSim package](https://github.com/Pacific-salmon-assess/samSim) and we label that option *samSim* in the *RapidRicker* functions. 
+
+
+
+\clearpage
+### Tests
+
+
+* *Test 1: Sample Parameter Set*: Applied the alternative calculation approaches to a sample parameter set with $ln.a = 1.3$ and $b = 5e-4$. Sgen calculations are relative to Smsy values, so this gives 16 total variations: 4 alternative Smsy calculations, and then 4 alternative Sgen calculations for each Smsy value.
+* *Test 2: Grid of ln.a and b parameters*: Applied the alternative calculation approaches to a set with all possible combinations of 100 $ln.a$ values from $ln(1.1)$ to $ln(10)$ and 100 $b$ values from 100 to 1 Mill capacity ($b = 1/Smax$, $b$ values from $1/100$ to $1/10^6$), resulting in 16 estimates for each of 10,000 alternative sets of $[ln.a, b]$.  
+* *Test 3: Computing Speed*: Applied the 4 Smsy calculation methods and 4 Sgen calculation methods to 10,000 parameter sets. 
+
+
+### Results
+
+
+All the alternative calculation methods (4 for Smsy, 4 for Sgen) generated benchmarks values that are essentially identical for a sample parameter set (Table \@ref(tab:BMCalcTest1)).
+
+For 10,000 alternative combinations of ln.a and b, Smsy values varied by a maximum of `r paste0(test2.vals[1],"%")` across 4 alternative calculation methods. Sgen values varied by a maximum of `r paste0(test2.vals[2],"%")` across 16 alternative calculation methods (4 alternative Smsy calculations by 4 alternative Sgen calculations).
+
+Computing speed differed between calculation implementations, with brute force calculations much slower than the approximate Smsy calculations (Hilborn 1985, Peterman et al. 2000), the exact solution for Smsy (Scheuerell 2016), and the three alternative Sgen solver implementations (Table \@ref(tab:BMCalcTest3)). 
+
+
+### Conclusions
+
+Based on these results, we decided to use in this report:
+
+* the @Scheuerell2016 method for Smsy, because it is the only exact solution
+* the @Connorsetal2022 version of the Sgen optimizer, because it is the only non-brute-force method that did not crash for any of the $[ln.a, b, sd]$ combinations in the bias correction tests (Appendix \@ref(BiasCorrtest)).
+
+
+
+\clearpage
+
+
+(ref:BMCalcTest1) Benchmark Calculation Test 1. Estimates of biological benchmarks for $ln.a = 1.3$ and $b = 5e-4$ using 4 alternative Smsy calculations and 4 alternative Sgen calculations. Note that the @HoltOgden2013 version of the Sgen optimizer has a built-in Smsy calculation using the @Hilborn1985Proxies approximation, and therefore generates the same result for the four alternative Smsy inputs.
+
+```{r BMCalcTest1, echo = FALSE, results = "asis"}
+
+
+table.in <- test1.table #%>% select(-ln.a,-b)
+
+   
+table.in %>% 
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+#   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10, align = c("l","r","r","r","l","r","r"),
+                  caption = "(ref:BMCalcTest1)") %>%
+     kableExtra::row_spec(c(4,8,12), hline_after = TRUE) #%>%
+     #kableExtra::column_spec(3, width = "10em") %>%
+     #  kableExtra::row_spec(c(1:5,7:14,16:22), extra_latex_after = "\\cmidrule(l){2-8}") 
+
+```
+
+
+
+(ref:BMCalcTest3) Benchmark Calculation Test 3. Computing time for alternative benchmark calculation approaches over 10,000 sample values.
+
+```{r BMCalcTest3, echo = FALSE, results = "asis"}
+
+
+table.in <- test3.table %>%
+	mutate(Time_s = round(Time_s,2)) %>% 
+	dplyr::rename(Benchmark = BM, "Time(s)" = Time_s) %>%
+	select(-n)
+
+   
+table.in %>% 
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+#   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10, align = c("l","l","r"),
+                  caption = "(ref:BMCalcTest3)") #%>%
+     #kableExtra::row_spec(c(6,15,23), hline_after = TRUE) %>%
+     #kableExtra::column_spec(3, width = "10em") %>%
+     #  kableExtra::row_spec(c(1:5,7:14,16:22), extra_latex_after = "\\cmidrule(l){2-8}") 
+
+```
+
+
+
+
+
+
+

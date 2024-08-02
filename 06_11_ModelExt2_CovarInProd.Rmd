@@ -1,0 +1,46 @@
+\clearpage
+## MODELLING COVARIATION IN PRODUCTIVITY {#CovarProdApp}
+
+
+
+### Concepts
+
+The current simulation model simulates 20 stocks in two aggregates: Nass aggregate (4 stocks), SkeenaWild aggregate (16 modelled stocks). Simulated recruits are based on spawner numbers for the brood year, the fitted relationship between spawners and productivity (i.e., recruits/spawner), with randomly sampled noise to reflect natural variability and uncertainty. The initial model results presented in the CSAS science review process assumed a stock-specific amount of variability around the underlying spawner-recruit relationship, but the randomly sampled variability for an individual stock was independent of the variability in other stocks (e.g., in a simulated year, Babine Late Wild could have worse-than-expected recruitment and Babine Early wild could have better-than-expected recruitment). However, the spawner recruit data suggest that covariation in recruitment productivity occurs for some nearby stocks (e.g., positive covariation would mean that in a year with a good productivity for one stock, other stocks would also tend to have good productivity).  Covariation in salmon productivity has been documented at different scales, from stocks in an aggregate to coastwide patterns by species [e.g., @CkCov2017].
+
+Depending on the type of harvest strategy, the level of covariation can strongly influence the aggregate and individual trajectories of run size, harvest, and spawner abundance. Participants in the science review therefore identified covariation in productivity as a high-priority extension of the simulation model. 
+
+
+
+### Estimating Historical Covariation in Productivity 
+
+To estimate historical covariation in productivity, we estimated the log residuals from the basic Ricker model fit (i.e., the one without a time-varying productivity parameter), and then estimated the correlation between each pair of productivity time series for modelled stocks. We  then averaged the correlations for groups of stocks (Figure \@ref(fig:AltCorrMat)). Stocks were grouped based on life history and freshwater adaptive zone (LHAZ).  There are two LHAZ with modelled stocks on the Nass (Lower Nass Sea & River Type, Upper Nass Lake Type) and three LHAZ with modelled stocks on the Skeena (Lower, Middle, and Upper Skeena Lake Type). 
+
+Notable observations included:
+
+* *longer time period*:  Positive correlations were observed within and between stocks in the Skeena LHAZ, but the correlation is weaker between Middle Skeena stocks and others. Specifically, correlations are larger than 0.4 within all three Skeena LHAZ, and between lower and upper Skeena stocks. Correlations between middle Skeena stocks and the other Skeena stocks are lower, around 0.175. We observed negative correlations between Lower Nass SRT and all other Skeena and Nass stocks (strongest negative for correlation with Upper Skeena).
+* *shorter time period*: We observed stronger correlations than for the longer time period within 2 of the 3 Skeena LHAZ stocks, similar correlations between lower and upper Skeena stocks, and no correlation between middle Skeena LHAZ and other Skeena stocks. There is a stronger negative correlation between Nass Lake Type and Skeena Lake Type stocks.
+* Very weak correlation was observed within Upper Nass Lake Type for either time period, so set to 0 in both time periods.
+* No correlation was calculated within Lower Nass SRT, because it consists of only a single stock.
+
+\clearpage
+(ref:AltCorrMat)  Observed correlation in productivity within and between groups of Skeena and Nass Sockeye stocks. Estimates are based on residuals, ln(recruits/spawner), from Ricker fits for the long-term average productivity scenario (i.e., no time-varying productivity parameter). Missing brood years for some stocks were either left as NA or infilled based on mean residual for other stocks with the same life history and in the same adaptive zone (LHAZ). Note that diagonal cells with bold font are the correlations among stocks within the LHAZ, not the correlation of the LHAZ with itself, which would be 1. Estimates only cover 20 modelled wild stocks. Numbers in brackets show the number of stocks in each LHAZ.
+
+```{r AltCorrMat,  out.width= 400, fig.cap="(ref:AltCorrMat)"}
+include_graphics("data/CovarProd/AltCorrMat_Plot.PNG")
+```
+
+
+
+\clearpage
+### Model Implementation of Covariation in Productivity
+
+
+We incorporated covariation in productivity into the simulaton model by generating correlated time series of standardized residuals, which are then scaled up based on each stock’s observed magnitude of variability. 
+
+We created four alternative covariation scenarios for sensitivity testing:
+
+-	*No covariation*: productivity for each stock is independent of the other stocks.
+-	*Simplified correlations – 1984 to 2013 Brood Years*: Using the values from Panel A of Figure 1 for each stock in a group.
+-	*Simplified correlations – 1999 to 2013 Brood Years*: Using the values from Panel B of Figure 1 for each stock in a group.
+-	*Detailed pairwise correlations – 1984 to 2013 Brood Years*: Using the observed correlations between individual stocks (i.e., the numbers that were averaged to generate Figure \@ref(fig:AltCorrMat)). For example, in this version the productivity correlation between Babine Late Wild and Johnston is a bit less than the correlation between Babine Mid Wild and Johnston. In the simplified versions above, these two correlations are the same.
+

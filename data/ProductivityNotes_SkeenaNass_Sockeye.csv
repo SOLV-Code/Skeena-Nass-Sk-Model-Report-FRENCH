@@ -1,0 +1,36 @@
+Type,Basin,Stock,Prod_Recent,Prod_LT,DataNotes
+Agg,Nass,,,,
+Agg,Skeena,,Decline,Flat from 1960-90. Decline since 1990.,
+Agg,SkeenaWild,,Steep Decline,Increase 1970-89. Steep decline since 1990,
+Stock,,,,,
+Stock,Nass,Lower Nass Sea & River Type,,,
+Stock,Nass,Meziadin,,,
+Stock,Nass,Bowser,,,
+Stock,Nass,Oweegee,,,
+Stock,Nass,Kwinageese,,,
+Stock,Nass,Damdochax,,,
+Stock,Nass,Upper Nass River Type,,,
+Stock,Skeena,Johnston,,,9 data points
+Stock,Skeena,Ecstall,,,
+Stock,Skeena,Alastair,No trend,Variable,No data gaps
+Stock,Skeena,Lakelse,Decline,Variable,Few data gaps
+Stock,Skeena,Kitsumkalum,Decline,Variable,Few data gaps
+Stock,Skeena,Mcdonell,No trend,Variable,SR Curve decline 3-8K CLARIFY
+Stock,Skeena,Kitwanga,Decline,Variable,Only use data since 2000
+Stock,Skeena,Upper Bulkley Lakes,,,
+Stock,Skeena,Morice,Increase,Variable,Few data gaps
+Stock,Skeena,Swan/Stephens,No trend,Variable,Few data gaps
+Stock,Skeena,Babine Early Wild,Steep Decline,Flat from 1960-91. Steep decline since 1992.,
+Stock,Skeena,Babine Late Wild,Steep Decline,Flat from 1960-88. Steep decline since 1989,
+Stock,Skeena,Babine Mid Wild,Decline,Flat from 1960-92. Decline since 1993.,
+Stock,Skeena,Pinkut,Decline,Increase 1960-90. Steep decline since 1990,
+Stock,Skeena,Fulton,Decline,Increase 1960-90. Steep decline since 1990,
+Stock,Skeena,Sicintine,,,
+Stock,Skeena,Slamgeesh,No trend,Variable,Good range in spawner numbers
+Stock,Skeena,Motase ,No trend,Variable,14 data points
+Stock,Skeena,Bear,No trend,Variable,Few data gaps 1982-2015
+Stock,Skeena,Asitka,,,10 data points
+Stock,Skeena,Sustut,No trend,Variable,Good range in spawner numbers
+Stock,Skeena,Kluantantan,,,
+Stock,Skeena,Kluayaz,,,
+Stock,Skeena,Skeena River Type,,,

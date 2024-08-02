@@ -1,0 +1,12 @@
+Seq,Label,Criterion,Scope,Vars,Metric,Calc,Trigger,Reference,Lower,Upper
+1,Contr,Low contrast in Spn Data,Series,S,Contrast in Spn,max(spn)/min(spn),<4,Volk et al. (2009),4,100
+2,NumObs,Insufficient SR data,Series,"S,R",Num brood years with data,num(BY),<10,Karl,10,NA
+3,LgSpn,Missing large Spn,Series,"S,R",Large obs Spn not in SR data,Max(spn)/(Max(spn in SR),>2,TBD,NA,2
+4,LgRec,Missing large Rec,Series,"S,R",Large obs Rec not in SR data,Max(rec)/(Max(rec in SR),>2,TBD,NA,2
+5,SmSpn,Missing small Spn,Series,"S,R",Small obs Spn not in SR data,Min(spn)/(Min(spn in SR),<0.5,TBD,0.5,NA
+6,SmRec,Missing small Rec,Series,"S,R",Small obs Rec not in SR data,Min(rec)/(Min(rec in SR),<0.5,TBD,0.5,NA
+7,LgExp,Large Spn Exp,Series,SpnExp,total expansion,Median(ExpSpn),>3,TBD,NA,3
+8,OddSpn,Unusual Spn obs,Obs,S,Obs vs. Med,Spn / Med(Spn),<0.1 or >10,TBD,0.1,10
+9,OddRec,Unusual Rec obs,Obs,R,Obs vs. Med,Rec / Med(Rec),<0.1 or >10,TBD,0.1,10
+10,OddProd,Unusual productivity,Obs,"S,R",Recruits/Spawner,RpS ,<0.3 or >15,TBD,0.3,15
+11,OddExp,Unusual Spn Exp obs,Obs,SpnExp,Obs vs Med,ExpSpn/Median(ExpSpn),<0.2 or >5,TBD,0.2,5

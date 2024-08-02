@@ -1,0 +1,351 @@
+Aggregate,Scenario,BM,Label,Mean,Median,p10,p25,p75,p90,Stock
+Nass,LTAvg,Smsy,Agg Fit,334705,274342,200742,229576,373467,591450,NA
+Nass,LTAvg,Smsy,Sum,217507,211709,NA,NA,NA,NA,NA
+Nass,LTAvg,Smsy,Sum-Agg,-117198,-62633,NA,NA,NA,NA,NA
+Nass,LTAvg,Smsy,Meziadin,157702,155575,127897,139585,174644,192488,Meziadin
+Nass,LTAvg,Smsy,LNassSRT,46430,44109,18188,26567,61899,80606,Lower Nass Sea & River Type
+Nass,LTAvg,Smsy,Kwinag,8865,7583,5662,6440,9511,13347,Kwinageese
+Nass,LTAvg,Smsy,Damdoch,4510,4442,3505,3881,5098,5634,Damdochax
+Nass,LTAvg,Smsy,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,LTAvg,Smsy,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,LTAvg,Smsy,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,Now,Smsy,Agg Fit,192431,187039,109487,151938,225845,268363,NA
+Nass,Now,Smsy,Sum,144988,138552,NA,NA,NA,NA,NA
+Nass,Now,Smsy,Sum-Agg,-47443,-48487,NA,NA,NA,NA,NA
+Nass,Now,Smsy,Meziadin,92381,94927,49814,65701,117347,132628,Meziadin
+Nass,Now,Smsy,LNassSRT,38580,31642,12711,18919,53727,74715,Lower Nass Sea & River Type
+Nass,Now,Smsy,Kwinag,10773,8789,5978,7014,13056,17719,Kwinageese
+Nass,Now,Smsy,Damdoch,3254,3194,2549,2833,3603,4027,Damdochax
+Nass,Now,Smsy,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,Now,Smsy,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,Now,Smsy,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,LTAvg,Smsy.c,Agg Fit,365896,296745,211440,245522,413608,664390,NA
+Nass,LTAvg,Smsy.c,Sum,257416,251143,NA,NA,NA,NA,NA
+Nass,LTAvg,Smsy.c,Sum-Agg,-108480,-45602,NA,NA,NA,NA,NA
+Nass,LTAvg,Smsy.c,Meziadin,172647,169666,137442,150984,193804,212503,Meziadin
+Nass,LTAvg,Smsy.c,LNassSRT,69149,67709,25567,39834,95664,117387,Lower Nass Sea & River Type
+Nass,LTAvg,Smsy.c,Kwinag,10706,8957,6522,7409,11499,16721,Kwinageese
+Nass,LTAvg,Smsy.c,Damdoch,4914,4811,3795,4199,5580,6212,Damdochax
+Nass,LTAvg,Smsy.c,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,LTAvg,Smsy.c,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,LTAvg,Smsy.c,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,Now,Smsy.c,Agg Fit,195232,189696,112735,153833,228174,270369,NA
+Nass,Now,Smsy.c,Sum,159034,150796,NA,NA,NA,NA,NA
+Nass,Now,Smsy.c,Sum-Agg,-36198,-38900,NA,NA,NA,NA,NA
+Nass,Now,Smsy.c,Meziadin,95217,98257,51880,68691,119689,134882,Meziadin
+Nass,Now,Smsy.c,LNassSRT,46614,38245,16005,22872,64904,89296,Lower Nass Sea & River Type
+Nass,Now,Smsy.c,Kwinag,13832,10990,6998,8336,17436,25123,Kwinageese
+Nass,Now,Smsy.c,Damdoch,3371,3304,2631,2926,3729,4188,Damdochax
+Nass,Now,Smsy.c,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,Now,Smsy.c,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,Now,Smsy.c,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,LTAvg,Smax,Agg Fit,581190,444139,287707,350828,657601,1137954,NA
+Nass,LTAvg,Smax,Sum,369811,361787,NA,NA,NA,NA,NA
+Nass,LTAvg,Smax,Sum-Agg,-211379,-82352,NA,NA,NA,NA,NA
+Nass,LTAvg,Smax,Meziadin,245083,242244,182140,206486,284761,316937,Meziadin
+Nass,LTAvg,Smax,LNassSRT,102626,100284,36516,58510,142793,177486,Lower Nass Sea & River Type
+Nass,LTAvg,Smax,Kwinag,15300,12584,8639,10124,16913,24784,Kwinageese
+Nass,LTAvg,Smax,Damdoch,6802,6675,5084,5716,7848,8820,Damdochax
+Nass,LTAvg,Smax,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,LTAvg,Smax,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,LTAvg,Smax,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,Now,Smax,Agg Fit,384379,351185,261972,298885,421557,556157,NA
+Nass,Now,Smax,Sum,339445,322093,NA,NA,NA,NA,NA
+Nass,Now,Smax,Sum-Agg,-44934,-29092,NA,NA,NA,NA,NA
+Nass,Now,Smax,Meziadin,219160,214335,170732,186540,245329,278604,Meziadin
+Nass,Now,Smax,LNassSRT,93917,85581,27650,42555,138815,176103,Lower Nass Sea & River Type
+Nass,Now,Smax,Kwinag,21095,17019,9459,11955,27381,39386,Kwinageese
+Nass,Now,Smax,Damdoch,5273,5158,4302,4642,5732,6468,Damdochax
+Nass,Now,Smax,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,Now,Smax,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,Now,Smax,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,LTAvg,Sgen,Agg Fit,NA,NA,NA,NA,NA,NA,NA
+Nass,LTAvg,Sgen,Sum,55805,53753,NA,NA,NA,NA,NA
+Nass,LTAvg,Sgen,Sum-Agg,NA,NA,NA,NA,NA,NA,NA
+Nass,LTAvg,Sgen,Meziadin,33695,32713,20216,25178,41393,49691,Meziadin
+Nass,LTAvg,Sgen,LNassSRT,18809,18270,6368,10519,26637,32850,Lower Nass Sea & River Type
+Nass,LTAvg,Sgen,Kwinag,2410,1899,1058,1371,2754,4242,Kwinageese
+Nass,LTAvg,Sgen,Damdoch,891,871,563,683,1080,1250,Damdochax
+Nass,LTAvg,Sgen,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,LTAvg,Sgen,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,LTAvg,Sgen,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,Now,Sgen,Agg Fit,NA,NA,NA,NA,NA,NA,NA
+Nass,Now,Sgen,Sum,56618,52919,NA,NA,NA,NA,NA
+Nass,Now,Sgen,Sum-Agg,NA,NA,NA,NA,NA,NA,NA
+Nass,Now,Sgen,Meziadin,37344,36698,26098,31202,43195,49491,Meziadin
+Nass,Now,Sgen,LNassSRT,14804,12522,2867,6056,22645,30180,Lower Nass Sea & River Type
+Nass,Now,Sgen,Kwinag,3702,2960,1246,1787,4996,7368,Kwinageese
+Nass,Now,Sgen,Damdoch,768,739,534,627,885,1031,Damdochax
+Nass,Now,Sgen,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,Now,Sgen,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,Now,Sgen,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,LTAvg,Sgen.c,Agg Fit,NA,NA,NA,NA,NA,NA,NA
+Nass,LTAvg,Sgen.c,Sum,43666,41371,NA,NA,NA,NA,NA
+Nass,LTAvg,Sgen.c,Sum-Agg,NA,NA,NA,NA,NA,NA,NA
+Nass,LTAvg,Sgen.c,Meziadin,28220,27377,16498,20590,34912,41846,Meziadin
+Nass,LTAvg,Sgen.c,LNassSRT,12922,11867,3853,6554,18064,23735,Lower Nass Sea & River Type
+Nass,LTAvg,Sgen.c,Kwinag,1786,1407,741,997,2068,3110,Kwinageese
+Nass,LTAvg,Sgen.c,Damdoch,738,720,449,558,894,1059,Damdochax
+Nass,LTAvg,Sgen.c,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,LTAvg,Sgen.c,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,LTAvg,Sgen.c,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,Now,Sgen.c,Agg Fit,NA,NA,NA,NA,NA,NA,NA
+Nass,Now,Sgen.c,Sum,55028,51522,NA,NA,NA,NA,NA
+Nass,Now,Sgen.c,Sum-Agg,NA,NA,NA,NA,NA,NA,NA
+Nass,Now,Sgen.c,Meziadin,37261,36534,25796,31047,43243,49323,Meziadin
+Nass,Now,Sgen.c,LNassSRT,14231,12070,2378,5315,21714,30048,Lower Nass Sea & River Type
+Nass,Now,Sgen.c,Kwinag,2807,2211,901,1335,3943,5904,Kwinageese
+Nass,Now,Sgen.c,Damdoch,729,707,503,591,840,975,Damdochax
+Nass,Now,Sgen.c,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,Now,Sgen.c,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,Now,Sgen.c,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+SkeenaWild,LTAvg,Smsy,Agg Fit,344583,300112,223324,249412,388979,546638,NA
+SkeenaWild,LTAvg,Smsy,Sum,402369,389811,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Smsy,Sum-Agg,57786,89699,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Smsy,Bab-LW,251751,245179,177650,206592,290610,336510,Babine Late Wild
+SkeenaWild,LTAvg,Smsy,Bab-EW,45408,42938,34412,38055,49877,60072,Babine Early Wild
+SkeenaWild,LTAvg,Smsy,SwanSteph,21193,20934,14550,17492,24439,28327,Swan/Stephens
+SkeenaWild,LTAvg,Smsy,Bab-MW,17796,17246,14477,15726,19113,21881,Babine Mid Wild
+SkeenaWild,LTAvg,Smsy,Kitsumk,14739,14624,13128,13767,15581,16499,Kitsumkalum
+SkeenaWild,LTAvg,Smsy,Alastair,11722,11559,10135,10817,12537,13465,Alastair
+SkeenaWild,LTAvg,Smsy,Morice,10598,10398,8875,9580,11383,12699,Morice
+SkeenaWild,LTAvg,Smsy,Lakelse,9070,8951,7570,8226,9821,10724,Lakelse
+SkeenaWild,LTAvg,Smsy,Kitwanga,7647,5954,2398,3418,10546,15935,Kitwanga
+SkeenaWild,LTAvg,Smsy,Bear,4532,4490,3925,4169,4856,5190,Bear
+SkeenaWild,LTAvg,Smsy,Johnston,2982,2974,2460,2743,3240,3498,Johnston
+SkeenaWild,LTAvg,Smsy,Mcdonell,2198,2185,1962,2057,2314,2462,Mcdonell
+SkeenaWild,LTAvg,Smsy,Asitka,1117,838,546,658,1265,2132,Asitka
+SkeenaWild,LTAvg,Smsy,Sustut,785,767,659,708,848,936,Sustut
+SkeenaWild,LTAvg,Smsy,Motase,562,508,382,433,645,814,Motase
+SkeenaWild,LTAvg,Smsy,Slamg,269,266,230,246,291,312,Slamgeesh
+SkeenaWild,LTAvg,Smsy,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,LTAvg,Smsy,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,LTAvg,Smsy,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,LTAvg,Smsy,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,LTAvg,Smsy,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,LTAvg,Smsy,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,Now,Smsy,Agg Fit,169672,156986,55083,107697,214518,285050,NA
+SkeenaWild,Now,Smsy,Sum,244017,234226,NA,NA,NA,NA,NA
+SkeenaWild,Now,Smsy,Sum-Agg,74345,77240,NA,NA,NA,NA,NA
+SkeenaWild,Now,Smsy,Bab-LW,129426,123391,64424,93047,156597,201520,Babine Late Wild
+SkeenaWild,Now,Smsy,Bab-EW,22555,21593,8437,14548,29066,36075,Babine Early Wild
+SkeenaWild,Now,Smsy,Bab-MW,16258,15927,12051,13929,18235,21076,Babine Mid Wild
+SkeenaWild,Now,Smsy,Kitsumk,14319,14205,12898,13535,15032,15880,Kitsumkalum
+SkeenaWild,Now,Smsy,Alastair,12560,13092,7229,10653,15012,16934,Alastair
+SkeenaWild,Now,Smsy,SwanSteph,11156,10459,4591,7277,14090,18763,Swan/Stephens
+SkeenaWild,Now,Smsy,Morice,10595,10429,8399,9391,11598,12946,Morice
+SkeenaWild,Now,Smsy,Lakelse,8870,9040,4558,6601,11261,12806,Lakelse
+SkeenaWild,Now,Smsy,Bear,4623,4585,4044,4289,4895,5268,Bear
+SkeenaWild,Now,Smsy,Kitwanga,5590,3775,959,2320,6825,12881,Kitwanga
+SkeenaWild,Now,Smsy,Johnston,3176,3169,2606,2872,3485,3820,Johnston
+SkeenaWild,Now,Smsy,Mcdonell,2192,2177,1960,2052,2303,2442,Mcdonell
+SkeenaWild,Now,Smsy,Asitka,1090,844,540,656,1228,2045,Asitka
+SkeenaWild,Now,Smsy,Sustut,782,766,659,704,846,928,Sustut
+SkeenaWild,Now,Smsy,Motase,563,517,385,441,638,804,Motase
+SkeenaWild,Now,Smsy,Slamg,262,257,223,237,281,308,Slamgeesh
+SkeenaWild,Now,Smsy,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,Now,Smsy,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,Now,Smsy,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,Now,Smsy,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,Now,Smsy,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,Now,Smsy,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,LTAvg,Smsy.c,Agg Fit,486977,399054,273104,314316,561691,875814,NA
+SkeenaWild,LTAvg,Smsy.c,Sum,518661,500110,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Smsy.c,Sum-Agg,31684,101056,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Smsy.c,Bab-LW,322689,315497,218996,257198,381938,445147,Babine Late Wild
+SkeenaWild,LTAvg,Smsy.c,Bab-EW,59635,55229,42802,47976,65702,82710,Babine Early Wild
+SkeenaWild,LTAvg,Smsy.c,SwanSteph,30785,29984,22481,25341,35141,40783,Swan/Stephens
+SkeenaWild,LTAvg,Smsy.c,Bab-MW,22006,20855,17204,18699,23901,28241,Babine Mid Wild
+SkeenaWild,LTAvg,Smsy.c,Kitsumk,15205,14966,13373,14038,16080,17241,Kitsumkalum
+SkeenaWild,LTAvg,Smsy.c,Alastair,13820,13576,11951,12596,14754,15971,Alastair
+SkeenaWild,LTAvg,Smsy.c,Kitwanga,16188,13097,4994,7295,23049,32769,Kitwanga
+SkeenaWild,LTAvg,Smsy.c,Morice,12514,12246,10357,11141,13526,14986,Morice
+SkeenaWild,LTAvg,Smsy.c,Lakelse,11325,11064,9573,10232,12115,13346,Lakelse
+SkeenaWild,LTAvg,Smsy.c,Bear,4777,4708,4110,4363,5127,5543,Bear
+SkeenaWild,LTAvg,Smsy.c,Johnston,3459,3415,2965,3175,3713,3987,Johnston
+SkeenaWild,LTAvg,Smsy.c,Mcdonell,2375,2352,2096,2200,2502,2697,Mcdonell
+SkeenaWild,LTAvg,Smsy.c,Asitka,1990,1343,811,970,2290,4419,Asitka
+SkeenaWild,LTAvg,Smsy.c,Sustut,870,849,712,772,947,1058,Sustut
+SkeenaWild,LTAvg,Smsy.c,Motase,726,635,463,527,849,1146,Motase
+SkeenaWild,LTAvg,Smsy.c,Slamg,297,294,249,267,320,349,Slamgeesh
+SkeenaWild,LTAvg,Smsy.c,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,LTAvg,Smsy.c,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,LTAvg,Smsy.c,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,LTAvg,Smsy.c,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,LTAvg,Smsy.c,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,LTAvg,Smsy.c,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,Now,Smsy.c,Agg Fit,264384,234245,121567,173977,315902,444184,NA
+SkeenaWild,Now,Smsy.c,Sum,327575,309238,NA,NA,NA,NA,NA
+SkeenaWild,Now,Smsy.c,Sum-Agg,63191,74993,NA,NA,NA,NA,NA
+SkeenaWild,Now,Smsy.c,Bab-LW,178372,165820,103856,132208,212106,270902,Babine Late Wild
+SkeenaWild,Now,Smsy.c,Bab-EW,33600,31403,17425,24059,40336,52688,Babine Early Wild
+SkeenaWild,Now,Smsy.c,Bab-MW,20785,19920,15508,17513,23017,27050,Babine Mid Wild
+SkeenaWild,Now,Smsy.c,Kitwanga,17297,15896,5565,8354,23709,32098,Kitwanga
+SkeenaWild,Now,Smsy.c,Kitsumk,14473,14379,13039,13661,15198,16000,Kitsumkalum
+SkeenaWild,Now,Smsy.c,Alastair,13556,14237,7908,11774,16068,17917,Alastair
+SkeenaWild,Now,Smsy.c,SwanSteph,14792,13733,7839,10462,17997,23575,Swan/Stephens
+SkeenaWild,Now,Smsy.c,Morice,10695,10496,8506,9469,11693,13014,Morice
+SkeenaWild,Now,Smsy.c,Lakelse,9407,9589,5145,7157,11705,13350,Lakelse
+SkeenaWild,Now,Smsy.c,Bear,4790,4749,4181,4427,5078,5511,Bear
+SkeenaWild,Now,Smsy.c,Johnston,3637,3582,3060,3279,3944,4356,Johnston
+SkeenaWild,Now,Smsy.c,Mcdonell,2367,2343,2102,2200,2489,2661,Mcdonell
+SkeenaWild,Now,Smsy.c,Asitka,1927,1330,794,944,2193,4292,Asitka
+SkeenaWild,Now,Smsy.c,Sustut,866,849,713,770,944,1050,Sustut
+SkeenaWild,Now,Smsy.c,Motase,726,635,464,533,849,1112,Motase
+SkeenaWild,Now,Smsy.c,Slamg,285,277,241,255,309,341,Slamgeesh
+SkeenaWild,Now,Smsy.c,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,Now,Smsy.c,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,Now,Smsy.c,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,Now,Smsy.c,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,Now,Smsy.c,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,Now,Smsy.c,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,LTAvg,Smax,Agg Fit,903469,690556,402363,488070,1111580,1796648,NA
+SkeenaWild,LTAvg,Smax,Sum,848137,812951,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Smax,Sum-Agg,-55332,122395,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Smax,Bab-LW,525207,508554,313839,391326,644857,763824,Babine Late Wild
+SkeenaWild,LTAvg,Smax,Bab-EW,104258,95071,65871,77484,119411,156018,Babine Early Wild
+SkeenaWild,LTAvg,Smax,SwanSteph,60388,60297,40485,49119,71635,81333,Swan/Stephens
+SkeenaWild,LTAvg,Smax,Bab-MW,32014,29842,23389,26048,35611,42979,Babine Mid Wild
+SkeenaWild,LTAvg,Smax,Kitsumk,23292,23111,19339,20714,25570,27874,Kitsumkalum
+SkeenaWild,LTAvg,Smax,Lakelse,21341,20808,17134,18594,23437,26228,Lakelse
+SkeenaWild,LTAvg,Smax,Alastair,20948,20504,17034,18495,22804,25412,Alastair
+SkeenaWild,LTAvg,Smax,Kitwanga,23189,18918,6893,10332,35291,46495,Kitwanga
+SkeenaWild,LTAvg,Smax,Morice,16366,15977,13279,14387,17940,19915,Morice
+SkeenaWild,LTAvg,Smax,Bear,6267,6167,5175,5601,6836,7529,Bear
+SkeenaWild,LTAvg,Smax,Johnston,5655,5785,4963,5452,6010,6131,Johnston
+SkeenaWild,LTAvg,Smax,Mcdonell,3516,3456,2935,3145,3794,4205,Mcdonell
+SkeenaWild,LTAvg,Smax,Asitka,3090,2030,1142,1410,3803,7029,Asitka
+SkeenaWild,LTAvg,Smax,Sustut,1006,982,800,876,1112,1255,Sustut
+SkeenaWild,LTAvg,Smax,Motase,1119,968,631,756,1338,1911,Motase
+SkeenaWild,LTAvg,Smax,Slamg,481,481,367,420,552,596,Slamgeesh
+SkeenaWild,LTAvg,Smax,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,LTAvg,Smax,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,LTAvg,Smax,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,LTAvg,Smax,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,LTAvg,Smax,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,LTAvg,Smax,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,Now,Smax,Agg Fit,891859,698856,421366,518738,1039419,1762839,NA
+SkeenaWild,Now,Smax,Sum,707831,653077,NA,NA,NA,NA,NA
+SkeenaWild,Now,Smax,Sum-Agg,-184028,-45779,NA,NA,NA,NA,NA
+SkeenaWild,Now,Smax,Bab-LW,404586,369407,260947,301502,469654,616528,Babine Late Wild
+SkeenaWild,Now,Smax,Bab-EW,95569,87099,63689,73867,106109,141178,Babine Early Wild
+SkeenaWild,Now,Smax,SwanSteph,43538,39626,27243,32402,51329,66880,Swan/Stephens
+SkeenaWild,Now,Smax,Bab-MW,33141,30736,23587,26589,37031,44880,Babine Mid Wild
+SkeenaWild,Now,Smax,Kitwanga,27281,25607,8505,13731,39180,48737,Kitwanga
+SkeenaWild,Now,Smax,Kitsumk,23255,23009,18772,20488,25807,28282,Kitsumkalum
+SkeenaWild,Now,Smax,Lakelse,22146,21527,17561,19256,24105,27390,Lakelse
+SkeenaWild,Now,Smax,Alastair,21617,21081,17351,19118,23641,26404,Alastair
+SkeenaWild,Now,Smax,Morice,16233,15726,13076,14071,17775,20016,Morice
+SkeenaWild,Now,Smax,Bear,6047,5972,5055,5418,6529,7172,Bear
+SkeenaWild,Now,Smax,Johnston,5382,5548,4498,4949,5928,6097,Johnston
+SkeenaWild,Now,Smax,Mcdonell,3500,3425,2936,3148,3777,4121,Mcdonell
+SkeenaWild,Now,Smax,Asitka,2991,1946,1124,1380,3569,6730,Asitka
+SkeenaWild,Now,Smax,Sustut,1000,982,794,874,1105,1243,Sustut
+SkeenaWild,Now,Smax,Motase,1119,978,636,767,1358,1870,Motase
+SkeenaWild,Now,Smax,Slamg,426,408,324,350,493,568,Slamgeesh
+SkeenaWild,Now,Smax,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,Now,Smax,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,Now,Smax,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,Now,Smax,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,Now,Smax,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,Now,Smax,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,LTAvg,Sgen,Agg Fit,NA,NA,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Sgen,Sum,151636,145260,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Sgen,Sum-Agg,NA,NA,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Sgen,Bab-LW,95887,92775,49926,67192,122448,145812,Babine Late Wild
+SkeenaWild,LTAvg,Sgen,Bab-EW,19458,17982,11075,13749,22983,30113,Babine Early Wild
+SkeenaWild,LTAvg,Sgen,SwanSteph,11178,11191,7458,9166,13157,14908,Swan/Stephens
+SkeenaWild,LTAvg,Sgen,Bab-MW,5269,4820,3234,3880,6211,7770,Babine Mid Wild
+SkeenaWild,LTAvg,Sgen,Lakelse,4034,3960,3115,3468,4467,5029,Lakelse
+SkeenaWild,LTAvg,Sgen,Alastair,3431,3324,2401,2801,3919,4600,Alastair
+SkeenaWild,LTAvg,Sgen,Kitsumk,3294,3241,2317,2682,3842,4401,Kitsumkalum
+SkeenaWild,LTAvg,Sgen,Kitwanga,3795,2957,1083,1670,5500,7963,Kitwanga
+SkeenaWild,LTAvg,Sgen,Morice,2228,2152,1544,1768,2549,3046,Morice
+SkeenaWild,LTAvg,Sgen,Johnston,969,1004,731,867,1098,1157,Johnston
+SkeenaWild,LTAvg,Sgen,Bear,679,656,451,543,793,938,Bear
+SkeenaWild,LTAvg,Sgen,Mcdonell,508,496,352,423,572,680,Mcdonell
+SkeenaWild,LTAvg,Sgen,Asitka,538,366,189,258,672,1174,Asitka
+SkeenaWild,LTAvg,Sgen,Motase,191,163,79,110,250,344,Motase
+SkeenaWild,LTAvg,Sgen,Slamg,88,87,48,66,107,135,Slamgeesh
+SkeenaWild,LTAvg,Sgen,Sustut,89,86,40,56,118,142,Sustut
+SkeenaWild,LTAvg,Sgen,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,LTAvg,Sgen,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,LTAvg,Sgen,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,LTAvg,Sgen,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,LTAvg,Sgen,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,LTAvg,Sgen,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,Now,Sgen,Agg Fit,NA,NA,NA,NA,NA,NA,NA
+SkeenaWild,Now,Sgen,Sum,114535,106655,NA,NA,NA,NA,NA
+SkeenaWild,Now,Sgen,Sum-Agg,NA,NA,NA,NA,NA,NA,NA
+SkeenaWild,Now,Sgen,Bab-LW,69857,64408,43554,52175,82253,104437,Babine Late Wild
+SkeenaWild,Now,Sgen,Bab-EW,14188,13584,7487,10920,16833,21110,Babine Early Wild
+SkeenaWild,Now,Sgen,SwanSteph,6756,6336,3770,5082,8127,10572,Swan/Stephens
+SkeenaWild,Now,Sgen,Bab-MW,5706,5304,3536,4244,6771,8330,Babine Mid Wild
+SkeenaWild,Now,Sgen,Lakelse,3719,3726,2590,3164,4257,4832,Lakelse
+SkeenaWild,Now,Sgen,Kitsumk,3391,3295,2081,2536,4198,4905,Kitsumkalum
+SkeenaWild,Now,Sgen,Alastair,2948,2932,1378,2050,3750,4473,Alastair
+SkeenaWild,Now,Sgen,Kitwanga,3056,2462,825,1435,4066,6584,Kitwanga
+SkeenaWild,Now,Sgen,Morice,2166,2093,1383,1668,2558,3088,Morice
+SkeenaWild,Now,Sgen,Johnston,820,814,520,653,1032,1125,Johnston
+SkeenaWild,Now,Sgen,Bear,555,527,322,408,672,832,Bear
+SkeenaWild,Now,Sgen,Mcdonell,506,495,359,425,568,665,Mcdonell
+SkeenaWild,Now,Sgen,Asitka,519,360,183,250,619,1134,Asitka
+SkeenaWild,Now,Sgen,Motase,192,164,78,116,249,348,Motase
+SkeenaWild,Now,Sgen,Sustut,87,86,37,56,115,139,Sustut
+SkeenaWild,Now,Sgen,Slamg,69,69,24,46,89,112,Slamgeesh
+SkeenaWild,Now,Sgen,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,Now,Sgen,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,Now,Sgen,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,Now,Sgen,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,Now,Sgen,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,Now,Sgen,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,LTAvg,Sgen.c,Agg Fit,NA,NA,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Sgen.c,Sum,124826,117924,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Sgen.c,Sum-Agg,NA,NA,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Sgen.c,Bab-LW,77466,73801,36365,52057,100078,123586,Babine Late Wild
+SkeenaWild,LTAvg,Sgen.c,Bab-EW,16703,14949,8400,10986,20208,27518,Babine Early Wild
+SkeenaWild,LTAvg,Sgen.c,SwanSteph,10512,10589,6089,8013,13028,14936,Swan/Stephens
+SkeenaWild,LTAvg,Sgen.c,Lakelse,3662,3554,2609,2994,4169,4823,Lakelse
+SkeenaWild,LTAvg,Sgen.c,Bab-MW,3890,3506,2252,2735,4639,6109,Babine Mid Wild
+SkeenaWild,LTAvg,Sgen.c,Kitsumk,3127,3077,2198,2554,3652,4197,Kitsumkalum
+SkeenaWild,LTAvg,Sgen.c,Alastair,2752,2624,1788,2182,3239,3820,Alastair
+SkeenaWild,LTAvg,Sgen.c,Kitwanga,2645,1995,528,984,3815,5950,Kitwanga
+SkeenaWild,LTAvg,Sgen.c,Morice,1501,1460,956,1154,1743,2133,Morice
+SkeenaWild,LTAvg,Sgen.c,Johnston,835,863,536,707,993,1069,Johnston
+SkeenaWild,LTAvg,Sgen.c,Bear,583,557,381,460,681,813,Bear
+SkeenaWild,LTAvg,Sgen.c,Mcdonell,445,434,311,367,502,598,Mcdonell
+SkeenaWild,LTAvg,Sgen.c,Asitka,417,249,112,165,510,1010,Asitka
+SkeenaWild,LTAvg,Sgen.c,Motase,151,127,54,84,198,287,Motase
+SkeenaWild,LTAvg,Sgen.c,Slamg,80,80,40,59,98,123,Slamgeesh
+SkeenaWild,LTAvg,Sgen.c,Sustut,57,59,15,30,78,96,Sustut
+SkeenaWild,LTAvg,Sgen.c,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,LTAvg,Sgen.c,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,LTAvg,Sgen.c,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,LTAvg,Sgen.c,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,LTAvg,Sgen.c,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,LTAvg,Sgen.c,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,Now,Sgen.c,Agg Fit,NA,NA,NA,NA,NA,NA,NA
+SkeenaWild,Now,Sgen.c,Sum,119052,109244,NA,NA,NA,NA,NA
+SkeenaWild,Now,Sgen.c,Sum-Agg,NA,NA,NA,NA,NA,NA,NA
+SkeenaWild,Now,Sgen.c,Bab-LW,72300,65816,44252,52575,84150,112328,Babine Late Wild
+SkeenaWild,Now,Sgen.c,Bab-EW,16700,15561,10675,12752,19125,24896,Babine Early Wild
+SkeenaWild,Now,Sgen.c,SwanSteph,7669,7062,4656,5719,9180,11619,Swan/Stephens
+SkeenaWild,Now,Sgen.c,Bab-MW,4634,4199,2559,3143,5609,7307,Babine Mid Wild
+SkeenaWild,Now,Sgen.c,Lakelse,3726,3728,2522,3147,4285,4859,Lakelse
+SkeenaWild,Now,Sgen.c,Kitsumk,3339,3244,2016,2467,4140,4868,Kitsumkalum
+SkeenaWild,Now,Sgen.c,Kitwanga,3603,2944,670,1434,5259,7541,Kitwanga
+SkeenaWild,Now,Sgen.c,Alastair,2676,2600,1183,1715,3560,4272,Alastair
+SkeenaWild,Now,Sgen.c,Morice,2132,2060,1348,1634,2519,3059,Morice
+SkeenaWild,Now,Sgen.c,Johnston,668,639,333,470,900,1026,Johnston
+SkeenaWild,Now,Sgen.c,Bear,490,467,281,359,596,732,Bear
+SkeenaWild,Now,Sgen.c,Mcdonell,443,432,310,368,500,576,Mcdonell
+SkeenaWild,Now,Sgen.c,Asitka,403,248,107,162,485,956,Asitka
+SkeenaWild,Now,Sgen.c,Motase,151,126,54,87,199,282,Motase
+SkeenaWild,Now,Sgen.c,Slamg,62,60,18,39,81,104,Slamgeesh
+SkeenaWild,Now,Sgen.c,Sustut,56,58,15,30,78,95,Sustut
+SkeenaWild,Now,Sgen.c,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,Now,Sgen.c,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,Now,Sgen.c,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,Now,Sgen.c,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,Now,Sgen.c,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,Now,Sgen.c,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes

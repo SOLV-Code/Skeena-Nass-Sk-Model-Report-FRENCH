@@ -1,0 +1,1694 @@
+# RESULTS
+
+This Research Document focuses on SR modelling for wild Sockeye stocks (16 Skeena, 4 Nass) and alternative approaches for developing management reference points for two aggregates (Skeena Wild, Nass). Enhanced Pinkut and Fulton Sockeye present a fundamentally different challenge in terms of population dynamics and management implications. We include a review of available information for Babine Sockeye enhancement facilities (Appendix \@ref(ChannelReview)) and illustrate two candidate methods for expanding a management reference point for wild Skeena Sockeye to a management reference point for the whole Skeena aggregate including enhanced Pinkut and Fulton (Section \@ref(SkeenaExpResults)). Section \@ref(AltApproachEnhanced) explains the rationale for this approach within the scope of the current project. Appendix \@ref(PinkutFultonResults) includes the available SR data and parameter estimates for Pinkut and Fulton as a reference, but resulting benchmark estimates should not be used as they are, given SR model fitting issues and management challenges.
+
+
+## SINGLE-STOCK SPAWNER-RECRUIT MODEL FITS (STOCK-LEVEL AND AGGREGATE-LEVEL)  {#SingleStockSRResults}
+
+
+### Convergence {#Convergence}
+
+
+```{r , echo = FALSE, results = "asis"}
+
+conv.summary.df <- read_csv("data/Convergence/FitsComparison_ConvergenceSummary.csv") 
+
+full.set.post.df <- read_csv("data/Appendix SR Model Outputs/FullSet_Posterior_Summary.csv") 
+
+```
+
+
+We tested `r conv.summary.df %>% dplyr::filter(DataType == "All") %>% select(Total)` alternative SR model fits for `r length(unique(full.set.post.df$Stock)) -3` stock-level SR data sets (including enhanced Pinkut and Fulton) and three aggregate-level SR data sets (Nass, Skeena, SkeenaWild).
+
+All of the candidate SR model fits met at least two of three convergence criteria, and most model fits met all three criteria (Table \@ref(tab:ConvergenceTab)). Convergence varied depending on the amount of data used, the SR model form, and form of the capacity prior (Smax). Models fit to all available brood years of data converged more reliably than model fits to truncated data sets, but note that not all model forms could be fitted to all stocks, and that the number of available brood years varies across stocks (Table \@ref(tab:DataOverviewSkeena); Figure \@ref(fig:SRDataOverview)). More complex SR model forms were run with more intensive MCMC sampling (longer burn-in, larger samples), but still had a lower rate of meeting all three convergence criteria. Alternative capacity priors had little effect on convergence for the Basic Ricker model, with 88-89% of model fits meeting all three convergence criteria across four alternative capacity priors.
+
+
+### Alternative SR Model Fits
+
+Posterior estimates of capacity (Smax) were much wider and more skewed than posterior estimates of productivity (ln.alpha) for most stocks using the Basic Ricker model (Figure \@ref(fig:FitsCompProdCap)). Four stock-level fits and one aggregate-level fit were notably more uncertain (i.e., wider posteriors) than the other fits: Lower Nass Sea and River Type, Kitwanga, Motase, and the SkeenaWild aggregate.
+
+For the Basic Ricker model, median Bayesian estimates of Smsy were similar to simple deterministic estimates for most cases (Figure \@ref(fig:FitsCompDetFig)). Differences between Bayesian and deterministic estimates were larger for cases where the Bayesian estimate was more uncertain (i.e., wider posterior, larger SIQR). The two stocks with the largest difference between the Bayesian and deterministic Smsy estimate also had the most uncertain Bayesian estimates (Lower Nass Sea and River Type, Kitwanga).
+
+
+(ref:ConvergenceTab) Summary of convergence diagnostics for single-stock SR model fits. We considered three convergence diagnostics with quantitative thresholds (Table \@ref(tab:MCMCDiagnostics)). Table shows the total number of stock-level and aggregate-level single-stock SR model fits tested (Total), the number that met each criterion (Rhat, Gelman, Geweke), the number and percent of fits that met at least two of the criteria (Met2, pMet2), and the number and percent of fits that met all three criteria (Met3, pMet3). Convergence thresholds were specified as Rhat < 1.05, Gelman within [0.99,1.01], and Geweke within [-2,2]. For each criterion, the value compared to the threshold was the most extreme value across all estimated parameters. For the TVP model fits with time-varying productivity, this captures the poorest fit across all the brood-year-specific ln.alpha posteriors.
+
+```{r ConvergenceTab, echo = FALSE, results = "asis"}
+
+table.in <- conv.summary.df %>% mutate(ModelType = gsub("Kalman","TVP",ModelType))
+table.in$DataType[duplicated(table.in$DataType)] <- ""
+
+
+
+table.in %>%
+   #mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   #mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l","l","l",rep("r",8)),
+                  caption = "(ref:ConvergenceTab)" ) %>%
+    kableExtra::row_spec(c(1,9), hline_after = TRUE) %>%
+	add_header_above(c(" " = 4, "Criteria" = 3," " = 4) ) %>%
+  kableExtra::row_spec(c(5,7,13,15), extra_latex_after = "\\cmidrule(l){2-11}") 
+
+```
+
+For the Basic Ricker model, the effect of alternative capacity priors was generally larger for cases where capacity estimates were more uncertain (Figure \@ref(fig:FitsCompCapPrior)). Three stock-level fits and one aggregate-level fit were notably more sensitive (i.e., larger differences in median estimates) than the other fits: Lower Nass Sea and River Type, Kitwanga, Babine Late Wild, and the Skeena aggregate. Motase had the widest Smsy posterior across alternative capacity priors.
+
+
+Posterior parameter distributions were similar for Basic Ricker and AR1 model fits in most cases (Figures \@ref(fig:FitsCompAR1Pars) and \@ref(fig:FitsCompAR1Smsy)). The AR1 model had slightly wider ln.alpha
+posteriors for most fits and slightly narrower Smax posteriors for some fits. Estimates of ln.alpha  that were more uncertain in the Basic Ricker fit did not improve with the AR1 model form. The AR1 fit for Swan/Stephens was even poorer than the Basic Ricker fit. Among the cases where AR1 models could be fitted, the posterior capacity estimates were most uncertain for the three aggregate-level fits and for Lower Nass Sea and River Type Sockeye, which also showed the largest improvement due to the change in model form (i.e., Smax posterior much narrower for the AR1 fit than the Basic Ricker fit). Median Smsy estimates were very similar for the two alternative model forms, except for Lower Nass Sea and River Type, where the AR1 estimate has a 26% lower median and a substantially narrower posterior.
+
+A TVP model with time-varying productivity could be fitted to 12 stocks to identify stock-specific changes over time in productivity (Figure \@ref(fig:FitsCompProd1)). Most stocks showed recent declines in productivity, but the time trends differed between stocks.  Five stocks showed a persistent decline in productivity since the 1990s, and these include the two largest wild stocks (Babine Early Wild, Babine Late Wild, Damdochax, Meziadin, and Swan/Stephens). Estimated productivity of Alastair gradually increased since the 1960s, until a drastic drop in the last few brood years. Babine Mid Wild has been mostly stable, with a slight decline. Bear has increased. Productivity is highly variable over time for three stocks (Lakelse, Lower Nass Sea and River Type, and Morice). 
+
+The estimated productivity trends from the TVP model fit generally track the trends over time of residuals generated from a Basic Ricker fit (Figure \@ref(fig:FitsCompProd1) vs. Figure \@ref(fig:FitsCompProd2)), and the TVP residuals therefore change less over time (Figure \@ref(fig:FitsCompProd3) vs. Figure \@ref(fig:FitsCompProd2)). Note the trade-off between the time-trends in time-varying ln.alpha from the TVP model and the TVP residuals (Figure \@ref(fig:FitsCompProd1) vs. Figure \@ref(fig:FitsCompProd3)): For those stocks where the productivity parameter changes smoothly over time, the TVP residuals vary a lot from year to year (i.e., "spiky"), while for those stocks where the productivity parameter changes rapidly between years, the TVP residuals are much smoother. Depending on the stock, the observed variability in the data is allocated either to the time-varying productivity parameter or to the residual error.
+
+For stocks where all three model forms could be fitted, the median posterior estimates of the productivity parameter ln.alpha are very similar between the basic Ricker and AR1 model, but brood-year specific ln.alpha estimates for the TVP model with time-varying productivity span a wide range, from much higher to much lower median estimates  than the basic Ricker and AR1 fits (Table \@ref(tab:ProdCompAcrossModels)).
+
+Figures \@ref(fig:ScatterMezidian) to \@ref(fig:JoinPostBabLW) summarize the SR data and alternative model fits for the largest wild stock from each aggregate: Meziadin on the Nass and Babine Late Wild on the Skeena.
+
+\clearpage
+(ref:ProdCompAcrossModels) Comparison of median ln.alpha estimates across SR model forms. Table lists the number of available brood years with SR data (n), the median estimate for the basic Ricker model (BR), and median estimates (Med) and percent difference to the basic Ricker (pDiff) for the AR1 model fit, and the year-specific estimate for the brood years with  lowest and highest median estimate from the time-varying productivity model (TVP Min, TVP Max).
+
+```{r ProdCompAcrossModels, echo = FALSE, results = "asis"}
+
+table.in <- read_csv("data/FitsComparison_ReportTable_lnalpha.csv",
+										 col_types = cols(.default = "c"))  %>%
+							select(-contains("SIQR"),-SpnContr) %>%
+							mutate_all(~ as.character(.x))
+	
+
+table.in[is.na(table.in)] <- "-"
+table.in$Basin[duplicated(table.in$Basin)] <- ""
+
+
+col.names.use <-  c("Basin","Stock","n","Med","Med","pDiff","Med","pDiff","Med","pDiff")
+
+
+
+table.in %>%
+   #mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   #mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l","l",rep("r",8)),
+									col.names = col.names.use ,
+                  caption = "(ref:ProdCompAcrossModels)" ) %>%
+	 #kableExtra::column_spec(6, bold = T) %>%
+     #kableExtra::row_spec(c(lines.idx), hline_after = TRUE) %>%
+	add_header_above(c(" " = 3, "BR" = 1,"AR1" = 2,"TVP Min" = 2,"TVP Max" = 2))  
+
+```
+
+
+
+
+
+
+
+\clearpage
+
+(ref:FitsCompProdCap) Comparison of Bayesian posterior distributions for productivity (ln.alpha) and capacity (Smax). Model fits shown are the Basic Ricker fits with capped uniform prior for Smax. Posterior distributions are summarized as the standardized interquartile range SIQR = (p75-p25)/p50. The reference line marks a slope of 2 (i.e., posterior for Smax is twice as wide relative to the median value as the posterior for ln.alpha). Model fits are flagged with red points if the SIQR for Smax is larger than 0.8 or the SIQR for ln.alpha is larger than 0.3. Johnston is labelled because it has the narrowest Smax posterior (lowest SIQR).
+
+```{r FitsCompProdCap,   fig.cap="(ref:FitsCompProdCap)"}
+include_graphics("data/Convergence/FitsComparison_ProdvsCapWidth.png")
+```
+
+
+
+
+\clearpage
+(ref:FitsCompDetFig) Comparison of Bayesian and deterministic estimates for Smsy. Both estimates use the basic Ricker model form. The Bayesian estimate is the version with the capped uniform prior on capacity. Model fits are flagged with red points if the difference is larger than 25%. Panel A compares estimates on a log scale to allow comparison across stocks with very different estimates, but stocks are flagged if the difference in original (i.e., unlogged) values is larger than 25%. Bayesian and deterministic fits are mostly similar. Panel B shows the relationship between the % difference and the width of the Bayesian posterior distribution, expressed as the standardized interquartile range (SIQR). The difference between estimates increases with larger uncertainty in the Bayesian estimates (i.e., larger SIQR).
+
+```{r FitsCompDetFig,   fig.cap="(ref:FitsCompDetFig)"}
+include_graphics("data/Convergence/FitsComparison_BRcuVsDet.png")
+```
+
+
+
+
+\clearpage
+(ref:FitsCompCapPrior) Effect of alternative capacity priors on median Smsy estimates. We tested two to four alternative priors for Smax for the stock-level and aggregate-level fits of the Basic Ricker model (wide vs. capped, uniform vs. lognormal). The effect of alternative capacity priors is larger for more uncertain SR model fits (i.e., larger SIQR). SR model fits with red points are flagged if the difference  between median estimates is larger than 25% or the standardized interquartile range for the most uncertain fit is larger than 1 (i.e., the range between the lower and upper quartiles is larger than the median value).
+
+```{r FitsCompCapPrior,   fig.cap="(ref:FitsCompCapPrior)"}
+include_graphics("data/Convergence/FitsComparison_CapPriorEffect.png")
+```
+
+
+\clearpage
+(ref:FitsCompAR1Pars) Comparison of posterior distributions for Basic Ricker and AR1 model fits - Parameters. Both model fits used the capped uniform capacity prior. Panels compare the width of posterior distributions (SIQR) between model forms for ln.alpha (A) and Smax (B). SR model fits are flagged with red points for n.alpha if either SIQR > 0.3 and flagged for Smax if either SIQR > 0.6.
+
+
+```{r FitsCompAR1Pars,   fig.cap="(ref:FitsCompAR1Pars)"}
+include_graphics("data/Convergence/FitsComparison_BRcuVsAR1_Pars.png")
+```
+
+
+\clearpage
+(ref:FitsCompAR1Smsy) Comparison of posterior distributions for Basic Ricker and AR1 model fits - Smsy. Figures compare median estimates (A) and width of the posteriors (B) of posterior Smsy distributions from the alternative model forms. Model fits are flagged with red points if the difference in median estimates is larger than 25%. Aggregate fits are also labelled in Panel B. Note that Panel A compares estimates on a log scale to allow comparison across stocks with very different estimates, but stocks are flagged if the difference in original (i.e., unlogged) values is larger than 25%.
+
+```{r FitsCompAR1Smsy,   fig.cap="(ref:FitsCompAR1Smsy)"}
+include_graphics("data/Convergence/FitsComparison_BRcuVsAR1_Smsy.png")
+```
+
+
+
+\clearpage
+(ref:FitsCompProd1) Time-varying productivity for 12 stocks with complete time series. Each panel shows the median and 80% bounds of year-specific posterior distributions of ln.alpha for the TVP model fit. Reference lines show the corresponding intrinsic productivity in terms of recruits per spawner (R/S) at very low spawner abundance (technically, at 0 spawners). 
+
+```{r FitsCompProd1,   fig.cap="(ref:FitsCompProd1)"}
+include_graphics("data/Convergence/FitsComparison_PROD_3_ProdPatterns_KF_All.png")
+```
+
+
+
+
+\clearpage
+(ref:FitsCompProd2) Log residuals from the Basic Ricker fit for 12 stocks where a time-varying productivity TVP model was also fitted. Each panel shows median and 80% bounds for annual residuals and a 4yr running average trend line.
+
+```{r FitsCompProd2,   fig.cap="(ref:FitsCompProd2)"}
+include_graphics("data/Convergence/FitsComparison_PROD_3_RickerResids_Basic_All.png")
+```
+
+
+
+\clearpage
+(ref:FitsCompProd3) Log residuals from the TVP model fit with time varying productivity for 12 stocks with complete time series. Each panel shows median and 80% bounds for annual residuals and a 4yr running average trend line.
+
+```{r FitsCompProd3,   fig.cap="(ref:FitsCompProd3)"}
+include_graphics("data/Convergence/FitsComparison_PROD_3_RickerResids_KF_All.png")
+```
+
+
+
+
+
+
+\clearpage
+
+
+
+(ref:ScatterMezidian) Scatterplot of log productivity ln(R/S) vs. spawner abundance - Meziadin. Observations are colour-coded, with earlier data in fainter shading. The secondary axis illustrates the corresponding raw R/S values. 
+
+```{r ScatterMezidian,   fig.cap="(ref:ScatterMezidian)"}
+include_graphics("data/StockSampleFigs/Meziadin_RpS_ScatterPlot.png")
+```
+
+
+(ref:JoinPostMezidian) Joint posterior distributions for productivity parameter ln(alpha) and capacity parameter Smax (1/b): Meziadin, with PR-based capacity priors. Each panel shows the scatter of MCMC samples, contour lines for the joint distribution, and two depictions of the marginal distributions for each parameter: boxplot with median, quartiles, and 80% whiskers, and a kernel density plot. Dashed reference lines show the medians of the marginal distributions. Figure includes 1 panel for the Basic Ricker model fit (top left), one panel for the Ricker AR1 fit (top right), and two panels showing the brood years with the lowest and highest productivity (median ln.alpha) for the TVP model fit (bottom panels). The parameter samples for the TVP model have 1 set of posterior samples for Smax, and 1 set of ln.alpha posterior samples for each brood year. The bottom panels show the joint distribution of Smax and ln.alpha for 2 brood years, selected to capture the brood year with the lowest median ln.alpha and the highest median ln.alpha.
+
+```{r JoinPostMezidian,   fig.cap="(ref:JoinPostMezidian)"}
+include_graphics("data/StockSampleFigs/Meziadin_SR_Par_JointPosterior_3Modelcu.png")
+```
+
+
+
+(ref:ScatterBabLW) Scatterplot of log productivity ln(R/S) vs. spawner abundance - Babine Late Wild. Observations are colour-coded, with earlier data in fainter shading. The secondary axis illustrates the corresponding raw R/S values.
+
+```{r ScatterBabLW,   fig.cap="(ref:ScatterBabLW)"}
+include_graphics("data/StockSampleFigs/BabLW_RpS_ScatterPlot.png")
+```
+
+
+(ref:JoinPostBabLW) Joint posterior distributions for ln.a and b: Babine Late Wild. Each panel shows the scatter of MCMC samples, contour lines for the joint distribution, and two depictions of the marginal distributions for each parameter: boxplot with median, quartiles, and 80% whiskers, and a kernel density plot. Dashed reference lines show the medians of the marginal distributions. Figure includes 1 panel for the Basic Ricker model fit (top left), one panel for the Ricker AR1 fit (top right), and two panels showing the brood years with the lowest and highest productivity (median ln.alpha) for the TVP model fit (bottom panels). The parameter samples for the TVP model have 1 set of posterior samples for Smax, and 1 set of ln.alpha posterior samples for each brood year. The bottom panels show the joint distribution of Smax and ln.alpha for 2 brood years, selected to capture the brood year with the lowest median ln.alpha and the highest median ln.alpha.
+
+```{r JoinPostBabLW,   fig.cap="(ref:JoinPostBabLW)"}
+include_graphics("data/StockSampleFigs/Bab-LW_SR_Par_JointPosterior_3Modelcu.png")
+```
+
+
+
+\clearpage
+## HIERARCHICAL SPAWNER-RECRUIT MODEL FITS (STOCK-LEVEL) {#HBMResultsComp}
+
+### Model Versions Used for Comparison
+
+The purpose of including the HBM analyses by McAllister and Challenger in this paper is to explore the potential benefits of including the hierarchical structure and sharing information across stocks. For this comparison to single-stock fits, all other elements of the model fits should be kept as similar as possible, at least for the starting point of the comparison. McAllister and Challenger document sensitivity tests of the Hierarchical Bayesian Model (HBM) in Appendix \@ref(app:HBMFits). Here we focus on comparing results between the single-stock fits and two versions of the HBM model fits:
+
+* *HBM Base Case*: Used all stocks with data, including enhanced Pinkut and Fulton, with a shared year effect of productivity across all stocks, and more informative lognormal priors on Smax for several of the stocks (CV = 0.3).
+* *HBM Senstivity Run 26*: Excluded Pinkut and Fulton, less informative lognormal priors for Bear, Kitwanga, and Sustut (CV = 2).
+
+
+### Comparison of Biological Benchmark Estimates
+
+We compared HBM estimates of biological benchmarks to single stock fits with the Basic Ricker model (capped uniform Smax prior). This comparison covered the largest number of stocks, because single-stock AR1 and TVP model fits could only be applied to stocks with complete time series.  
+
+For most stocks, median Smsy estimates from the HBM Base Case were similar to the single stock Basic Ricker estimates, but for six stocks the difference was more than 25% (Figure \@ref(fig:HBMComp1)). After excluding the enhanced stocks and relaxing the HBM capacity prior on three stocks (Bear, Kitwanga, Sustut), all the estimates were similar between HBM and single-stock model fits (Figure \@ref(fig:HBMComp2)). In fact, Smsy estimates for HBM Run 26 and the single-stock Basic Ricker with capped uniform prior (Model BRcu) were more similar to each other than the Bayesian single stock estimate was to the simple deterministic estimate (Figure \@ref(fig:FitsCompDetFig)). 
+
+Widths of posterior Smsy distributions were similar between HBM and single-stock model fits for many stocks, tighter (i.e., more precise) in the HBM estimates for some stocks, and wider in the HBM estimates for a few stocks (Figure \@ref(fig:HBMComp3)). Smsy estimates for three stocks stood out in both HBM and single-stock model fits as particularly uncertain (i.e., very wide posteriors): Kitwanga, Asitka, and Motase. 
+
+While Smsy estimates were much more similar between HBM and single-stock model fits after the capacity prior was relaxed for some stocks (HBM Run 26), median estimates of Umsy remained quite different between the two types of model (Figure \@ref(fig:HBMComp4)). Median Umsy differed by more than 5% for seven stocks. HBM Run 26 estimated higher median Umsy (i.e., higher productivity) than the single stock Basic Ricker fit for Johnston, Asitka, Kitwanga, and Swan/Stephens. HBM Run 26 estimated lower median Umsy for Sustut, Bear, and Kitsumkalum. The range of median Umsy estimates across stocks was narrower for HBM Run 26 (44%-72%) than for the single stock Basic Ricker fit (41%-79%).
+
+
+
+\clearpage
+(ref:HBMComp1) Difference in median Smsy estimates for the HBM Base Case and the single stock Basic Ricker fit with capped uniform capacity priors. Stocks with differences larger than 25% are highlighted.
+
+```{r HBMComp1,   fig.cap="(ref:HBMComp1)"}
+include_graphics("data/HBM/FitsComparisonHBM_BRcuvsBaseCase_Smsy_PercDiff.png")
+```
+
+
+
+(ref:HBMComp2) Difference in median Smsy estimates for HBM Run 26 and the single stock Basic Ricker fit with capped uniform capacity priors. Stocks with differences larger than 25% are highlighted.
+
+```{r HBMComp2,   fig.cap="(ref:HBMComp2)"}
+include_graphics("data/HBM/FitsComparisonHBM_BRcuvsSensitivityRun26_Smsy_PercDiff.png")
+```
+
+\clearpage
+
+(ref:HBMComp3) Comparison of Smsy estimates for HBM Run 26 and the single stock Basic Ricker fit with capped uniform capacity priors. (A) Comparison of median estimates. Stocks with differences in median estimates larger than 25% are highlighted. Panel A compares estimates on a log scale to allow comparison across stocks with very different estimates, but stocks are flagged if the difference in original (i.e., unlogged) values is larger than 25%. (B) Comparison of the standardized interquartile range (SIQR), which captures half of the posterior samples. Stocks with SIQR > 0.4 in either estimate are highlighted.
+
+```{r HBMComp3,   fig.cap="(ref:HBMComp3)"}
+include_graphics("data/HBM/FitsComparisonHBM_BRcuvsSensitivityRun26_Smsy.png")
+```
+
+
+
+(ref:HBMComp4) Comparison of Umsy estimates for HBM Run 26 and the single stock Basic Ricker fit with capped uniform capacity priors. Sidebars identify the range of median estimates from each model type. Stocks are highlighted if median Umsy differ by more than 5%. Note that the difference in actual values is used here, not the relative % difference used for Smsy comparisons in previous plots.
+
+```{r HBMComp4,   fig.cap="(ref:HBMComp4)"}
+include_graphics("data/HBM/FitsComparisonHBM_BRcuvsSensitivityRun26_Umsy.png")
+```
+
+
+\clearpage
+### Comparison of eEstimated Productivity Changes Over Time (Single-stock vs. HBM Fits)
+
+We compared HBM estimates of productivity over time to single stock fits with the TVP model (capped uniform Smax prior) for the nine wild Skeena stocks where both estimates were available. 
+
+The shared year effect identified by the HBM model was very similar between the HBM Base Case, which included Pinkut and Fulton, and HBM Run 26, which excluded the enhanced stocks (Figure \@ref(fig:HBMComp5), Panel A). Both versions identified a sharp productivity drop in 1994, followed by a spike in 1995. The 4-year running mean of the HBM Base Case shared year effect identified a period of higher-than-average productivity in the 1980s and early 1990s, followed by a general decline since then (Panel B). Single stock TVP fits identified a similar decline in productivity since the 1990s for Babine Late Wild, the largest wild Skeena stock,  but other stocks had very different productivity trends over time (e.g., Panel D of Figure \@ref(fig:HBMComp5), Figure \@ref(fig:HBMComp6)). The three wild Babine stocks had very similar productivity trend over time in the single stock TVP fits. 
+
+Both the HBM shared year effect and the single-stock TVP estimates of changes in productivity over time link back to the residuals from the Basic Ricker fit. Based on the residuals, the  1994/1995 dip and spike in the HBM shared year effect was driven by the residuals from the Babine stocks (Figure \@ref(fig:HBMComp6)). In the HBM Base Case the change over time was very pronounced, because it included Pinkut and Fulton, which had the disease outbreak. In HBM Run 26, without the enhanced stocks, this was less pronounced, but it still picked up the same signal from the 3 wild Babine stock residuals, and assumed that all the non-Babine stocks experienced the same dramatic changes in those 2 years. The residual 1994/1995 signal from the three wild Babine stocks needs to be interpreted carefully, because spawner and recruit estimates for all five Babine stocks are derived together from a total weir count, based on estimated stock proportions from tagging studies in the 1970s.
+
+
+(ref:HBMComp5) Comparison of estimated productivity trends over time from HBM and single stock TVP model fits. (A) Annual shared year effect from the HBM model fits. Blue line and shaded area show median and 80% of the shared year effect from the HBM Base Case, the red overlayed line shows the shared year effect from HBM Run 26. (B) 4yr running mean of the shared year effect from the HBM Base Case. (C, D) Estimates of the time-varying productivity parameter ln.alpha from a single stock TVP model fit with capped uniform capacity prior for Babine Late Wild and Alastair. Medians and 80% bounds are shown.
+
+```{r HBMComp5,   fig.cap="(ref:HBMComp5)"}
+include_graphics("data/HBM/FitsComparison_PROD_1_SinglevsHBM.png")
+```
+
+
+(ref:HBMComp6) Changes in productivity parameter ln.alpha over time for nine wild Skeena stocks with complete SR time series. Estimates of the time-varying productivity parameter ln.alpha from a single stock TVP model fit with capped uniform capacity prior. Medians and 80% bounds are shown. 
+
+```{r HBMComp6,   fig.cap="(ref:HBMComp6)"}
+include_graphics("data/HBM/FitsComparison_PROD_2_ProdPatterns_KF_Skeena.png")
+```
+
+
+
+
+\clearpage
+##  PRODUCTIVITY SCENARIOS (STOCK-LEVEL AND AGGREGATE-LEVEL)
+
+### Scenario Descriptions
+
+We worked through the considerations and steps outlined in Section \@ref(ModelSelection) to select spawner-recruit parameter sets for four alternative productivity scenarios from the suite of candidate single-stock SR model fits.  These scenarios were used for the remaining analyses in this report (Tables \@ref(tab:SelectedModelsTab) and \@ref(tab:SelectedModelsTabAgg)). 
+
+Key considerations were:
+
+* We wanted to highlight differences in productivity between stocks, so focused on single-stock model fits, rather than the hierarchical model fits that start with the assumption of a similar underlying productivity across stocks.
+* Given that all candidate single-stock model fits converged for at least two of the three criteria (Section \@ref(Convergence)), we did not reject any of the fits based on statistical considerations.
+* We wanted to highlight the implications of alternative productivity assumptions for each stock, so we generated three alternatives to the base case with long-term average productivity. 
+* Where available, we used the AR1 model fit for the long-term average scenario. Otherwise, we used the Basic Ricker fit.
+* Where available, we used year-specific ln.alpha estimates from the time-varying productivity (TVP) model for the alternative productivity scenarios. Otherwise, we subsampled parameter sets from the Basic Ricker fit.
+* For stocks with time-varying productivity (TVP) model fits, we used the last available generation for the *Recent* productivity scenario. However, given discussions during the peer-review meeting [@SkeenaNassSkPRO;@SkeenaNassSkSAR], we also tested the effect of expanding the number of brood-years included in the *Recent* scenario to either two generations or 3 generations.
+
+We anticipate that future processes, such as the on-going Canadian domestic engagement process, will identify additional candidate model fits,  explore alternative parameter selection criteria, and request additional productivity scenarios.  The analysis framework is set up to rapidly respond to these requests. All of the results shown in subsequent sections can be  easily re-generated with alternative MCMC parameter sets (e.g., different productivity assumptions, Hierarchical Bayesian Model fits), but we have decided to limit the number of examples included in this Research Document. 
+
+\clearpage
+
+
+(ref:SelectedModelsTab) Stock-level SR models selected for alternative scenarios.  Model fits are BR = Basic Ricker, AR1 = Ricker with lag-1 autoregression correction, TVP = Ricker model with time-varying productivity parameter alpha. All selected model fits used the capped uniform (*cu*) capacity prior. The range of brood years from which parameter sets were sampled is listed for TVP fits. For example, TVPcu2010-2014 denotes that 1/5th of the parameter samples were taken from each year in the period 2010 to 2014. For BR and AR1 fits, alternative scenarios are identified based on the percentile used for the adjusted median of the sample distribution. For example, BRcu(0.1) denotes that half the parameter samples for that scenario were taken from below the 10th percentile of the original distribution, and half from above. For stocks without TVP fits the recent productivity scenario matched the low productivity scenario if observed R/S clearly decreased in recent years, matched the high productivity scenarios if they increased, and matched the long-term average scenario if there was no clear trend in either direction. Note that three alternative versions of *Recent* productivity scenario for stocks with TVP fits were explored. All use the model fit, generation length, and end year specified in this table, but they include either one, two, or three generations. Section \@ref(AltProdResults) compares the parameter distributions. The examples in the rest of this Research Document are based on the 1-generation version of the *Recent* productivity scenario.
+
+```{r SelectedModelsTab, echo = FALSE, results = "asis"}
+
+table.in <- read_csv("data/ReportTable_SelectedModels.csv") %>% arrange(Aggregate,StkSeq) %>%
+									select(-StkSeq,-Stock) %>% dplyr::filter(!is.na(Aggregate)) %>%
+									dplyr::rename(Stock = StkNmS,Recent = Now,MU=Aggregate) %>%
+									mutate_all(funs(str_replace(., "KF","TVP")))
+
+
+
+
+table.in$MU[duplicated(table.in$MU)] <- ""
+
+table.in[is.na(table.in)] <- "-"
+
+
+table.in %>%
+   #mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   #mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
+                  caption = "(ref:SelectedModelsTab)" ) %>%
+    kableExtra::row_spec(c(7,9), hline_after = TRUE) %>%
+	add_header_above(c(" " = 2, "Scenarios" = 4)) 
+
+```
+
+
+
+
+\clearpage
+
+(ref:SelectedModelsTabAgg) Aggregate-level SR models selected for alternative scenarios. Layout as per Table \@ref(tab:SelectedModelsTab). 
+
+```{r SelectedModelsTabAgg, echo = FALSE, results = "asis"}
+
+table.in <- read_csv("data/ReportTable_SelectedModelsAgg.csv") %>%			
+	dplyr::rename(Recent = Now) %>%
+									mutate_all(funs(str_replace(., "KF","TVP")))
+
+table.in[is.na(table.in)] <- "-"
+
+
+
+
+table.in %>%
+   #mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   #mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
+                  caption = "(ref:SelectedModelsTabAgg)" ) %>%
+    #kableExtra::row_spec(c(7,9), hline_after = TRUE) %>%
+	add_header_above(c(" " = 1, "Scenarios" = 4)) 
+
+```
+
+
+
+### Comparison of Parameter Distributions for Productivity Scenarios {#AltProdResults}
+
+Productivity parameters for the *recent* scenario, generated as per Table \@ref(tab:SelectedModelsTab), have lower median productivity for about 1/3 of the stocks, and wider distributions (i.e., larger uncertainty, lower confidence) for most of the stocks (Table \@ref(tab:ProdCompTab1), Figures \@ref(fig:ProdComp1) and \@ref(fig:ProdComp2)). Stocks with lower productivity in the *Recent* scenario include Meziadin, the largest Nass stock, and all three wild Babine stocks (Early, Mid, and Late Wild). Four small stocks, each accounting for less than 2% of cumulative spawner abundance since 2000, have higher *Recent* productivity: Alastair, Bear, Slamgeesh, and Johnston. Three stocks are notable for having both much lower productivity, with a % difference in median ln.alpha between scenarios larger than -35%, and a distribution that is more than twice as wide (i.e., % difference in SIQR > 100): Babine Late Wild, Babine Early Wild, Meziadin, and Kitwanga (Figure \@ref(fig:ProdComp2)).
+
+
+Alternative versions of the *recent* productivity scenario, using either two or three generations instead of only the last generation, have similar median productivity and similar spread for about 1/2 of the stocks (Table \@ref(tab:ProdCompTab2), Figures \@ref(fig:ProdComp3) and \@ref(fig:ProdComp3)). This includes two of the three wild Babine stocks (Mid and Late Wild). For 1/3 of the stocks, median productivity is higher, and the distribution is narrower if additional brood years are included in the definition of the *recent* scenario. These include Meziadin, the largest Nass stock, and one of the wild Babine stocks (Babine Early Wild). For two stocks, median productivity is lower and more uncertain: Morice and Swan/Stephens. Corresponding Smsy estimates change similarly due to the alternative time windows used for the recent productivity scenario (Table \@ref(tab:ProdCompBMRatioSmsy)).
+
+
+
+
+
+
+\clearpage
+(ref:ProdCompTab1) Estimated productivity parameters ln.alpha for the long-term average and recent productivity scenarios. For each scenario, the table lists median (Med) and standardized inter-quartile range (SIQR, range between p25 and p75) for the Bayesian posterior parameter subsamples generated as per Table \@ref(tab:SelectedModelsTab). The last two columns show percent difference (*PercDiff*) between the scenarios. Stocks are sorted by *PercDiff* in median estimate. Horizontal lines separate the stocks into three groups based on percent difference in median ln.alpha: more than ~ 10% decrease (top), more than ~ 10% increase  (bottom), or less than ~ 10% change in either direction (middle). Note that table includes only wild stocks.
+
+```{r ProdCompTab1, echo = FALSE, results = "asis"}
+
+table.in <- read_csv("data/ReportTable_ProdChange.csv") %>%		
+	dplyr::filter(!(Stock %in% c("Skeena","SkeenaWild","Nass","Pinkut","Fulton"))) %>%
+	dplyr::select(Stock,Median.LTAvg,SIQR.LTAvg,Median.Curr,SIQR.Curr,
+								Median.PercChange,	SIQR.PercChange) %>%
+	arrange(Median.PercChange) %>%
+	mutate_if(is.numeric, round,2)
+	
+
+lines.idx <- c( max(which(table.in$Median.PercChange < -9.5)),
+								min(which(table.in$Median.PercChange > 9.5))-1)
+
+	
+table.in$Stock <- gsub("Lower Nass Sea & River Type","L Nass SRT",table.in$Stock)
+
+table.in[is.na(table.in)] <- "-"
+
+
+col.names.use <-  c("Stock",rep(c("Med","SIQR"),3))
+
+
+
+table.in %>%
+   #mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   #mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
+									col.names = col.names.use ,
+                  caption = "(ref:ProdCompTab1)" ) %>%
+	 kableExtra::column_spec(6, bold = T) %>%
+    kableExtra::row_spec(c(lines.idx), hline_after = TRUE) %>%
+	add_header_above(c(" " = 1, "LTAvg" = 2,"Recent" = 2,"PercDiff" = 2)) 
+
+```
+
+
+
+
+\clearpage
+
+(ref:ProdComp1) Estimated median productivity (ln.alpha) for the long-term average and recent productivity scenarios. Medians are for the Bayesian posterior parameter subsamples generated as per Table \@ref(tab:SelectedModelsTab). Stocks falling on the solid red line have the same median for both scenarios. For stocks below the solid red line, recent productivity is lower than long-term average productivity. For stocks between the dashed red lines, the difference in productivity scenarios is less than 25%. Note that figure includes only wild stocks.
+
+```{r ProdComp1,   fig.cap="(ref:ProdComp1)"}
+include_graphics("data/RecentProd_Comparison_LTavgvs1genv_Values.png")
+```
+
+
+
+
+\clearpage
+
+(ref:ProdComp2) Differences in median and spread of the productivity parameter (ln.alpha) for the long-term average and recent productivity scenarios. Points show the percent change in the standardized inter-quartile range (SIQR, range between p25 and p75) vs. the change in median ln.alpha. Horizontal and vertical red lines mark "no change". Note that figure includes only wild stocks.
+
+
+```{r ProdComp2,   fig.cap="(ref:ProdComp2)"}
+include_graphics("data/RecentProd_Comparison_LTavgvs1gen_Diffs.png")
+```
+
+
+
+
+\clearpage
+(ref:ProdCompTab2) Estimated productivity parameters ln.alpha for three versions of the recent productivity scenario (1,2, or 3 generations). For each scenario, the table lists median (Med) and standardized inter-quartile range (SIQR, range between p25 and p75) for the Bayesian posterior parameter subsamples generated as per Table \@ref(tab:SelectedModelsTab). Table also shows percent difference (*PercDiff*) between the alternative versions. Stocks are sorted by *PercDiff* in median estimate between the 2-generation and 1-generation versions. Horizontal lines separate the stocks into three groups based on percent difference in median ln.alpha between the 2-generation and 1-generation versions: more than ~ 5% decrease (top), more than ~ 5% increase  (bottom), or less than ~ 5% change in either direction (middle). Note that table includes only wild stocks. Table \@ref(tab:ProdCompBMRatioSmsy) compares the corresponding Smsy estimates.
+
+```{r ProdCompTab2, echo = FALSE, results = "asis"}
+
+table.in <- read_csv("data/ReportTable_ProdChange.csv") %>%		
+	dplyr::filter(!(Stock %in% c("Skeena","SkeenaWild","Nass","Pinkut","Fulton"))) %>%
+	dplyr::select(Stock,Median.CurrLS,SIQR.CurrLS,Median.CurrLS2,SIQR.CurrLS2,
+								Median.PercChange2,	SIQR.PercChange2,
+								Median.CurrLS3,SIQR.CurrLS3,
+								Median.PercChange3,	SIQR.PercChange3) %>%
+	arrange(Median.PercChange2) %>%
+	mutate_if(is.numeric, round,2)
+	
+	
+table.in$Stock <- gsub("Lower Nass Sea & River Type","L Nass SRT",table.in$Stock)
+
+table.in[is.na(table.in)] <- "-"
+
+
+lines.idx <- c( max(which(table.in$Median.PercChange2 < -4.99)),
+								min(which(table.in$Median.PercChange2 > 4.99))-1)
+
+	
+
+col.names.use <-  c("Stock",rep(c("Med","SIQR"),5))
+
+
+
+table.in %>%
+   #mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   #mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
+									col.names = col.names.use ,
+                  caption = "(ref:ProdCompTab2)" ) %>%
+	 kableExtra::column_spec(6, bold = T) %>%
+     kableExtra::row_spec(c(lines.idx), hline_after = TRUE) %>%
+	add_header_above(c(" " = 1, "1 Gen" = 2,"2 Gen" = 2,"PercDiff\n(2 Gen vs 1 Gen)" = 2,
+										 "3 Gen" = 2,"PercDiff\n(3 Gen vs 1 Gen)" = 2)) 
+
+```
+
+
+
+
+
+\clearpage
+(ref:ProdCompBMRatioSmsy) Comparison of Median Smsy estimates across productivity scenarios. Layout as per Table \@ref(tab:ProdCompTab2). Median Smsy estimates are in 1,000s (columns 2,4,and 8).
+
+```{r ProdCompBMRatioSmsy, echo = FALSE, results = "asis"}
+
+table.in <- read_csv("data/ReportTable_SmsyChange.csv") %>%		
+	dplyr::filter(!(Stock %in% c("Skeena","SkeenaWild","Nass","Pinkut","Fulton"))) %>%
+	dplyr::select(Stock,Median.CurrLS,SIQR.CurrLS,Median.CurrLS2,SIQR.CurrLS2,
+								Median.PercChange2,	SIQR.PercChange2,
+								Median.CurrLS3,SIQR.CurrLS3,
+								Median.PercChange3,	SIQR.PercChange3) %>%
+	arrange(Median.PercChange2) %>%
+	mutate_if(is.numeric, round,2)
+	
+	
+table.in$Stock <- gsub("Lower Nass Sea & River Type","L Nass SRT",table.in$Stock)
+
+table.in[is.na(table.in)] <- "-"
+
+
+lines.idx <- c( max(which(table.in$Median.PercChange2 < -4.99)),
+								min(which(table.in$Median.PercChange2 > 4.99))-1)
+
+	
+
+col.names.use <-  c("Stock",rep(c("Med","SIQR"),5))
+
+
+
+table.in %>%
+   #mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   #mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
+									col.names = col.names.use ,
+                  caption = "(ref:ProdCompBMRatioSmsy)" ) %>%
+	 kableExtra::column_spec(6, bold = T) %>%
+     kableExtra::row_spec(c(lines.idx), hline_after = TRUE) %>%
+	add_header_above(c(" " = 1, "1 Gen" = 2,"2 Gen" = 2,"PercDiff\n(2 Gen vs 1 Gen)" = 2,
+										 "3 Gen" = 2,"PercDiff\n(3 Gen vs 1 Gen)" = 2)) 
+
+```
+
+
+
+
+
+
+
+\clearpage
+
+(ref:ProdComp3) Estimated median productivity (ln.alpha) for the 1-generation and 2-generation versions of the recent productivity scenario. Medians are for the Bayesian posterior parameter subsamples generated as per Table \@ref(tab:SelectedModelsTab). Stocks falling on the solid red line have the same median for both scenarios. For stocks below the solid red line, the 1-generation version has lower productivity than the 2-generation version. For stocks between the dashed red lines, the difference between alternative versions is less than 25%. Note that figure includes only wild stocks.
+
+```{r ProdComp3,   fig.cap="(ref:ProdComp3)"}
+include_graphics("data/RecentProd_Comparison_1genvs2Gen_Values.png")
+```
+
+
+
+\clearpage
+
+(ref:ProdComp4) Differences in median and spread of the productivity parameter (ln.alpha) for the  1-generation and 2-generation versions of the recent productivity scenario. Points show the percent change in the standardized inter-quartile range (SIQR, range between p25 and p75) vs. the change in median ln.alpha. Horizontal and vertical red lines mark "no change". Note that figure includes only wild stocks.
+
+```{r ProdComp4,   fig.cap="(ref:ProdComp4)"}
+include_graphics("data/RecentProd_Comparison_1genvs2Gen_Diffs.png")
+```
+
+
+\clearpage
+##  BIOLOGICAL BENCHMARK ESTIMATES (STOCK-LEVEL AND AGGREGATE-LEVEL) {#BMResults}
+
+
+### Illustration of Stock-level Results: Meziadin and Babine Late Wild
+
+Standard biological benchmarks for the largest wild stock from each aggregate differed substantially between alternative productivity scenarios. 
+
+Comparing the recent productivity scenario to the long-term average  productivity scenario for Meziadin (Figure \@ref(fig:BMMezidian)) and Babine Late Wild (Figure \@ref(fig:BMBabLW)):
+
+* The recent productivity scenario had  lower and more uncertain estimates of productivity (ln.alpha) and lower estimates of capacity (Smax), which resulted in lower estimates of Smsy, Seq, and Umsy. 
+* Estimates of Sgen, which is linked to both the productivity estimate and the value of Smsy, increased for Meziadin and decreased for Babine Late Wild, but note that in both cases Sgen increased as a relative proportion of Smsy (i.e., with lower productivity need more spawners to build back to Smsy in one generation, but if Smsy is much lower, then Sgen can actually drop relative to the long-term average scenario).
+
+
+(ref:BMMezidian) Posterior distributions of productivity parameter ln.alpha and biological benchmark estimates: Meziadin. Each panel shows the posterior distribution (median, quartiles, 80% bounds) for two productivity scenarios: long-term average (LTAvg) and recent productivity. Two versions of the parameter estimates are shown: regular (R) and with log-normal bias correction (C) on the productivity parameter ln.alpha.
+
+```{r BMMezidian,   fig.cap="(ref:BMMezidian)"}
+include_graphics("data/StockSampleFigs/Meziadin_BM_SummaryPlot.png")
+```
+
+
+
+\clearpage
+(ref:BMBabLW) Posterior distributions of biological benchmark estimates: Babine Late Wild. Layout as per Figure \@ref(fig:BMMezidian).
+
+```{r BMBabLW,   fig.cap="(ref:BMBabLW)"}
+include_graphics("data/StockSampleFigs/Bab-LW_BM_SummaryPlot.png")
+```
+
+\clearpage
+### Stock-level and Aggregate-level Biological Benchmarks for Nass Sockeye  
+
+*Abundance benchmarks*
+
+Comparing aggregate to stock-level Smsy estimates for Nass Sockeye under long-term average productivity (Table \@ref(tab:SmsyLtAvgNass)):
+
+* The aggregate-level Smsy estimate for Nass Sockeye was substantially larger than the sum of stock-level estimates for those stocks where SR models were fitted. The four stocks with stock-level estimates are assumed to account for most of the Sockeye production from the Nass, but see notes regarding Bowser in Section \@ref(PrioritiesFuture). 
+
+Comparing aggregate to stock-level Smsy estimates for Nass Sockeye under recent productivity (Table \@ref(tab:SmsyRecentNass)):
+
+* The aggregate-level Smsy estimate was larger than the sum of stock-level estimates for four modelled stocks, but the difference was smaller than under the long-term average productivity scenario.
+
+Comparing aggregate and stock-level benchmark estimates under recent productivity to the long-term average productivity scenario  (Table \@ref(tab:SmsyLtAvgNass) vs. Table \@ref(tab:SmsyRecentNass), Table \@ref(tab:SmaxLtAvgNass) vs. Table \@ref(tab:SmaxRecentNass), Table \@ref(tab:SgenLtAvgNass) vs. Table \@ref(tab:SgenRecentNass)):
+
+* The aggregate estimate, and the Meziadin Smsy estimate are much lower under recent productivity. 
+* The Smsy estimate for the second-largest stock, Lower Nass Sea and River Type Sockeye, also dropped under recent productivity, but much less.  
+* The same general differences were observed for estimates of Smax. 
+* Under the recent productivity scenario, Sgen estimates increased for Meziadin and Kwinageese and decreased for the other two stocks with SR data, so that there was little change in the sum of Sgen estimates due to alternative productivity assumptions. 
+
+
+Sgen is not applicable for stock aggregates, so we did not include a comparison between aggregate and stock-level Sgen estimates. 
+
+*Umsy*
+
+Aggregate-level estimates of Umsy closely matched the median of stock-level median estimates under both productivity scenarios, but differed from the median Umsy estimate for Meziadin, the largest stock (Tables \@ref(tab:UmsyLtAvgNass) and \@ref(tab:UmsyRecentNass)). Under the recent productivity scenario, Umsy for Meziadin is the lowest among the 4 modelled Nass stocks and about 10% lower than the aggregate fit (55% for the aggregate, 45% for Meziadin).
+
+
+\clearpage
+
+(ref:SmsyLtAvgNass) Comparison of aggregate and stock-level Smsy estimates: Nass / Long-term average productivity. Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit. 
+
+```{r SmsyLtAvgNass, echo = FALSE, results = "asis"}
+
+abd.bm.tab.src <- read_csv("data/SummaryTables_AbundanceBM.csv") %>% select(-Stock)
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Smsy") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmsyLtAvgNass)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+(ref:SmsyRecentNass) Comparison of aggregate and stock-level Smsy estimates: Nass / Recent productivity. Stocks are sorted based on median estimate. 
+
+```{r SmsyRecentNass, echo = FALSE, results = "asis"}
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "Now",BM == "Smsy") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmsyRecentNass)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+
+\clearpage
+
+(ref:SmaxLtAvgNass) Comparison of aggregate and stock-level Smax estimates: Nass / Long-term average productivity.  Stocks are sorted based on median estimate. 
+
+```{r SmaxLtAvgNass, echo = FALSE, results = "asis"}
+
+
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Smax") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmaxLtAvgNass)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+(ref:SmaxRecentNass) Comparison of aggregate and stock-level Smax estimates: Nass / Recent productivity.  Stocks are sorted based on median estimate. 
+
+```{r SmaxRecentNass, echo = FALSE, results = "asis"}
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "Now",BM == "Smax") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmaxRecentNass)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+
+
+
+\clearpage
+
+(ref:SgenLtAvgNass) Comparison of aggregate and stock-level Sgen estimates: Nass / Long-term average productivity.  Stocks are sorted based on median estimate. 
+
+```{r SgenLtAvgNass, echo = FALSE, results = "asis"}
+
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Sgen") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SgenLtAvgNass)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+(ref:SgenRecentNass) Comparison of aggregate and stock-level Sgen estimates: Nass / Recent productivity.  Stocks are sorted based on median estimate. 
+
+```{r SgenRecentNass, echo = FALSE, results = "asis"}
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "Now",BM == "Sgen") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SgenRecentNass)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+\clearpage
+
+(ref:UmsyLtAvgNass) Comparison of aggregate and stock-level Umsy estimates: Nass / Long-term average productivity.  Table also lists the range and median across stock-level estimates.
+
+```{r UmsyLtAvgNass, echo = FALSE, results = "asis"}
+
+umsy.bm.tab.src <- read_csv("data/SummaryTables_UMSY.csv") %>% select(-Stock)
+
+table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Umsy") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:UmsyLtAvgNass)") %>%
+    kableExtra::row_spec(c(1,4), hline_after = TRUE) 
+
+```
+
+
+
+(ref:UmsyRecentNass) Comparison of aggregate and stock-level Umsy estimates: Nass / Recent productivity.  Table also lists the range and median across stock-level estimates.
+
+```{r UmsyRecentNass, echo = FALSE, results = "asis"}
+
+table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "Now",BM == "Umsy") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:UmsyRecentNass)") %>%
+    kableExtra::row_spec(c(1,4), hline_after = TRUE) 
+
+```
+
+
+
+
+
+\clearpage
+### Stock-level and Aggregate-level Biological Benchmarks for Skeena Wild Sockeye
+
+*Abundance benchmarks*
+
+Comparing aggregate to stock-level Smsy estimates for Skeena Sockeye under long-term average productivity (Table \@ref(tab:SmsyLtAvgSkeenaWild)):
+
+* The aggregate-level Smsy estimate for Skeena Sockeye was lower than the sum of stock-level estimates for those stocks where SR models were fitted. The 16 stocks with stock-level estimates are assumed to account for most of the Sockeye production from the Skeena. 
+
+Comparing aggregate to stock-level Smsy estimates for Skeena Sockeye under recent productivity (Table \@ref(tab:SmsyRecentNass)):
+
+* The aggregate-level Smsy estimate was much lower than the sum of stock-level estimates for 16 modelled stocks, and the difference was larger than under the long-term average productivity scenario.
+
+Comparing aggregate and stock-level benchmark estimates under recent productivity to the long-term average productivity scenario  (Table \@ref(tab:SmsyLtAvgSkeenaWild) vs. Table \@ref(tab:SmsyRecentSkeenaWild), Table \@ref(tab:SmaxLtAvgSkeenaWild) vs. Table \@ref(tab:SmaxRecentSkeenaWild), Table \@ref(tab:SgenLtAvgSkeenaWild) vs. Table \@ref(tab:SgenRecentSkeenaWild)):
+
+* The aggregate estimate, and the Babine Late Wild Smsy estimate, are much lower under recent productivity. 
+* The same general differences were observed for estimates of Smax.
+* Under the recent productivity scenario, Sgen estimates decreased for most of the stocks, and the sum of Sgen estimates decreased substantially. 
+
+Sgen is not applicable for stock aggregates, so we did not include a comparison between aggregate and stock-level Sgen estimates. 
+
+*Umsy*
+
+Aggregate-level estimates of Umsy differed substantially from the median of stock-level median estimates under both productivity scenarios (Tables \@ref(tab:UmsyLtAvgSkeenaWild) and \@ref(tab:UmsyRecentSkeenaWild)). The median of stock-level estimates was much higher, because large stocks and small stocks were weighted equally in the median calculcation. Aggregate Umsy estimates were closer to the Umsy estimates for the largest stocks (Babine Early, Mid, and Late Wild).
+
+
+
+\clearpage
+
+(ref:SmsyLtAvgSkeenaWild) Comparison of aggregate and stock-level Smsy estimates: SkeenaWild / Long-term average productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SmsyLtAvgSkeenaWild, echo = FALSE, results = "asis"}
+
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "LTAvg",BM == "Smsy") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmsyLtAvgSkeenaWild)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+\clearpage
+(ref:SmsyRecentSkeenaWild) Comparison of aggregate and stock-level Smsy estimates: SkeenaWild / Recent productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SmsyRecentSkeenaWild, echo = FALSE, results = "asis"}
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "Now",BM == "Smsy") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmsyRecentSkeenaWild)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+
+\clearpage
+
+(ref:SmaxLtAvgSkeenaWild) Comparison of aggregate and stock-level Smax estimates: SkeenaWild / Long-term average productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SmaxLtAvgSkeenaWild, echo = FALSE, results = "asis"}
+
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "LTAvg",BM == "Smax") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmaxLtAvgSkeenaWild)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+\clearpage
+(ref:SmaxRecentSkeenaWild) Comparison of aggregate and stock-level Smax estimates: SkeenaWild / Recent productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SmaxRecentSkeenaWild, echo = FALSE, results = "asis"}
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "Now",BM == "Smax") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SmaxRecentSkeenaWild)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+
+
+
+\clearpage
+
+(ref:SgenLtAvgSkeenaWild) Comparison of aggregate and stock-level Sgen estimates: SkeenaWild / Long-term average productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+
+```{r SgenLtAvgSkeenaWild, echo = FALSE, results = "asis"}
+
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "LTAvg",BM == "Sgen") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SgenLtAvgSkeenaWild)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+\clearpage
+
+(ref:SgenRecentSkeenaWild) Comparison of aggregate and stock-level Sgen estimates: SkeenaWild / Recent productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added.  
+
+```{r SgenRecentSkeenaWild, echo = FALSE, results = "asis"}
+
+table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "Now",BM == "Sgen") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:SgenRecentSkeenaWild)") %>%
+    kableExtra::row_spec(c(1,3), hline_after = TRUE) 
+
+```
+
+
+
+
+\clearpage
+
+(ref:UmsyLtAvgSkeenaWild) Comparison of aggregate and stock-level Umsy estimates: Skeena Wild / Long-term average productivity.  Table also lists the range and median across stock-level estimates. 
+
+```{r UmsyLtAvgSkeenaWild, echo = FALSE, results = "asis"}
+
+
+table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "LTAvg",BM == "Umsy") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:UmsyLtAvgSkeenaWild)") %>%
+    kableExtra::row_spec(c(1,4), hline_after = TRUE) 
+
+```
+
+\clearpage
+
+(ref:UmsyRecentSkeenaWild) Comparison of aggregate and stock-level Umsy estimates: Skeena Wild / Recent productivity.  Table also lists the range and median across stock-level estimates.
+
+```{r UmsyRecentSkeenaWild, echo = FALSE, results = "asis"}
+
+table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "Now",BM == "Umsy") %>% select(-Aggregate,-Scenario,-BM) %>%
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+	
+table.in[table.in == "NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",6)),
+                  caption = "(ref:UmsyRecentSkeenaWild)") %>%
+    kableExtra::row_spec(c(1,4), hline_after = TRUE) 
+
+```
+
+
+
+
+\clearpage
+## COMPARISON OF SUSTAINABLE EXPLOITATION RATE ACROSS STOCKS AND SCENARIOS {#UmsyComp}
+
+Observed differences in estimated productivity (ln.alpha) between stocks and between scenarios translate into large differences in estimates of Umsy, defined as the sustainable harvest mortality rate at MSY (Figure \@ref(fig:AggUmsy)). Aggregate-level Umsy estimates were higher for the Nass aggregate than for the Skeena Wild aggregate, and Umsy under recent productivity was much lower than under long-term average productivity for both aggregates. Umsy estimates varied substantially between the component stocks for each aggregate. The SkeenaWild aggregate includes more stocks than the Nass aggregate, and median stock-level Umsy estimates spanned a wider range. Umsy under recent productivity was lower  and more uncertain for most stocks. The ranking of stocks by productictivity also differed between the long-term average and recent productivity scenario. Tables \@ref(tab:UmsyLtAvgNass), \@ref(tab:UmsyRecentNass), \@ref(tab:UmsyLtAvgSkeenaWild), and \@ref(tab:UmsyRecentSkeenaWild) above list the corresponding estimates. Appendix \@ref(BiasCorrectedBM) lists the bias-corrected versions of the estimates.
+
+Umsy distributions can be considered relative to different levels of target exploitation rate for a stock aggregate:
+
+* Figure \@ref(fig:UmsyProfiles1) shows the Prop(ER < Umsy), the proportion of the posterior Umsy distribution for each stock which exceeds ERs from 0 to 100% (i.e., the probability that a particular aggregate ER is sustainable over the long run for each component stock). This is the same information as Figure \@ref(fig:AggUmsy), just expressed in a different way: this version shows how much of the boxplots in Figure \@ref(fig:AggUmsy) falls to the right of each ER level. At 40% ER applied over the long run, two wild stocks have less than 50% probability of being harvested sustainably (two lines below the horizontal red line) under the long-term average productivity scenario, which increases to four wild stocks under the recent productivity scenario.
+* Figure \@ref(fig:UmsyProfiles2) summarizes this information across stocks. It shows how many stocks have at least 50% probability of being sustainably harvested at each ER. At 40% ER, two wild stocks don't meet this objective under the long-term average productivity scenario (18 of 20 stocks do meet it), which increases to four wild stocks under the recent productivity scenario (16 of 20 wild stocks = 80%  of stocks meet the objective).
+* Figures \@ref(fig:UmsyHeatmapLTAvg) and \@ref(fig:UmsyHeatmapRecent) show the details by stock. At 40% ER, the two stocks with less than 50% probability of meeting this objective under the long-term average productivity scenario are Kitwanga and Swan/Stephens. Under the recent productivity scenario, the list of stocks not meeting this objective also includes Babine Early Wild and Babine Late Wild.
+* Figure  \@ref(fig:UmsyHisto) shows the frequency distribution of stock-specific median Umsy estimates. This type of plot was presented by @Waltersetal2008ISRP in their review of Skeena Sockeye (their Figure 14), so we've included it here for comparison. For Skeena Wild,  the spread of median Umsy estimates across component stocks is wider under the recent productivity scenario (i.e., the mixed-stock fishery challenge is more pronounced).  For Nass, there is an overall shift to lower median Umsy for the component stocks.
+
+The different types of plots in Figures \@ref(fig:AggUmsy) to \@ref(fig:UmsyHisto) all show the same underlying information, just presented differently. However, these alternative displays capture alternative perspectives, and no single version will be informative for all participants in a planning process.
+
+\clearpage
+(ref:AggUmsy) Comparison of aggregate and stock-level Umsy estimates across stocks and aggregates for two alternative productivity assumptions. Stocks within an aggregate are sorted based on median Umsy. The largest stock in each aggregate is highlighted with red horizontal lines.
+
+```{r AggUmsy,   fig.cap="(ref:AggUmsy)"}
+include_graphics("data/UmsyPlots/Agg_Umsy_Comparison.png")
+```
+
+
+\clearpage
+(ref:UmsyProfiles1) Probability profiles of sustainable ER. Proportion of Bayesian posterior Umsy estimates that exceeds different levels of ER for 20 wild stocks. Red horizontal line marks 50% probability. The ER where a line for a stock crosses the red line corresponds to the median estimate of Umsy. The largest stock from each aggregate is highlighted. 
+
+```{r UmsyProfiles1,   fig.cap="(ref:UmsyProfiles1)"}
+include_graphics("data/UmsyPlots/ResDoc_Umsy_Profile_Figure.png")
+```
+
+
+\clearpage
+(ref:UmsyProfiles2) Summary of sustainable ER across 20 wild stocks. Number of stocks with at least 50% probability of being harvested sustainably.
+
+```{r UmsyProfiles2,   fig.cap="(ref:UmsyProfiles2)"}
+include_graphics("data/UmsyPlots/ResDoc_Umsy_Profile_Figure2.png")
+```
+
+
+
+\clearpage
+(ref:UmsyHeatmapLTAvg) Umsy comparison across stocks - Long-term average productivity. Each column shows estimates for a fixed aggregate ER rate. Each cell in the table shows the probability of that ER being sustainable over the long run (i.e., ER < Umsy). Probabilities are categorized using the Intergovernmental Panel on Climate Change (IPCC) Likelihood Scale to facilitate discussion of results (Table \@ref(tab:IPPCLikelihoodTab)). Note that this figure shows the same information as the top panel of Figure \@ref(fig:UmsyProfiles1), just in more detail. Stocks are grouped by aggregate, and roughly sorted within aggregate from mouth of the river upstream. Grey shading indicates stocks that either lack SR data (e.g., Oweegee, Sicintine) or are enhanced (Pinkut, Fulton).
+
+
+```{r UmsyHeatmapLTAvg,   fig.cap="(ref:UmsyHeatmapLTAvg)"}
+include_graphics("data/UmsyPlots/Agg_Heatmap_FixedER_UmsyComparison_LTAvgProd.png")
+```
+
+
+
+\clearpage
+(ref:IPCCscale) IPCC Likelihood scale from @IPCCscale and colour coding used in this paper.
+
+
+```{r IPPCLikelihoodTab, echo = FALSE, results = "asis"}
+
+ipcc.df <- read.csv("data/Reference Tables/IPCC_LikelihoodScale.csv",stringsAsFactors = FALSE)
+
+
+ipcc.df  %>% 
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)})%>%
+   mutate_all(function(x){gsub("NA", "", x)})%>%
+   csas_table(format = "latex", escape = FALSE, font_size = 9,
+                  caption = "(ref:IPCCscale)") %>%
+   #kableExtra::column_spec(1, width = "15em") %>%
+   kableExtra::row_spec(1:(dim(ipcc.df)[1] -1), hline_after = TRUE)
+   #kableExtra::column_spec(2, width = "8em") %>%
+   #kableExtra::column_spec(3, width = "5em") %>%
+   #kableExtra::column_spec(4, width = "7em") %>%
+   #kableExtra::column_spec(5, width = "4em") %>%
+   #kableExtra::column_spec(6, width = "14em") 
+
+
+```
+
+
+
+
+
+\clearpage
+(ref:UmsyHeatmapRecent) Umsy comparison across stocks - Recent productivity. Layout as per Figure \@ref(fig:UmsyHeatmapLTAvg).
+
+```{r UmsyHeatmapRecent,   fig.cap="(ref:UmsyHeatmapRecent)"}
+include_graphics("data/UmsyPlots/Agg_Heatmap_FixedER_UmsyComparison_RecentProd.png")
+```
+
+
+
+\clearpage
+(ref:UmsyHisto) Umsy frequency plot. Each panel shows the distribution of stock-specific median Umsy estimates, rounded to the nearest 5%, with the 16 modelled stock in the Skeena Wild aggregate  in the top row, and the 4 modelled stocks in the Nass aggregate in the bottom row. Adapted from Figure 14 in @Waltersetal2008ISRP.
+
+```{r UmsyHisto,   fig.cap="(ref:UmsyHisto)"}
+include_graphics("data/UmsyPlots/Umsy_Histograms.png")
+```
+
+
+
+
+
+
+
+
+
+\clearpage
+##  EQUILIBRIUM PROFILES (STOCK-LEVEL AND AGGREGATE-LEVEL)  {#ProfileResults}
+
+### Examples of Spawner-based Equilibrium Profiles
+
+Equilibrium profiles of expected yield or recruitment at different levels of spawner abundance (assumed to be a fixed escapement target) have been used as a building block for setting escapement goals in Alaskan and northern transboundary salmon fisheries (Section \@ref(EqProfilesMethods)). 
+
+We illustrate the approach for the largest stock in each aggregate, using three alternative versions of a yield profile, and then summarize the aggregate-level and stock-level results for one commonly used version, the "80-60 range", which captures the range of spawner abundances with an 80% probability of achieving at least 60% of median MSY on average over the long term, if the stock were managed to a fixed escapement goal in that range.
+
+*Meziadin*: The all-year median spawner abundance is very close to the median estimate of Smsy under the long-term average productivity scenario, but most years since 2000 were at or below the long-term average Smsy (Figure \@ref(fig:ProfileMezidian), Panel A). Under long-term average productivity, spawner abundances near the median Smsy estimate had a roughly 80% probability of achieving at least 80% of long-term average MSY, but under the recent productivity scenario no spawner abundance was likely to achieve that objective (Panel B). For objectives with lower targets (achieve at least 60% of MSY, achieve an equilibrium yield of 100,000 fish), the ranges of spawner abundances with an 80% probability of meeting the objective under long-term average productivity was wider (Panels C, D).  Probabilities of achieving these lower objectives were higher under recent productivity, but still didn't meet the 80% threshold we used for illustration.
+
+*Babine Late Wild*: The all-year median spawner abundance is below the median estimate of Smsy under the long-term average productivity scenario, and most years since 2000 were below the long-term average Smsy (Figure \@ref(fig:ProfileBabineLW), Panel A). The observed differences in yield profiles across alternative productivity scenarios and objectives for Babine Late Wild were similar to the Meziadin profiles (Panels B-D).
+
+ "80-60" yield ranges could be calculated for both aggregates and most of the stocks under the long-term average productivity, but only a few stocks met the 80% threshold under the recent productivity scenario (Tables \@ref(tab:ProfTab8060Nass) and \@ref(tab:ProfTab8060SkeenaWild)).
+
+
+(ref:ProfileMezidian) Sample yield profiles: Meziadin (Largest Nass stock). Observed spawner abundances (A) and three alternative equlibrium yield profiles (B, C, D). Yield profiles are shown for the long-term average productivity scenario (LtAvg) and the recent productivity scenario (Recent). Boxplots in panel A show distributions for either all years or by decade, with number of observations in brackets. Each boxplot shows median (vertical line), lower and upper quartiles (box) and the range between smallest and largest observations (x).  
+
+```{r ProfileMezidian,   fig.cap="(ref:ProfileMezidian)"}
+include_graphics("data/StockSampleFigs/Meziadin_EqProbProfiles.png")
+```
+
+
+
+
+
+\clearpage
+(ref:ProfileBabineLW) Sample Yield Profiles: Babine Late Wild (Largest wild Skeena stock). Layout as per Figure \@ref(fig:ProfileMezidian).
+
+```{r ProfileBabineLW,   fig.cap="(ref:ProfileBabineLW)"}
+include_graphics("data/StockSampleFigs/Bab-LW_EqProbProfiles.png")
+```
+
+
+
+\clearpage
+
+
+
+(ref:ProfTab8060Nass) Summary of "80-60" yield profiles - Nass. For the long-term average productivity scenario, the table lists median Smsy (Smsy), median yield at Smsy (MSY), 60% of MSY, the range of spawner abundances with 80% probability of achieving 60% MSY (Lower, Upper), as well as median recruits and median productivity in that spawner range (Rec, RpS). For the recent productivity scenario, spawner range, recruits, and productivity are also listed for those cases where there is at least an 80% of achieving 60% of the long-term average MSY.
+
+```{r ProfTab8060Nass, echo = FALSE, results = "asis"}
+
+prof.tab.src <- read_csv("data/SummaryTables_Profiles8060.csv")
+
+table.in <-  prof.tab.src %>% dplyr::filter(Basin=="Nass") %>% arrange(StkSeq) %>% select(-StkSeq,-Basin,-Stock) %>%
+														mutate_at(c(2:7,9:11),function(x){prettyNum(round(x), big.mark=",")}) %>%
+														mutate_at(c(8,12),function(x){format(round(x,1),n.small =1)}) 
+	
+col.names.use <- c("Stock","Smsy","MSY","60\\% MSY","Lower","Upper","Rec","RpS","Lower","Upper","Rec","RpS")
+table.in[table.in == "NA"] <- "-"
+table.in[table.in == " NA"] <- "-"
+	
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",11)),
+                  caption = "(ref:ProfTab8060Nass)", col.names = col.names.use ) %>%
+    kableExtra::row_spec(c(1), hline_after = TRUE) %>%
+	add_header_above(c(" ", "LtAvg" = 7, "Recent" = 4)) 
+
+```
+
+
+
+(ref:ProfTab8060SkeenaWild) Summary of sample yield profiles - SkeenaWild.  Layout as per Table \@ref(tab:ProfTab8060Nass).
+
+```{r ProfTab8060SkeenaWild, echo = FALSE, results = "asis"}
+
+table.in <-  prof.tab.src %>% dplyr::filter(Basin=="Skeena",!(Stock %in% c("Pinkut", "Fulton","Skeena"))) %>% arrange(StkSeq) %>% select(-StkSeq,-Basin,-Stock) %>%
+							mutate_at(c(2:7,9:11),function(x){prettyNum(round(x), big.mark=",")}) %>%
+														mutate_at(c(8,12),function(x){format(round(x,1),n.small =1)}) 
+	
+col.names.use <- c("Stock","Smsy","MSY","60\\% MSY","Lower","Upper","Rec","RpS","Lower","Upper","Rec","RpS")
+table.in[table.in == "NA"] <- "-"
+table.in[table.in == " NA"] <- "-"
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",11)),
+                  caption = "(ref:ProfTab8060SkeenaWild)", col.names = col.names.use ) %>%
+    kableExtra::row_spec(c(1), hline_after = TRUE) %>%
+	add_header_above(c(" ", "LtAvg" = 7, "Recent" = 4)) 
+
+```
+
+
+
+
+\clearpage
+### Examples of ER-based Equilibrium Profiles
+
+
+Equilibrium yield and spawner abundance at different levels of exploitation rate (assumed to be a fixed ER target) have been used to develop aggregate trade-off plots for various salmon stock aggregates and mixed-stock fisheries, including Skeena Sockeye (Section \@ref(EqProfilesMethods)). 
+
+We illustrate the approach for the 16 modelled wild stocks in the Skeena aggregate  and the 4 modelled wild stocks in the Nass aggregate.
+
+
+*Skeena Wild* (Figure \@ref(fig:ERBasedProfileSkeenaWild), Table \@ref(tab:ProfTabERbasedNass))
+
+
+Aggregate equilibrium catch is largest for exploitation rate around 50% under the long-term average productivity scenario, and around 40% under the recent productivity scenario. The number of spawners and catch at equilibrium under these exploitation rates are very different depending on the productivity assumption. Under long-term average productivity and 50% ER every year, the aggregate is assumed to settle into a stable state of around 390,000 spawners and around 390,000 catch, with 6 stocks harvested above their sustainable harvest rate (Umsy), and one of these stocks extirpated. Under recent productivity and 41% ER every year, the aggregate is assumed to settle into a stable state of around 226,000 spawners and around 157,000 catch, with two stocks harvested above their stock-specific Umsy, and two of those extirpated.
+
+If all stocks are at equilibrium, then managing to a fixed ER of 50% under long-term average productivity is the same as managing, on average, to an aggregate spawning target of 390,000.  In practice, however, aggregate run sizes and stock composition vary from year to year, and parameter estimates are uncertain.  In any given year, these two strategies can therefore have very different implications, both in terms of aggregate outcomes and stock-level outcomes. For example, consider a year with an aggregate run of 400,000. Though mathematically equivalent at equilibrium, in that year a fixed ER strategy of 50% implies a spawning target of 200,000 and a catch target of 200,000, while a fixed escapement strategy of 390,000 implies a spawning target of 390,000 and a catch target of 10,000 (ER = 0.25%). Now imagine another year with an aggregate run of 1 million. In that year a fixed ER strategy of 50% implies a spawning target of 500,000 and a catch target of 500,000, while a fixed escapement strategy of 390,000 implies a spawning target of 390,000 and a catch target of 610,000 (ER = 61%).  At 61% ER over many years, about 10 of the 16 stocks would be overfished or extirpated. In that specific year, however, the stock-level implications of a 61% ER depend on stock composition (i.e., similar to equilibrium stock composition, or disproportionate contribution of a few stocks?). Forward simulations can be used to explore the expected long-term effect of alternative strategies for these types of contingencies (Section \@ref(ProjBesdResults)).  
+
+
+*Nass* (Figure \@ref(fig:ERBasedProfileNass), Table \@ref(tab:ProfTabERbasedNass))
+
+Aggregate equilibrium catch is largest for exploitation rate around 60% under the long-term average productivity scenario, and around 50% under the recent productivity scenario. The number of spawners and catch at equilibrium under these exploitations are very different depending on the productivity assumption. Under long-term average productivity and 60% ER every year, the aggregate is assumed to settle into a stable state of around 220,000 spawners and around 330,000 catch, with 2 stocks harvested above their sustainable harvest rate (Umsy), and none of the stocks extirpated. Under recent productivity and 50% ER every year, the aggregate is assumed to settle into a stable state of around 125,000 spawners and around 125,000 catch, with two stocks harvested above their stock-specific Umsy, and none of the stocks extirpated.
+
+
+
+
+\clearpage
+(ref:ERBasedProfileSkeenaWild) Example of aggregate equilibrium trade off plots for the SkeenaWild aggregate with 16 modelled stocks. For 5% increments of aggregate exploitation rate (ER; top axis), the figure shows median estimates (points) and interquartile range along the vertical axes (shaded area, p25 to p75) for aggregate spawner abundance (bottom axis), aggregate catch (left axis), and number of stocks where aggregate ER exceeds stock-specific median estimates of Umsy, the exploitation rate at maximum sustainable yield. Note  that the ranges of spawner abundances and catch levels differ substantially between long-term average productivity (Panel A) and recent productivity  (Panel B), but the ranges of ER and number of stocks are the same in both panels.
+
+```{r ERBasedProfileSkeenaWild,   fig.cap="(ref:ERBasedProfileSkeenaWild)"}
+include_graphics("data/AggProfiles_SkeenaWild_Dual_2Panel.png")
+```
+
+
+
+\clearpage
+(ref:ProfTabERbasedSkeenaWild) Summary of aggregate equilibrium trade-offs under alternative exploitation rates - Skeena Wild. Table shows values from Figure \@ref(fig:ERBasedProfileSkeenaWild) at 10% increments of fixed harvest rate *(U)*.
+
+```{r ProfTabERbasedSkeenaWild, echo = FALSE, results = "asis"}
+
+er.based.prof.tab.src <- read_csv("data/Agg_Tradeoff_SummaryByAgg.csv") %>% mutate(U2= round(U*100))
+
+table.in <-  er.based.prof.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild", U2 %in% seq(0,100,by=10)) %>%
+							select(Prod,U2, -Aggregate,
+										 NumStksOverfished_Med,	NumStksBelowSgen_Med, NumStksExtirpated_Med, 	
+										 EqSpn_p25,	EqSpn_Med,	EqSpn_p75,	EqCt_p25,	EqCt_Med,	EqCt_p75) %>%
+							mutate_at(c(6:11),function(x){format(round(x/1000,1), big.mark=",",n.small =1)}) 
+	
+col.names.use <- c("Prod","U (\\%)", "Above\nUmsy","Below\nSgen","Ext","p25","Med","p75","p25","Med","p75")
+
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",11)),
+                  caption = "(ref:ProfTabERbasedSkeenaWild)", col.names = linebreak(col.names.use) ) %>%
+    kableExtra::row_spec(c(11), hline_after = TRUE) %>%
+	add_header_above(c(" ", " ", "Median Num Stocks" = 3, "Spawners (1000s)" = 3, "Catch (1000s)" = 3)) 
+
+```
+
+
+
+
+\clearpage
+(ref:ERBasedProfileNass) Example of aggregate equilibrium trade off plots for the Nass aggregate with 16 modelled stocks. For 5% increments of aggregate exploitation rate (ER; top axis), the figure shows median estimates (points) and interquartile range along the vertical axes (shaded area, p25 to p75) for aggregate spawner abundance (bottom axis), aggregate catch (left axis), and number of stocks where aggregate ER exceeds stock-specific median estimates of Umsy, the exploitation rate at maximum sustainable yield. Note  that the ranges of spawner abundances and catch levels differ substantially between long-term average productivity (Panel A) and recent productivity  (Panel B), but the ranges of ER and number of stocks are the same in both panels.
+
+```{r ERBasedProfileNass,   fig.cap="(ref:ERBasedProfileNass)"}
+include_graphics("data/AggProfiles_Nass_Dual_2Panel.png")
+```
+
+
+\clearpage
+(ref:ProfTabERbasedNass)  Summary of aggregate equilibrium trade-offs under alternative exploitation rates - Skeena Wild. Table shows values from Figure \@ref(fig:ERBasedProfileSkeenaWild) at 10% increments of fixed harvest rate *(U)*.
+
+```{r ProfTabERbasedNass, echo = FALSE, results = "asis"}
+
+table.in <-  er.based.prof.tab.src %>% dplyr::filter(Aggregate=="Nass", U2 %in% seq(0,100,by=10)) %>%
+							select(Prod,U2, -Aggregate,
+										 NumStksOverfished_Med,	NumStksBelowSgen_Med, NumStksExtirpated_Med, 	
+										 EqSpn_p25,	EqSpn_Med,	EqSpn_p75,	EqCt_p25,	EqCt_Med,	EqCt_p75) %>%
+							mutate_at(c(6:11),function(x){format(round(x/1000,1), big.mark=",",n.small =1)}) 
+	
+col.names.use <- c("Prod","U (\\%)", "Above\nUmsy","Below\nSgen","Ext","p25","Med","p75","p25","Med","p75")
+
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",11)),
+                  caption = "(ref:ProfTabERbasedNass)", col.names = linebreak(col.names.use) ) %>%
+    kableExtra::row_spec(c(11), hline_after = TRUE) %>%
+	add_header_above(c(" ", " ", "Median Num Stocks" = 3, "Spawners (1000s)" = 3, "Catch (1000s)" = 3)) 
+
+```
+
+
+
+
+\clearpage
+##  STATUS-BASED AGGREGATE LIMIT REFERENCE POINTS {#StatusRPResults}
+
+```{r , echo = FALSE, results = "asis"}
+
+rel.abd.metric.all.df  <- read_csv("data/SummaryTables_RelAbdMetric_AllYears.csv") 
+
+rel.abd.status.2019 <- rel.abd.metric.all.df %>% 
+	dplyr::filter(UpTo == 2019) 
+
+```
+
+
+Status assessments under Canada's Wild Salmon Policy combine multiple considerations into a single integrated status, including absolute abundance, relative abundance, long-term trend, short-term trend, probability of decline, and spatial distribution (Section \@ref(StatusMethods)). Relative abundance is assessed by comparing the generational average of spawner abundance (geometric mean) to a lower benchmark at Sgen and an upper benchmark at 80% Smsy. If abundance falls below Sgen, status *on this one metric* is Red, above 80% Smsy it is Green, and in-between it is Amber. WSP status has been recommended as the primary consideration for evaluating aggregate limit reference points under the 2019 update of the *Fisheries Act* [@LRPGuidelinesSAR]. 
+
+In a full integrated WSP status assessment [e.g., @FrSkWSPStatus2017], a group of experts would work through a case-by-case review of observed abundance against the full posterior distributions of alternative benchmark estimates, then decide how much weight to give this metric relative to other information, such as trends. A rapid approximation of the integrated assessments has been developed, using an algorithm derived from completed integrated expert assessments to combine median benchmark estimates, where deemed appropriate, with the other metrics [@RapidStatusTechRep1]. Integrated or rapid status assessments have not been completed for Nass and Skeena Sockeye, but we illustrate potential uses of the status information with a single metric. We used benchmark estimates without lognormal bias correction for the long-term average productivity scenario to calculate the relative abundance metric for wild Nass and Skeena stocks.
+
+With data up to 2019, spawner abundances for the largest stock from each aggregate fell into the Amber status zone for the relative abundance metric (Figures \@ref(fig:RelAbdMetricMeziadian) and \@ref(fig:RelAbdMetricBabLW)). For Meziadin, annual abundances and running generational averages have been above 80% of the median long-term Smsy for most years since 1980, but dipped into the Amber zone in the last few years. Babine Late Wild abundances and running generational averages have been in the Amber zone for most years since the late 1990s, and even dipped into the Red zone for some years.
+
+Looking at the average abundance for the generation ending in 2019, `r sum(rel.abd.status.2019$MetricStatus == "Red")` stocks were in the Red zone,  `r sum(rel.abd.status.2019$MetricStatus == "Amber")` stocks were in the Amber zone, `r sum(rel.abd.status.2019$MetricStatus == "Green")` stocks were in the Green zone, and `r sum(rel.abd.status.2019$MetricStatus == "None")` stocks could not be assessed for this metric (Table \@ref(tab:RelAbd2019)). Generational average for some stocks falls near the benchmark value (i.e., lower or upper ratio is near 1), and in these cases a small change in the median benchmark estimate could result in a switch of the status category (e.g., Meziadin).  For other stocks, the generational average is so clearly in the Red zone (e.g., Kitwanga at less than 20% of Sgen) or in the Green zone (e.g., Mcdonell at almost 4 times the upper benchmark), that the metric status wouldn't change for any of the alternative benchmark estimates generated by the various candidate SR models. 
+
+The proportion of stocks from each aggregate that fall into the Red, Amber, or Green status zone on the relative abundance metric has varied over time (Tables \@ref(tab:RelAbdTabNass) and \@ref(tab:RelAbdTabSkeenaWild), Figure \@ref(fig:RelAbdPattern)). Most of the modelled stocks for both aggregates were in the Amber or Green zones for the relative abundance metric for most years since the 1980s, but note the several of the largest stocks fell into the Amber zone in recent years (with data up to 2019), and that incorporating low returns in 2020 and 2021 may push these stocks deeper into the Amber zone or even into the Red zone (e.g., Meziadin, Babine Late Wild, Babine Early Wild). If integrated status assessments were to result in a similar picture, then the proposed aggregate limit reference points would be triggered for most years on the Nass aggregate for both of the illustrated objectives (No Red, < 20% Red), and for most years on the Skeena aggregate for the stricter objective (No Red).
+
+
+\clearpage
+(ref:RelAbdMetricMeziadian) WSP metric for relative abundance: Meziadin (Largest Nass stock). Figure shows estimated spawner abundances (blue line with points) and running generational average (red line) compared to lower and upper benchmarks (boxplots). Each boxplot shows median (horizontal line), half of the posterior distribution (box, p25-p75), and 80% of the posterior distribution (whiskers, p10-p90). Benchmark estimates are shown without (R) and with (C) lognormal bias correction. Horizontal reference lines mark the median benchmark estimate without bias correction, which are the values used in Tables \@ref(tab:RelAbd2019) to \@ref(tab:RelAbdTabSkeenaWild).
+
+```{r RelAbdMetricMeziadian,   fig.cap="(ref:RelAbdMetricMeziadian)"}
+include_graphics("data/StockSampleFigs/Meziadin_RelAbd_Plot.png")
+```
+
+
+
+
+
+\clearpage
+(ref:RelAbdMetricBabLW) WSP metric for relative abundance: Babine Late Wild (Largest Skeena stock). Layout as per Figure \@ref(fig:RelAbdMetricMeziadian).
+
+```{r RelAbdMetricBabLW,   fig.cap="(ref:RelAbdMetricBabLW)"}
+include_graphics("data/StockSampleFigs/Bab-LW_RelAbd_Plot.png")
+```
+
+
+
+
+\clearpage
+
+(ref:RelAbd2019) Single-metric statuses using data up to 2019: Relative abundance.  Table lists the average generation (main age class, Gen), the number of observations in the generation ending in 2019 (Obs). The generational avg (geometric mean) is compared to median estimates of Sgen (Lower) and 80% Smsy (Upper) under the long-term average productivity scenario. Note that the resulting status category is only for the relative abundance metric, and a comprehensive status assessment would also consider absolute abundance (i.e., is it less than 1,000 adults?), short-term and long-term trends, probability of decline, and spatial distribution (Section \@ref(StatusMethods)).
+
+```{r RelAbd2019, echo = FALSE, results = "asis"}
+
+table.in <-  rel.abd.metric.all.df %>%
+								dplyr::filter(UpTo == 2019) %>% arrange(RatioUBM) %>%
+								select(-UpTo,-MetricScore) %>% 
+								mutate_at(5:7,function(x){prettyNum(round(x),big.mark=",")}) %>%
+								mutate_at(8:9,function(x){format(round(x,2),n.small =2)}) %>%
+								mutate(MetricStatus = recode(MetricStatus,"None" = "Unk"))
+
+
+#table.in[is.na(table.in)] <- "NA"
+table.in[table.in == "NA"] <- "-"
+
+
+col.names.use <- c("Aggregate","Stock","Gen","Obs","GenAvg","Lower","Upper","Lower","Upper","Status\nCategory")
+
+
+table.in %>%
+   mutate_at(2,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(2,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c(rep("l",2),rep("r",8)),
+                  caption = "(ref:RelAbd2019)",col.names = linebreak(col.names.use) ) %>%
+	add_header_above(c(" " = 5, "BM Value" = 2, "Ratio" = 2," " = 1 )) 
+
+```
+
+
+
+
+
+
+
+
+
+\clearpage
+
+
+(ref:RelAbdTabNass) Retrospective changes over time in annual metric statuses for Nass: Relative abundance.  Table summarizes status categories for the relative abundance metric as described in Table \@ref(tab:RelAbd2019), listing the total number of stock (n), the number and proportion of stocks for which the metric could not be calculated (Unk, pUnk), the number of stock for which the metric could be calculated (nStatus), the number of stocks in each status ctegory (Red, Amber, Green), the proportion of Red or Green among the assessed stocks (pRed, pGreen), and proportion of all stocks not assessed as Green (pNotGreen; includes Red, Amber, and Unk).
+
+```{r RelAbdTabNass, echo = FALSE, results = "asis"}
+
+table.in <-  read_csv("data/SummaryTables_RelAbdMetric_AnnualSummary_Nass.csv")
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
+                  caption = "(ref:RelAbdTabNass)") 
+
+```
+
+
+\clearpage
+(ref:RelAbdTabSkeenaWild) Retrospective changes over time in annual metric statuses for Skeena Wild: Relative abundance.  Layout as per Table \@ref(tab:RelAbdTabNass).
+
+```{r RelAbdTabSkeenaWild, echo = FALSE, results = "asis"}
+
+table.in <-  read_csv("data/SummaryTables_RelAbdMetric_AnnualSummary_SkeenaWild.csv")
+
+table.in %>%
+   mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
+                  caption = "(ref:RelAbdTabSkeenaWild)") 
+
+```
+
+
+\clearpage
+(ref:RelAbdPattern) Changes over time of single-metric statuses: Relative abundance. The first three panels show the retrospective changes over time in status categories for the relative abundance benchmark, which are listed in Tables  \@ref(tab:RelAbdTabNass) and \@ref(tab:RelAbdTabSkeenaWild). The fourth panel shows a timeline of years for which either none or only a few of the assessed stocks were in the Red zone on this metric.
+
+```{r RelAbdPattern,   fig.cap="(ref:RelAbdPattern)"}
+include_graphics("data/RelAbdMetric_Patterns_MultiPanel.png")
+```
+
+
+
+
+\clearpage
+## LOGISTIC-REGRESSION-BASED AGGREGATE ABUNDANCE REFERENCE POINTS {#LogRegResults}
+
+We explored whether the approach of developing aggregate abundance reference points based on logistic regressions would be potentially applicable to Nass or Skeena Sockeye. For the illustration, we defined a "success" as *"At least 80% of the stocks in aggregate are above Sgen"*, checked which past years met the criterion, and plotted success/failure vs. aggregate abundance.
+
+For the Skeena Wild aggregate, there was relationship between aggregate abundance and success (Figure \@ref(fig:LogRegSkeenaWild)). All past years where aggregate abundance exceeded about 350,000 spawners met the criterion, but many years with lower abundance also met the criterion. A logistic regression could be fitted to the resulting data, but the shape was highly sensitive to alternative definitions of the success criterion we tested (variations not included in this paper).
+
+For the Skeena aggregate, any results from the logistic regression approach would also need to be carefully framed in the context of (1) wild stocks, (2) total effective spawners combining wild spawners and  effective spawners from the channel stocks, and (3) total escapement including non-spawning biological surplus on the enhanced stocks (Figure \@ref(fig:LogRegSkeenaWild2)).
+
+
+For the Nass aggregate, there was no link between aggregate abundance and success (Figure \@ref(fig:LogRegNass)). The years with the two largest spawner abundances did not meet the criterion (1992 and 1993, both with more than 500,000 spawners). Most of the remaining years did not meet the criterion, and the success years spanned a wide range of abundances, from less than 200,000 to more than 400,000. 
+
+
+
+\clearpage
+(ref:LogRegSkeenaWild) Illustration of log-regression approach for deriving aggregate abundance reference points: Skeena Wild. Panels show aggregate spawner abundance (A), the proportion of stocks in the aggregate that met the criterion "annual spawner abundance larger than than the lower benchmark set at Sgen" (pAnnualSpnLgLBM)  by year (B) and by aggregate abundance (C), and overall success/failure on the aggregate criterion of "80% of stocks above the benchmark" (D). The interim escapement goal for the Skeena aggregate is 900,000 spawners, and the corresponding interim escapement goal for the Skeena Wild aggregate is 300,000 based on average stock composition (Section \@ref(Background)), which is marked in the plots. Wild spawner abundance has been at or above the interim EG for most years since the 1980s (A). The proportion of stocks meeting the success criterion has ranged from about 60%-100% (B). For most years where aggregate spawner abundance was at or above the interim goal, 80% or more of the stocks met the success criterion (C). The data points in panel C are then simplified to whether they meet the 80% threshold (Yes/No) to fit a logistic regression (D). The fitted red regression line shows the increasing probability that at least 80% of stocks meet the success criterion as aggregate spawner abundance increases, with aggregate spawner abundance larger than 500,000 resulting in very little incremental increase in the probability of success for this specific example of a success criterion. 
+
+```{r LogRegSkeenaWild,   fig.cap="(ref:LogRegSkeenaWild)"}
+include_graphics("data/PropBasedTargetPlots_SkeenaWild_pAnnualSpnLgLBM.png")
+```
+
+
+
+\clearpage
+
+
+(ref:LogRegSkeenaWild2) Illustration of log-regression approach for deriving aggregate abundance reference points: Alternative aggregations. Skeena Wild are only a part of the total annual returns that are currently managed based on aggregate abundance. This figure shows three versions of the aggregate spawner abundance (A): wild spawners (including only wild stocks), total effective spawners (wild plus channel loading plus Pinkut and Fulton spawners below the fence), and total escapement including biological surplus (i.e., run kept out of channels but beyond the capacity of spawning grounds below the fences). The time series of success/failure from Figure \@ref(fig:LogRegSkeenaWild) can be plotted against either one of these aggregate abundance (B-D), and would lead to very different results for an aggregate abundance reference point. Interim EG of 900,000 for the total aggregate and 300,000 for the wild aggregate are marked. 
+
+```{r LogRegSkeenaWild2,   fig.cap="(ref:LogRegSkeenaWild2)"}
+include_graphics("data/PropBasedTargetPlots_COMPARE_SkeenaWild_pAnnualSpnLgLBM.png")
+```
+
+
+
+
+
+\clearpage
+(ref:LogRegNass) Illustration of log-regression approach for deriving aggregate abundance reference points: Nass. Layout as per Figure \@ref(fig:LogRegSkeenaWild). The interim escapement goal for the Nass aggregate at 200,000 spawners is marked. Aggregate spawner abundance has been at or above the interim EG for most years since the 1980s (A). The proportion of stocks meeting the success criterion has ranged from about 25%-100%, but for most years it was less than 80% (B). For most years where aggregate spawner abundance was at or above the interim goal, less than 80% of the stocks met the success criterion (C). The data points in panel C are then simplified to whether they meet the 80% threshold (Yes/No), but the observed scatter of points does not allow for a logistic regression fit, because even the largest aggregate spawner abundances failed to meet the success criterion (D).
+
+```{r LogRegNass,   fig.cap="(ref:LogRegNass)"}
+include_graphics("data/PropBasedTargetPlots_Nass_pAnnualSpnLgLBM.png")
+```
+
+
+
+
+\clearpage
+## SIMULATION-BASED AGGREGATE ABUNDANCE REFERENCE POINTS {#ProjBesdResults}
+
+### Example Results
+
+The example results shown here are for a small and very specific subset of potential scenarios, as defined in Section \@ref(SimScenarios), and for two specific versions of more general objectives.
+
+We include two types of summaries for the simulation results: 
+
+* *Stock-specific probabilities* (Figures \@ref(fig:HeatmapAggFixedERLtAvg) to \@ref(fig:HeatmapAggFixedEscRecent)): These plots compare 10 different levels of a harvest strategy, showing for each modelled stock the probability of achieving one specific objective.
+* *Trade-off plots* (Figures \@ref(fig:TradeoffPlotSkeenaWildLTAvg) to \@ref(fig:TradeoffPlotNassRecent)):  These plots compare two objectives across 10 different levels of  a harvest strategy.
+
+
+#### Probabilities - Fixed Exploitation Rates
+
+Under long-term productivity, almost all modelled stocks (19/20) met the objective when fixed ER was 10% or less, but over half the modelled stocks (11/20) met the objective for fixed ER greater than 50%. Most modelled stocks failed to meet the objective at fixed ER at 60% or higher (Figure \@ref(fig:HeatmapAggFixedERLtAvg)). These proportions shifted dramatically under the recent productivity scenario: Even under 10% fixed ER a quarter (5/20) of the modelled stocks did not meet the objective (Figure \@ref(fig:HeatmapAggFixedERRecent)). 
+
+#### Probabilities -  Fixed Escapement
+
+Under long-term productivity about half (11/20) of the modelled stocks met the objective for aggregate escapement goals set at least 75% above the current interim escapement goals, or target of 350,000 for Nass Sockeye compared to the interim EG of 200,000, and a 525,000 target for Skeena Wild compared to the assumed interim EG of 300,000 (Figure \@ref(fig:HeatmapAggFixedEscLtAvg)). Performance degraded rapidly for lower escapement goals, with only 6 of 20 modelled stock meeting the objective at the interim EG (4th column). The effect of lower fixed escapement goals was less pronounced under the recent productivity scenario, with twice the number of stocks (12/20) meeting the objective at the interim EG (Figure \@ref(fig:HeatmapAggFixedEscLtAvg); 4th column). This is due to the interaction between aggregate abundance and target exploitation rate: under the recent productivity scenario, run sizes for the largest stocks are lower, leading to a lower aggregate abundance, and a lower target ER with a fixed escapement strategy. Under long-term average productivity, aggregate abundances and resulting target ERs are higher, and the component stocks are less likely to meet conservation objectives if they have lower productivity than the largest stocks. A key benefit of the forward simulation approach is that it allows us to identify and investigate these types of counter-intuitive interactions.
+
+
+
+\clearpage
+(ref:HeatmapAggFixedERLtAvg) Simulation summary - Alternative fixed ER and long-term average productivity.  Simulation results are summarized for different levels of fixed ER (0% to 90%; columns) and one productivity scenario across all stocks. The numbers in each cell of the grid show the probability of spawner abundance in the 3rd generation exceeding a benchmark set at 80% of median Smsy under long-term average productivity for one stock under one specific level of fixed ER. Probabilities are categorized using the Intergovernmental Panel on Climate Change (IPCC) Likelihood Scale to facilitate discussion of results (Table \@ref(tab:IPPCLikelihoodTab)). Stocks are grouped by aggregate, and roughly sorted within aggregate from mouth of the river upstream. Grey shading indicates stocks that were not modelled in the current project. Bolded blue numbers above the grid show the number of stocks in each column with probability larger than 80%.
+
+
+```{r HeatmapAggFixedERLtAvg,   fig.cap="(ref:HeatmapAggFixedERLtAvg)"}
+include_graphics("data/Sims/Agg_Heatmap_SpnLgSmsyBM_LTAvg_FixedER.png")
+```
+
+
+
+
+
+\clearpage
+(ref:HeatmapAggFixedERRecent) Simulation summary - Alternative fixed ER and recent productivity. Layout as per Figure \@ref(fig:HeatmapAggFixedERLtAvg).
+
+```{r HeatmapAggFixedERRecent,   fig.cap="(ref:HeatmapAggFixedERRecent)"}
+include_graphics("data/Sims/Agg_Heatmap_SpnLgSmsyBM_Recent_FixedER.png")
+```
+
+
+
+
+
+
+\clearpage
+(ref:HeatmapAggFixedEscLtAvg) Simulation summary - Alternative fixed escapement targets with 10% ER floor and 80% ER cap under long-term average productivity.  Layout as per Figure \@ref(fig:HeatmapAggFixedERLtAvg), except that columns correspond to different levels of fixed escapement, set at increments of the interim escapement goal for each aggregate. The fourth column corresponds to the interim goal (200,000 for Nass, 300,000 for Skeena Wild), the first column to 1/4 of the interim goal, and the last column to 2.5 times the interim goal.
+
+```{r HeatmapAggFixedEscLtAvg,   fig.cap="(ref:HeatmapAggFixedEscLtAvg)"}
+include_graphics("data/Sims/Agg_Heatmap_SpnLgSmsyBM_LTAvg_FixedEsc10to80.png")
+```
+
+
+
+
+
+
+\clearpage
+(ref:HeatmapAggFixedEscRecent) Simulation summary - Alternative fixed escapement targets with 10% ER floor and 80% ER cap under recent productivity.  Layout as per Figure \@ref(fig:HeatmapAggFixedEscLtAvg).
+
+```{r HeatmapAggFixedEscRecent,   fig.cap="(ref:HeatmapAggFixedEscRecent)"}
+include_graphics("data/Sims/Agg_Heatmap_SpnLgSmsyBM_Recent_FixedEsc10to80.png")
+```
+
+
+\clearpage
+#### Trade-off plots
+
+The basic trade-off is the same for both aggregates under both productivity assumptions: The number of stocks meeting the biological objective increases as the spawning target increases, up to a point,  while the average annual catch  over 3 generations peaks at some spawning level and then starts declining with further increases in spawning target. 
+
+The spawning target with peak average catch is much lower under recent productivity (Figures \@ref(fig:TradeoffPlotSkeenaWildRecent),\@ref(fig:TradeoffPlotNassRecent)) than under recent productivity (Figures \@ref(fig:TradeoffPlotSkeenaWildLTAvg), \@ref(fig:TradeoffPlotNassLTAvg)), and the amount of catch is much lower as well. 
+
+The effect of the productivity assumption on the number of stocks meeting the biological objective differs by spawning target:
+
+* At larger spawning targets, more stocks meet the biological objective under long-term average productivity than under recent productivity, because more stocks are sufficiently productive to withstand higher aggregate exploitation rates, even though those rates are higher than under recent productivity. Under recent productivity, several stocks fail to meet the biological objective even with a large spawning target, because their productivity is so low that even with the lower exploitation rates associated with larger spawning targets, they don't reach their stock-specific benchmark within 3 generations from recently observed spawner abundances.
+
+* At spawning targets around the interim EG, more stocks meet the biological objective under recent productivity than under long-term average productivity, because aggregate abundances are lower, resulting in lower exploitation rates for the same spawning target. This is another example of the counter-intuitive interactions discussed above for the probability plots.
+
+
+\clearpage
+(ref:TradeoffPlotSkeenaWildLTAvg) Example of Trade off Plot - SkeenaWild - Long-term average productivity. Compares change for two different performance measures as aggregate spawning target is increased from 1/4 of the current escapement goal (left-most point) to 2.5 times the current goal (right-most point). Performance measures were selected to show the trade-off between an example biological objective (number of stocks for which the 3rd simulated generation exceeds 80% of Smsy with more than 80% probability; blue line with solid points, left axis) and an example harvest objective (trimmed average annual catch over 3 generations, orange line with open circles, right axis). Both performance measures improve as as the aggregate spawning target increases up to around 500,000, but average catch peaks around 500,000 spawning target (much above the interim EG of 300,000), while the number of stocks meeting 80% of Smsy continues to increase.
+
+```{r TradeoffPlotSkeenaWildLTAvg,   fig.cap="(ref:TradeoffPlotSkeenaWildLTAvg)"}
+include_graphics("data/Sims/TradeOffPlot_2_ProbSmsyVSAvgCtTr_Skeena_LTAvg.png")
+```
+
+
+
+\clearpage
+(ref:TradeoffPlotSkeenaWildRecent) Example of Trade off Plot - SkeenaWild - Recent productivity.  Layout as per Figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg). The basic trade-off is the same as in Figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg) for long-term average productivity, with average catch peaking at some spawning level while the number of stocks meeting the biological objective continues to increase. However, with this recent productivity scenario, the average catch peaks at a lower spawning target (around the interim goal of 300,000 vs. 500,000) and peak catch is much lower (around 175,000 vs. almost 500,000). The number of stocks meeting the biological objective is higher at lower spawning targets (because large stock have reduced productivity under the recent scenario, so total run sizes and resulting aggregate ER are lower), but lower at higher spawner targets (because under recent productivity more stocks do not reach the biological objective in 3 generations).
+
+```{r TradeoffPlotSkeenaWildRecent,   fig.cap="(ref:TradeoffPlotSkeenaWildRecent)"}
+include_graphics("data/Sims/TradeOffPlot_1_ProbSmsyVSAvgCtTr_Skeena_Recent.png")
+```
+
+
+
+
+\clearpage
+(ref:TradeoffPlotNassLTAvg) Example of Trade off Plot - Nass - Long-term average productivity.  Layout as per Figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg). The basic trade-off is the same as in Figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg) for Skeena Wild, with average catch peaking at some spawning level while the number of stocks meeting the biological objective continues to increase. For Nass Sockeye, under long-term productivity, the average catch peaks around the interim goal of 200,000 and peak catch is around 325,000. The number of stocks meeting the biological objective ranges from 0 for spawning targets below the interim EG of 200,000 to all 4 modelled stocks for spawning targets
+above about 400,000. 
+
+```{r TradeoffPlotNassLTAvg,   fig.cap="(ref:TradeoffPlotNassLTAvg)"}
+include_graphics("data/Sims/TradeOffPlot_4_ProbSmsyVSAvgCtTr_Nass_LTAvg.png")
+```
+
+
+
+
+\clearpage
+(ref:TradeoffPlotNassRecent) Example of Trade off Plot - Nass - Recent productivity.  Layout as per Figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg). Observed differences between recent and long-term average productivity for Nass are similar to the observed differences for Skeena Wild: average catch peaks at a lower spawning target (around 125,000 vs. 200,000) and reaches a lower peak (about 110,000 vs. 325,000). Only 2 of the 4 stocks reach the biological objective under recent productivity over 3 generations, even for spawning targets more than double the interim EG.
+
+```{r TradeoffPlotNassRecent,   fig.cap="(ref:TradeoffPlotNassRecent)"}
+include_graphics("data/Sims/TradeOffPlot_3_ProbSmsyVSAvgCtTr_Nass_Recent.png")
+```
+
+
+
+
+\clearpage
+### Summary of Sensitivity Tests
+
+The example results in the previous section are for a small, and very specific subset, of potential scenarios, as defined in Section \@ref(SimScenarios), and for two very specific versions of more general objectives. To support scoping discussions for future simulation work and collaborative planning processes, we summarize general observations from sensitivity tests described in Table \@ref(tab:SimSensTestTable).  Figure \@ref(fig:FixedEscVar) illustrates the comment regarding ER floor and cap.
+
+
+
+(ref:SimSensTestTable) Observed effects of key model components. 
+
+```{r SimSensTestTable, echo = FALSE, results = "asis"}
+
+
+sims.obs.df <- read.csv("data/Sims/SimSensTest_Summary.csv",stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM") %>%
+								arrange(Seq) %>% select(-Seq)
+
+
+colnames(sims.obs.df) <- linebreak(c("Model\nComponent","Observations"))
+
+
+
+sims.obs.df %>%
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
+                  caption = "(ref:SimSensTestTable)") %>%
+  kableExtra::column_spec(1, width = "7em") %>%
+  kableExtra::column_spec(2, width = "43em") %>%
+   kableExtra::row_spec(1:  (dim(sims.obs.df)[1] -1), hline_after = TRUE)
+
+
+```
+
+
+\clearpage
+(ref:FixedEscVar) Variations of a fixed escapement goal strategy. Both panels compare a 300,000 escapement goal (A,C) and a 600,000 escapement goal (B,D), with the resulting ER at different aggregate run sizes shown in grey for strict fixed escapement policy (i.e., harvest every fish above the goal, harvest is 0 below the goal). Top panel shows the corresponding harvest control rules (HCR) if ER floor is 10% (i.e., harvest 10% of run regardless of run size, increase ER as run size increases) and ER cap is 80% (i.e., never harvest more than 80%, even at very large aggregate run size). Bottom panel shows the HCR for the same two escapement goals, but with ER floor at 25% and ER cap at 60%. Even though escapement goals of 300,000 and 600,000 are very different, with the higher floor and lower cap, the target ER for the two strategies is the same for a wide range of run sizes. Differences in simulated outcomes between the two strategies are even less pronounced if aggregate-level outcome uncertainty is added to the model (e.g., a difference of 5% in the ER target has little effect if the actual ER is modelled as target ± 15%).
+
+
+
+```{r FixedEscVar,   fig.cap="(ref:FixedEscVar)"}
+include_graphics("data/Sims/FixedEscRule_Illustration.png")
+```
+
+
+\clearpage
+## EXPANDING AGGREGATE REFERENCE POINTS FOR WILD SKEENA SOCKEYE TO ACCOUNT FOR ENHANCED CONTRIBUTION {#SkeenaExpResults}
+
+### Context
+
+Enhanced Pinkut and Fulton present two distinct challenges for managing the total Skeena stock aggregate: 
+
+* *Enhanced contribution to returns* (Figure \@ref(fig:ChannelContribution)): The contributions of Sockeye originating from the enhanced Babine tributaries to the aggregate returns of Babine and Skeena Sockeye have increased over time. Pinkut and Fulton Sockeye together accounted for about 30% of Babine returns in the 1950s and 1960s, before the start of BLDP enhancement, but consistently contribute 80% or more in recent years. Enhanced contribution to total Skeena returns has ranged from about 40% to more than 80% since the 1980s, with a median of 66%. 
+
+* *Biological surplus* (Figure \@ref(fig:SurplusProduction)): Returning Pinkut and Fulton fish that exceed the capacity of natural spawning habitat below the fence and are locked out of the channels are considered a non-spawning surplus. The method for estimating the annual surplus is described in Section \@ref(SurplusEst). The surplus amount has declined from over 400,000 fish in the 1980s and 1990s to under 200,000 in the 2000s and 2010s. However, the proportion of the surplus relative to the total Skeena Sockeye abundance has increased with decreasing returns of wild Skeena Sockeye. From 2016-2019, the surplus represented around 20 percent of the total Sockeye return and up to 50% of total escapements for the Skeena aggregate. In 2 recent years, the surplus matched or exceeded the total harvest.  
+
+(ref:ChannelContribution) Contribution of BLDP-enhanced Sockeye stocks (Pinkut and Fulton). Figure shows % contribution of Pinkut and Fulton to Babine returns (A) and total Skeena returns (B). Vertical red line indicates start of construction of BLDP enhancement facilities in 1965. Trend line shows the running 4-yr average. 
+
+```{r ChannelContribution,  fig.cap="(ref:ChannelContribution)" }
+include_graphics("data/ChannelReview/ChannelContribution.PNG")
+```
+
+
+(ref:SurplusProduction) Estimates of channel surplus over time - Total Skeena. Top left panel shows the time series of estimated surplus spawners from both channel-enhanced stocks, excluding ESSR harvests. The remaining panels show the magnitude of the surplus relative to total Skeena Sockeye run size, total escapement (i.e., effective spawner abundance), and total catch including ESSR harvest. 
+
+
+```{r SurplusProduction,  fig.cap="(ref:SurplusProduction)" }
+include_graphics("data/ChannelReview/ChannelSurplus_TotalSkeena_TimeSeries.PNG")
+```
+
+\clearpage
+
+
+### Alternative Expansion Approaches 
+
+We tested two alternative approaches for expanding a wild Skeena management reference point to a total Skeena management reference point. Both used the observed composition of the total Skeena returns from 1982 to 2019, specifically the % of wild spawners in the terminal return, and they both assume that future stock composition is similar to the range of stock compositions observed since the 1980s. 
+
+However, they differ in how those data are used:
+
+* *Simple expansion* (Figure \@ref(fig:SkeenaExp1)): Use the median or upper/lower quartiles for the % wild spawners as a direct scalar on the wild reference point. For example, with a median scalar of 3.58, a terminal run of a bit more than 1 million had a 50:50 chance of resulting in about 300,000 wild spawners. To increase the probability of meeting 300,000 spawners to 75% (3/4 chance), the terminal run would need to be around 1.4 million. Similarly, for a 50:50 chance of meeting a wild spawning goal of 400,000, the terminal run would need to be around 1.5 million. 
+* *Logistic regression* (Figure \@ref(fig:SkeenaExp2)): For each candidate terminal run target, calculate the probability of meeting alternative wild spawning goals. The logistic regression approach classifies the annual observations as a success (i.e., wild spawning goal was met) or failure (i.e., wild spawning goal was not met), then calculates the probability of success for different combinations of terminal return target and wild spawning goal. For example, in 1982 the terminal return was 1,447,330 and the wild spawner abundance was	303,954, so 1982 is classified as a success for a wild goal of 300,000, and as a failure for a wild goal of 400,000. The current terminal run target of 1.05 million is as likely as not to meet the current interim EG for wild Skeena Sockeye. This result is similar to the 50:50 chance identified with simple expansion in Figure \@ref(fig:SkeenaExp1). The current terminal run target of 1.05 million is unlikely to meet a wild spawning goal of 350,000 or larger.
+
+
+Both of these approaches could be applied using forecasted stock composition for a specific year. Given pre-season forecasts for the enhanced stocks and largest wild stocks, in combination with target harvests, an in-season scalar could be approximated. However, this  information is not currently part of the annual in-season planning process.
+
+Note that the % of wild *spawners* used for Figures \@ref(fig:SkeenaExp1) and \@ref(fig:SkeenaExp2) differs slightly from the % of wild *returns* plotted in Panel B of Figure \@ref(fig:ChannelContribution), due to differential in-river harvest of wild and enhanced Sockeye (e.g., timing and location of in-river fisheries below Babine fence, ESSR fisheries targeting Pinkut and Fulton in Babine Lake).
+
+
+(ref:SkeenaExp1) Simple expansion of wild Skeena management reference points. Plot shows three alternative scalars applied to wild spawning goals ranging from 250,000 to 600,000. Current interim escapement goal and terminal run management target are shown for reference. Note that the scalars are estimated from observed historical stock composition, independent of alternative SR model fits or productivity assumptions.
+
+```{r SkeenaExp1,   fig.cap="(ref:SkeenaExp1)"}
+include_graphics("data/SkeenaExpansions/SkeenaExpansion_ScalarPlot_For_DiscPaper_v1.png")
+```
+
+
+
+\clearpage
+(ref:SkeenaExp2) Probability of meeting wild spawning goals at different management targets for terminal run. Logistic regression was used to estimate the probability of success (i.e., wild spawning goal is met) for different combinations of terminal run target and wild spawning goal. Probabilities are categorized using the Intergovernmental Panel on Climate Change (IPCC) Likelihood Scale to facilitate interpretation of results (Table \@ref(tab:IPPCLikelihoodTab)). 
+
+```{r SkeenaExp2,   fig.cap="(ref:SkeenaExp1)"}
+include_graphics("data/SkeenaExpansions/SkeenaExpansion_ProbSuccessPlot_For_DiscPaper.png")
+```
+
+

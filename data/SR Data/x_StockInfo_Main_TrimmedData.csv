@@ -1,0 +1,32 @@
+"StkSeq","Basin","LifeHistory","LHAZ","LHAZShort","LHAZSeq","Watershed","Stock","StkNmS","StartYr","SpnAddCV","CtCV","Notes","NumSpn","NumRec","NumSR","ContrX","NumObsX","LgSpnX","LgRecX","SmSpnX","SmRecX","LgExpX","ContrVal","NumObsVal","LgSpnVal","LgRecVal","SmSpnVal","SmRecVal","LgExpVal","OddSpn","OddRec","OddProd","OddExp"
+1,"Nass","Sea/River","Nass Sea/River Type","Nass SRT",1,"Lower Nass Tribs","Lower Nass Sea & River Type","LNassSRT",2000,0.1,0.3,"",20,16,16,"-","-","-","-","-","-","-",74.71,16,1.23,1,1,1,2.72,1,0,1,0
+2,"Nass","Lake","Upper Nass Lake Type","U Nass LT",2,"Meziadin","Meziadin","Meziadin",1990,0,0.2,"",30,24,24,"-","-","-","-","-","-","-",6.72,24,1,1,0.84,1,1,0,0,0,0
+3,"Nass","Lake","Upper Nass Lake Type","U Nass LT",2,"Bell-Irving","Bowser","Bowser",1990,0.1,0.3,"",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+4,"Nass","Lake","Upper Nass Lake Type","U Nass LT",2,"Bell-Irving","Oweegee","Oweege",1990,0.1,0.3,"",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+5,"Nass","Lake","Upper Nass Lake Type","U Nass LT",2,"Kwinageese","Kwinageese","Kwinag",1990,0.1,0.3,"",27,13,13,"X","-","-","-","-","-","-",412.44,13,1.41,1,1,1,1,3,0,4,0
+6,"Nass","Lake","Upper Nass Lake Type","U Nass LT",2,"Damdochax","Damdochax","Damdoch",1990,0.1,0.3,"",29,21,21,"-","-","-","-","-","-","-",17.71,21,1,1,1,1,1,0,0,1,0
+7,"Nass","River","Nass River Type","Nass RT",3,"Upper Nass Tribs","Upper Nass River Type","UNassRT",1990,0.1,0.3,"",17,11,11,"X","-","-","-","-","-","-",1301,11,1.72,1,0.5,1,1,3,0,3,0
+8,"Skeena","Lake","Lower Skeena Lake Type","L Skeena LT",4,"Ecstall","Johnston","Johnston",1980,0.1,0.3,"",17,2,2,"-","X","-","-","X","-","-",48.72,2,1.67,1,0.28,1,2.01,0,0,0,0
+9,"Skeena","Lake","Lower Skeena Lake Type","L Skeena LT",4,"Ecstall","Ecstall","Ecstall",1990,0.1,0.3,"",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+10,"Skeena","Lake","Lower Skeena Lake Type","L Skeena LT",4,"Gitnadoix","Alastair","Alastair",1990,0.1,0.3,"",30,24,24,"-","-","-","-","-","-","-",80.36,24,1,1,1,1,2.22,1,0,3,0
+11,"Skeena","Lake","Lower Skeena Lake Type","L Skeena LT",4,"Lakelse","Lakelse","Lakelse",1990,0.1,0.3,"",28,21,19,"-","-","-","-","-","-","-",11.75,19,1.08,1,1,1,2.19,0,0,0,1
+12,"Skeena","Lake","Lower Skeena Lake Type","L Skeena LT",4,"Kitsumkalum","Kitsumkalum","Kitsumk",1990,0.1,0.3,"",27,18,16,"-","-","-","-","-","-","X",8.47,16,1.11,1,1,1,3.9,0,0,0,0
+13,"Skeena","Lake","Lower Skeena Lake Type","L Skeena LT",4,"Zymoetz","Mcdonell","Mcdonell",1990,0.1,0.3,"",22,16,13,"-","-","-","-","-","-","-",45.92,13,1.65,1,1,1,2,1,0,0,0
+14,"Skeena","Lake","Middle Skeena Lake Type","M Skeena LT",5,"Kitwanga","Kitwanga","Kitwanga",2000,0.075,0.3,"Fence counts until 2017",20,15,15,"X","-","-","-","-","-","-",166.43,15,1,1,0.57,1,1,3,0,4,0
+15,"Skeena","Lake","Middle Skeena Lake Type","M Skeena LT",5,"Bulkley","Upper Bulkley Lakes","UBulkLk",1990,0.1,0.3,"",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+16,"Skeena","Lake","Middle Skeena Lake Type","M Skeena LT",5,"Bulkley","Morice","Morice",1998,0.1,0.3,"",22,16,16,"-","-","-","-","-","-","-",13.08,16,1,1,1,1,1.16,0,0,1,0
+17,"Skeena","Lake","Middle Skeena Lake Type","M Skeena LT",5,"Kispiox","Swan/Stephens","SwanSteph",1995,0.1,0.2,"",23,18,16,"-","-","-","-","-","-","-",11.04,16,1.06,1,1,1,2.55,0,0,2,0
+18,"Skeena","Lake","Middle Skeena Lake Type","M Skeena LT",5,"Babine","Babine Early Wild","Bab-EW",1993,0.05,0.2,"",27,22,22,"-","-","-","-","-","-","-",33.35,22,1,1,0.8,1,1,0,1,2,0
+19,"Skeena","Lake","Middle Skeena Lake Type","M Skeena LT",5,"Babine","Babine Late Wild","Bab-LW",1993,0.05,0.2,"",27,22,22,"-","-","-","-","-","-","-",15.59,22,1,1,1,1,1,0,1,1,0
+20,"Skeena","Lake","Middle Skeena Lake Type","M Skeena LT",5,"Babine","Babine Mid Wild","Bab-MW",1993,0.05,0.2,"",27,22,22,"-","-","-","-","X","-","-",30.56,22,1,1,0.45,1,1,0,1,4,0
+21,"Skeena","Lake","Middle Skeena Lake Type","M Skeena LT",5,"Babine","Pinkut","Pinkut",1993,0.05,0.2,"",27,22,22,"-","-","-","-","-","-","-",8.35,22,1,1,1,1,1,0,1,1,0
+22,"Skeena","Lake","Middle Skeena Lake Type","M Skeena LT",5,"Babine","Fulton","Fulton",1993,0.05,0.2,"",27,22,22,"X","-","-","-","-","-","-",3.73,22,1,1,1,1,1,0,1,1,0
+23,"Skeena","Lake","Upper Skeena Lake Type","U Skeena LT",6,"Sicintine","Sicintine","Sicintine",1990,0.1,0.3,"",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+24,"Skeena","Lake","Upper Skeena Lake Type","U Skeena LT",6,"Slamgeesh","Slamgeesh","Slamg",2000,0.075,0.3,"Fence counts until 2017",19,14,14,"-","-","-","-","-","-","-",13.77,14,1.35,1,1,1,1,0,0,0,0
+25,"Skeena","Lake","Upper Skeena Lake Type","U Skeena LT",6,"Motase ","Motase ","Motase",1990,0.1,0.3,"",26,18,14,"X","-","-","-","X","-","-",360.4,14,1,1,0.06,1,2,1,0,1,0
+26,"Skeena","Lake","Upper Skeena Lake Type","U Skeena LT",6,"Sustut","Bear","Bear",1990,0.1,0.3,"",29,23,22,"-","-","-","-","-","-","-",61.66,22,1,1,1,1,2.51,2,0,1,0
+27,"Skeena","Lake","Upper Skeena Lake Type","U Skeena LT",6,"Sustut","Asitka","Asitka",2000,0.1,0.3,"",18,13,11,"-","-","-","-","-","-","-",54.91,11,1,1,1,1,2,2,0,3,0
+28,"Skeena","Lake","Upper Skeena Lake Type","U Skeena LT",6,"Sustut","Sustut","Sustut",1990,0.1,0.3,"",24,17,13,"-","-","-","X","-","-","-",30.59,13,1.04,2.22,0.8,1,1,0,0,0,0
+29,"Skeena","Lake","Upper Skeena Lake Type","U Skeena LT",6,"Kluatantan","Kluantantan","Kluant",1990,0.1,0.3,"",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+30,"Skeena","Lake","Upper Skeena Lake Type","U Skeena LT",6,"Kluayaz","Kluayaz","Kluayaz",1990,0.1,0.3,"",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+31,"Skeena","Lake","Skeena River Type","Skeena RT",7,"All","Skeena River Type","Skeena RT",2000,0.1,0.3,"",0,0,0,"-","X","-","-","-","-","-",NA,0,NA,NA,NA,NA,NA,0,0,0,0

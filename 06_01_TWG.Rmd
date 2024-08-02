@@ -1,0 +1,305 @@
+
+<!-- The following code should appear at the beginning of the first appendix.
+After that, all subsequent sections will be turned into appendices. -->
+
+`r if(knitr:::is_latex_output()) '\\Appendices'`
+
+`r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
+
+
+
+# TECHNICAL PROCESS PARTICIPANTS  {#app:TWG}
+
+
+The TWG consists of members from Fisheries and Oceans Canada, North Coast Area First Nations, Pacific Salmon Foundation, and consulting organizations (Table \@ref(tab:TWGTable)). Two independent reviewers were appointed by Canada and Alaska (Table \@ref(tab:ReviewersTable)).
+
+
+
+```{r TWGTable, echo = FALSE, results = "asis"}
+
+
+particpants.src <- read.csv("data/Reference Tables/TWG_Members.csv",stringsAsFactors = FALSE,
+														fileEncoding = "UTF-8-BOM") %>% arrange(Type, Name)
+  
+twg.df <- particpants.src %>%
+							dplyr::filter(Type == "TWG") %>%
+							select(-Type)
+
+  
+csasdown::csas_table(twg.df,
+  caption = "Members of the Technical Working Group (TWG).",
+  format = "latex",
+  #landscape = FALSE,
+  font_size = 10) %>%
+  kableExtra::column_spec(1, width = "12em") %>%
+  kableExtra::column_spec(2, width = "35em") %>%
+  kableExtra::row_spec(1:(dim(twg.df)[1]-1), hline_after = TRUE) 
+
+
+
+```
+
+
+
+
+```{r ReviewersTable, echo = FALSE, results = "asis"}
+
+
+
+reviewers.df <- particpants.src %>%
+							dplyr::filter(Type == "Reviewer") %>%
+							select(-Type)
+
+  
+csasdown::csas_table(reviewers.df ,
+  caption = "Independent reviewers for the escapement goal review.",
+  format = "latex",
+  #landscape = FALSE,
+  font_size = 10) %>%
+  kableExtra::column_spec(1, width = "12em") %>%
+  kableExtra::column_spec(2, width = "35em") %>%
+  kableExtra::row_spec(1:(dim(reviewers.df)[1]-1), hline_after = TRUE) 
+
+
+
+```
+
+
+
+\clearpage
+# CHARACTERISTICS of ALTERNATIVE APPROACHES FOR DEVELOPING AGGREGATE MANAGEMENT REFERENCE POINTS {#AggregationAppendix}
+
+This appendix includes one table for each of the alternative aggregation methods. All tables have the same structure: for each criterion, there is a single rating in all capitals (YES/NO/MAYBE), followed by a brief rationale. Table  \@ref(tab:TableAltApproaches) describes the aggregation methods. Table \@ref(tab:TableCriteria) describes the criteria. Table \@ref(tab:TableSummary) summarizes the results across aggregation methods.
+
+
+
+\clearpage
+(ref:TableCriteriaAggSmsy) Rationale for criteria ratings – Aggregate Smsy estimate. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+
+```{r TableCriteriaAggSmsy, echo = FALSE, results = "asis"}
+
+
+
+criteria.table.src <- read_csv("data/AggregationApproachTables/AggregationTable_AppendixDetails.csv")
+
+table.in <- criteria.table.src %>% dplyr::filter(Method == "Agg Smsy") %>% select(-Method)
+
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableCriteriaAggSmsy)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "9em") %>%
+     kableExtra::column_spec(2, width = "37em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+
+\clearpage
+(ref:TableCriteriaSumSmsy) Rationale for criteria ratings – Sum of stock-level Smsy estimates. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+
+```{r TableCriteriaSumSmsy, echo = FALSE, results = "asis"}
+
+
+table.in <- criteria.table.src %>% dplyr::filter(Method == "Sum of Smsy") %>% select(-Method)
+
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableCriteriaSumSmsy)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "9em") %>%
+     kableExtra::column_spec(2, width = "37em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+\clearpage
+(ref:TableCriteriaUmsyComp) Rationale for criteria ratings – Comparison of stock-level Umsy estimates. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+
+```{r TableCriteriaUmsyComp, echo = FALSE, results = "asis"}
+
+
+table.in <- criteria.table.src %>% dplyr::filter(Method == "Umsy Comp") %>% select(-Method)
+
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableCriteriaUmsyComp)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "9em") %>%
+     kableExtra::column_spec(2, width = "37em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+
+\clearpage
+(ref:TableCriteriaSpnStkEquProf) Rationale for criteria ratings – Stock-level equilibrium profiles based on fixed escapement targets. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+
+```{r TableCriteriaSpnStkEquProf, echo = FALSE, results = "asis"}
+
+
+table.in <- criteria.table.src %>% dplyr::filter(Method == "Spn Equ Prof") %>% select(-Method)
+
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableCriteriaSpnStkEquProf)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "9em") %>%
+     kableExtra::column_spec(2, width = "37em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+\clearpage
+(ref:TableCriteriaERAggEquProf) Rationale for criteria ratings – Aggregate-level equilibrium profiles based on fixed exploitation rate targets. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+
+```{r TableCriteriaERAggEquProf, echo = FALSE, results = "asis"}
+
+
+table.in <- criteria.table.src %>% dplyr::filter(Method == "ER Equ Prof") %>% select(-Method)
+
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableCriteriaERAggEquProf)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "9em") %>%
+     kableExtra::column_spec(2, width = "37em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+
+
+\clearpage
+(ref:TableCriteriaStockStatus) Rationale for criteria ratings – Stock-level status considerations. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+
+```{r TableCriteriaStockStatus, echo = FALSE, results = "asis"}
+
+
+table.in <- criteria.table.src %>% dplyr::filter(Method == "Stock Status") %>% select(-Method)
+
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableCriteriaStockStatus)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "9em") %>%
+     kableExtra::column_spec(2, width = "37em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+
+
+
+
+\clearpage
+(ref:TableCriteriaLogReg) Rationale for criteria ratings – Logistic Regression. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+
+```{r TableCriteriaLogReg, echo = FALSE, results = "asis"}
+
+
+table.in <- criteria.table.src %>% dplyr::filter(Method == "Log Reg") %>% select(-Method)
+
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableCriteriaLogReg)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "9em") %>%
+     kableExtra::column_spec(2, width = "37em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+(ref:TableCriteriaSim) Rationale for criteria ratings – Forward Simulation. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+
+```{r TableCriteriaSim, echo = FALSE, results = "asis"}
+
+
+table.in <- criteria.table.src %>% dplyr::filter(Method == "Sim") %>% select(-Method)
+
+
+
+table.in  %>%     
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableCriteriaSim)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "7em") %>%
+     kableExtra::column_spec(2, width = "40em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+
+
+

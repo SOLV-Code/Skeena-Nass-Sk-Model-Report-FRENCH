@@ -1,0 +1,203 @@
+# REVIEW OF WILD AND BLDP-ENHANCED BABINE SOCKEYE PRODUCTION {#ChannelReview}
+
+## Context
+
+Considerations for developing management reference points for wild and enhanced Skeena Sockeye include potential interactions between the enhanced and wild Babine stocks, which have distinctive run timing and geographic separation between spawning areas. We reviewed production data for wild and enhanced Babine Sockeye to assess general trends in adult returns, escapement quality (size, sex ratio and fecundity), egg production, and fry and smolt outputs. This was not intended to be a comprehensive assessment of Babine Sockeye production, or a detailed analysis of the effects of the BLDP enhancement program on wild Babine and other Skeena Sockeye stocks. Rather, we provide a high-level overview of observed trends in freshwater production based on available information. An integrated review of BLDP production and updated recommendations for loading targets and operational procedures is a major undertaking that will require input and advice from the facility operator (Fisheries and Oceans Canada - Salmonid Enhancement Program) and is outside the scope of the current review of Skeena and Nass Sockeye escapement goals.
+
+
+
+## Babine Sockeye Stocks
+
+Babine Lake is the largest natural freshwater lake in British Columbia, encompassing an area of nearly 500 km^2^ which drains a watershed of approximately 10,000 km^2^. Morrison Lake and Tahlo Lake, which drain through Morrison River into Morrison Arm upstream of Babine Lake. The North Arm, upstream of Harrison Narrows on the northwest side of Babine Lake, flows through a short section of the Upper Babine River into Nilkitkwa Lake, then into the Lower Babine River, a 5th order tributary of the middle Skeena. 
+
+Babine Sockeye have been counted at the Babine weir downstream of Nilkitkwa Lake annually since 1949. The Babine weir which is currently operated by Lake Babine Nation, under contract to Fisheries and Oceans Canada, provides daily counts for all salmon species from the middle of July until the end of September and encompasses most of the Sockeye return. The weir operation has been extended to the end of November in some years. The weir program is assumed to provide a complete count for most years, but adjusted in some years for estimated passage during times when the fence was not operational.
+
+Sockeye salmon escapements to Babine Lake have ranged from 71,000 to 2.1 million past the Babine weir. Very low returns were observed after a catastrophic landslide in Babine River in 1951 that restricted fish passage in 1951 and 1952, and until repairs were completed in 1953 [@Godfry1954BabineSlideEffects]. The lowest Sockeye return of just over 71,000 was recorded in 1955 following the 1950 brood year of 141,000 (Figure \@ref(fig:BabineCounts)).  
+
+Wild Babine Sockeye are assigned to three groups based on adult run timing: an early timed group which primarily spawn in tributaries that drain into the main basin of Babine Lake; a mid-timed group which spawn in Morrison Creek, Morrison Lake, and Tahlo Creek, and a late-timed group of Babine Sockeye includes Sockeye that spawn in sections of the Upper Babine River between Babine Lake and Nilkitkwa Lake, and downstream of Nilkitkwa Lake. The progeny of early and mid-timed wild Babine spawners rear in the main basin of Babine Lake with the exception of Sockeye returning to spawn in Morrison River, Morrison Lake and Tahlo Creek, which rear in Morrison Lake [@WoodLifeHist1995]. The late-timed group exhibits an upstream migration pattern for fry which migrate upstream following emergence and rear in Nilkitkwa Lake and the North Arm of Babine Lake. 
+
+Visual escapement estimates of up to 30 wild Babine Sockeye spawning tributaries are conducted annually by foot or aerial surveys led by DFO and Lake Babine Nation. Estimates from visual escapement surveys for wild Babine systems are adjusted to account for underestimation bias using methods described in @WoodLifeHist1995. Annual stream counts for individual Babine systems are maintained in the Fisheries and Oceans Canada [NUSEDS database](https://open.canada.ca/data/en/dataset/c48669a3-045b-400d-b730-48aafe8c5ee6).  The raw spawner estimates for the different wild Babine systems are expanded and combined into adjusted estimates for the early, mid and wild run timing components using a run-reconstruction procedure described by @WoodLifeHist1995.
+
+Fulton River and Pinkut Creek were, along with Babine River, the most abundant Babine Sockeye stocks and largest contributor to Babine Lake Sockeye before the start of the  BLDP. In the post-BLDP period, Sockeye salmon returns to the enhanced systems increased following while returns wild Babine systems have declined. The pattern of declines has varied between stocks over time. Early and late-timed Babine wild stocks have seen steady declines in spawner abundances. The numbers of recruits produced per spawner (recruits per spawner) since the late 1990s, while mid-timed wild stocks appear to have recovered from low returns in the late 1990s but have been in a state of decline since the mid-2000s.  
+
+The asynchrounous population dynamics between wild and enhanced Babine Sockeye, and among the different wild stocks, suggest that straying of enhanced surplus spawners into wild systems is not likely given that there have been large surpluses and low observed spawner escapement to wild Babine tributaries have been observed in some years, and the reverse in others (Figures \@ref(fig:BabineProdRpS) and \@ref(fig:BabineProdResid)).
+
+(ref:BabineCounts) Babine weir counts 1950 – 2021. Figure shows estimated wild (light grey) and enhanced (dark grey) components of the run.
+
+```{r BabineCounts,  fig.cap="(ref:BabineCounts)" }
+include_graphics("data/ChannelReview/BabineWeirCounts.png")
+```
+
+
+\clearpage
+(ref:BabineProdRpS) Observed productivity of Babine Sockeye stocks. Panels show productivity in terms of recruits/spawner (R/S), log-transformed to adjust for the commonly observed skewed distribution and smoothed as a 4-yr running average to highlight the underlying pattern. Spawners exclude the channel surplus. Red horizontal lines mark the corresponding raw numbers that can be more directly interpreted: At 1 R/S (*Repl*), the stock replaces itself *in the absence of any harvest*. At  2 R/S, the stock could sustain  50% exploitation rate while maintaining the same spawner abundance (under theoretical stable long-term conditions, i.e., *equilibrium*). For each stock, the largest observed productivity, Max(R/S), and the stock's contribution to the total Skeena spawner abundance since 2000 (%Spn) are listed. Figure \@ref(fig:BabineProdResid) shows changes in productivity after accounting for density dependence.
+
+```{r BabineProdRpS,  fig.cap="(ref:BabineProdRpS)" }
+include_graphics("data/ChannelReview/ProdPatterns_BabineStocks_LogRpS.png")
+```
+
+
+
+(ref:BabineProdResid) Productivity residuals for Babine Sockeye stocks. Panels show productivity patterns as deviations from the expected log(R/S) based on a simple deterministic Ricker fit, smoothed as 4-yr running average to highlight the underlying pattern. The Ricker residuals residuals, in units of ln(R/S), account for within-stock density effects, so that the pattern is a better reflection of fundamental, underlying productivity changes as spawner abundance naturally varies from year to year. With these residuals, the pattern can be directly interpreted, but the specific values are not as biologically meaningful as the observed productivity series in Figure \@ref(fig:BabineProdRpS).
+
+```{r BabineProdResid,  fig.cap="(ref:BabineProdResid)" }
+include_graphics("data/ChannelReview/ProdPatterns_BabineStocks_RickerResids.png")
+```
+
+
+
+
+
+\clearpage
+## Babine Lake Development Project 
+
+### History
+
+The BLDP spawning channels, adult control weirs, and flow control structures were built in stages starting with construction of Fulton Channel 1 in 1965, and the Fulton weir and Pinkut flow-control structures in 1966. Pinkut Channel and weir, and the Fulton flow-control structures were installed in 1968, followed by Fulton Channel #2, which was completed in two phases, in 1969 and  1971. For the first two years of operation, only the top half of Fulton Channel #2, representing 55% of its eventual capacity, was loaded. Pinkut Channel, which was initially built in 1968, experienced high egg mortality in the first two years of operation as a result of anchor ice formation in the channel bed. In 1970, an auxillary water system was installed to supply warm lake water to the channel. In subsequent years, spawning habitat quality in Pinkut Channel was affected by heavy siltation caused by erosion of the unarmoured banks, and the channel was entirely rebuilt in 1976-77 [@West1987]. Starting in 1973, an airlift operation was used to transport spawners to an inaccessible section of the creek above Pinkut Falls in some years of high returns.
+
+The BLDP spawning channels increased available spawning habitat by 116,000 m^2^ to accommodate approximately 190,000 additional spawners, and flow control provides stable spawning and incubation habitat in Pinkut Creek and Fulton River (West 1987, Table 1). Sockeye returning to Pinkut Creek and Fulton River also spawn in natural stream sections downstream of the respective weirs, which have an estimated capacity for 5,000 and 45,000 effective spawners. The current combined spawning capacity for Pinkut and Fulton Sockeye, including spawning channels, flow-controlled river sections, inaccessible spawning habitat serviced by the Pinkut Airlift program, (which has not operated since 2007), and downstream areas, is 509,000 spawners. The area of available spawning habitat, year of implementation, and current loading targets for BLDP enhanced channel, river and creek sections are provided in Table
+\@ref(tab:ChannelTargets).
+
+
+(ref:ChannelTargets) Area, loading capacity and date of construction for BLDP components. The original target density of one female per 1.25 m^2^ was increased  in the early 1990s for components marked by **\***.
+
+```{r ChannelTargets, echo = FALSE, results = "asis"}
+
+table.in <- read_csv("data/ChannelReview/ChannelTargets.csv") %>% mutate(Target = prettyNum(Target,big.mark = ",",scientific = FALSE)) %>% 			mutate_all(as.character)
+
+table.in[is.na(table.in)] <- "-"
+
+col.names.use <- c("Component",
+									 "Area\n(1000$m^2$)",
+									 "1st year\noperated",
+									 "Target\nspawners\n1000")
+
+
+table.in %>%
+   #mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
+   #mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l","r","r","r"),
+                  caption = "(ref:ChannelTargets)" ,col.names = linebreak(col.names.use ,
+                  																												align = "c")) %>%
+    kableExtra::row_spec(c(6,7,12,13), hline_after = TRUE)# %>%
+	#add_header_above(c(" " = 2, "Scenarios" = 4)) 
+
+```
+
+
+### Channel Loading
+
+Sockeye escapements, or loading, of spawning channels and Pinkut Creek and Fulton Rivers are managed to maintain target densities of spawners to maximize fry production and reduce risks of over-escapement including redd superimposition following wave spawning events, and disease outbreaks. The channels are loaded by female counts, and the target loading density of about 1.25 females/m^2^ of available spawning gravel is designed to achieve an optimal egg density of 2000-2500 eggs/m^2^. Loading targets for Fulton River were adjusted upwards in the 2000s to mitigate for pre-spawn mortality (PSM) caused by parasites and warmer temperatures. The actual number of eggs deposited in a given year depends on a number of factors including fecundity, egg retention, PSM and the ability to reload spawners, if available, in the event of high PSM. Current loading targets are provided in Table \@ref(tab:ChannelTargets).
+
+Loading events for the BLDP  spawning channels ideally occur in a single event for each channel to avoid wave spawning. Sockeye spawners are enumerated as they pass through weirs located near the mouths of Pinkut Creek and Fulton Rivers. Once the spawning channels and river sections upstream of the weir have reached capacity, any Sockeye remaining holding below the fence are locked out. Visual estimates of the number of Sockeye holding below the BLDP facilities are conducted regularly during the spawning season in most years. If significant pre-spawn mortality is detected in the spawning channels, they may be reloaded with the Sockeye that remain holding below the fences.
+
+The loading target for  Fulton River upstream of the  counting fence was increased from 100,000 to 200,000 in the early 2000s to offset potential PSM related to parasite infection, and because it was thought that additional fry could be produced, albeit at a lower egg-to-fry survival rate, from the lower quality, more marginal spawning habitats that are not included in the estimated area of  good quality spawning habitat for Fulton River above the counting fence (67,000 m^2^).
+
+A disease outbreak (the parasite *Ichthyophthirius multifilis*) caused high pre-spawn mortality in the Fulton and Pinkut spawning channels in 1994 and 1995 [@Traxler1998BabineDisease] and resulted in low spawner escapements to the enhanced facilities in subsequent return years starting in 1998.  Although escapements for both systems rebounded somewhat in the early 2000s, it has remained lower than the pre-outbreak period), with further declines observed for Pinkut Sockeye since 2010.
+
+Loading targets for the Pinkut and Fulton spawning channels and managed river sections have been maintained at full capacity  in most years except for years of exceptionally poor returns, including 1998 and 1999 (following the disease outbreak that affected the 1994 and 1995 brood years), and more recently in 2013 and 2019 when spawning targets were not attained for Fulton Channel #2, and for Pinkut Channel in 2013. Fulton River did not attain its loading targets in 1969, 1991 and 2013.  
+
+
+## Available biological information for wild and enhanced Babine Sockeye
+
+
+
+### Age Sampling
+
+Babine Sockeye primarily rear for 1 year in freshwater following emergence as fry, migrate to sea in their second year of life and return to spawn after 1-3 years at sea, for a total ages ranging from 3 (“jack” Sockeye which spend 1 winter at sea) or 4-5 (“adult” or “large” Sockeye, which spend 2-3 winters at sea). Age sampling has not been regularly conducted at the Babine weir or BLDP facilities since the mid-1990s. Age composition estimates for Babine Sockeye are derived from the aggregate Skeena Sockeye return, which is sampled at the Tyee Test Fishery, of which Babine Sockeye typically account for about 90% of the total return. 
+
+Age-3 Sockeye, which are not effectively sampled at the Tyee Test Fishery are counted at the Babine weir. The estimated returns of “large”, or 4- and 5-year old Sockeye arriving at the Babine fence, which are based on the sampled proportions of Sockeye with a single freshwater year at the Tyee Test Fishery (age 4~2~ and 5~2~ in Gilbert-Rich notation), are added to the counts of age-3 Sockeye from the Babine fence to calculate the proportions for all age classes. 
+
+The proportions of age 3-, 4-, and 5-year old Skeena and thus Babine Sockeye varies across years. Since 1970, the annual proportion of age-3 Sockeye returns to Babine Lake has ranged from 0 – 40%. The proportions of age 4 and age 5 age classes have both ranged between 3 – 92%. Exceptionally low returns of one age class can signal a brood year failure related to poor marine survival for the siblings of a cohort that went to sea in a common year. For example, a poor return of age 3 Sockeye may signal a poor return of age 4 the next year, followed by age 5 in the following year. Because the dominant age class (4~2~ or 5~2~) of spawning females varies by year, there is no clear trend in declining total age at return for Babine Sockeye.
+
+
+### Body Size
+
+Length-at-age and overall body length have decreased over time for Skeena Sockeye, which are sampled at the Tyee Test Fishery. For Sockeye sampled at the Tyee Test Fishery, length at age decreased by 2-3% for 5-, 6- and 7-year old fish and remained constant for 4 year old fish between the 1980s and 2010s (decadal averages). The pattern of observed changes in overall length and length-at-age for Skeena and Nass Sockeye, which are consistent with decreases observed for Sockeye salmon populations in Southeast Alaska [e.g., @Oke2020RecentDeclinesBodySize], are not linear, with less pronounced declines in older age classes and steeper declines observed since 2010.  
+
+The magnitude of the observed declines in body length for Skeena and Nass Sockeye are consistent with those observed for other Sockeye populations in the North Pacific, and are related to decreases in fecundity [@Oke2020RecentDeclinesBodySize; @Ohlbergeretal2020CkEscQual]. 
+
+### Fecundity
+
+Fisheries and Oceans Canada, Salmon Enhancement Program collects and maintains production datasets for Pinkut and Fulton Sockeye. BLDP Production data to 1985 are reported in @West1987, and are currently being updated by Pacific Salmon Foundation. The data presented here are preliminary, and availabilty by year varies by project and channel. 
+
+DFO-Salmon Enhancement Program (DFO-SEP) personnel collect biological data at the Pinkut and Fulton facilities, including sex ratio and estimated percentage of prespawn mortality (PSM). Biosampling is conducted at both spawning channels to assess body size, fecundity, and egg retention for spawners, which are incorporated into estimates of total egg deposition and density for each BLDP component. Potential fecundity, or the average number of eggs carried by spawning females, is measured from sacrificed samples collected across the observed size spectrum of spawning females at the Pinkut and Fulton spawning channels. Average potential fecundity is estimated by regressing egg counts to body length of sampled fish, and applying the regression equation to the average length of female spawners for each channel, river or creek.
+
+Apparent fecundity, or the actual average number of eggs deposited, which accounts for egg retention (estimated from sampling spawned-out carcasses), is combined the number of effective females after accounting for  prespawn mortality to estimate the actual deposition of eggs deposited in each river, creek or section of channel. While potential fecundity is an indicator of the condition of female spawners entering the channels, apparent fecundity is required to estimate total egg deposition and egg to fry survival for a given year.
+
+Estimates of potential fecundity, which are available for the spawning channels, Pinkut Creek and Fulton Rivers from 1998 onward show a decreasing trend, likely related to a trend in decreasing body size during that time period (Figure \@ref(fig:PotentialFecundity)). Estimates of apparent fecundity (potential fecundity minus egg retention), which are available for longer time series, show a decreasing and nonlinear trend since the 1970s which are likely related to overall declines in average body length that have been observed during the same time period (Figures \@ref(fig:PotentialFecundity) and \@ref(fig:ReducedFecundity)). 
+
+
+(ref:PotentialFecundity) Calculated potential fecundity for Sockeye sampled at Pinkut and Fulton spawning channels, 1960-2020. Estimates cover 1998-2020 for Fulton systems and 2000-2020 for Pinkut systems.
+
+```{r PotentialFecundity,  fig.cap="(ref:PotentialFecundity)" }
+include_graphics("data/ChannelReview/PotentialFecundity.png")
+```
+
+(ref:ReducedFecundity) Trends in average apparent fecundity for Babine Sockeye sampled at Fulton Channel 2, 1960-2020. 
+
+```{r ReducedFecundity,  fig.cap="(ref:ReducedFecundity)",out.width = "80%" }
+include_graphics("data/ChannelReview/ReducedAverageFecundity.png")
+```
+
+### Egg Deposition and Fry Production
+
+From 1973 to 1984, hydraulic sampling was used to assess egg survival in the channels, river and creek.  Hydraulic sampling was then discontinued because it does not assess all mortality prior to hatch and was not considered a replacement for the downstream fry enumeration program [@West1987].
+
+Fry production for Pinkut Creek and Fulton River is assessed annually during the spring outmigration period after emergence, using fan or converging throat traps operated during the spring migration period to generate an estimate of the total abundance of fry entering the lake from both projects. In recent years (2015-2019), Fulton Channel 1 has been operated as part of the river and the fry counts have been combined.
+
+Fry production is not assessed directly for wild Babine systems. A biostandard of 233 fry/spawner, derived from average egg to fry survival in the natural sections of Pinkut Creek and Fulton River is applied to estimate fry production for the early, mid and late-timed wild Babine Sockeye groups (MacDonald and Hume 1984), which are added to reported BLDP fry production to estimate total combined fry abundances for Babine Lake [e.g., @Woodetal1998Babine; @CoxRogersSpilsted2012Babine].
+
+Egg deposition and fry production have remained relatively constant over time for Fulton River and Pinkut Creek. The three channels have seen decreasing trends in  egg deposition since the 1970s which may be related to lower fecundity for spawning females. Fry production has decreased somewhat for Fulton Channel two during this time period, but there is no clear pattern of reduced fry production for Fulton Channel #2 or Pinkut Channel. 
+
+Egg to fry survival rates are higher in the spawning channels than in the natural river sections with regulated flow. This is not surprising, because the channels have been designed and managed for ideal spawning conditions, including water depth, flow, and substrate. For the post-BLDP period between 1970-2020, the average egg to fry survival rates for Pinkut Channel, Fulton Channel 1 and Fulton Channel 2 were 49%, 35%, and 48% respectively compared with 25% for Pinkut Creek and 18% for Fulton River. Egg to fry survival has not changed from pre-BLDP conditions since flow control structures were installed in Fulton River. There is no clear relationship between egg density and egg to fry survival for the spawning channels. Although there is evidence of decreasing egg to fry survival rates with increasing egg densities in Pinkut Creek and Fulton River, fry production increases with increasing egg densities in both systems, but the rates of increase are slower at higher densities than 2000-2500 eggs/m^2^, which are considered ideal for maximum fry production without a decrease in egg-to-fry survival (C. West, unpublished data).
+
+(ref:EggDeposition) Total estimated egg deposition (x 10 million) for BLDP enhanced river, stream and channels, 1960-2020. Here, the upper and lower sections of Pinkut Creek (including the Pinkut Airlift) are combined, as are Fulton Channel 1 and Fulton River, which are assessed together in spring fry enumeration programs. 
+
+```{r EggDeposition,  fig.cap="(ref:EggDeposition)" }
+include_graphics("data/ChannelReview/TotalEggDepo.png")
+```
+
+(ref:FryProd) Estimated egg to fry survival for BLDP enhanced river, stream and channel, 1960-2020. Here, the upper and lower sections of Pinkut Creek (including the Pinkut Airlift) are combined, as are Fulton Channel 1 and Fulton River, which are assessed together in the spring fry enumeration programs.
+
+```{r FryProd,  fig.cap="(ref:FryProd)" }
+include_graphics("data/ChannelReview/FryProd.png")
+```
+
+
+(ref:EggToFry) Estimated fry production (x 10 million) for BLDP facilities, 1960-2020. Here, the upper and lower sections of Pinkut Creek (including the Pinkut Airlift) are combined, as are Fulton Channel 1 and Fulton River, which are assessed together in the spring fry enumeration programs.
+
+```{r EggToFry,  fig.cap="(ref:EggToFry)" }
+
+include_graphics("data/ChannelReview/EggToFry.png")
+```
+
+
+### Smolts
+
+Babine Sockeye smolts are assessed annually at the outlet of Nilkitkwa Lake during the spring migration. Annual smolt abundance estimates are produced by mark and recapture estimation using a parsimonious model reported in MacDonald and Smith (1980). Smolts are sampled for length, weight, age, and prevalence of the parasite Eubothrim salvelini.  The smolt migration is bimodal, which allows for separate for a smaller first peak, consisting of smolts leaving Nilkitwka lake and the North Arm of Babine Lake, which are likely the progeny of late-timed Babine River spawners, and a second larger peak consisting of main-basin populations, including smolts originating from BLDP facilities. The smolt program, which did not operate from 2002-2012 due to budgetary restrictions, resumed in 2013 and is currently operated by Lake Babine Nation.
+
+Smolt production from the BLDP has increased linearly with increasing fry production since the start of the BLDP. The average weight of sampled smolts in the pre and post BLDP periods were 5.4 g (SD 0.5 g) prior to 1975 and 4.8 g (SD 0.4 g) since 1976. The significant decrease in mean weight occurred in the pre BLDP period, and it has remained relatively constant since the production of BLDP smolts began.
+
+Although there is a clear positive relationship between fry production and seaward migrating smolts from Babine Lake, the benefits of increased smolt production to adult returns are less clear, with high variability in smolt to adult survival.  From 1960-2000 (the years prior to the closure of the Babine smolt fence), smolt-to-adult survival ranged from 0.71 – 13.8 adult returns per smolt, with the highest survival rate observed for the 1995 brood year, following disease and associated prespawn mortality in 1994 and 1995 and associated prespawn mortality, and low fry production from BLDP facilities. There are no clear trends in smolt to adult survival, which is highly variable, however there is a weak positive relationship between smolt to adult survival (SAS) and smolt weight and a negative relationship between SAS and smolt abundance. 
+
+(ref:SmoltPlots) Exploratory data analysis (EDA) plots of smolt abundance and weight. (A) Annual abundance of smolts in the main Babine basin, with construction start of enhancement facilities marked by the red vertical line; (B) Changes in smolt weight over time, with simple linear regressions fitted to two time periods: 1950-1968, 1969-2013; (C) Relationship between fry abundance and smolt abundance in the main basin; (D) Relationship between smolt weight and abundance in the main basin;  (E) Relationship between smolt survival and smolt weight; (F) Relationship between adult returns and smolt abundance, with simple linear trendline as a visual reference. More recent observations are shaded darker red in all six panels. Panels C-F include a simple linear trend line as a visual reference.
+
+```{r SmoltPlots,  fig.cap="(ref:SmoltPlots)" }
+
+include_graphics("data/ChannelReview/SmoltPlots.png")
+```
+
+### Limnology of Babine Lake
+
+Limnological assessments conducted in the 1950s and 1960s found that the Sockeye rearing capacity of Babine Lake was underutilized [i.e., @Brett1951; @Johnston1956] and estimated that Babine Lake could support up to 300 million fry. The initial target for increased fry production for the BLDP of an additional 100 million fry was exceeded, with BLDP facilities estimated to have contributed an average of 125 million fry (range: 37 – 212 million) to Babine Lake since 1971, which together with the estimated fry production from wild spawning populations (1950-2021 average 68.0 million, range 9.4 – 209.2 million) is less than the estimated capacity of 300 million.
+
+A more recent limnological assessment in 2000 used the PR (phtotosynthetic rate) capacity model estimated the rearing capacity of the main basin of Babine Lake  to be 219 million (Hume and Maclellan 2000), which combined with unsampled habitats in North Arm, Morrison Arm and Hagen Arm would likely approach 300 million fry, with additional rearing capacity in Nilkitkwa Lake. Hydroacoustic fall fry estimates carried out in Nilkitkwa Lake in 2013 and 2016 observed 0.99 and 0.67 million fry, respectively (Carr-Harris and Doire 2017).
+
+Updated limnological assessments are needed to identify any large-scale changes that have occurred during the last two decades, during which Babine Lake has experienced higher temperatures and lower Sockeye returns than in the previous decades, which potentially affect nutrient loading. The results from relatively recent limnological surveys that were carried out at Babine Lake in 2013 and 2015, are not available at this time (D. Selbie, pers. comm., DFO Cultus Lake Salmon Research Laboratory, 2021).
+
+
+
+
+
+

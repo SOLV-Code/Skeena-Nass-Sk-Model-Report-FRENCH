@@ -1,0 +1,3 @@
+"AggSeq","Aggregate","StartYr","SpnAddCV","CtCV","Notes","NumSpn","NumRec","NumSR","ContrX","NumObsX","LgSpnX","LgRecX","SmSpnX","SmRecX","LgExpX","ContrVal","NumObsVal","LgSpnVal","LgRecVal","SmSpnVal","SmRecVal","LgExpVal","OddSpn","OddRec","OddProd","OddExp"
+1,"Nass",2000,0.2,0.1,NA,20,14,14,"X","-","-","-","-","-","-",2.46,14,1,1,1,1,1,0,0,0,0
+2,"Skeena",1993,0.05,0.2,NA,27,22,22,"X","-","-","-","-","-","-",3.38,22,1,1,1,1,1,0,1,1,0

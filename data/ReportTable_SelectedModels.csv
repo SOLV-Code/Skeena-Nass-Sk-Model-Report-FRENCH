@@ -1,0 +1,32 @@
+Aggregate,StkSeq,Stock,StkNmS,LTAvg,Now,Low,High
+Nass,1,Lower Nass Sea & River Type,LNassSRT,AR1cu,KFcu2012-2015,KFcu1982-1985,KFcu1991-1994
+Nass,2,Meziadin,Meziadin,AR1cu,KFcu2010-2013,KFcu2010-2013,KFcu1986-1989
+Nass,3,Bowser,Bowser,NA,NA,NA,NA
+Nass,4,Oweegee,Oweege,NA,NA,NA,NA
+Nass,5,Kwinageese,Kwinag,BRcu,BRcu(0.1),BRcu(0.1),BRcu(0.9)
+Nass,6,Damdochax,Damdoch,AR1cu,KFcu2006-2010,KFcu1995-1999,KFcu1982-1986
+Nass,7,Upper Nass River Type,UNassRT,NA,NA,NA,NA
+Skeena,8,Johnston,Johnston,BRcu,BRcu(0.9),BRcu(0.1),BRcu(0.9)
+Skeena,9,Ecstall,Ecstall,NA,NA,NA,NA
+Skeena,10,Alastair,Alastair,AR1cu,KFcu2009-2013,KFcu2009-2013,KFcu2006-2010
+Skeena,11,Lakelse,Lakelse,AR1cu,KFcu2010-2014,KFcu1966-1970,KFcu1960-1964
+Skeena,12,Kitsumkalum,Kitsumk,AR1cu,KFcu2009-2013,KFcu1995-1999,KFcu2000-2004
+Skeena,13,Mcdonell,Mcdonell,BRcu,BRcu,BRcu(0.1),BRcu(0.9)
+Skeena,14,Kitwanga,Kitwanga,BR01cu,BR01cu(0.1),BR01cu(0.1),BR01cu(0.9)
+Skeena,15,Upper Bulkley Lakes,UBulkLk,NA,NA,NA,NA
+Skeena,16,Morice,Morice,AR1cu,KFcu2010-2013,KFcu2004-2008,KFcu1989-1993
+Skeena,17,Swan/Stephens,SwanSteph,AR1cu,KFcu2010-2014,KFcu2006-2010,KFcu1981-1985
+Skeena,18,Babine Early Wild,Bab-EW,AR1cu,KFcu2010-2014,KFcu2010-2014,KFcu1963-1967
+Skeena,19,Babine Late Wild,Bab-LW,AR1cu,KFcu2010-2014,KFcu2010-2014,KFcu1961-1965
+Skeena,20,Babine Mid Wild,Bab-MW,AR1cu,KFcu2010-2014,KFcu2010-2014,KFcu1961-1965
+Skeena,21,Pinkut,Pinkut,AR1cu,KFcu2010-2014,KFcu2010-2014,KFcu1978-1982
+Skeena,22,Fulton,Fulton,AR1cu,KFcu2010-2014,KFcu2010-2014,KFcu1983-1987
+Skeena,23,Sicintine,Sicintine,NA,NA,NA,NA
+Skeena,24,Slamgeesh,Slamg,BRcu,BRcu(0.9),BRcu(0.1),BRcu(0.9)
+Skeena,25,Motase,Motase,BRcu,BRcu,BRcu(0.1),BRcu(0.9)
+Skeena,26,Bear,Bear,AR1cu,KFcu2010-2014,KFcu1999-2003,KFcu2010-2014
+Skeena,27,Asitka,Asitka,BRcu,BRcu,BRcu(0.1),BRcu(0.9)
+Skeena,28,Sustut,Sustut,BRcu,BRcu,BRcu(0.1),BRcu(0.9)
+Skeena,29,Kluantantan,Kluant,NA,NA,NA,NA
+Skeena,30,Kluayaz,Kluayaz,NA,NA,NA,NA
+Skeena,31,Skeena River Type,Skeena RT,NA,NA,NA,NA

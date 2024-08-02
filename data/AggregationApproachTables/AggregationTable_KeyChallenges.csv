@@ -1,0 +1,10 @@
+Type,Approach,Key Challenges
+Use biological benchmarks,"Aggregate abundance-based benchmarks (Sgen, Smsy, Smax, Seq)",Does not account for differences between component stocks.
+Use biological benchmarks,"Stock-specific abundance-based benchmarks (Sgen, Smsy, Smax, Seq)","Can be calculated directly from SR parameters, but sum of stock-level benchmarks is not biologically meaningful."
+Use biological benchmarks,Rate-based benchmarks (Umsy),"Does not give a spawning goal, but can be used to set upper ER limit."
+Use status considerations,"Define aggregate reference points based on stock-level status (e.g. ""No stock with Red Status"")",Does not give a spawning goal.
+Use status considerations,Logistic regression (define target based on agg abd that achieved most stock-level objectives in the past),Only works if aggregate abundance and stock-level statuses are correlated. 
+Use equilibrium results,"Spawner-based (assume fixed spawning target implemented exactly forever,  without annual variation)","Generates stock-level trade-off profiles, but does not give aggregate target."
+Use equilibrium results,"ER-based (assume fixed ER target implemented exactly forever, without annual variation)",Can sum Spawners and Catch across stocks if plausible to assume that same (or at least similar) ER is applied to all stocks.
+Use forward simulation,"""Simple"" Simulation",Scoping out a model that is not overly complex but still captures the essential mechanisms. Appropriate scope depends on the specific questions we are trying to answer with the model.
+Use forward simulation,Management Strategy Evaluation (MSE),"Requires time to develop both a detailed model and implement a structured planning process. Recommended approach for future work, but not feasible  on current timeline."

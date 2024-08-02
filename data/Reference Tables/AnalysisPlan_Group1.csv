@@ -1,0 +1,15 @@
+﻿Seq,LHAZ,Stock,StkNmS,R,AR1,KF,Notes
+1,Nass SRT,Lower Nass Sea & River Type,LNassSRT,Y,Y,Y,No gaps
+2,U Nass LT,Meziadin,Meziadin,Y,Y,Y,No gaps
+3,L Skeena LT,Alastair,Alastair,Y,Y,Y,No gaps
+4,M Skeena LT,Babine Early Wild,Bab-EW,Y,Y,Y,No gaps
+5,M Skeena LT,Babine Mid Wild,Bab-MW,Y,Y,Y,No gaps
+6,M Skeena LT,Babine Late Wild,Bab-LW,Y,Y,Y,No gaps
+7,L Skeena LT,Kitsumkalum,Kitsumk,Y,N,N,Some missing brood years
+8,L Skeena LT,Mcdonell,Mcdonell,Y,N,N,Many missing brood years
+9,L Skeena LT,Lakelse,Lakelse,Y,N,N,Some missing brood years
+10,M Skeena LT,Swan/Stephens,SwanSteph,Y,N,N,Some missing brood years
+11,M Skeena LT,Morice,Morice,Y,N,N,1 missing  brood year
+12,U Skeena LT,Bear,Bear,Y,N,N,Some missing brood years 
+13,M Skeena LT,Fulton,Fulton,Y,Y,Y,"Channel loading target, SR may not apply"
+14,M Skeena LT,Pinkut,Pinkut,Y,Y,Y,"Channel loading target, SR may not apply"

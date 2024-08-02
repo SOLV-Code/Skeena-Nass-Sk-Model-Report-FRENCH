@@ -1,0 +1,7 @@
+﻿Type,Benchmark,Definition
+Standard,Smax,Spawner abundance that maximizes median recruits.
+Standard,Smsy,"Spawner abundance that maximizes sustainable median yield (Rec-Spn), if managed to a fixed escapement target under equilibrium conditions."
+Standard,Seq,Long-term equilibrium spawner abundance in the absence of harvest.
+Standard,Umsy,Harvest mortality rate at median MSY.
+WSP,80% Smsy,"Used as the upper benchmark for the relative abundance metric in WSP status assessments. If generational average spawner abundance falls above 80% Smsy, the conservation unit is designated as Green status on this metric."
+WSP,Sgen,"Spawner abundance with a high probability of rebuilding to Smsy in 1 generation in the absence of harvest. Used as the lower benchmark for the relative abundance metric in WSP status assessments. If generational average spawner abundance falls below Sgen, the conservation unit is designated as Red status on this metric. Note that Sgen is not applicable for stock aggregates."

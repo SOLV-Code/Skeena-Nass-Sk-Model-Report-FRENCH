@@ -1,0 +1,26 @@
+book_filename: "SkeenaNass_Sockeye_BM_ResDoc"
+rmd_files: ["index.Rmd",
+            "01-Introduction.Rmd",
+           "02-Methods.Rmd",
+           "02b-MethodsSim.Rmd",
+           "03-Results.Rmd",
+           "04-Discussion.Rmd",
+           # "06_01_Figures.Rmd",
+           # "06_02_Tables.Rmd",
+           "05-references.Rmd",
+           "06_01_TWG.Rmd",
+           "06_03-appendix_SingleStockFits.Rmd",
+           "06_04-appendix_HBM.Rmd",
+           "06_06-appendix_AltSRTest.Rmd",
+            "06_06-appendix_BMCalcTests.Rmd",
+           "06_06-appendix_BiasCorrTests.Rmd",
+           "06_10_ModelExt1_OutcomeUncertainty.Rmd",
+           "06_11_ModelExt2_CovarInProd.Rmd",
+           "06_07-appendix_BiasCorrectedBenchmarks.Rmd",
+           "06_08-appendix_ChannelReview.Rmd", 
+           "06_09-appendix_PinkutFultonResults.Rmd" #,
+           #"06_05-appendix_SimpleSim.Rmd",
+           #"99_appendix_LastPart.Rmd"
+
+            ]
+delete_merged_file: true

@@ -1,0 +1,283 @@
+## REMERCIEMENTS {-}
+
+Le travail présenté dans ce document s’inscrit dans une initiative plus vaste qui n’aurait pas été possible sans les contributions et les conseils constructifs d’un groupe diversifié. Les détenteurs de droits, les intervenants et les experts techniques qui ont participé à l’atelier de détermination de la portée à Prince Rupert en 2019 ont tracé la voie initiale. Un groupe de travail technique (annexe \@ref(app:TWG)) a coordonné les examens des données et le travail analytique. Randall Peterman (Ph. D.) et Milo Adkison (Ph. D.) ont agi à titre d’examinateurs indépendants pour l’ensemble de l’initiative et nous ont guidés dans les périodes difficiles. Murdoch McAllister (Ph. D.) et Wendell Challenger (Ph. D.) ont fourni un ensemble distinct d’analyses des géniteurs-recrues pour permettre de comparer les méthodes. Nous remercions tous les contributeurs qui nous ont aidés à nous rendre jusqu’ici, et nous avons hâte de poursuivre ce parcours avec eux.
+
+## ACRONYMES ET SIGLES {-}
+
+
+(ref:TableAcronyms) Formes longue et abrégée des termes techniques utilisés tout au long du document. 
+
+```{r TableAcronyms, echo = FALSE, results = "asis"}
+
+
+table.in <- read_csv("data/Reference Tables/Acronyms.csv")# %>% select
+
+table.in[,1:2]  %>%     
+   #mutate_all(function(x){x = as.character(x)}) %>%
+   #mutate_all(function(x){gsub("-", "", x)}) %>% 
+   #mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+     #mutate_all(function(x){gsub("@", "\\\\@", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
+   csas_table(format = "latex", escape = TRUE, font_size = 10,align = c("l","l","l"),
+                  caption = "(ref:TableAcronyms)")  %>%
+	kableExtra::row_spec(1:dim(table.in)[1]-1, hline_after = TRUE) %>%
+     kableExtra::column_spec(1, width = "10em") %>%
+     kableExtra::column_spec(2, width = "24em") #%>%
+   #  kableExtra::column_spec(3, width = "12em")
+   #kableExtra::row_spec(c(1:3,5), extra_latex_after = "\\cmidrule(l){2-3}") 
+
+
+```
+
+
+
+\clearpage
+# INTRODUCTION
+
+## ESCAPEMENT GOAL REVIEW {#Project}
+
+### Background {#Background}
+
+Sockeye salmon populations are changing rapidly with the cumulative effects of anthropogenenic stressors including fishing pressure, habitat degradation, and climate change. Skeena and Nass Sockeye, which are the second and third largest Sockeye runs in British Columbia, have experienced  declining productivity, together with increasing variability in run size and increased frequency of low returns since 2000. In recent years, low returns of Skeena and Nass Sockeye have led to reductions or closures of Canadian commercial fisheries, and restrictions on Indigenous fisheries targeting Skeena Sockeye in some years. The four lowest Nass Sockeye returns were recorded from 2017-2021. For Skeena Sockeye, the lowest escapements since a catastrophic Babine landslide in the 1950s occurred in 2013, 2017, and 2019.
+
+Under the renewed Pacific Salmon Treaty (PST) provisions, Canada has agreed to complete a  comprehensive escapement goal analysis for Sockeye salmon (*Oncorhynchus nerka*) returning to the Skeena and Nass rivers [@PST]. Aggregate escapement goals for Skeena and Nass Sockeye salmon are used to set Annual Allowable Harvests (AAH) for U.S. and Canadian fisheries targeting both stock aggregates. In addition to renewed PST provisions, biologically-based escapement goals for Skeena and Nass River Sockeye salmon are used for Canadian fishery management including the Nisga’a Treaty [@NisgaaFinalAg], and First Nations Food, Social and Ceremonial (FSC), economic opportunity and recreational fisheries in the Skeena and Nass rivers.    
+
+Aggregate Sockeye salmon returns to the Skeena and Nass watersheds are comprised of numerous  distinct stocks, some of which are depressed and are considered stocks of concern, while others have small spawner abundances and few or no reliable estimates [@SkeenaNassSkDataRep]. Enhanced-origin Sockeye salmon from two tributaries to Babine Lake account for a large proportion of aggregate Skeena Sockeye salmon production. Although the individual wild stocks, with run sizes ranging from hundreds to tens of thousands, are  much smaller in terms of abundance than enhanced Babine stocks, they account for most of the genetic diversity among Skeena and Nass Sockeye. Under the Wild Salmon Policy [@WSP], Canada is seeking to maintain the future productivity of Skeena and Nass Sockeye salmon returns by maintaining the genetically unique wild Sockeye salmon populations that contribute to overall returns. Concerns about potential overharvesting of smaller, less productive Skeena and Nass in mixed stock fisheries targeting the large lake stocks have been noted since at least the 1960s, prior to the start of BLDP-enhanced returns [e.g., @Larkin1968SkeenaPopBio]. More recently, an independent review of Skeena emphasized the need to consider tradeoffs between fishery management measures and WSP requirements to conserve already depressed weaker stocks [@Waltersetal2008ISRP]. 
+
+The current aggregate escapement goals for Skeena and Nass Sockeye salmon, based on previous estimates of aggregate spawner abundance to produce maximum sustained yield (Smsy) are 900,000 for Skeena Sockeye and 200,000 for Nass Sockeye [@ShepardWithlerSkeenaBM; @RickerSmithSkeenaBM; @BockingetalMeziadinBM; @CoxRogers2013SkeenaMemo]. These goals do not consider the complex stock structure of each aggregate. Furthermore, the productivity of Skeena and Nass Sockeye salmon aggregates has declined considerably in recent years, and stock composition within and between the two aggregates has changed, most notably after the implementation of the enhancement facilities at Babine Lake in the 1970s, and a more recent reduction in the proportion of Sockeye returning to Meziadin Lake, which is the largest Sockeye system in the Nass watershed. Aggregate escapement goals based on maximum sustainable yield, which assume long term average productivity and stable stock composition, do not account for these changes and may not reflect current or future conditions for Skeena or Nass Sockeye. 
+
+The current escapement goal for Skeena Sockeye does not consider the contribution from enhanced Babine Sockeye originating from the BLDP, which accounts for an average of 67% (1970-2020) of the Skeena Sockeye return, with high variability between years (range 33-83%). Given that the average ratio of enhanced to wild Skeena Sockeye is approximately 2:1, the assumed interim escapement goal for the wild component of Skeena Sockeye is approximately 300,000, or 1/3 of the current 900,000 escapement goal.
+
+Skeena and Nass Sockeye, which originate in Canadian waters, are primarily harvested in Canadian and Alaskan commercial fisheries, and Indigenous fisheries in marine approach areas and throughout the Skeena and Nass watersheds.  A small number of Skeena and Nass Sockeye are harvested in recreational fisheries in each river. From 1985-2021, the average total exploitation rate was 54% for Skeena Sockeye  and 64.6% for Nass Sockeye [@NBTC2020]. Total exploitation rates for both Skeena and Nass Sockeye have decreased during this time period, and the proportion of Skeena and Nass Sockeye in the total harvest has varied by sector. 
+
+Aggregate escapement goals for Sockeye salmon returning to the Skeena and Nass Rivers (Skeena and Nass Sockeye) are required to implement Pacific Salmon Treaty Chapter 2 provisions.  Chapter 2 allows the U.S. to harvest 2.45% of the Annual Allowable Harvest (AAH) of Skeena and Nass River salmon prior to U.S. Statistical Week 31 in the District 104 purse seine fishery, and 13.8% of the AAH for Nass Sockeye in the District 101 gillnet fishery. The AAH each year is calculated as the combined total run above the combined escapement targets for Skeena and Nass Sockeye, unless the run size falls below the combined escapement target of 1.1m, in which case the AAH is defined as the total run less actual escapement.
+
+
+### Escapement Goal Review Process {#EGProcess}
+
+The escapement goal review is guided by bilaterally accepted Terms of Reference that specify the following objectives:
+
+1.	Summarize and evaluate relevant biological information to inform the development of aggregate escapement goals for Skeena and Nass Sockeye including an assessment of key uncertainties and gaps in the data for Sockeye populations in these basins. 
+2.	Evaluate  alternative aggregate escapement goals for Nass and Skeena River Sockeye, including an evaluation of stock status, production, and implications of key uncertainties. 
+
+Canadian members of the Northern Boundary Technical Committee (NBTC) of the Pacific Salmon Commission (PSC) have been tasked with leading a technical review of data, methods and metrics that can be used to developed biologically based escapement goals for Skeena and Nass Sockeye. A Technical Working Group (TWG) was established to support this work. The TWG included participants from Fisheries and Oceans Canada, North Coast Area First Nations, Pacific Salmon Foundation, and consulting organizations. Two independent reviewers were also identified, one by each country, to guide the technical work and review the resulting science advice. The technical work is one part of the broader escapement goal review process, and this document is one step in the technical work. Appendix \@ref(app:TWG) lists TWG members and independent reviewers.
+
+The TWG and independent reviewers have completed four key steps leading up to this Research Document:  
+
+* *Scoping workshop*: We prepared a workshop with Canadian rights holders and stakeholders in the fall of 2019, presenting an overview of planned technical work, seeking feedback on analytical priorities, and compiling suggestions for the overall escapement goal review process.
+* *Data review - Part 1: Stock structure*: We consolidated information on population structure for Skeena and Nass Sockeye aggregates, established an agreed-upon list of 31 stocks for subsequent analyses, and documented how stocks align with designated Conservation Units (CU) under Canada's Wild Salmon Policy [@WSP]. A key finding of the stock structure review was that some of the existing CU designations were likely errors that required further review, but this is outside the scope of the current process. 
+* *Data review - Part 2: Spawner-recruit data*: We compiled, reviewed, and updated available data to generate agreed-upon spawner-recruit data sets for stocks and aggregates [@SkeenaNassSkDataRep]. The 31 stocks were organized into three groups based on relative abundance and available data for subsequent analyses. Based on the data review and extensive sensitivity testing, we identified priorities for the analysis. The key issues highlighted for investigation are:
+   1. *Changes in productivity*: Productivity for Skeena and Nass Sockeye has declined considerably in recent years with increasing variability in total returns and productivity for both aggregates, and for many of the component stocks. An effective escapement goal needs to consider that these changes are likely to persist in the future. The TWG and both independent reviewers identified time-varying productivity as one of the most important factors to consider in the analytical plan.
+   2. *Aggregate vs. stock-level management reference points*: The Skeena and Nass Sockeye aggregates are both comprised of many smaller stocks with unique characteristics and population dynamics. A key objective for the review of Skeena and Nass Sockeye escapement goals is to recommend a combined aggregate escapement goal for Skeena and Nass Sockeye which considers stock-level genetic diversity in addition to variable productivity.
+   3. *Enhanced stocks vs. wild stocks*: The largest component of the combined aggregate Skeena and Nass Sockeye return  originates from the BLDP-enhanced systems where spawner escapement is relatively constant and managed to maintain optimal production of fry. The current aggregate escapement goal for Skeena Sockeye of 900,000 spawners is based on spawner recruitment analyses that were conducted in the 1950s and 1960s [@ShepardWithlerSkeenaBM] prior to the BLDP. A review of management targets for Skeena Sockeye needs to consider the large contribution and spawning capacity for the enhanced stocks.
+
+This Research Document provides science advice regarding these analytical priorities. Trade-offs and eventual decisions regarding aggregate management goals and associated harvest strategies, which will consider biological as well as other factors (e.g., socio-economic objectives), will depend on policy decisions and the specific objectives of First Nation and stakeholder groups which will be defined in a subsequent management process. This Research Document presents candidate biological benchmarks for Skeena and Nass Sockeye stocks based on the best available data and compares alternative approaches for developing aggregate biological escapement goals for these stocks.  Section \@ref(AnalysisOverview) explains the rationale for the scope and structure of this Research Document.
+
+This project is closely linked to other ongoing initiatives: 
+
+* New *Fish Stock Provisions* defined under Canada’s revised *Fisheries Act* [@NewFisheriesAct] require the development of Limit Reference Points (LRP) for major fish stocks. Stock management units have been defined for Pacific salmon, which are groups of CUs that have been organized into Stock Management Units (SMU), which are considered to be major fish stocks which will be managed as a unit to achieve joint status. Under the proposed framework to define Stock Management Units, Skeena and Nass Sockeye are defined as separate SMUs [@smuref]. 
+
+* A key pillar of Canada's Wild Salmon Policy (WSP) is to identify Conservation Units and assess their status using a standard suite of indicators, which are combined into an overall integrated status [@WSP; @HoltbyCiruna2007; @CURev2019; @Holtetal2009BM]. An overarching goal of the WSP is to maintain CUs above their lower benchmarks to buffer from extinction risk and conserve their adaptive diversity. Implementation guidelines for the new *Fisheries Act* provisions are a key deliverable under the updated WSP implementation plan [@WSPImplementationAddendum]. Guidelines and case studies were peer-reviewed in early March 2022 [@LRPGuidelinesSAR]. Work to develop LRPs for Pacific salmon SMUs is onging, and we summarize recommendations for the types of analyses and analytical tools that would be required to support the development of LRPs for Skeena and Nass Sockeye, but do not include candidate LRPs for Skeena and Nass Sockeye in this Research Document.
+
+* A Canadian domestic engagement process started in the Fall of 2022, in which rights holders and stakeholders are reviewing technical information and are providing feedback regarding the current Skeena and Nass escapement goals. The examples included in this Research Document are intended to provide a sound technical basis for prioritizing future work to support the engagement process.
+
+
+### Research Document Objectives {#PaperObj}
+
+The project mandate established by the Northern Panel of the Pacific Salmon Commission (Section \@ref(EGProcess)) requires the "development and evaluation of candidate benchmarks at the stock level and aggregate level". Aggregate benchmarks are required to implement international management provisions under the renewed Pacific Salmon Treaty [@PST], while stock-level benchmarks are needed to address conservation objectives under  Canada’s Wild Salmon Policy [@WSP].
+
+The specific objectives of this Research Document are to:
+
+1. Develop an approach for the evaluation and selection of spawner-recruit model fits using alternative data sets and alternative model forms, including time-varying model forms, and apply this approach at the stock and aggregate levels for Skeena and Nass Sockeye salmon.
+2. Develop an approach to identify plausible alternative productivity scenarios (e.g., long-term average vs. current productivity) and corresponding spawner-recruit parameter sets.
+3. Develop stock-level biological benchmarks using current data sets and appropriate methods for wild and enhanced Skeena and Nass Sockeye salmon stocks including:
+   a.	Estimate and evaluate candidate biological benchmarks (e.g., Smsy, Smax, Sgen, Umsy) from model fits based on the plausible alternative productivity scenarios for wild Skeena and Nass Sockeye salmon stocks.
+   b.	Review channel capacity and observed patterns in productivity for enhanced Skeena Sockeye salmon stocks originating from the Babine Lake Development Project.
+4. Compare alternative approaches for choosing aggregate-level biological reference points for Skeena and Nass Sockeye salmon, evaluate advantages and disadvantages for each approach, and compare uncertainties in aggregate reference points generated using different approaches.
+5. Identify priorities for future work to support the development of stock-specific escapement goals and aggregate reference points.
+6. Examine and identify uncertainties in stock-level benchmarks by comparing outputs generated using alternative spawner-recruit model forms and data sets, and compare uncertainties in aggregate reference points generated using alternative approaches. 
+
+
+## STOCK STRUCTURE OF SKEENA AND NASS SOCKEYE
+
+
+### Life History Types, Stocks, and Conservation Units
+
+Skeena and Nass Sockeye are the second and third largest Sockeye salmon returns in Canada, after Fraser Sockeye. Together, Skeena and Nass Sockeye comprise dozens of genetically unique populations that return to different tributaries throughout both watersheds and are harvested in large-scale commercial and numerous constitutionally protected Indigenous fisheries throughout both watersheds [@Moore2015SellingFN]. The importance of stock-level diversity, which is protected by Canadian fisheries policy, is a key consideration for the current review of Skeena and Nass Sockeye escapement goals. 
+
+A key characteristic of both Skeena and Nass Sockeye salmon returns is that a single large lake accounts for most Sockeye production (Babine Lake for Skeena, Meziadin Lake for Nass). These large lake populations are themselves aggregates that are comprised of many smaller spawning populations, and for both, stock composition has changed over time. The many other smaller stocks account for most of the genetic diversity of Skeena and Nass Sockeye, and some are harvested in small-scale in-river or terminal Indigenous fisheries which support local economies [@GottesfeldSkeenaBook]. 
+
+@BeachamWithlerSeaType describe three alternative life history strategies observed in the juveniles of sea-going (anadromous) Sockeye salmon: 
+
+* *lake-type Sockeye* spawn in lakes or lake tributaries, and rear in the lake for at least 1 year after hatching
+* *sea-type Sockeye* spawn in tributaries or mainstem side channels, and the juveniles rear for several months in estuarine waters after hatching, with a total freshwater residency of less than one year
+* *river-type Sockeye* spawn in tributaries or mainstem side channels, and the juveniles rear in a river environment for at least 1 year before migrating to the ocean
+
+Lake-type Sockeye account for most of the large stocks on the Pacific Coast, but river- and sea-type Sockeye may have more adaptive potential, because they are less specialized for specific sites and are more versatile in their use of variable or changing habitats  [Sec. 9.2 in @HoltbyCiruna2007]. Evolutionary linkages between lake-, sea- and river-type Sockeye populations continue to be explored [e.g., @WoodetalLifeHist1987;  @BeachamWithlerSeaType; @WoodLifeHist1995;@WoodetalLifeHist2008; @Beachametal2004transboundary].
+
+Most Sockeye that originate from the Skeena and Nass watersheds follow the lake-type life history, but there are river-type populations that spawn throughout both basins. There are also at least two sea-type populations that spawn in the lower Nass River in Gingit and Gityzon creeks [@Beveridgeetal2015GingitSea]. Contributions from these sea-type populations to the Nass aggregate have increased in recent years. The Lower Nass sea-type population, for which the most abundant spawning population (Gingit Creek) has been surveyed regularly since 2000 [@Beveridgeetal2015GingitSea], contributed about 31% of the Nass Sockeye return in 2019 [@NFWD2020].
+
+Under the Wild Salmon Policy, Canadian anadromous salmon have been grouped into distinct *conservation units* (CU), defined as "a group of wild salmon sufficiently isolated from other groups that, if extirpated, is very unlikely to recolonize naturally within an acceptable timeframe" [@WSP]. For Nass and Skeena Sockeye, CU definitions are based on preliminary designations that were established in 2009, which for lake-type Sockeye generally correspond to the rearing lake of origin [@HoltbyCiruna2007].  Most of the stocks identified in our analyses align with a single CU, while for some smaller stocks, we have combined 2-3 CUs, either because they rear in cojoined lakes and the population structure is unclear, or they are assessed together, and the data cannot be separated. Babine, the largest CU, is split into 5 distinct stocks based on enhancement status and run timing. 
+
+Nass and Skeena Sockeye have been organized into 31 stocks for this review, including 7 Nass and 24 Skeena stocks, as described in @SkeenaNassSkDataRep and summarized in Figure \@ref(fig:PopStrucGeneral). Stocks can be grouped together based on life history and adaptive zone, as well as by watershed.
+
+###  Babine Lake Development Project (Pinkut and Fulton)
+
+Babine Lake is the largest natural freshwater lake in British Columbia and the largest producer of Sockeye salmon in the Skeena basin, and has accounted for 87-93% of aggregate Skeena Sockeye returns since 2000 [i.e., @CoxRogersSpilsted2012Babine], and includes wild and enhanced populations. The Babine Lake Development Project (BLDP) consists of a series of spawning channels and flow control structures that were built on Pinkut Creek and Fulton River starting in the late 1960s to increase the production of Babine Sockeye.
+
+Wild Babine Sockeye spawn in dozens of tributaries and lake-spawning habitats throughout the main basin of Babine Lake, in sections of Babine River between Babine and Nilkitkwa Lake, and in Morrison Lake and Tahlo Creek. Here, “Babine Sockeye” refers to all Sockeye returning to Babine Lake and upstream areas and includes wild and enhanced Sockeye from the Babine-Nilkitkwa and Morrison-Tahlo CUs, which are assessed together at the Babine weir and smolt enumeration programs and run-reconstruction procedures. Sockeye returning to Fulton River and Pinkut Creek, along with the late-timed Babine River stock, were the largest Babine Lake Sockeye populations before the BLDP.
+
+From a fisheries perspective, the BLDP has proven to be a successful enhancement program that has substantially increased returns of Babine and Skeena Sockeye. West and Mason (1987) estimated that for the first two decades following completion of the BLDP spawning channels and associated infrastructure, total returns for Skeena Sockeye nearly doubled, from 1.3 to nearly 2.5 million, with commensurate increases in fishery landings. 
+
+
+(ref:PopStrucGeneral) Population Structure of the Skeena/Nass Sockeye Management Unit. This figure summarizes all stocks and current Conservation Unit (CU) delineations, grouping them based on life history (i.e., lake-type vs. river-type and sea-type) as well as freshwater adaptive zone (LHAZ). Enhanced Pinkut and Fulton are part of the Middle Skeena Lake-Type LHAZ.
+
+```{r PopStrucGeneral, out.width= 350,  fig.cap="(ref:PopStrucGeneral)",fig.pos="H"}
+include_graphics("data/Pop_Structure_Small.PNG")
+```
+
+
+
+Sockeye returns to the channel-enhanced systems have exceeded the capacity of the available spawning habitat in the spawning channels and managed sections of Pinkut Creek and Fulton River in most years since the start of the BLDP (Wood 1995). Enhanced Sockeye returns to in excess of spawning capacity are considered surplus production. Some of these fish are harvested in ESSR (Excess Sockeye to Spawning Requirements) in Babine Lake after loading targets for wild and enhanced systems have been met, but these fisheries do not take place every year.
+
+Concerns have been raised about negative effects of the enhanced Babine Sockeye on wild Babine and other Skeena Sockeye stocks. Increased returns of enhanced Babine Sockeye have introduced new fishing pressure on wild Babine and other Skeena Sockeye stocks in mixed stock fisheries, with less productive wild stocks experiencing higher exploitation rates following more intensive mixed-stock fisheries targeting enhanced returns. Sockeye returns to wild Babine systems, and the numerous non-Babine Skeena Sockeye populations, which were in already decline prior to the start of the BLDP, have seen further declines since its implementation.
+
+Other potential interactions between wild and enhanced Babine Sockeye populations include  potential straying of enhanced Sockeye into wild spawning tributaries, and competition related to density dependence in freshwater and marine rearing habitats. The BLDP spawning channels were built after limnological assessments conducted in the 1950s and 1960s found that the Sockeye rearing capacity of Babine Lake was underutilized [i.e., @Brett1951; @Johnston1956] and that Sockeye production was limited by available spawning habitat. At the time, Babine Lake was estimated to have rearing capacity to support 300 million Sockeye fry [@West1987]. Further, size and size at age have declined for Skeena Sockeye consistent with other salmon populations in the North Pacific [@Oke2020RecentDeclinesBodySize], along with declines in fecundity, and modest declines in overall length are associated with much larger decreases in fecundity. For example, average fecundity for Pinkut and Fulton Sockeye, measured at the enhancement facilities, has declined over 10% since the 1980s. A significant decline in fecundity for wild and enhanced Skeena Sockeye could contribute to reduced productivity for these populations. An abundance based escapement goal based on the number of spawners which assumes constant egg production over time may not account for demographic changes such as changes in body size, age composition, or sex ratio, which have the potential to increase the escapements required to achieve maximum sustained yield over time [@Staton2021].
+
+Incorporating BLDP capacity limitations into the development of an aggregate escapement goal for Skeena Sockeye poses challenges because loading targets for the spawning channels and flow-controlled sections of Pinkut Creek and Fulton River are fixed to maintain optimal densities of spawners to maximize fry production. Spawner-recruitment models such as the Ricker models which were used to develop biological benchmarks for other stocks, require a range of spawner escapements (i.e., contrast in the data) may not produce useful parameter estimates for the enhanced stocks. 
+
+Enhanced Pinkut and Fulton Sockeye currently represent the largest component of Skeena Sockeye and are thus an important consideration for developing an aggregate escapement goal. However, a full review and updated recommendations for loading targets and operational procedures will require input and advice from the facility operator (DFO Salmonid Enhancement program) and is outside the scope of the current review, which focused on developing biological escapement goals for wild Skeena and Nass Sockeye stocks. In this paper we summarize estimation methods and run-reconstructions specific to Babine Sockeye, and assessed trends in surplus production and ratio of wild and enhanced Skeena Sockeye in order to develop advice for incorporating the enhanced stocks into an aggregate escapement goal for Skeena Sockeye.
+
+To address questions about the effects of enhancement on wild Sockeye production, we reviewed and updated production data for wild and enhanced Babine Sockeye to assess general trends in adult returns, escapement quality (size, sex ratio and fecundity), egg production, and fry outputs. This was not intended to be a comprehensive assessment of Babine Sockeye production, or a detailed analysis of the effects of the BLDP enhancement facilities on wild Babine and other Skeena Sockeye stocks. Rather, we provide a high-level overview of observed trends in freshwater production based on available information and make recommendations for further work on this topic.
+
+
+## ANALYSIS OVERVIEW {#AnalysisOverview}
+
+### Research Document Scope and Organization {#PaperScopeOrg}
+
+The analyses presented in this Research Document were bounded based on scoping discussions throughout the Skeena and Nass Sockeye escapement goal review process since 2019. These discussions included a technical working group process, scoping workshop, and feedback from two independent reviewers (Section \@ref(EGProcess)), as well as the peer-review process [@SkeenaNassSkSAR; @SkeenaNassSkPRO] which included the main Regional Peer Review (RPR) meeting in April of 2022 and a follow-up process led by CSAS to develop recommendations on alternative approaches for developing aggregate management reference points for Skeena and Nass Sockeye. 
+
+Data issues were mostly resolved by the Technical Working Group (TWG) prior to the peer-review meeting, with details documented in a stand-alone report [@SkeenaNassSkDataRep]. Data-related revisions identified through the peer review focused on clarifications and some additional testing of data treatment choices, such as procedures for infilling missing brood years.
+
+The focus of discussions around the scope of our analyses related to the three topics that were identified as key analytical priorities by the TWG (Section \@ref(EGProcess)), including:
+
+* Methods for spawner-recruit SR model fitting to account for time-varying productivity
+* Methods for developing aggregate management reference points based on stock-level SR model fits
+* Treatment of enhanced Pinkut and Fulton in the analyses
+
+This paper is structured as a series of modular steps, and includes extensive sensitivity testing of the initial steps (i.e., developing candidate SR models and model selection), or "building blocks" that are used in subsequent analyses. We provide examples for each of the subsequent steps which demonstrate how the biological information produced in the initial steps could be used to develop scientific advice for developing reference points. Depending on the specific context and requirements of current the Skeena and Nass Sockeye escapement goal review and future processes, this advice can be applied to develop specific questions, and specific analyses prioritized to address them. The examples provided in the second part of the results are intended to assist with identifying those priorities.
+
+The next three sections summarize how we approached each of these three components, and how our work compares to previous analyses. Section \@ref(TORLink) describes how this Research Document addresses each of the objectives in the Terms of Reference, linking to specific sections of the paper.
+
+
+
+### Spawner-recruit Model Fits, Productivity Scenarios and Biological Benchmarks {#AnalysisOverviewSR}
+
+
+
+Previous work on SR model fits and biological benchmarks for Skeena and Nass Sockeye has differed widely in scope and approach (Table \@ref(tab:PastWorkTable)). Earlier work was mainly focused on estimating stock-level SR-based benchmarks like Smsy, Smax, and Umsy [@BockingetalMeziadinBM;  @Waltersetal2008ISRP; @KormanEnglish2013; @Hawkshaw2018Diss]. @PacificSalmonExplorer also included percentile benchmarks. SR model details varied widely across these analyses. 
+
+To address the priorities and Research Document objectives listed in Section \@ref(PaperObj), we fitted alternative model forms of the Ricker model to each spawner-recruit data set (Skeena and Nass aggregates and 20 component stocks with sufficient SR data). The types of models used for each stock depended on data availability. We focused on developing simple single-stock models along with time-varying model forms (AR1 and Recursive Bayes models) to explore underlying productivity patterns for the different stocks and calculate biological benchmarks for alternative productivity scenarios.
+
+Following a review of candidate SR model fits by TWG participants, we selected model fits that best described the dynamics of each stock. We sampled from the posterior distributions of selected single stock models to characterize high, low, recent, and long-term productivity scenarios, which were then used as inputs for examples of alternative methods for developing aggregate management reference points, as summarized in the next section.  
+
+Standard biological benchmarks based on spawner recruitment parameters were calculated for each model fit (Smsy, Smax, Umsy; Section \@ref(BMMethods)). The resulting benchmark estimates were compared to observed spawner abundances and lake capacity estimates. 
+
+Some TWG members recommended the development of an updated version of a hierarchal Bayesian model (HBM) used in a previous process to estimate biological benchmarks for Skeena Sockeye, which would allow for a direct comparison of results generated using updated data. McAllister and Challenger (Appendix \@ref(app:HBMFits)) contributed preliminary results for the updated HBM model fits. We include a comparison of the initial HBM results to our single-stock SR model fits and discuss potential sources for observed discrepancies (Sections \@ref(HBMExploration) and \@ref(HBMResultsComp)). However, we did not include the initial HBM results in the model selection process to define different productivity scenarios used for the example results in the rest of the paper. This may be a priority for future work.
+
+The initial version of the Research Document was presented for peer review in April 2022 and included alternative SR model fits and alternative productivity scenarios. Revisions identified through the peer-review process focused on additional sensitivity testing (e.g., additional productivity scenarios), comparisons of alternative methods (e.g., single-stock vs. hierarchical model fits), and clarification of the analytical steps (e.g., log-normal bias correction, smoothing of time-varying parameter estimates).
+
+
+### Alternative Approaches for Developing Management Reference Points for Stock Aggregates {#AltApproachesOverview}
+
+The analyses presented in this Research Document are intended to inform a review of Skeena and Nass Sockeye management targets. The development of management targets needs to take into account social and economic considerations in addition to biological objectives, and requires additional work after biological benchmarks  have been estimated, such as Smsy [e.g., @HoltIrvineBMvsRP]. 
+
+Considerations for choosing an appropriate approach for developing management targets include:
+
+* *Type of harvest strategy*:  The purpose of management reference points is to trigger a response to changing conditions. Therefore, the approach to developing management reference points needs to fit the harvest strategy being used (i.e., fixed escapement, fixed exploitation rate, abundance-based rule). 
+* *Specific objectives*:  Clearly specified objectives are needed to allow for a structured and consistent comparison of alternative management reference points. 
+
+A straightforward approach that has been applied extensively in Pacific salmon fishery management is to select the estimate of a biological benchmark, such as Smsy, as the management target. This approach assumes (1) a harvest strategy where the stock overall is managed to a fixed escapement goal, and all returning adults in addition to the escapement goal are harvested; and (2) a management objective to maximize total harvest on average over the long-term, regardless of annual variability in harvest (i.e., most of the year-to-year variation in returns translates into variation of harvests).  
+
+(ref:PastWorkTable) Overview of Previous Work on Biological Benchmarks and Escapement Goals for Skeena and Nass Sockeye. Previous work differs in terms of scope, estimation approach, analysis type, and performance evaluation. 
+
+```{r PastWorkTable, echo = FALSE, results = "asis"}
+
+
+past.work.df <- read.csv("data/Reference Tables/PastWork_Overview.csv",stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM") %>%
+                        select(-Benchmark.Calculation)
+
+
+colnames(past.work.df ) <- linebreak(c("Reference","Main\nObjective","Scope","Parameter\nEstimation", # "Benchmark\nCalculation",
+                                         "Forward\nSimulation","Performance\nEvaluation"))
+
+
+
+past.work.df %>%
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
+                  caption = "(ref:PastWorkTable)") %>%
+  kableExtra::column_spec(1, width = "4em") %>%
+  kableExtra::column_spec(2, width = "7em") %>%
+  kableExtra::column_spec(3, width = "9em") %>%
+   kableExtra::column_spec(4, width = "12em") %>%
+  kableExtra::column_spec(5, width = "7em") %>%
+  kableExtra::column_spec(6, width = "9em") %>%
+  # kableExtra::column_spec(7, width = "8em") %>%
+   kableExtra::row_spec(1:  (dim(past.work.df)[1] -1), hline_after = TRUE)
+
+
+```
+
+
+
+
+\clearpage
+Alternatives to this basic approach have evolved to:
+
+* capture other objectives (e.g., reduce variability in harvest)
+* deal with practical considerations (e.g., constraints on implementing target harvests)
+* consider current conditions (e.g., recent returns, recent productivity)
+* consider multiple stocks in an aggregate
+
+The initial version of the Research Document included examples of seven alternative approaches. Each of these had previously been used or recommended for the development of Pacific salmon escapement goals, and some had been previously applied to Skeena or Nass Sockeye (Table \@ref(tab:PastWorkTable)). The strengths and limitations of these alternative approaches were discussed extensively during the CSAS RPR, but participants did not reach consensus or  firm recommendation regarding a single approach, and recommended the inclusion of one additional candidate approach. This paper includes examples of a total of eight alternative approaches.
+
+Peer review participants recommended that clear advice on choosing an appropriate approach *should* be developed. A subgroup of participants was then convened to develop this advice, which included (1) identifying criteria for evaluating the alternative approaches, (2) completing a detailed evaluation of each approach, and (3) generating a summary table of comparisons, along with an overview of practical challenges for the alternative approaches. This structured comparison of approaches is a key product of the peer review process, and is documented in Section \@ref(AltApproachesComp). This Research Document includes worked examples for each approach, so that decision makers have a tangible basis for prioritizing next steps.
+
+
+### Alternative Approaches for Inlcuding Enhanced Pinkut and Fulton in the Analyses {#AltApproachEnhanced}
+
+Most Skeena Sockeye production occurs in actively managed spawning channels at Pinkut and Fulton, which are fundamentally different from wild stocks where variations in observed spawner abundance and resulting production can be used to fit spawner-recruit models and estimate biological benchmarks. This creates challenges for modelling stock dynamics and for developing management targets for the stock aggregate. 
+
+This Research Document focuses on wild Skeena and Nass Sockeye stocks. A comprehensive review of enhanced production dynamics and channel loading targets is outside the scope of this work, and may be addressed in a separate process led by DFO's Salmonid Enhancement Program, which operates the Babine enhancement facilities. An explicit analysis of trade-offs between enhanced production objectives and wild stock objectives is also outside the scope of the current project. 
+
+Previous analyses of Skeena Sockeye, summarized in Table \@ref(tab:PastWorkTable), treated Pinkut and Fulton the same as for wild stocks, either in a single-stock analysis or as part of the aggregate. We assume that the spawner time series used for these analyses were actual channel loading plus capacity below the fence, rather than the gross escapement (i.e., accounted for top-ups and non-spawning surplus). However, this was not easily verifiable.
+
+Three types of approach for accounting for enhanced Skeena Sockeye from Pinkut and Fulton were discussed during the peer-review and follow-up process: 
+
+* *Develop SR-based benchmarks for all wild and enhanced stocks*: Fit alternative SR model forms to generate parameter sets for alternative productivity scenarios for wild and enhanced stocks, and include resulting benchmarks for enhanced stocks in the development of alternative management targets. Caveats should be clearly stated regarding the SR model fits for enhanced stocks and their implication for the results shown, and nuances for interpretation. For example, estimates of Smsy for Pinkut and Fulton are not only highly uncertain due to the low contrast in spawner abundance, but they are also not relevant to the current management approach which focuses on loading targets that maximize fry production. 
+* *Explicitly model the distinct management and production dynamics of the enhanced stocks*: Depending on the chosen aggregation approach, the dynamics of enhanced stocks could be incorporated in different ways. For instance Pinkut and Fulton could be added to a forward simulation by developing additional model components, which would include an enhanced sub-model of the population dynamics (e.g., two steps linking channel loading to fry output, and then fry-to-adult survival), a harvest sub-model that reflects differences in wild and enhanced harvest (e.g., fisheries targeting the enhanced non-spawning surplus in some years), and a channel management sub-model that captures how loading targets might change with aggregate and stock-specific abundance. This type of model could test interactions between alternative harvest strategies and alternative channel operation strategies, and explore trade-offs between total harvest including enhanced fish and conservation objectives for wild stocks.
+* *Clearly distinguish between considerations of wild and enhanced Skeena Sockeye*: Given WSP requirements, estimate biological benchmarks for wild stocks and apply the candidate approaches for aggregate management targets to the *Skeena Wild* stock aggregate, then explore how the resulting management targets could be scaled up to cover the entire Skeena return. 
+
+
+The third option is the most feasible for the current project, given the complexity of capturing enhanced production dynamics in a detailed forward simulation. Thus, most of the analyses in this paper focus on the wild stocks, but we have included a review of available information the Babine Sockeye enhancement facilities (Appendix \@ref(ChannelReview)), and we include two examples of how management targets for *Skeena Wild* could be scaled up to account for enhanced production (Section \@ref(SkeenaExpResults)). We recommend future work to more fully integrate enhanced and wild considerations take place as part of a  management strategy evaluation for Skeena Sockeye. As a reference, some SR model results for the enhanced stocks are provided in Appendix H.
+
+
+### How this Research Document Addresses the Terms of Reference {#TORLink}
+
+We reviewed and updated the spawner recruit data, and set up a framework for fitting and selecting alternative spawner-recruit models. We then used the selected spawner-recruit model fits in worked examples of alternative approaches for developing aggregate management reference points. Our approach was designed with a focus on flexibility and the ability to respond rapidly to changing conditions, new data, alternative benchmark formulations, requests for alternative productivity scenarios, and comparison of alternative objectives. Much work remains to fully connect the information and decision makers through a structured process, such as a management strategy evaluation (MSE). 
+
+Below we briefly summarize how this Research Document addresses each objective from the Terms of Reference:
+
+1. *Develop an approach for the evaluation and selection of spawner-recruit model fits using alternative data sets and alternative model forms, including time-varying model forms, and apply this approach at the stock and aggregate levels for Skeena and Nass Sockeye salmon:* We developed a checklist for identifying candidate SR models for single-stock model fits, covering three alternative model forms (Figure \@ref(fig:CandidateModels)). We tested the candidate models on 20 stock-level data sets and three aggregate-level data sets (Sections \@ref(CandidateStockModels) and \@ref(CandidateAggModels)), and completed extensive sensitivity tests (Section \@ref(Convergence)). In addition, we compared the single-stock model fits to results from an independent SR analysis by McAllister and Challenger (Appendix \@ref(app:HBMFits)) using a Hierarchical Bayesian model on the same data sets (Section \@ref(HBMResultsComp)).
+2. *Develop an approach to identify plausible alternative productivity scenarios (e.g., long-term average vs. current productivity) and corresponding spawner-recruit parameter sets:* We identified four alternative productivity scenarios intended to provide  contrasting stock dynamics, and established guidelines for sampling parameter sets from the candidate SR models to populate the scenarios (Figure \@ref(fig:ModelSelection)).
+3. *Develop stock-level biological benchmarks using current data sets and appropriate methods for wild and enhanced Skeena and Nass Sockeye salmon stocks including:*
+   a.	*Estimate and evaluate candidate biological benchmarks (e.g., Smsy, Smax, Sgen, Umsy) from model fits based on the plausible alternative productivity scenarios for wild Skeena and Nass Sockeye salmon stocks:* Section \@ref(BMResults) presents aggregate-level and stock-level estimates under alternative productivity assumptions.
+   b.	*Review channel capacity and observed patterns in productivity for channel-enhanced Skeena Sockeye salmon stocks originating from the Babine Lake Development Project:* Appendix \@ref(ChannelReview) summarizes available production information for the Babine enhancement facilities.
+4. *Compare alternative approaches for choosing aggregate-level biological reference points for Skeena and Nass Sockeye salmon, evaluate advantages and disadvantages for each approach, and compare uncertainties in aggregate reference points generated using different approaches:* We illustrated building blocks for eight alternative aggregation approaches (Sections \@ref(BMResults) to \@ref(ProjBesdResults)): aggregate model fits, simple sum of stock-level abundance benchmarks, comparison of aggregate and stock-level sustainable exploitation rates, stock-level equilibrium profiles based on fixed spawner targets, aggregate equilibrium profiles based on fixed exploitation rates, status-based aggregate limit reference points, aggregate reference points based on logistic regression, and forward simulations. The simulation results include two high-priority extensions identified during the peer review (covariation in productivity, outcome uncertainty). We compare the results in Section \@ref(AggregationComparison).
+5. *Identify priorities for future work to support the development of stock-specific escapement goals and aggregate reference points:* Priorities for future work are listed Section \@ref(PrioritiesFuture).
+6. *Examine and identify uncertainties in stock-level benchmarks by comparing outputs generated using alternative spawner-recruit model forms and data sets, and compare uncertainties in aggregate reference points generated using alternative approaches:* We completed extensive sensitivity tests of the spawner-recruit model fits, including alternative model forms and alternative prior assumptions (Section \@ref(SingleStockSRResults)), and compared the results to estimates from a Hierarchical Bayesian model by McAllister and Challenger (Appendix \@ref(app:HBMFits)) on the same data set (Section \@ref(HBMResultsComp)). In addition, we tested alternative data treatment options (Appendix \@ref(AltSRTest)), alternative calculation approaches for biological benchmarks (Appendix \@ref(BMCalcTest)), and the effect of including a lognormal bias correction on the productivity parameter ln.alpha (Appendix \@ref(BiasCorrtest)). We compare aggregation approaches in Section \@ref(AggregationComparison).
+ 
+ 

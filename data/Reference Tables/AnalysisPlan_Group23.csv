@@ -1,0 +1,18 @@
+﻿Seq,Group,LHAZ,Stock,StkNmS,SR,Perc,Cap,Notes
+1,2,U Nass LT,Kwinageese,Kwinag,Y,TBD,TBD,20+ brood years of SR data
+2,2,M Skeena LT,Kitwanga,Kitwanga,Y,TBD,TBD,20+ brood years of SR data
+3,2,U Nass LT,Damdochax,Damdoch,Y,TBD,TBD,20+ brood years of SR data
+4,2,U Skeena LT,Sustut,Sustut,Y,TBD,TBD,20+ brood years of SR data
+5,2,L Skeena LT,Johnston,Johnston,Y,TBD,TBD,<20 brood years of SR data
+6,2,U Skeena LT,Asitka,Asitka,Y,TBD,TBD,<20 brood years of SR data
+7,2,Nass RT,Upper Nass River Type,UNassRT,Y,TBD,NA,"<20 brood years of SR data, river-type life history"
+8,2,U Skeena LT,Slamgeesh,Slamg,Y,TBD,TBD,<20 brood years of SR data
+9,2,U Skeena LT,Motase ,Motase,Y,TBD,TBD,<20 brood years of SR data
+10,2,Skeena RT,Skeena River Type,Skeena RT,N,TBD,NA,"<20 brood years of SR data, river-type life history"
+11,3,U Nass LT,Bowser,Bowser,N,N,TBD,"No SR data, few spn estimates"
+12,3,U Nass LT,Oweegee,Oweege,N,N,TBD,"No SR data, few spn estimates"
+13,3,L Skeena LT,Ecstall,Ecstall,N,N,TBD,"No SR data, few spn estimates"
+14,3,M Skeena LT,Upper Bulkley Lakes,UBulkLk,N,N,TBD,"No SR data, few spn estimates"
+15,3,U Skeena LT,Sicintine,Sicintine,N,N,TBD,"No SR data, few spn estimates"
+16,3,U Skeena LT,Kluantantan,Kluant,N,N,TBD,"No SR data, few spn estimates"
+17,3,U Skeena LT,Kluayaz,Kluayaz,N,N,TBD,"No SR data, few spn estimates"

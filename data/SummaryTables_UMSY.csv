@@ -1,0 +1,149 @@
+Aggregate,Scenario,BM,Label,Mean,Median,p10,p25,p75,p90,Stock
+Nass,LTAvg,Umsy,Agg Fit,61,62,51,56,67,71,NA
+Nass,LTAvg,Umsy,Min,47,47,NA,NA,NA,NA,NA
+Nass,LTAvg,Umsy,Med,62.5,63,NA,NA,NA,NA,NA
+Nass,LTAvg,Umsy,Max,67,67,NA,NA,NA,NA,NA
+Nass,LTAvg,Umsy,Damdoch,67,67,61,64,70,73,Damdochax
+Nass,LTAvg,Umsy,Meziadin,65,65,58,61,69,73,Meziadin
+Nass,LTAvg,Umsy,Kwinag,60,61,52,56,65,69,Kwinageese
+Nass,LTAvg,Umsy,LNassSRT,47,47,34,41,53,58,Lower Nass Sea & River Type
+Nass,LTAvg,Umsy,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,LTAvg,Umsy,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,LTAvg,Umsy,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,Now,Umsy,Agg Fit,52,55,31,44,62,68,NA
+Nass,Now,Umsy,Min,43,45,NA,NA,NA,NA,NA
+Nass,Now,Umsy,Med,50.5,50,NA,NA,NA,NA,NA
+Nass,Now,Umsy,Max,62,63,NA,NA,NA,NA,NA
+Nass,Now,Umsy,Damdoch,62,63,52,57,67,71,Damdochax
+Nass,Now,Umsy,Kwinag,54,51,44,48,62,67,Kwinageese
+Nass,Now,Umsy,LNassSRT,47,49,20,34,62,73,Lower Nass Sea & River Type
+Nass,Now,Umsy,Meziadin,43,45,22,32,56,61,Meziadin
+Nass,Now,Umsy,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,Now,Umsy,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,Now,Umsy,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,LTAvg,Umsy.c,Agg Fit,66,67,57,61,71,75,NA
+Nass,LTAvg,Umsy.c,Min,68,68,NA,NA,NA,NA,NA
+Nass,LTAvg,Umsy.c,Med,71.5,71.5,NA,NA,NA,NA,NA
+Nass,LTAvg,Umsy.c,Max,73,72,NA,NA,NA,NA,NA
+Nass,LTAvg,Umsy.c,Damdoch,73,72,67,69,76,78,Damdochax
+Nass,LTAvg,Umsy.c,Kwinag,72,72,64,68,76,79,Kwinageese
+Nass,LTAvg,Umsy.c,Meziadin,71,71,65,67,75,78,Meziadin
+Nass,LTAvg,Umsy.c,LNassSRT,68,68,59,63,74,79,Lower Nass Sea & River Type
+Nass,LTAvg,Umsy.c,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,LTAvg,Umsy.c,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,LTAvg,Umsy.c,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+Nass,Now,Umsy.c,Agg Fit,53,56,32,45,63,68,NA
+Nass,Now,Umsy.c,Min,44,47,NA,NA,NA,NA,NA
+Nass,Now,Umsy.c,Med,59.5,61,NA,NA,NA,NA,NA
+Nass,Now,Umsy.c,Max,68,67,NA,NA,NA,NA,NA
+Nass,Now,Umsy.c,Kwinag,68,67,59,62,72,76,Kwinageese
+Nass,Now,Umsy.c,Damdoch,64,65,54,60,69,73,Damdochax
+Nass,Now,Umsy.c,LNassSRT,55,57,27,43,71,81,Lower Nass Sea & River Type
+Nass,Now,Umsy.c,Meziadin,44,47,23,33,57,62,Meziadin
+Nass,Now,Umsy.c,Bowser,NA,NA,NA,NA,NA,NA,Bowser
+Nass,Now,Umsy.c,Oweege,NA,NA,NA,NA,NA,NA,Oweegee
+Nass,Now,Umsy.c,UNassRT,NA,NA,NA,NA,NA,NA,Upper Nass River Type
+SkeenaWild,LTAvg,Umsy,Agg Fit,44,44,28,35,53,59,NA
+SkeenaWild,LTAvg,Umsy,Min,36,36,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Umsy,Med,55.5,56,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Umsy,Max,79,79,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Umsy,Sustut,79,79,72,75,82,85,Sustut
+SkeenaWild,LTAvg,Umsy,Bear,73,73,67,70,76,78,Bear
+SkeenaWild,LTAvg,Umsy,Morice,65,65,58,62,69,72,Morice
+SkeenaWild,LTAvg,Umsy,Kitsumk,64,64,58,61,67,69,Kitsumkalum
+SkeenaWild,LTAvg,Umsy,Mcdonell,63,63,57,60,66,69,Mcdonell
+SkeenaWild,LTAvg,Umsy,Bab-MW,57,58,48,53,62,65,Babine Mid Wild
+SkeenaWild,LTAvg,Umsy,Slamg,57,57,47,51,62,66,Slamgeesh
+SkeenaWild,LTAvg,Umsy,Alastair,57,57,49,53,61,64,Alastair
+SkeenaWild,LTAvg,Umsy,Motase,54,55,39,47,62,67,Motase
+SkeenaWild,LTAvg,Umsy,Johnston,53,53,43,48,59,64,Johnston
+SkeenaWild,LTAvg,Umsy,Bab-LW,50,49,40,44,55,59,Babine Late Wild
+SkeenaWild,LTAvg,Umsy,Bab-EW,46,46,36,40,51,57,Babine Early Wild
+SkeenaWild,LTAvg,Umsy,Lakelse,43,43,34,39,48,52,Lakelse
+SkeenaWild,LTAvg,Umsy,Asitka,42,43,24,34,52,58,Asitka
+SkeenaWild,LTAvg,Umsy,Kitwanga,37,37,16,26,48,56,Kitwanga
+SkeenaWild,LTAvg,Umsy,SwanSteph,36,36,25,30,43,48,Swan/Stephens
+SkeenaWild,LTAvg,Umsy,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,LTAvg,Umsy,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,LTAvg,Umsy,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,LTAvg,Umsy,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,LTAvg,Umsy,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,LTAvg,Umsy,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,Now,Umsy,Agg Fit,24,24,6,14,34,43,NA
+SkeenaWild,Now,Umsy,Min,25,25,NA,NA,NA,NA,NA
+SkeenaWild,Now,Umsy,Med,56.5,58.5,NA,NA,NA,NA,NA
+SkeenaWild,Now,Umsy,Max,79,79,NA,NA,NA,NA,NA
+SkeenaWild,Now,Umsy,Sustut,79,79,73,76,82,85,Sustut
+SkeenaWild,Now,Umsy,Bear,77,77,69,73,81,84,Bear
+SkeenaWild,Now,Umsy,Slamg,63,67,50,56,70,73,Slamgeesh
+SkeenaWild,Now,Umsy,Morice,66,67,56,61,71,75,Morice
+SkeenaWild,Now,Umsy,Johnston,60,64,46,52,67,71,Johnston
+SkeenaWild,Now,Umsy,Mcdonell,63,63,57,60,66,69,Mcdonell
+SkeenaWild,Now,Umsy,Kitsumk,63,63,52,57,68,72,Kitsumkalum
+SkeenaWild,Now,Umsy,Alastair,59,63,32,50,73,80,Alastair
+SkeenaWild,Now,Umsy,Motase,54,54,40,47,61,67,Motase
+SkeenaWild,Now,Umsy,Bab-MW,51,52,36,45,59,64,Babine Mid Wild
+SkeenaWild,Now,Umsy,Asitka,43,44,25,35,53,59,Asitka
+SkeenaWild,Now,Umsy,Lakelse,41,42,20,30,53,61,Lakelse
+SkeenaWild,Now,Umsy,Bab-LW,33,34,17,26,42,49,Babine Late Wild
+SkeenaWild,Now,Umsy,SwanSteph,27,27,11,18,35,43,Swan/Stephens
+SkeenaWild,Now,Umsy,Kitwanga,27,26,4,8,42,54,Kitwanga
+SkeenaWild,Now,Umsy,Bab-EW,25,25,9,16,34,42,Babine Early Wild
+SkeenaWild,Now,Umsy,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,Now,Umsy,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,Now,Umsy,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,Now,Umsy,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,Now,Umsy,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,Now,Umsy,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,LTAvg,Umsy.c,Agg Fit,58,58,45,51,66,71,NA
+SkeenaWild,LTAvg,Umsy.c,Min,52,52,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Umsy.c,Med,67,67,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Umsy.c,Max,87,87,NA,NA,NA,NA,NA
+SkeenaWild,LTAvg,Umsy.c,Sustut,87,87,82,85,89,92,Sustut
+SkeenaWild,LTAvg,Umsy.c,Morice,77,77,71,74,80,82,Morice
+SkeenaWild,LTAvg,Umsy.c,Bear,77,77,72,74,79,81,Bear
+SkeenaWild,LTAvg,Umsy.c,Kitwanga,71,72,54,62,80,87,Kitwanga
+SkeenaWild,LTAvg,Umsy.c,Bab-MW,70,70,63,66,74,76,Babine Mid Wild
+SkeenaWild,LTAvg,Umsy.c,Mcdonell,68,68,63,65,71,73,Mcdonell
+SkeenaWild,LTAvg,Umsy.c,Asitka,67,68,54,61,74,80,Asitka
+SkeenaWild,LTAvg,Umsy.c,Motase,67,67,56,61,73,79,Motase
+SkeenaWild,LTAvg,Umsy.c,Alastair,67,67,60,63,70,74,Alastair
+SkeenaWild,LTAvg,Umsy.c,Kitsumk,66,66,60,63,68,71,Kitsumkalum
+SkeenaWild,LTAvg,Umsy.c,Slamg,63,62,53,58,67,72,Slamgeesh
+SkeenaWild,LTAvg,Umsy.c,Bab-LW,63,62,55,58,67,71,Babine Late Wild
+SkeenaWild,LTAvg,Umsy.c,Johnston,62,61,51,55,67,73,Johnston
+SkeenaWild,LTAvg,Umsy.c,Bab-EW,59,59,50,54,64,68,Babine Early Wild
+SkeenaWild,LTAvg,Umsy.c,Lakelse,54,54,46,49,58,62,Lakelse
+SkeenaWild,LTAvg,Umsy.c,SwanSteph,52,52,40,46,58,64,Swan/Stephens
+SkeenaWild,LTAvg,Umsy.c,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,LTAvg,Umsy.c,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,LTAvg,Umsy.c,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,LTAvg,Umsy.c,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,LTAvg,Umsy.c,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,LTAvg,Umsy.c,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes
+SkeenaWild,Now,Umsy.c,Agg Fit,34,35,15,24,44,53,NA
+SkeenaWild,Now,Umsy.c,Min,35,35,NA,NA,NA,NA,NA
+SkeenaWild,Now,Umsy.c,Med,65.5,67,NA,NA,NA,NA,NA
+SkeenaWild,Now,Umsy.c,Max,87,87,NA,NA,NA,NA,NA
+SkeenaWild,Now,Umsy.c,Sustut,87,87,82,85,89,92,Sustut
+SkeenaWild,Now,Umsy.c,Bear,80,80,73,77,83,86,Bear
+SkeenaWild,Now,Umsy.c,Slamg,68,71,55,62,75,78,Slamgeesh
+SkeenaWild,Now,Umsy.c,Johnston,68,70,54,60,77,82,Johnston
+SkeenaWild,Now,Umsy.c,Mcdonell,68,68,63,65,71,73,Mcdonell
+SkeenaWild,Now,Umsy.c,Alastair,64,68,36,56,77,83,Alastair
+SkeenaWild,Now,Umsy.c,Asitka,67,68,54,61,74,80,Asitka
+SkeenaWild,Now,Umsy.c,Morice,66,67,56,61,72,75,Morice
+SkeenaWild,Now,Umsy.c,Motase,67,67,55,61,73,78,Motase
+SkeenaWild,Now,Umsy.c,Kitwanga,65,66,43,54,77,85,Kitwanga
+SkeenaWild,Now,Umsy.c,Bab-MW,64,65,52,59,70,75,Babine Mid Wild
+SkeenaWild,Now,Umsy.c,Kitsumk,63,64,53,58,69,73,Kitsumkalum
+SkeenaWild,Now,Umsy.c,Bab-LW,45,46,30,38,53,59,Babine Late Wild
+SkeenaWild,Now,Umsy.c,Lakelse,44,45,22,33,56,63,Lakelse
+SkeenaWild,Now,Umsy.c,Bab-EW,36,37,20,27,46,53,Babine Early Wild
+SkeenaWild,Now,Umsy.c,SwanSteph,35,35,19,27,43,50,Swan/Stephens
+SkeenaWild,Now,Umsy.c,Ecstall,NA,NA,NA,NA,NA,NA,Ecstall
+SkeenaWild,Now,Umsy.c,Kluant,NA,NA,NA,NA,NA,NA,Kluantantan
+SkeenaWild,Now,Umsy.c,Kluayaz,NA,NA,NA,NA,NA,NA,Kluayaz
+SkeenaWild,Now,Umsy.c,Sicintine,NA,NA,NA,NA,NA,NA,Sicintine
+SkeenaWild,Now,Umsy.c,Skeena RT,NA,NA,NA,NA,NA,NA,Skeena River Type
+SkeenaWild,Now,Umsy.c,UBulkLk,NA,NA,NA,NA,NA,NA,Upper Bulkley Lakes

@@ -1,0 +1,751 @@
+\clearpage
+# CUSTOM R PACKAGES AND FUNCTIONS {#SingleStockSRFits}
+
+
+## *RapidRicker* Package
+
+### Purpose
+
+As part of this project, we started developing the R package *RapidRicker*, which runs spawner-recruit data quality checks, tests the sensitivity of standard biological benchmarks using simple Ricker fits, and implements Bayesian SR fits using the JAGS sampling engine [@Plummer03jags] via the *jags()* function from the *R2jags* package [@R2jags]. 
+
+The motivation for building this package was the large number of stocks covered by the Skeena and Nass Sockeye escapement goal review. Routine aspects of data review, such as checking for potential outliers or concerns regarding contrast, presented a non-trivial challenge in an analysis covering dozens of stocks within 2 aggregates, with data continuously being updated as the data reviews progressed. With the large number of stocks, we also faced the challenge of being consistent across stocks with data treatment choices (e.g., criteria for identifying outliers).
+
+Most of the analyses in this report were implemented using the *RapidRicker* package. A basic worked example and the JAGS code follow. Package functions are available on [Github](https://github.com/SOLV-Code/RapidRicker).
+
+### Setting Up
+
+
+```{r, eval=F, echo=T}
+
+# Install
+install.packages("devtools") # Install the devtools package
+library(devtools) # Load the devtools package.
+install_github("SOLV-Code/RapidRicker", dependencies = TRUE,
+               build_vignettes = FALSE)
+
+# Load
+library(RapidRicker)	
+library(tidyverse)	
+
+# check the built in data set
+?SR_Sample # opens help file
+head(SR_Sample) # shows the first few rows
+
+# check the function help files
+?checkSRData
+?calcDetModelFit
+?calcDetRickerBM
+?calcMCMCModelFit
+?calcMCMCRickerBM 
+```
+
+
+### Run the Data Check
+
+```{r, eval=F, echo=T}
+
+# look at the default criteria for the data check 
+flags_default
+
+# apply the data check to data for 1 stock
+data.chk <- checkSRData(SR_Sample[SR_Sample$Stock == "Stock1",])
+names(data.chk)
+print(data.chk$Summary)
+print(head(data.chk$Data))
+
+```
+
+### Test the Simple Deterministic Ricker Fits
+
+```{r, eval=F, echo=T}
+
+det.fit <- calcDetModelFit(sr_obj = SR_Sample[SR_Sample$Stock == "Stock1",],
+                              sr.scale = 10^6, min.obs=15)
+det.fit
+
+det.bm  <- calcDetRickerBM(fit_obj = det.fit,sr.scale = 10^6, 
+                    Smsy.method = "Scheuerell2016",
+					     Sgen.method = "Connorsetal2022")
+det.bm
+
+```
+
+
+### Test the Bayesian Fits
+
+
+```{r, eval=F, echo=T}
+
+sr.use <- SR_Sample[SR_Sample$Stock == "Stock1",] %>% select(Year, Spn, Rec,logRpS)
+head(sr.use)
+sr.scale.use <- 10^6
+
+#default priors and inits
+priors.up <- generatePriors(sr_obj = sr.use , sr.scale=10^6, model_type = "Basic",
+                            capacity.prior.type = "uniform")
+inits.up <- generateInits(priors.up)
+
+test.basic.up <- calcMCMCModelFit(
+  sr_obj = sr.use, sr.scale = sr.scale.use  ,
+  model.type = "Basic",
+  model.file = "BUILT_IN_MODEL_Ricker_UniformCapPrior.txt",
+  min.obs = 15,
+  mcmc.settings = list(n.chains = 2, n.burnin = 20000, 
+  										 n.thin = 60, n.samples = 80000),
+  mcmc.inits = inits.up,
+  mcmc.priors = priors.up,
+  mcmc.output = "post",
+  mcmc.out.path = "MCMC_Out",
+  mcmc.out.label = "MCMC",
+  mcmc.seed = "default",
+  tracing = FALSE
+)
+names(test.basic.up)
+head(test.basic.up$Summary)
+
+```
+
+
+
+\clearpage
+## JAGS Code for single-stock SR model fits
+
+
+### JAGS Code for Basic Ricker Model
+
+```{r, eval=F, echo=T}
+model{
+	# adapted from code originally developed by Catherine Michielsens, Sue Grant, 
+	# and Bronwyn MacDonald. Modifications based on comments and code samples 
+	# from Ann-Marie Huang, Brendan Connors, Charmaine Carr-Harris, and 
+	# Wendell Challenger.
+
+    for (i in 1:N) {                #loop over N sample points
+      R_Obs[i] ~ dlnorm(logR[i],tau_R)    #likelihood 
+      logR[i] <- RS[i] +log(S[i])         # calc log(R) fitted values
+       RS[i] <- ln.alpha - beta * S[i]     # ricker model
+	  log.resid[i] <-  log(R_Obs[i]) - logR[i] 
+   }
+
+    ln.alpha ~ dnorm(p.alpha,tau_alpha)  #prior for ln.alpha 
+    beta <- 1/ S.max				     # prior for beta
+
+   # capacity prior: uniform OR lognormal. Use only one!!!!!
+   S.max ~ dunif(1/10^6, max.scalar * smax.in )  # data is in millions
+   
+   S.max ~ dlnorm(log(smax.in), tau_smax) T(0,smax.limit)
+	smax.limit <- max.scalar * smax.in # typical default  3 * (Max Obs)
+    
+    
+	# non-updating samples (so can plot priors)
+	S.max.prior ~ dunif(1/10^6, max.scalar * smax.in)
+	ln.alpha.prior ~ dnorm(p.alpha,tau_alpha)
+	
+	#prior for precision parameter
+    tau_R ~ dgamma(shape.tau_R,lambda_tau_R)  
+    sigma <- 1/sqrt(tau_R) 			
+    
+	# bias correction for lognormal skewness
+	ln.alpha.c <- ln.alpha + (sigma * sigma / 2) 
+
+}
+```
+
+\clearpage
+
+### JAGS Code for AR1 Ricker Model
+
+
+```{r, eval=F, echo=T}
+model{
+
+# This is a JAGS version of the Ricker model fit with lag-1 autoregression 
+# correction (AR1). Adapted from code originally developed by Catherine 
+# Michielsens, Sue Grant, and Bronwyn MacDonald. Modifications based on comments
+# and code samples from Ann-Marie Huang, Brendan Connors, Charmaine Carr-Harris, 
+# and Wendell Challenger. The code is expanded for AR1 based on Eq21 and 22 of  
+# Fleischman and Evenson (2010; ADFG FMS10-04). 
+
+# do first year    
+R_Obs[1] ~ dlnorm(logR[1],tau_R)    
+logR[1] <- log(S[1]) + RS[1]    
+RS[1] <- ln.alpha - beta * S[1] + phi * log.resid.0    
+
+# do second year    
+R_Obs[2] ~ dlnorm(logR[2],tau_R)    
+logR[2] <- log(S[2]) + RS[2]     
+RS[2] <- ln.alpha - beta * S[2] + phi * log.resid[1]    
+log.resid[1] <-  log(R_Obs[1]) - logR[1]    
+
+#loop over rext of N sample points (starting with the third)    
+for (i in 2:N) { 
+log.resid[i] <-  log(R_Obs[i]) - logR[i] 
+}
+
+for (i in 3:N) {       
+R_Obs[i] ~ dlnorm(logR[i],tau_R)  # likelihood 
+logR[i] <- log(S[i]) + RS[i]      
+RS[i] <- ln.alpha - beta * S[i] + phi * log.resid[i-1] 
+} 
+
+ln.alpha ~ dnorm(p.alpha,tau_alpha)            #prior for ln.alpha     
+beta <-1/S.max    # prior for beta     
+
+# capacity prior: uniform OR lognormal. Use only one!!!!!
+S.max ~ dunif(1/10^6, max.scalar * smax.in )  # data is in millions
+
+S.max ~ dlnorm(smax.in, tau_smax) T(0,smax.limit)
+smax.limit <- max.scalar * smax.in # typical default  3 * (Max Obs)
+	
+# non-updating samples (so can plot priors)
+S.max.prior ~ dunif(1/10^6, max.scalar * smax.in)
+ln.alpha.prior ~ dnorm(p.alpha,tau_alpha)
+
+tau_R ~ dgamma(shape.tau_R,lambda_tau_R)    #prior for precision parameter     
+sigma <- 1/sqrt(tau_R)   # based on Fleishman and Evenson (2010; ADFG FMS10-04)
+
+phi ~ dnorm(0.5,0.0001) #T(0.0001,0.9999)
+log.resid.0 ~ dnorm(0,tau.red) #T(-3,3)  
+tau.red <- tau.white * (1-phi*phi)     
+tau.white ~ dgamma(shape.tauw,lambda_tauw)    
+
+# bias correction for lognormal skewness
+ln.alpha.c <- ln.alpha + ((sigma * sigma) / (2 * (1-phi*phi)) ) 
+}
+```
+
+
+### JAGS Code for Recursive Bayes Ricker Model with Time-varying Productivity
+
+```{r, eval=F, echo=T}
+model{
+	# adapted from code by Ann-Marie Huang, which was originally contributed by 
+	# Catherine Michielsens. Modifications based on comments and code samples 
+	# from Ann-Marie Huang, Brendan Connors, Charmaine Carr-Harris, and Wendell 
+	# Challenger.
+
+    for (i in 1:N) {       #loop over N sample points
+      R_Obs[i] ~ dlnorm(logR[i],tau_R)       #likelihood 
+      logR[i] <- RS[i] +log(S[i])            # calc log(R) 
+      RS[i] <- ln.alpha[i] - beta * S[i]     # ricker model
+	  year[i]<-i
+	  log.resid[i] <-  log(R_Obs[i]) - logR[i]  
+	}
+
+    for (i in 2:N){
+          ln.alpha[i] <- ln.alpha[i-1] + w[i]
+          w[i]~ dnorm(0,tauw)
+    }
+
+    #prior for alpha (actually ln.alpha!)
+    
+    ln.alpha[1] ~ dnorm(p.alpha,tau_alpha)    
+    
+    # prior for beta
+    beta <-1/ S.max					   
+	
+	# capacity prior: uniform OR lognormal. Use only one!!!!!
+   S.max ~ dunif(1/10^6, max.scalar * smax.in )  # data is in millions
+	
+	# non-updating samples (so can plot priors)
+	S.max.prior ~ dunif(1/10^6, max.scalar * smax.in)
+	ln.alpha.prior ~ dnorm(p.alpha,tau_alpha)
+	
+	S.max ~ dlnorm(log(smax.in), tau_smax) T(0,smax.limit)
+	smax.limit <- max.scalar * smax.in # typical default  3 * (Max Obs)
+	
+    tau_R ~ dgamma(shape.tau_R,lambda_tau_R)    #prior for precision parameter
+    sigma <- 1/sqrt(tau_R) 			# based on Fleishman and Evenson
+
+	tauw~ dgamma(shape.tauw,lambda_tauw)
+    varw<- 1/tauw
+	sigw<- 1/sqrt(tauw)
+
+   # bias correction for lognormal skewness
+    for (i in 1:N) {  
+			ln.alpha.c[i] <- ln.alpha[i] + (sigma * sigma / 2) 
+	}
+	
+}
+
+```
+
+
+
+## Benchmark calculation functions {#BMFuns}
+
+### R Code for Smsy Calculation  {#BMFunsSmsy}
+
+*Rapid Ricker* includes four alternative options for calculating Smsy: (1) approximation from @Hilborn1985Proxies, (2) approximation from @PetermanPyperGrout2000ParEst, (3)
+explicit solution from @Scheuerell2016, using code from the [samSim Package](https://github.com/Pacific-salmon-assess/samSim), and (4) a brute force approximation.
+
+The main function handles inputs and specifications, and includes three of the four alternative calculation approaches:
+
+```{r, eval=F, echo=T}
+
+#' calcRickerSmsy
+#'
+#' This function calculates Smsy for a Ricker a,b parameters. Note: This function 
+#' DOES NOT apply bias correction on alpha. Whether the output is bias-corrected 
+#' estimates or not depends on the par set provided by the user. This keeps the 
+#' parameter estimation and benchmark calculation steps clearly separated.
+#' 
+#' @param X  a data frame with columns ln.alpha, beta
+#' @param method  one of "Hilborn1985","Petermanetal2000","Scheuerell2016", or
+#'                        "BruteForce"
+#' @param sr.scale scalar applied to SR data in the model fitting step, 
+#'                 need it here to scale up the Sgen values
+#' @param out.type either "BMOnly" or "Full"
+#' @keywords Smsy
+#' @export
+
+calcRickerSmsy <- function(X, method = "Scheuerell2016",sr.scale =1, 
+													 out.type = "Full"){
+  
+if(!(method %in% c("Hilborn1985","Petermanetal2000","Scheuerell2016",
+									 "BruteForce") )){
+  warning("Method must be one of Hilborn1985,Petermanetal2000,
+  				Scheuerell2016, BruteForce")
+  stop()}
+
+X.orig <- X
+
+# check for negative ln.a or b pars
+X$ln.alpha[X$ln.alpha < 0] <- NA
+X$beta[X$beta < 0] <- NA
+
+do.idx <- !is.na(X$ln.alpha) & !is.na(X$beta)
+
+smsy.est <- rep(NA, dim(X)[1] )
+
+if(sum(do.idx)>0){
+
+if(method == "Hilborn1985") {
+  smsy.est[do.idx] <-  X$ln.alpha[do.idx]/X$beta[do.idx] *
+  	                       (0.5-0.07*X$ln.alpha[do.idx]) * sr.scale  }
+
+if(method == "Petermanetal2000") {   
+  peterman.approx <- (0.5 - 0.65 * X$ln.alpha[do.idx]^1.27 / 
+                          (8.7 + X$ln.alpha[do.idx]^1.27))
+  smsy.est[do.idx] <- X$ln.alpha[do.idx] * peterman.approx[do.idx] / 
+                            X$beta[do.idx]  * sr.scale } 
+
+if(method == "Scheuerell2016") { 
+# adapted from samSim package (https://github.com/Pacific-salmon-assess/samSim)
+  smsy.est[do.idx] <- (1 - gsl::lambert_W0(exp(1 - X$ln.alpha[do.idx]))) / 
+  	                        X$beta[do.idx] * sr.scale  } 
+  
+if(method == "BruteForce") { 
+    smsy.est[do.idx] <-   mapply(smsy.proxy, ln.a = X$ln.alpha[do.idx] ,
+                                b = X$beta[do.idx], sr.scale = sr.scale )}   
+} # end if any do.idx 
+
+umsy.est <- X$beta * smsy.est/sr.scale
+
+if(out.type == "Full"){return(bind_cols(X.orig,SmsyCalc = method, 
+                      	Smsy = smsy.est, Umsy = umsy.est)) }
+if(out.type == "BMOnly"){return(bind_cols(Smsy = smsy.est, Umsy = umsy.est))  }
+
+} # end calcRickerSmsy 
+```
+
+\clearpage
+The brute-force approximation is implemented as a sub-routine:
+
+```{r, eval=F, echo=T}
+
+smsy.proxy <- function(ln.a,b,sr.scale){
+
+if(!is.na(ln.a) & !is.na(b)){
+spn.check <- seq((1/sr.scale), 1/b ,length.out = 3000)  
+rec.check <-  ricker.rec(S = spn.check,ricker.lna = ln.a, ricker.b = b)
+test.df <- data.frame(Spn = spn.check, Rec = rec.check) %>% 
+		mutate(Yield = Rec-Spn) %>% arrange(-Rec)
+s.msy <- spn.check[which.max(rec.check - spn.check) ]  * sr.scale
+}
+
+if(is.na(ln.a) | is.na(b)){s.msy <- NA}
+
+return(s.msy)
+}
+
+```
+
+
+### R Code for Sgen Calculation   {#BMFunsSgen}
+
+*Rapid Ricker* includes four alternative options for calculating Sgen: (1) solver function extracted from @HoltOgden2013, (2) solver function extracted from the [samSim R package](https://github.com/Pacific-salmon-assess/samSim), (3) solver function used in @Connorsetal2022 and generously shared by the lead author, and (4) a brute force approximation.
+
+The main function handles inputs and specifications, and includes three of the four alternative calculation approaches:
+
+```{r, eval=F, echo=T}
+
+#' calcRickerSgen
+#'
+#' This function calculates Sgen for a set of Ricker ln.a,b,sigma parameters, 
+#' and optionally Smsy. NOTE: If method is "HoltOgden2013", then Smsy is always
+#'  calculated based on Hilborn (1985) approximation, and if Smsy is provided, 
+#'  it will give a warning that it was ignored. Note: This function DOES NOT 
+#'  apply bias correction on alpha. Whether the output is bias-corrected 
+#'  estimates or not depends on the par set provided by the user. This keeps 
+#'  the parameter estimation and benchark calculation steps clearly separated.
+#'
+#' @param X  a data frame with columns ln.alpha, beta, sigma, and optionally Smsy
+#' @param method  one of "HoltOgden2013", "samSim", "Connorsetal2022","BruteForce"
+#' @param sr.scale scalar applied to SR data in the model fitting step, 
+#'                    need it here to scale up the Sgen values
+#' @param out.type either "BMOnly" or "Full"
+#' @keywords Sgen
+#' @export
+
+calcRickerSgen <- function(X, method = "Connorsetal2022",sr.scale = 1, 
+                               out.type = "Full",tracing = FALSE){
+
+if(!(method %in% c("HoltOgden2013", "samSim", "Connorsetal2022",
+									 "BruteForce") )){
+  warning("Method must be one of HoltOgden2013, SamSim, Connorsetal2022, 
+  				BruteForce")
+  stop()}
+
+X.orig <- X
+
+# check for negative ln.a or b pars
+X$ln.alpha[X$ln.alpha < 0] <- NA
+X$beta[X$beta < 0] <- NA
+
+do.idx <- !is.na(X$ln.alpha) & !is.na(X$beta) 
+sgen.est <- rep(NA, dim(X)[1] )
+
+if(sum(do.idx)>0){
+
+#---------------------------------------------
+if(method == "HoltOgden2013") {
+
+  if(!is.null(X$Smsy[do.idx]) & sum(is.na(X$Smsy[do.idx])) == 0){
+  	warning("Smsy provided as input, but not used for this method! ")}
+  if(is.null(X$sigma)){X$sigma <- 1}
+   sgen.est[do.idx] <- unlist(mapply(Sgen.solver.HO, 
+                                a = exp(X$ln.alpha[do.idx]), 
+                                b = X$beta[do.idx], 
+                                sig = X$sigma[do.idx]))  * sr.scale
+} # end if HoltOgden2013
+
+#--------------------------------------------
+if(method == "samSim") {
+
+if(is.null(X$Smsy[do.idx]) | sum(is.na(X$Smsy[do.idx])) > 0){
+	warning("Need to provide Smsy column in input data frame for this method! ")
+	stop()}
+
+     if(is.null(X$sigma)){X$sigma <- 1}
+
+
+  samsim.out <-  mapply(sGenSolver.samSim.wrapper, ln.a = X$ln.alpha[do.idx], 
+                                b = X$beta[do.idx], 
+                                sigma = X$sigma[do.idx],
+                                SMSY = X$Smsy[do.idx])
+   sgen.est[do.idx] <- samsim.out  * sr.scale
+} # end if samSim
+
+#---------------------------------------------
+if(method == "Connorsetal2022") {
+
+  if(is.null(X$Smsy[do.idx]) | sum(is.na(X$Smsy[do.idx])) > 0){
+  	warning("Need to provide Smsy column in input data frame for this method! ")
+  	stop()}
+  # https://stackoverflow.com/questions/38961221/uniroot-solution-in-r
+  bc.out<-   mapply(get_Sgen.bc, a = exp(X$ln.alpha[do.idx]),b = X$beta[do.idx],
+  									int_lower = -1, int_upper =  1/X$b[do.idx]*2, 
+  									SMSY = X$Smsy[do.idx]/sr.scale)
+    sgen.est[do.idx] <- bc.out * sr.scale
+}  # end if "Connorsetal2022"
+
+if(method == "BruteForce") {
+
+  if(is.null(X$Smsy[do.idx]) | sum(is.na(X$Smsy[do.idx])) > 0){
+  	warning("Need to provide Smsy column in input data frame for this method! ")
+  	stop()}
+
+  sgen.est[do.idx] <-   mapply(sgen.proxy, ln.a = X$ln.alpha[do.idx] ,
+									b = X$beta[do.idx], 
+									Smsy = X$Smsy[do.idx], 
+									sr.scale = sr.scale )
+
+  }
+} # end if any do.idx
+
+if(out.type == "Full"){
+	      return(bind_cols(X.orig,SgenCalc = method,Sgen = sgen.est) %>% 
+	      			 	mutate(Ratio = round(Smsy/Sgen,2) )) }
+if(out.type == "BMOnly"){return(sgen.est)  }
+
+} # end calcRickerSgen
+```
+
+
+Solver subroutine for the @HoltOgden2013 implementation
+
+```{r, eval=F, echo=T}
+
+Sgen.model.HO <-function(S,a,b,sig,trace = FALSE){
+  PR<-a*S*exp(-b*S)
+  SMSY<-(log(a)/b)*(0.5-0.07*log(a))
+  epsilon.wna=log(SMSY)-log(PR)	#residuals
+  epsilon=as.numeric(na.omit(epsilon.wna))
+  nloglike=sum(dnorm(epsilon,0,sig, log=T))
+  if(is.na(sum(dnorm(epsilon,0,sig, log=T)))==TRUE) print(c(a,b,sig))
+  return(list(PR=PR, epsilon=epsilon, nloglike=nloglike))
+  #actually returns postive loglikelihood (CH note)
+}
+
+Sgen.fn.HO <- function(S,a,b,sig){ -1.0*Sgen.model.HO(S,a,b,sig)$nloglike}	
+#gives the min Ricker LL
+
+Sgen.solver.HO <- function(a,b,sig) {
+  SMSY<-(log(a)/b)*(0.5-0.07*log(a))
+
+  SRfit=optimize(f=Sgen.fn.HO,interval=c(0, SMSY), a=a, b=b, sig=sig)	 
+  # nb: not optim() !!
+  return(list(SRfit=SRfit$minimum))  # returns the minimum S
+}
+```
+
+Solver subroutines for the samSim implementation
+
+```{r, eval=F, echo=T}
+sGenSolver.samSim.wrapper <- function(ln.a, b, sigma,SMSY){
+  sgen.val <- sGenSolver.samSim( theta = c(ln.a, b, sigma), sMSY = SMSY)
+  sgen.out <- as.numeric(sgen.val)
+  return(sgen.out)
+}
+
+sGenOptimum.samSim <- function(S, theta, sMSY) {
+  a = theta[1]
+  b = theta[2]
+  sig = exp(theta[3])
+  prt <- S * exp(a - b * S)
+  epsilon <- log(sMSY) - log(prt)
+  nLogLike <- sum(dnorm(epsilon, 0, sig, log = T))
+
+  return(list(prt = prt, epsilon = epsilon, nLogLike = nLogLike, S = S))
+}
+
+sGenSolver.samSim <- function(theta, sMSY) {
+  #gives the min Ricker log-likelihood
+  fnSGen <- function(S, theta, sMSY) -1.0 * 
+                         sGenOptimum.samSim(S, theta, sMSY)$nLogLike
+  fit <- optimize(f = fnSGen, interval = c(0, ((theta[1] / theta[2]) * 
+                                                (0.5 - 0.07 * theta[1]))),
+                  theta = theta, sMSY = sMSY)
+  return(list(fit = fit$minimum))
+}
+```
+
+
+Solver subroutines for the @Connorsetal2022 implementation
+ 
+```{r, eval=F, echo=T}
+get_Sgen.bc <- function(a, b, int_lower, int_upper, SMSY) {
+  fun_Sgen.bc <- function(Sgen, a, b, SMSY) {Sgen * a * exp( - b* Sgen) - SMSY}
+  Sgen <- uniroot(fun_Sgen.bc, interval=c(int_lower, int_upper), 
+  								a=a, b=b, SMSY=SMSY)$root
+  }
+```
+
+
+The brute-force approximation is implemented as a sub-routine:
+
+```{r, eval=F, echo=T}
+ricker.rec  <- function(S,ricker.lna,ricker.b) {
+	                            exp( (ricker.lna - ricker.b * S) + log(S) )}
+
+sgen.proxy <- function(ln.a,b,Smsy, sr.scale){
+
+if(!is.na(ln.a) & !is.na(b)){
+
+spn.check <- seq((1/sr.scale),1.5*Smsy/sr.scale,length.out = 3000)
+rec.check <-  ricker.rec(S = spn.check,ricker.lna = ln.a, ricker.b = b)
+s.gen <- min(spn.check[rec.check > Smsy/sr.scale],na.rm=TRUE) *sr.scale
+return(s.gen)
+
+}}
+
+```
+
+
+## ER-based equlibrium profile functions {#EquProfFuns}
+
+This function calculates equilibrium spawner abundance and equilibrium catch under the following assumptions: (1) There is no recruitment or age-at-return process variability (all v_{y,j} are 0); (2)  All populations are fished at equal exploitation rates; (3) The same exploitation rate is used year after year; (4) Productivity of component stocks is stable over time; (5) there are no other significant sources of mortality (e.g., no en-route mortality, no pre-spawn mortality). Function developed from code shared by Brendan Connors (DFO), implementing the approach from @SchnuteKronlund1996Equprof.
+
+The main functions handles inputs, settings for the calculations, and outputs:
+
+```{r, eval=F, echo=T}
+#' calcAggEqProf
+#'
+#' This function calculates equilibrium profiles using eq_ricker_us() for 
+#' each MCMC sample in the input file, then generates stock-level and 
+#' aggregate-level summaries across MCMC samples.
+#' #' @param data.use a data frame with columns SampleID, Aggregate, StkID, 
+#'                       Stock , Umsy,Smsy, and Sgen
+#' @export
+
+calcAggEqProf <- function(data.use){
+
+for(u.do in seq(0, 1, 0.01)){
+
+print(paste("doing U =",u.do))
+
+  #u.do <- 0.7
+
+  out.raw <- bind_cols(
+    data.use %>% select(SampleID,Aggregate,StkID,Stock),
+    eq_ricker_us(U_msy = data.use$Umsy, S_msy = data.use$Smsy, 
+                       S_gen = data.use$Sgen , U.check = u.do)
+  )
+
+  tmp.out.bystk <- out.raw %>% group_by(Aggregate, StkID, Stock) %>%
+    summarize(U = median(U),
+              NumSamples =  n(),
+              NumNA = sum(is.na(S)),
+              ProbOverfished = sum(overfished,na.rm=TRUE)/n(),
+              ProbExtirpated = sum(extirpated,na.rm=TRUE)/n(),
+              ProbBelowSgen = sum(belowSgen,na.rm=TRUE)/n(),
+              EqSpn_p10 = quantile(S,probs=0.1,na.rm=TRUE),
+              EqSpn_p25 = quantile(S,probs=0.25,na.rm=TRUE),
+              EqSpn_Med = median(S,na.rm=TRUE),
+              EqSpn_p75 = quantile(S,probs=0.75,na.rm=TRUE),
+              EqSpn_p90 = quantile(S,probs=0.9,na.rm=TRUE),
+              EqCt_p10 = quantile(C,probs=0.1,na.rm=TRUE),
+              EqCt_p25 = quantile(C,probs=0.25,na.rm=TRUE),
+              EqCt_Med = median(C,na.rm=TRUE),
+              EqCt_p75 = quantile(C,probs=0.75,na.rm=TRUE),
+              EqCt_p90 = quantile(C,probs=0.9,na.rm=TRUE),
+              .groups = "keep"
+    )
+
+  tmp.agg.sums <- out.raw %>% group_by(Aggregate,SampleID) %>%
+    summarize(U = median(U),AggSpn = sum(S,na.rm=TRUE), 
+              AggCt = sum(C,na.rm=TRUE),
+              NumStks = n(),
+              NumStksOverfished = sum(overfished,na.rm=TRUE),
+              NumStksExtirpated = sum(extirpated,na.rm=TRUE),
+              NumStksBelowSgen = sum(belowSgen,na.rm=TRUE),
+              .groups = "keep"
+    )
+
+  tmp.out.byagg <- tmp.agg.sums %>% group_by(Aggregate) %>%
+    summarize(U = median(U),
+              NumSamples =  n(),
+              NumNA = sum(is.na(AggSpn)),
+              NumStksOverfished_p10 = quantile(NumStksOverfished,
+                       probs=0.1,na.rm=TRUE),
+              NumStksOverfished_p25 = quantile(NumStksOverfished,
+                       probs=0.25,na.rm=TRUE),
+              NumStksOverfished_Med = median(NumStksOverfished,na.rm=TRUE),
+              NumStksOverfished_p75 = quantile(NumStksOverfished,
+                       probs=0.75,na.rm=TRUE),
+              NumStksOverfished_p90 = quantile(NumStksOverfished,
+                       probs=0.9,na.rm=TRUE),
+              NumStksExtirpated_p10 = quantile(NumStksExtirpated,
+                       probs=0.1,na.rm=TRUE),
+              NumStksExtirpated_p25 = quantile(NumStksExtirpated,
+                        probs=0.25,na.rm=TRUE),
+              NumStksExtirpated_Med = median(NumStksExtirpated,na.rm=TRUE),
+              NumStksExtirpated_p75 = quantile(NumStksExtirpated,
+                       probs=0.75,na.rm=TRUE),
+              NumStksExtirpated_p90 = quantile(NumStksExtirpated,
+                       probs=0.9,na.rm=TRUE),
+              NumStksBelowSgen_p10 = quantile(NumStksBelowSgen,
+                       probs=0.1,na.rm=TRUE),
+              NumStksBelowSgen_p25 = quantile(NumStksBelowSgen,
+                       probs=0.25,na.rm=TRUE),
+              NumStksBelowSgen_Med = median(NumStksBelowSgen,na.rm=TRUE),
+              NumStksBelowSgen_p75 = quantile(NumStksBelowSgen,
+                       probs=0.75,na.rm=TRUE),
+              NumStksBelowSgen_p90 = quantile(NumStksBelowSgen,
+                       probs=0.9,na.rm=TRUE),
+              EqSpn_p10 = quantile(AggSpn,probs=0.1,na.rm=TRUE),
+              EqSpn_p25 = quantile(AggSpn,probs=0.25,na.rm=TRUE),
+              EqSpn_Med = median(AggSpn,na.rm=TRUE),
+              EqSpn_p75 = quantile(AggSpn,probs=0.75,na.rm=TRUE),
+              EqSpn_p90 = quantile(AggSpn,probs=0.9,na.rm=TRUE),
+              EqCt_p10 = quantile(AggCt,probs=0.1,na.rm=TRUE),
+              EqCt_p25 = quantile(AggCt,probs=0.25,na.rm=TRUE),
+              EqCt_Med = median(AggCt,na.rm=TRUE),
+              EqCt_p75 = quantile(AggCt,probs=0.75,na.rm=TRUE),
+              EqCt_p90 = quantile(AggCt,probs=0.9,na.rm=TRUE),
+              .groups = "keep"
+    )
+
+    if(exists("out.summary.stk")){ out.summary.stk <- 
+                       bind_rows(out.summary.stk,tmp.out.bystk) }
+  if(!exists("out.summary.stk")){ out.summary.stk <- tmp.out.bystk }
+
+  if(exists("out.summary.agg")){ out.summary.agg <- 
+                       bind_rows(out.summary.agg,tmp.out.byagg) }
+  if(!exists("out.summary.agg")){ out.summary.agg <- tmp.out.byagg }
+
+  out.summary.stk <- out.summary.stk %>% arrange(Aggregate, StkID)
+  out.summary.agg <- out.summary.agg %>% arrange(Aggregate)
+
+} # end looping through U values
+
+# alternate aggregation calc
+out.summary.agg.stk.pm <- out.summary.stk %>% group_by(Aggregate,U) %>%
+  summarize(NumStksOverfishedv2p20 = sum(ProbOverfished >= 0.2),
+            NumStksExtirpatedv2p20 = sum(ProbExtirpated >= 0.2),
+            NumStksBelowSgenv2p20 = sum(ProbBelowSgen >= 0.2),
+            NumStksOverfishedv2p40 = sum(ProbOverfished >= 0.4),
+            NumStksExtirpatedv2p40 = sum(ProbExtirpated >= 0.4),
+            NumStksBelowSgenv2p40 = sum(ProbBelowSgen >= 0.4),
+            .groups = "keep"
+  )
+
+out.summary.agg <- out.summary.agg %>% left_join(out.summary.agg.stk.pm, 
+                       by = c("Aggregate","U"))
+
+return(list(summary.stk = out.summary.stk, summary.agg = out.summary.agg))
+
+}
+```
+
+The core calculations are done in  subroutine:
+
+```{r, eval=F, echo=T}
+
+#' eq_ricker_us
+#'
+
+#' @param U_msy  point estimate of exploitation rate at MSY, typically 
+#'          one MCMC sample. This version uses S_msy and U_msy as inputs. 
+#'          eq_ricker_ab() does the comparative calculation using ln.alpha and 
+#'          beta inputs. 
+#' @param S_msy point estimate of exploitation rate at MSY, typically one 
+#'                 MCMC sample
+#' @param S_gen point estimate of Sgen, the spawner abundance that allows 
+#'                  rebuilding to Smsy in 1 generation in absence of fishing
+#' @param U.check vector with ER increments to evaluate, default is 0.5
+#' @export
+#' @examples
+
+eq_ricker_us <- function(U_msy, S_msy, S_gen, U.check = 0.5) {
+  Seq <- ((U_msy - log((1 - U_msy)/(1 - U.check)))/U_msy) * S_msy
+  Seq[Seq < 0] <- 0
+
+  Ceq <- (U.check * Seq)/(1 - U.check)
+  Ceq[is.na(Ceq)] <- 0
+  Ceq[Ceq < 0] <- 0
+
+  overfished <- ifelse(U.check > U_msy, 1, 0)
+  extirpated <- ifelse(Seq == 0, 1, 0)
+  belowSgen <- ifelse(Seq < S_gen, 1, 0)
+
+  return(data.frame(U = U.check, S = Seq, C = Ceq, 
+                       overfished = overfished, extirpated= extirpated,
+                       belowSgen = belowSgen))
+}
+```
+
+
+
+
