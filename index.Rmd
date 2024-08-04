@@ -14,7 +14,9 @@ report_number: nnn
 region: "Pacific Region"
 isbn: "Insert ISBN"
 cat_no: "Insert Cat No"
-citation_other_language: "French citation goes here"
+citation_other_language: "Pestal, G.P. and C. Carr-Harris 2024. Biological Benchmarks and Building Blocks for Aggregatelevel
+Management Targets for Skeena and Nass Sockeye Salmon (Oncorhynchus nerka).
+DFO Can. Sci. Advis. Sec. Res. Doc. 2024/nnn. v + 307 p."
 abstract: |
     Dans le cadre des dispositions du Traité sur le saumon du Pacifique (TSP) renouvelé, le Canada a accepté de réaliser une analyse approfondie des objectifs d’échappée pour les saumons rouges (*Oncorhynchus nerka*) remontant les rivières Skeena et Nass au sein de 31 stocks dont le cycle biologique et la productivité observée varient. Nous avons mis à l’essai d’autres ajustements du modèle géniteurs-recrues, élaboré des lignes directrices pour la sélection de scénarios de productivité de rechange fondés sur les ajustements du modèle et calculé des points de référence biologiques pour les scénarios retenus. Nous avons aussi comparé d’autres approches pour combiner les estimations des points de référence biologiques au niveau du stock en points de référence au niveau du regroupement. Une grande proportion des saumons rouges qui remontent la rivière Skeena vient du projet de mise en valeur à faible intensité dans le lac Babine qui consiste en une série de frayères artificielles et de tronçons gérés sur deux affluents du lac Babine (le ruisseau Pinkut et la rivière Fulton). Dans le cadre de cet examen, nous avons résumé les tendances relevées dans les données de production du projet de mise en valeur dans le lac Babine et constaté que, bien que les densités de charge des systèmes concernés soient demeurées relativement constantes au fil du temps, la productivité globale des saumons rouges de la rivière Skeena issus de la mise en valeur a diminué dans les 20 dernières années.
 

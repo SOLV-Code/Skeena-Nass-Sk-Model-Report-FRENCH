@@ -1,4 +1,4 @@
-book_filename: "SkeenaNass_Sockeye_BM_ResDoc"
+book_filename: "SkeenaNass_Sockeye_BM_ResDoc_FRENCH"
 rmd_files: ["index.Rmd",
             "01-Introduction.Rmd",
            "02-Methods.Rmd",
