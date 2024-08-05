@@ -169,66 +169,65 @@ Les saumons rouges mis en valeur du ruisseau Pinkut et de la rivière Fulton rep
 Pour répondre aux questions concernant les effets de la mise en valeur sur la production de saumon rouge sauvage, nous avons examiné et mis à jour les données sur la production de saumon rouge sauvage et mis en valeur du lac Babine afin d’évaluer les tendances générales des montaisons d’adultes, la qualité des échappées (taille, sex ratio et fécondité), la production d’œufs et la production d’alevins. Il ne s’agissait pas d’une évaluation exhaustive de la production de saumon rouge du lac Babine ni d’une analyse détaillée des effets des installations du PMVLB sur les stocks sauvages du lac et d’autres stocks de saumon rouge de la rivière Skeena. Nous donnons plutôt un aperçu de haut niveau des tendances observées de la production en eau douce en nous fondant sur les renseignements accessibles, et nous formulons des recommandations en vue de poursuivre le travail sur ce sujet.
 
 
-## ANALYSIS OVERVIEW {#AnalysisOverview}
+## APERÇU DE L’ANALYSE {#AnalysisOverview}
 
-### Research Document Scope and Organization {#PaperScopeOrg}
+### Portée et organisation du document de recherche {#PaperScopeOrg}
 
-The analyses presented in this Research Document were bounded based on scoping discussions throughout the Skeena and Nass Sockeye escapement goal review process since 2019. These discussions included a technical working group process, scoping workshop, and feedback from two independent reviewers (Section \@ref(EGProcess)), as well as the peer-review process [@SkeenaNassSkSAR; @SkeenaNassSkPRO] which included the main Regional Peer Review (RPR) meeting in April of 2022 and a follow-up process led by CSAS to develop recommendations on alternative approaches for developing aggregate management reference points for Skeena and Nass Sockeye. 
+Les analyses présentées dans ce document de recherche ont été circonscrites en fonction des discussions sur la portée dans l’ensemble du processus d’examen des objectifs d’échappée des saumons rouges des rivières Skeena et Nass depuis 2019. Ces discussions comprenaient un processus du GTT, un atelier de détermination de la portée et les commentaires de deux examinateurs indépendants (section \@ref(EGProcess)), ainsi que le processus d’examen par les pairs [@SkeenaNassSkSAR; @SkeenaNassSkPRO], avec la réunion principale d’examen régional par les pairs en avril 2022 et un processus ultérieur de suivi dirigé par le SCAS afin d’élaborer des recommandations sur des approches de rechange pour l’élaboration de points de référence de gestion pour les regroupements de saumon rouge des rivières Skeena et Nass.
 
-Data issues were mostly resolved by the Technical Working Group (TWG) prior to the peer-review meeting, with details documented in a stand-alone report [@SkeenaNassSkDataRep]. Data-related revisions identified through the peer review focused on clarifications and some additional testing of data treatment choices, such as procedures for infilling missing brood years.
+La plupart des problèmes liés aux données ont été résolus par le GTT avant la réunion d’examen par les pairs, et les détails ont été consignés dans un rapport distinct [@SkeenaNassSkDataRep]. Les révisions déterminées pendant l’examen par les pairs étaient axées sur des clarifications et quelques essais supplémentaires des choix de traitement des données, comme les procédures pour combler les années d’éclosion manquantes.
 
-The focus of discussions around the scope of our analyses related to the three topics that were identified as key analytical priorities by the TWG (Section \@ref(EGProcess)), including:
+Les discussions sur la portée de nos analyses concernaient les trois sujets désignés comme des priorités clés pour l’analyse par le GTT (section \@ref(EGProcess)) :
 
-* Methods for spawner-recruit SR model fitting to account for time-varying productivity
-* Methods for developing aggregate management reference points based on stock-level SR model fits
-* Treatment of enhanced Pinkut and Fulton in the analyses
+* méthodes pour tenir compte de la productivité variable dans le temps dans l’ajustement du modèle géniteurs-recrues;
+* méthodes d’élaboration de points de référence de gestion au niveau du regroupement en fonction des ajustements du modèle géniteurs-recrues au niveau du stock;
+* traitement des saumons mis en valeur du ruisseau Pinkut et de la rivière Fulton dans les analyses.
 
-This paper is structured as a series of modular steps, and includes extensive sensitivity testing of the initial steps (i.e., developing candidate SR models and model selection), or "building blocks" that are used in subsequent analyses. We provide examples for each of the subsequent steps which demonstrate how the biological information produced in the initial steps could be used to develop scientific advice for developing reference points. Depending on the specific context and requirements of current the Skeena and Nass Sockeye escapement goal review and future processes, this advice can be applied to develop specific questions, and specific analyses prioritized to address them. The examples provided in the second part of the results are intended to assist with identifying those priorities.
+Ce document est structuré selon une série d’étapes modulaires et comprend des tests de sensibilité approfondis des étapes initiales (l’élaboration de modèles géniteurs-recrues possibles et la sélection d’un modèle) ou des « éléments de base » qui sont utilisés dans les analyses suivantes. Nous donnons des exemples pour chacune des étapes suivantes afin de démontrer comment l’information biologique produite durant les étapes initiales pourrait servir à produire des avis scientifiques pour l’élaboration de points de référence. Selon le contexte et les exigences propres à l’examen actuel des objectifs d’échappée pour les saumons rouges des rivières Skeena et Nass et des processus futurs, ces avis peuvent être appliqués pour élaborer des questions précises et prioriser les analyses précises qui permettront d’y répondre. Les exemples fournis dans la deuxième partie des résultats visent à aider à déterminer ces priorités.
 
-The next three sections summarize how we approached each of these three components, and how our work compares to previous analyses. Section \@ref(TORLink) describes how this Research Document addresses each of the objectives in the Terms of Reference, linking to specific sections of the paper.
-
-
-
-### Spawner-recruit Model Fits, Productivity Scenarios and Biological Benchmarks {#AnalysisOverviewSR}
+Les trois prochaines sections récapitulent comment nous avons abordé chacun de ces trois éléments et comment notre travail se compare aux analyses précédentes. La section \@ref(TORLink) décrit comment ce document de recherche aborde chacun des objectifs du cadre de référence, en établissant un lien avec des sections précises du document.
 
 
-
-Previous work on SR model fits and biological benchmarks for Skeena and Nass Sockeye has differed widely in scope and approach (Table \@ref(tab:PastWorkTable)). Earlier work was mainly focused on estimating stock-level SR-based benchmarks like Smsy, Smax, and Umsy [@BockingetalMeziadinBM;  @Waltersetal2008ISRP; @KormanEnglish2013; @Hawkshaw2018Diss]. @PacificSalmonExplorer also included percentile benchmarks. SR model details varied widely across these analyses. 
-
-To address the priorities and Research Document objectives listed in Section \@ref(PaperObj), we fitted alternative model forms of the Ricker model to each spawner-recruit data set (Skeena and Nass aggregates and 20 component stocks with sufficient SR data). The types of models used for each stock depended on data availability. We focused on developing simple single-stock models along with time-varying model forms (AR1 and Recursive Bayes models) to explore underlying productivity patterns for the different stocks and calculate biological benchmarks for alternative productivity scenarios.
-
-Following a review of candidate SR model fits by TWG participants, we selected model fits that best described the dynamics of each stock. We sampled from the posterior distributions of selected single stock models to characterize high, low, recent, and long-term productivity scenarios, which were then used as inputs for examples of alternative methods for developing aggregate management reference points, as summarized in the next section.  
-
-Standard biological benchmarks based on spawner recruitment parameters were calculated for each model fit (Smsy, Smax, Umsy; Section \@ref(BMMethods)). The resulting benchmark estimates were compared to observed spawner abundances and lake capacity estimates. 
-
-Some TWG members recommended the development of an updated version of a hierarchal Bayesian model (HBM) used in a previous process to estimate biological benchmarks for Skeena Sockeye, which would allow for a direct comparison of results generated using updated data. McAllister and Challenger (Appendix \@ref(app:HBMFits)) contributed preliminary results for the updated HBM model fits. We include a comparison of the initial HBM results to our single-stock SR model fits and discuss potential sources for observed discrepancies (Sections \@ref(HBMExploration) and \@ref(HBMResultsComp)). However, we did not include the initial HBM results in the model selection process to define different productivity scenarios used for the example results in the rest of the paper. This may be a priority for future work.
-
-The initial version of the Research Document was presented for peer review in April 2022 and included alternative SR model fits and alternative productivity scenarios. Revisions identified through the peer-review process focused on additional sensitivity testing (e.g., additional productivity scenarios), comparisons of alternative methods (e.g., single-stock vs. hierarchical model fits), and clarification of the analytical steps (e.g., log-normal bias correction, smoothing of time-varying parameter estimates).
+### Ajustements du modèle géniteurs-recrues, scénarios de productivité et points de référence biologiques {#AnalysisOverviewSR}
 
 
-### Alternative Approaches for Developing Management Reference Points for Stock Aggregates {#AltApproachesOverview}
+La portée et l’approche des travaux antérieurs sur les ajustements du modèle géniteurs-recrues et les points de référence biologiques pour les saumons rouges des rivières Skeena et Nass sont très différentes (tableau \@ref(tab:PastWorkTable)). Les travaux antérieurs cherchaient principalement à estimer des points de référence fondés sur les géniteurs-recrues au niveau du stock, comme Srmd, Smax et Urmd [@BockingetalMeziadinBM;  @Waltersetal2008ISRP; @KormanEnglish2013; @Hawkshaw2018Diss]. @PacificSalmonExplorer a également inclus des points de référence fondés sur le centile. Les détails du modèle géniteurs-recrues variaient considérablement d’une analyse à l’autre.
 
-The analyses presented in this Research Document are intended to inform a review of Skeena and Nass Sockeye management targets. The development of management targets needs to take into account social and economic considerations in addition to biological objectives, and requires additional work after biological benchmarks  have been estimated, such as Smsy [e.g., @HoltIrvineBMvsRP]. 
+Afin de répondre aux priorités et aux objectifs du document de recherche énumérés à la section \@ref(PaperObj), nous avons ajusté d’autres formes du modèle de Ricker à chaque ensemble de données géniteurs-recrues (les regroupements des rivières Skeena et Nass et les 20 stocks qui les composent pour lesquels les données sur les géniteurs-recrues étaient suffisantes). Les types de modèles utilisés pour chaque stock dépendaient de l’accessibilité des données. Nous nous sommes concentrés sur l’élaboration de modèles simples à un seul stock et de formes du modèle variables dans le temps (modèles AR1 et bayésien récursif) afin d’explorer les profils de productivité sous-jacents pour les différents stocks et de calculer des points de référence biologiques pour d’autres scénarios de productivité.
 
-Considerations for choosing an appropriate approach for developing management targets include:
+À la suite d’un examen des ajustements possibles du modèle géniteurs-recrues par les membres du GTT, nous avons sélectionné le modèle qui décrit le mieux la dynamique de chaque stock. Nous avons procédé à un échantillonnage à partir des distributions a posteriori de certains modèles à un seul stock pour caractériser des scénarios de productivité élevée, faible, récente et à long terme, que nous avons ensuite utilisés comme intrants pour des exemples de méthodes de rechange pour l’élaboration de points de référence de gestion au niveau du regroupement, comme nous le résumons dans la section suivante.
 
-* *Type of harvest strategy*:  The purpose of management reference points is to trigger a response to changing conditions. Therefore, the approach to developing management reference points needs to fit the harvest strategy being used (i.e., fixed escapement, fixed exploitation rate, abundance-based rule). 
-* *Specific objectives*:  Clearly specified objectives are needed to allow for a structured and consistent comparison of alternative management reference points. 
+Des points de référence biologiques standard fondés sur les paramètres géniteurs-recrues ont été calculés pour chaque ajustement du modèle (Srmd, Smax, Urmd; section \@ref(BMMethods)). Nous avons comparé les estimations des points de référence ainsi obtenues à l’abondance observée des géniteurs et aux estimations de la capacité des lacs.
 
-A straightforward approach that has been applied extensively in Pacific salmon fishery management is to select the estimate of a biological benchmark, such as Smsy, as the management target. This approach assumes (1) a harvest strategy where the stock overall is managed to a fixed escapement goal, and all returning adults in addition to the escapement goal are harvested; and (2) a management objective to maximize total harvest on average over the long-term, regardless of annual variability in harvest (i.e., most of the year-to-year variation in returns translates into variation of harvests).  
+Certains membres du GTT ont recommandé d’élaborer une version actualisée du modèle bayésien hiérarchique (MBH) utilisé dans un processus précédent pour estimer les points de référence biologiques pour le saumon rouge de la rivière Skeena, afin de pouvoir comparer directement les résultats générés à l’aide des données mises à jour. McAllister et Challenger (annexe \@ref(app:HBMFits)) ont fourni les résultats préliminaires pour les ajustements du MBH actualisé. Nous comparons les résultats initiaux du MBH à notre modèle géniteurs-recrues à un seul stock et examinons les sources potentielles des écarts observés (sections \@ref(HBMExploration) et \@ref(HBMResultsComp)). Cependant, nous n’avons pas inclus les résultats initiaux du MBH dans le processus de sélection du modèle pour définir les différents scénarios de productivité utilisés pour les exemples de résultats dans le reste du document. Cela pourrait être une priorité pour les travaux futurs.
 
-(ref:PastWorkTable) Overview of Previous Work on Biological Benchmarks and Escapement Goals for Skeena and Nass Sockeye. Previous work differs in terms of scope, estimation approach, analysis type, and performance evaluation. 
+La version initiale du document de recherche a été présentée lors de la réunion d’examen par les pairs en avril 2022 et comprenait d’autres ajustements du modèle géniteurs-recrues et d’autres scénarios de productivité. Les révisions déterminées pendant le processus d’examen par les pairs étaient axées sur des tests de sensibilité supplémentaires (p. ex. des scénarios de productivité supplémentaires), des comparaisons des méthodes de rechange (p. ex. ajustements du modèle à un seul stock et du modèle hiérarchique) et la clarification des étapes analytiques (p. ex. correction du biais log-normal, lissage des estimations des paramètres variables dans le temps).
+
+
+### Approches de rechange pour l’élaboration de points de référence de gestion pour les regroupements de stocks {#AltApproachesOverview}
+
+Les analyses présentées dans ce document de recherche visent à guider un examen des objectifs de gestion des saumons rouges des rivières Skeena et Nass. L’élaboration d’objectifs de gestion doit tenir compte de considérations sociales et économiques, en plus d’objectifs biologiques, et des travaux supplémentaires sont nécessaires après l’estimation des points de référence biologiques, comme Srmd [p. ex. @HoltIrvineBMvsRP].
+
+Les facteurs à prendre en considération pour choisir une approche appropriée pour l’élaboration des cibles de gestion sont les suivants:
+
+* *Type de stratégie de récolte* : L’objectif des points de référence de gestion est de déclencher une réaction à l’évolution des conditions. Par conséquent, l’approche d’élaboration des points de référence de gestion doit s’ajuster à la stratégie de récolte utilisée (règle fondée sur une échappée fixe, un taux d’exploitation fixe ou l’abondance).
+* *Objectifs précis* : Des objectifs clairement définis sont nécessaires pour permettre une comparaison structurée et uniforme des points de référence de gestion de rechange.
+
+Une approche simple, largement appliquée dans la gestion des pêches des saumons du Pacifique, consiste à choisir l’estimation d’un point de référence biologique, comme Srmd, comme objectif de gestion. Cette approche suppose : (1) une stratégie de récolte dans laquelle le stock dans son ensemble est géré en fonction d’un objectif d’échappée fixe, et tous les adultes en montaison dépassant l’objectif d’échappée sont récoltés; (2) un objectif de gestion visant à maximiser la récolte totale en moyenne sur le long terme, indépendamment de la variabilité annuelle de la récolte (la plus grande partie de la variation d’une année à l’autre des remontes se traduit par une variation des récoltes).
+
+
+
+(ref:PastWorkTable) Aperçu des travaux précédents sur les points de référence biologiques et les objectifs d’échappée pour les saumons rouges des rivières Skeena et Nass. Les travaux antérieurs diffèrent sur le plan de la portée, de l’approche d’estimation, du type d’analyse et de l’évaluation du rendement. 
 
 ```{r PastWorkTable, echo = FALSE, results = "asis"}
 
 
-past.work.df <- read.csv("data/Reference Tables/PastWork_Overview.csv",stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM") %>%
-                        select(-Benchmark.Calculation)
+past.work.df <- read.csv("data/Reference Tables/PastWork_Overview_French.csv",stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM") 
 
 
-colnames(past.work.df ) <- linebreak(c("Reference","Main\nObjective","Scope","Parameter\nEstimation", # "Benchmark\nCalculation",
-                                         "Forward\nSimulation","Performance\nEvaluation"))
-
+colnames(past.work.df ) <- linebreak(c("Référence", 
+"Objectif\nprincipal","Portée","Estimation des\nparamètres", 
+                                         "Simulation \nprospective","Évaluation\ndu rendement"))
 
 
 past.work.df %>%
@@ -252,19 +251,22 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
 
 
 \clearpage
-Alternatives to this basic approach have evolved to:
-
-* capture other objectives (e.g., reduce variability in harvest)
-* deal with practical considerations (e.g., constraints on implementing target harvests)
-* consider current conditions (e.g., recent returns, recent productivity)
-* consider multiple stocks in an aggregate
-
-The initial version of the Research Document included examples of seven alternative approaches. Each of these had previously been used or recommended for the development of Pacific salmon escapement goals, and some had been previously applied to Skeena or Nass Sockeye (Table \@ref(tab:PastWorkTable)). The strengths and limitations of these alternative approaches were discussed extensively during the CSAS RPR, but participants did not reach consensus or  firm recommendation regarding a single approach, and recommended the inclusion of one additional candidate approach. This paper includes examples of a total of eight alternative approaches.
-
-Peer review participants recommended that clear advice on choosing an appropriate approach *should* be developed. A subgroup of participants was then convened to develop this advice, which included (1) identifying criteria for evaluating the alternative approaches, (2) completing a detailed evaluation of each approach, and (3) generating a summary table of comparisons, along with an overview of practical challenges for the alternative approaches. This structured comparison of approaches is a key product of the peer review process, and is documented in Section \@ref(AltApproachesComp). This Research Document includes worked examples for each approach, so that decision makers have a tangible basis for prioritizing next steps.
 
 
-### Alternative Approaches for Inlcuding Enhanced Pinkut and Fulton in the Analyses {#AltApproachEnhanced}
+Les solutions de rechange à cette approche de base ont évolué pour :
+
+* refléter d’autres objectifs (p. ex. réduire la variabilité de la récolte);
+* tenir compte de considérations pratiques (p. ex. contraintes imposées à la mise en œuvre des récoltes cibles);
+* tenir compte des conditions actuelles (p. ex. remontes et productivité récentes);
+* tenir compte de plusieurs stocks dans un regroupement.
+
+La version initiale du document de recherche comprenait des exemples de sept approches de rechange. Chacune avait déjà été utilisée ou recommandée pour l’élaboration d’objectifs d’échappée de saumons du Pacifique, et certaines avaient déjà été appliquées aux saumons rouges des rivières Skeena ou Nass (tableau \@ref(tab:PastWorkTable)). Les forces et les limites de ces approches de rechange ont fait l’objet de discussions approfondies au cours de l’examen régional par les pairs du SCAS, mais les participants ne sont pas parvenus à un consensus et n’ont pas formulé de recommandation ferme au sujet d’une approche unique. Ils ont recommandé d’inclure une approche possible supplémentaire. Ce document donne des exemples de huit approches de rechange.
+
+Les participants à l’examen par les pairs ont recommandé d’élaborer un avis clair sur le choix d’une approche appropriée. Un sous-groupe de participants a ensuite été créé pour élaborer cet avis, qui comportait : (1) la détermination des critères d’évaluation des approches de rechange; (2) l’exécution d’une évaluation détaillée de chaque approche; (3) la production d’un tableau récapitulatif des comparaisons, ainsi qu’un aperçu des défis pratiques pour les approches de rechange. Cette comparaison structurée des approches est un produit clé du processus d’examen par les pairs et est documentée à la section \@ref(AltApproachesComp). Ce document de recherche donne des exemples concrets pour chaque approche, afin que les décideurs disposent d’une base tangible pour établir l’ordre de priorité des prochaines étapes.
+
+
+
+### Alternative Approaches for Including Enhanced Pinkut and Fulton in the Analyses {#AltApproachEnhanced}
 
 Most Skeena Sockeye production occurs in actively managed spawning channels at Pinkut and Fulton, which are fundamentally different from wild stocks where variations in observed spawner abundance and resulting production can be used to fit spawner-recruit models and estimate biological benchmarks. This creates challenges for modelling stock dynamics and for developing management targets for the stock aggregate. 
 
