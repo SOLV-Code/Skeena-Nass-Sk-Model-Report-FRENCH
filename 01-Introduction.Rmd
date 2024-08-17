@@ -2,9 +2,9 @@
 
 - Report Number
 - French abstract not showing up?
-- French translation of references? PSC, BLMDP, NBSRR = "RRSRLN", NCCSDB = "NCCDSB" etc?
+- French translation of references? PSC, BLMDP, NBSRR = "RRSRLN", NCCSDB = "NCCDSB", SSIR = "RRSRRS" etc?  (even in the French text they switch back and forth between NCCSDB and NCCDSB 
 - Is "enhanced" really "mise en valeur" in a fisheries context? Maybe the French for "supplemented" would be better?
-- 
+- table formatting (blank lines)
 
 
 ## REMERCIEMENTS {-}
