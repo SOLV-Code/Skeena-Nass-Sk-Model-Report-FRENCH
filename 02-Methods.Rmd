@@ -176,47 +176,58 @@ Les mises à jour des estimations des recrues au niveau du stock et du regroupem
 
 
 
-### Data Checks and Sensitivity Tests
+### Vérifications des données et tests de sensibilité
 
-Data quality metrics were calculated for each stock looking at the entire time series and at individual observations [@SkeenaNassSkDataRep]. Potential data concerns were identified if metric values fell below, above, or outside the range of user-specified trigger values, depending on the metric. Trigger values were selected based on published guidance where available, or based on TWG consensus. 
+Des paramètres de la qualité des données ont été calculés pour chaque stock en examinant l’ensemble de la série chronologique et les observations individuelles [@SkeenaNassSkDataRep]. Des préoccupations potentielles liées aux données ont été cernées si les valeurs des paramètres tombaient en dessous, au-dessus ou en dehors de la plage des valeurs de déclenchement spécifiées par l’utilisateur, selon le paramètre. Les valeurs de déclenchement ont été choisies en fonction des directives publiées, le cas échéant, ou par consensus du GTT.
 
-The following metrics were used to conduct a systematic review of these considerations for the 31 Skeena and Nass Sockeye stocks:
+Les paramètres suivants ont été utilisés pour effectuer un examen systématique de ces considérations pour les 31 stocks de saumon rouge des rivières Skeena et Nass.
 
-* *Contrast*: low contrast in spawner data is flagged if $Max(Spn)/Min(Spn) < 4$, using the threshold from @Clarketal2014PercBM.  
-* *Number of observations*: insufficient data for fitting SR models is flagged if the number of brood years with estimates of both spawners and recruits is less than 10. This trigger value was selected based on general experience with other Sockeye stocks. This is intended to identify stocks with "little" data using a consistent definition.
-* *Large/small estimates not in model fit*: large estimates of spawners or recruits outside of the SR data set are flagged if the largest observed value is more than double the largest value for the brood years with estimates of both spawners and recruits. Small estimates of spawners or recruits outside of the SR data set are flagged if the smallest observed value is less than half the largest value for the brood years with estimates of both spawners and recruits. These trigger values were selected to identify extreme values.
-* *Large expansion factor*: the expansion from index spawners to total spawner estimate were flagged if the average expansion for the whole time series is larger than 3 (i.e., observations are multiplied by more than 3).
+* *Contraste* : Un faible contraste dans les données sur les géniteurs est signalé si Max(Spn)/Min(Spn)<4, en utilisant le seuil défini dans @Clarketal2014PercBM.
+* *Nombre d’observations* : Des données insuffisantes pour l’ajustement des modèles géniteurs-recrues sont signalées si le nombre d’années d’éclosion pour lesquelles on dispose d’estimations des géniteurs et des recrues est inférieur à 10. Cette valeur de déclenchement a été sélectionnée en fonction de l’expérience générale avec d’autres stocks de saumon rouge. Il s’agit d’identifier les stocks ayant « peu » de données à l’aide d’une définition uniforme.
+* *Grandes et petites estimations qui sortent de l’ajustement du modèle* : Les grandes estimations des géniteurs ou des recrues qui sortent de l’ensemble de données sur les géniteurs-recrues sont signalées si la plus grande valeur observée est plus du double de la plus grande valeur pour les années d’éclosion pour lesquelles on dispose d’estimations des géniteurs et des recrues. Les petites estimations des géniteurs ou des recrues en dehors de l’ensemble de données sur les géniteurs-recrues sont signalées si la plus petite valeur observée est inférieure à la moitié de la plus grande valeur pour les années d’éclosion pour lesquelles on dispose d’estimations des géniteurs et des recrues. Ces valeurs de déclenchement ont été sélectionnées pour repérer les valeurs extrêmes.
+* *Facteur d’expansion important* : L’expansion des géniteurs dans les cours d’eau repères à l’estimation du nombre total de géniteurs est signalée si l’expansion moyenne pour l’ensemble de la série chronologique est supérieure à 3 (c.-à-d. que les observations sont multipliées par plus de 3).
 
-Qualitative commentaries  were compiled to describe spawner data, catch data, age composition data, recruitment estimates, and lake survey data, and included the following considerations for each of these categories:
+
+Des commentaires qualitatifs ont été compilés pour décrire les données sur les géniteurs, les données sur les prises, les données sur la composition selon l’âge, les estimations du recrutement et les données sur les relevés dans les lacs, et ils comprenaient les considérations suivantes pour chacune de ces catégories.
 
 * *Indicator quality*: commentary on quality of spawner surveys (i.e., sum of estimates from indicator streams), based on survey types and coverage. Weirs and fishways were generally categorized as highly accurate, but if they capture multiple stocks then quality of stock composition estimates and relative abundance of the component stocks was also considered. 
-* *Expansions*: categorizes the total expansion factor applied to the estimate from indicator streams into 4 categories. Expansion factors were taken from the previously published run reconstruction estimates [e.g., @Englishetal2019NCCReview].
+* *Expansions*: categorizes the total expansion factor applied to the estimate from indicator streams into 4 categories. Expansion factors were taken from the previously published run reconstruction estimates .
 * *Total spawner estimate quality*: Commentary on overall quality of the spawner estimate, considering the quality of the index estimate and the expansion factor.
 * *Overall rating for spawner estimate*: The quality of spawner estimates was assessed on a 5-point scale from Very Good to Very Poor, based on the commentary for *TotalSpn*.
 
-
-Quality of catch estimates by stock: 
-
-
-* *Marine*: commentary on whether the marine migration route for the stock is likely similar to the aggregate migration route used in the NBSRR model, considering life history (e.g., sea type vs. lake type) and stock size (i.e., the model better captures they dynamics of major stocks: Meziadin on Nass and Babine stocks on the Skeena); this in turn affects whether the proportion of aggregate marine catch in the major fisheries for this stock is likely similar to the stock composition in the lower river assessment project (i.e., Nass fishwheels, Tyee test fishery), considering migration behaviour and stock size.
-* *In-river*: commentary covering 2 considerations: (1) the quality of run timing and migration speed estimates; and (2) quality of catch estimates in different modelled river sections.
-* *Total catch estimate quality*: commentary on overall quality of the total catch estimates, considering the quality of the above components 
-* *Overall rating for catch estimate*: The quality of catch estimates was assessed on a 5-point scale from Very Good to Very Poor, based on the commentary for *TotalCt*.
+* *Qualité de l’indicateur* : Commentaire sur la qualité des relevés des géniteurs (somme des estimations des cours d’eau repères), en fonction du type des relevés et de leur couverture. Les déversoirs et les passes migratoires ont généralement été classés comme étant très précis, mais s’ils capturent plusieurs stocks, on a également tenu compte de la qualité des estimations de la composition des stocks et de l’abondance relative des différents stocks.
+* *Expansion* : Catégorise le facteur d’expansion total appliqué à l’estimation à partir des cours d’eau repères en quatre catégories. Les facteurs d’expansion ont été tirés des estimations publiées précédemment [p. ex. @Englishetal2019NCCReview].
+* *Qualité globale de l’estimation des géniteurs* : Commentaire sur la qualité globale de l’estimation des géniteurs, compte tenu de la qualité de l’estimation pour les cours d’eau repères et du facteur d’expansion.
+* *Note globale pour l’estimation des géniteurs* : La qualité des estimations des géniteurs a été évaluée sur une échelle de 5 points, allant de « très bonne » à « très mauvaise », en fonction du commentaire pour TotalSpn (total des géniteurs).
 
 
-Quality of recruitment estimates by stock: 
 
-* *Run rating*: Describes the quality of run size estimates on a 5-point scale from Very Good to Very Poor, based on the commentary ratings for expanded spawner estimates and total catch estimates, and the relative magnitude of catch and spawner abundance (e.g., very poor catch estimate has little effect on quality of run size estimate if catches are very small).
-* *Age structure*: categorizes the age structure of the stock as either *stable* (very little change from one year to the next), *variable* (some change on relative proportions, but consistent dominant age class), or *highly variable* (dominant age class varies). 
-* *Age data*: categorizes the age composition estimates as either *Annual* (estimates available for most years), *Infill* (estimates available for many years, and remaining years infilled with average), or *Average* (a few years of data, using average for all years).
-* *Total recruitment estimate quality*: commentary on overall quality of the recruitment estimates, considering the quality of the estimates for total run size and age composition.
-* *Overall rating for recruitment estimate*: The quality of recruitment estimates was assessed on a 5-point scale from Very Good to Very Poor, based on the commentary for *TotalRec*.
+Qualité des estimations des prises par stock 
 
-Sensitivity tests were used to assess whether the potential data issues identified in the previous section were likely to affect estimates of standard biological benchmarks (e.g., $S_{MSY}$, $S_{MAX}$), in order to assist model scoping and  to identify which priority areas of uncertainty that will need to be considered in subsequent analyses [@SkeenaNassSkDataRep]. 
 
-We performed three sets of sensitivity tests: data variations, uncertainty in the data (bootstrap), and uncertainty in the model fit (Bayesian estimates). Sensitivity tests were implemented with the *RapidRicker* package [@RapidRicker], which iterates through a comprehensive set of data variations to calculate standard biological benchmarks. Model fits and benchmark calculations are generated using both a simple linear regression fit and a Bayesian fit using JAGS code adapted from @MillerPestalTakuSk. 
+* *Milieu marin* : Commentaires sur la question de savoir si la voie de migration marine pour le stock est probablement semblable à celle du regroupement utilisée dans le modèle RRSRLN, en tenant compte du cycle biologique (p. ex. type océanique ou lacustre) et de la taille du stock (c.-à-d. que le modèle saisit mieux la dynamique des grands stocks : le lac Meziadin sur les stocks de la rivière Nass et le lac Babine sur les stocks de la rivière Skeena); cela a ensuite une incidence sur la question de savoir si la proportion de prises en milieu marin du regroupement dans les principales pêches pour ce stock est probablement semblable à la composition du stock dans le projet d’évaluation du cours inférieur de la rivière (tourniquets sur la rivière Nass, pêche d’essai à Tyee), en tenant compte du comportement migratoire et de la taille du stock.
+* *Milieu fluvial* : Commentaires couvrant 1) la qualité des estimations de la période de montaison et de la vitesse de migration; 2) la qualité des estimations des prises dans différents tronçons du cours d’eau modélisés.
+* *Qualité de l’estimation des prises totales* : Commentaire sur la qualité globale des estimations des prises totales, compte tenu de la qualité des éléments ci-dessus.
+* *Note globale pour l’estimation des prises* : Qualité des estimations des prises évaluée sur une échelle de 5 points, allant de « très bonne » à « très mauvaise », en fonction du commentaire pour TotalCt (prises totales).
 
-The results from these initial sensitivity tests of SR model fitting, documented in the data report [@SkeenaNassSkDataRep],  were used to identify analytical priorities for this Research Document (Section \@ref(EGProcess)).
+
+
+Qualité des estimations du recrutement par stock: 
+
+* *Note pour la remonte* : Décrit la qualité des estimations de la remonte sur une échelle de 5 points, allant de « très bonne » à « très mauvaise », en fonction des notes des commentaires pour les estimations étendues des géniteurs et les estimations des prises totales, ainsi que de l’ampleur relative des prises et de l’abondance des géniteurs (p. ex. une très mauvaise estimation des prises a peu d’effet sur la qualité de l’estimation de la remonte si les prises sont très faibles).
+* *Structure selon l’âge* : Catégorise la structure selon l’âge du stock – stable (très peu de changement d’une année à l’autre), variable (une certaine variation des proportions relatives, mais classe d’âge dominante constante) ou très variable (la classe d’âge dominante varie).
+* *Données sur l’âge* : Catégorise les estimations de la composition selon l’âge – annuelles (estimations accessibles pour la plupart des années), remplies (estimations accessibles pour de nombreuses années, les années restantes étant remplies avec la moyenne) ou moyenne (quelques années de données, en utilisant la moyenne pour toutes les années).
+* *Qualité de l’estimation du recrutement total* : Commentaire sur la qualité globale des estimations du recrutement, compte tenu de la qualité des estimations de la remonte totale et de la composition selon l’âge.
+* *Note globale pour l’estimation du recrutement* : Qualité des estimations du recrutement évaluée sur une échelle de 5 points, allant de « très bonne » à « très mauvaise », en fonction des commentaires pour TotalRec.
+
+
+Des tests de sensibilité ont été utilisés pour évaluer si les problèmes de données potentiels relevés dans la section précédente étaient susceptibles d’influer sur les estimations des points de référence biologiques standard (p. ex. $S_{RMD}$, $S_{MAX}$), afin de faciliter la définition de la portée du modèle et de déterminer les domaines d’incertitude prioritaires à prendre en compte dans les analyses subséquentes [@SkeenaNassSkDataRep].
+
+Nous avons effectué trois séries de tests de sensibilité : les variations des données, l’incertitude dans les données (bootstrap) et l’incertitude dans l’ajustement du modèle (estimations bayésiennes). Des tests de sensibilité ont été mis en œuvre avec le progiciel RapidRicker [@RapidRicker], qui reproduit un ensemble complet de variations des données pour calculer des points de référence biologiques standard. Les ajustements du modèle et les calculs des points de référence sont générés à l’aide d’un ajustement de régression linéaire simple et d’un ajustement bayésien à l’aide du code JAGS adapté de @MillerPestalTakuSk.
+
+Les résultats de ces tests de sensibilité initiaux de l’ajustement du modèle géniteurs-recrues, documentés dans le rapport de données [@SkeenaNassSkDataRep], ont servi à déterminer les priorités d’analyse pour ce document de recherche (section \@ref(EGProcess)).
+
+
 
 ### Available Spawner-Recruit Data {#AvailableSRData}
 
