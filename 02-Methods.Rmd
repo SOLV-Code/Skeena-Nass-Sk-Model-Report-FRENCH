@@ -353,30 +353,30 @@ include_graphics("data/1_FrenchFigs/Fig2_DataOverview_ResDoc_Filter45Infill_Fren
 
 
 \clearpage
-## SPAWNER-RECRUIT MODEL FITTING {#SRFitting}
+## AJUSTEMENT DU MODÈLE GÉNITEURS-RECRUES {#SRFitting}
 
-### Ricker Model Forms {#ModelForms}
-
-Sockeye population dynamics are commonly modelled with the Ricker curve, which assumes that productivity, expressed as ln(Rec/Spn), decreases as the abundance of spawners increases, resulting in a dome-shaped relationship between spawners and total recruits. Key milestones in previous work on Skeena and Nass Sockeye (Table \@ref(tab:PastWorkTable)) all used the Ricker curve, but implementation details varied widely across these analyses:
-
-* @BockingetalMeziadinBM used a deterministic Ricker model for a single stock (Meziadin, the largest Nass stock). 
-* @Waltersetal2008ISRP and @Hawkshaw2018Diss developed state-space Ricker models for 9 Skeena CUs.
-* @Hawkshaw2018Diss also modeled Skeena Sockeye as a single stock with Ricker dynamics in a multi-species simulation.
-* @CoxRogersetal2010 used nursery lake capacity estimates based on photosynthetic rate to develop Ricker parameters for 28 nursery lakes, with Babine treated as a single stock. 
-* @KormanEnglish2013 used hierarchical Bayesian Ricker fits for 17 Skeena conservation units, splitting Babine into one enhanced and three wild CUs, and using PR-based lake rearing capacity as priors for Smax for all CUs except for Babine-Nilkitkwa. 
-* @PacificSalmonExplorer updated the @KormanEnglish2013 analysis, but modified the Babine split to one enhanced and two wild CUs, and added four Nass Sockeye CUs.
-* @Atlasetal2021HabitatDyn used Hierarchical Bayesian Ricker model fit to SR data for 54 North Coast Sockeye CUs (1 model for each biogeoclimactic zone).
+### Formes du modèle de Ricker {#ModelForms}
 
 
-@Fleischmanetal2013CJFASStateSpace observed that "*The Ricker model is, by far, the most common choice for Pacific
-salmon SR analyses, probably because (i) it can accommodate overcompensation, which is evident in many Pacific salmon data
-sets, and (ii) it is conservative with respect to optimal escapement levels (for fixed values of the productivity parameter and carrying capacity, SMSY is always higher under the assumption of a Ricker model than under a Beverton–Holt model).*"
+La dynamique des populations de saumon rouge est couramment modélisée avec la courbe de Ricker, qui suppose que la productivité, exprimée en ln(Rec/Gén), diminue à mesure que l’abondance des géniteurs augmente, ce qui donne une relation en forme de dôme entre les géniteurs et le nombre total de recrues. Les principaux jalons des travaux antérieurs sur les saumons rouges des rivières Skeena et Nass (tableau \@ref(tab:PastWorkTable)) ont tous utilisé la courbe de Ricker, mais les détails de la mise en œuvre variaient considérablement d’une analyse à l’autre.
 
-We used three alternative model forms for the Ricker SR relationship to assess the sensitivity of biological benchmark estimates to alternative assumptions about observed residuals.
 
-*Basic Ricker (BR)*
+* @BockingetalMeziadinBM ont utilisé un modèle déterministe de Ricker pour un seul stock (Meziadin, le plus grand stock de la rivière Nass).
+* @Waltersetal2008ISRP and @Hawkshaw2018Diss ont élaboré des modèles de Ricker d’espace d’états pour 9 UC de la rivière Skeena.
+* @Hawkshaw2018Diss a également modélisé le saumon rouge de la rivière Skeena comme un seul stock avec la dynamique de Ricker dans une simulation plurispécifique.
+* @CoxRogersetal2010 ont utilisé des estimations de la capacité des lacs de croissance fondées sur le rendement photosynthétique pour élaborer des paramètres de Ricker pour 28 lacs de croissance, les saumons rouges du lac Babine étant traités comme formant un seul stock. 
+* @KormanEnglish2013 ont utilisé des ajustements de Ricker bayésiens hiérarchiques pour 17 UC de la rivière Skeena, divisant Babine en une UC mise en valeur et trois UC sauvages et utilisant la capacité de croissance des lacs fondée sur le rendement photosynthétique comme valeurs a priori pour Smax pour toutes les UC, à l’exception de Babine-Nilkitkwa. 
+* @PacificSalmonExplorer a mis à jour l’analyse de  @KormanEnglish2013, mais a modifié la division de Babine en ajoutant une UC mise en valeur et deux UC sauvages, et en ajoutant quatre UC pour le saumon rouge de la rivière Nass.
+* @Atlasetal2021HabitatDyn ont utilisé le modèle de Ricker bayésien hiérarchique ajusté aux données GS pour 54 UC de saumon rouge de la côte nord (1 modèle pour chaque zone biogéoclimatique).
 
-A standard Bayesian Ricker fit, based on a fixed linear relationship between $ln(R/S)$ (productivity) and $S$ (spawner abundance). The basic Ricker model, like any basic linear regression, assumes that residuals have a random normal distribution $N$ with mean 0 and sample-based variance, without any pattern in the deviations over time.  The basic Ricker fit serves as a good baseline, even if the observed pattern in productivity violates that assumption (i.e., What would benchmark estimates look like if changes over time were disregarded?). For brood year $i$
+
+@Fleischmanetal2013CJFASStateSpace ont indiqué que « Le modèle de Ricker est, de loin, le choix le plus courant pour les analyses de la relation géniteurs-recrues chez les saumons du Pacifique, probablement parce que (i) il peut tenir compte de la surcompensation, qui est évidente dans de nombreux ensembles de données sur les saumons du Pacifique, et (ii) il est prudent en ce qui concerne les niveaux optimaux d’échappées (pour les valeurs fixes du paramètre de productivité et de la capacité de charge, SRMD est toujours plus élevé dans l’hypothèse d’un modèle de Ricker que dans celle d’un modèle de Beverton-Holt). » [traduction]
+
+Nous avons utilisé trois formes du modèle de Ricker pour la relation géniteurs-recrues afin d’évaluer la sensibilité des estimations des points de référence biologiques aux hypothèses de rechange au sujet des résiduels observés.
+
+*Modèle de Ricker de base (BR)*
+
+Un ajustement standard bayésien du modèle de Ricker, fondé sur une relation linéaire fixe entre $ln(R/S)$  (productivité) et $S$ (abondance des géniteurs). Le modèle de Ricker de base, comme toute régression linéaire de base, suppose que les résiduels ont une distribution normale aléatoire $N$ avec une moyenne de 0 et une variance fondée sur l’échantillon, sans profil des écarts dans le temps. L’ajustement du modèle de Ricker de base constitue une bonne base de référence, même si le profil observé dans la productivité contredit cette hypothèse (à quoi ressembleraient les estimations des points de référence si on ignorait les changements dans le temps?). Pour l’année d’éclosion $i$
 
 \begin{equation} 
   ln(R_{i}/S_{i}) = ln(\alpha) - \beta * S_{i} + \varepsilon_{i}
@@ -392,7 +392,7 @@ A standard Bayesian Ricker fit, based on a fixed linear relationship between $ln
 
 *Ricker with lag-1 autocorrelation (AR1)*
 
-An extension to the Ricker model, which is again based on fixed linear relationship between $ln(R/S)$ (productivity) and $S$ (spawner abundance), but also looks for an underlying pattern in the residuals (i.e., estimate a specific residual for each brood year $i$) 
+Une extension du modèle de Ricker, qui est encore une fois fondée sur une relation linéaire fixe entre $ln(R/S)$ (productivité) et $S$ (abondance des géniteurs), mais qui cherche également un profil sous-jacent dans les résiduels (estimer un résiduel précis pour chaque année d’éclosion $i$).
 
 \begin{equation} 
   ln(R_{i}/S_{i}) = ln(\alpha) - \beta * S_{i} + \varepsilon_{i}
@@ -412,9 +412,9 @@ An extension to the Ricker model, which is again based on fixed linear relations
 
 
 
-*Ricker with Time Varying Productivity (TVP)* 
+*Modèle de Ricker avec productivité variable dans le temps (PVT)* 
 
-An extension to the Ricker model, which is based on a *time-varying* linear relationship between $ln(R/S)$ (productivity) and $S$ (spawner abundance) [e.g., @PetermanPyperGrout2000ParEst;  @PetermanPyperMacGregor2003KF; @HoltMichielsens2020RecBayes; @Freshwateretal2020Selectivity; @FraserSkRPASAR; @Huangetal2021FraserSkRPA]. For each brood year, the productivity parameter $ln(\alpha)$ is estimated based on the observed productivity for that year and the estimated $ln(\alpha)$ for the previous brood year, to generate a more or less smooth series of $\alpha$ parameters. 
+Une extension du modèle de Ricker, fondée sur une relation linéaire variable dans le temps entre $ln(R/S)$ (productivité) et $S$  (abondance des géniteurs) [p. ex. @PetermanPyperGrout2000ParEst;  @PetermanPyperMacGregor2003KF; @HoltMichielsens2020RecBayes; @Freshwateretal2020Selectivity; @FraserSkRPASAR; @Huangetal2021FraserSkRPA]. Pour chaque année d’éclosion, le paramètre de productivité $ln(\alpha)$  est estimé en fonction de la productivité observée pour l’année en question et de l’estimation de $ln(\alpha)$ pour l’année d’éclosion précédente, afin de générer une série plus ou moins lisse de paramètres $ln(\alpha)$.
 
 
 \begin{equation} 
@@ -438,25 +438,25 @@ An extension to the Ricker model, which is based on a *time-varying* linear rela
   (\#eq:RecBayesRicker4)
 \end{equation} 
 
-Two alternative approaches for fitting a time-varying productivity Ricker model have been applied for Pacific salmon data, (1) Kalman Filter [@PetermanPyperGrout2000ParEst;  @PetermanPyperMacGregor2003KF] and (2) Recursive Bayes [@HoltMichielsens2020RecBayes; @Freshwateretal2020Selectivity; @FraserSkRPASAR; @Huangetal2021FraserSkRPA]. While the mathematical structure of these models are the same (Eq. \@ref(eq:RecBayesRicker1),  \@ref(eq:RecBayesRicker4)), the computational implementation of the estimation step is very different. A key difference is that the Kalman Filter implementations included a smoothing step, whereas the Recursive Bayes implementations did not.  
-
-The TVP model described here uses the Recursive Bayes version, consistent with recent work on Fraser Sockeye [@FraserSkRPASAR; @Huangetal2021FraserSkRPA].
-
-
-*Summary*
-
-The Basic Ricker and AR1 Ricker both fit a single spawner-recruit relationship which is assumed to describe inherent properties of the stock that remain constant over time. The AR1 model form has previously been used in escapement goal analyses for Alaskan and northern transboundary Sockeye stocks [e.g., @MillerPestalTakuSk; @Connorsetal2022]. The time-varying productivity version of the Ricker model assumes that there are real changes in productivity over time, and tries to extract a more-or-less smoothed pattern, identifying high and low productivity periods. The time-varying productivity model has been used for some northern transboundary salmon stocks [e.g., @PestalJohnstonTakuCo] and in several Fraser Sockeye applications [e.g., @FrSkWSPBM;@Huangetal2021FraserSkRPA; @PetermanDorner2011Fraser].
+Deux approches de rechange pour ajuster un modèle de Ricker avec PVT ont été appliquées pour les données sur les saumons du Pacifique : (1) le filtre de Kalman [@PetermanPyperGrout2000ParEst;  @PetermanPyperMacGregor2003KF] et (2) le modèle bayésien récursif [@HoltMichielsens2020RecBayes; @Freshwateretal2020Selectivity; @FraserSkRPASAR; @Huangetal2021FraserSkRPA]. Bien que la structure mathématique de ces modèles soit la même (équations \@ref(eq:RecBayesRicker1),  \@ref(eq:RecBayesRicker4)), la mise en œuvre computationnelle de l’étape d’estimation est très différente. Une différence clé réside dans le fait que les mises en œuvre du filtre de Kalman comprenaient une étape de lissage, contrairement aux mises en œuvre du modèle bayésien récursif.
+Le modèle avec PVT décrit ici utilise la version bayésienne récursive, conformément aux travaux récents sur le saumon rouge du fleuve Fraser [@FraserSkRPASAR; @Huangetal2021FraserSkRPA].
 
 
-### Bayesian Parameter Estimation Using Markov Chain Monte Carlo (MCMC) 
+*Résumé*
 
-We derived parameter estimates with Bayesian methods for candidate stock-level and aggregate-level SR models with Markov chain Monte Carlo (MCMC) using the JAGS sampling engine [@Plummer03jags] via the *jags()* function from the *R2jags* package [@R2jags]. Appendix \@ref(SingleStockSRFits)  describes the code set-up and  lists the JAGS code for the three model forms.
+The Basic Ricker and AR1 Ricker both fit a single spawner-recruit relationship which is assumed to describe inherent properties of the stock that remain constant over time. The AR1 model form has previously been used in escapement goal analyses for Alaskan and northern transboundary Sockeye stocks . The time-varying productivity version of the Ricker model assumes that there are real changes in productivity over time, and tries to extract a more-or-less smoothed pattern, identifying high and low productivity periods. The time-varying productivity model has been used for some northern transboundary salmon stocks  and in several Fraser Sockeye applications .
 
-MCMC estimation combines prior assumptions about each parameter with the likelihood of different parameter values based on the data to generate a posterior sample of parameter values. Prior assumptions can be uninformative (e.g., productivity for the stocks can be anywhere from very high to very low, and we don't specify a preference) or informative (e.g., we think productivity of the stock is similar to the average productivity from several near-by stocks with similar life history).
+Les modèles de Ricker de base et AR1 sont tous deux ajustés à une relation géniteurs-recrues qui est censée décrire les propriétés inhérentes du stock qui demeurent constantes au fil du temps. La forme du modèle AR1 a déjà été utilisée dans les analyses des objectifs d’échappée pour les stocks de saumon rouge de l’Alaska et transfrontaliers du Nord [p. ex.  @MillerPestalTakuSk; @Connorsetal2022]. La version avec productivité variable dans le temps du modèle de Ricker suppose que la productivité change réellement au fil du temps et tente d’extraire un profil plus ou moins lissé, en déterminant les périodes de productivité élevée et faible. Le modèle avec PVT a été utilisé pour certains stocks de saumon transfrontaliers du Nord [p. ex. @PestalJohnstonTakuCo] et dans plusieurs applications du saumon rouge du Fraser [p. ex. @FrSkWSPBM;@Huangetal2021FraserSkRPA; @PetermanDorner2011Fraser].
 
-The sampling engine starts with some random values sampled from the prior distribution, then searches through variations of all the parameters to identify values that plausibly link the observed data to the specified relationship (e.g., a Ricker function). Sampling should be set up such that parameter values stabilize (*convergence*), and earlier parts of the sampling chain are discarded (*burn-in*).
+### Estimation bayésienne des paramètres à l’aide de la méthode de Monte-Carlo par chaîne de Markov (MCCM) 
 
-MCMC implementations require careful testing of prior assumptions and verification of sampling behaviour to assess the quality of resulting estimates. We compiled a checklist of MCMC diagnostics and used it to select a short-list of SR model fits for each stock (Sec. \@ref(ModelSelection)).
+Nous avons dérivé des estimations des paramètres à l’aide des méthodes bayésiennes pour les modèles géniteurs-recrues possibles au niveau du stock et au niveau du regroupement selon la méthode MCCM à l’aide du moteur d’échantillonnage JAGS [@Plummer03jags]  et de la fonction *jags()* du progiciel *R2jags* [@R2jags]. L’annexe \@ref(SingleStockSRFits) décrit la configuration du code et indique le code JAGS pour les trois formes du modèle.
+
+L’estimation MCCM combine les hypothèses sur les valeurs a priori de chaque paramètre avec la probabilité de différentes valeurs des paramètres d’après les données pour générer un échantillon a posteriori des valeurs des paramètres. Les hypothèses sur les valeurs a priori peuvent être non informatives (p. ex. la productivité des stocks peut varier de très élevée à très faible, et nous ne précisons pas de préférence) ou informatives (p. ex. nous pensons que la productivité du stock est semblable à la productivité moyenne de plusieurs stocks proches ayant un cycle biologique semblable).
+
+Le moteur d’échantillonnage commence par quelques valeurs aléatoires échantillonnées à partir de la distribution a priori, puis recherche des variations de tous les paramètres pour déterminer les valeurs qui relient vraisemblablement les données observées à la relation spécifiée (p. ex. une fonction de Ricker). L’échantillonnage doit être configuré de manière à ce que les valeurs des paramètres se stabilisent (*convergence*) et que les parties antérieures de la chaîne d’échantillonnage soient éliminées (*rodage*).
+
+Les mises en œuvre de la méthode MCCM nécessitent une mise à l’essai minutieuse des hypothèses sur les valeurs a priori et la vérification du comportement d’échantillonnage afin d’évaluer la qualité des estimations qui en découlent. Nous avons compilé une liste de contrôle des diagnostics MCCM et l’avons utilisée pour sélectionner une liste restreinte de modèles géniteurs-recrues ajustés à chaque stock (section \@ref(ModelSelection)).
 
 
 ### Priors {#Priors}
