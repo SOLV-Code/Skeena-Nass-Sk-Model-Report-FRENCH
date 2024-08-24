@@ -5,6 +5,11 @@
 - French translation of references? PSC, BLMDP, NBSRR = "RRSRLN", NCCSDB = "NCCDSB", SSIR = "RRSRRS" etc?  (even in the French text they switch back and forth between NCCSDB and NCCDSB 
 - Is "enhanced" really "mise en valeur" in a fisheries context? Maybe the French for "supplemented" would be better?
 - table formatting (blank lines)
+- SOme citations are as "et al." in the French callout, but many others are like this "Cox-Rogers et ses collaborateurs (2010)" -> How to fix this in csasdown/bibtex?
+- In some equations (and all/most labels/tables/text) Spn is translated as "Gèn" or "G", but in Sec 2.2.1 with the Ricker equations it \
+uses "S" in text and equations. I carried over the French callout text as-is.
+- Model labels: BR, AR1,TVP -> need to make sure consistently handled in text, figs,tables
+
 
 
 ## REMERCIEMENTS {-}
