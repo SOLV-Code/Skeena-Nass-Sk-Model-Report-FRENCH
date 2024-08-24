@@ -229,32 +229,30 @@ Les résultats de ces tests de sensibilité initiaux de l’ajustement du modèl
 
 
 
-### Available Spawner-Recruit Data {#AvailableSRData}
+### Données sur les géniteurs-recrues accessibles {#AvailableSRData}
 
 
-Complete time series of spawners and recruits are available for the Nass aggregate since 1982 and for the Skeena aggregate since 1970. Stock-level run reconstructions for the Skeena are available back to 1960.
+Des séries chronologiques complètes sur les géniteurs et les recrues sont disponibles pour le regroupement de la rivière Nass depuis 1982 et pour celui de la rivière Skeena depuis 1970. Les reconstitutions des remontes au niveau du stock pour la rivière Skeena sont disponibles depuis 1960.
 
-The 31 stocks were organized into three groups based on relative abundance and available data. Group 1 includes 14 larger stocks with long time series of spawner-recruit data which account for about 98% of the combined total returns for Nass and Skeena Sockeye, Group 2 includes 9 smaller stocks with some spawner-recruit data which together account for about 2% of combined total returns, and Group 3 includes 8 stocks without any spawner-recruit data.
+Les stocks de saumon rouge des rivières Nass et Skeena ont été répartis en 31 stocks (tableau \@ref(tab:StockOverview)) : 7 stocks de la rivière Nass et 24 stocks de la rivière Skeena [@SkeenaNassSkDataRep]. Les stocks peuvent être regroupés par cycle biologique et zone d’adaptation (CBZA), ainsi que par bassin versant. Les variations du cycle biologique sont le type lacustre (TL), le type fluvial (TF) et le type océanique (TO). Les taux d’exploitation sont estimés pour les réseaux repères (stocks ou groupes de stocks ayant des périodes de montaison semblables et des estimations fiables des prises et de l’abondance des géniteurs). En vertu de la PSS [@WSP], les saumons anadromes canadiens sont regroupés en UC distinctes. Pour les saumons rouges des rivières Nass et Skeena, la plupart des stocks correspondent à une seule UC. Certains des plus petits stocks combinent deux ou trois UC, soit parce qu’ils remontent dans des lacs reliés entre eux, soit parce qu’ils sont évalués ensemble et qu’il n’est pas possible de séparer les données. L’UC Babine/Nilkitkwa, la plus grande UC de la rivière Skeena, a été divisée en cinq stocks distincts en fonction de la mise en valeur et de la période de montaison.
 
-Nass and Skeena Sockeye were organized into 31 stocks (Table \@ref(tab:StockOverview)), including 7 Nass and 24 Skeena stocks [@SkeenaNassSkDataRep]. Stocks can be grouped together based on life history  and adaptive zone (*LHAZ*), as well as watershed. Life history variations include lake type (*LT*), river-type (*RT*), and sea-type (*ST*). Exploitation rates are estimated for indicator systems (stocks or stock groups with similar run timing and reliable estimates of catch and spawner abundance). Under the Wild Salmon Policy [@WSP], Canadian anadromous salmon are grouped into distinct conservation units (CU). For Nass and Skeena Sockeye, most of the stocks match 
-up with a single CU. Some of the smaller stocks combine 2-3 CUs, either because they rear in cojoined lakes, or they are assessed together and data can't be separated. Babine/Nilkitkwa, the largest Skeena CU, was divided into 5 distinct stocks based on enhancement and run timing.
+La longueur et la qualité des séries chronologiques sur les géniteurs-recrues varient d’un stock à l’autre (tableau \@ref(tab:DataOverviewSkeena), figure \@ref(fig:SRDataOverview)). Les stocks plus grands ont généralement plus d’années de données de meilleure qualité. Le GTT a élaboré une note de qualité uniforme pour les estimations du nombre de géniteurs, de la remonte et du recrutement en fonction des types de données et de calculs @SkeenaNassSkDataRep. Les notes d’estimation des géniteurs tiennent compte de la qualité du relevé dans un cours d’eau repère ainsi que du facteur d’expansion (p. ex. un recensement aux barrières de tous les géniteurs est considéré comme *très bon*, mais un relevé aérien couvrant moins du cinquième du stock est considéré comme *mauvais*). Les notes des estimations de la remonte tiennent compte du fait qu’un stock est bien représenté dans la comptabilisation des prises et dans les analyses de reconstitution des stocks (p. ex. un grand stock avec une identification fiable et les estimations temporelles qui en découlent est considéré comme *bon*, mais un petit stock incertain est considéré comme *mauvais*). Les notes des estimations du recrutement combinent la qualité de l’estimation de la remonte avec les considérations de la qualité et de la quantité des données sur la composition selon l’âge (p. ex. données annuelles sur l’âge par stock par rapport à la composition selon l’âge moyenne d’un stock témoin).
 
-The length and quality of spawner-recruit time series vary across stocks (Table \@ref(tab:DataOverviewSkeena), Figure \@ref(fig:SRDataOverview)). Larger stocks generally have more years of higher quality data. The TWG developed a consistent quality rating for spawner, run size, and recruitment estimates based on the types of data and calculations @SkeenaNassSkDataRep. Spawner estimate ratings incorporate the quality of the index survey as well as the expansion factor (e.g., a fence-based census of all spawners is rated as *very good*, but an aerial survey covering less than 1/5th of the stock is rated as poor).  Run size estimates ratings consider whether a stock is well represented in the catch accounting and run reconstruction analyses (e.g., a major stock with reliable stock identification and resulting timing estimates is rated as *good*, but a small stock uncertain timing is rated as *poor*). Recruitment estimate ratings combine quality of the run size estimate with considerations of the quality and amount of age composition data (e.g., stock-specific annual age data vs. average age composition from a proxy stock).
+Les 31 stocks ont été répartis en trois groupes en fonction de l’abondance relative et des données accessibles. Le groupe 1 comprend 14 grands stocks avec de longues séries chronologiques de données sur les géniteurs-recrues, qui représentent environ 98 % des remontes totales combinées de saumon rouge des rivières Nass et Skeena; le groupe 2 comprend 9 stocks plus petits avec certaines données sur les géniteurs-recrues, qui représentent ensemble environ 2 % des remontes totales combinées, et le groupe 3 comprend 8 stocks sans aucune donnée sur les géniteurs-recrues.
 
-We filtered out implausible spawner-recruit observations and infilled gaps to allow fitting model forms that require complete time series. Specifically, we excluded brood years where estimated recruits/spawner exceeded 45, infilled 1-yr gaps in spawner estimates using the average of previous and subsequent estimates, infilled the corresponding run size using the year-specific exploitation rate estimate from the run reconstruction models, and then used the infilled data in the recruit calculation. Filtering and infilling procedures were only applied to some stocks (Table \@ref(tab:DataOverviewSkeena), Figure \@ref(fig:SRDataOverview)). We tested the effect of these data treatment steps using the basic Ricker model: Removing outliers through filtering generally had a larger effect on the parameter estimates than the infilling step (Appendix \@ref(AltSRTest)).
-
-New information has recently become available for some stocks, which has not been incorporated into the current version of the analyses, but we consider these a high priority for updating in future work:
-
-* *Bowser*: Bowser Lake was likely a major contributor to the Nass aggregate Sockeye return in some years. Visual escapement estimates, which are confounded by high glacial turbidity, have not been regularly conducted for Bowser Lake Sockeye, which are primarily a lakeshore spawning population. Previous abundance estimates for Bowser Sockeye have been derived using different methods including stock identification using scale pattern analyses, and more recently, GSI applied to Nass aggregate escapements. The different methods have produced divergent estimates for some years, and further assessment is required to reconcile these estimates before spawner recruit time series can be developed. 
-* *Bear/Azuklotz*: Preliminary results from a new assessment program (video weir installed in 2021 on Bear River downstream of Bear Lake) suggest that the combined visual spawner escapements based on aerial surveys may underestimate the actual spawning population by a much larger factor than what has been accounted for in the expansion factors that are currently used in run reconstruction procedures. For our analyses, we used the existing time series of reconstructed abundances that do not account for new information from the camera weir program, with the understanding that these data may change in the near future.
-* *Skeena river-type*: This stock is currently considered data deficient, because there is not enough information about spawning abundance or distribution of Skeena river-type Sockeye to estimate total watershed abundance for these populations. While there are  small persistent river-type spawning populations that are enumerated annually in the Kispiox watershed and Bulkley River, it is not known whether these populations account for most or only a small portion of river-type spawners in the Skeena watershed. Anecdotal information from historic and recent surveys suggest that persistent or ephemeral populations are also present in Upper Skeena tributaries. The population structure of river-type spawners in the Skeena watershed is unclear, with few samples in the genetic baseline and poor differentiation between some Skeena and Nass river-type populations. It is not known whether Skeena river-types represent one or multiple populations, or a single population for Skeena and Upper Nass river-types. 
+Nous avons exclu les observations sur les géniteurs-recrues invraisemblables et rempli les vides pour pouvoir ajuster les formes du modèle qui nécessitent une série chronologique complète. Plus précisément, nous avons exclu les années d’éclosion où l’estimation du nombre de recrues par géniteur (R/S) dépassait 45, nous avons rempli les vides d’un an dans les estimations du nombre de géniteurs en utilisant la moyenne des estimations précédentes et suivantes, nous avons rempli la remonte correspondante en utilisant l’estimation du taux d’exploitation de l’année tirée des modèles de reconstitution des remontes, puis appliqué les données remplies dans le calcul des recrues. Les procédures de filtrage et de remplissage n’ont été appliquées qu’à certains stocks (tableau \@ref(tab:DataOverviewSkeena), figure \@ref(fig:SRDataOverview)). Nous avons testé l’effet de ces étapes du traitement des données à l’aide du modèle de Ricker de base : l’élimination des valeurs aberrantes par filtrage a généralement eu un effet plus important sur les estimations des paramètres que l’étape du remplissage (annexe \@ref(AltSRTest)).
 
 
+De nouveaux renseignements sont récemment devenus accessibles pour certains stocks et n’ont pas été intégrés à la version actuelle des analyses, mais nous considérons qu’il s’agit d’une priorité élevée pour la mise à jour dans les futurs travaux.
+
+* *Bowser* : La population du lac Bowser a probablement contribué de façon importante à la remonte du regroupement de saumon rouge de la rivière Nass certaines années. Les estimations visuelles des échappées, qui sont faussées par une turbidité glaciaire élevée, n’ont pas été effectuées régulièrement pour le saumon rouge du lac Bowser, qui est principalement une population qui fraye près des rives. Les estimations antérieures de l’abondance du saumon rouge du lac Bowser ont été obtenues à l’aide de différentes méthodes, notamment l’identification des stocks au moyen d’analyses des motifs des écailles et, plus récemment, l’identification génétique des stocks appliquée aux échappées du regroupement de la rivière Nass. Ces différentes méthodes ont produit des estimations divergentes pour certaines années et une évaluation plus poussée est nécessaire pour rapprocher ces estimations avant de pouvoir élaborer une série chronologique sur les géniteurs-recrues. 
+* *Bear/Azuklotz* : D’après les résultats préliminaires d’un nouveau programme d’évaluation (déversoir vidéo installé en 2021 sur la rivière Bear en aval du lac Bear), les échappées combinées des géniteurs fondées sur des relevés visuels aériens pourraient sous-estimer la population reproductrice réelle d’un facteur beaucoup plus important que celui qui a été pris en compte dans les facteurs d’expansion utilisés actuellement dans les procédures de reconstitution des remontes. Pour nos analyses, nous avons utilisé la série chronologique existante des abondances reconstituées qui ne tiennent pas compte des nouveaux renseignements provenant du programme du déversoir vidéo, sachant que ces données pourraient changer dans un proche avenir.
+* *Skeena, type fluvial* : On considère actuellement que les données sur ce stock sont insuffisantes, car il n’y a pas suffisamment d’information sur l’abondance des géniteurs ou la répartition du saumon rouge de la rivière Skeena de type fluvial pour estimer l’abondance totale dans le bassin versant pour ces populations. Bien que de petites populations de géniteurs de type fluvial persistent et soient dénombrées chaque année dans le bassin versant de la rivière Kispiox et la rivière Bulkley, on ne sait pas si ces populations représentent la plupart ou seulement une petite partie des géniteurs de type fluvial dans le bassin versant de la rivière Skeena. Des renseignements anecdotiques tirés de relevés historiques et récents donnent à penser que des populations persistantes ou éphémères sont également présentes dans les affluents de la haute Skeena. La structure de la population des géniteurs de type fluvial dans le bassin versant de la rivière Skeena n’est pas claire, en raison du peu d’échantillons dans la base de référence génétique et d’une faible différenciation entre certaines populations de type fluvial des rivières Skeena et Nass. On ne sait pas si les types fluviaux de la rivière Skeena représentent une ou plusieurs populations, ou une seule population pour les types fluviaux de la rivière Skeena et de la haute Nass. 
 
 
 
 \clearpage
-(ref:StockOverview) Nass and Skeena Sockeye population structure. The 31 stocks fall into 7 distinct groups based on life history type and freshwater adaptive zone (LHAZ) and 21 watersheds. We use short stock labels (Stock) for tables and figures throughout the Research Document. Exploitation rate indicators (ERInd) are available for most of the stocks. Stocks match up with one or more conservation units (CU). Babine is currently designated as a single CU, but assessed and analyzed as five distinct stocks (marked with *).
+(ref:StockOverview) Structure des populations de saumon rouge des rivières Skeena et Nass. Les 31 stocks se répartissent en 7 groupes distincts en fonction du type de cycle biologique et de la zone d’adaptation en eau douce (CBZA) et 21 bassins versants. Nous utilisons des étiquettes abrégées des stocks (Stock) pour les tableaux et les figures tout au long du document de recherche. Des indicateurs du taux d’exploitation (IndTE) sont disponibles pour la plupart des stocks. Les stocks correspondent à une ou plusieurs UC. La population de la rivière Babine est actuellement désignée comme une seule UC, mais évaluée et analysée comme cinq stocks distincts (marqués par un *).
 
 ```{r StockOverview, echo = FALSE, results = "asis"}
 
@@ -263,13 +261,16 @@ n.skeena <- sum(stock.info$Basin == "Skeena")
 
 table.in <- stock.info %>% #dplyr::filter(Basin == "Nass") %>%
    select(LHAZShort,Watershed,Stock,StkNmS,ERInd,NumCU) %>%
-   dplyr::rename(LHAZ = LHAZShort, Label = StkNmS,CU= NumCU)
+   dplyr::rename(CBZA = LHAZShort, Étiquette = StkNmS,UC= NumCU,IndTE = ERInd)
 
-table.in[table.in$Watershed == "Babine","CU"] <- "*"
+table.in[table.in$Watershed == "Babine","UC"] <- "*"
 
 
-table.in$LHAZ[duplicated(table.in$LHAZ)] <- ""
+table.in$CBZA[duplicated(table.in$CBZA)] <- ""
 table.in$Watershed[duplicated(table.in$Watershed)] <- ""
+   
+table.in <- table.in %>% dplyr::rename('Bassin versant' = Watershed)  
+   
    
 table.in %>%   
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
@@ -290,7 +291,7 @@ table.in %>%
 
 \clearpage
 
-(ref:DataOverviewSkeena) Summary of available spawner-recruit data by stock. Stocks are sorted based on relative size (pSpn), calculated as the the percent of cumulative spawner abundance since 2000 across both stock aggregates. Quality ratings for spawner (Spn), run (Run), and recruit (Rec) estimates on a 5-point scale from *very poor* (VP) to *very good* (VG) are based on TWG consensus using a set of qualitative criteria [@SkeenaNassSkDataRep].  nS is the number of spawner estimates. The number of brood years with spawner-recruit data varies based on data treatment for some stocks: Orig = original data set from @SkeenaNassSkDataRep, Filter  = number of brood years filtered due to R/S > 45, Infill = number of years for which a 1-yr gap in estimates of spawners and run size could be infilled, Use = number of brood years with spawner and recruit estimates after filtering and infilling.
+(ref:DataOverviewSkeena) Récapitulatif des données sur les géniteurs et les recrues (GR) accessibles par stock. Les stocks sont triés en fonction de leur taille relative, calculée en pourcentage de l’abondance cumulative des géniteurs (pGén) depuis 2000 dans les deux regroupements de stocks. Les notes de qualité pour les estimations des géniteurs (Gén), des remontes (Rem) et des recrues (Rec) sur une échelle de 5 points allant de « très mauvaise » (VP) à « très bonne » (VG) sont fondées sur le consensus du GTT déterminé à l’aide d’un ensemble de critères qualitatifs (Pestal et al. en cours d’examen). nG est le nombre de géniteurs estimé. Le nombre d’années d’éclosion avec des données sur les géniteurs-recrues varie selon le traitement des données pour certains stocks : Orig = ensemble de données original tiré de Pestal et al. (en cours d’examen), Filtre = nombre d’années d’éclosion filtrées en raison de R/S > 45, Remplissage = nombre d’années pour lesquelles un écart d’un an dans les estimations des géniteurs et de la remonte pourrait être comblé, Utilisation = nombre d’années d’éclosion avec les estimations des géniteurs et des recrues après le filtrage et le remplissage.
 
 ```{r DataOverviewSkeena, echo = FALSE, results = "asis"}
 
@@ -308,9 +309,9 @@ table.in <- stock.info %>% arrange(desc(PercEffSpn)) %>%
    #          dplyr::rename(nSR = NumBrYr) %>% select(Stock, NumFiltered,NumInfilled,nSR), by = "Stock") %>%
    select(LHAZShort,StkNmS,PercSpnLabel, NumSpn, SpnRating,RunRating,RecRating,
           Orig, NumFiltered,NumInfilled, Use) %>%
-   dplyr::rename(LHAZ = LHAZShort, Stock = StkNmS,pSpn =  PercSpnLabel, nS = NumSpn, 
-                 Spn = SpnRating,Run = RunRating,Rec =RecRating,Filter = NumFiltered,
-                 Infill =NumInfilled)
+   dplyr::rename(CBZA = LHAZShort, Stock = StkNmS,pGén =  PercSpnLabel, nG = NumSpn, 
+                 Gén = SpnRating,Rem = RunRating,Rec =RecRating,Filtre = NumFiltered,
+                 Remplissage =NumInfilled, Utilisation = Use)
 
 table.in[table.in == "Data Deficient"] <- "DD"
 table.in[table.in == "Good"] <- "G"
@@ -331,7 +332,7 @@ table.in %>%
 #   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
    csas_table(format = "latex", escape = FALSE, font_size = 10, align = c("l","l","r","r","l","l","l","r","r","r","r"),
                   caption = "(ref:DataOverviewSkeena)") %>%
-   add_header_above(c(" " = 4, "Quality" = 3, "SR Data" = 4),bold=TRUE) #%>% 
+   add_header_above(c(" " = 4, "Qualité" = 3, "Données sur les GR" = 4),bold=TRUE) #%>% 
     # kableExtra::row_spec(c(6,15,23), hline_after = TRUE) %>%
      #kableExtra::column_spec(3, width = "10em") %>%
         #kableExtra::row_spec(c(1:5,7:14,16:22), extra_latex_after = "\\cmidrule(l){2-8}") 
@@ -341,14 +342,11 @@ table.in %>%
 
 
 
-
-
-
 \clearpage
-(ref:SRDataOverview) Spawner-recruit data availability - By stock. Timeline of available data by brood year, with stocks grouped based on life history and adaptive zone. Dark blue circles are brood years with both spawner and recruit estimates. Light blue points are brood years with only spawner estimates. Light red diamonds mark brood years where a 1yr gap in spawner estimates was infilled. Dark red diamonds mark infilled brood years where a corresponding recruit estimate could be calculated. Red "x" mark filtered observations (R/S > 45) that could not be infilled. Numbers in brackets are the share of cumulative spawner abundance since 2000 across both stock aggregates.
+(ref:SRDataOverview) Disponibilité des données géniteurs-recrues – par stock. Chronologie des données accessibles par année d’éclosion, les stocks étant regroupés en fonction du cycle biologique et de la zone d’adaptation. Les cercles bleu foncé sont les années d’éclosion avec des estimations de géniteurs et de recrues. Les points bleu pâle sont les années d’éclosion avec seulement des estimations de géniteurs. Les diamants rouge pâle marquent les années d’éclosion où un écart d’un an dans les estimations des géniteurs a été rempli. Les diamants rouge foncé indiquent les années d’éclosion remplies où une estimation correspondante des recrues pourrait être calculée. Un « X » rouge indique les observations filtrées (R/S > 45) qu’il n’a pas été possible de remplir. Les nombres entre parenthèses représentent la part de l’abondance cumulative des géniteurs depuis 2000 dans les deux regroupements de stocks..
 
 ```{r SRDataOverview,  out.width= 415, fig.cap="(ref:SRDataOverview)"}
-include_graphics("data/DataOverview_ResDoc_Filter45Infill.png")
+include_graphics("data/1_FrenchFigs/Fig2_DataOverview_ResDoc_Filter45Infill_French.png")
 ```
 
 
