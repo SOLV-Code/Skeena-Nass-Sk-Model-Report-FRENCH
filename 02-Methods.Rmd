@@ -444,8 +444,6 @@ Le modèle avec PVT décrit ici utilise la version bayésienne récursive, confo
 
 *Résumé*
 
-The Basic Ricker and AR1 Ricker both fit a single spawner-recruit relationship which is assumed to describe inherent properties of the stock that remain constant over time. The AR1 model form has previously been used in escapement goal analyses for Alaskan and northern transboundary Sockeye stocks . The time-varying productivity version of the Ricker model assumes that there are real changes in productivity over time, and tries to extract a more-or-less smoothed pattern, identifying high and low productivity periods. The time-varying productivity model has been used for some northern transboundary salmon stocks  and in several Fraser Sockeye applications .
-
 Les modèles de Ricker de base et AR1 sont tous deux ajustés à une relation géniteurs-recrues qui est censée décrire les propriétés inhérentes du stock qui demeurent constantes au fil du temps. La forme du modèle AR1 a déjà été utilisée dans les analyses des objectifs d’échappée pour les stocks de saumon rouge de l’Alaska et transfrontaliers du Nord [p. ex.  @MillerPestalTakuSk; @Connorsetal2022]. La version avec productivité variable dans le temps du modèle de Ricker suppose que la productivité change réellement au fil du temps et tente d’extraire un profil plus ou moins lissé, en déterminant les périodes de productivité élevée et faible. Le modèle avec PVT a été utilisé pour certains stocks de saumon transfrontaliers du Nord [p. ex. @PestalJohnstonTakuCo] et dans plusieurs applications du saumon rouge du Fraser [p. ex. @FrSkWSPBM;@Huangetal2021FraserSkRPA; @PetermanDorner2011Fraser].
 
 ### Estimation bayésienne des paramètres à l’aide de la méthode de Monte-Carlo par chaîne de Markov (MCCM) 
@@ -459,18 +457,19 @@ Le moteur d’échantillonnage commence par quelques valeurs aléatoires échant
 Les mises en œuvre de la méthode MCCM nécessitent une mise à l’essai minutieuse des hypothèses sur les valeurs a priori et la vérification du comportement d’échantillonnage afin d’évaluer la qualité des estimations qui en découlent. Nous avons compilé une liste de contrôle des diagnostics MCCM et l’avons utilisée pour sélectionner une liste restreinte de modèles géniteurs-recrues ajustés à chaque stock (section \@ref(ModelSelection)).
 
 
-### Priors {#Priors}
+### Valeurs a priori {#Priors}
 
-Bayesian fits for all three model forms (Basic Ricker, AR1 Ricker, and time-varying productivity Ricker require prior distributions for the productivity parameter $ln(\alpha)$  and the capacity parameter $S_{max}$.
+Les ajustements bayésiens pour les trois formes de modèle de Ricker (de base, AR1 et avec PVT) exigent des distributions a priori pour le paramètre de productivité $ln(\alpha)$ et le paramètre de capacité $S_{max}$.
 
-We used uninformative productivity priors for all single-stock SR model fits, implemented as a normal distribution with a mean of 0 and a very wide spread:
+Nous avons utilisé des valeurs a priori de la productivité non informatives pour tous les modèles géniteurs-recrues à un seul stock, mises en œuvre comme une distribution normale avec une moyenne de 0 et un très large écart :
+
 
 \begin{equation} 
   ln.alpha \sim normal(0,100)
   (\#eq:ProductivityPrior)
 \end{equation} 
 
-For the capacity prior, we tested uniform and lognormal prior distributions for $S_{max}$, with either wide (Scalar = 3) or capped (Scalar = 1.5) upper bounds:
+Pour les valeurs a priori de la capacité, nous avons testé des distributions a priori uniformes et log-normales pour $S_{max}$, avec des bornes supérieures soit larges (scalaire = 3), soit plafonnées (scalaire = 1,5) :
 
 \begin{equation} 
   Smax \sim uniform(0,Spn_{ref}*Scalar)
@@ -482,29 +481,28 @@ For the capacity prior, we tested uniform and lognormal prior distributions for 
   (\#eq:LognormalCapacityPrior)
 \end{equation} 
 
-Informative capacity priors based on the photosynthetic rate observed in rearing lakes can improve the precision of capacity estimates (i.e., narrower posterior distribution of Smax)  for stocks where they are appropriate given the life history, lake properties, number of stocks rearing in a lake, and plausibility of the PR-based Smax estimate [e.g., @Bodtkeretal2007; @Atlasetal2021HabitatDyn; @Atlasetal2020Limno]. We used lake-based capacity estimates as the initial stock-specific values for $Spn_{ref}$ where available and applicable, and used the largest observed spawner abundance as the reference value for the remaining stocks. 
+Les valeurs a priori de la capacité informatives fondées sur le rendement photosynthétique observé dans les lacs de croissance peuvent améliorer la précision des estimations de la capacité (distribution a posteriori plus étroite de $S_{max}$) pour les stocks lorsqu’elles sont appropriées compte tenu du cycle biologique, des propriétés du lac, du nombre de stocks qui grandissent dans un lac, ainsi que la plausibilité de l’estimation de Smax fondée sur le rendement photosynthétique [p. ex. @Bodtkeretal2007; @Atlasetal2021HabitatDyn; @Atlasetal2020Limno]. Nous avons utilisé les estimations de la capacité des lacs comme valeurs initiales propres au stock, le cas échéant, et la plus grande abondance observée des géniteurs comme valeur de référence pour les stocks restants.
 
-\clearpage
-@SkeenaNassSkDataRep compiled published and unpublished PR-based Smax estimates for 26 Sockeye rearing lakes in the Skeena and Nass basins (their Appendix B.4), and we used the estimates for 20 of the lakes to specify informative $Spn_{ref}$ values for 15 stocks (Table \@ref(tab:PRPriorsTable)), based on the following considerations:
+@SkeenaNassSkDataRep ont compilé les estimations, publiées et inédites, de $S_{max}$ fondé sur le rendement photosynthétique pour 26 lacs de croissance du saumon rouge dans les bassins versants des rivières Skeena et Nass (leur annexe B.4) et nous avons utilisé ces estimations pour 20 des lacs afin de spécifier des valeurs informatives de $Spn_{ref}$ pour 15 stocks (tableau Table \@ref(tab:PRPriorsTable)), selon les considérations suivantes.
 
-* Informative capacity priors using the sum of PR-based Smax estimates for major rearing lakes are not applicable for aggregate-level model fits, given the mixture of life histories and lake properties across the component stocks.
-* PR-based capacity priors are not applicable to river type or sea type Sockeye, which do not rear in a lake.
-* We did not use PR-based capacity priors for Babine stocks, due to (1) the size of the lake and (2) the challenge of allocating lake capacity estimates among five stocks, including the two channel-enhanced stocks (Pinkut, Fulton).
-* For stocks with multiple rearing lakes, we generally summed the available PR-based Smax estimates for the main spawning lakes (Bear / Azuklotz, Fred Wright / Kwinageese, Swan / Stephens / Club, Sustut / Johansen). For Mcdonell, we used only the Mcdonell lake capacity estimate, but excluded Aldrich and Dennis, because all spawners observed surveys rear in Mcdonell Lake. The Slamgeesh stock includes Slamgeesh and Damshilgwit lakes, but PR-based estimates are only available for Slamgeesh. 
-* For some stocks with PR-based capacity priors there is insufficient data for fitting single-stock SR models (Bowser).
-* Capacity priors for some stocks were adjusted based on a review of posterior distributions from preliminary model fits.
+* Les valeurs a priori de la capacité informatives utilisant la somme des estimations de $S_{max}$ fondées sur le rendement photosynthétique pour les grands lacs de croissance ne s’appliquent pas aux ajustements du modèle au niveau du regroupement, compte tenu de la combinaison des cycles biologiques et des propriétés des lacs dans les stocks qui le composent.
+* Les valeurs a priori de la capacité fondées sur le rendement photosynthétique ne s’appliquent pas au saumon rouge de type fluvial ou océanique, qui ne grandit pas dans un lac.
+* Nous n’avons pas utilisé les valeurs a priori de la capacité fondées sur le rendement photosynthétique pour les stocks du lac Babine, en raison (1) de la taille du lac et (2) de la difficulté de répartir les estimations de la capacité du lac entre cinq stocks, y compris les deux stocks mis en valeur au moyen de frayères (ruisseau Pinkut, rivière Fulton).
+* Pour les stocks utilisant plusieurs lacs de croissance, nous avons généralement fait la somme des estimations de $S_{max}$ fondées sur le rendement photosynthétique disponibles pour les principaux lacs de fraie (Bear/Azuklotz, Fred Wright/Kwinageese, Swan/Stephens/Club, Sustut/Johansen). Pour le lac Mcdonell, nous n’avons utilisé que l’estimation de la capacité du lac Mcdonell, mais nous avons exclu les lacs Aldrich et Dennis, parce que tous les géniteurs observés dans les relevés grandissent dans le lac Mcdonell. Le stock du lac Slamgeesh comprend les lacs Slamgeesh et Damshilgwit, mais les estimations fondées sur le rendement photosynthétique ne sont disponibles que pour le lac Slamgeesh.
+* Pour certains stocks dont les valeurs a priori de la capacité sont fondées sur le rendement photosynthétique, il n’y a pas suffisamment de données pour ajuster les modèles géniteurs-recrues à un seul stock (rivière Bowser).
+* Les valeurs a priori de la capacité de certains stocks ont été ajustées d’après un examen des distributions a posteriori à partir des ajustements préliminaires du modèle.
 
-Overall, we tested four alternative capacity priors (Table \@ref(tab:AltCapPriorsTable)) and used the *capped uniform* prior as the base case for the model fits reported in this paper. 
+Dans l’ensemble, nous avons testé quatre autres valeurs a priori de la capacité (tableau \@ref(tab:AltCapPriorsTable)) et nous avons utilisé la valeur a priori uniforme plafonnée comme scénario de base pour les ajustements du modèle indiqués dans le présent document.
 
-Where PR-based capacity estimates were available, these were used to bound the SR model fit, but in a bounded uniform prior the lake-based estimate carries less weight than in a lognormal prior, unless the lognormal prior is used with a large CV, in which case it behaves almost like a uniform prior. We chose to downweight the lake-based information this way because (1) most of the available PR-based estimates are from 20 or more years ago, and (2) a consistent stock-by-stock review of limiting factors has not been completed for Skeena and Nass Sockeye.
+Lorsque des estimations de la capacité fondées sur le rendement photosynthétique étaient disponibles, nous les avons utilisées pour limiter l’ajustement du modèle géniteurs-recrues, mais dans une valeur a priori uniforme bornée, l’estimation basée sur le lac est moins pondérée que dans une valeur a priori log-normale, à moins que la valeur a priori log-normale soit utilisée avec un coefficient de variation important, auquel cas elle se comporte presque comme une valeur a priori uniforme. Nous avons choisi de réduire ainsi l’information fondée sur les lacs parce que (1) la plupart des estimations disponibles fondées sur le rendement photosynthétique remontent à 20 ans ou plus et (2) un examen uniforme stock par stock des facteurs limitatifs n’a pas été effectué pour les saumons rouges des rivières Skeena et Nass.
 
-The potential issues with using PR-based capacity estimates are illustrated by Kitwanga Sockeye: The PR-based estimate of  $S_{max}$ from 2003 is 36,984 (Table \@ref(tab:PRPriorsTable)), but median observed spawner abundance since 1960 is 1,258. The largest observed spawner abundance was 20,804 in 2010, and the second largest was 13,699 in 2014. All other observations have been below 6,000 spawners. There are several potential explanations for this discrepancy: Either the spawner-recruit data is biased low, or the capacity estimate is biased high, or the stock has been severely depleted since before 1960, or Kitwanga production is not lake-limited. In addition, lake conditions have likely changed in the 20 years since the estimate was generated. In an escapement goal review focusing on one or two stocks, these alternative hypotheses could be explored and weighed to determine whether the PR-based capacity estimate is valid. However, this was not feasible here, given the number of stocks covered in the current analysis.  
-
-
+Les problèmes potentiels liés à l’utilisation d’estimations de la capacité fondées sur le rendement photosynthétique sont illustrés par le saumon rouge de la rivière Kitwanga : l’estimation de $S_{max}$  fondée sur le rendement photosynthétique de 2003 est de 36 984 géniteurs (tableau \@ref(tab:PRPriorsTable)), mais l’abondance médiane observée des géniteurs depuis 1960 est de 1 258. La plus grande abondance observée des géniteurs était de 20 804 en 2010, et la deuxième en importance était de 13 699 en 2014. Toutes les autres observations étaient inférieures à 6 000 géniteurs. Cet écart peut s’expliquer de plusieurs façons : soit les données sur les géniteurs-recrues sont biaisées à la baisse, soit l’estimation de la capacité est biaisée à la hausse, soit le stock a été gravement appauvri avant 1960, soit la production de la rivière Kitwanga n’est pas limitée par le lac. De plus, les conditions du lac ont probablement changé au cours des 20 années qui ont suivi la production de l’estimation. Dans un examen des objectifs d’échappée axé sur un ou deux stocks, on pourrait explorer et évaluer ces hypothèses de rechange pour déterminer si l’estimation de la capacité fondée sur le rendement photosynthétique est valide. Cependant, cela n’était pas possible ici, compte tenu du nombre de stocks visés par l’analyse actuelle.
 
 \clearpage
 
-(ref:PRPriorsTable) PR-based Smax estimates used to specify informative capacity priors. Table lists the year of the last limnological survey (*LastLim*) used to derive the PR-based Smax (*Est*). 95% confidence intervals (*Lower*, *Upper*) were based on assumed 20% coefficient of variation and a normal distribution (Cox-Rogers and Hume, pers. comm., DFO, 2012). Estimates for Skeena lakes are from Cox-Rogers and Hume (pers. comm., DFO, 2012, from datasets maintained by Cultus Lake Salmon Research Laboratory), which include lake-specific adjustments for non-Sockeye competitors (e.g., stickleback) and juvenile competition. Estimates for Nass lakes are from @Atlasetal2020Limno,  which do not include adjustments. However, adjustments would likely be small for the Nass nursery lakes. Updates or sensitivity tests of the PR-based Smax capacity estimates developed in the 1990s and early 2000s (e.g., the 20% CV assumption) were outside the scope of the current project.
+(ref:PRPriorsTable) Estimations de $S_{max}$ fondées sur le rendement photosynthétique utilisées pour spécifier les valeurs a priori de la capacité informatives. Le tableau indique l’année du dernier relevé limnologique (*DernierLim*) utilisé pour calculer $S_{max}$ fondé sur le rendement photosynthétique (*Est*). Les intervalles de confiance à 95 % (limites *inférieure* et *supérieure*) reposaient sur un coefficient de variation présumé de 20 % et une distribution normale (Cox-Rogers et Hume comm. pers., MPO 2012). Les estimations pour les lacs de la rivière Skeena proviennent de Cox-Rogers et de Hume (comm. pers., MPO 2012, à partir des ensembles de données tenus par le Cultus Lake Salmon Research Laboratory), y compris les ajustements propres au lac pour les concurrents autres que le saumon rouge (p. ex. les épinoches) et la concurrence des juvéniles. Les estimations pour les lacs de la rivière Nass proviennent @Atlasetal2020Limno, qui ne comprennent pas les ajustements. Cependant, les ajustements seraient probablement minimes pour les lacs de la rivière Nass. Les mises à jour ou les tests de sensibilité des estimations de la capacité $S_{max}$ fondées sur le rendement photosynthétique, élaborées dans les années 1990 et au début des années 2000 (p. ex., l’hypothèse d’un coefficient de variation de 20 %), sortaient de la portée du projet actuel.
+
+
 
 ```{r PRPriorsTable, echo = FALSE, results = "asis"}
 
@@ -514,7 +512,7 @@ table.in <- read.csv("data/Reference Tables/PRbasedPrior_Info.csv",stringsAsFact
    mutate(Smax_Spn_Lower = prettyNum(round(Smax_Spn_Lower),big.mark = ",")) %>%
    mutate(Smax_Spn_Upper = prettyNum(round(Smax_Spn_Upper),big.mark = ",")) %>%
    #mutate(Cap = prettyNum(round(Cap),big.mark = ",")) %>%
-   dplyr::rename(Est = Smax_Spn,Lower = Smax_Spn_Lower,Upper = Smax_Spn_Upper) #%>% 
+   dplyr::rename(Est = Smax_Spn,Inférieure = Smax_Spn_Lower,Supérieure = Smax_Spn_Upper, DernierLim = LastLim, Lac = Lake ) #%>% 
    #select(-EstCV)
    
 
@@ -522,6 +520,8 @@ table.in$Basin[duplicated(table.in$Basin)] <- ""
 table.in$Stock[duplicated(table.in$Stock)] <- ""
 table.in[is.na(table.in)] <- ""
 table.in[table.in == "NA"] <- ""
+   
+table.in <- table.in %>% dplyr::rename('Bassin versant' = Basin)   
    
 table.in %>% 
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
@@ -539,12 +539,12 @@ add_header_above(c(" " = 4, "PR-based Smax" = 3),bold=TRUE) %>%
 
 \clearpage
 
-(ref:AltCapPriorsTable) Alternative priors for the capacity parameter Smax. All four versions were tested with the Basic Ricker model fit, and the two versions of the uniform prior were tested with the AR1 and TVP Ricker model fits. The capped uniform prior (*CU*) was selected as the default for results presented in this paper.
+(ref:AltCapPriorsTable) Autres valeurs a priori pour le paramètre de capacité $S_{max}$. Les quatre versions ont été mises à l’essai avec l’ajustement du modèle de Ricker de base et les deux versions de la valeur a priori uniforme ont été testées avec l’ajustement du modèle AR1 et du modèle de Ricker avec PVT. La valeur a priori uniforme plafonnée (*CU*) a été retenue comme résultat par défaut dans le présent document.
 
 ```{r AltCapPriorsTable, echo = FALSE, results = "asis"}
 
 
-table.in <- read_csv("data/Reference Tables/AltCapPriors.csv")
+table.in <- read.csv("data/Reference Tables/AltCapPriors.csv", fileEncoding = "latin1")
    
 table.in %>% 
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
