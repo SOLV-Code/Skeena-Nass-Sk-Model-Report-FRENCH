@@ -7,7 +7,7 @@
 - table formatting (blank lines, number formatting!!!!!)
 - SOme citations are as "et al." in the French callout, but many others are like this "Cox-Rogers et ses collaborateurs (2010)" -> How to fix this in csasdown/bibtex?
 - In some equations (and all/most labels/tables/text) Spn is translated as "Gèn" or "G", but in Sec 2.2.1 with the Ricker equations it and Sec 2.2.3 with the prior equations
-uses "S" in text and equations. I carried over the French callout text as-is.
+uses "S" in text and equations. Section 2.2.5 uses Srmd instead of Smsy or Grmd. I carried over the French callout text as-is in each section.
 - Model labels: BR, AR1,TVP -> need to make sure consistently handled in text, figs,tables
 
 
