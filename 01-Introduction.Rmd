@@ -9,7 +9,8 @@
 - In some equations (and all/most labels/tables/text) Spn is translated as "Gèn" or "G", but in Sec 2.2.1 with the Ricker equations it and Sec 2.2.3 with the prior equations
 uses "S" in text and equations. Section 2.2.5 uses Srmd instead of Smsy or Grmd. I carried over the French callout text as-is in each section.
 - Model labels: BR, AR1,TVP -> need to make sure consistently handled in text, figs,tables
-
+- Sec 2.3 title "model selection and productivity scenarios" translated as "scenarios of model selection and scenarios of productivity"???? -> used what they provided
+- **TABLE 8** - special symbols crashing the compile 
 
 
 ## REMERCIEMENTS {-}
