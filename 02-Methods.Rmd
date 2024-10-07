@@ -708,28 +708,29 @@ table.in %>%
 
 
 \clearpage
-## BIOLOGICAL BENCHMARKS AND STATUS BENCHMARKS {#BMMethods}
+## POINTS DE RÉFÉRENCE BIOLOGIQUES ET POINTS DE RÉFÉRENCE DE L’ÉTAT {#BMMethods}
 
-We calculated four standard biological benchmarks and  two related WSP status benchmarks (Table \@ref(tab:BMDefs)). Preliminary benchmark estimates were reviewed through the TWG process to identify potential errors and anomalies. During the first pass through the TWG review process, Sgen values were flagged as seeming too low for several of the stocks. This triggered a detailed review and testing of all the benchmark calculation steps.
+Nous avons calculé quatre points de référence biologiques standard et deux points de référence de l’état connexes de la PSS (tableau \@ref(tab:BMDefs)). Les estimations provisoires des points de référence ont été examinées dans le cadre du processus du GTT afin de repérer les erreurs et les anomalies potentielles. Au cours de la première étape du processus d’examen du GTT, les valeurs de Sgen ont été signalées comme étant trop faibles pour plusieurs des stocks. Cela a déclenché un examen détaillé et la mise à l’essai de toutes les étapes du calcul des points de référence.
 
-Smax and Seq can be calculated directly from the SR parameters. Smsy and Sgen require a more complex solution, and we tested four alternative implementations for each. Based on the tests summarized in Appendix \@ref(BMCalcTest), we decided to use (1) the  @Scheuerell2016 method for Smsy, because it is the only exact solution, and (2) the @Connorsetal2022 version of the Sgen optimizer, because it was the only optimization approach that generated solutions for all tested combinations of parameters (Table \@ref(tab:BMCalcs)).  Appendix \@ref(BMFuns) shows the corresponding R code.
+Smax et Seq peuvent être calculés directement à partir des paramètres géniteurs-recrues. Srmd et Sgen ont besoin d’une solution plus complexe, et nous avons testé quatre solutions de rechange pour chacun. D’après les tests résumés à l’annexe E.3, nous avons décidé d’utiliser (1) la méthode de @Scheuerell2016 pour Srmd, parce que c’est la seule solution exacte, et (2) la version de @Connorsetal2022 de l’optimisateur de Sgen, car c’est la seule approche d’optimisation qui a généré des solutions pour toutes les combinaisons de paramètres testées (tableau \@ref(tab:BMCalcs). L’annexe \@ref(BMFuns) indique le code R correspondant.
 
-Some previous escapement goal analyses have used a log-normal bias correction on the productivity parameter (Table \@ref(tab:BMCalcs)), but implementation has varied between agencies, regions, and projects. WSP status assessments  used benchmarks without the bias correction [@FrSkWSPStatus2012; @FrSkWSPStatus2017; @SBCCkWSPStatus2012SAR;@IFCohoWSPStatus2013SAR]. Alaskan escapement goal analyses typically included the bias correction  [@EggersBernard2011Alsek; @FleishmanEvenson2010; @McPhersonetal2010; @Fairetal2011]. Escapement goal analyses for northern transboundary salmon stocks used to include both versions a few years ago [e.g., @PestalJohnstonTakuCo] but have recently shifted to only reporting the bias-corrected version [@Connorsetal2022; @MillerPestalTakuSk]. 
+Certaines analyses antérieures des objectifs d’échappée ont utilisé une correction du biais log-normal sur le paramètre de la productivité (tableau \@ref(tab:BMCalcs)), mais la mise en œuvre a varié entre les organismes, les régions et les projets. Les évaluations de l’état selon la PSS ont utilisé des points de référence sans correction du biais [@FrSkWSPStatus2012; @FrSkWSPStatus2017; @SBCCkWSPStatus2012SAR;@IFCohoWSPStatus2013SAR]. Les analyses des objectifs d’échappée de l’Alaska incluaient habituellement la correction du biais [@EggersBernard2011Alsek; @FleishmanEvenson2010; @McPhersonetal2010; @Fairetal2011]. Les analyses des objectifs d’échappée pour les stocks de saumon transfrontaliers du Nord incluaient les deux versions il y a quelques années [p. ex. @PestalJohnstonTakuCo], mais elles ne déclarent récemment que la version avec correction du biais [@Connorsetal2022; @MillerPestalTakuSk].
 
-This is not unique to Pacific salmon. In their review of stock-recruit modelling,  @Subbeyetal2014SRReview note that both versions have been widely used and that the choice for a particular applications should consider how the estimates are used afterwards. The general guidelines are:
+Cela n’est pas propre au saumon du Pacifique. Dans leur examen de la modélisation stock-recrutement, @Subbeyetal2014SRReview notent que les deux versions ont été largement utilisées et que le choix pour une application particulière devrait tenir compte de la façon dont les estimations seront utilisées par la suite. Les lignes directrices générales sont les suivantes :
 
-* Use values *with* bias correction when the management objective is defined in terms of mean values  (e.g., mean Smsy).
-* Use values *without* bias correction when the management objective is defined in terms of median values (e.g., median Smsy) or when using the parameter estimates as inputs to other models (e.g., forward simulation).
+* utiliser des valeurs *avec* correction du biais lorsque l’objectif de gestion est défini en termes de valeurs moyennes (p. ex. Srmd moyen);
+* utiliser des valeurs *sans* correction du biais lorsque l’objectif de gestion est défini en termes de valeurs médianes (p. ex. Srmd médian) ou lorsque les estimations des paramètres sont utilisées comme données d’entrée dans d’autres modèles (p. ex. simulation prospective).
+
+Les essais systématiques des données sur les géniteurs-recrues pour les saumons rouges des rivières Skeena et Nass (annexe \@ref(BiasCorrtest)) ont démontré que l’effet de la correction du biais est généralement faible pour les stocks productifs avec de bons ajustements du modèle géniteurs-recrues (c.-à-d. que sigma est petit par rapport à ln.alpha), mais peut être important pour les stocks dont la productivité est faible et dont les ajustements du modèle géniteurs-recrues sont mauvais (c.-à-d. que sigma est plus grand par rapport à ln.alpha). La correction du biais augmente généralement les estimations de Srmd et abaisse celles de Sgen.
+
+Compte tenu de ces effets observés et des différences d’approche ces dernières années, nous avons choisi de déclarer les médianes et les centiles de l’estimation du paramètre a posteriori sans correction du biais log-normal dans tout ce document, mais avons inclus la version avec correction du biais à l’annexe \@ref(BiasCorrectedBM).
 
 
-Systematic testing of Skeena and Nass Sockeye SR data (Appendix \@ref(BiasCorrtest)) demonstrated that the effect of bias correction is generally small for productive stocks with good SR model fits (i.e., sigma is small relative to ln.alpha), but can be substantial for stocks with low productivity and poor SR model fits (i.e., sigma is larger relative to ln.alpha). The bias correction generally increases Smsy estimates and decreases Sgen estimates.
-
-Given these observed effects, and the differences in approach over recent years, we chose to report medians and percentiles of posterior parameter estimate without log-normal bias correction throughout this paper, but included the bias-corrected version in Appendix \@ref(BiasCorrectedBM). 
  
 
 
 \clearpage
-(ref:BMDefs) Definition of standard biological benchmarks and Wild Salmon Policy status benchmarks for the relative abundance metric. Note that we define benchmarks in terms of median recruits and median yield, and therefore present benchmark estimates without log-normal bias correction throughout most of the paper. Bias-corrected mean estimates of biological benchmarks are included as Appendix \@ref(BiasCorrectedBM).
+(ref:BMDefs) Définition des points de référence biologiques standard et des points de référence de l’état de la PSS pour le paramètre de l’abondance relative. Il convient de noter que nous définissons les points de référence en termes de médiane des recrues et de médiane du rendement et que, par conséquent, nous présentons les estimations des points de référence sans correction du biais log-normal dans la majorité du document. Les estimations moyennes avec correction du biais des points de référence biologiques sont incluses à \@ref(BiasCorrectedBM).
 
 
 ```{r BMDefs, echo = FALSE, results = "asis"}
@@ -756,7 +757,7 @@ table.in  %>%
 ```
 
 
-(ref:BMCalcs) Calculation approach for biological benchmarks.
+(ref:BMCalcs) Méthode de calcul des points de référence biologiques.
 
 ```{r BMCalcs, echo = FALSE, results = "asis"}
 
@@ -780,7 +781,7 @@ table.in  %>%
 
 
 
-(ref:BiasCorrCalcs) Log-normal bias correction for the productivity parameter by model form.
+(ref:BiasCorrCalcs) Correction du biais log-normal pour le paramètre de productivité par forme du modèle.
 
 ```{r BiasCorrCalcs, echo = FALSE, results = "asis"}
 
@@ -810,28 +811,27 @@ table.in  %>%
 
 \clearpage
 
-## ALTERNATIVE APPROACHES FOR DEVELOPING MANAGEMENT REFERENCE POINTS FOR STOCK AGGREGATES {#AltApproachesComp}
+## APPROCHES DE RECHANGE POUR L’ÉLABORATION DE POINTS DE RÉFÉRENCE DE GESTION POUR LES REGROUPEMENTS DE STOCKS {#AltApproachesComp}
 
 ### Overview of Alternative Approaches
 
-This paper and the underlying R code were structured to clearly separate the steps of (1) biological analyses to fit SR models and generate alternative productivity scenarios, and (2) using the SR parameter sets to develop management reference points for the Skeena and Nass Sockeye stock aggregates. These steps are fundamentally different in terms of the information and process they require. Keeping the analyses modular has allowed us to set up a framework for future updates and collaborative processes. 
+Le présent document et le code R sous-jacent ont été structurés de manière à séparer clairement les étapes (1) des analyses biologiques pour ajuster les modèles géniteurs-recrues et générer d’autres scénarios de productivité et (2) de l’utilisation des ensembles de paramètres géniteurs-recrues pour élaborer des points de référence de gestion pour les regroupements des stocks de saumon rouge des rivières Skeena et Nass. Ces étapes sont fondamentalement différentes en ce qui concerne l’information et le processus dont elles ont besoin. Le fait de garder les analyses modulaires nous a permis d’établir un cadre pour les mises à jour futures et les processus collaboratifs.
 
-We provide worked examples of eight alternative aggregation approaches for the second step, and a rationale for why these examples are included in this paper in Section \@ref(AnalysisOverview). These examples use the specific SR fits and productivity scenarios described above, but can be quickly regenerated with alternative parameter sets (e.g., if participants in a planning workshop suggest a different productivity scenario, or contribute alternative SR parameter sets based on alternative analyses).
+Nous donnons des exemples pratiques de huit autres approches de regroupement pour la deuxième étape, ainsi qu’une justification des raisons pour lesquelles ces exemples sont inclus dans le présent document à la section \@ref(AnalysisOverview). Ces exemples utilisent les ajustements géniteurs-recrues et les scénarios de productivité précis décrits ci-dessus, mais peuvent être rapidement régénérés avec d’autres ensembles de paramètres (p. ex. si les participants à un atelier de planification proposent un scénario de productivité différent ou fournissent d’autres ensembles de paramètres géniteurs-recrues fondés sur d’autres analyses).
 
-Table \@ref(tab:TableAltApproaches) summarizes the alternative approaches and defines the short labels we use throughout the rest of the paper. The approaches are presented in order of increasing complexity, where complexity can be due to analytical requirements, process requirements, or both. The simplest approaches directly use estimates of biological benchmarks like Smsy or Umsy (Agg Smsy, Sum Smsy, Umsy Comp). Next are approaches that can be calculated directly from  SR parameters using assumptions about long-term equilibrium (Equ. Prof, Agg TradeOff). Aggregation approaches that explicitly consider stock status (Status, Log Reg), are computationally simple but require a collaborative process to agree on status criteria. Forward simulation (Sim) is the most complex approach, because in addition to the SR fitting, many iterations of scoping, prototyping, and review need to occur through a collaborative process. To provide worked examples for each approach, we assumed quantitative objectives, and used examples consistent with previous work (Table \@ref(tab:TableAltApprObj)).   
+Le tableau Table \@ref(tab:TableAltApproaches)récapitule les autres approches et définit les étiquettes abrégées que nous utilisons dans le reste du document. Les approches sont présentées par ordre croissant de complexité, qui peut être attribuable à des exigences analytiques, à des exigences de processus ou aux deux. Les approches les plus simples utilisent directement les estimations de points de référence biologiques comme Srmd ou Urmd (Regr. Srmd, Somme Srmd, Comp. Urmd). Viennent ensuite les approches qui peuvent être calculées directement à partir des paramètres géniteurs-recrues en utilisant des hypothèses d’équilibre à long terme (Prof. équ., Compr. regr.). Les approches de regroupement qui tiennent explicitement compte de l’état du stock (État, Rég. log.) sont simples sur le plan informatique, mais nécessitent un processus collaboratif pour s’entendre sur les critères d’état. La simulation prospective (Sim) est l’approche la plus complexe, parce qu’en plus de l’ajustement géniteurs-recrues, de nombreuses itérations de détermination de la portée, de prototypage et d’examen doivent être menées dans le cadre d’un processus collaboratif. Pour donner des exemples pratiques pour chaque approche, nous avons supposé des objectifs quantitatifs et utilisé des exemples conformes à des travaux antérieurs (tableau \@ref(tab:TableAltApprObj)).
 
-Six of the eight alternative approaches have been previously used for Skeena or Nass Sockeye analyses (Table \@ref(tab:PastWorkTable)):
 
-* *Agg Smsy*: The current escapement goals for Skeena and Nass Sockeye are based on aggregate-level Smsy estimates developed in 1958 for the Skeena, prior to the implementation of Babine spawning channels, and in the 1990s for the Nass. 
-* *Sum Smsy*: In 2016, the Skeena First Nations Technical Committee recommended increasing the limit reference point for aggregate Skeena Sockeye from 400,000 to 600,000 based on the sum of stock-level Smsy estimates and the observed stock composition [@NCIFMP2019]. 
-* *Umsy Comp*: @Waltersetal2008ISRP included a comparison of stock-specific estimates of Fmax, the maximum exploitation rates (ER) that can be applied sustainably
-without causing extinction (their Figure 14). The worked example we include here compares stock-specific estimates of an ER benchmark. 
-* *Equ. Prof*: These have not been previously published for Skeena or Nass Sockeye, but are a standard output for the escapement goal reviews completed for northern transboundary stocks [e.g., @MillerPestalTakuSk].
-* *Agg Tradeoff*: This was a key result of @Waltersetal2008ISRP, and triggered changes to the Canadian domestic harvest management approach. 
-* *Status*: @KormanEnglish2013 and  @PacificSalmonExplorer included synoptic, or “first-cut”, status assessments taking a broad-brush and consistent approach based on a single status metric. While this approach does not cover all the considerations captured in the integrated multi-criteria status assessments completed under WSP [@FrSkWSPStatus2012; @FrSkWSPStatus2017; @SBCCkWSPStatus2012SAR; @IFCohoWSPStatus2013SAR], it uses the same benchmarks for the relative abundance metric (Sgen, 80% Smsy), and gives comparable results for those CUs where integrated status assessments were driven by that metric.
-* *Log Reg*:  This is one of two candidate approaches described for developing limit reference points (LRP) for stock management units (SMU) under the modernized *Fisheries Act* (2019). @LRPGuidelinesSAR summarizes three case studies and concludes that *"Logistic regression LRPs’ have several limitations and should only be used when (i) supplemental aggregate abundance LRPs are required and (ii) all assumptions of the logistic regression model can be met"*. We included a worked example for this method to check whether the challenges identified by @LRPGuidelinesSAR are encountered for Skeena and Nass Sockeye.
-* *Sim*: @CoxRogersetal2010 tested the effect of different harvest rates (i.e., *open loop*) over 15 years (*short simulation*) and 100 years (*long simulation*).  @Hawkshaw2018Diss used optimization techniques (*long simulation*) to compare alternative harvest strategy types (*open* and *closed* loop). The harvest rates in @CoxRogersetal2010 were applied equally to all stocks.  @Hawkshaw2018Diss explored alternative harvest control rules and fishing plans for multi-species mixed-stock fishery (i.e., 5 Pacific salmon species and steelhead, each modeled as a single stock).
+Six des huit approches de rechange ont déjà été utilisées pour des analyses du saumon rouge de la rivière Skeena ou de la rivière Nass (tableau \@ref(tab:PastWorkTable)):
 
+* *Regr. Srmd* : Les objectifs actuels d’échappée pour les saumons rouges des rivières Skeena et Nass sont fondés sur les estimations de Srmd pour le regroupement établies en 1958 pour la rivière Skeena, avant la mise en place des frayères artificielles de la rivière Babine, et dans les années 1990 pour la rivière Nass. 
+* *Somme Srmd* : En 2016, le Skeena First Nations Technical Committee a recommandé de relever de 400 000 à 600 000 géniteurs le point de référence limite pour le regroupement de saumon rouge de la rivière Skeena en fonction de la somme des estimations de Srmd au niveau du stock et de la composition observée des stocks [@NCIFMP2019].
+* *Comp. Urmd*: @Waltersetal2008ISRP ont inclus une comparaison des estimations par stock de Fmax, les taux d’exploitation maximaux qui peuvent être appliqués de façon durable sans causer de disparition (leur figure 14). L’exemple pratique que nous donnons ici compare les estimations par stock d’un point de référence des taux d’exploitation.
+* *Prof. équ.* : Ces données n’ont pas été publiées auparavant pour le saumon rouge des rivières Skeena ou Nass, mais elles constituent un extrant standard pour les examens des objectifs d’échappée effectués pour les stocks transfrontaliers du Nord [p. ex. @MillerPestalTakuSk].
+* *Agg Tradeoff*: C’était un résultat clé dans @Waltersetal2008ISRP, qui a amené des changements à l’approche canadienne de gestion des prises intérieures.
+* *État* : @KormanEnglish2013 et la @PacificSalmonExplorer (2021) ont inclus des évaluations synoptiques, ou « grossières », de l’état selon une approche générale et uniforme fondée sur un seul paramètre d’état. Bien que cette approche ne couvre pas toutes les considérations prises en compte dans les évaluations d’état intégrées et à plusieurs critères réalisées dans le cadre de la PSS [@FrSkWSPStatus2012; @FrSkWSPStatus2017; @SBCCkWSPStatus2012SAR; @IFCohoWSPStatus2013SAR], elle utilise les mêmes points de référence pour le paramètre d’abondance relative (Sgen, 80 % de Srmd) et donne des résultats comparables pour les UC pour lesquelles les évaluations intégrées de l’état étaient effectuées en fonction de ce paramètre.
+* *Rég. log.* : Il s’agit de l’une des deux approches possibles décrites pour l’élaboration des points de référence limites (PRL) pour les zones de gestion des stocks en vertu de la Loi sur les pêches modernisée (2019). Le @LRPGuidelinesSAR résume trois études de cas et conclut que « Les PRL de régression logistique » *ont plusieurs limites et ne doivent être utilisés que lorsque (i) des PRL supplémentaires fondés sur l’abondance agrégée sont nécessaires et (ii) toutes les hypothèses du modèle de régression logistique peuvent être respectées* ». Nous avons inclus un exemple concret pour cette méthode afin de vérifier si les défis cernés par le @LRPGuidelinesSAR  se posent pour les saumons rouges des rivières Skeena et Nass.
+* *Sim.* : @CoxRogersetal2010 ont testé l’effet de différents taux de récolte (en boucle ouverte) sur 15 ans (simulation courte) et 100 ans (simulation longue). @Hawkshaw2018Diss a utilisé des techniques d’optimisation (simulation longue) pour comparer d’autres types de stratégies de récolte (en boucle ouverte et fermée). Les taux de récolte indiqués dans @CoxRogersetal2010 ont été appliqués également à tous les stocks. @Hawkshaw2018Diss a exploré d’autres règles de contrôle des prises et d’autres plans de pêche pour la pêche plurispécifique de stocks mixtes (cinq espèces de saumon du Pacifique et la truite arc-en-ciel anadrome, chacune modélisée comme un stock unique).
 
 
 
@@ -839,7 +839,7 @@ without causing extinction (their Figure 14). The worked example we include here
 
 
 \clearpage
-(ref:TableAltApproaches) Alternative Approaches for Developing Aggregate Biological Reference Points. 
+(ref:TableAltApproaches) Approches de rechange afin d’élaborer des points de référence biologiques pour les regroupements. 
 
 ```{r TableAltApproaches, echo = FALSE, results = "asis"}
 
@@ -864,7 +864,7 @@ table.in  %>%
 
 \clearpage
 
-(ref:TableAltApprObj) Objectives used in the worked examples for each aggregation approach. 
+(ref:TableAltApprObj) Objectifs utilisés dans les exemples pratiques pour chaque approche de regroupement. 
 
 ```{r TableAltApprObj, echo = FALSE, results = "asis"}
 

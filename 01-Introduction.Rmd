@@ -11,6 +11,8 @@ uses "S" in text and equations. Section 2.2.5 uses Srmd instead of Smsy or Grmd.
 - Model labels: BR, AR1,TVP -> need to make sure consistently handled in text, figs,tables
 - Sec 2.3 title "model selection and productivity scenarios" translated as "scenarios of model selection and scenarios of productivity"???? -> used what they provided
 - **TABLE 8** - special symbols crashing the compile 
+- "State vs. Status" and "statut ou l'état" It seems that in both languages there are complicted nuances around these terms. The French version of the WSP uses "POINTS DE RÉFÉRENCE DE L’ÉTAT" for status benchmarks, and so the res doc translation is right. It just surprised me. It seems like in French they use both depending om the kind of status you're talking about. See examples at https://www.linguee.fr/francais-anglais/traduction/statut+ou+%C3%A9tat.html
+- **Table 12** "Étiquette" column label is crashing the compile, Even without it, some cell content also crashing the compile.
 
 
 ## REMERCIEMENTS {-}

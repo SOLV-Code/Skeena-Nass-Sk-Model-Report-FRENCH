@@ -1,7 +1,7 @@
 ﻿Type,Benchmark,Definition
-Standard,Smax,Spawner abundance that maximizes median recruits.
-Standard,Smsy,"Spawner abundance that maximizes sustainable median yield (Rec-Spn), if managed to a fixed escapement target under equilibrium conditions."
-Standard,Seq,Long-term equilibrium spawner abundance in the absence of harvest.
-Standard,Umsy,Harvest mortality rate at median MSY.
-WSP,80% Smsy,"Used as the upper benchmark for the relative abundance metric in WSP status assessments. If generational average spawner abundance falls above 80% Smsy, the conservation unit is designated as Green status on this metric."
-WSP,Sgen,"Spawner abundance with a high probability of rebuilding to Smsy in 1 generation in the absence of harvest. Used as the lower benchmark for the relative abundance metric in WSP status assessments. If generational average spawner abundance falls below Sgen, the conservation unit is designated as Red status on this metric. Note that Sgen is not applicable for stock aggregates."
+Standard,Smax,Abondance des géniteurs qui maximise la médiane des recrues.
+Standard,Srmd,"Abondance des géniteurs qui maximise la médiane du rendement durable (Rec-Spn), si elle est gérée selon un objectif d’échappée fixe dans des conditions d’équilibre."
+Standard,Seq,Abondance des géniteurs à l’équilibre à long terme en l’absence de récolte.
+Standard,Urmd,Taux de mortalité dû à la récolte à la médiane du RMD.
+PSS,80 % de Srmd,"Utilisé comme point de référence supérieur pour le paramètre d’abondance relative dans les évaluations de l’état selon la PSS. Si l’abondance moyenne générationnelle des géniteurs parvient au-dessus de 80 % de Srmd, l’UC est désignée comme étant dans la zone d’état verte pour ce paramètre."
+PSS,Sgen,"Abondance des géniteurs ayant une forte probabilité de revenir à Srmd en une génération en l’absence de récolte. Utilisé comme point de référence inférieur pour le paramètre d’abondance relative dans les évaluations de l’état selon la PSS. Si l’abondance moyenne générationnelle des géniteurs tombe en dessous de Sgen, l’UC est désignée comme étant dans la zone d’état rouge pour ce paramètre. Il convient de noter que Sgen n’est pas applicable aux regroupements de stocks."

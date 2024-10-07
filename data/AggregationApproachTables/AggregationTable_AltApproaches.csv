@@ -1,9 +1,9 @@
-Approach,Label,Description
-Aggregate Smsy Estimate,Agg Smsy,"Calculate Smsy for aggregate data set (total Nass, Total Skeena Wild). "
-Sum of stock-level Smsy Estimate,Sum Smsy,"Calculate Smsy for each stock with SR data, and sum the estimates. Meeting participants emphasized that this approach does not produce aggregate biological reference points consistent with the definition of MSY. Although this method is not recommended for developing aggregate reference points, it has been included here for completeness."
-Umsy Comparison,Umsy Comp,"Calculate Umsy for each stock with SR data, and compare the estimates to Identify a target ER for the stock aggregate from available stock-level Umsy estimates from stocks with SR data (i.e., may choose to use the lowest stock-level Umsy or the Umsy for the largest stock, depending on management objectives)."
-Spawner-based Single-stock Equilibrium Profile,Equ. Prof,"For each stock, calculate the proportion of parameter samples that meets a specified objective at increments of spawner abundance, such as prop(yield > 60% of MSY), under equilibrium conditions (i.e., on average over the long-term)."
-ER-based Aggregate Equilibrium Trade-off Plots,Agg TradeOff,"Calculate summary performance measures across stocks (e.g., proportion of stocks meeting an objective vs. aggregate harvest), under equilibrium conditions (i.e., on average over the long-term), using the simplifying assumption that all stocks are managed to the same fixed exploitation rate."
-Stock-level Status Considerations,Status,"Calculate status for each stock with data, and then identify aggregate reference points (LRP, harvest triggers) based on number of red/amber/green stocks."
-Log-regression ,Log Reg,"Classify past years as success or failure based on-stock-level performance measure (e.g. 80% of stocks above median Sgen), then plot a logistic regression of success vs. aggregate abundance to identify an aggregate reference point from the fitted regression as the aggregate abundance associated with a required threshold of the stock-level performance measure. "
-Forward simulation,Sim,"Beginning with recent spawner abundances, simulate stocks forward under alternative assumptions about productivity, harvest, and other sources of mortality to identify aggregate abundances associated with appropriate levels of probability of meeting specified objectives. If the forward simulation meets certain technical criteria and is developed in combination with a structured participatory process, then it can evolve into a formal Management Strategy Evaluation (MSE)."
+Approche,Etiquette,Description
+x,x,x
+x,x,x
+x,x,x
+x,x,x
+x,x,x
+x,x,x
+x,x,x
+x,x,x
