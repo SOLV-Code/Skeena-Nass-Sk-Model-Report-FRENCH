@@ -219,81 +219,82 @@ include_graphics("data/1_FrenchFigs/Fig18_French_Bab-LW_SR_Par_JointPosterior_3M
 
 
 \clearpage
-## HIERARCHICAL SPAWNER-RECRUIT MODEL FITS (STOCK-LEVEL) {#HBMResultsComp}
+## AJUSTEMENTS DU MODÈLE GÉNITEURS-RECRUES HIÉRARCHIQUE (AU NIVEAU DU STOCK) {#HBMResultsComp}
 
-### Model Versions Used for Comparison
+### Versions du modèle utilisées pour la comparaison
+
+La présentation des analyses du MBH de McAllister et Challenger dans ce document vise à explorer les avantages potentiels de l’inclusion de la structure hiérarchique et du partage de l’information entre les stocks. Pour cette comparaison avec les ajustements pour des stocks uniques, tous les autres éléments des ajustements du modèle doivent être conservés aussi identiques que possible, du moins pour le point de départ de la comparaison. Les tests de sensibilité du MBH sont décrits à l’annexe \@ref(app:HBMFits) du document de McAllister et Challenger. Nous nous concentrons ici sur la comparaison des résultats entre les ajustements pour un seul stock et pour les deux versions du modèle MBH.
+
+* *Scénario de base du MBH* : Nous avons utilisé tous les stocks pour lesquels des données sont accessibles, y compris les stocks issus de la mise en valeur du ruisseau Pinkut et de la rivière Fulton, avec un effet annuel commun de la productivité sur l’ensemble des stocks, et des valeurs a priori log-normales plus informatives sur Smax pour plusieurs des stocks (coefficient de variation = 0,3).
+* *Analyse de sensibilité 26 du MBH* : Exclusion des stocks du ruisseau Pinkut et de la rivière Fulton, valeurs a priori log-normales moins informatives pour les stocks des rivières Bear, Kitwanga et Sustut (coefficient de variation = 2).
 
 The purpose of including the HBM analyses by McAllister and Challenger in this paper is to explore the potential benefits of including the hierarchical structure and sharing information across stocks. For this comparison to single-stock fits, all other elements of the model fits should be kept as similar as possible, at least for the starting point of the comparison. McAllister and Challenger document sensitivity tests of the Hierarchical Bayesian Model (HBM) in Appendix \@ref(app:HBMFits). Here we focus on comparing results between the single-stock fits and two versions of the HBM model fits:
 
-* *HBM Base Case*: Used all stocks with data, including enhanced Pinkut and Fulton, with a shared year effect of productivity across all stocks, and more informative lognormal priors on Smax for several of the stocks (CV = 0.3).
-* *HBM Senstivity Run 26*: Excluded Pinkut and Fulton, less informative lognormal priors for Bear, Kitwanga, and Sustut (CV = 2).
 
+### Comparaison des estimations des points de référence biologiques
 
-### Comparison of Biological Benchmark Estimates
+Nous avons comparé les estimations des points de référence biologiques du MBH aux ajustements pour un seul stock avec le modèle de Ricker de base (valeur a priori de Smax uniforme plafonnée). Cette comparaison portait sur le plus grand nombre de stocks, car les ajustements des modèles AR1 et avec PVT pour un seul stock ne pouvaient être appliqués qu’aux stocks pour lesquels une série chronologique complète est accessible.
 
-We compared HBM estimates of biological benchmarks to single stock fits with the Basic Ricker model (capped uniform Smax prior). This comparison covered the largest number of stocks, because single-stock AR1 and TVP model fits could only be applied to stocks with complete time series.  
+Pour la plupart des stocks, la médiane des estimations de Srmd dans le scénario de référence du MBH était semblable aux estimations dans le modèle de Ricker de base pour un seul stock, mais la différence était de plus de 25 % pour six stocks (figure \@ref(fig:HBMComp1)). Après l’exclusion des stocks issus de la mise en valeur et l’assouplissement des valeurs a priori de la capacité dans le MBH pour trois stocks (rivières Bear, Kitwanga et Sustut), toutes les estimations étaient semblables entre les ajustements du MBH et ceux du modèle à un seul stock (figure \@ref(fig:HBMComp2)). En fait, les estimations de Srmd pour l’analyse 26 du MBH et le modèle de Ricker de base à un seul stock avec valeur a priori uniforme plafonnée (modèle RBcu) étaient plus semblables les unes aux autres que l’estimation bayésienne du stock unique ne l’était à l’estimation déterministe simple (figure \@ref(fig:FitsCompDetFig)).
 
-For most stocks, median Smsy estimates from the HBM Base Case were similar to the single stock Basic Ricker estimates, but for six stocks the difference was more than 25% (Figure \@ref(fig:HBMComp1)). After excluding the enhanced stocks and relaxing the HBM capacity prior on three stocks (Bear, Kitwanga, Sustut), all the estimates were similar between HBM and single-stock model fits (Figure \@ref(fig:HBMComp2)). In fact, Smsy estimates for HBM Run 26 and the single-stock Basic Ricker with capped uniform prior (Model BRcu) were more similar to each other than the Bayesian single stock estimate was to the simple deterministic estimate (Figure \@ref(fig:FitsCompDetFig)). 
+Les largeurs des distributions a posteriori de Srmd étaient semblables entre le MBH et le modèle à un seul stock pour beaucoup de stocks, plus étroites (plus précises) dans les estimations du MBH pour certains stocks, et plus larges dans les estimations du MBH pour quelques stocks (figure \@ref(fig:HBMComp3)). Les estimations de Srmd pour trois stocks (rivières Kitwanga, Asitka et Motase) sont particulièrement incertaines dans les ajustements du MBH et du modèle à un seul stock (valeurs a posteriori très larges).
 
-Widths of posterior Smsy distributions were similar between HBM and single-stock model fits for many stocks, tighter (i.e., more precise) in the HBM estimates for some stocks, and wider in the HBM estimates for a few stocks (Figure \@ref(fig:HBMComp3)). Smsy estimates for three stocks stood out in both HBM and single-stock model fits as particularly uncertain (i.e., very wide posteriors): Kitwanga, Asitka, and Motase. 
-
-While Smsy estimates were much more similar between HBM and single-stock model fits after the capacity prior was relaxed for some stocks (HBM Run 26), median estimates of Umsy remained quite different between the two types of model (Figure \@ref(fig:HBMComp4)). Median Umsy differed by more than 5% for seven stocks. HBM Run 26 estimated higher median Umsy (i.e., higher productivity) than the single stock Basic Ricker fit for Johnston, Asitka, Kitwanga, and Swan/Stephens. HBM Run 26 estimated lower median Umsy for Sustut, Bear, and Kitsumkalum. The range of median Umsy estimates across stocks was narrower for HBM Run 26 (44%-72%) than for the single stock Basic Ricker fit (41%-79%).
-
-
+Même si les estimations de Srmd étaient beaucoup plus semblables entre les ajustements du MBH et du modèle à un seul stock après l’assouplissement de la valeur a priori de la capacité pour certains stocks (analyse 26 du MBH), la médiane des estimations de Urmd est demeurée très différente entre les deux types de modèle (figure\@ref(fig:HBMComp4)). La médiane de Urmd différait de plus de 5 % pour sept stocks. L’analyse 26 du MBH a estimé une médiane de Urmd (c.-à-d. une productivité plus élevée) plus élevée que l’ajustement du modèle de Ricker de base à un seul stock pour les rivières Johnston, Asitka, Kitwanga et Swan/Stephens. L’analyse 26 du MBH a estimé une médiane plus basse de Urmd pour les rivières Sustut, Bear et Kitsumkalum. La fourchette de la médiane des estimations de Urmd pour l’ensemble des stocks était plus étroite pour l’analyse 26 du MBH (de 44 à 72 %) que pour l’ajustement du modèle de Ricker de base à un seul stock (de 41 à 79 %).
 
 \clearpage
-(ref:HBMComp1) Difference in median Smsy estimates for the HBM Base Case and the single stock Basic Ricker fit with capped uniform capacity priors. Stocks with differences larger than 25% are highlighted.
+(ref:HBMComp1) Différence entre la médiane des estimations de Srmd pour le scénario de base du MBH et l’ajustement du modèle de Ricker de base à un seul stock avec des valeurs a priori de la capacité uniformes plafonnées. Les stocks pour lesquels les différences sont supérieures à 25 % sont mis en évidence.
 
 ```{r HBMComp1,   fig.cap="(ref:HBMComp1)"}
-include_graphics("data/HBM/FitsComparisonHBM_BRcuvsBaseCase_Smsy_PercDiff.png")
+include_graphics("data/1_FrenchFigs/Fig19_French_FitsComparisonHBM_BRcuvsBaseCase_Smsy_PercDiff.png")
 ```
 
 
 
-(ref:HBMComp2) Difference in median Smsy estimates for HBM Run 26 and the single stock Basic Ricker fit with capped uniform capacity priors. Stocks with differences larger than 25% are highlighted.
+(ref:HBMComp2) Différence entre la médiane des estimations de Srmd pour l’analyse 26 du MBH et l’ajustement du modèle de Ricker de base à un seul stock avec des valeurs a priori de la capacité uniformes plafonnées. Les stocks pour lesquels les différences sont supérieures à 25 % sont mis en évidence.
 
 ```{r HBMComp2,   fig.cap="(ref:HBMComp2)"}
-include_graphics("data/HBM/FitsComparisonHBM_BRcuvsSensitivityRun26_Smsy_PercDiff.png")
+include_graphics("data/1_FrenchFigs/Fig20_French_FitsComparisonHBM_BRcuvsSensitivityRun26_Smsy_PercDiff.png")
 ```
 
 \clearpage
 
-(ref:HBMComp3) Comparison of Smsy estimates for HBM Run 26 and the single stock Basic Ricker fit with capped uniform capacity priors. (A) Comparison of median estimates. Stocks with differences in median estimates larger than 25% are highlighted. Panel A compares estimates on a log scale to allow comparison across stocks with very different estimates, but stocks are flagged if the difference in original (i.e., unlogged) values is larger than 25%. (B) Comparison of the standardized interquartile range (SIQR), which captures half of the posterior samples. Stocks with SIQR > 0.4 in either estimate are highlighted.
+(ref:HBMComp3) Comparaison des estimations de Srmd pour l’analyse 26 du MBH et l’ajustement du modèle de Ricker de base à un seul stock avec des valeurs a priori de la capacité uniformes plafonnées. (A) Comparaison de la médiane des estimations. Les stocks pour lesquels les différences entre la médiane des estimations sont supérieures à 25 % sont mis en évidence. Le graphique A compare les estimations sur une échelle logarithmique pour permettre de comparer des stocks dont les estimations sont très différentes, mais les stocks sont représentés si la différence des valeurs originales (c.-à-d. non logarithmiques) est supérieure à 25 %. (B) Comparaison de l’écart interquartile normalisé (SIQR), qui représente la moitié des échantillons a posteriori. Les stocks dont le SIQR est supérieur à 0,4 dans l’une ou l’autre des estimations sont mis en évidence.
 
 ```{r HBMComp3,   fig.cap="(ref:HBMComp3)"}
-include_graphics("data/HBM/FitsComparisonHBM_BRcuvsSensitivityRun26_Smsy.png")
+include_graphics("data/1_FrenchFigs/Fig21_French_FitsComparisonHBM_BRcuvsSensitivityRun26_Smsy.png")
 ```
 
 
 
-(ref:HBMComp4) Comparison of Umsy estimates for HBM Run 26 and the single stock Basic Ricker fit with capped uniform capacity priors. Sidebars identify the range of median estimates from each model type. Stocks are highlighted if median Umsy differ by more than 5%. Note that the difference in actual values is used here, not the relative % difference used for Smsy comparisons in previous plots.
+(ref:HBMComp4) Comparaison des estimations de Urmd pour l’analyse 26 du MBH et l’ajustement du modèle de Ricker de base à un seul stock avec des valeurs a priori de la capacité uniformes plafonnées. Les barres latérales indiquent la fourchette de la médiane des estimations de chaque type de modèle. Les stocks sont mis en évidence si la médiane de Urmd diffère de plus de 5 %. Il convient de noter que c’est la différence des valeurs réelles qui est utilisée ici, et non la différence relative en pourcentage utilisée pour les comparaisons de Srmd dans les graphiques précédents.
 
 ```{r HBMComp4,   fig.cap="(ref:HBMComp4)"}
-include_graphics("data/HBM/FitsComparisonHBM_BRcuvsSensitivityRun26_Umsy.png")
+include_graphics("data/1_FrenchFigs/Fig22_FitsComparisonHBM_BRcuvsSensitivityRun26_Umsy_FRENCH.png")
 ```
 
 
 \clearpage
-### Comparison of eEstimated Productivity Changes Over Time (Single-stock vs. HBM Fits)
+### Comparaison des variations estimées de la productivité dans le temps (ajustements d’un modèle à un seul stock par rapport au MBH)
 
-We compared HBM estimates of productivity over time to single stock fits with the TVP model (capped uniform Smax prior) for the nine wild Skeena stocks where both estimates were available. 
+Nous avons comparé les estimations par le MBH de la productivité dans le temps aux ajustements du modèle avec PVT à un seul stock (valeur a priori de Smax uniforme plafonnée) pour les neuf stocks sauvages de la rivière Skeena pour lesquels les deux estimations étaient accessibles.
 
-The shared year effect identified by the HBM model was very similar between the HBM Base Case, which included Pinkut and Fulton, and HBM Run 26, which excluded the enhanced stocks (Figure \@ref(fig:HBMComp5), Panel A). Both versions identified a sharp productivity drop in 1994, followed by a spike in 1995. The 4-year running mean of the HBM Base Case shared year effect identified a period of higher-than-average productivity in the 1980s and early 1990s, followed by a general decline since then (Panel B). Single stock TVP fits identified a similar decline in productivity since the 1990s for Babine Late Wild, the largest wild Skeena stock,  but other stocks had very different productivity trends over time (e.g., Panel D of Figure \@ref(fig:HBMComp5), Figure \@ref(fig:HBMComp6)). The three wild Babine stocks had very similar productivity trend over time in the single stock TVP fits. 
+L’effet annuel commun déterminé par le MBH était très semblable entre le scénario de base du MBH, qui comprenait les stocks mis en valeur du ruisseau Pinkut et de la rivière Fulton, et l’analyse 26 du MBH, qui excluait les stocks mis en valeur (figure \@ref(fig:HBMComp5), graphique A). Les deux versions ont fait état d’une baisse marquée de la productivité en 1994, suivie d’un pic en 1995. La moyenne mobile sur quatre ans de l’effet annuel commun du scénario de référence du MBH a révélé une période de productivité supérieure à la moyenne dans les années 1980 et au début des années 1990, suivie d’une baisse générale depuis (graphique B). Les ajustements du modèle avec PVT à un seul stock ont indiqué une baisse semblable de la productivité depuis les années 1990 pour le stock sauvage à montaison tardive de la rivière Babine, le plus grand stock sauvage de la rivière Skeena, mais des tendances de la productivité très différentes dans le temps pour d’autres stocks (p. ex. graphique D de la figure \@ref(fig:HBMComp5), \@ref(fig:HBMComp6)). Les trois stocks sauvages de la rivière Babine affichaient une tendance de la productivité très semblable au fil du temps dans les ajustements du modèle avec PVT à un seul stock.
 
-Both the HBM shared year effect and the single-stock TVP estimates of changes in productivity over time link back to the residuals from the Basic Ricker fit. Based on the residuals, the  1994/1995 dip and spike in the HBM shared year effect was driven by the residuals from the Babine stocks (Figure \@ref(fig:HBMComp6)). In the HBM Base Case the change over time was very pronounced, because it included Pinkut and Fulton, which had the disease outbreak. In HBM Run 26, without the enhanced stocks, this was less pronounced, but it still picked up the same signal from the 3 wild Babine stock residuals, and assumed that all the non-Babine stocks experienced the same dramatic changes in those 2 years. The residual 1994/1995 signal from the three wild Babine stocks needs to be interpreted carefully, because spawner and recruit estimates for all five Babine stocks are derived together from a total weir count, based on estimated stock proportions from tagging studies in the 1970s.
+L’effet annuel commun du MBH et les estimations dans le modèle avec PVT à un seul stock de la variation de la productivité au fil du temps sont tous deux liés aux résiduels de l’ajustement du modèle de Ricker de base. D’après les résiduels, le creux et le pic de 1994-1995 de l’effet annuel commun du MBH ont été entraînés par les résiduels des stocks de la rivière Babine (figure \@ref(fig:HBMComp6)). Dans le scénario de référence du MBH, le changement dans le temps était très prononcé, parce que les stocks du ruisseau Pinkut et de la rivière Fulton, qui ont subi une éclosion de maladie, étaient inclus. Dans l’analyse 26 du MBH, sans les stocks mis en valeur, il était moins prononcé, mais le modèle a tout de même capté le même signal des résiduels des trois stocks sauvages de la rivière Babine et supposé que tous les stocks autres que ceux de la rivière Babine ont connu les mêmes changements spectaculaires au cours de ces deux années. Il faut faire attention pour interpréter le signal de 1994-1995 des résiduels des trois stocks sauvages de la rivière Babine, car les estimations du nombre de géniteurs et de recrues pour les cinq stocks de la rivière Babine sont dérivées ensemble du dénombrement total au déversoir, en fonction des proportions estimées des stocks tirées d’études par marquage menées dans les années 1970.
 
 
-(ref:HBMComp5) Comparison of estimated productivity trends over time from HBM and single stock TVP model fits. (A) Annual shared year effect from the HBM model fits. Blue line and shaded area show median and 80% of the shared year effect from the HBM Base Case, the red overlayed line shows the shared year effect from HBM Run 26. (B) 4yr running mean of the shared year effect from the HBM Base Case. (C, D) Estimates of the time-varying productivity parameter ln.alpha from a single stock TVP model fit with capped uniform capacity prior for Babine Late Wild and Alastair. Medians and 80% bounds are shown.
+
+(ref:HBMComp5) Comparaison des tendances estimées de la productivité au fil du temps à partir des ajustements du MBH et du modèle avec PVT à un seul stock. (A) Effet annuel commun des ajustements du MBH. La ligne bleue et la zone ombrée représentent la médiane et 80 % de l’effet annuel commun du scénario de base du MBH, la ligne rouge superposée montre l’effet annuel commun de l’analyse 26 du MBH. (B) Moyenne mobile sur 4 ans de l’effet annuel commun du scénario de référence du MBH. (C, D) Estimations du paramètre de PVT ln.alpha à partir d’un ajustement du modèle avec PVT à un seul stock avec valeur a priori de la capacité uniforme plafonnée pour le stock sauvage à montaison tardive de la rivière Babine et le stock de la rivière Alastair. Les médianes et les bornes de 80 % sont indiquées.
 
 ```{r HBMComp5,   fig.cap="(ref:HBMComp5)"}
-include_graphics("data/HBM/FitsComparison_PROD_1_SinglevsHBM.png")
+include_graphics("data/1_FrenchFigs/Fig23_FitsComparison_PROD_1_SinglevsHBM_FRENCH.png")
 ```
 
 
-(ref:HBMComp6) Changes in productivity parameter ln.alpha over time for nine wild Skeena stocks with complete SR time series. Estimates of the time-varying productivity parameter ln.alpha from a single stock TVP model fit with capped uniform capacity prior. Medians and 80% bounds are shown. 
+(ref:HBMComp6) Variations des paramètres de productivité ln.alpha dans le temps pour neuf stocks sauvages de la rivière Skeena dont la série chronologique sur les géniteurs-recrues est complète. Estimations du paramètre de PVT ln.alpha à partir d’un ajustement du modèle avec PVT à un seul stock avec valeur a priori de la capacité uniforme plafonnée. Les médianes et les bornes de 80 % sont indiquées.
 
 ```{r HBMComp6,   fig.cap="(ref:HBMComp6)"}
-include_graphics("data/HBM/FitsComparison_PROD_2_ProdPatterns_KF_Skeena.png")
+include_graphics("data/1_FrenchFigs/Fig24_FitsComparison_PROD_2_ProdPatterns_KF_Skeena_French.png")
 ```
 
 
