@@ -1,9 +1,9 @@
-# RESULTS
+# RÉSULTATS
 
-This Research Document focuses on SR modelling for wild Sockeye stocks (16 Skeena, 4 Nass) and alternative approaches for developing management reference points for two aggregates (Skeena Wild, Nass). Enhanced Pinkut and Fulton Sockeye present a fundamentally different challenge in terms of population dynamics and management implications. We include a review of available information for Babine Sockeye enhancement facilities (Appendix \@ref(ChannelReview)) and illustrate two candidate methods for expanding a management reference point for wild Skeena Sockeye to a management reference point for the whole Skeena aggregate including enhanced Pinkut and Fulton (Section \@ref(SkeenaExpResults)). Section \@ref(AltApproachEnhanced) explains the rationale for this approach within the scope of the current project. Appendix \@ref(PinkutFultonResults) includes the available SR data and parameter estimates for Pinkut and Fulton as a reference, but resulting benchmark estimates should not be used as they are, given SR model fitting issues and management challenges.
+Le présent document de recherche porte sur la modélisation des géniteurs-recrues pour les stocks de saumon rouge sauvage (16 de la rivière Skeena, 4 de la rivière Nass) et sur d’autres approches d’élaboration de points de référence de gestion pour deux regroupements (stocks sauvages de la rivière Skeena, stocks de la rivière Nass). Les saumons rouges issus de la mise en valeur du ruisseau Pinkut et de la rivière Fulton présentent un défi fondamentalement différent en ce qui concerne la dynamique des populations et les conséquences pour la gestion. Nous incluons un examen des renseignements accessibles pour les installations de mise en valeur du saumon rouge de la rivière Babine (annexe \@ref(ChannelReview)) et illustrons deux méthodes possibles pour étendre un point de référence de gestion pour le saumon rouge sauvage de la rivière Skeena à un point de référence de gestion applicable à l’ensemble du regroupement de la rivière Skeena, y compris les poissons issus de la mise en valeur du ruisseau Pinkut et de la rivière Fulton (section \@ref(SkeenaExpResults)). La section \@ref(AltApproachEnhanced) explique la justification de cette approche dans le cadre de la portée du projet actuel. L’annexe \@ref(PinkutFultonResults) comprend les données sur les géniteurs-recrues accessibles et les estimations des paramètres pour le ruisseau Pinkut et la rivière Fulton à titre de référence, mais les estimations des points de référence qui en découlent ne devraient pas être utilisées telles quelles, compte tenu des problèmes d’ajustement du modèle géniteurs-recrues et des défis de gestion.
 
 
-## SINGLE-STOCK SPAWNER-RECRUIT MODEL FITS (STOCK-LEVEL AND AGGREGATE-LEVEL)  {#SingleStockSRResults}
+## AJUSTEMENTS POSSIBLES DU MODÈLE GÉNITEURS-RECRUES À UN SEUL STOCK (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)  {#SingleStockSRResults}
 
 
 ### Convergence {#Convergence}
@@ -11,31 +11,32 @@ This Research Document focuses on SR modelling for wild Sockeye stocks (16 Skeen
 
 ```{r , echo = FALSE, results = "asis"}
 
-conv.summary.df <- read_csv("data/Convergence/FitsComparison_ConvergenceSummary.csv") 
+conv.summary.df <- read_csv("data/Convergence/FitsComparison_ConvergenceSummary.csv",locale=locale(encoding="latin1")) 
 
 full.set.post.df <- read_csv("data/Appendix SR Model Outputs/FullSet_Posterior_Summary.csv") 
 
 ```
 
+Nous avons mis à l’essai 163 ajustements de rechange du modèle géniteurs-recrues pour 22 ensembles de données sur les géniteurs-recrues au niveau du stock (y compris les poissons issus de la mise en valeur du ruisseau Pinkut et de la rivière Fulton) et trois ensembles de données sur les géniteurs-recrues au niveau du regroupement (Nass, Skeena et SkeenaSauvage).
 
-We tested `r conv.summary.df %>% dplyr::filter(DataType == "All") %>% select(Total)` alternative SR model fits for `r length(unique(full.set.post.df$Stock)) -3` stock-level SR data sets (including enhanced Pinkut and Fulton) and three aggregate-level SR data sets (Nass, Skeena, SkeenaWild).
-
-All of the candidate SR model fits met at least two of three convergence criteria, and most model fits met all three criteria (Table \@ref(tab:ConvergenceTab)). Convergence varied depending on the amount of data used, the SR model form, and form of the capacity prior (Smax). Models fit to all available brood years of data converged more reliably than model fits to truncated data sets, but note that not all model forms could be fitted to all stocks, and that the number of available brood years varies across stocks (Table \@ref(tab:DataOverviewSkeena); Figure \@ref(fig:SRDataOverview)). More complex SR model forms were run with more intensive MCMC sampling (longer burn-in, larger samples), but still had a lower rate of meeting all three convergence criteria. Alternative capacity priors had little effect on convergence for the Basic Ricker model, with 88-89% of model fits meeting all three convergence criteria across four alternative capacity priors.
-
-
-### Alternative SR Model Fits
-
-Posterior estimates of capacity (Smax) were much wider and more skewed than posterior estimates of productivity (ln.alpha) for most stocks using the Basic Ricker model (Figure \@ref(fig:FitsCompProdCap)). Four stock-level fits and one aggregate-level fit were notably more uncertain (i.e., wider posteriors) than the other fits: Lower Nass Sea and River Type, Kitwanga, Motase, and the SkeenaWild aggregate.
-
-For the Basic Ricker model, median Bayesian estimates of Smsy were similar to simple deterministic estimates for most cases (Figure \@ref(fig:FitsCompDetFig)). Differences between Bayesian and deterministic estimates were larger for cases where the Bayesian estimate was more uncertain (i.e., wider posterior, larger SIQR). The two stocks with the largest difference between the Bayesian and deterministic Smsy estimate also had the most uncertain Bayesian estimates (Lower Nass Sea and River Type, Kitwanga).
+Tous les ajustements possibles du modèle géniteurs-recrues répondent à au moins deux des trois critères de convergence, et la plupart répondent aux trois critères (tableau \@ref(tab:ConvergenceTab)). La convergence variait en fonction de la quantité de données utilisée, de la forme du modèle géniteurs-recrues et de la forme de la valeur a priori de la capacité (Smax). Les modèles ajustés à toutes les années d’éclosion disponibles de données convergeaient de façon plus fiable que ceux ajustés à des ensembles de données tronqués, mais il convient de noter qu’il n’a pas été possible d’ajuster toutes les formes du modèle à tous les stocks et que le nombre d’années d’éclosion disponibles varie d’un stock à l’autre (tableau \@ref(tab:DataOverviewSkeena); figure \@ref(fig:SRDataOverview)). Des formes plus complexes du modèle géniteurs-recrues ont été exécutées avec un échantillonnage MCCM plus intensif (rodage plus long, échantillons plus grands), mais le taux de respect des trois critères de convergence était tout de même plus faible. D’autres valeurs a priori de la capacité ont eu peu d’effet sur la convergence pour le modèle de Ricker de base, 88 ou 89 % des ajustements du modèle répondant aux trois critères de convergence pour quatre autres valeurs a priori de la capacité.
 
 
-(ref:ConvergenceTab) Summary of convergence diagnostics for single-stock SR model fits. We considered three convergence diagnostics with quantitative thresholds (Table \@ref(tab:MCMCDiagnostics)). Table shows the total number of stock-level and aggregate-level single-stock SR model fits tested (Total), the number that met each criterion (Rhat, Gelman, Geweke), the number and percent of fits that met at least two of the criteria (Met2, pMet2), and the number and percent of fits that met all three criteria (Met3, pMet3). Convergence thresholds were specified as Rhat < 1.05, Gelman within [0.99,1.01], and Geweke within [-2,2]. For each criterion, the value compared to the threshold was the most extreme value across all estimated parameters. For the TVP model fits with time-varying productivity, this captures the poorest fit across all the brood-year-specific ln.alpha posteriors.
+
+### Ajustements de rechange du modèle géniteurs-recrues
+
+Les estimations a posteriori de la capacité (Smax) étaient beaucoup plus larges et plus asymétriques que celles de la productivité (ln.alpha) pour la plupart des stocks avec le modèle de Ricker de base (figure \@ref(fig:FitsCompProdCap)). Quatre ajustements au niveau du stock et un au niveau du regroupement étaient sensiblement plus incertains (valeurs a posteriori plus larges) que les autres ajustements : les regroupements de saumon rouge de type océanique et de type fluvial de la basse Nass, de la rivière Kitwanga, de la rivière Motase et du stock sauvage de la rivière Skeena.
+
+Pour le modèle de Ricker de base, les estimations bayésiennes médianes de Srmd étaient semblables aux estimations déterministes simples dans la plupart des cas (figure \@ref(fig:FitsCompDetFig)). Les différences entre les estimations bayésiennes et déterministes étaient plus importantes dans les cas où l’estimation bayésienne était plus incertaine (valeur a posteriori plus large, écart interquartile normalisé [SIQR] plus grand). Les deux stocks présentant la plus grande différence entre l’estimation bayésienne et l’estimation déterministe de Srmd étaient également ceux dont les estimations bayésiennes étaient les plus incertaines (saumon rouge de type océanique et de type fluvial de la basse Nass, rivière Kitwanga).
+
+
+(ref:ConvergenceTab) Résumé des diagnostics de convergence pour les ajustements du modèle géniteurs-recrues à un seul stock. Nous avons examiné trois diagnostics de convergence avec des seuils quantitatifs (tableau \@ref(tab:MCMCDiagnostics)). Le tableau montre le nombre total d’ajustements du modèle géniteurs-recrues à un seul stock au niveau du stock et au niveau du regroupement qui ont été testés (Total), le nombre qui répondait à chaque critère (Rhat, Gelman, Geweke), le nombre et le pourcentage d’ajustements qui répondaient à au moins deux des valeurs (Met2, pMet2), ainsi que le nombre et le pourcentage d’ajustements qui répondaient aux trois critères (Met3, pMet3). Les seuils de convergence ont été spécifiés comme Rhat < 1,05, Gelman dans la fourchette [0,99; 1,01] et Geweke dans la fourchette [-2; 2]. Pour chaque critère, la valeur comparée au seuil était la valeur la plus extrême pour tous les paramètres estimés. Pour les ajustements du modèle avec PVT, elle indique l’ajustement le plus mauvais parmi toutes les valeurs a posteriori de In.alpha propres aux années d’éclosion
 
 ```{r ConvergenceTab, echo = FALSE, results = "asis"}
 
-table.in <- conv.summary.df %>% mutate(ModelType = gsub("Kalman","TVP",ModelType))
-table.in$DataType[duplicated(table.in$DataType)] <- ""
+table.in <- conv.summary.df %>% mutate(TypeModèle = gsub("Kalman","PVT",TypeModèle)) %>% 			
+				mutate(TypeModèle = gsub("Basic","De Base",TypeModèle))
+table.in$TypeDonnée[duplicated(table.in$TypeDonnée)] <- ""
 
 
 
@@ -45,53 +46,57 @@ table.in %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l","l","l",rep("r",8)),
                   caption = "(ref:ConvergenceTab)" ) %>%
     kableExtra::row_spec(c(1,9), hline_after = TRUE) %>%
-	add_header_above(c(" " = 4, "Criteria" = 3," " = 4) ) %>%
+	kableExtra::column_spec(1, width = "5em") %>%
+	kableExtra::column_spec(3, width = "6em") %>%
+	add_header_above(c(" " = 4, "Critères" = 3," " = 4) ) %>%
   kableExtra::row_spec(c(5,7,13,15), extra_latex_after = "\\cmidrule(l){2-11}") 
 
 ```
 
-For the Basic Ricker model, the effect of alternative capacity priors was generally larger for cases where capacity estimates were more uncertain (Figure \@ref(fig:FitsCompCapPrior)). Three stock-level fits and one aggregate-level fit were notably more sensitive (i.e., larger differences in median estimates) than the other fits: Lower Nass Sea and River Type, Kitwanga, Babine Late Wild, and the Skeena aggregate. Motase had the widest Smsy posterior across alternative capacity priors.
+Pour le modèle de Ricker de base, l’effet des valeurs a priori de la capacité de rechange était généralement plus important dans les cas où les estimations de la capacité étaient plus incertaines (figure \@ref(fig:FitsCompCapPrior)). Trois ajustements au niveau du stock et un au niveau du regroupement étaient particulièrement plus sensibles (différences plus importantes dans les estimations des médianes) que les autres : le stock de type océanique et de type fluvial de la basse Nass, le stock de la rivière Kitwanga, le stock sauvage à montaison tardive de la rivière Babine et le regroupement de la rivière Skeena. C’est le stock de la rivière Motase qui avait la valeur a posteriori de Srmd la plus large parmi les valeurs a priori de la capacité.
 
 
-Posterior parameter distributions were similar for Basic Ricker and AR1 model fits in most cases (Figures \@ref(fig:FitsCompAR1Pars) and \@ref(fig:FitsCompAR1Smsy)). The AR1 model had slightly wider ln.alpha
-posteriors for most fits and slightly narrower Smax posteriors for some fits. Estimates of ln.alpha  that were more uncertain in the Basic Ricker fit did not improve with the AR1 model form. The AR1 fit for Swan/Stephens was even poorer than the Basic Ricker fit. Among the cases where AR1 models could be fitted, the posterior capacity estimates were most uncertain for the three aggregate-level fits and for Lower Nass Sea and River Type Sockeye, which also showed the largest improvement due to the change in model form (i.e., Smax posterior much narrower for the AR1 fit than the Basic Ricker fit). Median Smsy estimates were very similar for the two alternative model forms, except for Lower Nass Sea and River Type, where the AR1 estimate has a 26% lower median and a substantially narrower posterior.
+Les distributions des paramètres a posteriori étaient semblables pour les ajustements du modèle de Ricker de base et du modèle AR1 dans la plupart des cas (figures \@ref(fig:FitsCompAR1Pars et \@ref(fig:FitsCompAR1Smsy)). Le modèle AR1 avait des valeurs a posteriori de In.alpha légèrement plus larges pour la plupart des ajustements et des valeurs a posteriori de Smax légèrement plus étroites pour certains. Les estimations de ln.alpha qui étaient plus incertaines dans l’ajustement du modèle de Ricker de base n’étaient pas meilleures avec la forme de modèle AR1. L’ajustement du modèle AR1 pour les rivières Swan et Stephens était encore plus mauvais que l’ajustement du modèle de Ricker de base. Parmi les cas où il a été possible d’ajuster des modèles AR1, les estimations de la capacité a posteriori étaient les plus incertaines pour les trois ajustements au niveau du regroupement et pour le saumon rouge de type océanique et de type fluvial de la basse Nass, qui affichaient également l’amélioration la plus importante résultant du changement de la forme du modèle (valeur a posteriori de Smax beaucoup plus étroite pour l’ajustement AR1 que pour l’ajustement de Ricker de base). La médiane des estimations de Srmd était très semblable pour les deux formes de rechange du modèle, sauf pour le saumon rouge de type océanique et de type fluvial de la basse Nass, pour lequel l’estimation AR1 a une médiane plus basse de 26 % et une valeur a posteriori beaucoup plus étroite.
 
-A TVP model with time-varying productivity could be fitted to 12 stocks to identify stock-specific changes over time in productivity (Figure \@ref(fig:FitsCompProd1)). Most stocks showed recent declines in productivity, but the time trends differed between stocks.  Five stocks showed a persistent decline in productivity since the 1990s, and these include the two largest wild stocks (Babine Early Wild, Babine Late Wild, Damdochax, Meziadin, and Swan/Stephens). Estimated productivity of Alastair gradually increased since the 1960s, until a drastic drop in the last few brood years. Babine Mid Wild has been mostly stable, with a slight decline. Bear has increased. Productivity is highly variable over time for three stocks (Lakelse, Lower Nass Sea and River Type, and Morice). 
+Il a été possible d’ajuster un modèle avec PVT à 12 stocks afin de déterminer les changements de la productivité pour chaque stock au fil du temps (figure \@ref(fig:FitsCompProd1)). La productivité a baissé récemment pour la plupart des stocks, mais les tendances temporelles différaient entre les stocks. Cinq stocks ont connu un déclin persistant de la productivité depuis les années 1990, notamment les deux plus grands stocks sauvages (stock sauvage à montaison précoce de la rivière Babine, stock sauvage à montaison tardive de la rivière Babine, rivière Damdochax, rivière Meziadin et rivières Swan/Stephens). La productivité estimée du stock de la rivière Alastair a graduellement augmenté depuis les années 1960, jusqu’à une chute marquée dans les dernières années d’éclosion. Le stock sauvage à montaison moyenne de la rivière Babine est demeuré en grande partie stable, avec une légère baisse. Celui de la rivière Bear a augmenté. La productivité varie grandement dans le temps pour trois stocks (rivière Lakelse, saumon rouge de type océanique et de type fluvial de la basse Nass et rivière Morice).
 
-The estimated productivity trends from the TVP model fit generally track the trends over time of residuals generated from a Basic Ricker fit (Figure \@ref(fig:FitsCompProd1) vs. Figure \@ref(fig:FitsCompProd2)), and the TVP residuals therefore change less over time (Figure \@ref(fig:FitsCompProd3) vs. Figure \@ref(fig:FitsCompProd2)). Note the trade-off between the time-trends in time-varying ln.alpha from the TVP model and the TVP residuals (Figure \@ref(fig:FitsCompProd1) vs. Figure \@ref(fig:FitsCompProd3)): For those stocks where the productivity parameter changes smoothly over time, the TVP residuals vary a lot from year to year (i.e., "spiky"), while for those stocks where the productivity parameter changes rapidly between years, the TVP residuals are much smoother. Depending on the stock, the observed variability in the data is allocated either to the time-varying productivity parameter or to the residual error.
+Les tendances estimées de la productivité selon l’ajustement du modèle avec PVT suivent généralement les tendances temporelles des résiduels générés par un ajustement du modèle de Ricker de base (figure \@ref(fig:FitsCompProd1) et figure Figure \@ref(fig:FitsCompProd2)), et les résiduels de la PVT changent donc moins dans le temps (figure \@ref(fig:FitsCompProd3) et figure Figure \@ref(fig:FitsCompProd2)). Il convient de noter le compromis entre les tendances temporelles de ln.alpha variable dans le temps du modèle avec PVT et les résiduels de la PVT (figure \@ref(fig:FitsCompProd1) et figure \@ref(fig:FitsCompProd3)) : Pour les stocks dont le paramètre de productivité change en douceur au fil du temps, les résiduels de la PVT varient beaucoup d’une année à l’autre (« en dents de scie »), mais ils sont beaucoup plus lisses pour les stocks dont le paramètre de productivité change rapidement d’une année à l’autre. Selon le stock, la variabilité observée dans les données est attribuée soit au paramètre de PVT, soit à l’erreur résiduelle.
 
-For stocks where all three model forms could be fitted, the median posterior estimates of the productivity parameter ln.alpha are very similar between the basic Ricker and AR1 model, but brood-year specific ln.alpha estimates for the TVP model with time-varying productivity span a wide range, from much higher to much lower median estimates  than the basic Ricker and AR1 fits (Table \@ref(tab:ProdCompAcrossModels)).
+Pour les stocks pour lesquels on a pu ajuster les trois formes du modèle, la médiane des estimations a posteriori du paramètre de productivité ln.alpha est très semblable entre le modèle de Ricker de base et le modèle AR1, mais les estimations de ln.alpha par année d’éclosion pour le modèle avec PVT s’étendent sur une large fourchette, des médianes des estimations beaucoup plus élevées à beaucoup plus faibles que les ajustements du modèle de Ricker de base et du modèle AR1 (tableau  \@ref(tab:ProdCompAcrossModels)).
 
-Figures \@ref(fig:ScatterMezidian) to \@ref(fig:JoinPostBabLW) summarize the SR data and alternative model fits for the largest wild stock from each aggregate: Meziadin on the Nass and Babine Late Wild on the Skeena.
+Les figures \@ref(fig:ScatterMezidian) à \@ref(fig:JoinPostBabLW) résument les données sur les géniteurs-recrues et les ajustements de rechange du modèle pour le plus grand stock sauvage de chaque regroupement : le stock de la rivière Meziadin pour la rivière Nass et le stock sauvage à montaison tardive de la rivière Babine pour la rivière Skeena
 
-\clearpage
-(ref:ProdCompAcrossModels) Comparison of median ln.alpha estimates across SR model forms. Table lists the number of available brood years with SR data (n), the median estimate for the basic Ricker model (BR), and median estimates (Med) and percent difference to the basic Ricker (pDiff) for the AR1 model fit, and the year-specific estimate for the brood years with  lowest and highest median estimate from the time-varying productivity model (TVP Min, TVP Max).
+
+(ref:ProdCompAcrossModels) Comparaison des estimations de la médiane de ln.alpha entre les modèles géniteurs-recrues. Le tableau présente le nombre d’années d’éclosion disponibles pour lesquelles il existe des données sur les géniteurs-recrues (n), la médiane de l’estimation pour le modèle de Ricker de base (RB) et la médiane des estimations (Med) et la différence en pourcentage par rapport au modèle de Ricker de base (pDiff) pour l’ajustement du modèle AR1, de même que l’estimation par année pour les années d’éclosion pour lesquelles la médiane de l’estimation est la plus basse et la plus élevée à partir du modèle avec productivité variable dans le temps (PVT Min, PVT Max).
 
 ```{r ProdCompAcrossModels, echo = FALSE, results = "asis"}
 
 table.in <- read_csv("data/FitsComparison_ReportTable_lnalpha.csv",
 										 col_types = cols(.default = "c"))  %>%
 							select(-contains("SIQR"),-SpnContr) %>%
-							mutate_all(~ as.character(.x))
-	
+							mutate_all(~ as.character(.x)) %>%
+							mutate_all(~gsub("\\.",",",.x))
+
 
 table.in[is.na(table.in)] <- "-"
 table.in$Basin[duplicated(table.in$Basin)] <- ""
 
 
-col.names.use <-  c("Basin","Stock","n","Med","Med","pDiff","Med","pDiff","Med","pDiff")
+col.names.use <-  c("Bassin","Stock","n","Med","Med","pDiff","Med","pDiff","Med","pDiff")
 
 
 
 table.in %>%
    #mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
    #mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
-csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l","l",rep("r",8)),
+csas_table(format = "latex", 
+			#format.args = list(decimal.mark = ',', big.mark = " "), #CAUSES ERROR
+			escape = FALSE, font_size = 9, align = c("l","l",rep("r",8)),
 									col.names = col.names.use ,
                   caption = "(ref:ProdCompAcrossModels)" ) %>%
 	 #kableExtra::column_spec(6, bold = T) %>%
      #kableExtra::row_spec(c(lines.idx), hline_after = TRUE) %>%
-	add_header_above(c(" " = 3, "BR" = 1,"AR1" = 2,"TVP Min" = 2,"TVP Max" = 2))  
+	add_header_above(c(" " = 3, "RB" = 1,"AR1" = 2,"PVT Min" = 2,"PVT Max" = 2))  
 
 ```
 
@@ -103,75 +108,75 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l","l",re
 
 \clearpage
 
-(ref:FitsCompProdCap) Comparison of Bayesian posterior distributions for productivity (ln.alpha) and capacity (Smax). Model fits shown are the Basic Ricker fits with capped uniform prior for Smax. Posterior distributions are summarized as the standardized interquartile range SIQR = (p75-p25)/p50. The reference line marks a slope of 2 (i.e., posterior for Smax is twice as wide relative to the median value as the posterior for ln.alpha). Model fits are flagged with red points if the SIQR for Smax is larger than 0.8 or the SIQR for ln.alpha is larger than 0.3. Johnston is labelled because it has the narrowest Smax posterior (lowest SIQR).
+(ref:FitsCompProdCap) Comparaison des distributions a posteriori bayésiennes pour la productivité (ln.alpha) et la capacité (Smax). Les ajustements de modèle indiqués sont les ajustements du modèle de Ricker de base avec une valeur a priori uniforme plafonnée pour Smax. Les distributions a posteriori sont résumées comme l’écart interquartile normalisé SIQR = (p75-p25)/p50. La ligne de référence marque une pente de 2 (c’est-à-dire que la valeur a posteriori de Smax est deux fois plus large par rapport à la valeur médiane que la valeur a posteriori de ln alpha). Les ajustements du modèle sont indiqués par des points rouges si le SIQR pour Smax est supérieur à 0,8 ou si le SIQR pour ln.alpha est supérieur à 0,3. Le stock de la rivière Johnston est représenté parce qu’il a la valeur a posteriori de Smax la plus étroite (SIQR le plus bas).
 
 ```{r FitsCompProdCap,   fig.cap="(ref:FitsCompProdCap)"}
-include_graphics("data/Convergence/FitsComparison_ProdvsCapWidth.png")
+include_graphics("data/1_FrenchFigs/Fig7_FitsComparison_ProdvsCapWidth_French.png")
 ```
 
 
 
 
 \clearpage
-(ref:FitsCompDetFig) Comparison of Bayesian and deterministic estimates for Smsy. Both estimates use the basic Ricker model form. The Bayesian estimate is the version with the capped uniform prior on capacity. Model fits are flagged with red points if the difference is larger than 25%. Panel A compares estimates on a log scale to allow comparison across stocks with very different estimates, but stocks are flagged if the difference in original (i.e., unlogged) values is larger than 25%. Bayesian and deterministic fits are mostly similar. Panel B shows the relationship between the % difference and the width of the Bayesian posterior distribution, expressed as the standardized interquartile range (SIQR). The difference between estimates increases with larger uncertainty in the Bayesian estimates (i.e., larger SIQR).
+(ref:FitsCompDetFig) Comparaison des estimations bayésiennes et déterministes pour Srmd. Les deux estimations utilisent le modèle de Ricker de base. L’estimation bayésienne est la version avec la valeur a priori uniforme plafonnée de la capacité. Les ajustements du modèle sont indiqués par des points rouges si la différence est supérieure à 25 %. Le graphique A compare les estimations sur une échelle logarithmique pour permettre de comparer des stocks dont les estimations sont très différentes, mais les stocks sont représentés si la différence des valeurs originales (c.-à-d. non logarithmiques) est supérieure à 25 %. Les ajustements bayésiens et déterministes sont en gros semblables. Le graphique B montre la relation entre la différence en % et la largeur de la distribution a posteriori bayésienne, exprimée en tant qu’écart interquartile normalisé (SIQR). La différence entre les estimations augmente avec l’incertitude plus grande dans les estimations bayésiennes (SIQR plus important).
 
 ```{r FitsCompDetFig,   fig.cap="(ref:FitsCompDetFig)"}
-include_graphics("data/Convergence/FitsComparison_BRcuVsDet.png")
+include_graphics("data/1_FrenchFigs/Fig8_FitsComparison_BRcuVsDet_French.png")
 ```
 
 
 
 
 \clearpage
-(ref:FitsCompCapPrior) Effect of alternative capacity priors on median Smsy estimates. We tested two to four alternative priors for Smax for the stock-level and aggregate-level fits of the Basic Ricker model (wide vs. capped, uniform vs. lognormal). The effect of alternative capacity priors is larger for more uncertain SR model fits (i.e., larger SIQR). SR model fits with red points are flagged if the difference  between median estimates is larger than 25% or the standardized interquartile range for the most uncertain fit is larger than 1 (i.e., the range between the lower and upper quartiles is larger than the median value).
+(ref:FitsCompCapPrior) Effet des autres valeurs a priori de la capacité sur la médiane des estimations de Srmd. Nous avons testé deux à quatre valeurs a priori de rechange pour Smax pour les ajustements au niveau du stock et au niveau du regroupement du modèle de Ricker de base (étendue par rapport à plafonnée, uniforme par rapport à log-normale). L’effet des autres valeurs a priori de la capacité est plus important pour les ajustements plus incertains du modèle géniteurs-recrues (SIQR plus important). Les ajustements du modèle géniteurs-recrues avec des points rouges sont indiqués si la différence entre la médiane des estimations est supérieure à 25 % ou si l’écart interquartile normalisé pour l’ajustement le plus incertain est supérieur à 1 (c.-à-d. que l’écart entre les quartiles inférieur et supérieur est supérieur à la valeur médiane).
 
 ```{r FitsCompCapPrior,   fig.cap="(ref:FitsCompCapPrior)"}
-include_graphics("data/Convergence/FitsComparison_CapPriorEffect.png")
+include_graphics("data/1_FrenchFigs/Fig9_FitsComparison_CapPriorEffect_French.png")
 ```
 
 
 \clearpage
-(ref:FitsCompAR1Pars) Comparison of posterior distributions for Basic Ricker and AR1 model fits - Parameters. Both model fits used the capped uniform capacity prior. Panels compare the width of posterior distributions (SIQR) between model forms for ln.alpha (A) and Smax (B). SR model fits are flagged with red points for n.alpha if either SIQR > 0.3 and flagged for Smax if either SIQR > 0.6.
+(ref:FitsCompAR1Pars) Comparaison des distributions a posteriori pour les ajustements des modèles de Ricker de base et AR1 – Paramètres. Les ajustements des deux modèles ont utilisé la valeur a priori de la capacité uniforme plafonnée. Les graphiques comparent la largeur des distributions a posteriori (SIQR) entre les formes du modèle pour ln.alpha (A) et Smax (B). Les ajustements du modèle géniteurs-recrues sont indiqués par des points rouges pour In.alpha si le SIQR > 0,3 et indiqués pour Smax si le SIQR > 0,6.
 
 
 ```{r FitsCompAR1Pars,   fig.cap="(ref:FitsCompAR1Pars)"}
-include_graphics("data/Convergence/FitsComparison_BRcuVsAR1_Pars.png")
+include_graphics("data/1_FrenchFigs/Fig10_FitsComparison_BRcuVsAR1_Pars_French.png")
 ```
 
 
 \clearpage
-(ref:FitsCompAR1Smsy) Comparison of posterior distributions for Basic Ricker and AR1 model fits - Smsy. Figures compare median estimates (A) and width of the posteriors (B) of posterior Smsy distributions from the alternative model forms. Model fits are flagged with red points if the difference in median estimates is larger than 25%. Aggregate fits are also labelled in Panel B. Note that Panel A compares estimates on a log scale to allow comparison across stocks with very different estimates, but stocks are flagged if the difference in original (i.e., unlogged) values is larger than 25%.
+(ref:FitsCompAR1Smsy) Comparaison des distributions a posteriori pour les ajustements des modèles de Ricker de base et AR1 – Srmd. Les figures comparent la médiane des estimations (A) et la largeur des valeurs a posteriori (B) des distributions a posteriori de Srmd à partir des formes de rechange du modèle. Les ajustements du modèle sont indiqués par des points rouges si la différence dans la médiane des estimations est supérieure à 25 %. Les ajustements pour les regroupements sont également indiqués dans le graphique B. Il convient de noter que le graphique A compare les estimations sur une échelle logarithmique pour permettre de comparer des stocks dont les estimations sont très différentes, mais les stocks sont représentés si la différence des valeurs originales (c.-à-d. non logarithmiques) est supérieure à 25 %.
 
 ```{r FitsCompAR1Smsy,   fig.cap="(ref:FitsCompAR1Smsy)"}
-include_graphics("data/Convergence/FitsComparison_BRcuVsAR1_Smsy.png")
+include_graphics("data/1_FrenchFigs/Fig11_FitsComparison_BRcuVsAR1_Smsy_French.png")
 ```
 
 
 
 \clearpage
-(ref:FitsCompProd1) Time-varying productivity for 12 stocks with complete time series. Each panel shows the median and 80% bounds of year-specific posterior distributions of ln.alpha for the TVP model fit. Reference lines show the corresponding intrinsic productivity in terms of recruits per spawner (R/S) at very low spawner abundance (technically, at 0 spawners). 
+(ref:FitsCompProd1) Tendance de la productivité variable dans le temps pour 12 stocks pour lesquels on dispose d’une série chronologique complète. Chaque graphique montre la médiane et les bornes de 80 % des distributions a posteriori de ln.alpha, par année, pour l’ajustement du modèle avec PVT. Les lignes de référence indiquent la productivité intrinsèque correspondante en matière de recrues par géniteur (R/S) à une très faible abondance de géniteurs (techniquement, à 0 géniteur). 
 
 ```{r FitsCompProd1,   fig.cap="(ref:FitsCompProd1)"}
-include_graphics("data/Convergence/FitsComparison_PROD_3_ProdPatterns_KF_All.png")
+include_graphics("data/1_FrenchFigs/Fig12_FitsComparison_PROD_3_ProdPatterns_KF_All_French.png")
 ```
 
 
 
 
 \clearpage
-(ref:FitsCompProd2) Log residuals from the Basic Ricker fit for 12 stocks where a time-varying productivity TVP model was also fitted. Each panel shows median and 80% bounds for annual residuals and a 4yr running average trend line.
+(ref:FitsCompProd2) Résiduels logarithmiques de l’ajustement du modèle de Ricker de base pour 12 stocks pour lesquels un modèle avec PVT a également été ajusté. Chaque graphique montre la médiane et les bornes de 80 % pour les résiduels annuels et la ligne d’une tendance de la moyenne mobile sur quatre ans.
 
 ```{r FitsCompProd2,   fig.cap="(ref:FitsCompProd2)"}
-include_graphics("data/Convergence/FitsComparison_PROD_3_RickerResids_Basic_All.png")
+include_graphics("data/1_FrenchFigs/Fig13_FitsComparison_PROD_3_RickerResids_Basic_All_French.png")
 ```
 
 
 
 \clearpage
-(ref:FitsCompProd3) Log residuals from the TVP model fit with time varying productivity for 12 stocks with complete time series. Each panel shows median and 80% bounds for annual residuals and a 4yr running average trend line.
+(ref:FitsCompProd3) Résiduels logarithmiques de l’ajustement du modèle avec PVT pour 12 stocks pour lesquels on dispose d’une série chronologique complète. Chaque graphique montre la médiane et les bornes de 80 % pour les résiduels annuels et la ligne d’une tendance de la moyenne mobile sur quatre ans.
 
 ```{r FitsCompProd3,   fig.cap="(ref:FitsCompProd3)"}
-include_graphics("data/Convergence/FitsComparison_PROD_3_RickerResids_KF_All.png")
+include_graphics("data/1_FrenchFigs/Fig14_FitsComparison_PROD_3_RickerResids_KF_All_French.png")
 ```
 
 
@@ -183,32 +188,32 @@ include_graphics("data/Convergence/FitsComparison_PROD_3_RickerResids_KF_All.png
 
 
 
-(ref:ScatterMezidian) Scatterplot of log productivity ln(R/S) vs. spawner abundance - Meziadin. Observations are colour-coded, with earlier data in fainter shading. The secondary axis illustrates the corresponding raw R/S values. 
+(ref:ScatterMezidian) Diagramme de dispersion de la productivité logarithmique ln(R/S) par rapport à l’abondance des géniteurs – Meziadin. Les observations sont codées par couleur, les données antérieures étant représentées avec un ombrage moins vif. L’axe secondaire illustre les valeurs brutes R/S correspondantes.
 
 ```{r ScatterMezidian,   fig.cap="(ref:ScatterMezidian)"}
-include_graphics("data/StockSampleFigs/Meziadin_RpS_ScatterPlot.png")
+include_graphics("data/1_FrenchFigs/Fig15_French_Meziadin_RpS_ScatterPlot.png")
 ```
 
 
-(ref:JoinPostMezidian) Joint posterior distributions for productivity parameter ln(alpha) and capacity parameter Smax (1/b): Meziadin, with PR-based capacity priors. Each panel shows the scatter of MCMC samples, contour lines for the joint distribution, and two depictions of the marginal distributions for each parameter: boxplot with median, quartiles, and 80% whiskers, and a kernel density plot. Dashed reference lines show the medians of the marginal distributions. Figure includes 1 panel for the Basic Ricker model fit (top left), one panel for the Ricker AR1 fit (top right), and two panels showing the brood years with the lowest and highest productivity (median ln.alpha) for the TVP model fit (bottom panels). The parameter samples for the TVP model have 1 set of posterior samples for Smax, and 1 set of ln.alpha posterior samples for each brood year. The bottom panels show the joint distribution of Smax and ln.alpha for 2 brood years, selected to capture the brood year with the lowest median ln.alpha and the highest median ln.alpha.
+(ref:JoinPostMezidian) Distributions a posteriori communes pour le paramètre de productivité ln(alpha) et le paramètre de capacité Smax (1/b) : Meziadin, avec les valeurs a priori de la capacité fondées sur le rendement photosynthétique. Chaque graphique montre la dispersion des échantillons MCCM, les lignes de contour pour la distribution commune et deux représentations des distributions marginales pour chaque paramètre : un diagramme de quartiles avec la médiane, les quartiles et les moustaches à 80 % et un diagramme de densité de noyau. Les lignes de référence en pointillés représentent les médianes des distributions marginales. La figure comprend un graphique pour l’ajustement du modèle de Ricker de base (en haut à gauche), un graphique pour l’ajustement du modèle de Ricker AR1 (en haut à droite) et deux graphiques montrant les années d’éclosion ayant la productivité la plus faible et la plus élevée (médiane de ln.alpha) pour l’ajustement du modèle avec PVT (graphiques du bas). Les échantillons de paramètres pour le modèle avec PVT ont un ensemble d’échantillons a posteriori pour Smax et un ensemble d’échantillons a posteriori de ln.alpha pour chaque année d’éclosion. Les graphiques du bas montrent la distribution commune de Smax et ln.alpha pour deux années d’éclosion, sélectionnées pour avoir la médiane la plus faible et la médiane la plus élevée de ln.alpha.
 
 ```{r JoinPostMezidian,   fig.cap="(ref:JoinPostMezidian)"}
-include_graphics("data/StockSampleFigs/Meziadin_SR_Par_JointPosterior_3Modelcu.png")
+include_graphics("data/1_FrenchFigs/Fig16_French_Meziadin_SR_Par_JointPosterior_3Modelcu.png")
 ```
 
 
 
-(ref:ScatterBabLW) Scatterplot of log productivity ln(R/S) vs. spawner abundance - Babine Late Wild. Observations are colour-coded, with earlier data in fainter shading. The secondary axis illustrates the corresponding raw R/S values.
+(ref:ScatterBabLW) Diagramme de dispersion de la productivité logarithmique ln(R/S) par rapport à l’abondance des géniteurs – Stock sauvage à montaison tardive de la rivière Babine. Les observations sont codées par couleur, les données antérieures étant représentées avec un ombrage moins vif. L’axe secondaire illustre les valeurs brutes R/S correspondantes.
 
 ```{r ScatterBabLW,   fig.cap="(ref:ScatterBabLW)"}
-include_graphics("data/StockSampleFigs/BabLW_RpS_ScatterPlot.png")
+include_graphics("data/1_FrenchFigs/Fig17_French_BabLW_RpS_ScatterPlot.png")
 ```
 
 
-(ref:JoinPostBabLW) Joint posterior distributions for ln.a and b: Babine Late Wild. Each panel shows the scatter of MCMC samples, contour lines for the joint distribution, and two depictions of the marginal distributions for each parameter: boxplot with median, quartiles, and 80% whiskers, and a kernel density plot. Dashed reference lines show the medians of the marginal distributions. Figure includes 1 panel for the Basic Ricker model fit (top left), one panel for the Ricker AR1 fit (top right), and two panels showing the brood years with the lowest and highest productivity (median ln.alpha) for the TVP model fit (bottom panels). The parameter samples for the TVP model have 1 set of posterior samples for Smax, and 1 set of ln.alpha posterior samples for each brood year. The bottom panels show the joint distribution of Smax and ln.alpha for 2 brood years, selected to capture the brood year with the lowest median ln.alpha and the highest median ln.alpha.
+(ref:JoinPostBabLW) Distributions a posteriori communes pour ln.a et b : Stock sauvage à montaison tardive de la rivière Babine. Chaque graphique montre la dispersion des échantillons MCCM, les lignes de contour pour la distribution commune et deux représentations des distributions marginales pour chaque paramètre : un diagramme de quartiles avec la médiane, les quartiles et les moustaches à 80 % et un diagramme de densité de noyau. Les lignes de référence en pointillés représentent les médianes des distributions marginales. La figure comprend un graphique pour l’ajustement du modèle de Ricker de base (en haut à gauche), un graphique pour l’ajustement du modèle de Ricker AR1 (en haut à droite) et deux graphiques montrant les années d’éclosion ayant la productivité la plus faible et la plus élevée (médiane de ln.alpha) pour l’ajustement du modèle avec PVT (graphiques du bas). Les échantillons de paramètres pour le modèle avec PVT ont un ensemble d’échantillons a posteriori pour Smax et un ensemble d’échantillons a posteriori de ln.alpha pour chaque année d’éclosion. Les graphiques du bas montrent la distribution commune de Smax et ln.alpha pour deux années d’éclosion, sélectionnées pour avoir la médiane la plus faible et la médiane la plus élevée de ln.alpha.
 
 ```{r JoinPostBabLW,   fig.cap="(ref:JoinPostBabLW)"}
-include_graphics("data/StockSampleFigs/Bab-LW_SR_Par_JointPosterior_3Modelcu.png")
+include_graphics("data/1_FrenchFigs/Fig18_French_Bab-LW_SR_Par_JointPosterior_3Modelcu.png")
 ```
 
 
