@@ -1,18 +1,18 @@
-DataType,ModelType,CapPriorType,Total,Rhat,Gelman,Geweke,Met2,Met3,pMet2,pMet3
-All,All,All,163,159,157,138,163,134,100,82
-all years,Basic,capped uniform,25,25,25,22,25,22,100,88
-all years,Basic,wide uniform,24,24,24,21,24,21,100,88
-all years,Basic,capped lognormal,19,19,19,17,19,17,100,89
-all years,Basic,wide lognormal,19,19,18,18,19,17,100,89
-all years,AR1,capped uniform,17,17,17,14,17,14,100,82
-all years,AR1,wide uniform,3,3,3,3,3,3,100,100
-all years,Kalman,capped uniform,15,12,13,6,15,6,100,40
-all years,Kalman,wide uniform,3,3,3,2,3,2,100,67
-truncated,Basic,capped uniform,22,22,22,19,22,19,100,86
-truncated,Basic,wide uniform,3,3,3,3,3,3,100,100
-truncated,Basic,capped lognormal,1,1,1,1,1,1,100,100
-truncated,Basic,wide lognormal,1,1,1,1,1,1,100,100
-truncated,AR1,capped uniform,3,2,1,3,3,1,100,33
-truncated,AR1,wide uniform,2,2,1,2,2,1,100,50
-truncated,Kalman,capped uniform,4,4,4,4,4,4,100,100
-truncated,Kalman,wide uniform,2,2,2,2,2,2,100,100
+TypeDonnée,TypeModèle,TypeAprioriCap,Total,Rhat,Gelman,Geweke,Met2,Met3,pMet2,pMet3
+Total,Total,Total,163,159,157,138,163,134,100,82
+Toutes les années,Basic,Uniforme plafonnée,25,25,25,22,25,22,100,88
+Toutes les années,Basic,Uniforme large,24,24,24,21,24,21,100,88
+Toutes les années,Basic,Log-normale plafonnée,19,19,19,17,19,17,100,89
+Toutes les années,Basic,Log-normale large,19,19,18,18,19,17,100,89
+Toutes les années,AR1,Uniforme plafonnée,17,17,17,14,17,14,100,82
+Toutes les années,AR1,Uniforme large,3,3,3,3,3,3,100,100
+Toutes les années,Kalman,Uniforme plafonnée,15,12,13,6,15,6,100,40
+Toutes les années,Kalman,Uniforme large,3,3,3,2,3,2,100,67
+Tronquée,Basic,Uniforme plafonnée,22,22,22,19,22,19,100,86
+Tronquée,Basic,Uniforme large,3,3,3,3,3,3,100,100
+Tronquée,Basic,Log-normale plafonnée,1,1,1,1,1,1,100,100
+Tronquée,Basic,Log-normale large,1,1,1,1,1,1,100,100
+Tronquée,AR1,Uniforme plafonnée,3,2,1,3,3,1,100,33
+Tronquée,AR1,Uniforme large,2,2,1,2,2,1,100,50
+Tronquée,Kalman,Uniforme plafonnée,4,4,4,4,4,4,100,100
+Tronquée,Kalman,Uniforme large,2,2,2,2,2,2,100,100
