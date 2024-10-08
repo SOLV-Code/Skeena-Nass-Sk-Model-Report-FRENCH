@@ -1,5 +1,5 @@
 ﻿Benchmark,Version,Calculation
 Smax,Standard,$S_{max} = 1 / b$
 Seq,Standard,$S_{eq} = ln.a / b$
-Smsy,Scheuerell (2016),$S_{msy} = (1 - lambert_W0(exp(1 - ln.a))) / b$
-Sgen,Connors et al. (2023),Optimization
+Srmd,Scheuerell (2016),$S_{rmd} = (1 - lambert_W0(exp(1 - ln.a))) / b$
+Sgen,Connors et al. (2023),Optimisation

@@ -1,3 +1,3 @@
 ﻿ModelForm,BiasCorrection,Source
-"Basic, Time-varying Productivity (TVP)",$ln(\alpha') = ln(\alpha) + \frac{\sigma^2}{2}$,"Bernard et al. (2000), McPherson et al. (2010)"
-AR1,$ln(\alpha') = ln(\alpha) + \frac{\sigma^2}{2(1-\phi^2)}$,Fleishman and Evenson (2010)
+"De base, productivité variable dans le temps (PVT)",$ln(\alpha') = ln(\alpha) + \frac{\sigma^2}{2}$,"Bernard et al. (2000), McPherson et al. (2010)"
+AR1,$ln(\alpha') = ln(\alpha) + \frac{\sigma^2}{2(1-\phi^2)}$,Fleishman et Evenson (2010)
