@@ -1,12 +1,12 @@
-Criterion,Critical?,Agg Smsy,Sum Smsy,Umsy Comp,Equ. Prof,Agg Equ. TradeOff,Status,Log Reg,Sim
-Time-varying parameters?,YES,MAYBE,MAYBE,MAYBE,MAYBE,MAYBE,MAYBE,MAYBE,MAYBE
-Uncertainty in SR model fits?,TBD,YES,YES,YES,YES,YES,YES,YES,YES
-Outcome uncertainty?,TBD,NO,NO,NO,NO,NO,NO,NO,YES
-Productivity Covariation?,TBD,NO,NO,NO,NO,NO,NO,MAYBE,YES
-Bias in parameter estimates?,TBD,MAYBE,MAYBE,MAYBE,MAYBE,MAYBE,MAYBE,MAYBE,YES
-Can get abundance-based Agg RP?,TBD,YES,MAYBE,NO,NO,YES,NO,MAYBE,MAYBE
-Can test state-dependent HCR?,TBD,NO,NO,MAYBE,NO,NO,NO,NO,YES
-Data-deficient stocks?,TBD,NO,NO,NO,NO,NO,MAYBE,MAYBE,MAYBE
-Account for component stocks?,YES,NO,NO,MAYBE,MAYBE,YES,YES,YES,YES
-Can be easily operationalized?,TBD,YES,YES,YES,YES,YES,YES,YES,YES
-Time requirements,TBD,Short,Short,Short,Short,Med,Med,Med,Long
+Crit,Critical?,Agg Smsy,Sum Smsy,Umsy Comp,Equ. Prof,Agg Equ. TradeOff,Status,Log Reg,Sim
+X,X,X,X,X,X,X,X,X,X
+X,X,X,X,X,X,X,X,X,X
+X,X,X,X,X,X,X,X,X,X
+X,X,X,X,X,X,X,X,X,X
+X,X,X,X,X,X,X,X,X,X
+X,X,X,X,X,X,X,X,X,X
+X,X,X,X,X,X,X,X,X,X
+X,X,X,X,X,X,X,X,X,X
+X,X,X,X,X,X,X,X,X,X
+X,X,X,X,X,X,X,X,X,X
+X,X,X,X,X,X,X,X,X,X

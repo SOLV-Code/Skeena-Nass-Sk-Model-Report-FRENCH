@@ -13,7 +13,8 @@ uses "S" in text and equations. Section 2.2.5 uses Srmd instead of Smsy or Grmd.
 - **TABLE 8** - special symbols crashing the compile 
 - "State vs. Status" and "statut ou l'état" It seems that in both languages there are complicted nuances around these terms. The French version of the WSP uses "POINTS DE RÉFÉRENCE DE L’ÉTAT" for status benchmarks, and so the res doc translation is right. It just surprised me. It seems like in French they use both depending om the kind of status you're talking about. See examples at https://www.linguee.fr/francais-anglais/traduction/statut+ou+%C3%A9tat.html
 - **Table 12** "Étiquette" column label is crashing the compile, Even without it, some cell content also crashing the compile.
-
+- **Tables 13-16** some content crashes the compile
+- Why are Skeena and Nass rivers translated as "riviere" and the Fraser River as "fleuve"? "In French, rivers are traditionally classified either as fleuves when they flow into the sea (or into a desert or lake), or as rivières when they flow into another river. " https://en.wikipedia.org/wiki/List_of_rivers_of_France
 
 ## REMERCIEMENTS {-}
 
