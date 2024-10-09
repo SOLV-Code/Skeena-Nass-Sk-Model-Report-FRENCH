@@ -301,39 +301,48 @@ include_graphics("data/1_FrenchFigs/Fig24_FitsComparison_PROD_2_ProdPatterns_KF_
 
 
 \clearpage
-##  PRODUCTIVITY SCENARIOS (STOCK-LEVEL AND AGGREGATE-LEVEL)
+##  SCÉNARIOS DE PRODUCTIVITÉ (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)
 
-### Scenario Descriptions
+### Description des scénarios
 
-We worked through the considerations and steps outlined in Section \@ref(ModelSelection) to select spawner-recruit parameter sets for four alternative productivity scenarios from the suite of candidate single-stock SR model fits.  These scenarios were used for the remaining analyses in this report (Tables \@ref(tab:SelectedModelsTab) and \@ref(tab:SelectedModelsTabAgg)). 
+Nous avons examiné les considérations et les étapes décrites à la section \@ref(ModelSelection) afin de sélectionner des ensembles de paramètres géniteurs-recrues pour quatre scénarios de productivité de rechange à partir de la série d’ajustements possibles du modèle géniteurs-recrues à un seul stock. Ces scénarios ont été utilisés pour les autres analyses du présent rapport (tableaux  \@ref(tab:SelectedModelsTab) et \@ref(tab:SelectedModelsTabAgg)).
 
-Key considerations were:
+Voici les principales considérations :
 
-* We wanted to highlight differences in productivity between stocks, so focused on single-stock model fits, rather than the hierarchical model fits that start with the assumption of a similar underlying productivity across stocks.
-* Given that all candidate single-stock model fits converged for at least two of the three criteria (Section \@ref(Convergence)), we did not reject any of the fits based on statistical considerations.
-* We wanted to highlight the implications of alternative productivity assumptions for each stock, so we generated three alternatives to the base case with long-term average productivity. 
-* Where available, we used the AR1 model fit for the long-term average scenario. Otherwise, we used the Basic Ricker fit.
-* Where available, we used year-specific ln.alpha estimates from the time-varying productivity (TVP) model for the alternative productivity scenarios. Otherwise, we subsampled parameter sets from the Basic Ricker fit.
-* For stocks with time-varying productivity (TVP) model fits, we used the last available generation for the *Recent* productivity scenario. However, given discussions during the peer-review meeting [@SkeenaNassSkPRO;@SkeenaNassSkSAR], we also tested the effect of expanding the number of brood-years included in the *Recent* scenario to either two generations or 3 generations.
+* Nous voulions mettre en évidence les différences de productivité entre les stocks. Nous avons donc mis l’accent sur les ajustements du modèle à un seul stock, plutôt que sur ceux du modèle hiérarchique, qui part de l’hypothèse d’une productivité sous-jacente semblable entre les stocks.
+* Étant donné que tous les ajustements possibles du modèle à un seul stock convergeaient pour au moins deux des trois critères (section \@ref(Convergence)), nous n’avons rejeté aucun des ajustements sur la base de considérations statistiques.
+* Nous voulions souligner les conséquences des autres hypothèses de productivité pour chaque stock, de sorte que nous avons généré trois solutions de rechange au scénario de base avec une productivité moyenne à long terme.
+* Le cas échéant, nous avons utilisé l’ajustement du modèle AR1 pour le scénario de la moyenne à long terme. Sinon, nous avons utilisé l’ajustement du modèle de Ricker de base.
+* Lorsque c’était possible, nous avons utilisé des estimations de ln.alpha par année à partir du modèle avec PVT pour les autres scénarios de productivité. Sinon, nous avons sous-échantillonné les ensembles de paramètres à partir de l’ajustement du modèle de Ricker de base.
+* Pour les stocks pour lesquels des ajustements du modèle avec PVT étaient disponibles, nous avons utilisé la dernière génération disponible pour le scénario de productivité *récente*. Cependant, compte tenu des discussions qui ont eu lieu lors de la réunion d’examen par les pairs [@SkeenaNassSkPRO;@SkeenaNassSkSAR], nous avons également testé l’effet de l’augmentation du nombre d’années d’éclosion incluses dans le scénario de productivité *récente* à deux ou trois générations.
 
-We anticipate that future processes, such as the on-going Canadian domestic engagement process, will identify additional candidate model fits,  explore alternative parameter selection criteria, and request additional productivity scenarios.  The analysis framework is set up to rapidly respond to these requests. All of the results shown in subsequent sections can be  easily re-generated with alternative MCMC parameter sets (e.g., different productivity assumptions, Hierarchical Bayesian Model fits), but we have decided to limit the number of examples included in this Research Document. 
+Nous attendons à ce que des processus futurs, comme le processus de consultation national canadien en cours, déterminent d’autres ajustements possibles du modèle, explorent d’autres critères de sélection des paramètres et demandent d’autres scénarios de productivité. Le cadre d’analyse est conçu pour répondre rapidement à ces demandes. Tous les résultats présentés dans les sections suivantes peuvent être facilement produits de nouveau avec d’autres ensembles de paramètres MCCM (p. ex. différentes hypothèses de productivité, ajustements du modèle bayésien hiérarchique), mais nous avons décidé de limiter le nombre d’exemples inclus dans ce document de recherche.
+
 
 \clearpage
 
 
-(ref:SelectedModelsTab) Stock-level SR models selected for alternative scenarios.  Model fits are BR = Basic Ricker, AR1 = Ricker with lag-1 autoregression correction, TVP = Ricker model with time-varying productivity parameter alpha. All selected model fits used the capped uniform (*cu*) capacity prior. The range of brood years from which parameter sets were sampled is listed for TVP fits. For example, TVPcu2010-2014 denotes that 1/5th of the parameter samples were taken from each year in the period 2010 to 2014. For BR and AR1 fits, alternative scenarios are identified based on the percentile used for the adjusted median of the sample distribution. For example, BRcu(0.1) denotes that half the parameter samples for that scenario were taken from below the 10th percentile of the original distribution, and half from above. For stocks without TVP fits the recent productivity scenario matched the low productivity scenario if observed R/S clearly decreased in recent years, matched the high productivity scenarios if they increased, and matched the long-term average scenario if there was no clear trend in either direction. Note that three alternative versions of *Recent* productivity scenario for stocks with TVP fits were explored. All use the model fit, generation length, and end year specified in this table, but they include either one, two, or three generations. Section \@ref(AltProdResults) compares the parameter distributions. The examples in the rest of this Research Document are based on the 1-generation version of the *Recent* productivity scenario.
+(ref:SelectedModelsTab) 
+Modèles géniteurs-recrues au niveau du stock sélectionnés pour des scénarios de rechange. Les ajustements du modèle sont RB = modèle de Ricker de base, AR1 = modèle de Ricker avec correction de l’autorégression avec un décalage de 1, PVT = modèle de Ricker avec paramètre de productivité alpha variable dans le temps. Tous les ajustements sélectionnés du modèle utilisaient auparavant la valeur a priori de la capacité uniforme plafonnée (*cu*). La plage des années d’éclosion à partir de laquelle les ensembles de paramètres ont été échantillonnés est indiquée pour les ajustements du modèle avec PVT. Par exemple, PVTcu2010-2014 indique qu’un cinquième des échantillons de paramètres a été prélevé chaque année entre 2010 et 2014. Pour les ajustements du modèle RB et du modèle AR1, des scénarios de rechange sont déterminés en fonction du centile utilisé pour la médiane ajustée de la distribution de l’échantillon. Par exemple, RBcu(0,1) indique que la moitié des échantillons de paramètres pour ce scénario ont été prélevés en dessous du 10e centile de la distribution originale, et la moitié au-dessus. Pour les stocks sans ajustements de la PVT, le scénario de productivité récente correspondait au scénario de faible productivité si le rapport recrues/géniteur observé a clairement diminué au cours des dernières années; il correspondait aux scénarios de productivité élevée si le rapport a augmenté; et il correspondait au scénario de la moyenne à long terme s’il n’y a pas de tendance claire dans l’un ou l’autre sens. Il faut noter que trois autres versions du scénario de productivité récente pour les stocks avec ajustements de la PVT ont été explorées. Toutes utilisent l’ajustement du modèle, la durée de génération et l’année de fin spécifiés dans ce tableau, mais elles englobent une, deux ou trois générations. La section \@ref(AltProdResults) compare les distributions des paramètres. Les exemples donnés dans le reste de ce document de recherche sont fondés sur la version à une génération du scénario de productivité *récente*.
+
 
 ```{r SelectedModelsTab, echo = FALSE, results = "asis"}
 
-table.in <- read_csv("data/ReportTable_SelectedModels.csv") %>% arrange(Aggregate,StkSeq) %>%
-									select(-StkSeq,-Stock) %>% dplyr::filter(!is.na(Aggregate)) %>%
-									dplyr::rename(Stock = StkNmS,Recent = Now,MU=Aggregate) %>%
-									mutate_all(funs(str_replace(., "KF","TVP")))
+table.in <- read_csv("data/ReportTable_SelectedModels.csv",
+                               locale=locale(encoding="latin1")) %>%
+				arrange(Aggregate,StkSeq) %>%
+				select(-StkSeq,-Stock) %>% dplyr::filter(!is.na(Aggregate)) %>%
+				dplyr::rename(Stock = StkNmS,Récente = Now,
+                Moy.LT = LTAvg, Faible = Low,Élevée = High,
+                ZG=Aggregate)  %>%
+                mutate_all(~gsub("\\.",",",.x)) %>%
+                mutate_all(~gsub("KF","PVT",.x)) %>%
+                mutate_all(~gsub("BR","RB",.x))
 
 
 
 
-table.in$MU[duplicated(table.in$MU)] <- ""
+table.in$ZG[duplicated(table.in$ZG)] <- ""
 
 table.in[is.na(table.in)] <- "-"
 
@@ -344,7 +353,7 @@ table.in %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
                   caption = "(ref:SelectedModelsTab)" ) %>%
     kableExtra::row_spec(c(7,9), hline_after = TRUE) %>%
-	add_header_above(c(" " = 2, "Scenarios" = 4)) 
+	add_header_above(c(" " = 2, "Scénarios" = 4)) 
 
 ```
 
@@ -353,13 +362,19 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
 
 \clearpage
 
-(ref:SelectedModelsTabAgg) Aggregate-level SR models selected for alternative scenarios. Layout as per Table \@ref(tab:SelectedModelsTab). 
+(ref:SelectedModelsTabAgg) Modèles géniteurs-recrues au niveau du regroupement sélectionnés pour les scénarios de rechange. Disposition semblable à celle du tableau \@ref(tab:SelectedModelsTab). 
 
 ```{r SelectedModelsTabAgg, echo = FALSE, results = "asis"}
 
-table.in <- read_csv("data/ReportTable_SelectedModelsAgg.csv") %>%			
-	dplyr::rename(Recent = Now) %>%
-									mutate_all(funs(str_replace(., "KF","TVP")))
+table.in <- read_csv("data/ReportTable_SelectedModelsAgg.csv",
+                               locale=locale(encoding="latin1")) %>%
+				arrange(Aggregate) %>%
+				dplyr::rename(Récente = Now,
+                Moy.LT = LTAvg, Faible = Low,Élevée = High,
+                ZG=Aggregate)  %>%
+                mutate_all(~gsub("\\.",",",.x)) %>%
+                mutate_all(~gsub("KF","PVT",.x)) %>%
+                mutate_all(~gsub("BR","RB",.x))
 
 table.in[is.na(table.in)] <- "-"
 
@@ -372,18 +387,18 @@ table.in %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
                   caption = "(ref:SelectedModelsTabAgg)" ) %>%
     #kableExtra::row_spec(c(7,9), hline_after = TRUE) %>%
-	add_header_above(c(" " = 1, "Scenarios" = 4)) 
+	add_header_above(c(" " = 1, "Scénarios" = 4)) 
 
 ```
 
 
 
-### Comparison of Parameter Distributions for Productivity Scenarios {#AltProdResults}
-
-Productivity parameters for the *recent* scenario, generated as per Table \@ref(tab:SelectedModelsTab), have lower median productivity for about 1/3 of the stocks, and wider distributions (i.e., larger uncertainty, lower confidence) for most of the stocks (Table \@ref(tab:ProdCompTab1), Figures \@ref(fig:ProdComp1) and \@ref(fig:ProdComp2)). Stocks with lower productivity in the *Recent* scenario include Meziadin, the largest Nass stock, and all three wild Babine stocks (Early, Mid, and Late Wild). Four small stocks, each accounting for less than 2% of cumulative spawner abundance since 2000, have higher *Recent* productivity: Alastair, Bear, Slamgeesh, and Johnston. Three stocks are notable for having both much lower productivity, with a % difference in median ln.alpha between scenarios larger than -35%, and a distribution that is more than twice as wide (i.e., % difference in SIQR > 100): Babine Late Wild, Babine Early Wild, Meziadin, and Kitwanga (Figure \@ref(fig:ProdComp2)).
+### Comparaison des distributions des paramètres pour les scénarios de productivité {#AltProdResults}
 
 
-Alternative versions of the *recent* productivity scenario, using either two or three generations instead of only the last generation, have similar median productivity and similar spread for about 1/2 of the stocks (Table \@ref(tab:ProdCompTab2), Figures \@ref(fig:ProdComp3) and \@ref(fig:ProdComp3)). This includes two of the three wild Babine stocks (Mid and Late Wild). For 1/3 of the stocks, median productivity is higher, and the distribution is narrower if additional brood years are included in the definition of the *recent* scenario. These include Meziadin, the largest Nass stock, and one of the wild Babine stocks (Babine Early Wild). For two stocks, median productivity is lower and more uncertain: Morice and Swan/Stephens. Corresponding Smsy estimates change similarly due to the alternative time windows used for the recent productivity scenario (Table \@ref(tab:ProdCompBMRatioSmsy)).
+Les paramètres de productivité pour le scénario de productivité *récente*, générés conformément au tableau \@ref(tab:SelectedModelsTab), ont une productivité médiane plus faible pour environ le tiers des stocks et des distributions plus larges (c.-à-d. plus grande incertitude, confiance plus faible) pour la plupart des stocks (tableau \@ref(tab:ProdCompTab1), figures \@ref(fig:ProdComp1) et \@ref(fig:ProdComp2)). Les stocks ayant une productivité plus faible dans le scénario de productivité *récente* sont le stock de la rivière Meziadin, le plus grand stock de la rivière Nass, et les trois stocks sauvages de la rivière Babine (stocks sauvages à montaison précoce, moyenne et tardive). Quatre petits stocks, représentant chacun moins de 2 % de l’abondance cumulative des géniteurs depuis 2000, ont une productivité *récente* plus élevée : les stocks des rivières Alastair, Bear, Slamgeesh et Johnston. Il est intéressant de mentionner trois stocks qui ont à la fois une productivité beaucoup plus faible, avec une différence de plus de -35 % dans la médiane de ln.alpha entre les scénarios, et une distribution plus de deux fois plus large (c.-à-d. une différence en pourcentage dans le SIQR supérieure à 100) : le stock sauvage à montaison tardive de la rivière Babine, le stock sauvage à montaison précoce de la rivière Babine, le stock de la rivière Meziadin et le stock de la rivière Kitwanga (figure \@ref(fig:ProdComp2)).
+
+D’autres versions du scénario de productivité *récente*, utilisant deux ou trois générations au lieu de la dernière génération seulement, ont une productivité médiane et une dispersion semblables pour environ la moitié des stocks (tableau \@ref(tab:ProdCompTab2), figures \@ref(fig:ProdComp3) et \@ref(fig:ProdComp4)), notamment deux des trois stocks sauvages de la rivière Babine (à montaison moyenne et tardive). Pour un tiers des stocks, la productivité médiane est plus élevée et la distribution est plus étroite si on ajoute d’autres années d’éclosion dans la définition du scénario de productivité *récente* : le stock de la rivière Meziadin, le plus grand stock de la rivière Nass, et l’un des stocks sauvages de la rivière Babine (le stock sauvage à montaison précoce de la rivière Babine). Pour deux stocks, la productivité médiane est plus faible et plus incertaine : les stocks des rivières Morice et Swan/Stephens. Les estimations correspondantes de Srmd changent de la même façon en raison des autres périodes utilisées pour le scénario de productivité récente (tableau \@ref(tab:ProdCompBMRatioSmsy)).
 
 
 
@@ -391,7 +406,7 @@ Alternative versions of the *recent* productivity scenario, using either two or 
 
 
 \clearpage
-(ref:ProdCompTab1) Estimated productivity parameters ln.alpha for the long-term average and recent productivity scenarios. For each scenario, the table lists median (Med) and standardized inter-quartile range (SIQR, range between p25 and p75) for the Bayesian posterior parameter subsamples generated as per Table \@ref(tab:SelectedModelsTab). The last two columns show percent difference (*PercDiff*) between the scenarios. Stocks are sorted by *PercDiff* in median estimate. Horizontal lines separate the stocks into three groups based on percent difference in median ln.alpha: more than ~ 10% decrease (top), more than ~ 10% increase  (bottom), or less than ~ 10% change in either direction (middle). Note that table includes only wild stocks.
+(ref:ProdCompTab1) Estimation des paramètres de productivité ln.alpha pour les scénarios de productivité moyenne à long terme et récente. Pour chaque scénario, le tableau indique la médiane (*Med*) et l’écart interquartile normalisé (*SIQR*, fourchette entre p25 et p75) pour les sous-échantillons des paramètres a posteriori bayésiens générés conformément au tableau \@ref(tab:SelectedModelsTab). Les deux dernières colonnes indiquent la différence en pourcentage (*PercDiff*) entre les scénarios. Les stocks sont triés selon la différence en pourcentage dans la médiane de l’estimation. Les lignes horizontales séparent les stocks en trois groupes en fonction de la différence en pourcentage dans la médiane de ln.alpha : diminution de plus de 10 % environ (en haut), augmentation de plus de 10 % environ (en bas) ou variation de moins de 10 % environ dans un sens ou l’autre (au milieu). Le tableau ne comprend que les stocks sauvages.
 
 ```{r ProdCompTab1, echo = FALSE, results = "asis"}
 
@@ -400,12 +415,17 @@ table.in <- read_csv("data/ReportTable_ProdChange.csv") %>%
 	dplyr::select(Stock,Median.LTAvg,SIQR.LTAvg,Median.Curr,SIQR.Curr,
 								Median.PercChange,	SIQR.PercChange) %>%
 	arrange(Median.PercChange) %>%
-	mutate_if(is.numeric, round,2)
-	
+	mutate_if(is.numeric, round,2) 
 
 lines.idx <- c( max(which(table.in$Median.PercChange < -9.5)),
 								min(which(table.in$Median.PercChange > 9.5))-1)
 
+	
+	
+table.in <- table.in %>% mutate_all(~ as.character(.x)) %>%
+							mutate_all(~gsub("\\.",",",.x))
+		
+	
 	
 table.in$Stock <- gsub("Lower Nass Sea & River Type","L Nass SRT",table.in$Stock)
 
@@ -424,7 +444,7 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
                   caption = "(ref:ProdCompTab1)" ) %>%
 	 kableExtra::column_spec(6, bold = T) %>%
     kableExtra::row_spec(c(lines.idx), hline_after = TRUE) %>%
-	add_header_above(c(" " = 1, "LTAvg" = 2,"Recent" = 2,"PercDiff" = 2)) 
+	add_header_above(c(" " = 1, "Moy.LT" = 2,"Récente" = 2,"PercDiff" = 2)) 
 
 ```
 
@@ -433,10 +453,10 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
 
 \clearpage
 
-(ref:ProdComp1) Estimated median productivity (ln.alpha) for the long-term average and recent productivity scenarios. Medians are for the Bayesian posterior parameter subsamples generated as per Table \@ref(tab:SelectedModelsTab). Stocks falling on the solid red line have the same median for both scenarios. For stocks below the solid red line, recent productivity is lower than long-term average productivity. For stocks between the dashed red lines, the difference in productivity scenarios is less than 25%. Note that figure includes only wild stocks.
+(ref:ProdComp1) Estimation de la médiane de la productivité (ln.alpha) pour les scénarios de productivité moyenne à long terme et de productivité récente. Les médianes portent sur les sous-échantillons de paramètres a posteriori bayésiens générés conformément au tableau \@ref(tab:SelectedModelsTab). Les stocks qui se situent sur la ligne rouge pleine ont la même médiane pour les deux scénarios. Pour les stocks sous la ligne rouge pleine, la productivité récente est inférieure à la productivité moyenne à long terme. Pour les stocks entre les lignes rouges en pointillés, la différence entre les scénarios de productivité est inférieure à 25 %. Cette figure ne comprend que les stocks sauvages.
 
 ```{r ProdComp1,   fig.cap="(ref:ProdComp1)"}
-include_graphics("data/RecentProd_Comparison_LTavgvs1genv_Values.png")
+include_graphics("data/1_FrenchFigs/Fig25_RecentProd_Comparison_LTavgvs1genv_Values_FRENCH.png")
 ```
 
 
@@ -444,18 +464,17 @@ include_graphics("data/RecentProd_Comparison_LTavgvs1genv_Values.png")
 
 \clearpage
 
-(ref:ProdComp2) Differences in median and spread of the productivity parameter (ln.alpha) for the long-term average and recent productivity scenarios. Points show the percent change in the standardized inter-quartile range (SIQR, range between p25 and p75) vs. the change in median ln.alpha. Horizontal and vertical red lines mark "no change". Note that figure includes only wild stocks.
-
+(ref:ProdComp2) Différences dans la médiane et la dispersion du paramètre de productivité (ln.alpha) pour les scénarios de productivité moyenne à long terme et de productivité récente. Les points montrent la variation en pourcentage de l’écart interquartile normalisé (SIQR, fourchette entre p25 et p75) par rapport à la variation de la médiane de ln.alpha. Les lignes rouges horizontales et verticales indiquent « aucun changement ». Cette figure ne comprend que les stocks sauvages.
 
 ```{r ProdComp2,   fig.cap="(ref:ProdComp2)"}
-include_graphics("data/RecentProd_Comparison_LTavgvs1gen_Diffs.png")
+include_graphics("data/1_FrenchFigs/Fig26_RecentProd_Comparison_LTAvgvs1gen_Diffs_FRENCH.png")
 ```
 
 
 
 
 \clearpage
-(ref:ProdCompTab2) Estimated productivity parameters ln.alpha for three versions of the recent productivity scenario (1,2, or 3 generations). For each scenario, the table lists median (Med) and standardized inter-quartile range (SIQR, range between p25 and p75) for the Bayesian posterior parameter subsamples generated as per Table \@ref(tab:SelectedModelsTab). Table also shows percent difference (*PercDiff*) between the alternative versions. Stocks are sorted by *PercDiff* in median estimate between the 2-generation and 1-generation versions. Horizontal lines separate the stocks into three groups based on percent difference in median ln.alpha between the 2-generation and 1-generation versions: more than ~ 5% decrease (top), more than ~ 5% increase  (bottom), or less than ~ 5% change in either direction (middle). Note that table includes only wild stocks. Table \@ref(tab:ProdCompBMRatioSmsy) compares the corresponding Smsy estimates.
+(ref:ProdCompTab2) Estimation des paramètres de productivité ln.alpha pour trois versions du scénario de productivité récente (1, 2 ou 3 générations). Pour chaque scénario, le tableau indique la médiane (Med) et l’écart interquartile normalisé (SIQR, fourchette entre p25 et p75) pour les sous-échantillons des paramètres a posteriori bayésiens générés conformément au tableau 20. Le tableau montre également la différence en pourcentage (*PercDiff*) entre les autres versions. Les stocks sont triés par la différence en pourcentage dans la médiane de l’estimation entre les versions à deux générations et à une génération. Les lignes horizontales séparent les stocks en trois groupes en fonction de la différence en pourcentage de la médiane de ln.alpha entre les versions à deux générations et à une génération : diminution de plus de 5 % environ (en haut), augmentation de plus de 5 % environ (en bas) ou variation de moins de 5 % environ dans un sens ou l’autre (au milieu). Le tableau ne comprend que les stocks sauvages. Le tableau \@ref(tab:ProdCompBMRatioSmsy) compare les estimations de Srmd correspondantes.
 
 ```{r ProdCompTab2, echo = FALSE, results = "asis"}
 
@@ -466,7 +485,8 @@ table.in <- read_csv("data/ReportTable_ProdChange.csv") %>%
 								Median.CurrLS3,SIQR.CurrLS3,
 								Median.PercChange3,	SIQR.PercChange3) %>%
 	arrange(Median.PercChange2) %>%
-	mutate_if(is.numeric, round,2)
+	mutate_if(is.numeric, round,2)  %>% mutate_all(~ as.character(.x)) %>%
+							mutate_all(~gsub("\\.",",",.x))
 	
 	
 table.in$Stock <- gsub("Lower Nass Sea & River Type","L Nass SRT",table.in$Stock)
@@ -491,8 +511,8 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
                   caption = "(ref:ProdCompTab2)" ) %>%
 	 kableExtra::column_spec(6, bold = T) %>%
      kableExtra::row_spec(c(lines.idx), hline_after = TRUE) %>%
-	add_header_above(c(" " = 1, "1 Gen" = 2,"2 Gen" = 2,"PercDiff\n(2 Gen vs 1 Gen)" = 2,
-										 "3 Gen" = 2,"PercDiff\n(3 Gen vs 1 Gen)" = 2)) 
+	add_header_above(c(" " = 1, "1 gén" = 2,"2 gén" = 2,"PercDiff\n(2 gén vs 1 gén)" = 2,
+										 "3 gén" = 2,"PercDiff\n(3 gén vs 1 gén)" = 2)) 
 
 ```
 
@@ -501,7 +521,7 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
 
 
 \clearpage
-(ref:ProdCompBMRatioSmsy) Comparison of Median Smsy estimates across productivity scenarios. Layout as per Table \@ref(tab:ProdCompTab2). Median Smsy estimates are in 1,000s (columns 2,4,and 8).
+(ref:ProdCompBMRatioSmsy) Comparaison des estimations de la médiane de Srmd entre les scénarios de productivité. Disposition semblable à celle du tableau \@ref(tab:ProdCompTab2). Les estimations de la médiane de Srmd sont exprimées en milliers (colonnes 2,4 et 8). 
 
 ```{r ProdCompBMRatioSmsy, echo = FALSE, results = "asis"}
 
@@ -512,7 +532,8 @@ table.in <- read_csv("data/ReportTable_SmsyChange.csv") %>%
 								Median.CurrLS3,SIQR.CurrLS3,
 								Median.PercChange3,	SIQR.PercChange3) %>%
 	arrange(Median.PercChange2) %>%
-	mutate_if(is.numeric, round,2)
+	mutate_if(is.numeric, round,2)  %>% mutate_all(~ as.character(.x)) %>%
+							mutate_all(~gsub("\\.",",",.x))
 	
 	
 table.in$Stock <- gsub("Lower Nass Sea & River Type","L Nass SRT",table.in$Stock)
@@ -537,8 +558,8 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
                   caption = "(ref:ProdCompBMRatioSmsy)" ) %>%
 	 kableExtra::column_spec(6, bold = T) %>%
      kableExtra::row_spec(c(lines.idx), hline_after = TRUE) %>%
-	add_header_above(c(" " = 1, "1 Gen" = 2,"2 Gen" = 2,"PercDiff\n(2 Gen vs 1 Gen)" = 2,
-										 "3 Gen" = 2,"PercDiff\n(3 Gen vs 1 Gen)" = 2)) 
+	add_header_above(c(" " = 1, "1 gén" = 2,"2 gén" = 2,"PercDiff\n(2 gén vs 1 gén)" = 2,
+										 "3 gén" = 2,"PercDiff\n(3 gén vs 1 gén)" = 2)) 
 
 ```
 
@@ -550,90 +571,96 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
 
 \clearpage
 
-(ref:ProdComp3) Estimated median productivity (ln.alpha) for the 1-generation and 2-generation versions of the recent productivity scenario. Medians are for the Bayesian posterior parameter subsamples generated as per Table \@ref(tab:SelectedModelsTab). Stocks falling on the solid red line have the same median for both scenarios. For stocks below the solid red line, the 1-generation version has lower productivity than the 2-generation version. For stocks between the dashed red lines, the difference between alternative versions is less than 25%. Note that figure includes only wild stocks.
+(ref:ProdComp3) Estimation de la médiane de la productivité (ln.alpha) pour les versions à une et à deux générations du scénario de productivité récente. Les médianes portent sur les sous-échantillons de paramètres a posteriori bayésiens générés conformément au tableau \@ref(tab:SelectedModelsTab). Les stocks qui se situent sur la ligne rouge pleine ont la même médiane pour les deux scénarios. Pour les stocks sous la ligne rouge pleine, la version à une génération a une productivité inférieure à celle de la version à deux générations. Pour les stocks entre les lignes rouges en pointillés, la différence entre les versions de rechange est inférieure à 25 %. Cette figure ne comprend que les stocks sauvages.
 
 ```{r ProdComp3,   fig.cap="(ref:ProdComp3)"}
-include_graphics("data/RecentProd_Comparison_1genvs2Gen_Values.png")
+include_graphics("data/1_FrenchFigs/Fig27_RecentProd_Comparison_1genvs2Gen_Values_FRENCH.png")
 ```
 
 
 
 \clearpage
 
-(ref:ProdComp4) Differences in median and spread of the productivity parameter (ln.alpha) for the  1-generation and 2-generation versions of the recent productivity scenario. Points show the percent change in the standardized inter-quartile range (SIQR, range between p25 and p75) vs. the change in median ln.alpha. Horizontal and vertical red lines mark "no change". Note that figure includes only wild stocks.
+(ref:ProdComp4) Différences dans la médiane et la dispersion du paramètre de productivité (ln.alpha) pour les versions à une et à deux générations du scénario de productivité récente. Les points montrent la variation en pourcentage de l’écart interquartile normalisé (SIQR, fourchette entre p25 et p75) par rapport à la variation de la médiane de ln.alpha. Les lignes rouges horizontales et verticales indiquent « aucun changement ». Cette figure ne comprend que les stocks sauvages.
 
 ```{r ProdComp4,   fig.cap="(ref:ProdComp4)"}
-include_graphics("data/RecentProd_Comparison_1genvs2Gen_Diffs.png")
+include_graphics("data/1_FrenchFigs/Fig28_RecentProd_Comparison_1genvs2Gen_Diffs_FRENCH.png")
 ```
 
 
 \clearpage
-##  BIOLOGICAL BENCHMARK ESTIMATES (STOCK-LEVEL AND AGGREGATE-LEVEL) {#BMResults}
+##  ESTIMATIONS DES POINTS DE RÉFÉRENCE BIOLOGIQUES (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT) {#BMResults}
 
 
-### Illustration of Stock-level Results: Meziadin and Babine Late Wild
+### Illustration des résultats au niveau du stock : stock de la rivière Meziadin et stock sauvage à montaison tardive de la rivière Babine
 
-Standard biological benchmarks for the largest wild stock from each aggregate differed substantially between alternative productivity scenarios. 
+Les points de référence biologiques standard pour le plus grand stock sauvage de chaque regroupement différaient considérablement entre les scénarios de productivité de rechange.
 
-Comparing the recent productivity scenario to the long-term average  productivity scenario for Meziadin (Figure \@ref(fig:BMMezidian)) and Babine Late Wild (Figure \@ref(fig:BMBabLW)):
+Comparaison du scénario de productivité récente au scénario de productivité moyenne à long terme pour le stock de la rivière Meziadin (figure \@ref(fig:BMMezidian)) et le stock sauvage à montaison tardive de la rivière Babine (figure \@ref(fig:BMBabLW)) :
 
-* The recent productivity scenario had  lower and more uncertain estimates of productivity (ln.alpha) and lower estimates of capacity (Smax), which resulted in lower estimates of Smsy, Seq, and Umsy. 
-* Estimates of Sgen, which is linked to both the productivity estimate and the value of Smsy, increased for Meziadin and decreased for Babine Late Wild, but note that in both cases Sgen increased as a relative proportion of Smsy (i.e., with lower productivity need more spawners to build back to Smsy in one generation, but if Smsy is much lower, then Sgen can actually drop relative to the long-term average scenario).
+* Le scénario de productivité récente présentait des estimations plus faibles et plus incertaines de la productivité (ln.alpha) et des estimations plus faibles de la capacité (Smax), ce qui a donné des estimations plus faibles de Srmd, de Seq et de Urmd.
+* Les estimations de Sgen, qui sont liées à la fois à l’estimation de la productivité et à la valeur de Srmd, ont augmenté pour le stock de la rivière Meziadin et diminué pour le stock sauvage à montaison tardive de la rivière Babine, mais il convient de noter que dans les deux cas, Sgen a augmenté en proportion relative de Srmd (avec une productivité plus faible, il faut plus de géniteurs pour revenir à Srmd en une génération, mais si Srmd est beaucoup plus faible, alors Sgen peut en fait baisser par rapport au scénario de productivité moyenne à long terme).
 
 
-(ref:BMMezidian) Posterior distributions of productivity parameter ln.alpha and biological benchmark estimates: Meziadin. Each panel shows the posterior distribution (median, quartiles, 80% bounds) for two productivity scenarios: long-term average (LTAvg) and recent productivity. Two versions of the parameter estimates are shown: regular (R) and with log-normal bias correction (C) on the productivity parameter ln.alpha.
+
+(ref:BMMezidian) Distributions a posteriori des estimations du paramètre de productivité ln.alpha et des points de référence biologiques : Meziadin. Chaque graphique présente la distribution a posteriori (médiane, quartiles, bornes de 80 %) pour deux scénarios de productivité : productivité moyenne à long terme (Moy.LT) et productivité récente. Deux versions des estimations des paramètres sont présentées : régulières (R) et avec correction du biais log-normal (C) sur le paramètre de productivité ln.alpha.
 
 ```{r BMMezidian,   fig.cap="(ref:BMMezidian)"}
-include_graphics("data/StockSampleFigs/Meziadin_BM_SummaryPlot.png")
+include_graphics("data/1_FrenchFigs/Fig29_Meziadin_BM_SummaryPlot_FRENCH.png")
 ```
 
 
 
 \clearpage
-(ref:BMBabLW) Posterior distributions of biological benchmark estimates: Babine Late Wild. Layout as per Figure \@ref(fig:BMMezidian).
+(ref:BMBabLW) Distributions a posteriori des estimations des points de référence biologiques : Stock sauvage à montaison tardive de la rivière Babine. Disposition comme sur la figure \@ref(fig:BMMezidian).
 
 ```{r BMBabLW,   fig.cap="(ref:BMBabLW)"}
-include_graphics("data/StockSampleFigs/Bab-LW_BM_SummaryPlot.png")
+include_graphics("data/1_FrenchFigs/Fig30_Bab-LW_BM_SummaryPlot_FRENCH.png")
 ```
 
 \clearpage
-### Stock-level and Aggregate-level Biological Benchmarks for Nass Sockeye  
+### Points de référence biologiques au niveau du stock et au niveau du regroupement pour le saumon rouge de la rivière Nass  
 
-*Abundance benchmarks*
+*Points de référence fondés sur l’abondance*
 
-Comparing aggregate to stock-level Smsy estimates for Nass Sockeye under long-term average productivity (Table \@ref(tab:SmsyLtAvgNass)):
+Comparaison des estimations de Srmd au niveau du regroupement et au niveau du stock pour le saumon rouge de la rivière Nass pour la productivité moyenne à long terme (tableau \@ref(tab:SmsyLtAvgNass)).
 
-* The aggregate-level Smsy estimate for Nass Sockeye was substantially larger than the sum of stock-level estimates for those stocks where SR models were fitted. The four stocks with stock-level estimates are assumed to account for most of the Sockeye production from the Nass, but see notes regarding Bowser in Section \@ref(PrioritiesFuture). 
+* L’estimation de Srmd au niveau du regroupement pour le saumon rouge de la rivière Nass était considérablement plus élevée que la somme des estimations au niveau du stock pour les stocks pour lesquels les modèles géniteurs-recrues ont été ajustés. On suppose que les quatre stocks pour lesquels on dispose d’estimations au niveau du stock représentent la majeure partie de la production de saumon rouge de la rivière Nass, mais il convient de consulter les notes concernant la rivière Bowser à la section \@ref(PrioritiesFuture).
 
-Comparing aggregate to stock-level Smsy estimates for Nass Sockeye under recent productivity (Table \@ref(tab:SmsyRecentNass)):
+Comparaison des estimations de Srmd au niveau du regroupement et au niveau du stock pour le saumon rouge de la rivière Nass pour la productivité récente (tableau \@ref(tab:SmsyRecentNass)).
 
-* The aggregate-level Smsy estimate was larger than the sum of stock-level estimates for four modelled stocks, but the difference was smaller than under the long-term average productivity scenario.
+* L’estimation de Srmd au niveau du regroupement pour le saumon rouge de la rivière Nass était plus élevée que la somme des estimations au niveau du stock pour quatre stocks modélisés, mais la différence était plus faible que dans le scénario de productivité moyenne à long terme.
 
-Comparing aggregate and stock-level benchmark estimates under recent productivity to the long-term average productivity scenario  (Table \@ref(tab:SmsyLtAvgNass) vs. Table \@ref(tab:SmsyRecentNass), Table \@ref(tab:SmaxLtAvgNass) vs. Table \@ref(tab:SmaxRecentNass), Table \@ref(tab:SgenLtAvgNass) vs. Table \@ref(tab:SgenRecentNass)):
+Comparaison des estimations des points de référence au niveau du regroupement et au niveau du stock entre les scénarios de productivité récente et de productivité moyenne à long terme (tableau \@ref(tab:SmsyLtAvgNass) et tableau \@ref(tab:SmsyRecentNass), tableau \@ref(tab:SmaxLtAvgNass) et tableau\@ref(tab:SmaxRecentNass), tableau \@ref(tab:SgenLtAvgNass) et tableau \@ref(tab:SgenRecentNass)).
 
-* The aggregate estimate, and the Meziadin Smsy estimate are much lower under recent productivity. 
-* The Smsy estimate for the second-largest stock, Lower Nass Sea and River Type Sockeye, also dropped under recent productivity, but much less.  
-* The same general differences were observed for estimates of Smax. 
-* Under the recent productivity scenario, Sgen estimates increased for Meziadin and Kwinageese and decreased for the other two stocks with SR data, so that there was little change in the sum of Sgen estimates due to alternative productivity assumptions. 
+* L’estimation au niveau du regroupement et l’estimation de Srmd pour la rivière Meziadin sont beaucoup plus faibles dans le scénario de productivité récente.
+* L’estimation de Srmd pour le deuxième stock en importance, le saumon rouge de type océanique et de type fluvial de la basse Nass, a également chuté dans le scénario de productivité récente, mais beaucoup moins.
+* Les mêmes différences générales ont été relevées pour les estimations de Smax.
+*Dans le scénario de productivité récente, les estimations de Sgen ont augmenté pour les rivières Meziadin et Kwinageese et ont diminué pour les deux autres stocks pour lesquels on dispose de données sur les géniteurs-recrues, de sorte que la somme des estimations de Sgen a peu varié en raison des autres hypothèses de productivité.
 
+Sgen n’est pas applicable pour les regroupements de stocks, nous n’avons donc pas inclus de comparaison entre les estimations de Sgen au niveau du regroupement et au niveau du stock.
 
-Sgen is not applicable for stock aggregates, so we did not include a comparison between aggregate and stock-level Sgen estimates. 
+*Urmd*
 
-*Umsy*
+Les estimations de Urmd au niveau du regroupement correspondaient étroitement à la médiane des estimations au niveau du stock dans les deux scénarios de productivité, mais différaient de la médiane de l’estimation de Urmd pour le stock de la rivière Meziadin, le stock le plus important (tableaux \@ref(tab:UmsyLtAvgNass) et \@ref(tab:UmsyRecentNass)). Dans le scénario de productivité récente, Urmd pour le stock de la rivière Meziadin est le plus bas parmi les quatre stocks modélisés de la rivière Nass et environ 10 % plus bas que l’ajustement pour le regroupement (55 % pour le regroupement, 45 % pour le stock de la rivière Meziadin).
 
-Aggregate-level estimates of Umsy closely matched the median of stock-level median estimates under both productivity scenarios, but differed from the median Umsy estimate for Meziadin, the largest stock (Tables \@ref(tab:UmsyLtAvgNass) and \@ref(tab:UmsyRecentNass)). Under the recent productivity scenario, Umsy for Meziadin is the lowest among the 4 modelled Nass stocks and about 10% lower than the aggregate fit (55% for the aggregate, 45% for Meziadin).
 
 
 \clearpage
 
-(ref:SmsyLtAvgNass) Comparison of aggregate and stock-level Smsy estimates: Nass / Long-term average productivity. Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit. 
+(ref:SmsyLtAvgNass) Comparaison des estimations de Srmd au niveau du regroupement et au niveau du stock : Rivière Nass/Productivité moyenne à long terme. Les stocks sont triés en fonction de la médiane de l’estimation. Les estimations moyennes et médianes ont été additionnées pour l’ensemble des stocks aux fins de comparaison avec l’ajustement pour le regroupement. 
 
 ```{r SmsyLtAvgNass, echo = FALSE, results = "asis"}
 
 abd.bm.tab.src <- read_csv("data/SummaryTables_AbundanceBM.csv") %>% select(-Stock)
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Smsy") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
+
+							
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -648,12 +675,15 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 
 
-(ref:SmsyRecentNass) Comparison of aggregate and stock-level Smsy estimates: Nass / Recent productivity. Stocks are sorted based on median estimate. 
+(ref:SmsyRecentNass) Comparaison des estimations de Srmd au niveau du regroupement et au niveau du stock : Rivière Nass/Productivité récente. Les stocks sont triés en fonction de la médiane de l’estimation.
 
 ```{r SmsyRecentNass, echo = FALSE, results = "asis"}
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "Now",BM == "Smsy") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -671,14 +701,17 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 \clearpage
 
-(ref:SmaxLtAvgNass) Comparison of aggregate and stock-level Smax estimates: Nass / Long-term average productivity.  Stocks are sorted based on median estimate. 
+(ref:SmaxLtAvgNass) Comparaison des estimations de Smax au niveau du regroupement et au niveau du stock : Rivière Nass/Productivité moyenne à long terme. Les stocks sont triés en fonction de la médiane de l’estimation.
 
 ```{r SmaxLtAvgNass, echo = FALSE, results = "asis"}
 
 
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Smax") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -693,12 +726,15 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 
 
-(ref:SmaxRecentNass) Comparison of aggregate and stock-level Smax estimates: Nass / Recent productivity.  Stocks are sorted based on median estimate. 
+(ref:SmaxRecentNass) Comparaison des estimations de Smax au niveau du regroupement et au niveau du stock : Rivière Nass/Productivité récente. Les stocks sont triés en fonction de la médiane de l’estimation.
 
 ```{r SmaxRecentNass, echo = FALSE, results = "asis"}
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "Now",BM == "Smax") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -718,13 +754,16 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 \clearpage
 
-(ref:SgenLtAvgNass) Comparison of aggregate and stock-level Sgen estimates: Nass / Long-term average productivity.  Stocks are sorted based on median estimate. 
+(ref:SgenLtAvgNass) Comparaison des estimations de Sgen au niveau du regroupement et au niveau du stock : Rivière Nass/Productivité moyenne à long terme. Les stocks sont triés en fonction de la médiane de l’estimation.
 
 ```{r SgenLtAvgNass, echo = FALSE, results = "asis"}
 
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Sgen") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -739,12 +778,15 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 
 
-(ref:SgenRecentNass) Comparison of aggregate and stock-level Sgen estimates: Nass / Recent productivity.  Stocks are sorted based on median estimate. 
+(ref:SgenRecentNass) Comparaison des estimations de Sgen au niveau du regroupement et au niveau du stock : Rivière Nass/Productivité récente. Les stocks sont triés en fonction de la médiane de l’estimation.
 
 ```{r SgenRecentNass, echo = FALSE, results = "asis"}
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "Now",BM == "Sgen") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -761,14 +803,18 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 \clearpage
 
-(ref:UmsyLtAvgNass) Comparison of aggregate and stock-level Umsy estimates: Nass / Long-term average productivity.  Table also lists the range and median across stock-level estimates.
+(ref:UmsyLtAvgNass) Comparaison des estimations de Urmd au niveau du regroupement et au niveau du stock : Rivière Nass/Productivité moyenne à long terme. Le tableau présente également la fourchette et la médiane des estimations au niveau du stock.
 
 ```{r UmsyLtAvgNass, echo = FALSE, results = "asis"}
 
 umsy.bm.tab.src <- read_csv("data/SummaryTables_UMSY.csv") %>% select(-Stock)
 
 table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Umsy") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr",  "Min" = "Min.", "Med" = "Méd."  ,
+"Max" = "Max.")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -784,12 +830,16 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 
 
-(ref:UmsyRecentNass) Comparison of aggregate and stock-level Umsy estimates: Nass / Recent productivity.  Table also lists the range and median across stock-level estimates.
+(ref:UmsyRecentNass) Comparaison des estimations de Urmd au niveau du regroupement et au niveau du stock : Rivière Nass/Productivité récente. Le tableau présente également la fourchette et la médiane des estimations au niveau du stock.
 
 ```{r UmsyRecentNass, echo = FALSE, results = "asis"}
 
 table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "Now",BM == "Umsy") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr",  "Min" = "Min.", "Med" = "Méd."  ,
+"Max" = "Max.")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -807,41 +857,46 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 
 \clearpage
-### Stock-level and Aggregate-level Biological Benchmarks for Skeena Wild Sockeye
+### Points de référence biologiques au niveau du stock et au niveau du regroupement pour le saumon rouge sauvage de la rivière Skeena
 
-*Abundance benchmarks*
+*Points de référence fondés sur l’abondance*
 
-Comparing aggregate to stock-level Smsy estimates for Skeena Sockeye under long-term average productivity (Table \@ref(tab:SmsyLtAvgSkeenaWild)):
+Comparaison des estimations de Srmd au niveau du regroupement et au niveau du stock pour le saumon rouge de la rivière Skeena pour la productivité moyenne à long terme (tableau \@ref(tab:SmsyLtAvgSkeenaWild)).
 
-* The aggregate-level Smsy estimate for Skeena Sockeye was lower than the sum of stock-level estimates for those stocks where SR models were fitted. The 16 stocks with stock-level estimates are assumed to account for most of the Sockeye production from the Skeena. 
+* L’estimation de Srmd au niveau du regroupement pour le saumon rouge de la rivière Skeena était inférieure à la somme des estimations au niveau du stock pour les stocks pour lesquels les modèles géniteurs-recrues ont été ajustés. On suppose que les 16 stocks pour lesquels on dispose d’estimations au niveau du stock représentent la majeure partie de la production de saumon rouge de la rivière Skeena.
 
-Comparing aggregate to stock-level Smsy estimates for Skeena Sockeye under recent productivity (Table \@ref(tab:SmsyRecentNass)):
+Comparaison des estimations de Srmd au niveau du regroupement et au niveau du stock pour le saumon rouge de la rivière Skeena pour la productivité récente (tableau \@ref(tab:SmsyRecentNass)):
 
-* The aggregate-level Smsy estimate was much lower than the sum of stock-level estimates for 16 modelled stocks, and the difference was larger than under the long-term average productivity scenario.
+* L’estimation de Srmd au niveau du regroupement était largement inférieure à la somme des estimations au niveau du stock pour quatre stocks modélisés, et la différence était plus grande que dans le scénario de productivité moyenne à long terme.
 
-Comparing aggregate and stock-level benchmark estimates under recent productivity to the long-term average productivity scenario  (Table \@ref(tab:SmsyLtAvgSkeenaWild) vs. Table \@ref(tab:SmsyRecentSkeenaWild), Table \@ref(tab:SmaxLtAvgSkeenaWild) vs. Table \@ref(tab:SmaxRecentSkeenaWild), Table \@ref(tab:SgenLtAvgSkeenaWild) vs. Table \@ref(tab:SgenRecentSkeenaWild)):
+Comparaison des estimations des points de référence au niveau du regroupement et au niveau du stock entre les scénarios de productivité récente et de productivité moyenne à long terme (tableau \@ref(tab:SmsyLtAvgSkeenaWild) et tableau \@ref(tab:SmsyRecentSkeenaWild), tableau \@ref(tab:SmaxLtAvgSkeenaWild) et tableau \@ref(tab:SmaxRecentSkeenaWild), tableau \@ref(tab:SgenLtAvgSkeenaWild) et tableau \@ref(tab:SgenRecentSkeenaWild)):
 
-* The aggregate estimate, and the Babine Late Wild Smsy estimate, are much lower under recent productivity. 
-* The same general differences were observed for estimates of Smax.
-* Under the recent productivity scenario, Sgen estimates decreased for most of the stocks, and the sum of Sgen estimates decreased substantially. 
+* L’estimation au niveau du regroupement et l’estimation de Srmd pour le stock à montaison tardive de la rivière Babine sont beaucoup plus faibles dans le scénario de productivité récente.
+* Les mêmes différences générales ont été relevées pour les estimations de Smax.
+* Dans le scénario de productivité récente, les estimations de Sgen ont diminué pour la plupart des stocks et la somme des estimations de Sgen a diminué sensiblement.
 
-Sgen is not applicable for stock aggregates, so we did not include a comparison between aggregate and stock-level Sgen estimates. 
+Sgen n’est pas applicable pour les regroupements de stocks, nous n’avons donc pas inclus de comparaison entre les estimations de Sgen au niveau du regroupement et au niveau du stock.
 
-*Umsy*
 
-Aggregate-level estimates of Umsy differed substantially from the median of stock-level median estimates under both productivity scenarios (Tables \@ref(tab:UmsyLtAvgSkeenaWild) and \@ref(tab:UmsyRecentSkeenaWild)). The median of stock-level estimates was much higher, because large stocks and small stocks were weighted equally in the median calculcation. Aggregate Umsy estimates were closer to the Umsy estimates for the largest stocks (Babine Early, Mid, and Late Wild).
+*Urmd*
 
+Aggregate-level estimates of Umsy differed substantially from the median of stock-level median estimates under both productivity scenarios (Tables  and ). The median of stock-level estimates was much higher, because large stocks and small stocks were weighted equally in the median calculcation. Aggregate Umsy estimates were closer to the Umsy estimates for the largest stocks (Babine Early, Mid, and Late Wild).
+
+Les estimations de Urmd au niveau du regroupement différaient nettement de la médiane des estimations au niveau du stock dans les deux scénarios de productivité (tableaux \@ref(tab:UmsyLtAvgSkeenaWild) et \@ref(tab:UmsyRecentSkeenaWild)). La médiane des estimations au niveau du stock était beaucoup plus élevée, car les grands stocks et les petits stocks avaient une pondération égale dans le calcul de la médiane. Les estimations de Urmd pour le regroupement étaient plus proches des estimations de Urmd pour les plus grands stocks (stocks sauvages à montaison précoce, moyenne et tardive de la rivière Babine).
 
 
 \clearpage
 
-(ref:SmsyLtAvgSkeenaWild) Comparison of aggregate and stock-level Smsy estimates: SkeenaWild / Long-term average productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+(ref:SmsyLtAvgSkeenaWild) Comparaison des estimations de Srmd au niveau du regroupement et au niveau du stock : Stock sauvage de la rivière Skeena/Productivité moyenne à long terme. Les stocks sont triés en fonction de la médiane de l’estimation. Les estimations moyennes et médianes ont été additionnées pour l’ensemble des stocks aux fins de comparaison à l’ajustement pour le regroupement, mais il n’est pas possible de simplement ajouter les centiles.
 
 ```{r SmsyLtAvgSkeenaWild, echo = FALSE, results = "asis"}
 
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "LTAvg",BM == "Smsy") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -856,12 +911,15 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 
 \clearpage
-(ref:SmsyRecentSkeenaWild) Comparison of aggregate and stock-level Smsy estimates: SkeenaWild / Recent productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+(ref:SmsyRecentSkeenaWild) Comparaison des estimations de Srmd au niveau du regroupement et au niveau du stock : Stock sauvage de la rivière Skeena/Productivité récente. Les stocks sont triés en fonction de la médiane de l’estimation. Les estimations moyennes et médianes ont été additionnées pour l’ensemble des stocks aux fins de comparaison à l’ajustement pour le regroupement, mais il n’est pas possible de simplement ajouter les centiles.
 
 ```{r SmsyRecentSkeenaWild, echo = FALSE, results = "asis"}
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "Now",BM == "Smsy") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -879,13 +937,16 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 \clearpage
 
-(ref:SmaxLtAvgSkeenaWild) Comparison of aggregate and stock-level Smax estimates: SkeenaWild / Long-term average productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+(ref:SmaxLtAvgSkeenaWild) Comparaison des estimations de Smax au niveau du regroupement et au niveau du stock : Stock sauvage de la rivière Skeena/Productivité moyenne à long terme. Les stocks sont triés en fonction de la médiane de l’estimation. Les estimations moyennes et médianes ont été additionnées pour l’ensemble des stocks aux fins de comparaison à l’ajustement pour le regroupement, mais il n’est pas possible de simplement ajouter les centiles. 
 
 ```{r SmaxLtAvgSkeenaWild, echo = FALSE, results = "asis"}
 
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "LTAvg",BM == "Smax") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -900,12 +961,15 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 
 \clearpage
-(ref:SmaxRecentSkeenaWild) Comparison of aggregate and stock-level Smax estimates: SkeenaWild / Recent productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+(ref:SmaxRecentSkeenaWild) Comparaison des estimations de Smax au niveau du regroupement et au niveau du stock : Stock sauvage de la rivière Skeena/Productivité récente. Les stocks sont triés en fonction de la médiane de l’estimation. Les estimations moyennes et médianes ont été additionnées pour l’ensemble des stocks aux fins de comparaison à l’ajustement pour le regroupement, mais il n’est pas possible de simplement ajouter les centiles
 
 ```{r SmaxRecentSkeenaWild, echo = FALSE, results = "asis"}
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "Now",BM == "Smax") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -925,13 +989,16 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 \clearpage
 
-(ref:SgenLtAvgSkeenaWild) Comparison of aggregate and stock-level Sgen estimates: SkeenaWild / Long-term average productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added. 
+(ref:SgenLtAvgSkeenaWild) Comparaison des estimations de Sgen au niveau du regroupement et au niveau du stock : Stock sauvage de la rivière Skeena/Productivité moyenne à long terme. Les stocks sont triés en fonction de la médiane de l’estimation. Les estimations moyennes et médianes ont été additionnées pour l’ensemble des stocks aux fins de comparaison à l’ajustement pour le regroupement, mais il n’est pas possible de simplement ajouter les centiles.
 
 ```{r SgenLtAvgSkeenaWild, echo = FALSE, results = "asis"}
 
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "LTAvg",BM == "Sgen") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -946,12 +1013,15 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 \clearpage
 
-(ref:SgenRecentSkeenaWild) Comparison of aggregate and stock-level Sgen estimates: SkeenaWild / Recent productivity.  Stocks are sorted based on median estimate. Mean and median estimates were summed across stocks as a comparison to the aggregate fit, but percentiles can not be simply added.  
+(ref:SgenRecentSkeenaWild) Comparaison des estimations de Sgen au niveau du regroupement et au niveau du stock : Stock sauvage de la rivière Skeena/Productivité récente. Les stocks sont triés en fonction de la médiane de l’estimation. Les estimations moyennes et médianes ont été additionnées pour l’ensemble des stocks aux fins de comparaison à l’ajustement pour le regroupement, mais il n’est pas possible de simplement ajouter les centiles. 
 
 ```{r SgenRecentSkeenaWild, echo = FALSE, results = "asis"}
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "Now",BM == "Sgen") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr", "Sum-Agg" = "Somme - Ajus Regr","Sum" = "Somme")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -969,13 +1039,17 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 \clearpage
 
-(ref:UmsyLtAvgSkeenaWild) Comparison of aggregate and stock-level Umsy estimates: Skeena Wild / Long-term average productivity.  Table also lists the range and median across stock-level estimates. 
+(ref:UmsyLtAvgSkeenaWild) Comparaison des estimations de Urmd au niveau du regroupement et au niveau du stock : Stock sauvage de la rivière Skeena/Productivité moyenne à long terme. Le tableau présente également la fourchette et la médiane des estimations au niveau du stock.
 
 ```{r UmsyLtAvgSkeenaWild, echo = FALSE, results = "asis"}
 
 
 table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "LTAvg",BM == "Umsy") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr",  "Min" = "Min.", "Med" = "Méd."  ,
+"Max" = "Max.")) 
 	
 table.in[table.in == "NA"] <- "-"
 
@@ -990,12 +1064,16 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 \clearpage
 
-(ref:UmsyRecentSkeenaWild) Comparison of aggregate and stock-level Umsy estimates: Skeena Wild / Recent productivity.  Table also lists the range and median across stock-level estimates.
+(ref:UmsyRecentSkeenaWild) Comparaison des estimations de Urmd au niveau du regroupement et au niveau du stock : Stock sauvage de la rivière Skeena/Productivité récente. Le tableau présente également la fourchette et la médiane des estimations au niveau du stock.
 
 ```{r UmsyRecentSkeenaWild, echo = FALSE, results = "asis"}
 
 table.in <-  umsy.bm.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild",Scenario == "Now",BM == "Umsy") %>% select(-Aggregate,-Scenario,-BM) %>%
-							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=",")})
+							mutate_if(is.numeric,function(x){prettyNum(round(x), big.mark=" ")}) %>%
+  dplyr::rename(Étiquette = Label, Moyenne = Mean,	Médiane = Median)
+
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c(  "Agg Fit" ="Ajus Regr",  "Min" = "Min.", "Med" = "Méd."  ,
+"Max" = "Max.")) 
 	
 table.in[table.in == "NA"] <- "-"
 

@@ -16,6 +16,7 @@ uses "S" in text and equations. Section 2.2.5 uses Srmd instead of Smsy or Grmd.
 - **Tables 13-16** some content crashes the compile
 - Why are Skeena and Nass rivers translated as "riviere" and the Fraser River as "fleuve"? "In French, rivers are traditionally classified either as fleuves when they flow into the sea (or into a desert or lake), or as rivières when they flow into another river. " https://en.wikipedia.org/wiki/List_of_rivers_of_France. Also,Pinkut is a "ruisseau", because it's a "Creek" and Fulton is a "riviere"?
 * **FIGURES 16 AND 18 CAPTIONS TOO LONG**
+* **continued from previous page** shows up in English (Sec 3.3.1)
 
 ## REMERCIEMENTS {-}
 
