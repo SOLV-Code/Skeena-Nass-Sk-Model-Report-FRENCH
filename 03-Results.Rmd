@@ -301,39 +301,48 @@ include_graphics("data/1_FrenchFigs/Fig24_FitsComparison_PROD_2_ProdPatterns_KF_
 
 
 \clearpage
-##  PRODUCTIVITY SCENARIOS (STOCK-LEVEL AND AGGREGATE-LEVEL)
+##  SCÉNARIOS DE PRODUCTIVITÉ (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)
 
-### Scenario Descriptions
+### Description des scénarios
 
-We worked through the considerations and steps outlined in Section \@ref(ModelSelection) to select spawner-recruit parameter sets for four alternative productivity scenarios from the suite of candidate single-stock SR model fits.  These scenarios were used for the remaining analyses in this report (Tables \@ref(tab:SelectedModelsTab) and \@ref(tab:SelectedModelsTabAgg)). 
+Nous avons examiné les considérations et les étapes décrites à la section \@ref(ModelSelection) afin de sélectionner des ensembles de paramètres géniteurs-recrues pour quatre scénarios de productivité de rechange à partir de la série d’ajustements possibles du modèle géniteurs-recrues à un seul stock. Ces scénarios ont été utilisés pour les autres analyses du présent rapport (tableaux  \@ref(tab:SelectedModelsTab) et \@ref(tab:SelectedModelsTabAgg)).
 
-Key considerations were:
+Voici les principales considérations :
 
-* We wanted to highlight differences in productivity between stocks, so focused on single-stock model fits, rather than the hierarchical model fits that start with the assumption of a similar underlying productivity across stocks.
-* Given that all candidate single-stock model fits converged for at least two of the three criteria (Section \@ref(Convergence)), we did not reject any of the fits based on statistical considerations.
-* We wanted to highlight the implications of alternative productivity assumptions for each stock, so we generated three alternatives to the base case with long-term average productivity. 
-* Where available, we used the AR1 model fit for the long-term average scenario. Otherwise, we used the Basic Ricker fit.
-* Where available, we used year-specific ln.alpha estimates from the time-varying productivity (TVP) model for the alternative productivity scenarios. Otherwise, we subsampled parameter sets from the Basic Ricker fit.
-* For stocks with time-varying productivity (TVP) model fits, we used the last available generation for the *Recent* productivity scenario. However, given discussions during the peer-review meeting [@SkeenaNassSkPRO;@SkeenaNassSkSAR], we also tested the effect of expanding the number of brood-years included in the *Recent* scenario to either two generations or 3 generations.
+* Nous voulions mettre en évidence les différences de productivité entre les stocks. Nous avons donc mis l’accent sur les ajustements du modèle à un seul stock, plutôt que sur ceux du modèle hiérarchique, qui part de l’hypothèse d’une productivité sous-jacente semblable entre les stocks.
+* Étant donné que tous les ajustements possibles du modèle à un seul stock convergeaient pour au moins deux des trois critères (section \@ref(Convergence)), nous n’avons rejeté aucun des ajustements sur la base de considérations statistiques.
+* Nous voulions souligner les conséquences des autres hypothèses de productivité pour chaque stock, de sorte que nous avons généré trois solutions de rechange au scénario de base avec une productivité moyenne à long terme.
+* Le cas échéant, nous avons utilisé l’ajustement du modèle AR1 pour le scénario de la moyenne à long terme. Sinon, nous avons utilisé l’ajustement du modèle de Ricker de base.
+* Lorsque c’était possible, nous avons utilisé des estimations de ln.alpha par année à partir du modèle avec PVT pour les autres scénarios de productivité. Sinon, nous avons sous-échantillonné les ensembles de paramètres à partir de l’ajustement du modèle de Ricker de base.
+* Pour les stocks pour lesquels des ajustements du modèle avec PVT étaient disponibles, nous avons utilisé la dernière génération disponible pour le scénario de productivité *récente*. Cependant, compte tenu des discussions qui ont eu lieu lors de la réunion d’examen par les pairs [@SkeenaNassSkPRO;@SkeenaNassSkSAR], nous avons également testé l’effet de l’augmentation du nombre d’années d’éclosion incluses dans le scénario de productivité *récente* à deux ou trois générations.
 
-We anticipate that future processes, such as the on-going Canadian domestic engagement process, will identify additional candidate model fits,  explore alternative parameter selection criteria, and request additional productivity scenarios.  The analysis framework is set up to rapidly respond to these requests. All of the results shown in subsequent sections can be  easily re-generated with alternative MCMC parameter sets (e.g., different productivity assumptions, Hierarchical Bayesian Model fits), but we have decided to limit the number of examples included in this Research Document. 
+Nous attendons à ce que des processus futurs, comme le processus de consultation national canadien en cours, déterminent d’autres ajustements possibles du modèle, explorent d’autres critères de sélection des paramètres et demandent d’autres scénarios de productivité. Le cadre d’analyse est conçu pour répondre rapidement à ces demandes. Tous les résultats présentés dans les sections suivantes peuvent être facilement produits de nouveau avec d’autres ensembles de paramètres MCCM (p. ex. différentes hypothèses de productivité, ajustements du modèle bayésien hiérarchique), mais nous avons décidé de limiter le nombre d’exemples inclus dans ce document de recherche.
+
 
 \clearpage
 
 
-(ref:SelectedModelsTab) Stock-level SR models selected for alternative scenarios.  Model fits are BR = Basic Ricker, AR1 = Ricker with lag-1 autoregression correction, TVP = Ricker model with time-varying productivity parameter alpha. All selected model fits used the capped uniform (*cu*) capacity prior. The range of brood years from which parameter sets were sampled is listed for TVP fits. For example, TVPcu2010-2014 denotes that 1/5th of the parameter samples were taken from each year in the period 2010 to 2014. For BR and AR1 fits, alternative scenarios are identified based on the percentile used for the adjusted median of the sample distribution. For example, BRcu(0.1) denotes that half the parameter samples for that scenario were taken from below the 10th percentile of the original distribution, and half from above. For stocks without TVP fits the recent productivity scenario matched the low productivity scenario if observed R/S clearly decreased in recent years, matched the high productivity scenarios if they increased, and matched the long-term average scenario if there was no clear trend in either direction. Note that three alternative versions of *Recent* productivity scenario for stocks with TVP fits were explored. All use the model fit, generation length, and end year specified in this table, but they include either one, two, or three generations. Section \@ref(AltProdResults) compares the parameter distributions. The examples in the rest of this Research Document are based on the 1-generation version of the *Recent* productivity scenario.
+(ref:SelectedModelsTab) 
+Modèles géniteurs-recrues au niveau du stock sélectionnés pour des scénarios de rechange. Les ajustements du modèle sont RB = modèle de Ricker de base, AR1 = modèle de Ricker avec correction de l’autorégression avec un décalage de 1, PVT = modèle de Ricker avec paramètre de productivité alpha variable dans le temps. Tous les ajustements sélectionnés du modèle utilisaient auparavant la valeur a priori de la capacité uniforme plafonnée (*cu*). La plage des années d’éclosion à partir de laquelle les ensembles de paramètres ont été échantillonnés est indiquée pour les ajustements du modèle avec PVT. Par exemple, PVTcu2010-2014 indique qu’un cinquième des échantillons de paramètres a été prélevé chaque année entre 2010 et 2014. Pour les ajustements du modèle RB et du modèle AR1, des scénarios de rechange sont déterminés en fonction du centile utilisé pour la médiane ajustée de la distribution de l’échantillon. Par exemple, RBcu(0,1) indique que la moitié des échantillons de paramètres pour ce scénario ont été prélevés en dessous du 10e centile de la distribution originale, et la moitié au-dessus. Pour les stocks sans ajustements de la PVT, le scénario de productivité récente correspondait au scénario de faible productivité si le rapport recrues/géniteur observé a clairement diminué au cours des dernières années; il correspondait aux scénarios de productivité élevée si le rapport a augmenté; et il correspondait au scénario de la moyenne à long terme s’il n’y a pas de tendance claire dans l’un ou l’autre sens. Il faut noter que trois autres versions du scénario de productivité récente pour les stocks avec ajustements de la PVT ont été explorées. Toutes utilisent l’ajustement du modèle, la durée de génération et l’année de fin spécifiés dans ce tableau, mais elles englobent une, deux ou trois générations. La section \@ref(AltProdResults) compare les distributions des paramètres. Les exemples donnés dans le reste de ce document de recherche sont fondés sur la version à une génération du scénario de productivité *récente*.
+
 
 ```{r SelectedModelsTab, echo = FALSE, results = "asis"}
 
-table.in <- read_csv("data/ReportTable_SelectedModels.csv") %>% arrange(Aggregate,StkSeq) %>%
-									select(-StkSeq,-Stock) %>% dplyr::filter(!is.na(Aggregate)) %>%
-									dplyr::rename(Stock = StkNmS,Recent = Now,MU=Aggregate) %>%
-									mutate_all(funs(str_replace(., "KF","TVP")))
+table.in <- read_csv("data/ReportTable_SelectedModels.csv",
+                               locale=locale(encoding="latin1")) %>%
+				arrange(Aggregate,StkSeq) %>%
+				select(-StkSeq,-Stock) %>% dplyr::filter(!is.na(Aggregate)) %>%
+				dplyr::rename(Stock = StkNmS,Récente = Now,
+                Moy.LT = LTAvg, Faible = Low,Élevée = High,
+                ZG=Aggregate)  %>%
+                mutate_all(~gsub("\\.",",",.x)) %>%
+                mutate_all(~gsub("KF","PVT",.x)) %>%
+                mutate_all(~gsub("BR","RB",.x))
 
 
 
 
-table.in$MU[duplicated(table.in$MU)] <- ""
+table.in$ZG[duplicated(table.in$ZG)] <- ""
 
 table.in[is.na(table.in)] <- "-"
 
@@ -344,7 +353,7 @@ table.in %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
                   caption = "(ref:SelectedModelsTab)" ) %>%
     kableExtra::row_spec(c(7,9), hline_after = TRUE) %>%
-	add_header_above(c(" " = 2, "Scenarios" = 4)) 
+	add_header_above(c(" " = 2, "Scénarios" = 4)) 
 
 ```
 
@@ -353,13 +362,19 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
 
 \clearpage
 
-(ref:SelectedModelsTabAgg) Aggregate-level SR models selected for alternative scenarios. Layout as per Table \@ref(tab:SelectedModelsTab). 
+(ref:SelectedModelsTabAgg) Modèles géniteurs-recrues au niveau du regroupement sélectionnés pour les scénarios de rechange. Disposition semblable à celle du tableau \@ref(tab:SelectedModelsTab). 
 
 ```{r SelectedModelsTabAgg, echo = FALSE, results = "asis"}
 
-table.in <- read_csv("data/ReportTable_SelectedModelsAgg.csv") %>%			
-	dplyr::rename(Recent = Now) %>%
-									mutate_all(funs(str_replace(., "KF","TVP")))
+table.in <- read_csv("data/ReportTable_SelectedModelsAgg.csv",
+                               locale=locale(encoding="latin1")) %>%
+				arrange(Aggregate) %>%
+				dplyr::rename(Récente = Now,
+                Moy.LT = LTAvg, Faible = Low,Élevée = High,
+                ZG=Aggregate)  %>%
+                mutate_all(~gsub("\\.",",",.x)) %>%
+                mutate_all(~gsub("KF","PVT",.x)) %>%
+                mutate_all(~gsub("BR","RB",.x))
 
 table.in[is.na(table.in)] <- "-"
 
@@ -372,7 +387,7 @@ table.in %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
                   caption = "(ref:SelectedModelsTabAgg)" ) %>%
     #kableExtra::row_spec(c(7,9), hline_after = TRUE) %>%
-	add_header_above(c(" " = 1, "Scenarios" = 4)) 
+	add_header_above(c(" " = 1, "Scénarios" = 4)) 
 
 ```
 
