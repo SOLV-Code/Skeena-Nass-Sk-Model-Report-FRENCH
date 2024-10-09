@@ -67,11 +67,11 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Comparaison des variations estimées de la productivité dans le temps (ajustements d'un modèle à un seul stock par rapport au MBH)}{106}{subsubsection.0.3.2.3}%
 \contentsline {subsection}{\numberline {3.3}SCÉNARIOS DE PRODUCTIVITÉ (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)}{109}{subsection.0.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Description des scénarios}{109}{subsubsection.0.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Comparison of Parameter Distributions for Productivity Scenarios}{112}{subsubsection.0.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}BIOLOGICAL BENCHMARK ESTIMATES (STOCK-LEVEL AND AGGREGATE-LEVEL)}{120}{subsection.0.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Illustration of Stock-level Results: Meziadin and Babine Late Wild}{120}{subsubsection.0.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Stock-level and Aggregate-level Biological Benchmarks for Nass Sockeye}{123}{subsubsection.0.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Stock-level and Aggregate-level Biological Benchmarks for Skeena Wild Sockeye}{128}{subsubsection.0.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.3.2}Comparaison des distributions des paramètres pour les scénarios de productivité}{112}{subsubsection.0.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}ESTIMATIONS DES POINTS DE RÉFÉRENCE BIOLOGIQUES (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)}{120}{subsection.0.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Illustration des résultats au niveau du stock~: stock de la rivière Meziadin et stock sauvage à montaison tardive de la rivière Babine}{120}{subsubsection.0.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Points de référence biologiques au niveau du stock et au niveau du regroupement pour le saumon rouge de la rivière Nass}{123}{subsubsection.0.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Points de référence biologiques au niveau du stock et au niveau du regroupement pour le saumon rouge sauvage de la rivière Skeena}{128}{subsubsection.0.3.4.3}%
 \contentsline {subsection}{\numberline {3.5}COMPARISON OF SUSTAINABLE EXPLOITATION RATE ACROSS STOCKS AND SCENARIOS}{137}{subsection.0.3.5}%
 \contentsline {subsection}{\numberline {3.6}EQUILIBRIUM PROFILES (STOCK-LEVEL AND AGGREGATE-LEVEL)}{145}{subsection.0.3.6}%
 \contentsline {subsubsection}{\numberline {3.6.1}Examples of Spawner-based Equilibrium Profiles}{145}{subsubsection.0.3.6.1}%
