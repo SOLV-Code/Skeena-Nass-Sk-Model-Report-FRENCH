@@ -1,22 +1,3 @@
-**TO DO LIST**
-
-- Report Number
-- French abstract not showing up?
-- French translation of references? PSC, BLMDP, NBSRR = "RRSRLN", NCCSDB = "NCCDSB", SSIR = "RRSRRS" etc?  (even in the French text they switch back and forth between NCCSDB and NCCDSB 
-- Is "enhanced" really "mise en valeur" in a fisheries context? Maybe the French for "supplemented" would be better?
-- table formatting (blank lines, number formatting!!!!!)
-- SOme citations are as "et al." in the French callout, but many others are like this "Cox-Rogers et ses collaborateurs (2010)" -> How to fix this in csasdown/bibtex?
-- In some equations (and all/most labels/tables/text) Spn is translated as "Gèn" or "G", but in Sec 2.2.1 with the Ricker equations it and Sec 2.2.3 with the prior equations
-uses "S" in text and equations. Section 2.2.5 uses Srmd instead of Smsy or Grmd. I carried over the French callout text as-is in each section.
-- Model labels: BR, AR1,TVP -> need to make sure consistently handled in text, figs,tables
-- Sec 2.3 title "model selection and productivity scenarios" translated as "scenarios of model selection and scenarios of productivity"???? -> used what they provided
-- **TABLE 8** - special symbols crashing the compile 
-- "State vs. Status" and "statut ou l'état" It seems that in both languages there are complicted nuances around these terms. The French version of the WSP uses "POINTS DE RÉFÉRENCE DE L’ÉTAT" for status benchmarks, and so the res doc translation is right. It just surprised me. It seems like in French they use both depending om the kind of status you're talking about. See examples at https://www.linguee.fr/francais-anglais/traduction/statut+ou+%C3%A9tat.html
-- **Table 12** "Étiquette" column label is crashing the compile, Even without it, some cell content also crashing the compile.
-- **Tables 13-16** some content crashes the compile
-- Why are Skeena and Nass rivers translated as "riviere" and the Fraser River as "fleuve"? "In French, rivers are traditionally classified either as fleuves when they flow into the sea (or into a desert or lake), or as rivières when they flow into another river. " https://en.wikipedia.org/wiki/List_of_rivers_of_France. Also,Pinkut is a "ruisseau", because it's a "Creek" and Fulton is a "riviere"?
-* **FIGURES 16 AND 18 CAPTIONS TOO LONG**
-* **continued from previous page** shows up in English (Sec 3.3.1)
 
 ## REMERCIEMENTS {-}
 

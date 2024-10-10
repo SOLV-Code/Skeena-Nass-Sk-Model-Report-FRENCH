@@ -2,80 +2,80 @@
 \thispagestyle {fancy}
 \contentsline {section}{R\'ESUM\'E}{v}{section*.1}%
 \contentsline {section}{REMERCIEMENTS}{1}{section*.3}%
-\contentsline {section}{ACRONYMES ET SIGLES}{2}{section*.4}%
-\contentsline {section}{\numberline {1}INTRODUCTION}{4}{section.0.1}%
-\contentsline {subsection}{\numberline {1.1}EXAMEN DES OBJECTIFS D'ÉCHAPPÉE}{4}{subsection.0.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}Renseignements de base}{4}{subsubsection.0.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.2}Processus d'examen des objectifs d'échappée}{6}{subsubsection.0.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.3}Objectifs du document de recherche}{8}{subsubsection.0.1.1.3}%
-\contentsline {subsection}{\numberline {1.2}STRUCTURE DES STOCKS DE SAUMON ROUGE DES RIVIÈRES SKEENA ET NASS}{9}{subsection.0.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Types de cycle biologique, stocks et unités de conservation}{9}{subsubsection.0.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}Projet de mise en valeur dans le lac Babine (ruisseau Pinkut et rivière Fulton)Babine Lake Development Project (Pinkut and Fulton)}{10}{subsubsection.0.1.2.2}%
-\contentsline {subsection}{\numberline {1.3}APERÇU DE L'ANALYSE}{13}{subsection.0.1.3}%
-\contentsline {subsubsection}{\numberline {1.3.1}Portée et organisation du document de recherche}{13}{subsubsection.0.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.3.2}Ajustements du modèle géniteurs-recrues, scénarios de productivité et points de référence biologiques}{14}{subsubsection.0.1.3.2}%
-\contentsline {subsubsection}{\numberline {1.3.3}Approches de rechange pour l'élaboration de points de référence de gestion pour les regroupements de stocks}{15}{subsubsection.0.1.3.3}%
-\contentsline {subsubsection}{\numberline {1.3.4}Approches de rechange pour inclure les saumons rouges du ruisseau Pinkut et de la rivière Fulton mis en valeur dans les analyses}{18}{subsubsection.0.1.3.4}%
-\contentsline {subsubsection}{\numberline {1.3.5}Comment le présent document de recherche respecte le cadre de référence}{20}{subsubsection.0.1.3.5}%
-\contentsline {section}{\numberline {2}MÉTHODES}{22}{section.0.2}%
-\contentsline {subsection}{\numberline {2.1}SOURCES DES DONNÉES}{22}{subsection.0.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Examen des données}{22}{subsubsection.0.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Estimations des géniteurs}{23}{subsubsection.0.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Estimation de l'excédent biologique du ruisseau Pinkut et de la rivière Fulton issu de la mise en valeur}{25}{subsubsection.0.2.1.3}%
-\contentsline {subsubsection}{\numberline {2.1.4}Estimations des prises}{26}{subsubsection.0.2.1.4}%
-\contentsline {subsubsection}{\numberline {2.1.5}Estimations de la composition selon l'âge}{26}{subsubsection.0.2.1.5}%
-\contentsline {paragraph}{\numberline {2.1.5.1}Données sur la composition selon l'âge des regroupements}{26}{paragraph.0.2.1.5.1}%
-\contentsline {paragraph}{\numberline {2.1.5.2}Données sur la composition selon l'âge de chaque stock}{27}{paragraph.0.2.1.5.2}%
-\contentsline {subsubsection}{\numberline {2.1.6}Relevés dans les lacs}{30}{subsubsection.0.2.1.6}%
-\contentsline {subsubsection}{\numberline {2.1.7}Reconstitutions des remontes}{30}{subsubsection.0.2.1.7}%
-\contentsline {subsubsection}{\numberline {2.1.8}Estimations du recrutement}{32}{subsubsection.0.2.1.8}%
-\contentsline {subsubsection}{\numberline {2.1.9}Vérifications des données et tests de sensibilité}{32}{subsubsection.0.2.1.9}%
-\contentsline {subsubsection}{\numberline {2.1.10}Données sur les géniteurs-recrues accessibles}{35}{subsubsection.0.2.1.10}%
-\contentsline {subsection}{\numberline {2.2}AJUSTEMENT DU MODÈLE GÉNITEURS-RECRUES}{42}{subsection.0.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Formes du modèle de Ricker}{42}{subsubsection.0.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Estimation bayésienne des paramètres à l'aide de la méthode de Monte-Carlo par chaîne de Markov (MCCM)}{44}{subsubsection.0.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Valeurs a priori}{44}{subsubsection.0.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Ajustements possibles du modèle géniteurs-recrues pour les regroupements}{50}{subsubsection.0.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.5}Ajustements possibles du modèle géniteurs-recrues à un seul stock}{52}{subsubsection.0.2.2.5}%
-\contentsline {subsubsection}{\numberline {2.2.6}Exploration d'un ajustement du modèle géniteurs-recrues hiérarchique pour les stocks de saumon rouge de la rivière Skeena}{55}{subsubsection.0.2.2.6}%
-\contentsline {subsection}{\numberline {2.3}SSCÉNARIOS DE SÉLECTION DU MODÈLE GÉNITEURS-RECRUES À UN SEUL STOCK ET DE PRODUCTIVITÉ}{56}{subsection.0.2.3}%
-\contentsline {subsection}{\numberline {2.4}POINTS DE RÉFÉRENCE BIOLOGIQUES ET POINTS DE RÉFÉRENCE DE L'ÉTAT}{62}{subsection.0.2.4}%
-\contentsline {subsection}{\numberline {2.5}APPROCHES DE RECHANGE POUR L'ÉLABORATION DE POINTS DE RÉFÉRENCE DE GESTION POUR LES REGROUPEMENTS DE STOCKS}{64}{subsection.0.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Overview of Alternative Approaches}{64}{subsubsection.0.2.5.1}%
-\contentsline {subsubsection}{\numberline {2.5.2}Évaluation des approches de rechange}{68}{subsubsection.0.2.5.2}%
-\contentsline {subsection}{\numberline {2.6}MISE EN ŒUVRE D'AUTRES APPROCHES POUR L'ÉLABORATION DE POINTS DE RÉFÉRENCE DE GESTION POUR LES REGROUPEMENTS DE STOCKS}{73}{subsection.0.2.6}%
-\contentsline {subsubsection}{\numberline {2.6.1}Estimations des points de référence biologiques pour les regroupements (Srmd Regr.)}{73}{subsubsection.0.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.6.2}Somme des points de référence biologiques au niveau du stock pour l'abondance (Somme Srmd)}{73}{subsubsection.0.2.6.2}%
-\contentsline {subsubsection}{\numberline {2.6.3}Comparaison des points de référence biologiques au niveau du stock pour le taux d'exploitation (Comp Urmd)}{73}{subsubsection.0.2.6.3}%
-\contentsline {subsubsection}{\numberline {2.6.4}Calcul des profils d'équilibre fondés sur les géniteurs (Prof.~équ.)}{73}{subsubsection.0.2.6.4}%
-\contentsline {subsubsection}{\numberline {2.6.5}Calcul des profils d'équilibre fondés sur les taux d'exploitation (Compr. regr.)}{74}{subsubsection.0.2.6.5}%
-\contentsline {subsubsection}{\numberline {2.6.6}Points de référence limites fondés sur l'état pour les regroupements}{75}{subsubsection.0.2.6.6}%
-\contentsline {subsubsection}{\numberline {2.6.7}Points de référence fondés sur l'abondance déterminés par régression logistique pour les regroupements (Rég. log.)}{76}{subsubsection.0.2.6.7}%
-\contentsline {subsubsection}{\numberline {2.6.8}Points de référence fondés sur l'abondance déterminés par simulation pour les regroupements (Sim)}{76}{subsubsection.0.2.6.8}%
-\contentsline {subsection}{\numberline {2.7}MISE EN ŒUVRE DE L'APPROCHE DE SIMULATION AVANCÉE}{77}{subsection.0.2.7}%
-\contentsline {subsubsection}{\numberline {2.7.1}Structure du modèle}{77}{subsubsection.0.2.7.1}%
-\contentsline {subsubsection}{\numberline {2.7.2}Types de règles de contrôle des prises}{81}{subsubsection.0.2.7.2}%
-\contentsline {subsubsection}{\numberline {2.7.3}Scénarios}{81}{subsubsection.0.2.7.3}%
-\contentsline {subsubsection}{\numberline {2.7.4}Objectifs, mesures du rendement et tracés diagnostiques}{82}{subsubsection.0.2.7.4}%
-\contentsline {section}{\numberline {3}RÉSULTATS}{83}{section.0.3}%
-\contentsline {subsection}{\numberline {3.1}AJUSTEMENTS POSSIBLES DU MODÈLE GÉNITEURS-RECRUES À UN SEUL STOCK (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)}{84}{subsection.0.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Convergence}{84}{subsubsection.0.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Ajustements de rechange du modèle géniteurs-recrues}{84}{subsubsection.0.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}AJUSTEMENTS DU MODÈLE GÉNITEURS-RECRUES HIÉRARCHIQUE (AU NIVEAU DU STOCK)}{100}{subsection.0.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Versions du modèle utilisées pour la comparaison}{100}{subsubsection.0.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Comparaison des estimations des points de référence biologiques}{100}{subsubsection.0.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Comparaison des variations estimées de la productivité dans le temps (ajustements d'un modèle à un seul stock par rapport au MBH)}{106}{subsubsection.0.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}SCÉNARIOS DE PRODUCTIVITÉ (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)}{109}{subsection.0.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Description des scénarios}{109}{subsubsection.0.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Comparaison des distributions des paramètres pour les scénarios de productivité}{112}{subsubsection.0.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}ESTIMATIONS DES POINTS DE RÉFÉRENCE BIOLOGIQUES (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)}{120}{subsection.0.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Illustration des résultats au niveau du stock~: stock de la rivière Meziadin et stock sauvage à montaison tardive de la rivière Babine}{120}{subsubsection.0.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Points de référence biologiques au niveau du stock et au niveau du regroupement pour le saumon rouge de la rivière Nass}{123}{subsubsection.0.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Points de référence biologiques au niveau du stock et au niveau du regroupement pour le saumon rouge sauvage de la rivière Skeena}{128}{subsubsection.0.3.4.3}%
-\contentsline {subsection}{\numberline {3.5}COMPARAISON DU TAUX D'EXPLOITATION DURABLE ENTRE LES STOCKS ET LES SCÉNARIOS}{137}{subsection.0.3.5}%
-\contentsline {subsection}{\numberline {3.6}EQUILIBRIUM PROFILES (STOCK-LEVEL AND AGGREGATE-LEVEL)}{145}{subsection.0.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Examples of Spawner-based Equilibrium Profiles}{145}{subsubsection.0.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}Examples of ER-based Equilibrium Profiles}{149}{subsubsection.0.3.6.2}%
+\contentsline {section}{ACRONYMES ET SIGLES}{1}{section*.4}%
+\contentsline {section}{\numberline {1}INTRODUCTION}{3}{section.0.1}%
+\contentsline {subsection}{\numberline {1.1}EXAMEN DES OBJECTIFS D'ÉCHAPPÉE}{3}{subsection.0.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Renseignements de base}{3}{subsubsection.0.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Processus d'examen des objectifs d'échappée}{5}{subsubsection.0.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Objectifs du document de recherche}{7}{subsubsection.0.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}STRUCTURE DES STOCKS DE SAUMON ROUGE DES RIVIÈRES SKEENA ET NASS}{8}{subsection.0.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Types de cycle biologique, stocks et unités de conservation}{8}{subsubsection.0.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Projet de mise en valeur dans le lac Babine (ruisseau Pinkut et rivière Fulton)Babine Lake Development Project (Pinkut and Fulton)}{9}{subsubsection.0.1.2.2}%
+\contentsline {subsection}{\numberline {1.3}APERÇU DE L'ANALYSE}{12}{subsection.0.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Portée et organisation du document de recherche}{12}{subsubsection.0.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Ajustements du modèle géniteurs-recrues, scénarios de productivité et points de référence biologiques}{13}{subsubsection.0.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Approches de rechange pour l'élaboration de points de référence de gestion pour les regroupements de stocks}{14}{subsubsection.0.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}Approches de rechange pour inclure les saumons rouges du ruisseau Pinkut et de la rivière Fulton mis en valeur dans les analyses}{17}{subsubsection.0.1.3.4}%
+\contentsline {subsubsection}{\numberline {1.3.5}Comment le présent document de recherche respecte le cadre de référence}{19}{subsubsection.0.1.3.5}%
+\contentsline {section}{\numberline {2}MÉTHODES}{21}{section.0.2}%
+\contentsline {subsection}{\numberline {2.1}SOURCES DES DONNÉES}{21}{subsection.0.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Examen des données}{21}{subsubsection.0.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Estimations des géniteurs}{22}{subsubsection.0.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Estimation de l'excédent biologique du ruisseau Pinkut et de la rivière Fulton issu de la mise en valeur}{24}{subsubsection.0.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Estimations des prises}{25}{subsubsection.0.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Estimations de la composition selon l'âge}{25}{subsubsection.0.2.1.5}%
+\contentsline {paragraph}{\numberline {2.1.5.1}Données sur la composition selon l'âge des regroupements}{25}{paragraph.0.2.1.5.1}%
+\contentsline {paragraph}{\numberline {2.1.5.2}Données sur la composition selon l'âge de chaque stock}{26}{paragraph.0.2.1.5.2}%
+\contentsline {subsubsection}{\numberline {2.1.6}Relevés dans les lacs}{29}{subsubsection.0.2.1.6}%
+\contentsline {subsubsection}{\numberline {2.1.7}Reconstitutions des remontes}{29}{subsubsection.0.2.1.7}%
+\contentsline {subsubsection}{\numberline {2.1.8}Estimations du recrutement}{31}{subsubsection.0.2.1.8}%
+\contentsline {subsubsection}{\numberline {2.1.9}Vérifications des données et tests de sensibilité}{31}{subsubsection.0.2.1.9}%
+\contentsline {subsubsection}{\numberline {2.1.10}Données sur les géniteurs-recrues accessibles}{34}{subsubsection.0.2.1.10}%
+\contentsline {subsection}{\numberline {2.2}AJUSTEMENT DU MODÈLE GÉNITEURS-RECRUES}{41}{subsection.0.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Formes du modèle de Ricker}{41}{subsubsection.0.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Estimation bayésienne des paramètres à l'aide de la méthode de Monte-Carlo par chaîne de Markov (MCCM)}{43}{subsubsection.0.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Valeurs a priori}{43}{subsubsection.0.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Ajustements possibles du modèle géniteurs-recrues pour les regroupements}{49}{subsubsection.0.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Ajustements possibles du modèle géniteurs-recrues à un seul stock}{51}{subsubsection.0.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Exploration d'un ajustement du modèle géniteurs-recrues hiérarchique pour les stocks de saumon rouge de la rivière Skeena}{54}{subsubsection.0.2.2.6}%
+\contentsline {subsection}{\numberline {2.3}SSCÉNARIOS DE SÉLECTION DU MODÈLE GÉNITEURS-RECRUES À UN SEUL STOCK ET DE PRODUCTIVITÉ}{55}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {2.4}POINTS DE RÉFÉRENCE BIOLOGIQUES ET POINTS DE RÉFÉRENCE DE L'ÉTAT}{61}{subsection.0.2.4}%
+\contentsline {subsection}{\numberline {2.5}APPROCHES DE RECHANGE POUR L'ÉLABORATION DE POINTS DE RÉFÉRENCE DE GESTION POUR LES REGROUPEMENTS DE STOCKS}{63}{subsection.0.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Overview of Alternative Approaches}{63}{subsubsection.0.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Évaluation des approches de rechange}{67}{subsubsection.0.2.5.2}%
+\contentsline {subsection}{\numberline {2.6}MISE EN ŒUVRE D'AUTRES APPROCHES POUR L'ÉLABORATION DE POINTS DE RÉFÉRENCE DE GESTION POUR LES REGROUPEMENTS DE STOCKS}{72}{subsection.0.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Estimations des points de référence biologiques pour les regroupements (Srmd Regr.)}{72}{subsubsection.0.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Somme des points de référence biologiques au niveau du stock pour l'abondance (Somme Srmd)}{72}{subsubsection.0.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Comparaison des points de référence biologiques au niveau du stock pour le taux d'exploitation (Comp Urmd)}{72}{subsubsection.0.2.6.3}%
+\contentsline {subsubsection}{\numberline {2.6.4}Calcul des profils d'équilibre fondés sur les géniteurs (Prof.~équ.)}{72}{subsubsection.0.2.6.4}%
+\contentsline {subsubsection}{\numberline {2.6.5}Calcul des profils d'équilibre fondés sur les taux d'exploitation (Compr. regr.)}{73}{subsubsection.0.2.6.5}%
+\contentsline {subsubsection}{\numberline {2.6.6}Points de référence limites fondés sur l'état pour les regroupements}{74}{subsubsection.0.2.6.6}%
+\contentsline {subsubsection}{\numberline {2.6.7}Points de référence fondés sur l'abondance déterminés par régression logistique pour les regroupements (Rég. log.)}{75}{subsubsection.0.2.6.7}%
+\contentsline {subsubsection}{\numberline {2.6.8}Points de référence fondés sur l'abondance déterminés par simulation pour les regroupements (Sim)}{75}{subsubsection.0.2.6.8}%
+\contentsline {subsection}{\numberline {2.7}MISE EN ŒUVRE DE L'APPROCHE DE SIMULATION AVANCÉE}{76}{subsection.0.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}Structure du modèle}{76}{subsubsection.0.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}Types de règles de contrôle des prises}{80}{subsubsection.0.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.7.3}Scénarios}{80}{subsubsection.0.2.7.3}%
+\contentsline {subsubsection}{\numberline {2.7.4}Objectifs, mesures du rendement et tracés diagnostiques}{81}{subsubsection.0.2.7.4}%
+\contentsline {section}{\numberline {3}RÉSULTATS}{82}{section.0.3}%
+\contentsline {subsection}{\numberline {3.1}AJUSTEMENTS POSSIBLES DU MODÈLE GÉNITEURS-RECRUES À UN SEUL STOCK (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)}{83}{subsection.0.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Convergence}{83}{subsubsection.0.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Ajustements de rechange du modèle géniteurs-recrues}{83}{subsubsection.0.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}AJUSTEMENTS DU MODÈLE GÉNITEURS-RECRUES HIÉRARCHIQUE (AU NIVEAU DU STOCK)}{99}{subsection.0.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Versions du modèle utilisées pour la comparaison}{99}{subsubsection.0.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Comparaison des estimations des points de référence biologiques}{99}{subsubsection.0.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Comparaison des variations estimées de la productivité dans le temps (ajustements d'un modèle à un seul stock par rapport au MBH)}{105}{subsubsection.0.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}SCÉNARIOS DE PRODUCTIVITÉ (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)}{108}{subsection.0.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Description des scénarios}{108}{subsubsection.0.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Comparaison des distributions des paramètres pour les scénarios de productivité}{111}{subsubsection.0.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}ESTIMATIONS DES POINTS DE RÉFÉRENCE BIOLOGIQUES (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)}{119}{subsection.0.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Illustration des résultats au niveau du stock~: stock de la rivière Meziadin et stock sauvage à montaison tardive de la rivière Babine}{119}{subsubsection.0.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Points de référence biologiques au niveau du stock et au niveau du regroupement pour le saumon rouge de la rivière Nass}{122}{subsubsection.0.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Points de référence biologiques au niveau du stock et au niveau du regroupement pour le saumon rouge sauvage de la rivière Skeena}{127}{subsubsection.0.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}COMPARAISON DU TAUX D'EXPLOITATION DURABLE ENTRE LES STOCKS ET LES SCÉNARIOS}{136}{subsection.0.3.5}%
+\contentsline {subsection}{\numberline {3.6}PROFILS D'ÉQUILIBRE (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT)}{144}{subsection.0.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Exemples de profils d'équilibre fondés sur les géniteurs}{144}{subsubsection.0.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Exemples de profils d'équilibre fondés sur le taux d'exploitation}{148}{subsubsection.0.3.6.2}%
 \contentsline {subsection}{\numberline {3.7}STATUS-BASED AGGREGATE LIMIT REFERENCE POINTS}{154}{subsection.0.3.7}%
 \contentsline {subsection}{\numberline {3.8}LOGISTIC-REGRESSION-BASED AGGREGATE ABUNDANCE REFERENCE POINTS}{161}{subsection.0.3.8}%
 \contentsline {subsection}{\numberline {3.9}SIMULATION-BASED AGGREGATE ABUNDANCE REFERENCE POINTS}{165}{subsection.0.3.9}%
