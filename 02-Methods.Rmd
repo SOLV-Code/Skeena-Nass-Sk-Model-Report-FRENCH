@@ -508,10 +508,10 @@ Les problèmes potentiels liés à l’utilisation d’estimations de la capacit
 
 
 table.in <- read.csv("data/Reference Tables/PRbasedPrior_Info.csv",stringsAsFactors = FALSE, fileEncoding = "UTF-8-BOM") %>% arrange(Basin,Stock,-Smax_Spn) %>% select(-CV, - Cap) %>%
-   mutate(Smax_Spn = prettyNum(round(Smax_Spn),big.mark = ",")) %>%
-   mutate(Smax_Spn_Lower = prettyNum(round(Smax_Spn_Lower),big.mark = ",")) %>%
-   mutate(Smax_Spn_Upper = prettyNum(round(Smax_Spn_Upper),big.mark = ",")) %>%
-   #mutate(Cap = prettyNum(round(Cap),big.mark = ",")) %>%
+   mutate(Smax_Spn = prettyNum(round(Smax_Spn),big.mark = " ")) %>%
+   mutate(Smax_Spn_Lower = prettyNum(round(Smax_Spn_Lower),big.mark = " ")) %>%
+   mutate(Smax_Spn_Upper = prettyNum(round(Smax_Spn_Upper),big.mark = " ")) %>%
+   #mutate(Cap = prettyNum(round(Cap),big.mark = " ")) %>%
    dplyr::rename(Est = Smax_Spn,Inférieure = Smax_Spn_Lower,Supérieure = Smax_Spn_Upper, DernierLim = LastLim, Lac = Lake ) #%>% 
    #select(-EstCV)
    
@@ -530,7 +530,7 @@ table.in %>%
 #   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
    csas_table(format = "latex", escape = FALSE, font_size = 10, align = c("l","l","l","r","r","r","r","r"),
                   caption = "(ref:PRPriorsTable)") %>%
-add_header_above(c(" " = 4, "PR-based Smax" = 3),bold=TRUE) %>%
+add_header_above(c(" " = 4, "Smax fondé sur le rendement\nphotosynthétique" = 3),bold=TRUE) %>%
         kableExtra::row_spec(c(5), hline_after = TRUE) %>%
        kableExtra::row_spec(c(1,4,6,9:17,20), extra_latex_after = "\\cmidrule(l){2-7}") 
 
@@ -605,7 +605,7 @@ Les ajustements du modèle géniteurs-recrues n’ont été appliqués qu’aux 
 * Les deux stocks mis en valeur (ruisseau Pinkut et rivière Fulton) ont été exclus en raison de problèmes d’ajustement, comme l’illustre la figure \@ref(fig:AltFitPlotSkeena) pour le regroupement de la rivière Skeena.
 * Les huit stocks dont les données sont insuffisantes ont également été exclus. Il convient de noter que pour l’un des stocks qui sont ici considérés comme ayant des données insuffisantes, le stock du lac Bowser (Nass), les discussions se poursuivent au sujet de l’utilisabilité des estimations disponibles, et il pourrait être inclus dans les mises à jour futures de cette analyse.
 
-\clearpage
+
 
 (ref:CandidateModels) Liste de contrôle pour la détermination d’un ensemble de base de modèles possibles pour les ajustements du modèle géniteurs-recrues à un seul stock. Nous nous sommes concentrés sur les variations du modèle de Ricker pour les stocks sauvages ayant au moins 10 années de données d’éclosion sur les géniteurs-recrues après avoir rempli les trous d’un an dans l’abondance des géniteurs ou la remonte. Pour les stocks ayant au moins 25 années de données d’éclosion continues sur les géniteurs-recrues, nous avons testé trois autres formes du modèle. Pour les stocks qui ne répondent pas à cette exigence, nous n’avons ajusté qu’un modèle de Ricker de base.
 
@@ -645,7 +645,7 @@ En plus de fournir une comparaison avec les estimations qui ont déjà été él
 
 À l’appui de ces objectifs, le MBH a été mis en œuvre à l’aide des mêmes ensembles de données et a intégré certains tests de sensibilité conçus pour être semblables à la mise en œuvre pour un stock unique. L’intention était que les différences observées dans les résultats soient principalement attribuables à la structure hiérarchique, mais il était difficile d’isoler clairement l’effet de l’hypothèse hiérarchique des autres nuances méthodologiques pour les stocks lorsque des différences entre les extrants du modèle à un seul stock et du modèle MBH ont été observées.
 
-## SSCÉNARIOS DE SÉLECTION DU MODÈLE GÉNITEURS-RECRUES À UN SEUL STOCK ET DE PRODUCTIVITÉ {#ModelSelection}
+## SCÉNARIOS DE SÉLECTION DU MODÈLE GÉNITEURS-RECRUES À UN SEUL STOCK ET DE PRODUCTIVITÉ {#ModelSelection}
 
 Nous avons ajusté un nombre total de 163 modèles possibles, en raison des autres formes du modèle (de base, AR1 et avec PVT), des tests de sensibilité (c.-à-d. les autres valeurs a priori, les séries chronologiques complètes et tronquées) et du grand nombre de stocks (20 stocks sauvages, 2 stocks mis en valeur, 3 versions de l’ajustement pour le regroupement). Afin d’améliorer l’uniformité, nous avons élaboré des lignes directrices pour sélectionner d’abord une courte liste d’ajustements du modèle pour chaque stock ou regroupement, puis pour élaborer d’autres scénarios de productivité fondés sur les ajustements présélectionnés du modèle (figure \@ref(fig:ModelSelection)).
 
@@ -678,16 +678,17 @@ include_graphics("data/1_FrenchFigs/Fig5_Diagram_ModelSelection_French.PNG")
 
 \clearpage
 
-(ref:MCMCDiagnostics) Liste de contrôle des diagnostics MCCM. Les diagnostics normalisés suivants ont été utilisés pour évaluer l’échantillonnage MCCM et l’ajustement du modèle. Tableau adapté et étendu de  @PestalJohnstonTakuCo. 
+(ref:MCMCDiagnostics) Liste de contrôle des diagnostics MCCM. Les diagnostics normalisés suivants ont été utilisés pour évaluer l’échantillonnage MCCM et l’ajustement du modèle. Tableau adapté et étendu de @PestalJohnstonTakuCo. 
 
 ```{r MCMCDiagnostics, echo = FALSE, results = "asis"}
 
 
-table.in <- read.csv("data/Reference Tables/MCMC_Diagnostics.csv",
+table.in <- read.csv("data/Reference Tables/MCMC_DiagnosticsFRENCH.csv",
                      stringsAsFactors = FALSE, fileEncoding = "UTF-8-BOM")
 
-table.in$Examples <- gsub("None","-",table.in$Examples)
+#table.in$Exemples <- gsub("None","-",table.in$Exemples)
 
+names(table.in)[1] <- "Facteur à\nconsidérer"
    
 table.in %>% 
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 

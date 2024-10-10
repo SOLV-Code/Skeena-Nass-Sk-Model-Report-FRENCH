@@ -38,7 +38,7 @@
 \contentsline {subsubsection}{\numberline {2.2.4}Ajustements possibles du modèle géniteurs-recrues pour les regroupements}{49}{subsubsection.0.2.2.4}%
 \contentsline {subsubsection}{\numberline {2.2.5}Ajustements possibles du modèle géniteurs-recrues à un seul stock}{51}{subsubsection.0.2.2.5}%
 \contentsline {subsubsection}{\numberline {2.2.6}Exploration d'un ajustement du modèle géniteurs-recrues hiérarchique pour les stocks de saumon rouge de la rivière Skeena}{54}{subsubsection.0.2.2.6}%
-\contentsline {subsection}{\numberline {2.3}SSCÉNARIOS DE SÉLECTION DU MODÈLE GÉNITEURS-RECRUES À UN SEUL STOCK ET DE PRODUCTIVITÉ}{55}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {2.3}SCÉNARIOS DE SÉLECTION DU MODÈLE GÉNITEURS-RECRUES À UN SEUL STOCK ET DE PRODUCTIVITÉ}{55}{subsection.0.2.3}%
 \contentsline {subsection}{\numberline {2.4}POINTS DE RÉFÉRENCE BIOLOGIQUES ET POINTS DE RÉFÉRENCE DE L'ÉTAT}{61}{subsection.0.2.4}%
 \contentsline {subsection}{\numberline {2.5}APPROCHES DE RECHANGE POUR L'ÉLABORATION DE POINTS DE RÉFÉRENCE DE GESTION POUR LES REGROUPEMENTS DE STOCKS}{63}{subsection.0.2.5}%
 \contentsline {subsubsection}{\numberline {2.5.1}Overview of Alternative Approaches}{63}{subsubsection.0.2.5.1}%
