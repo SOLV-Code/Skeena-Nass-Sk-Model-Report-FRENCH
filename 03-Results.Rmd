@@ -880,8 +880,6 @@ Sgen n’est pas applicable pour les regroupements de stocks, nous n’avons don
 
 *Urmd*
 
-Aggregate-level estimates of Umsy differed substantially from the median of stock-level median estimates under both productivity scenarios (Tables  and ). The median of stock-level estimates was much higher, because large stocks and small stocks were weighted equally in the median calculcation. Aggregate Umsy estimates were closer to the Umsy estimates for the largest stocks (Babine Early, Mid, and Late Wild).
-
 Les estimations de Urmd au niveau du regroupement différaient nettement de la médiane des estimations au niveau du stock dans les deux scénarios de productivité (tableaux \@ref(tab:UmsyLtAvgSkeenaWild) et \@ref(tab:UmsyRecentSkeenaWild)). La médiane des estimations au niveau du stock était beaucoup plus élevée, car les grands stocks et les petits stocks avaient une pondération égale dans le calcul de la médiane. Les estimations de Urmd pour le regroupement étaient plus proches des estimations de Urmd pour les plus grands stocks (stocks sauvages à montaison précoce, moyenne et tardive de la rivière Babine).
 
 
@@ -1090,61 +1088,63 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 
 \clearpage
-## COMPARISON OF SUSTAINABLE EXPLOITATION RATE ACROSS STOCKS AND SCENARIOS {#UmsyComp}
+## COMPARAISON DU TAUX D’EXPLOITATION DURABLE ENTRE LES STOCKS ET LES SCÉNARIOS {#UmsyComp}
 
-Observed differences in estimated productivity (ln.alpha) between stocks and between scenarios translate into large differences in estimates of Umsy, defined as the sustainable harvest mortality rate at MSY (Figure \@ref(fig:AggUmsy)). Aggregate-level Umsy estimates were higher for the Nass aggregate than for the Skeena Wild aggregate, and Umsy under recent productivity was much lower than under long-term average productivity for both aggregates. Umsy estimates varied substantially between the component stocks for each aggregate. The SkeenaWild aggregate includes more stocks than the Nass aggregate, and median stock-level Umsy estimates spanned a wider range. Umsy under recent productivity was lower  and more uncertain for most stocks. The ranking of stocks by productictivity also differed between the long-term average and recent productivity scenario. Tables \@ref(tab:UmsyLtAvgNass), \@ref(tab:UmsyRecentNass), \@ref(tab:UmsyLtAvgSkeenaWild), and \@ref(tab:UmsyRecentSkeenaWild) above list the corresponding estimates. Appendix \@ref(BiasCorrectedBM) lists the bias-corrected versions of the estimates.
 
-Umsy distributions can be considered relative to different levels of target exploitation rate for a stock aggregate:
+Les différences observées dans la productivité estimée (ln.alpha) entre les stocks et entre les scénarios se traduisent par de grandes différences dans les estimations de Urmd, défini comme le taux de mortalité durable dû à la pêche au rendement maximal durable (figure \@ref(fig:AggUmsy)). Les estimations de Urmd au niveau du regroupement étaient plus élevées pour le regroupement de la rivière Nass que pour celui du stock sauvage de la rivière Skeena et Urmd, dans le scénario de productivité récente, était beaucoup plus faible que dans le scénario de productivité moyenne à long terme pour les deux regroupements. Les estimations de Urmd variaient considérablement entre les stocks composant chaque regroupement. Le regroupement des stocks sauvages de la rivière Skeena compte plus de stocks que celui de la rivière Nass et la médiane des estimations de Urmd s’étendait sur une plus grande fourchette. Urmd était plus faible et plus incertain pour la plupart des stocks dans le scénario de productivité récente. Le classement des stocks selon la productivité différait également entre les scénarios de productivité moyenne à long terme et de productivité récente. Les tableaux \@ref(tab:UmsyLtAvgNass), \@ref(tab:UmsyRecentNass), \@ref(tab:UmsyLtAvgSkeenaWild), et \@ref(tab:UmsyRecentSkeenaWild) ci-dessus présentent les estimations correspondantes. L’annexe \@ref(BiasCorrectedBM) énumère les versions avec correction du biais des estimations.
 
-* Figure \@ref(fig:UmsyProfiles1) shows the Prop(ER < Umsy), the proportion of the posterior Umsy distribution for each stock which exceeds ERs from 0 to 100% (i.e., the probability that a particular aggregate ER is sustainable over the long run for each component stock). This is the same information as Figure \@ref(fig:AggUmsy), just expressed in a different way: this version shows how much of the boxplots in Figure \@ref(fig:AggUmsy) falls to the right of each ER level. At 40% ER applied over the long run, two wild stocks have less than 50% probability of being harvested sustainably (two lines below the horizontal red line) under the long-term average productivity scenario, which increases to four wild stocks under the recent productivity scenario.
-* Figure \@ref(fig:UmsyProfiles2) summarizes this information across stocks. It shows how many stocks have at least 50% probability of being sustainably harvested at each ER. At 40% ER, two wild stocks don't meet this objective under the long-term average productivity scenario (18 of 20 stocks do meet it), which increases to four wild stocks under the recent productivity scenario (16 of 20 wild stocks = 80%  of stocks meet the objective).
-* Figures \@ref(fig:UmsyHeatmapLTAvg) and \@ref(fig:UmsyHeatmapRecent) show the details by stock. At 40% ER, the two stocks with less than 50% probability of meeting this objective under the long-term average productivity scenario are Kitwanga and Swan/Stephens. Under the recent productivity scenario, the list of stocks not meeting this objective also includes Babine Early Wild and Babine Late Wild.
-* Figure  \@ref(fig:UmsyHisto) shows the frequency distribution of stock-specific median Umsy estimates. This type of plot was presented by @Waltersetal2008ISRP in their review of Skeena Sockeye (their Figure 14), so we've included it here for comparison. For Skeena Wild,  the spread of median Umsy estimates across component stocks is wider under the recent productivity scenario (i.e., the mixed-stock fishery challenge is more pronounced).  For Nass, there is an overall shift to lower median Umsy for the component stocks.
 
-The different types of plots in Figures \@ref(fig:AggUmsy) to \@ref(fig:UmsyHisto) all show the same underlying information, just presented differently. However, these alternative displays capture alternative perspectives, and no single version will be informative for all participants in a planning process.
+Les distributions de Urmd peuvent être prises en compte par rapport aux différents niveaux du taux d’exploitation cible pour un regroupement de stocks :
 
-\clearpage
-(ref:AggUmsy) Comparison of aggregate and stock-level Umsy estimates across stocks and aggregates for two alternative productivity assumptions. Stocks within an aggregate are sorted based on median Umsy. The largest stock in each aggregate is highlighted with red horizontal lines.
+* La figure \@ref(fig:UmsyProfiles1) illustre Prop(ER < Urmd), la proportion de la distribution a posteriori de Urmd pour chaque stock qui dépasse les taux d’exploitation de 0 à 100 % (c.-à-d. la probabilité que le taux d’exploitation d’un regroupement donné soit durable à long terme pour chaque stock composant le regroupement). Il s’agit des mêmes renseignements que ceux présentés sur la figure  \@ref(fig:AggUmsy), simplement exprimés d’une façon différente; cette version montre dans quelle mesure les diagrammes de la figure \@ref(fig:AggUmsy) tombent à droite de chaque niveau du taux d’exploitation. À un taux d’exploitation de 40 % appliqué à long terme, deux stocks sauvages ont moins de 50 % de probabilité d’être récoltés de façon durable (deux lignes sous la ligne rouge horizontale) dans le scénario de productivité moyenne à long terme, et ce chiffre passe à quatre stocks sauvages dans le scénario de productivité récente.
+* La figure \@ref(fig:UmsyProfiles2) résume cette information pour l’ensemble des stocks. Elle montre combien de stocks ont au moins 50 % de probabilité d’être récoltés de façon durable à chaque taux d’exploitation. À un taux d’exploitation de 40 %, deux stocks sauvages n’atteignent pas cet objectif dans le scénario de productivité moyenne à long terme (18 des 20 stocks l’atteignent), mais ce nombre passe à quatre stocks sauvages dans le scénario de productivité récente (16 des 20 stocks sauvages = 80 % des stocks atteignent l’objectif).
+* Les figures \@ref(fig:UmsyHeatmapLTAvg) et \@ref(fig:UmsyHeatmapRecent) présentent les détails par stock. À un taux d’exploitation de 40 %, les deux stocks dont la probabilité d’atteindre cet objectif est inférieure à 50 % dans le scénario de productivité moyenne à long terme sont ceux des rivières Kitwanga et Swan/Stephens. Dans le scénario de productivité récente, les stocks sauvages à montaison précoce et tardive de la rivière Babine n’atteignent pas non plus cet objectif.
+* La figure \@ref(fig:UmsyHisto) illustre la distribution des fréquences de la médiane des estimations de Urmd par stock. Ce type de graphique a été présenté par @Waltersetal2008ISRP  dans leur examen du saumon rouge de la rivière Skeena (leur figure 14), nous l’avons donc inclus ici à titre de comparaison. Dans le cas des stocks sauvages de la rivière Skeena, la dispersion de la médiane des estimations de Urmd entre les stocks constituants est plus importante dans le scénario de productivité récente (c.-à-d. que le problème de la pêche des stocks mixtes est plus prononcé). Pour la rivière Nass, on observe un changement global vers des valeurs plus basses de la médiane de Urmd pour les stocks constituants.
+
+Les différents types de graphiques des figures \@ref(fig:AggUmsy) à  \@ref(fig:UmsyHisto) donnent tous les mêmes renseignements sous-jacents, mais présentés différemment. Cependant, ces dispositions différentes permettent de saisir d’autres perspectives et aucune version ne sera informative pour tous les participants dans un processus de planification.
+
+
+(ref:AggUmsy) Comparaison des estimations de Urmd au niveau du regroupement et au niveau du stock entre les stocks et les regroupements pour deux autres hypothèses de productivité. Les stocks d’un regroupement sont triés en fonction de la médiane de Urmd. Le stock le plus abondant de chaque regroupement est mis en évidence par des lignes horizontales rouges.
 
 ```{r AggUmsy,   fig.cap="(ref:AggUmsy)"}
-include_graphics("data/UmsyPlots/Agg_Umsy_Comparison.png")
+include_graphics("data/1_FrenchFigs/Fig31_Agg_Umsy_Comparison_FRENCH.png")
 ```
 
 
 \clearpage
-(ref:UmsyProfiles1) Probability profiles of sustainable ER. Proportion of Bayesian posterior Umsy estimates that exceeds different levels of ER for 20 wild stocks. Red horizontal line marks 50% probability. The ER where a line for a stock crosses the red line corresponds to the median estimate of Umsy. The largest stock from each aggregate is highlighted. 
+(ref:UmsyProfiles1) Profils de probabilité du taux d’exploitation durable. Proportion des estimations de Urmd a posteriori bayésiennes qui dépassent différents niveaux de taux d’exploitation pour 20 stocks sauvages. La ligne horizontale rouge indique une probabilité de 50 %. Le taux d’exploitation où la ligne pour un stock croise la ligne rouge correspond à la médiane de l’estimation de Urmd. Le stock le plus abondant de chaque regroupement est mis en évidence.
 
 ```{r UmsyProfiles1,   fig.cap="(ref:UmsyProfiles1)"}
-include_graphics("data/UmsyPlots/ResDoc_Umsy_Profile_Figure.png")
+include_graphics("data/1_FrenchFigs/Fig32_ResDoc_Umsy_Profile_Figure_FRENCH.png")
 ```
 
 
 \clearpage
-(ref:UmsyProfiles2) Summary of sustainable ER across 20 wild stocks. Number of stocks with at least 50% probability of being harvested sustainably.
+(ref:UmsyProfiles2) Résumé des taux d’exploitation durables pour 20 stocks sauvages. Nombre de stocks ayant une probabilité d’au moins 50 % d’être récoltés de manière durable.
 
 ```{r UmsyProfiles2,   fig.cap="(ref:UmsyProfiles2)"}
-include_graphics("data/UmsyPlots/ResDoc_Umsy_Profile_Figure2.png")
+include_graphics("data/1_FrenchFigs/Fig33_ResDoc_Umsy_Profile_Figure2_FRENCH.png")
 ```
 
 
 
 \clearpage
-(ref:UmsyHeatmapLTAvg) Umsy comparison across stocks - Long-term average productivity. Each column shows estimates for a fixed aggregate ER rate. Each cell in the table shows the probability of that ER being sustainable over the long run (i.e., ER < Umsy). Probabilities are categorized using the Intergovernmental Panel on Climate Change (IPCC) Likelihood Scale to facilitate discussion of results (Table \@ref(tab:IPPCLikelihoodTab)). Note that this figure shows the same information as the top panel of Figure \@ref(fig:UmsyProfiles1), just in more detail. Stocks are grouped by aggregate, and roughly sorted within aggregate from mouth of the river upstream. Grey shading indicates stocks that either lack SR data (e.g., Oweegee, Sicintine) or are enhanced (Pinkut, Fulton).
+(ref:UmsyHeatmapLTAvg) Comparaison de Urmd entre les stocks – Productivité moyenne à long terme. Chaque colonne présente les estimations pour un taux d’exploitation fixe pour un regroupement. Chaque cellule du tableau indique la probabilité que ce taux d’exploitation soit durable à long terme (inférieur à Urmd). Les probabilités sont classées selon l’échelle de vraisemblance du Groupe d’experts intergouvernemental sur l’évolution du climat (GIEC) pour faciliter la discussion des résultats (tableau \@ref(tab:IPPCLikelihoodTab)). Cette figure présente les mêmes renseignements que le graphique supérieur de la figure \@ref(fig:UmsyProfiles1), mais de façon plus détaillée. Les stocks sont groupés par regroupement et triés approximativement à l’intérieur du regroupement de l’embouchure de la rivière en remontant vers l’amont. L’ombrage gris indique les stocks pour lesquels il manque des données sur les géniteurs-recrues (p. ex. rivière Oweegee, rivière Sicintine) ou qui sont mis en valeur (ruisseau Pinkut, rivière Fulton).
 
 
 ```{r UmsyHeatmapLTAvg,   fig.cap="(ref:UmsyHeatmapLTAvg)"}
-include_graphics("data/UmsyPlots/Agg_Heatmap_FixedER_UmsyComparison_LTAvgProd.png")
+include_graphics("data/1_FrenchFigs/Fig34_Agg_Heatmap_FixedER_UmsyComparison_LTAvgProd_FRENCH.png")
 ```
 
 
 
 \clearpage
-(ref:IPCCscale) IPCC Likelihood scale from @IPCCscale and colour coding used in this paper.
-
+(ref:IPCCscale) Échelle de probabilité du GIEC d’après Mastrandrea et al. (2011) et le code de couleur utilisé dans le présent document.
 
 ```{r IPPCLikelihoodTab, echo = FALSE, results = "asis"}
 
-ipcc.df <- read.csv("data/Reference Tables/IPCC_LikelihoodScale.csv",stringsAsFactors = FALSE)
+ipcc.df <- read_csv("data/Reference Tables/IPCC_LikelihoodScale.csv",
+						locale=locale(encoding="latin1")) 
 
 
 ipcc.df  %>% 
@@ -1166,13 +1166,11 @@ ipcc.df  %>%
 
 
 
-
-
 \clearpage
-(ref:UmsyHeatmapRecent) Umsy comparison across stocks - Recent productivity. Layout as per Figure \@ref(fig:UmsyHeatmapLTAvg).
+(ref:UmsyHeatmapRecent) Comparaison de Urmd entre les stocks – Productivité récente. Disposition comme sur la figure \@ref(fig:UmsyHeatmapLTAvg).
 
 ```{r UmsyHeatmapRecent,   fig.cap="(ref:UmsyHeatmapRecent)"}
-include_graphics("data/UmsyPlots/Agg_Heatmap_FixedER_UmsyComparison_RecentProd.png")
+include_graphics("data/1_FrenchFigs/Fig35_Agg_Heatmap_FixedER_UmsyComparison_RecentProd_FRENCH.png")
 ```
 
 
@@ -1181,7 +1179,7 @@ include_graphics("data/UmsyPlots/Agg_Heatmap_FixedER_UmsyComparison_RecentProd.p
 (ref:UmsyHisto) Umsy frequency plot. Each panel shows the distribution of stock-specific median Umsy estimates, rounded to the nearest 5%, with the 16 modelled stock in the Skeena Wild aggregate  in the top row, and the 4 modelled stocks in the Nass aggregate in the bottom row. Adapted from Figure 14 in @Waltersetal2008ISRP.
 
 ```{r UmsyHisto,   fig.cap="(ref:UmsyHisto)"}
-include_graphics("data/UmsyPlots/Umsy_Histograms.png")
+include_graphics("data/1_FrenchFigs/Fig36_Umsy_Histograms_FRENCH.png")
 ```
 
 
