@@ -1191,25 +1191,25 @@ include_graphics("data/1_FrenchFigs/Fig36_Umsy_Histograms_FRENCH.png")
 
 
 \clearpage
-##  EQUILIBRIUM PROFILES (STOCK-LEVEL AND AGGREGATE-LEVEL)  {#ProfileResults}
+##  PROFILS D’ÉQUILIBRE (AU NIVEAU DU STOCK ET AU NIVEAU DU REGROUPEMENT) {#ProfileResults}
 
-### Examples of Spawner-based Equilibrium Profiles
+### Exemples de profils d’équilibre fondés sur les géniteurs
 
-Equilibrium profiles of expected yield or recruitment at different levels of spawner abundance (assumed to be a fixed escapement target) have been used as a building block for setting escapement goals in Alaskan and northern transboundary salmon fisheries (Section \@ref(EqProfilesMethods)). 
+Les profils d’équilibre du rendement prévu ou du recrutement à différents niveaux d’abondance des géniteurs (censés être un objectif d’échappée fixe) ont été utilisés comme élément de base pour établir les objectifs d’échappée dans les pêches des stocks de saumon rouge de l’Alaska et transfrontaliers du Nord \@ref(EqProfilesMethods)). 
 
-We illustrate the approach for the largest stock in each aggregate, using three alternative versions of a yield profile, and then summarize the aggregate-level and stock-level results for one commonly used version, the "80-60 range", which captures the range of spawner abundances with an 80% probability of achieving at least 60% of median MSY on average over the long term, if the stock were managed to a fixed escapement goal in that range.
+Nous illustrons l’approche pour le plus grand stock de chaque regroupement, en utilisant trois versions de rechange d’un profil de rendement, puis nous résumons les résultats au niveau du regroupement et au niveau du stock pour une version couramment utilisée, la « fourchette de 80 à 60 », qui tient compte de la fourchette de l’abondance des géniteurs ayant une probabilité de 80 % d’atteindre au moins 60 % de la valeur médiane du rendement maximal durable en moyenne à long terme, si le stock est géré selon un objectif d’échappée fixe dans cette fourchette.
 
-*Meziadin*: The all-year median spawner abundance is very close to the median estimate of Smsy under the long-term average productivity scenario, but most years since 2000 were at or below the long-term average Smsy (Figure \@ref(fig:ProfileMezidian), Panel A). Under long-term average productivity, spawner abundances near the median Smsy estimate had a roughly 80% probability of achieving at least 80% of long-term average MSY, but under the recent productivity scenario no spawner abundance was likely to achieve that objective (Panel B). For objectives with lower targets (achieve at least 60% of MSY, achieve an equilibrium yield of 100,000 fish), the ranges of spawner abundances with an 80% probability of meeting the objective under long-term average productivity was wider (Panels C, D).  Probabilities of achieving these lower objectives were higher under recent productivity, but still didn't meet the 80% threshold we used for illustration.
+*Stock de la rivière Meziadin* : La médiane de l’abondance des géniteurs sur toute l’année est très proche de la médiane de l’estimation de Srmd dans le scénario de productivité moyenne à long terme, mais elle était égale ou inférieure à la moyenne à long terme de Srmd la plupart des années depuis 2000 (figure \@ref(fig:ProfileMezidian), graphique A). Dans le scénario de productivité moyenne à long terme, l’abondance des géniteurs près de la médiane de l’estimation de Srmd avait une probabilité d’environ 80 % d’atteindre au moins 80 % du rendement maximal durable moyen à long terme, mais dans le scénario de productivité récente, il était peu probable que l’abondance des géniteurs atteigne cet objectif (graphique B). Pour les objectifs comportant des cibles plus faibles (atteindre au moins 60 % du rendement maximal durable, atteindre un rendement d’équilibre de 100 000 poissons), la fourchette de l’abondance des géniteurs ayant une probabilité de 80 % d’atteindre l’objectif dans le scénario de productivité moyenne à long terme était plus grande (graphiques C, D). Les probabilités d’atteindre ces objectifs plus bas étaient plus élevées dans le scénario de productivité récente, mais n’atteignaient toujours pas le seuil de 80 % que nous avons utilisé à titre d’illustration.
 
-*Babine Late Wild*: The all-year median spawner abundance is below the median estimate of Smsy under the long-term average productivity scenario, and most years since 2000 were below the long-term average Smsy (Figure \@ref(fig:ProfileBabineLW), Panel A). The observed differences in yield profiles across alternative productivity scenarios and objectives for Babine Late Wild were similar to the Meziadin profiles (Panels B-D).
+*Stock sauvage à montaison tardive de la rivière Babine* : La médiane de l’abondance des géniteurs sur toute l’année est inférieure à la médiane de l’estimation de Srmd dans le scénario de productivité moyenne à long terme, et elle était inférieure à la moyenne à long terme de Srmd la plupart des années depuis 2000 (figure \@ref(fig:ProfileBabineLW), graphique A). Les différences observées dans les profils de rendement entre les différents scénarios et objectifs de productivité pour le stock sauvage à montaison tardive de la rivière Babine étaient semblables aux profils de la rivière Meziadin (graphiques B à D).
 
- "80-60" yield ranges could be calculated for both aggregates and most of the stocks under the long-term average productivity, but only a few stocks met the 80% threshold under the recent productivity scenario (Tables \@ref(tab:ProfTab8060Nass) and \@ref(tab:ProfTab8060SkeenaWild)).
+On a pu calculer les fourchettes de rendement « 80-60 » pour les deux regroupements et la plupart des stocks dans le scénario de productivité moyenne à long terme, mais seuls quelques stocks atteignaient le seuil de 80 % dans le scénario de productivité récente (tableaux \@ref(tab:ProfTab8060Nass) et \@ref(tab:ProfTab8060SkeenaWild)).
 
 
-(ref:ProfileMezidian) Sample yield profiles: Meziadin (Largest Nass stock). Observed spawner abundances (A) and three alternative equlibrium yield profiles (B, C, D). Yield profiles are shown for the long-term average productivity scenario (LtAvg) and the recent productivity scenario (Recent). Boxplots in panel A show distributions for either all years or by decade, with number of observations in brackets. Each boxplot shows median (vertical line), lower and upper quartiles (box) and the range between smallest and largest observations (x).  
+(ref:ProfileMezidian) Exemples de profils de rendement : Rivière Meziadin (le plus grand stock de la rivière Nass). Abondances des géniteurs observées (A) et trois différents profils de rendement à l’équilibre (B, C, D). Les profils de rendement sont présentés pour le scénario de productivité moyenne à long terme (Moy.LT) et le scénario de productivité récente (Récente). Les diagrammes de quartiles dans le graphique A représentent les distributions pour toutes les années ou par décennie, avec le nombre d’observations entre parenthèses. Chaque diagramme de quartiles indique la médiane (ligne verticale), les quartiles inférieurs et supérieurs (rectangle) et la fourchette entre les observations les plus petites et les plus grandes (x).
 
 ```{r ProfileMezidian,   fig.cap="(ref:ProfileMezidian)"}
-include_graphics("data/StockSampleFigs/Meziadin_EqProbProfiles.png")
+include_graphics("data/1_FrenchFigs/Fig37_Meziadin_EqProbProfiles_FRENCH.png")
 ```
 
 
@@ -1217,10 +1217,10 @@ include_graphics("data/StockSampleFigs/Meziadin_EqProbProfiles.png")
 
 
 \clearpage
-(ref:ProfileBabineLW) Sample Yield Profiles: Babine Late Wild (Largest wild Skeena stock). Layout as per Figure \@ref(fig:ProfileMezidian).
+(ref:ProfileBabineLW) Exemples de profils de rendement : Stock sauvage à montaison tardive de la rivière Babine (le plus grand stock sauvage de la rivière Skeena). Disposition comme sur la figure \@ref(fig:ProfileMezidian).
 
 ```{r ProfileBabineLW,   fig.cap="(ref:ProfileBabineLW)"}
-include_graphics("data/StockSampleFigs/Bab-LW_EqProbProfiles.png")
+include_graphics("data/1_FrenchFigs/Fig38_Bab-LW_EqProbProfiles_FRENCH.png")
 ```
 
 
@@ -1229,17 +1229,18 @@ include_graphics("data/StockSampleFigs/Bab-LW_EqProbProfiles.png")
 
 
 
-(ref:ProfTab8060Nass) Summary of "80-60" yield profiles - Nass. For the long-term average productivity scenario, the table lists median Smsy (Smsy), median yield at Smsy (MSY), 60% of MSY, the range of spawner abundances with 80% probability of achieving 60% MSY (Lower, Upper), as well as median recruits and median productivity in that spawner range (Rec, RpS). For the recent productivity scenario, spawner range, recruits, and productivity are also listed for those cases where there is at least an 80% of achieving 60% of the long-term average MSY.
+(ref:ProfTab8060Nass) Résumé des profils de rendement « 80-60 » – Rivière Nass. Pour le scénario de productivité moyenne à long terme, le tableau présente la médiane de Srmd (Srmd), la médiane du rendement à Srmd (RMD), 60 % du rendement maximal durable, la fourchette des abondances des géniteurs ayant une probabilité de 80 % d’atteindre 60 % du rendement maximal durable (Inférieure, Supérieure), ainsi que la médiane des recrues et de la productivité dans cette fourchette de géniteurs (Rec, RpS). Pour le scénario de productivité récente, la fourchette des géniteurs, les recrues et la productivité sont également indiquées pour les cas où il y a une probabilité d’au moins 80 % d’atteindre 60 % du rendement maximal durable moyen à long terme. *Inf.* = Inférieure, *Sup.* = Supérieure.
 
 ```{r ProfTab8060Nass, echo = FALSE, results = "asis"}
 
 prof.tab.src <- read_csv("data/SummaryTables_Profiles8060.csv")
 
 table.in <-  prof.tab.src %>% dplyr::filter(Basin=="Nass") %>% arrange(StkSeq) %>% select(-StkSeq,-Basin,-Stock) %>%
-														mutate_at(c(2:7,9:11),function(x){prettyNum(round(x), big.mark=",")}) %>%
+														mutate_at(c(2:7,9:11),function(x){prettyNum(round(x), big.mark=" ")}) %>%
 														mutate_at(c(8,12),function(x){format(round(x,1),n.small =1)}) 
-	
-col.names.use <- c("Stock","Smsy","MSY","60\\% MSY","Lower","Upper","Rec","RpS","Lower","Upper","Rec","RpS")
+
+
+col.names.use <- c("Stock","Srmd","RMD","60\\% RMD","Inf.","Sup.","Rec","RpS","Inf.","Sup.","Rec","RpS")
 table.in[table.in == "NA"] <- "-"
 table.in[table.in == " NA"] <- "-"
 	
@@ -1250,21 +1251,21 @@ table.in %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",11)),
                   caption = "(ref:ProfTab8060Nass)", col.names = col.names.use ) %>%
     kableExtra::row_spec(c(1), hline_after = TRUE) %>%
-	add_header_above(c(" ", "LtAvg" = 7, "Recent" = 4)) 
+	add_header_above(c(" ", "Moy.LT" = 7, "Récente" = 4)) 
 
 ```
 
 
 
-(ref:ProfTab8060SkeenaWild) Summary of sample yield profiles - SkeenaWild.  Layout as per Table \@ref(tab:ProfTab8060Nass).
+(ref:ProfTab8060SkeenaWild) Résumé des exemples de profils de rendement – Stock sauvage de la rivière Skeena. Disposition semblable à celle du tableau \@ref(tab:ProfTab8060Nass).
 
 ```{r ProfTab8060SkeenaWild, echo = FALSE, results = "asis"}
 
 table.in <-  prof.tab.src %>% dplyr::filter(Basin=="Skeena",!(Stock %in% c("Pinkut", "Fulton","Skeena"))) %>% arrange(StkSeq) %>% select(-StkSeq,-Basin,-Stock) %>%
-							mutate_at(c(2:7,9:11),function(x){prettyNum(round(x), big.mark=",")}) %>%
+							mutate_at(c(2:7,9:11),function(x){prettyNum(round(x), big.mark=" ")}) %>%
 														mutate_at(c(8,12),function(x){format(round(x,1),n.small =1)}) 
 	
-col.names.use <- c("Stock","Smsy","MSY","60\\% MSY","Lower","Upper","Rec","RpS","Lower","Upper","Rec","RpS")
+col.names.use <- c("Stock","Srmd","RMD","60\\% RMD","Inf.","Sup.","Rec","RpS","Inf.","Sup.","Rec","RpS")
 table.in[table.in == "NA"] <- "-"
 table.in[table.in == " NA"] <- "-"
 
@@ -1274,7 +1275,7 @@ table.in %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",11)),
                   caption = "(ref:ProfTab8060SkeenaWild)", col.names = col.names.use ) %>%
     kableExtra::row_spec(c(1), hline_after = TRUE) %>%
-	add_header_above(c(" ", "LtAvg" = 7, "Recent" = 4)) 
+	add_header_above(c(" ", "Moy.LT" = 7, "Récente" = 4)) 
 
 ```
 
@@ -1282,40 +1283,37 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 
 \clearpage
-### Examples of ER-based Equilibrium Profiles
+### Exemples de profils d’équilibre fondés sur le taux d’exploitation
 
 
-Equilibrium yield and spawner abundance at different levels of exploitation rate (assumed to be a fixed ER target) have been used to develop aggregate trade-off plots for various salmon stock aggregates and mixed-stock fisheries, including Skeena Sockeye (Section \@ref(EqProfilesMethods)). 
+Le rendement d’équilibre et l’abondance des géniteurs à différents niveaux du taux d’exploitation (censé être un objectif de taux d’exploitation fixe) ont été utilisés pour élaborer des graphiques de compromis pour divers regroupements de stocks de saumon et pêches de stocks mixtes, y compris le saumon rouge de la rivière Skeena (section \@ref(EqProfilesMethods)). 
 
-We illustrate the approach for the 16 modelled wild stocks in the Skeena aggregate  and the 4 modelled wild stocks in the Nass aggregate.
+Nous illustrons l’approche pour les 16 stocks sauvages modélisés dans le regroupement de la rivière Skeena et les quatre stocks sauvages modélisés dans celui de la rivière Nass.
 
-
-*Skeena Wild* (Figure \@ref(fig:ERBasedProfileSkeenaWild), Table \@ref(tab:ProfTabERbasedNass))
-
-
-Aggregate equilibrium catch is largest for exploitation rate around 50% under the long-term average productivity scenario, and around 40% under the recent productivity scenario. The number of spawners and catch at equilibrium under these exploitation rates are very different depending on the productivity assumption. Under long-term average productivity and 50% ER every year, the aggregate is assumed to settle into a stable state of around 390,000 spawners and around 390,000 catch, with 6 stocks harvested above their sustainable harvest rate (Umsy), and one of these stocks extirpated. Under recent productivity and 41% ER every year, the aggregate is assumed to settle into a stable state of around 226,000 spawners and around 157,000 catch, with two stocks harvested above their stock-specific Umsy, and two of those extirpated.
-
-If all stocks are at equilibrium, then managing to a fixed ER of 50% under long-term average productivity is the same as managing, on average, to an aggregate spawning target of 390,000.  In practice, however, aggregate run sizes and stock composition vary from year to year, and parameter estimates are uncertain.  In any given year, these two strategies can therefore have very different implications, both in terms of aggregate outcomes and stock-level outcomes. For example, consider a year with an aggregate run of 400,000. Though mathematically equivalent at equilibrium, in that year a fixed ER strategy of 50% implies a spawning target of 200,000 and a catch target of 200,000, while a fixed escapement strategy of 390,000 implies a spawning target of 390,000 and a catch target of 10,000 (ER = 0.25%). Now imagine another year with an aggregate run of 1 million. In that year a fixed ER strategy of 50% implies a spawning target of 500,000 and a catch target of 500,000, while a fixed escapement strategy of 390,000 implies a spawning target of 390,000 and a catch target of 610,000 (ER = 61%).  At 61% ER over many years, about 10 of the 16 stocks would be overfished or extirpated. In that specific year, however, the stock-level implications of a 61% ER depend on stock composition (i.e., similar to equilibrium stock composition, or disproportionate contribution of a few stocks?). Forward simulations can be used to explore the expected long-term effect of alternative strategies for these types of contingencies (Section \@ref(ProjBesdResults)).  
+*Stock sauvage de la rivière Skeena* (figure \@ref(fig:ERBasedProfileSkeenaWild), tableau \@ref(tab:ProfTabERbasedNass))
 
 
-*Nass* (Figure \@ref(fig:ERBasedProfileNass), Table \@ref(tab:ProfTabERbasedNass))
+Les prises à l’équilibre pour le regroupement sont les plus importantes pour un taux d’exploitation d’environ 50 % dans le scénario de productivité moyenne à long terme, et d’environ 40 % dans le scénario de productivité récente. Le nombre de géniteurs et les prises à l’équilibre selon ces taux d’exploitation sont très différents selon l’hypothèse de productivité. Dans le scénario de productivité moyenne à long terme et un taux d’exploitation de 50 % chaque année, le regroupement devrait se stabiliser à environ 390 000 géniteurs et à environ 390 000 prises, avec six stocks pêchés au-dessus de leur taux de récolte durable (Urmd) et l’un d’eux disparu. Dans le scénario de productivité récente et un taux d’exploitation de 41 % chaque année, le regroupement devrait se stabiliser à environ 226 000 géniteurs et à environ 157 000 prises, avec deux stocks pêchés au-dessus de leur taux de récolte durable (Urmd) et deux disparus.
 
-Aggregate equilibrium catch is largest for exploitation rate around 60% under the long-term average productivity scenario, and around 50% under the recent productivity scenario. The number of spawners and catch at equilibrium under these exploitations are very different depending on the productivity assumption. Under long-term average productivity and 60% ER every year, the aggregate is assumed to settle into a stable state of around 220,000 spawners and around 330,000 catch, with 2 stocks harvested above their sustainable harvest rate (Umsy), and none of the stocks extirpated. Under recent productivity and 50% ER every year, the aggregate is assumed to settle into a stable state of around 125,000 spawners and around 125,000 catch, with two stocks harvested above their stock-specific Umsy, and none of the stocks extirpated.
+Si tous les stocks sont à l’équilibre, la gestion selon un taux d’exploitation fixe de 50 % dans le scénario de productivité moyenne à long terme est la même que la gestion, en moyenne, selon un objectif 390 000 géniteurs pour le regroupement. Dans la pratique, cependant, les remontes et la composition des stocks du regroupement varient d’une année à l’autre et les estimations des paramètres sont incertaines. Au cours d’une année donnée, ces deux stratégies peuvent donc avoir des répercussions très différentes, tant en ce qui concerne les résultats du regroupement que les résultats au niveau du stock. Par exemple, prenons une année où la remonte pour le regroupement est de 400 000 géniteurs. Bien que mathématiquement équivalente à l’équilibre, cette année‑là, une stratégie de taux d’exploitation fixe de 50 % suppose un objectif de fraie de 200 000 et un objectif de prise de 200 000, tandis qu’une stratégie d’échappée fixe de 390 000 suppose un objectif de fraie de 390 000 et un objectif de prise de 10 000 (taux d’exploitation de 0,25 %). Maintenant, imaginons une autre année avec une remonte d’un million de géniteurs pour le regroupement. Cette année-là, une stratégie de taux d’exploitation fixe de 50 % suppose un objectif de fraie de 500 000 et un objectif de prise de 500 000, tandis qu’une stratégie d’échappée fixe de 390 000 suppose un objectif de fraie de 390 000 et un objectif de prise de 610 000 (taux d’exploitation de 61 %). À un taux d’exploitation de 61 % sur de nombreuses années, environ 10 des 16 stocks seraient surexploités ou auraient disparu. Toutefois, au cours de cette année particulière, les répercussions au niveau du stock d’un taux d’exploitation de 61 % dépendent de la composition des stocks (semblable à la composition des stocks d’équilibre ou contribution disproportionnée de quelques stocks?). Les simulations prospectives peuvent permettre d’explorer l’effet à long terme prévu de stratégies de rechange pour ces types de contingences (section \@ref(ProjBesdResults)).  
 
+*Stock de la rivière Nass* (figure \@ref(fig:ERBasedProfileNass), tableau \@ref(tab:ProfTabERbasedNass))
 
+Les prises à l’équilibre pour le regroupement sont les plus importantes pour un taux d’exploitation d’environ 60 % dans le scénario de productivité moyenne à long terme, et d’environ 50 % dans le scénario de productivité récente. Le nombre de géniteurs et les prises à l’équilibre selon ces taux d’exploitation sont très différents selon l’hypothèse de productivité. Dans le scénario de productivité moyenne à long terme et un taux d’exploitation de 60 % chaque année, le regroupement devrait se stabiliser à environ 220 000 géniteurs et à environ 330 000 prises, avec deux stocks pêchés au-dessus de leur taux de récolte durable (Urmd) et aucun disparu. Dans le scénario de productivité récente et un taux d’exploitation de 50 % chaque année, le regroupement devrait se stabiliser à environ 125 000 géniteurs et à environ 125 000 prises, avec deux stocks pêchés au-dessus de leur taux de récolte durable (Urmd) et aucun disparu.
 
 
 \clearpage
-(ref:ERBasedProfileSkeenaWild) Example of aggregate equilibrium trade off plots for the SkeenaWild aggregate with 16 modelled stocks. For 5% increments of aggregate exploitation rate (ER; top axis), the figure shows median estimates (points) and interquartile range along the vertical axes (shaded area, p25 to p75) for aggregate spawner abundance (bottom axis), aggregate catch (left axis), and number of stocks where aggregate ER exceeds stock-specific median estimates of Umsy, the exploitation rate at maximum sustainable yield. Note  that the ranges of spawner abundances and catch levels differ substantially between long-term average productivity (Panel A) and recent productivity  (Panel B), but the ranges of ER and number of stocks are the same in both panels.
+(ref:ERBasedProfileSkeenaWild) Exemple de diagrammes de compromis d’équilibre du regroupement de saumon sauvage de la rivière Skeena, avec 16 stocks modélisés. Pour des tranches de 5 % du taux d’exploitation du regroupement (ER; axe supérieur), la figure montre la médiane des estimations (points) et l’écart interquartile le long des axes verticaux (zone ombrée, p25 à p75) pour l’abondance des géniteurs du regroupement (axe inférieur), les prises du regroupement (axe de gauche) et le nombre de stocks pour lesquels le taux d’exploitation du regroupement dépasse la médiane des estimations de chaque stock de Urmd, le taux d’exploitation au rendement maximal durable. Il convient de noter que les fourchettes de l’abondance des reproducteurs et des niveaux de capture diffèrent sensiblement entre la productivité moyenne à long terme (graphique A) et la productivité récente (graphique B), mais que les fourchettes du taux d’exploitation et du nombre de stocks sont les mêmes dans les deux graphiques.
 
 ```{r ERBasedProfileSkeenaWild,   fig.cap="(ref:ERBasedProfileSkeenaWild)"}
-include_graphics("data/AggProfiles_SkeenaWild_Dual_2Panel.png")
+include_graphics("data/1_FrenchFigs/Fig39_AggProfiles_SkeenaWild_F.png")
 ```
 
 
 
 \clearpage
-(ref:ProfTabERbasedSkeenaWild) Summary of aggregate equilibrium trade-offs under alternative exploitation rates - Skeena Wild. Table shows values from Figure \@ref(fig:ERBasedProfileSkeenaWild) at 10% increments of fixed harvest rate *(U)*.
+(ref:ProfTabERbasedSkeenaWild) Résumé des compromis d’équilibre du regroupement pour différents taux d’exploitation – Stock sauvage de la rivière Skeena. Le tableau présente les valeurs de la figure \@ref(fig:ERBasedProfileSkeenaWild) par tranches de 10 % du taux d’exploitation fixe (*U*).
+
 
 ```{r ProfTabERbasedSkeenaWild, echo = FALSE, results = "asis"}
 
@@ -1325,9 +1323,15 @@ table.in <-  er.based.prof.tab.src %>% dplyr::filter(Aggregate=="SkeenaWild", U2
 							select(Prod,U2, -Aggregate,
 										 NumStksOverfished_Med,	NumStksBelowSgen_Med, NumStksExtirpated_Med, 	
 										 EqSpn_p25,	EqSpn_Med,	EqSpn_p75,	EqCt_p25,	EqCt_Med,	EqCt_p75) %>%
-							mutate_at(c(6:11),function(x){format(round(x/1000,1), big.mark=",",n.small =1)}) 
+							mutate_at(c(6:11),function(x){format(round(x/1000,1), big.mark=" ",n.small =1)}) 
 	
-col.names.use <- c("Prod","U (\\%)", "Above\nUmsy","Below\nSgen","Ext","p25","Med","p75","p25","Med","p75")
+col.names.use <- c("Prod","U (\\%)", "Au-dessus\nde Urmd",
+"En dessous\nde Sgen",
+"Disp","p25","Med","p75","p25","Med","p75")
+
+
+table.in$Prod <- str_replace_all(table.in$Prod, c(  "LTAvg" = "Moy.LT","Recent" = "Récente")) 
+
 
 
 table.in %>%
@@ -1336,7 +1340,7 @@ table.in %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",11)),
                   caption = "(ref:ProfTabERbasedSkeenaWild)", col.names = linebreak(col.names.use) ) %>%
     kableExtra::row_spec(c(11), hline_after = TRUE) %>%
-	add_header_above(c(" ", " ", "Median Num Stocks" = 3, "Spawners (1000s)" = 3, "Catch (1000s)" = 3)) 
+	add_header_above(c(" ", " ", "Médiane du nombre de stocks" = 3, "Géniteurs (en milliers)" = 3, "Prises (en milliers)" = 3)) 
 
 ```
 
@@ -1344,15 +1348,15 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 
 \clearpage
-(ref:ERBasedProfileNass) Example of aggregate equilibrium trade off plots for the Nass aggregate with 16 modelled stocks. For 5% increments of aggregate exploitation rate (ER; top axis), the figure shows median estimates (points) and interquartile range along the vertical axes (shaded area, p25 to p75) for aggregate spawner abundance (bottom axis), aggregate catch (left axis), and number of stocks where aggregate ER exceeds stock-specific median estimates of Umsy, the exploitation rate at maximum sustainable yield. Note  that the ranges of spawner abundances and catch levels differ substantially between long-term average productivity (Panel A) and recent productivity  (Panel B), but the ranges of ER and number of stocks are the same in both panels.
+(ref:ERBasedProfileNass) Exemple de diagrammes de compromis d’équilibre du regroupement de la rivière Nass, avec 4 stocks modélisés. Pour des tranches de 5 % du taux d’exploitation du regroupement (ER; axe supérieur), la figure montre la médiane des estimations (points) et l’écart interquartile le long des axes verticaux (zone ombrée, p25 à p75) pour l’abondance des géniteurs du regroupement (axe inférieur), les prises du regroupement (axe de gauche) et le nombre de stocks pour lesquels le taux d’exploitation du regroupement dépasse la médiane des estimations de chaque stock de Urmd, le taux d’exploitation au rendement maximal durable. Il convient de noter que les fourchettes de l’abondance des reproducteurs et des niveaux de capture diffèrent sensiblement entre la productivité moyenne à long terme (graphique A) et la productivité récente (graphique B), mais que les fourchettes du taux d’exploitation et du nombre de stocks sont les mêmes dans les deux graphiques.
 
 ```{r ERBasedProfileNass,   fig.cap="(ref:ERBasedProfileNass)"}
-include_graphics("data/AggProfiles_Nass_Dual_2Panel.png")
+include_graphics("data/1_FrenchFigs/Fig40_AggProfiles_Nass_F.png")
 ```
 
 
 \clearpage
-(ref:ProfTabERbasedNass)  Summary of aggregate equilibrium trade-offs under alternative exploitation rates - Skeena Wild. Table shows values from Figure \@ref(fig:ERBasedProfileSkeenaWild) at 10% increments of fixed harvest rate *(U)*.
+(ref:ProfTabERbasedNass)  Résumé des compromis d’équilibre du regroupement pour différents taux d’exploitation – Stock sauvage de la rivière Skeena. Le tableau présente les valeurs de la figure \@ref(fig:ERBasedProfileNass) par tranches de 10 % du taux d’exploitation fixe (*U*). 
 
 ```{r ProfTabERbasedNass, echo = FALSE, results = "asis"}
 
@@ -1360,9 +1364,14 @@ table.in <-  er.based.prof.tab.src %>% dplyr::filter(Aggregate=="Nass", U2 %in% 
 							select(Prod,U2, -Aggregate,
 										 NumStksOverfished_Med,	NumStksBelowSgen_Med, NumStksExtirpated_Med, 	
 										 EqSpn_p25,	EqSpn_Med,	EqSpn_p75,	EqCt_p25,	EqCt_Med,	EqCt_p75) %>%
-							mutate_at(c(6:11),function(x){format(round(x/1000,1), big.mark=",",n.small =1)}) 
+							mutate_at(c(6:11),function(x){format(round(x/1000,1), big.mark=" ",n.small =1)}) 
 	
-col.names.use <- c("Prod","U (\\%)", "Above\nUmsy","Below\nSgen","Ext","p25","Med","p75","p25","Med","p75")
+col.names.use <- c("Prod","U (\\%)", "Au-dessus\nde Urmd",
+"En dessous\nde Sgen",
+"Disp","p25","Med","p75","p25","Med","p75")
+
+
+table.in$Prod <- str_replace_all(table.in$Prod, c(  "LTAvg" = "Moy.LT","Recent" = "Récente")) 
 
 
 table.in %>%
@@ -1371,7 +1380,7 @@ table.in %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",11)),
                   caption = "(ref:ProfTabERbasedNass)", col.names = linebreak(col.names.use) ) %>%
     kableExtra::row_spec(c(11), hline_after = TRUE) %>%
-	add_header_above(c(" ", " ", "Median Num Stocks" = 3, "Spawners (1000s)" = 3, "Catch (1000s)" = 3)) 
+	add_header_above(c(" ", " ", "Médiane du nombre de stocks" = 3, "Géniteurs (en milliers)" = 3, "Prises (en milliers)" = 3)) 
 
 ```
 
