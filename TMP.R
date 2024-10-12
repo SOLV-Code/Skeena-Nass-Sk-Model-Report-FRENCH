@@ -1,10 +1,12 @@
 library(tidyverse)
 
 
-table.in <- read_csv("data/AggregationApproachTables/AggregationTable_KeyChallenges.csv",
-                     locale=locale(encoding="latin1"))
+table.in   <-  read_csv("data/SummaryTables_RelAbdMetric_AnnualSummary_Nass.csv") %>%
+  mutate_at(c(4,9:11),function(x){format(round(x,2),n.small =2,decimal.mark=",")})
 
-table.in$`Principaux défis`
+ table.in
+
+
 
 
 
