@@ -731,23 +731,25 @@ Compte tenu de ces effets observés et des différences d’approche ces derniè
 
 
 \clearpage
-(ref:BMDefs) Définition des points de référence biologiques standard et des points de référence de l’état de la PSS pour le paramètre de l’abondance relative. Il convient de noter que nous définissons les points de référence en termes de médiane des recrues et de médiane du rendement et que, par conséquent, nous présentons les estimations des points de référence sans correction du biais log-normal dans la majorité du document. Les estimations moyennes avec correction du biais des points de référence biologiques sont incluses à \@ref(BiasCorrectedBM).
+(ref:BMDefs) Définition des points de référence biologiques standard et des points de référence de l’état de la PSS pour le paramètre de l’abondance relative. Il convient de noter que nous définissons les points de référence en termes de médiane des recrues et de médiane du rendement et que, par conséquent, nous présentons les estimations des points de référence sans correction du biais log-normal dans la majorité du document. Les estimations moyennes avec correction du biais des points de référence biologiques sont incluses à l’annexe \@ref(BiasCorrectedBM).
 
 
 ```{r BMDefs, echo = FALSE, results = "asis"}
 
 
-table.in <- read_csv("data/Reference Tables/BM_Definitions.csv")
+table.in <- read.csv("data/Reference Tables/BM_Definitions.csv",stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM") 
 
 table.in$Type[duplicated(table.in$Type)] <- ""
 
+col.names.use <- c("Type", "Point de référence", "Définition")
 
 table.in  %>%     
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
    mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
    mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
    csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
-                  caption = "(ref:BMDefs)")  %>%
+		col.names = linebreak(col.names.use) , 
+				 caption = "(ref:BMDefs)")  %>%
 	kableExtra::row_spec(4, hline_after = TRUE) %>%
    #  kableExtra::column_spec(1, width = "8em") %>%
    #     kableExtra::column_spec(2, width = "8em") %>%
@@ -765,11 +767,14 @@ table.in  %>%
 
 table.in <- read_csv("data/Reference Tables/BM_Calc_Equations.csv")
 
+col.names.use <- c("Point de référence","Version","Calcul")
+
 table.in  %>%     
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
    mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
    mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
    csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+   col.names = linebreak(col.names.use) , 
                   caption = "(ref:BMCalcs)")  #%>%
 	#kableExtra::row_spec(4, hline_after = TRUE) %>%
      #kableExtra::column_spec(1, width = "8em") %>%
@@ -789,11 +794,15 @@ table.in  %>%
 
 table.in <- read_csv("data/Reference Tables/Bias_Corr_Equations.csv")
 
+
+col.names.use <- c("Forme du modèle","Correction du biais","Source")
+
 table.in  %>%     
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
    mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
    mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
    csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l"),
+      col.names = linebreak(col.names.use) , 
                   caption = "(ref:BiasCorrCalcs)") %>%
 	kableExtra::row_spec(1, hline_after = TRUE) %>%
      kableExtra::column_spec(1, width = "12em")  %>%
@@ -803,10 +812,6 @@ table.in  %>%
 
 
 ```
-
-
-
-
 
 
 
@@ -845,7 +850,8 @@ Six des huit approches de rechange ont déjà été utilisées pour des analyses
 ```{r TableAltApproaches, echo = FALSE, results = "asis"}
 
 
-table.in <- read_csv("data/AggregationApproachTables/AggregationTable_AltApproaches.csv")
+table.in <- read_csv("data/AggregationApproachTables/AggregationTable_AltApproaches.csv",
+					locale=locale(encoding="latin1")) 
 
 table.in  %>%     
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
@@ -870,7 +876,8 @@ table.in  %>%
 ```{r TableAltApprObj, echo = FALSE, results = "asis"}
 
 
-table.in <- read_csv("data/AggregationApproachTables/AggregationTable_ExampleObjectives.csv")
+table.in <- read_csv("data/AggregationApproachTables/AggregationTable_ExampleObjectives.csv",
+					locale=locale(encoding="latin1"))
 
 table.in  %>%     
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
@@ -916,7 +923,14 @@ Un modèle complet de simulation, avec le cadre et le processus d’évaluation 
 ```{r TableCriteria, echo = FALSE, results = "asis"}
 
 
-table.in <- read_csv("data/AggregationApproachTables/AggregationTable_Criteria.csv")
+table.in <-  read_csv("data/AggregationApproachTables/AggregationTable_Criteria.csv",
+                              locale=locale(encoding="latin1"))
+
+
+table.in$Type <- str_replace_all(table.in$Type, c( "\u009c" = "œ") )
+table.in$Étiquette <- str_replace_all(table.in$Étiquette, c( "\u009c" = "œ") )
+table.in$Description <- str_replace_all(table.in$Description, c( "\u009c" = "œ") )
+
 
 table.in  %>%     
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
@@ -937,7 +951,7 @@ table.in  %>%
 
 \clearpage
 
-(ref:TableSummary) Récapitulatif des caractéristiques de huit méthodes de rechange pour l’établissement des points de référence pour les regroupements. Le processus d’examen par les pairs a permis de comparer différentes approches pour l’établissement des points de référence pour les regroupements (tableau \@ref(tab:TableAltApproaches)) d’après un ensemble de 10 critères (tableau \@ref(tab:TableCriteria)). Une notation OUI/NON/PEUT-ÊTRE a été attribuée pour chaque critère afin de fournir une comparaison des méthodes de regroupement. OUI indique que l’approche de regroupement répond au critère. PEUT-ÊTRE signifie que l’approche actuelle pourrait être modifiée ou étendue pour répondre au critère, en fonction du temps et des ressources. NON signifie que cette approche de regroupement ne permet pas de satisfaire à ce critère. Pour la contrainte temporelle, COURT signifie que le processus peut être appliqué immédiatement aux estimations des paramètres géniteurs-recrues. MOYEN signifie qu’au moins six mois seront nécessaires pour élaborer le processus (p. ex. choisir les objectifs quantitatifs) ou la méthode (p. ex. en attendant la publication de lignes directrices, suivie d’un examen de la mise en œuvre). LONG signifie qu’un processus pluriannuel est probablement nécessaire pour une mise en œuvre complète. Les valeurs de la colonne Critique sont fournies par les participants à l’examen et indiquent les critères qui sont critiques (Oui) ou à déterminer (à déterminer). L’annexe \@ref(AggregationAppendix) récapitule brièvement la justification de chaque notation.
+(ref:TableSummary) Récapitulatif des caractéristiques de huit méthodes de rechange pour l’établissement des points de référence pour les regroupements. Le processus d’examen par les pairs a permis de comparer différentes approches pour l’établissement des points de référence pour les regroupements (tableau \@ref(tab:TableAltApproaches)) d’après un ensemble de 10 critères (tableau \@ref(tab:TableCriteria)). Une notation OUI/NON/PEUT-ÊTRE a été attribuée pour chaque critère afin de fournir une comparaison des méthodes de regroupement. OUI indique que l’approche de regroupement répond au critère. PEUT-ÊTRE signifie que l’approche actuelle pourrait être modifiée ou étendue pour répondre au critère, en fonction du temps et des ressources. NON signifie que cette approche de regroupement ne permet pas de satisfaire à ce critère. Pour la contrainte temporelle, COURT signifie que le processus peut être appliqué immédiatement aux estimations des paramètres géniteurs-recrues. MOYEN signifie qu’au moins six mois seront nécessaires pour élaborer le processus (p. ex. choisir les objectifs quantitatifs) ou la méthode (p. ex. en attendant la publication de lignes directrices, suivie d’un examen de la mise en œuvre). LONG signifie qu’un processus pluriannuel est probablement nécessaire pour une mise en œuvre complète. Les valeurs de la colonne *Crit?* (Critique?) sont fournies par les participants à l’examen et indiquent les critères qui sont critiques (Oui) ou à déterminer (à déterminer). L’annexe \@ref(AggregationAppendix) récapitule brièvement la justification de chaque notation.
 
 
 \begin{landscapepage}
@@ -948,53 +962,50 @@ table.in  %>%
 
 
 
-table.in <- read_csv("data/AggregationApproachTables/AggregationTable_Summary.csv")
+table.in <- read_csv("data/AggregationApproachTables/AggregationTable_Summary.csv",
+                              locale=locale(encoding="latin1"))
 
-col.names.use <- c("Criterion","Crit?","Agg\nSmsy","Sum\nSmsy","Umsy\nComp","Equ.\nProf",
-"Agg\nEqu.\nProf.","Status","Log\nReg","Sim")
+col.names.use <- c("Critère","Crit?","Regr.\nSrmd","Somme\nSrmd","Comp.\nUrmd","Prof.\néqu.","Regr.\nProf.\néqu.",
+				"État","Rég.\nlog.","Sim.")
 
-
-#table.cols <- table.in
-#table.cols[,] <- "white"
-#table.cols[table.in == "YES"] <- "green" 
-#table.cols[table.in == "NO"] <- "orange" 
+table.in$Crit <- str_replace_all(table.in$Crit, c( "\u009c" = "œ") )
 
 col3.cols <- rep("white", 11)
-col3.cols[table.in[,3]  == "YES"]  <- '#b8e186'
-#col3.cols[table.in[,3]  == "NO"] 	 <- '#d01c8b'
-col3.cols[table.in[,3]  == "MAYBE"] 	 <- "#F1CF31"	  #'#f1b6da'
+col3.cols[table.in[,3]  == "OUI"]  <- '#b8e186'
+#col3.cols[table.in[,3]  == "NON"] 	 <- '#d01c8b'
+col3.cols[table.in[,3]  == "PÊ"] 	 <- "#F1CF31"	  #'#f1b6da'
 
 col4.cols <- rep("white", 11)
-col4.cols[table.in[,4]  == "YES"]  <- '#b8e186'
-col4.cols[table.in[,4]  == "MAYBE"] 	 <- "#F1CF31"	 
+col4.cols[table.in[,4]  == "OUI"]  <- '#b8e186'
+col4.cols[table.in[,4]  == "PÊ"] 	 <- "#F1CF31"	 
 
 col5.cols <- rep("white", 11)
-col5.cols[table.in[,5]  == "YES"]  <- '#b8e186'
-col5.cols[table.in[,5]  == "MAYBE"] 	 <- "#F1CF31"	 
+col5.cols[table.in[,5]  == "OUI"]  <- '#b8e186'
+col5.cols[table.in[,5]  == "PÊ"] 	 <- "#F1CF31"	 
 
 col6.cols <- rep("white", 11)
-col6.cols[table.in[,6]  == "YES"]  <- '#b8e186'
-col6.cols[table.in[,6]  == "MAYBE"] 	 <- "#F1CF31"	 
+col6.cols[table.in[,6]  == "OUI"]  <- '#b8e186'
+col6.cols[table.in[,6]  == "PÊ"] 	 <- "#F1CF31"	 
 
 col7.cols <- rep("white", 11)
-col7.cols[table.in[,7]  == "YES"]  <- '#b8e186'
-col7.cols[table.in[,7]  == "MAYBE"] 	 <- "#F1CF31"	
+col7.cols[table.in[,7]  == "OUI"]  <- '#b8e186'
+col7.cols[table.in[,7]  == "PÊ"] 	 <- "#F1CF31"	
 	
 col8.cols <- rep("white", 11)
-col8.cols[table.in[,8]  == "YES"]  <- '#b8e186'
-col8.cols[table.in[,8]  == "MAYBE"] 	 <- "#F1CF31"	
+col8.cols[table.in[,8]  == "OUI"]  <- '#b8e186'
+col8.cols[table.in[,8]  == "PÊ"] 	 <- "#F1CF31"	
 	
 col9.cols <- rep("white", 11)
-col9.cols[table.in[,9]  == "YES"]  <- '#b8e186'
-col9.cols[table.in[,9]  == "MAYBE"] 	 <- "#F1CF31"	
+col9.cols[table.in[,9]  == "OUI"]  <- '#b8e186'
+col9.cols[table.in[,9]  == "PÊ"] 	 <- "#F1CF31"	
 	
 col10.cols <- rep("white", 11)
-col10.cols[table.in[,10]  == "YES"]  <- '#b8e186'
-col10.cols[table.in[,10]  == "MAYBE"] 	 <- "#F1CF31"	
+col10.cols[table.in[,10]  == "OUI"]  <- '#b8e186'
+col10.cols[table.in[,10]  == "PÊ"] 	 <- "#F1CF31"	
 	
 #col11.cols <- rep("white", 11)
-#col11.cols[table.in[,11]  == "YES"]  <- '#b8e186'
-#col11.cols[table.in[,11]  == "MAYBE"] 	 <- "#F1CF31"	
+#col11.cols[table.in[,11]  == "OUI"]  <- '#b8e186'
+#col11.cols[table.in[,11]  == "PÊ"] 	 <- "#F1CF31"	
 
 table.in  %>%     
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
@@ -1021,9 +1032,6 @@ table.in  %>%
 	
 	
 	
-	#table.cols[,3]) #%>%	
-
-# COLOR NOT WORKING! WHY??????
 
 
 ```
@@ -1036,7 +1044,11 @@ table.in  %>%
 ```{r TableChallenges, echo = FALSE, results = "asis"}
 
 
-table.in <- read_csv("data/AggregationApproachTables/AggregationTable_KeyChallenges.csv")
+table.in <- read_csv("data/AggregationApproachTables/AggregationTable_KeyChallenges.csv",
+                              locale=locale(encoding="latin1"))
+
+table.in$Approche <- str_replace_all(table.in$Approche, c( "\u009c" = "œ") )
+table.in$`Principaux défis` <- str_replace_all(table.in$`Principaux défis`, c( "\u009c" = "œ") ) 
 
 
 table.in$Type[duplicated(table.in$Type)] <- ""

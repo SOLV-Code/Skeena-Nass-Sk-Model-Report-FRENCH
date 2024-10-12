@@ -1,4 +1,4 @@
-﻿Type,Benchmark,Definition
+﻿Type,Point de référence,Définition
 Standard,Smax,Abondance des géniteurs qui maximise la médiane des recrues.
 Standard,Srmd,"Abondance des géniteurs qui maximise la médiane du rendement durable (Rec-Spn), si elle est gérée selon un objectif d’échappée fixe dans des conditions d’équilibre."
 Standard,Seq,Abondance des géniteurs à l’équilibre à long terme en l’absence de récolte.

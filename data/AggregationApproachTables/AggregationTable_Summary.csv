@@ -1,12 +1,12 @@
 Crit,Critical?,Agg Smsy,Sum Smsy,Umsy Comp,Equ. Prof,Agg Equ. TradeOff,Status,Log Reg,Sim
-X,X,X,X,X,X,X,X,X,X
-X,X,X,X,X,X,X,X,X,X
-X,X,X,X,X,X,X,X,X,X
-X,X,X,X,X,X,X,X,X,X
-X,X,X,X,X,X,X,X,X,X
-X,X,X,X,X,X,X,X,X,X
-X,X,X,X,X,X,X,X,X,X
-X,X,X,X,X,X,X,X,X,X
-X,X,X,X,X,X,X,X,X,X
-X,X,X,X,X,X,X,X,X,X
-X,X,X,X,X,X,X,X,X,X
+Paramètres variables dans le temps?,OUI,PÊ,PÊ,PÊ,PÊ,PÊ,PÊ,PÊ,PÊ
+Incertitude dans les ajustements du modèle géniteurs-recrues?,TBD,OUI,OUI,OUI,OUI,OUI,OUI,OUI,OUI
+Incertitude des résultats?,TBD,NON,NON,NON,NON,NON,NON,NON,OUI
+Covariation de la productivité?,TBD,NON,NON,NON,NON,NON,NON,PÊ,OUI
+Biais dans les estimations des paramètres?,TBD,PÊ,PÊ,PÊ,PÊ,PÊ,PÊ,PÊ,OUI
+Peut produire un point de référence des regroupements fondé sur l'abondance?,TBD,OUI,PÊ,NON,NON,OUI,NON,PÊ,PÊ
+Peut tester les RCP dépendantes de l'état?,TBD,NON,NON,PÊ,NON,NON,NON,NON,OUI
+Stocks dont les données sont insuffisantes?,TBD,NON,NON,NON,NON,NON,PÊ,PÊ,PÊ
+Tient compte des stocks constituants?,OUI,NON,NON,PÊ,PÊ,OUI,OUI,OUI,OUI
+Facile à mettre en œuvre?,TBD,OUI,OUI,OUI,OUI,OUI,OUI,OUI,OUI
+Contraintes temporelles,TBD,Court,Court,Court,Court,Moyen,Moyen,Moyen,Long
