@@ -1,6 +1,15 @@
 library(tidyverse)
 
 
+table.in <- read_csv("data/AggregationApproachTables/AggregationTable_KeyChallenges.csv",
+                     locale=locale(encoding="latin1"))
+
+table.in$`Principaux défis`
+
+
+
+
+
 abd.bm.tab.src <- read_csv("data/SummaryTables_AbundanceBM.csv") %>% select(-Stock)
 
 table.in <-  abd.bm.tab.src %>% dplyr::filter(Aggregate=="Nass",Scenario == "LTAvg",BM == "Smsy") %>% select(-Aggregate,-Scenario,-BM) %>%

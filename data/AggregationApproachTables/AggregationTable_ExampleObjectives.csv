@@ -1,9 +1,9 @@
-Approche,Objectives
-X,X
-X,X
-X,X
-X,X
-X,X
-X,X
-X,X
-X,X
+Approche,Objectifs
+Regr. Srmd,"Rendement maximal durable (RMD), médiane à long terme dans des conditions stables. Choix implicites : Stratégie fixe pour les échappées, gestion au RMD du regroupement, accent sur les stocks les plus grands."
+Somme Srmd,"Rendement maximal durable (RMD), médiane à long terme dans des conditions stables. Choix implicites : Stratégie fixe pour les échappées, gestion au RMD du regroupement, accent sur les stocks les plus grands."
+Comp. Urmd,"Taux d'exploitation durable (Urmd) selon le scénario de productivité récente et à long terme pour comparer les productivités du stock, pour déterminer les bornes supérieures du taux d'exploitation du regroupement."
+Prof. équ.,"Implicite : Stratégie fixe pour les échappées, conditions d'équilibre. Exemple d'objectif : 80 % de probabilité d'atteindre 60 % du RMD (axé sur le rendement)."
+Compr. regr.,"CONSERVATION : Nombre de stocks récoltés à leur taux durable estimé (Urmd) ou en deçà, RÉCOLTE : Maximiser la récolte du regroupement dans des conditions d'équilibre."
+État,Définir l'état rouge/ambre/vert pour le paramètre d'abondance relative en fonction de Sgen et de 80 % de Srmd dans le scénario de productivité moyenne à long terme. Exemple d'objectif : Pas plus de x UC dans la zone d'état rouge.
+Rég. log.,Exemple d'objectif : 80 % des stocks au-dessus de la médiane de Sgen dans le scénario de productivité moyenne à long terme.
+Sim.,"CONSERVATION : Nombre de stocks ayant une probabilité d'au moins 80 % que l'abondance moyenne générationnelle des géniteurs dépasse un point de référence (Sgen et 80 % de Srmd selon le scénario de productivité moyenne à long terme, 10e centile de l'abondance observée des géniteurs depuis 1990). RÉCOLTE : Médiane de la récolte totale sur 3 générations."

@@ -1,9 +1,9 @@
-Approche,Etiquette,Description
-x,x,x
-x,x,x
-x,x,x
-x,x,x
-x,x,x
-x,x,x
-x,x,x
-x,x,x
+Approche,Étiquette,Description
+Estimation de Srmd des regroupements,Regr. Srmd,"Calculer Srmd pour l'ensemble de données sur les regroupements (total pour la rivière Nass, total pour le stock sauvage de la rivière Skeena)."
+Somme des estimations de Srmd au niveau du stock,Somme Srmd,"Calculer Srmd pour chaque stock dont les données géniteurs-recrues sont disponibles et additionner les estimations. Les participants à la réunion ont souligné que cette approche ne permet pas de produire, pour les regroupements, des points de référence biologiques conformes à la définition du rendement maximal durable (RMD). Bien que cette méthode ne soit pas recommandée pour l'établissement des points de référence pour les regroupements, elle a été incluse ici dans un souci d'exhaustivité."
+Comparaison des Urmd,Comp. Urmd,"Calculer Urmd pour chaque stock dont les données géniteurs-recrues sont disponibles et comparer les estimations pour déterminer un taux d'exploitation cible pour le regroupement de stocks à partir des estimations de Urmd disponibles au niveau du stock pour les stocks dont les données géniteurs-recrues sont disponibles (c.-à-d. qu'on peut choisir d'utiliser la valeur Urmd la plus basse au niveau du stock ou celle du plus grand stock, selon les objectifs de gestion)."
+Profil à l'équilibre d'un seul stock fondé sur les géniteurs,Prof. équ.,"Pour chaque stock, calculer la proportion d'échantillons du paramètre qui atteint un objectif donné à des tranches de l'abondance des géniteurs, comme la proportion (rendement > 60 % du RMD), dans des conditions d'équilibre (c'est-à-dire en moyenne à long terme)."
+Diagrammes de compromis d'équilibre des regroupements fondés sur les géniteurs-recrues,Compr. regr.,"Calculer des paramètres de rendement sommaires pour l'ensemble des stocks (p. ex. proportion des stocks atteignant un objectif par rapport à la récolte du regroupement), dans des conditions d'équilibre (c.-à-d. en moyenne à long terme), en supposant de façon simplifiée que tous les stocks sont gérés selon le même taux d'exploitation fixe."
+Considérations sur l'état au niveau du stock,État,"Calculer l'état de chaque stock pour lequel des données sont disponibles, puis déterminer les points de référence pour les regroupements (PRL, points de déclenchement pour la récolte) en fonction du nombre de stocks dans la zone rouge/ambre/verte."
+Régression logistique,Rég. log.,"Classer les années passées comme des réussites ou des échecs en fonction de la mesure du rendement au niveau du stock (p. ex. 80 % des stocks au-dessus de la médiane de Sgen), puis tracer une régression logistique des réussites par rapport à l'abondance des regroupements pour déterminer un point de référence pour les regroupements, à partir de la régression ajustée comme l'abondance des regroupements associée à un seuil requis de la mesure du rendement au niveau du stock."
+Simulation prospective,Sim.,"En commençant par l'abondance récente des géniteurs, simuler l'évolution future des stocks selon différentes hypothèses sur la productivité, la récolte et d'autres sources de mortalité afin de déterminer les abondances des regroupements associées à des niveaux appropriés de probabilité d'atteindre les objectifs précis. Si la simulation prospective répond à certains critères techniques et est élaborée en combinaison avec un processus participatif structuré, elle peut évoluer en une évaluation officielle de la stratégie de gestion."

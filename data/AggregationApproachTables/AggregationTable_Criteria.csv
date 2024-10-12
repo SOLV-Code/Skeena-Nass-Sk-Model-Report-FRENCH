@@ -1,12 +1,12 @@
-Type,Label,Description
-Estimation,Time-varying parameters?,"Accounts for time-varying parameters (e.g., fecundity, capacity, variance, productivity)."
-Estimation,Uncertainty in SR model fits?,"Explicitly accounts for uncertainty in SR model fits that arises from natural process variation and observation (i.e., measurement) error."
-Estimation,Outcome uncertainty?,Can explicitly incorporate differences between target and actual escapement or exploitation rates?
-Estimation,Productivity Covariation?,Can explicitly incorporate observed or alternative future covariation in productivity between stocks?
-Estimation,Bias in parameter estimates?,"How much bias is produced in estimates of Smsy, Umsy, the Ricker alpha, and the Ricker beta parameters, for example, as a function of number of data points, average stock productivity, time variation in productivity, and previous harvest rates (the last two variables affect contrast in data), etc.?"
-Outcome,Can get abundance-based Aggregate Refrence Points (RP)?,Can produce an abundance-based aggregate reference point?
-Outcome,Can test state dependent harvest control rules (HCR)?,Can this method produce and test harvest control rules that respond to changing conditions?
-Outcome,Data-deficient stocks?,Appropriate to support stocks currently without SR data?
-Outcome,Allows taking into account component stocks?,Explicitly provides estimates of current or future [biological?] status of component populations and other stock-specific information so that decision makers can evaluate trade-offs?
-Implement-ation,Can be easily operationalized?,Easily operationalized in bilateral and domestic management setting?
-Implement-ation,Time requirements,"Implementation time frame *after data review and SR model fitting*. Short = short-term is possible (can calculate from SR parameters immediately), Medium = medium-term process required (at least 6 months), Long = multi-year process required."
+Type,Étiquette,Description
+Estimation,Paramètres variables dans le temps?,"Tient compte des paramètres variables dans le temps (p. ex. la fécondité, la capacité, la variance, la productivité)."
+Estimation,Incertitude dans les ajustements du modèle géniteurs-recrues?,Tient compte explicitement de l'incertitude des ajustements du modèle géniteurs-recrues qui découle de la variation du processus naturel et de l'erreur d'observation (c'est-à-dire de mesure).
+Estimation,Incertitude des résultats?,Peut intégrer explicitement les différences entre les taux d'échappée ou d'exploitation cibles et réels?
+Estimation,Covariation de la productivité?,Peut incorporer explicitement la covariation future observée ou autre de la productivité entre les stocks?
+Estimation,Biais dans les estimations des paramètres?,"Dans quelle mesure les estimations des paramètres Srmd, Urmd, alpha de Ricker et bêta de Ricker sont-elles biaisées, par exemple, en fonction du nombre de points de données, de la productivité moyenne du stock, de la variation temporelle de la productivité et des taux de récolte antérieurs (les deux dernières variables influent sur le contraste des données), etc.?"
+Résultat,Peut produire des points de référence pour les regroupements fondés sur l'abondance?,Peut produire un point de référence pour les regroupements fondé sur l'abondance?
+Résultat,Peut tester les règles de contrôle des prises (RCP) dépendantes de l'état?,Cette méthode peut-elle produire et tester des RCP qui répondent à des conditions changeantes?
+Résultat,Stocks dont les données sont insuffisantes?,Convient pour soutenir les stocks pour lesquels on ne dispose pas actuellement de données sur les géniteurs-recrues?
+Résultat,Permet de prendre en compte les stocks constituants?,Fournit explicitement des estimations de l'état (biologique) actuel ou futur des populations constituantes et d'autres renseignements propres au stock afin que les décideurs puissent évaluer les compromis?
+Mise en œuvre,Facile à mettre en œuvre?,Facile à mettre en œuvre dans une gestion bilatérale et nationale?
+Mise en œuvre,Contraintes temporelles,"Calendrier de mise en œuvre 'après examen des données et ajustement du modèle géniteurs-recrues'. Court = le court terme est possible (calcul immédiat possible à partir des paramètres géniteurs-recrues), moyen = processus à moyen terme requis (au moins six mois), long = processus pluriannuel requis."
