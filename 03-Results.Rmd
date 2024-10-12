@@ -1388,7 +1388,7 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r
 
 
 \clearpage
-##  STATUS-BASED AGGREGATE LIMIT REFERENCE POINTS {#StatusRPResults}
+##  POINTS DE RÉFÉRENCE LIMITES FONDÉS SUR L’ÉTAT POUR LES REGROUPEMENTS {#StatusRPResults}
 
 ```{r , echo = FALSE, results = "asis"}
 
@@ -1399,20 +1399,20 @@ rel.abd.status.2019 <- rel.abd.metric.all.df %>%
 
 ```
 
+Les évaluations de l’état en vertu de la PSS du Canada combinent plusieurs considérations en un seul état intégré, y compris l’abondance absolue, l’abondance relative, la tendance à long terme, la tendance à court terme, la probabilité de déclin et la répartition spatiale (section \@ref(StatusMethods)). L’abondance relative est évaluée en comparant la moyenne générationnelle de l’abondance des géniteurs (moyenne géométrique) à un point de référence inférieur à Sgen et à un point de référence supérieur à 80 % de Srmd. Si l’abondance est inférieure à Sgen, la zone d’état *d’après ce seul paramètre* est rouge, au-dessus de 80 % de Srmd, elle est verte et entre les deux, elle est ambre. L’état selon la PSS a été recommandé comme principale considération pour évaluer les points de référence limites pour les regroupements dans la mise à jour de 2019 de la *Loi sur les pêches* [@LRPGuidelinesSAR].
 
-Status assessments under Canada's Wild Salmon Policy combine multiple considerations into a single integrated status, including absolute abundance, relative abundance, long-term trend, short-term trend, probability of decline, and spatial distribution (Section \@ref(StatusMethods)). Relative abundance is assessed by comparing the generational average of spawner abundance (geometric mean) to a lower benchmark at Sgen and an upper benchmark at 80% Smsy. If abundance falls below Sgen, status *on this one metric* is Red, above 80% Smsy it is Green, and in-between it is Amber. WSP status has been recommended as the primary consideration for evaluating aggregate limit reference points under the 2019 update of the *Fisheries Act* [@LRPGuidelinesSAR]. 
+Dans une évaluation intégrée complète de l’état selon la PSS [p. ex. @FrSkWSPStatus2017], un groupe d’experts procéderait à un examen au cas par cas de l’abondance observée par rapport aux distributions a posteriori complètes des autres estimations des points de référence, puis déciderait de la pondération à accorder à ce paramètre par rapport à d’autres renseignements, comme les tendances. Une approximation rapide des évaluations intégrées a été élaborée à l’aide d’un algorithme dérivé d’évaluations d’experts intégrées réalisées pour combiner les médianes des estimations des points de référence, le cas échéant, avec les autres paramètres [@RapidStatusTechRep1]. Des évaluations intégrées ou rapides de l’état n’ont pas été effectuées pour les saumons rouges des rivières Nass et Skeena, mais nous illustrons les utilisations possibles de l’information sur l’état à l’aide d’un seul paramètre. Nous avons utilisé les estimations des points de référence sans correction du biais log-normal pour le scénario de productivité moyenne à long terme afin de calculer le paramètre d’abondance relative des stocks sauvages des rivières Nass et Skeena.
 
-In a full integrated WSP status assessment [e.g., @FrSkWSPStatus2017], a group of experts would work through a case-by-case review of observed abundance against the full posterior distributions of alternative benchmark estimates, then decide how much weight to give this metric relative to other information, such as trends. A rapid approximation of the integrated assessments has been developed, using an algorithm derived from completed integrated expert assessments to combine median benchmark estimates, where deemed appropriate, with the other metrics [@RapidStatusTechRep1]. Integrated or rapid status assessments have not been completed for Nass and Skeena Sockeye, but we illustrate potential uses of the status information with a single metric. We used benchmark estimates without lognormal bias correction for the long-term average productivity scenario to calculate the relative abundance metric for wild Nass and Skeena stocks.
+Selon les données jusqu’en 2019, les abondances des géniteurs pour le plus grand stock de chaque regroupement sont tombées dans la zone d’état ambre pour le paramètre d’abondance relative (figures \@ref(fig:RelAbdMetricMeziadian) et \@ref(fig:RelAbdMetricBabLW)). Pour le stock de la rivière Meziadin, les abondances annuelles et les moyennes mobiles générationnelles étaient supérieures à 80 % de la médiane à long terme de Srmd pendant la plupart des années depuis 1980, mais ont plongé dans la zone ambre ces dernières années. Les abondances et les moyennes mobiles générationnelles du stock sauvage à montaison tardive de la rivière Babine se trouvent dans la zone ambre la plupart des années depuis la fin des années 1990, et ont même plongé dans la zone rouge pendant quelques années.
 
-With data up to 2019, spawner abundances for the largest stock from each aggregate fell into the Amber status zone for the relative abundance metric (Figures \@ref(fig:RelAbdMetricMeziadian) and \@ref(fig:RelAbdMetricBabLW)). For Meziadin, annual abundances and running generational averages have been above 80% of the median long-term Smsy for most years since 1980, but dipped into the Amber zone in the last few years. Babine Late Wild abundances and running generational averages have been in the Amber zone for most years since the late 1990s, and even dipped into the Red zone for some years.
+Si l’on examine l’abondance moyenne pour la génération se terminant en 2019, deux stocks se trouvaient dans la zone rouge, huit dans la zone ambre, dix dans la zone verte et neuf n’ont pas pu être évalués pour ce paramètre (tableau \@ref(tab:RelAbd2019)). La moyenne générationnelle de certains stocks est proche de la valeur du point de référence (c.-à-d. que le ratio inférieur ou supérieur est proche de 1) et dans ces cas, une légère variation de la médiane de l’estimation du point de référence pourrait entraîner un changement de la catégorie d’état (p. ex. stock de la rivière Meziadin). Pour les autres stocks, la moyenne générationnelle est tellement nettement dans la zone rouge (p. ex. la rivière Kitwanga à moins de 20 % de Sgen) ou dans la zone verte (p. ex. la rivière Mcdonell à près de quatre fois le point de référence supérieur) que l’état du paramètre ne changerait pour aucune des autres estimations des points de référence générées par les divers modèles géniteurs-recrues possibles.
 
-Looking at the average abundance for the generation ending in 2019, `r sum(rel.abd.status.2019$MetricStatus == "Red")` stocks were in the Red zone,  `r sum(rel.abd.status.2019$MetricStatus == "Amber")` stocks were in the Amber zone, `r sum(rel.abd.status.2019$MetricStatus == "Green")` stocks were in the Green zone, and `r sum(rel.abd.status.2019$MetricStatus == "None")` stocks could not be assessed for this metric (Table \@ref(tab:RelAbd2019)). Generational average for some stocks falls near the benchmark value (i.e., lower or upper ratio is near 1), and in these cases a small change in the median benchmark estimate could result in a switch of the status category (e.g., Meziadin).  For other stocks, the generational average is so clearly in the Red zone (e.g., Kitwanga at less than 20% of Sgen) or in the Green zone (e.g., Mcdonell at almost 4 times the upper benchmark), that the metric status wouldn't change for any of the alternative benchmark estimates generated by the various candidate SR models. 
+La proportion des stocks de chaque regroupement qui se trouvent dans la zone d’état rouge, ambre ou verte du paramètre d’abondance relative a varié au fil du temps (tableaux \@ref(tab:RelAbdTabNass)  et \@ref(tab:RelAbdTabSkeenaWild), figure \@ref(fig:RelAbdPattern)). La plupart des stocks modélisés pour les deux regroupements se trouvaient dans les zones ambre ou verte pour le paramètre d’abondance relative la plupart des années depuis les années 1980, mais il convient de noter que plusieurs des stocks les plus grands sont tombés dans la zone ambre ces dernières années (avec des données jusqu’en 2019) et que l’intégration de faibles remontes en 2020 et 2021 pourrait enfoncer ces stocks plus profondément dans la zone ambre, voire dans la zone rouge (p. ex. le stock de la rivière Meziadin, le stock sauvage à montaison tardive de la rivière Babine, le stock sauvage à montaison précoce de la rivière Babine). Si les évaluations intégrées de l’état devaient dresser un tableau semblable, les points de référence limites proposés pour les regroupements seraient déclenchés la plupart des années pour le regroupement de la rivière Nass pour les deux objectifs illustrés (aucun stock dans la zone rouge, moins de 20 % des stocks dans la zone rouge) et la plupart des années pour le regroupement de la rivière Skeena pour l’objectif plus strict (aucun stock dans la zone rouge).
 
-The proportion of stocks from each aggregate that fall into the Red, Amber, or Green status zone on the relative abundance metric has varied over time (Tables \@ref(tab:RelAbdTabNass) and \@ref(tab:RelAbdTabSkeenaWild), Figure \@ref(fig:RelAbdPattern)). Most of the modelled stocks for both aggregates were in the Amber or Green zones for the relative abundance metric for most years since the 1980s, but note the several of the largest stocks fell into the Amber zone in recent years (with data up to 2019), and that incorporating low returns in 2020 and 2021 may push these stocks deeper into the Amber zone or even into the Red zone (e.g., Meziadin, Babine Late Wild, Babine Early Wild). If integrated status assessments were to result in a similar picture, then the proposed aggregate limit reference points would be triggered for most years on the Nass aggregate for both of the illustrated objectives (No Red, < 20% Red), and for most years on the Skeena aggregate for the stricter objective (No Red).
 
 
 \clearpage
-(ref:RelAbdMetricMeziadian) WSP metric for relative abundance: Meziadin (Largest Nass stock). Figure shows estimated spawner abundances (blue line with points) and running generational average (red line) compared to lower and upper benchmarks (boxplots). Each boxplot shows median (horizontal line), half of the posterior distribution (box, p25-p75), and 80% of the posterior distribution (whiskers, p10-p90). Benchmark estimates are shown without (R) and with (C) lognormal bias correction. Horizontal reference lines mark the median benchmark estimate without bias correction, which are the values used in Tables \@ref(tab:RelAbd2019) to \@ref(tab:RelAbdTabSkeenaWild).
+(ref:RelAbdMetricMeziadian) Paramètre de la PSS pour l’abondance relative : Rivière Meziadin (le plus grand stock de la rivière Nass). La figure illustre l’abondance estimée des géniteurs (ligne bleue avec des points) et la moyenne mobile générationnelle (ligne rouge) par rapport aux points de référence inférieur et supérieur (diagrammes de quartiles). Chaque diagramme représente la médiane (ligne horizontale), la moitié de la distribution a posteriori (rectangle, p25-p75) et 80 % de la distribution a posteriori (moustaches, p10-p90). Les estimations des points de référence sont indiquées sans (R) et avec (C) correction du biais log-normal. Les lignes de référence horizontales indiquent la médiane de l’estimation du point de référence sans correction du biais, qui sont les valeurs utilisées dans les tableaux 46 à 48. \@ref(tab:RelAbd2019) à \@ref(tab:RelAbdTabSkeenaWild).
 
 ```{r RelAbdMetricMeziadian,   fig.cap="(ref:RelAbdMetricMeziadian)"}
 include_graphics("data/StockSampleFigs/Meziadin_RelAbd_Plot.png")
@@ -1423,7 +1423,7 @@ include_graphics("data/StockSampleFigs/Meziadin_RelAbd_Plot.png")
 
 
 \clearpage
-(ref:RelAbdMetricBabLW) WSP metric for relative abundance: Babine Late Wild (Largest Skeena stock). Layout as per Figure \@ref(fig:RelAbdMetricMeziadian).
+(ref:RelAbdMetricBabLW) Paramètre de la PSS pour l’abondance relative : Stock sauvage à montaison tardive de la rivière Babine (le plus grand stock de la rivière Skeena). Disposition comme sur la figure \@ref(fig:RelAbdMetricMeziadian).
 
 ```{r RelAbdMetricBabLW,   fig.cap="(ref:RelAbdMetricBabLW)"}
 include_graphics("data/StockSampleFigs/Bab-LW_RelAbd_Plot.png")
@@ -1434,35 +1434,36 @@ include_graphics("data/StockSampleFigs/Bab-LW_RelAbd_Plot.png")
 
 \clearpage
 
-(ref:RelAbd2019) Single-metric statuses using data up to 2019: Relative abundance.  Table lists the average generation (main age class, Gen), the number of observations in the generation ending in 2019 (Obs). The generational avg (geometric mean) is compared to median estimates of Sgen (Lower) and 80% Smsy (Upper) under the long-term average productivity scenario. Note that the resulting status category is only for the relative abundance metric, and a comprehensive status assessment would also consider absolute abundance (i.e., is it less than 1,000 adults?), short-term and long-term trends, probability of decline, and spatial distribution (Section \@ref(StatusMethods)).
+(ref:RelAbd2019) États à paramètre unique à l’aide des données jusqu’en 2019 : Abondance relative : Le tableau présente la génération moyenne (classe d’âge principale, Gen), le nombre d’observations dans la génération se terminant en 2019 (Obs). La moyenne générationnelle (moyenne géométrique) est comparée à la médiane des estimations de Sgen (Inférieure) et de 80 % de Srmd (Supérieure) dans le scénario de productivité moyenne à long terme. Il convient de noter que la catégorie d’état qui en résulte ne concerne que le paramètre d’abondance relative et qu’une évaluation exhaustive de l’état tiendrait également compte de l’abondance absolue (est-elle inférieure à 1 000 adultes?), des tendances à court terme et à long terme, de la probabilité de déclin et de la répartition spatiale (section \@ref(StatusMethods)).  *Inf* = Inférieure, *Sup* = Supérieure.
 
 ```{r RelAbd2019, echo = FALSE, results = "asis"}
 
 table.in <-  rel.abd.metric.all.df %>%
 								dplyr::filter(UpTo == 2019) %>% arrange(RatioUBM) %>%
 								select(-UpTo,-MetricScore) %>% 
-								mutate_at(5:7,function(x){prettyNum(round(x),big.mark=",")}) %>%
-								mutate_at(8:9,function(x){format(round(x,2),n.small =2)}) %>%
-								mutate(MetricStatus = recode(MetricStatus,"None" = "Unk"))
+								mutate_at(5:7,function(x){prettyNum(round(x),big.mark=" ")}) %>%
+								mutate_at(8:9,function(x){format(round(x,2),n.small =2,decimal.mark=",")}) %>%
+								mutate(MetricStatus = recode(MetricStatus,"None" = "Inconnue",
+								"Red" = "Rouge", "Amber" = "Ambre", "Green" = "Verte"))
 
 
 #table.in[is.na(table.in)] <- "NA"
 table.in[table.in == "NA"] <- "-"
 
 
-col.names.use <- c("Aggregate","Stock","Gen","Obs","GenAvg","Lower","Upper","Lower","Upper","Status\nCategory")
-
+col.names.use <- c("Regroupement","Stock","Gen","Obs","MoyGen",
+					"Inf","Sup","Inf","Sup","Catégorie\nd’état")
 
 table.in %>%
    mutate_at(2,function(x){gsub("&", "\\\\&", x)}) %>% 
    mutate_at(2,function(x){gsub("%", "\\\\%", x)}) %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = c(rep("l",2),rep("r",8)),
                   caption = "(ref:RelAbd2019)",col.names = linebreak(col.names.use) ) %>%
-	add_header_above(c(" " = 5, "BM Value" = 2, "Ratio" = 2," " = 1 )) 
+	add_header_above(c(" " = 5, "Valeur du PR" = 2, "Ratio" = 2," " = 1 )) 
 
 ```
 
-
+	
 
 
 
@@ -1473,39 +1474,51 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = c(rep("l",2)
 \clearpage
 
 
-(ref:RelAbdTabNass) Retrospective changes over time in annual metric statuses for Nass: Relative abundance.  Table summarizes status categories for the relative abundance metric as described in Table \@ref(tab:RelAbd2019), listing the total number of stock (n), the number and proportion of stocks for which the metric could not be calculated (Unk, pUnk), the number of stock for which the metric could be calculated (nStatus), the number of stocks in each status ctegory (Red, Amber, Green), the proportion of Red or Green among the assessed stocks (pRed, pGreen), and proportion of all stocks not assessed as Green (pNotGreen; includes Red, Amber, and Unk).
+(ref:RelAbdTabNass)  Changements rétrospectifs dans le temps de l’état annuel du paramètre pour la rivière Nass : Abondance relative. Le tableau résume les catégories d’état pour le paramètre d’abondance relative décrit dans le tableau \@ref(tab:RelAbd2019), en indiquant le nombre total de stocks (n), le nombre et la proportion de stocks pour lesquels il n’a pas été possible de calculer le paramètre (Inc, pInc), le nombre de stocks pour lesquels il a été possible de calculer le paramètre (nÉtat), le nombre de stocks dans chaque catégorie (rouge, ambre, verte), la proportion de stocks dans la catégorie rouge ou verte parmi les stocks évalués (pRouge, pVerte) et la proportion de tous les stocks non évalués comme étant dans la catégorie Verte (pPasVerte; comprend rouge, ambre et inconnue).
 
 ```{r RelAbdTabNass, echo = FALSE, results = "asis"}
 
-table.in <-  read_csv("data/SummaryTables_RelAbdMetric_AnnualSummary_Nass.csv")
+table.in <-  read_csv("data/SummaryTables_RelAbdMetric_AnnualSummary_Nass.csv") %>%
+						mutate_at(c(4,9:11),function(x){format(round(x,2),n.small =2,decimal.mark=",")})
+
+col.names.use <- c("Année","n","Inconnu","pInc","nÉtat","Rouge","Ambre","Verte","pRouge","pVerte","pPasVerte")
+
 
 table.in %>%
    mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
    mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
-                  caption = "(ref:RelAbdTabNass)") 
+                  caption = "(ref:RelAbdTabNass)",
+				  col.names = linebreak(col.names.use) 
+				  ) 
 
 ```
 
 
 \clearpage
-(ref:RelAbdTabSkeenaWild) Retrospective changes over time in annual metric statuses for Skeena Wild: Relative abundance.  Layout as per Table \@ref(tab:RelAbdTabNass).
+(ref:RelAbdTabSkeenaWild) Changements rétrospectifs dans le temps de l’état annuel du paramètre pour le stock sauvage de la rivière Skeena : Abondance relative. Disposition semblable à celle du tableau  \@ref(tab:RelAbdTabNass).
 
 ```{r RelAbdTabSkeenaWild, echo = FALSE, results = "asis"}
 
-table.in <-  read_csv("data/SummaryTables_RelAbdMetric_AnnualSummary_SkeenaWild.csv")
+table.in <-  read_csv("data/SummaryTables_RelAbdMetric_AnnualSummary_SkeenaWild.csv") %>%					mutate_at(c(4,9:11),function(x){format(round(x,2),n.small =2,decimal.mark=",")})
+
+col.names.use <- c("Année","n","Inconnu","pInc","nÉtat","Rouge","Ambre","Verte","pRouge","pVerte","pPasVerte")
+
 
 table.in %>%
    mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
    mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
-                  caption = "(ref:RelAbdTabSkeenaWild)") 
+                  caption = "(ref:RelAbdTabSkeenaWild)",
+				  col.names = linebreak(col.names.use) 
+				  ) 
 
 ```
 
 
 \clearpage
-(ref:RelAbdPattern) Changes over time of single-metric statuses: Relative abundance. The first three panels show the retrospective changes over time in status categories for the relative abundance benchmark, which are listed in Tables  \@ref(tab:RelAbdTabNass) and \@ref(tab:RelAbdTabSkeenaWild). The fourth panel shows a timeline of years for which either none or only a few of the assessed stocks were in the Red zone on this metric.
+(ref:RelAbdPattern) Changements dans le temps de l’état à un seul paramètre : Abondance relative. Les trois premiers graphiques illustrent les changements rétrospectifs dans le temps des catégories d’état pour le point de référence de l’abondance relative, qui sont énumérés dans les tableaux \@ref(tab:RelAbdTabNass) et \@ref(tab:RelAbdTabSkeenaWild). Le quatrième graphique montre une chronologie des années pour lesquelles aucun ou seuls quelques-uns des stocks évalués n’étaient dans la zone rouge selon ce paramètre
+
 
 ```{r RelAbdPattern,   fig.cap="(ref:RelAbdPattern)"}
 include_graphics("data/RelAbdMetric_Patterns_MultiPanel.png")
