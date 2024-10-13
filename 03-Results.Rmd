@@ -1415,7 +1415,7 @@ La proportion des stocks de chaque regroupement qui se trouvent dans la zone d�
 (ref:RelAbdMetricMeziadian) Paramètre de la PSS pour l’abondance relative : Rivière Meziadin (le plus grand stock de la rivière Nass). La figure illustre l’abondance estimée des géniteurs (ligne bleue avec des points) et la moyenne mobile générationnelle (ligne rouge) par rapport aux points de référence inférieur et supérieur (diagrammes de quartiles). Chaque diagramme représente la médiane (ligne horizontale), la moitié de la distribution a posteriori (rectangle, p25-p75) et 80 % de la distribution a posteriori (moustaches, p10-p90). Les estimations des points de référence sont indiquées sans (R) et avec (C) correction du biais log-normal. Les lignes de référence horizontales indiquent la médiane de l’estimation du point de référence sans correction du biais, qui sont les valeurs utilisées dans les tableaux 46 à 48. \@ref(tab:RelAbd2019) à \@ref(tab:RelAbdTabSkeenaWild).
 
 ```{r RelAbdMetricMeziadian,   fig.cap="(ref:RelAbdMetricMeziadian)"}
-include_graphics("data/StockSampleFigs/Meziadin_RelAbd_Plot.png")
+include_graphics("data/1_FrenchFigs/Fig41_Meziadin_RelAbd_Plot_FRENCH.png")
 ```
 
 
@@ -1426,7 +1426,7 @@ include_graphics("data/StockSampleFigs/Meziadin_RelAbd_Plot.png")
 (ref:RelAbdMetricBabLW) Paramètre de la PSS pour l’abondance relative : Stock sauvage à montaison tardive de la rivière Babine (le plus grand stock de la rivière Skeena). Disposition comme sur la figure \@ref(fig:RelAbdMetricMeziadian).
 
 ```{r RelAbdMetricBabLW,   fig.cap="(ref:RelAbdMetricBabLW)"}
-include_graphics("data/StockSampleFigs/Bab-LW_RelAbd_Plot.png")
+include_graphics("data/1_FrenchFigs/Fig42_Bab-LW_RelAbd_Plot_FRENCH.png")
 ```
 
 
@@ -1521,31 +1521,31 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = "r",
 
 
 ```{r RelAbdPattern,   fig.cap="(ref:RelAbdPattern)"}
-include_graphics("data/RelAbdMetric_Patterns_MultiPanel.png")
+include_graphics("data/1_FrenchFigs/Fig43_RelAbdMetric_Patterns_MultiPanel_FRENCH.png")
 ```
 
 
 
 
 \clearpage
-## LOGISTIC-REGRESSION-BASED AGGREGATE ABUNDANCE REFERENCE POINTS {#LogRegResults}
+## POINTS DE RÉFÉRENCE FONDÉS SUR L’ABONDANCE DÉTERMINÉS PAR RÉGRESSION LOGISTIQUE POUR LES REGROUPEMENTS {#LogRegResults}
 
-We explored whether the approach of developing aggregate abundance reference points based on logistic regressions would be potentially applicable to Nass or Skeena Sockeye. For the illustration, we defined a "success" as *"At least 80% of the stocks in aggregate are above Sgen"*, checked which past years met the criterion, and plotted success/failure vs. aggregate abundance.
-
-For the Skeena Wild aggregate, there was relationship between aggregate abundance and success (Figure \@ref(fig:LogRegSkeenaWild)). All past years where aggregate abundance exceeded about 350,000 spawners met the criterion, but many years with lower abundance also met the criterion. A logistic regression could be fitted to the resulting data, but the shape was highly sensitive to alternative definitions of the success criterion we tested (variations not included in this paper).
-
-For the Skeena aggregate, any results from the logistic regression approach would also need to be carefully framed in the context of (1) wild stocks, (2) total effective spawners combining wild spawners and  effective spawners from the channel stocks, and (3) total escapement including non-spawning biological surplus on the enhanced stocks (Figure \@ref(fig:LogRegSkeenaWild2)).
+Nous avons examiné si l’approche consistant à établir des points de référence fondés sur l’abondance au moyen de régressions logistiques pour les regroupements pourrait s’appliquer aux saumons rouges des rivières Nass ou Skeena. Pour l’illustration, nous avons défini une « réussite » comme suit : « *Au moins 80 % des stocks du regroupement sont au-dessus de Sgen* », nous avons vérifié les années précédentes qui répondaient au critère et nous avons tracé la réussite/l’échec par rapport à l’abondance du regroupement.
 
 
-For the Nass aggregate, there was no link between aggregate abundance and success (Figure \@ref(fig:LogRegNass)). The years with the two largest spawner abundances did not meet the criterion (1992 and 1993, both with more than 500,000 spawners). Most of the remaining years did not meet the criterion, and the success years spanned a wide range of abundances, from less than 200,000 to more than 400,000. 
+Pour le regroupement des stocks sauvages de la rivière Skeena, il y avait une relation entre l’abondance du regroupement et la réussite (figure \@ref(fig:LogRegSkeenaWild)). Toutes les années précédentes où l’abondance du regroupement dépassait environ 350 000 géniteurs répondaient au critère, mais de nombreuses années où elle était plus faible y satisfaisaient également. Nous avons pu ajuster une régression logistique aux données obtenues, mais la forme était très sensible aux autres définitions du critère de réussite que nous avons testé (variations non incluses dans le présent document).
+
+Pour le regroupement de la rivière Skeena, il faudrait aussi encadrer soigneusement les résultats de l’approche de régression logistique dans le contexte (1) des stocks sauvages, (2) du nombre total de géniteurs efficaces combinant les géniteurs sauvages et les géniteurs efficaces des stocks issus des frayères artificielles et (3) de l’échappée totale, y compris l’excédent biologique non reproducteur des stocks mis en valeur (figure \@ref(fig:LogRegSkeenaWild2)).
+
+Pour le regroupement de la rivière Nass, il n’y avait aucun lien entre l’abondance du regroupement et la réussite (figure \@ref(fig:LogRegNass)). Les années où l’on a observé les deux plus grandes abondances de géniteurs ne répondaient pas au critère (1992 et 1993, les deux avec plus de 500 000 géniteurs). La plupart des autres années ne répondaient pas au critère et les années de réussite couvraient une large fourchette d’abondances, de moins de 200 000 à plus de 400 000 géniteurs.
 
 
 
 \clearpage
-(ref:LogRegSkeenaWild) Illustration of log-regression approach for deriving aggregate abundance reference points: Skeena Wild. Panels show aggregate spawner abundance (A), the proportion of stocks in the aggregate that met the criterion "annual spawner abundance larger than than the lower benchmark set at Sgen" (pAnnualSpnLgLBM)  by year (B) and by aggregate abundance (C), and overall success/failure on the aggregate criterion of "80% of stocks above the benchmark" (D). The interim escapement goal for the Skeena aggregate is 900,000 spawners, and the corresponding interim escapement goal for the Skeena Wild aggregate is 300,000 based on average stock composition (Section \@ref(Background)), which is marked in the plots. Wild spawner abundance has been at or above the interim EG for most years since the 1980s (A). The proportion of stocks meeting the success criterion has ranged from about 60%-100% (B). For most years where aggregate spawner abundance was at or above the interim goal, 80% or more of the stocks met the success criterion (C). The data points in panel C are then simplified to whether they meet the 80% threshold (Yes/No) to fit a logistic regression (D). The fitted red regression line shows the increasing probability that at least 80% of stocks meet the success criterion as aggregate spawner abundance increases, with aggregate spawner abundance larger than 500,000 resulting in very little incremental increase in the probability of success for this specific example of a success criterion. 
+(ref:LogRegSkeenaWild) Illustration de l’approche de régression logistique pour calculer les points de référence fondés sur l’abondance pour les regroupements : Stock sauvage de la rivière Skeena. Les graphiques montrent l’abondance des géniteurs du regroupement (A), la proportion de stocks du regroupement qui répond au critère « l’abondance annuelle des géniteurs est supérieure au point de référence inférieur établi à Sgen » (pAnnualSpnLgLBM) par année (B) et par abondance du regroupement (C) et réussite/échec du regroupement pour le critère « 80 % des stocks au-dessus du point de référence » (D). L’objectif d’échappée provisoire pour le regroupement de la rivière Skeena est de 900 000 géniteurs et l’objectif d’échappée provisoire correspondant pour le regroupement des stocks sauvages de la rivière Skeena est de 300 000 géniteurs, selon la composition moyenne des stocks (section \@ref(Background)), qui est indiquée dans les graphiques. L’abondance des géniteurs sauvages est égale ou supérieure à l’objectif d’échappée provisoire la plupart des années depuis les années 1980 (A). La proportion de stocks répondant au critère de réussite varie entre 60 et 100 % (B). Pour la plupart des années où l’abondance des géniteurs du regroupement était égale ou supérieure à l’objectif provisoire, 80 % ou plus des stocks satisfaisaient au critère de réussite (C). Les points de données du graphique C sont ensuite simplifiés pour déterminer s’ils atteignent le seuil de 80 % (Oui/Non) pour ajuster une régression logistique (D). La ligne de régression ajustée en rouge montre la probabilité croissante qu’au moins 80 % des stocks répondent au critère de réussite à mesure que l’abondance des géniteurs du regroupement augmente, une abondance des géniteurs supérieure à 500 000 résultant en une très faible augmentation progressive de la probabilité de réussite pour cet exemple précis de critère de réussite.
 
 ```{r LogRegSkeenaWild,   fig.cap="(ref:LogRegSkeenaWild)"}
-include_graphics("data/PropBasedTargetPlots_SkeenaWild_pAnnualSpnLgLBM.png")
+include_graphics("data/1_FrenchFigs/Fig44_PropBasedTargetPlots_SkeenaWild_pAnnualSpnLgLBM_FRENCH.png")
 ```
 
 
@@ -1553,10 +1553,11 @@ include_graphics("data/PropBasedTargetPlots_SkeenaWild_pAnnualSpnLgLBM.png")
 \clearpage
 
 
-(ref:LogRegSkeenaWild2) Illustration of log-regression approach for deriving aggregate abundance reference points: Alternative aggregations. Skeena Wild are only a part of the total annual returns that are currently managed based on aggregate abundance. This figure shows three versions of the aggregate spawner abundance (A): wild spawners (including only wild stocks), total effective spawners (wild plus channel loading plus Pinkut and Fulton spawners below the fence), and total escapement including biological surplus (i.e., run kept out of channels but beyond the capacity of spawning grounds below the fences). The time series of success/failure from Figure \@ref(fig:LogRegSkeenaWild) can be plotted against either one of these aggregate abundance (B-D), and would lead to very different results for an aggregate abundance reference point. Interim EG of 900,000 for the total aggregate and 300,000 for the wild aggregate are marked. 
+(ref:LogRegSkeenaWild2) Illustration de l’approche de régression logistique pour calculer les points de référence fondés sur l’abondance pour les regroupements : Autres regroupements. Le stock sauvage de la rivière Skeena n’est qu’une partie des remontes annuelles totales qui sont actuellement gérées en fonction de l’abondance du regroupement. Cette figure illustre trois versions de l’abondance des géniteurs du regroupement (A) : les géniteurs sauvages (comprenant seulement les stocks sauvages), les géniteurs efficaces totaux (géniteurs sauvages plus charge des frayères artificielles plus géniteurs du ruisseau Pinkut et de la rivière Fulton en aval de la barrière) et l’échappée totale, y compris l’excédent biologique (remonte tenue à l’écart des frayères artificielles, mais au-delà de la capacité des frayères en aval des barrières). La série chronologique de la réussite/de l’échec tirée de la figure \@ref(fig:LogRegSkeenaWild) peut être tracée par rapport à l’une ou l’autre de ces données sur l’abondance du regroupement (B-D) et donnerait des résultats très différents pour un point de référence de l’abondance pour le regroupement. Un objectif d’échappée provisoire de 900 000 géniteurs pour le regroupement total et de 300 000 géniteurs pour le regroupement sauvage est indiqué.
+
 
 ```{r LogRegSkeenaWild2,   fig.cap="(ref:LogRegSkeenaWild2)"}
-include_graphics("data/PropBasedTargetPlots_COMPARE_SkeenaWild_pAnnualSpnLgLBM.png")
+include_graphics("data/1_FrenchFigs/Fig45_PropBasedTargetPlots_COMPARE_SkeenaWild_pAnnualSpnLgLBM_FRENCH.png")
 ```
 
 
@@ -1564,10 +1565,11 @@ include_graphics("data/PropBasedTargetPlots_COMPARE_SkeenaWild_pAnnualSpnLgLBM.p
 
 
 \clearpage
-(ref:LogRegNass) Illustration of log-regression approach for deriving aggregate abundance reference points: Nass. Layout as per Figure \@ref(fig:LogRegSkeenaWild). The interim escapement goal for the Nass aggregate at 200,000 spawners is marked. Aggregate spawner abundance has been at or above the interim EG for most years since the 1980s (A). The proportion of stocks meeting the success criterion has ranged from about 25%-100%, but for most years it was less than 80% (B). For most years where aggregate spawner abundance was at or above the interim goal, less than 80% of the stocks met the success criterion (C). The data points in panel C are then simplified to whether they meet the 80% threshold (Yes/No), but the observed scatter of points does not allow for a logistic regression fit, because even the largest aggregate spawner abundances failed to meet the success criterion (D).
+(ref:LogRegNass) Illustration de l’approche de régression logistique pour calculer les points de référence fondés sur l’abondance pour les regroupements : Rivière Nass. Disposition comme sur la figure \@ref(fig:LogRegSkeenaWild). L’objectif d’échappée provisoire pour le regroupement de la rivière Nass à 200 000 géniteurs est représenté. Depuis les années 1980, l’abondance des géniteurs sauvages du regroupement est égale ou supérieure à l’objectif d’échappée provisoire la plupart des années depuis les années 1980 (A). La proportion de stocks répondant au critère de réussite varie entre 25 % et 100 %, mais elle était inférieure à 80 % la plupart des années (B). Pour la plupart des années où l’abondance des géniteurs du regroupement était égale ou supérieure à l’objectif provisoire, moins de 80 % des stocks satisfaisaient au critère de réussite (C). Les points de données dans le graphique C sont ensuite simplifiés afin de déterminer s’ils atteignent le seuil de 80 % (Oui/Non), mais la dispersion observée des points ne permet pas un ajustement de la régression logistique, parce que même les plus grandes abondances de géniteurs du regroupement n’ont pas satisfait au critère de réussite (D).
+
 
 ```{r LogRegNass,   fig.cap="(ref:LogRegNass)"}
-include_graphics("data/PropBasedTargetPlots_Nass_pAnnualSpnLgLBM.png")
+include_graphics("data/1_FrenchFigs/Fig46_PropBasedTargetPlots_Nass_pAnnualSpnLgLBM_FRENCH.png")
 ```
 
 
