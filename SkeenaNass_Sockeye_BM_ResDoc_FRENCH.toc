@@ -77,7 +77,7 @@
 \contentsline {subsubsection}{\numberline {3.6.1}Exemples de profils d'équilibre fondés sur les géniteurs}{146}{subsubsection.0.3.6.1}%
 \contentsline {subsubsection}{\numberline {3.6.2}Exemples de profils d'équilibre fondés sur le taux d'exploitation}{150}{subsubsection.0.3.6.2}%
 \contentsline {subsection}{\numberline {3.7}POINTS DE RÉFÉRENCE LIMITES FONDÉS SUR L'ÉTAT POUR LES REGROUPEMENTS}{156}{subsection.0.3.7}%
-\contentsline {subsection}{\numberline {3.8}LOGISTIC-REGRESSION-BASED AGGREGATE ABUNDANCE REFERENCE POINTS}{164}{subsection.0.3.8}%
+\contentsline {subsection}{\numberline {3.8}POINTS DE RÉFÉRENCE FONDÉS SUR L'ABONDANCE DÉTERMINÉS PAR RÉGRESSION LOGISTIQUE POUR LES REGROUPEMENTS}{164}{subsection.0.3.8}%
 \contentsline {subsection}{\numberline {3.9}SIMULATION-BASED AGGREGATE ABUNDANCE REFERENCE POINTS}{168}{subsection.0.3.9}%
 \contentsline {subsubsection}{\numberline {3.9.1}Example Results}{168}{subsubsection.0.3.9.1}%
 \contentsline {paragraph}{\numberline {3.9.1.1}Probabilities - Fixed Exploitation Rates}{168}{paragraph.0.3.9.1.1}%
