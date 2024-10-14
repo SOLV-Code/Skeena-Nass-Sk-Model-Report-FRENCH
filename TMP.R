@@ -1,8 +1,8 @@
 library(tidyverse)
 
 
-table.in   <-  read_csv("data/SummaryTables_RelAbdMetric_AnnualSummary_Nass.csv") %>%
-  mutate_at(c(4,9:11),function(x){format(round(x,2),n.small =2,decimal.mark=",")})
+table.in   <-   read_csv("data/Sims/SimSensTest_Summary.csv",stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM") %>%
+  arrange(Seq) %>% select(-Seq)
 
  table.in
 
