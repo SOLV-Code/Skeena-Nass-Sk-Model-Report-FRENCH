@@ -1576,34 +1576,35 @@ include_graphics("data/1_FrenchFigs/Fig46_PropBasedTargetPlots_Nass_pAnnualSpnLg
 
 
 \clearpage
-## SIMULATION-BASED AGGREGATE ABUNDANCE REFERENCE POINTS {#ProjBesdResults}
+## POINTS DE RÉFÉRENCE FONDÉS SUR L’ABONDANCE DÉTERMINÉS PAR SIMULATION POUR LES REGROUPEMENTS {#ProjBesdResults}
 
-### Example Results
+### Exemples de résultats
 
-The example results shown here are for a small and very specific subset of potential scenarios, as defined in Section \@ref(SimScenarios), and for two specific versions of more general objectives.
+Les exemples de résultats présentés ici concernent un petit sous-ensemble très précis de scénarios possibles, définis à la section \@ref(SimScenarios), et deux versions spécifiques d’objectifs plus généraux.
 
-We include two types of summaries for the simulation results: 
+Nous incluons deux types de résumés pour les résultats de la simulation.
 
-* *Stock-specific probabilities* (Figures \@ref(fig:HeatmapAggFixedERLtAvg) to \@ref(fig:HeatmapAggFixedEscRecent)): These plots compare 10 different levels of a harvest strategy, showing for each modelled stock the probability of achieving one specific objective.
-* *Trade-off plots* (Figures \@ref(fig:TradeoffPlotSkeenaWildLTAvg) to \@ref(fig:TradeoffPlotNassRecent)):  These plots compare two objectives across 10 different levels of  a harvest strategy.
-
-
-#### Probabilities - Fixed Exploitation Rates
-
-Under long-term productivity, almost all modelled stocks (19/20) met the objective when fixed ER was 10% or less, but over half the modelled stocks (11/20) met the objective for fixed ER greater than 50%. Most modelled stocks failed to meet the objective at fixed ER at 60% or higher (Figure \@ref(fig:HeatmapAggFixedERLtAvg)). These proportions shifted dramatically under the recent productivity scenario: Even under 10% fixed ER a quarter (5/20) of the modelled stocks did not meet the objective (Figure \@ref(fig:HeatmapAggFixedERRecent)). 
-
-#### Probabilities -  Fixed Escapement
-
-Under long-term productivity about half (11/20) of the modelled stocks met the objective for aggregate escapement goals set at least 75% above the current interim escapement goals, or target of 350,000 for Nass Sockeye compared to the interim EG of 200,000, and a 525,000 target for Skeena Wild compared to the assumed interim EG of 300,000 (Figure \@ref(fig:HeatmapAggFixedEscLtAvg)). Performance degraded rapidly for lower escapement goals, with only 6 of 20 modelled stock meeting the objective at the interim EG (4th column). The effect of lower fixed escapement goals was less pronounced under the recent productivity scenario, with twice the number of stocks (12/20) meeting the objective at the interim EG (Figure \@ref(fig:HeatmapAggFixedEscLtAvg); 4th column). This is due to the interaction between aggregate abundance and target exploitation rate: under the recent productivity scenario, run sizes for the largest stocks are lower, leading to a lower aggregate abundance, and a lower target ER with a fixed escapement strategy. Under long-term average productivity, aggregate abundances and resulting target ERs are higher, and the component stocks are less likely to meet conservation objectives if they have lower productivity than the largest stocks. A key benefit of the forward simulation approach is that it allows us to identify and investigate these types of counter-intuitive interactions.
+* Probabilités propres au stock (figures  \@ref(fig:HeatmapAggFixedERLtAvg) à  \@ref(fig:HeatmapAggFixedEscRecent)) : Ces graphiques comparent 10 niveaux différents d’une stratégie de récolte, montrant pour chaque stock modélisé la probabilité d’atteindre un objectif précis.
+* Graphiques de compromis (figures \@ref(fig:TradeoffPlotSkeenaWildLTAvg) à  \@ref(fig:TradeoffPlotNassRecent)) : Ces graphiques comparent deux objectifs à 10 niveaux différents d’une stratégie de récolte.
 
 
+#### Probabilités – Taux d’exploitation fixes
+
+Dans le scénario de productivité à long terme, presque tous les stocks modélisés (19/20) ont atteint l’objectif lorsque le taux d’exploitation fixe était de 10 % ou moins, mais plus de la moitié (11/20) l’ont atteint avec un taux d’exploitation fixe supérieur à 50 %. La plupart des stocks modélisés n’ont pas atteint l’objectif à un taux d’exploitation fixe de 60 % ou plus (figure \@ref(fig:HeatmapAggFixedERLtAvg)). Ces proportions ont changé radicalement dans le scénario de productivité récente : même avec un taux d’exploitation fixe inférieur à 10 %, un quart (5/20) des stocks modélisés n’ont pas atteint l’objectif (figure \@ref(fig:HeatmapAggFixedERRecent)).
+
+
+#### Probabilités – Échappée fixe
+
+Under long-term productivity about half (11/20) of the modelled stocks met the objective for aggregate escapement goals set at least 75% above the current interim escapement goals, or target of 350,000 for Nass Sockeye compared to the interim EG of 200,000, and a 525,000 target for Skeena Wild compared to the assumed interim EG of 300,000 (Figure ). Performance degraded rapidly for lower escapement goals, with only 6 of 20 modelled stock meeting the objective at the interim EG (4th column). The effect of lower fixed escapement goals was less pronounced under the recent productivity scenario, with twice the number of stocks (12/20) meeting the objective at the interim EG (Figure ; 4th column). This is due to the interaction between aggregate abundance and target exploitation rate: under the recent productivity scenario, run sizes for the largest stocks are lower, leading to a lower aggregate abundance, and a lower target ER with a fixed escapement strategy. Under long-term average productivity, aggregate abundances and resulting target ERs are higher, and the component stocks are less likely to meet conservation objectives if they have lower productivity than the largest stocks. A key benefit of the forward simulation approach is that it allows us to identify and investigate these types of counter-intuitive interactions.
+
+Dans le scénario de productivité à long terme, environ la moitié (11/20) des stocks modélisés ont atteint l’objectif pour les objectifs d’échappée du regroupement fixés à au moins 75 % au-dessus des objectifs d’échappée provisoires actuels, ou l’objectif de 350 000 géniteurs pour le saumon rouge de la rivière Nass par rapport à l’objectif provisoire de 200 000 et l’objectif de 525 000 géniteurs pour le stock sauvage de la rivière Skeena, par rapport à l’objectif d’échappée provisoire supposé de 300 000 (figure \@ref(fig:HeatmapAggFixedEscLtAvg)). Le rendement s’est rapidement dégradé pour des objectifs d’échappée plus faibles, seuls six des 20 stocks modélisés atteignant l’objectif pour l’objectif d’échappée provisoire (4e colonne). L’effet des objectifs d’échappée fixe moins élevés était moins prononcé dans le scénario de productivité récente, le double du nombre de stocks (12/20) atteignant l’objectif pour l’objectif d’échappée provisoire (figure \@ref(fig:HeatmapAggFixedEscRecent); 4e colonne). Cela s’explique par l’interaction entre l’abondance du regroupement et le taux d’exploitation cible : dans le scénario de productivité récente, les remontes des plus grands stocks sont plus faibles, ce qui entraîne une abondance plus faible du regroupement et un taux d’exploitation cible plus bas avec une stratégie d’échappée fixe. Dans le scénario de productivité moyenne à long terme, les abondances du regroupement et les taux d’exploitation cibles qui en découlent sont plus élevés, et les stocks constituants sont moins susceptibles d’atteindre les objectifs de conservation s’ils ont une productivité plus faible que les stocks les plus grands. L’un des principaux avantages de l’approche de simulation prospective est qu’elle nous permet de repérer et d’étudier ces types d’interactions contre-intuitives.
 
 \clearpage
-(ref:HeatmapAggFixedERLtAvg) Simulation summary - Alternative fixed ER and long-term average productivity.  Simulation results are summarized for different levels of fixed ER (0% to 90%; columns) and one productivity scenario across all stocks. The numbers in each cell of the grid show the probability of spawner abundance in the 3rd generation exceeding a benchmark set at 80% of median Smsy under long-term average productivity for one stock under one specific level of fixed ER. Probabilities are categorized using the Intergovernmental Panel on Climate Change (IPCC) Likelihood Scale to facilitate discussion of results (Table \@ref(tab:IPPCLikelihoodTab)). Stocks are grouped by aggregate, and roughly sorted within aggregate from mouth of the river upstream. Grey shading indicates stocks that were not modelled in the current project. Bolded blue numbers above the grid show the number of stocks in each column with probability larger than 80%.
+(ref:HeatmapAggFixedERLtAvg) Résumé de la simulation – Autre taux d’exploitation fixe et productivité moyenne à long terme. Les résultats de la simulation sont résumés pour différents niveaux de taux d’exploitation fixe (de 0 à 90 %; colonnes) et un scénario de productivité pour l’ensemble des stocks. Les nombres dans chaque cellule de la grille indiquent la probabilité que l’abondance des géniteurs de la 3e génération dépasse un point de référence établi à 80 % de la médiane de Srmd dans le scénario de productivité moyenne à long terme pour un stock à un niveau précis de taux d’exploitation fixe. Les probabilités sont classées selon l’échelle de vraisemblance du GIEC pour faciliter la discussion des résultats (tableau 41). Les stocks sont groupés par regroupement et triés approximativement à l’intérieur du regroupement, de l’embouchure de la rivière en remontant vers l’amont. L’ombrage gris indique les stocks qui n’ont pas été modélisés dans le projet actuel. Les nombres en gras et en bleu au-dessus de la grille indiquent le nombre de stocks dans chaque colonne dont la probabilité est supérieure à 80 %.
 
 
 ```{r HeatmapAggFixedERLtAvg,   fig.cap="(ref:HeatmapAggFixedERLtAvg)"}
-include_graphics("data/Sims/Agg_Heatmap_SpnLgSmsyBM_LTAvg_FixedER.png")
+include_graphics("data/1_FrenchFigs/Fig47_Agg_Heatmap_SpnLgSmsyBM_LTAvg_FixedER_French.png")
 ```
 
 
@@ -1611,10 +1612,10 @@ include_graphics("data/Sims/Agg_Heatmap_SpnLgSmsyBM_LTAvg_FixedER.png")
 
 
 \clearpage
-(ref:HeatmapAggFixedERRecent) Simulation summary - Alternative fixed ER and recent productivity. Layout as per Figure \@ref(fig:HeatmapAggFixedERLtAvg).
+(ref:HeatmapAggFixedERRecent) Résumé de la simulation – Autre taux d’exploitation fixe et productivité récente. Disposition comme sur la figure \@ref(fig:HeatmapAggFixedERLtAvg).
 
 ```{r HeatmapAggFixedERRecent,   fig.cap="(ref:HeatmapAggFixedERRecent)"}
-include_graphics("data/Sims/Agg_Heatmap_SpnLgSmsyBM_Recent_FixedER.png")
+include_graphics("data/1_FrenchFigs/Fig48_Agg_Heatmap_SpnLgSmsyBM_Recent_FixedER_French.png")
 ```
 
 
@@ -1623,10 +1624,11 @@ include_graphics("data/Sims/Agg_Heatmap_SpnLgSmsyBM_Recent_FixedER.png")
 
 
 \clearpage
-(ref:HeatmapAggFixedEscLtAvg) Simulation summary - Alternative fixed escapement targets with 10% ER floor and 80% ER cap under long-term average productivity.  Layout as per Figure \@ref(fig:HeatmapAggFixedERLtAvg), except that columns correspond to different levels of fixed escapement, set at increments of the interim escapement goal for each aggregate. The fourth column corresponds to the interim goal (200,000 for Nass, 300,000 for Skeena Wild), the first column to 1/4 of the interim goal, and the last column to 2.5 times the interim goal.
+(ref:HeatmapAggFixedEscLtAvg) Résumé de la simulation – Autres objectifs d’échappée fixe avec un taux d’exploitation plancher de 10 % et un taux d’exploitation plafond de 80 % dans le scénario de productivité moyenne à long terme. Disposition comme sur la figure \@ref(fig:HeatmapAggFixedERLtAvg), sauf que les colonnes correspondent à différents niveaux d’échappée fixe, établis par tranches de l’objectif d’échappée provisoire pour chaque regroupement. La quatrième colonne correspond à l’objectif provisoire (200 000 géniteurs pour la rivière Nass et 300 000 géniteurs pour le stock sauvage de la rivière Skeena), la première colonne correspond au quart de l’objectif provisoire et la dernière colonne à 2,5 fois l’objectif provisoire.
+
 
 ```{r HeatmapAggFixedEscLtAvg,   fig.cap="(ref:HeatmapAggFixedEscLtAvg)"}
-include_graphics("data/Sims/Agg_Heatmap_SpnLgSmsyBM_LTAvg_FixedEsc10to80.png")
+include_graphics("data/1_FrenchFigs/Fig49_Agg_Heatmap_SpnLgSmsyBM_LTAvg_FixedEsc10to80_French.png")
 ```
 
 
@@ -1635,84 +1637,86 @@ include_graphics("data/Sims/Agg_Heatmap_SpnLgSmsyBM_LTAvg_FixedEsc10to80.png")
 
 
 \clearpage
-(ref:HeatmapAggFixedEscRecent) Simulation summary - Alternative fixed escapement targets with 10% ER floor and 80% ER cap under recent productivity.  Layout as per Figure \@ref(fig:HeatmapAggFixedEscLtAvg).
+(ref:HeatmapAggFixedEscRecent) Résumé de la simulation – Autres objectifs d’échappée fixe avec un taux d’exploitation plancher de 10 % et un taux d’exploitation plafond de 80 % dans le scénario de productivité récente. Disposition comme sur la figure \@ref(fig:HeatmapAggFixedEscLtAvg).
 
 ```{r HeatmapAggFixedEscRecent,   fig.cap="(ref:HeatmapAggFixedEscRecent)"}
-include_graphics("data/Sims/Agg_Heatmap_SpnLgSmsyBM_Recent_FixedEsc10to80.png")
+include_graphics("data/1_FrenchFigs/Fig50_Agg_Heatmap_SpnLgSmsyBM_Recent_FixedEsc10to80_French.png")
 ```
 
 
 \clearpage
-#### Trade-off plots
+#### Graphiques de compromis
 
-The basic trade-off is the same for both aggregates under both productivity assumptions: The number of stocks meeting the biological objective increases as the spawning target increases, up to a point,  while the average annual catch  over 3 generations peaks at some spawning level and then starts declining with further increases in spawning target. 
+Le compromis de base est le même pour les deux regroupements selon les deux hypothèses de productivité : le nombre de stocks qui atteignent l’objectif biologique augmente avec l’objectif de fraie, jusqu’à un certain point, tandis que la prise annuelle moyenne sur trois générations culmine à un certain niveau de fraie, puis commence à diminuer lorsque l’objectif de fraie continue d’augmenter.
 
-The spawning target with peak average catch is much lower under recent productivity (Figures \@ref(fig:TradeoffPlotSkeenaWildRecent),\@ref(fig:TradeoffPlotNassRecent)) than under recent productivity (Figures \@ref(fig:TradeoffPlotSkeenaWildLTAvg), \@ref(fig:TradeoffPlotNassLTAvg)), and the amount of catch is much lower as well. 
+L’objectif de fraie avec la prise moyenne de pointe est beaucoup plus faible dans le scénario de productivité récente (figures \@ref(fig:TradeoffPlotSkeenaWildRecent) et \@ref(fig:TradeoffPlotNassRecent)) que dans celui de productivité moyenne à long terme (figures \@ref(fig:TradeoffPlotSkeenaWildLTAvg) et \@ref(fig:TradeoffPlotNassLTAvg)) et la quantité de prises est également beaucoup plus faible.
 
-The effect of the productivity assumption on the number of stocks meeting the biological objective differs by spawning target:
+L’effet de l’hypothèse de productivité sur le nombre de stocks atteignant l’objectif biologique diffère selon l’objectif de fraie.
 
-* At larger spawning targets, more stocks meet the biological objective under long-term average productivity than under recent productivity, because more stocks are sufficiently productive to withstand higher aggregate exploitation rates, even though those rates are higher than under recent productivity. Under recent productivity, several stocks fail to meet the biological objective even with a large spawning target, because their productivity is so low that even with the lower exploitation rates associated with larger spawning targets, they don't reach their stock-specific benchmark within 3 generations from recently observed spawner abundances.
+* Avec des objectifs de fraie plus élevés, davantage de stocks atteignent l’objectif biologique dans le scénario de productivité moyenne à long terme que dans celui de productivité récente, puisqu’un plus grand nombre de stocks sont suffisamment productifs pour résister à des taux d’exploitation du regroupement plus élevés, même si ces taux sont plus élevés que dans le cas de la productivité récente. Dans le scénario de productivité récente, plusieurs stocks n’atteignent pas l’objectif biologique, même avec un objectif de fraie élevé, parce que leur productivité est si faible que, même avec les taux d’exploitation plus bas associés à des objectifs de fraie plus élevés, ils n’atteignent pas leur point de référence spécifique en trois générations d’après les abondances des géniteurs observées récemment.
 
-* At spawning targets around the interim EG, more stocks meet the biological objective under recent productivity than under long-term average productivity, because aggregate abundances are lower, resulting in lower exploitation rates for the same spawning target. This is another example of the counter-intuitive interactions discussed above for the probability plots.
+* Lorsque les objectifs de fraie avoisinent l’objectif d’échappée provisoire, davantage de stocks atteignent l’objectif biologique dans le scénario de productivité récente que dans celui de productivité moyenne à long terme; en effet, avec des abondances du regroupement plus faibles, les taux d’exploitation sont aussi plus faibles pour le même objectif de fraie. Il s’agit d’un autre exemple des interactions contre-intuitives décrites ci-dessus pour les graphiques de probabilité.
+
 
 
 \clearpage
-(ref:TradeoffPlotSkeenaWildLTAvg) Example of Trade off Plot - SkeenaWild - Long-term average productivity. Compares change for two different performance measures as aggregate spawning target is increased from 1/4 of the current escapement goal (left-most point) to 2.5 times the current goal (right-most point). Performance measures were selected to show the trade-off between an example biological objective (number of stocks for which the 3rd simulated generation exceeds 80% of Smsy with more than 80% probability; blue line with solid points, left axis) and an example harvest objective (trimmed average annual catch over 3 generations, orange line with open circles, right axis). Both performance measures improve as as the aggregate spawning target increases up to around 500,000, but average catch peaks around 500,000 spawning target (much above the interim EG of 300,000), while the number of stocks meeting 80% of Smsy continues to increase.
+(ref:TradeoffPlotSkeenaWildLTAvg) Exemple de graphique de compromis – Stock sauvage de la rivière Skeena – Productivité moyenne à long terme. Compare le changement pour deux mesures de rendement différentes lorsque l’objectif de fraie du regroupement passe du quart de l’objectif d’échappée actuel (point le plus à gauche) à 2,5 fois l’objectif actuel (point le plus à droite). Les mesures de rendement ont été choisies pour illustrer le compromis entre un exemple d’objectif biologique (nombre de stocks pour lesquels la 3e génération simulée a une probabilité de plus de 80 % de dépasser 80 % de Srmd; ligne bleue avec des points pleins, axe de gauche) et un exemple d’objectif de récolte (prises annuelles moyennes coupées sur trois générations, ligne orange avec des cercles ouverts, axe de droite). Les deux mesures de rendement s’améliorent à mesure que l’objectif de fraie du regroupement augmente jusqu’à environ 500 000, mais la moyenne des prises culmine autour de l’objectif de fraie de 500 000 (bien au-dessus de l’objectif provisoire de 300 000), et le nombre de stocks atteignant 80 % de Srmd continue d’augmenter.
 
 ```{r TradeoffPlotSkeenaWildLTAvg,   fig.cap="(ref:TradeoffPlotSkeenaWildLTAvg)"}
-include_graphics("data/Sims/TradeOffPlot_2_ProbSmsyVSAvgCtTr_Skeena_LTAvg.png")
+include_graphics("data/1_FrenchFigs/Fig51_TradeOffPlot_2_ProbSmsyVSAvgCtTr_Skeena_LTAvg_FRENCH.png")
 ```
 
 
 
 \clearpage
-(ref:TradeoffPlotSkeenaWildRecent) Example of Trade off Plot - SkeenaWild - Recent productivity.  Layout as per Figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg). The basic trade-off is the same as in Figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg) for long-term average productivity, with average catch peaking at some spawning level while the number of stocks meeting the biological objective continues to increase. However, with this recent productivity scenario, the average catch peaks at a lower spawning target (around the interim goal of 300,000 vs. 500,000) and peak catch is much lower (around 175,000 vs. almost 500,000). The number of stocks meeting the biological objective is higher at lower spawning targets (because large stock have reduced productivity under the recent scenario, so total run sizes and resulting aggregate ER are lower), but lower at higher spawner targets (because under recent productivity more stocks do not reach the biological objective in 3 generations).
+(ref:TradeoffPlotSkeenaWildRecent) Exemple de graphique de compromis – Stock sauvage de la rivière Skeena – Productivité récente. Disposition comme sur la figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg). Le compromis de base est le même que dans la figure  pour la productivité moyenne à long terme, les prises moyennes culminant à un certain niveau de fraie, tandis que le nombre de stocks atteignant l’objectif biologique continue d’augmenter. Cependant, avec ce scénario de productivité récente, les prises moyennes culminent à un objectif de fraie plus bas (autour de l’objectif provisoire de 300 000 contre 500 000) et le pic des prises est beaucoup plus bas (environ 175 000 contre près de 500 000). Le nombre de stocks qui atteignent l’objectif biologique est plus élevé lorsque les objectifs de fraie sont plus faibles (parce que les grands stocks ont une productivité réduite dans le scénario de productivité récente, de sorte que les remontes et les taux d’exploitation qui en résultent pour le regroupement sont plus faibles), mais ces stocks sont moins nombreux lorsque les objectifs de fraie sont plus élevés (parce que, dans le scénario de productivité récente, davantage de stocks n’atteignent pas l’objectif biologique en trois générations).
+
+
 
 ```{r TradeoffPlotSkeenaWildRecent,   fig.cap="(ref:TradeoffPlotSkeenaWildRecent)"}
-include_graphics("data/Sims/TradeOffPlot_1_ProbSmsyVSAvgCtTr_Skeena_Recent.png")
+include_graphics("data/1_FrenchFigs/Fig52_TradeOffPlot_1_ProbSmsyVSAvgCtTr_Skeena_Recent_FRENCH.png")
 ```
 
 
 
 
 \clearpage
-(ref:TradeoffPlotNassLTAvg) Example of Trade off Plot - Nass - Long-term average productivity.  Layout as per Figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg). The basic trade-off is the same as in Figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg) for Skeena Wild, with average catch peaking at some spawning level while the number of stocks meeting the biological objective continues to increase. For Nass Sockeye, under long-term productivity, the average catch peaks around the interim goal of 200,000 and peak catch is around 325,000. The number of stocks meeting the biological objective ranges from 0 for spawning targets below the interim EG of 200,000 to all 4 modelled stocks for spawning targets
-above about 400,000. 
+(ref:TradeoffPlotNassLTAvg) Exemple de graphique de compromis – Rivière Nass – Productivité moyenne à long terme. Disposition comme sur la figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg). Le compromis de base est le même que sur la figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg) pour le stock sauvage de la rivière Skeena, les prises moyennes culminant à un certain niveau de fraie, tandis que le nombre de stocks atteignant l’objectif biologique continue d’augmenter. Dans le cas du saumon rouge de la rivière Nass, dans le scénario de productivité à long terme, les prises moyennes culminent autour de l’objectif provisoire de 200 000 et le pic des prises se situe autour de 325 000. Le nombre de stocks qui atteignent l’objectif biologique varie de 0 pour les objectifs de fraie inférieurs au taux d’exploitation provisoire de 200 000 aux 4 stocks modélisés pour les objectifs de fraie supérieurs à environ 400 000.
+
 
 ```{r TradeoffPlotNassLTAvg,   fig.cap="(ref:TradeoffPlotNassLTAvg)"}
-include_graphics("data/Sims/TradeOffPlot_4_ProbSmsyVSAvgCtTr_Nass_LTAvg.png")
+include_graphics("data/1_FrenchFigs/Fig53_TradeOffPlot_4_ProbSmsyVSAvgCtTr_Nass_LTAvg_FRENCH.png")
 ```
 
 
 
 
 \clearpage
-(ref:TradeoffPlotNassRecent) Example of Trade off Plot - Nass - Recent productivity.  Layout as per Figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg). Observed differences between recent and long-term average productivity for Nass are similar to the observed differences for Skeena Wild: average catch peaks at a lower spawning target (around 125,000 vs. 200,000) and reaches a lower peak (about 110,000 vs. 325,000). Only 2 of the 4 stocks reach the biological objective under recent productivity over 3 generations, even for spawning targets more than double the interim EG.
+(ref:TradeoffPlotNassRecent) Exemple de graphique de compromis – Rivière Nass – Productivité récente. Disposition comme sur la figure \@ref(fig:TradeoffPlotSkeenaWildLTAvg). Les différences observées entre la productivité récente et la productivité moyenne à long terme pour la rivière Nass sont semblables aux différences observées pour le saumon sauvage de la rivière Skeena : des pics moyens des prises à un objectif de fraie inférieur (environ 125 000 contre 200 000) et un pic plus bas (environ 110 000 contre 325 000). Seuls deux des quatre stocks atteignent l’objectif biologique dans le scénario de productivité récente sur trois générations, même pour des objectifs de fraie à plus du double de l’objectif d’échappée provisoire.
 
 ```{r TradeoffPlotNassRecent,   fig.cap="(ref:TradeoffPlotNassRecent)"}
-include_graphics("data/Sims/TradeOffPlot_3_ProbSmsyVSAvgCtTr_Nass_Recent.png")
+include_graphics("data/1_FrenchFigs/Fig54_TradeOffPlot_3_ProbSmsyVSAvgCtTr_Nass_Recent_FRENCH.png")
 ```
 
 
 
 
 \clearpage
-### Summary of Sensitivity Tests
+### Résumé des tests de sensibilité
 
-The example results in the previous section are for a small, and very specific subset, of potential scenarios, as defined in Section \@ref(SimScenarios), and for two very specific versions of more general objectives. To support scoping discussions for future simulation work and collaborative planning processes, we summarize general observations from sensitivity tests described in Table \@ref(tab:SimSensTestTable).  Figure \@ref(fig:FixedEscVar) illustrates the comment regarding ER floor and cap.
+Les exemples de résultats de la section précédente concernent un petit sous-ensemble très précis de scénarios possibles, définis à la section \@ref(SimScenarios), et deux versions très précises d’objectifs plus généraux. Pour faciliter les discussions sur la portée des futurs travaux de simulation et processus de planification collaboratifs, nous résumons les observations générales des tests de sensibilité décrits dans le tableau \@ref(tab:SimSensTestTable). La figure \@ref(fig:FixedEscVar) illustre le commentaire concernant les taux d’exploitation plancher et plafond.
 
 
-
-(ref:SimSensTestTable) Observed effects of key model components. 
+(ref:SimSensTestTable) Effets observés des composantes clés du modèle. 
 
 ```{r SimSensTestTable, echo = FALSE, results = "asis"}
 
 
-sims.obs.df <- read.csv("data/Sims/SimSensTest_Summary.csv",stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM") %>%
+sims.obs.df <- read_csv("data/Sims/SimSensTest_Summary.csv",locale=locale(encoding="latin1")) %>%
 								arrange(Seq) %>% select(-Seq)
 
 
-colnames(sims.obs.df) <- linebreak(c("Model\nComponent","Observations"))
+colnames(sims.obs.df) <- linebreak(c("Composante\ndu modèle","Observations"))
 
 
 
@@ -1730,71 +1734,77 @@ csas_table(format = "latex", escape = FALSE, font_size = 9, align = "l",
 
 
 \clearpage
-(ref:FixedEscVar) Variations of a fixed escapement goal strategy. Both panels compare a 300,000 escapement goal (A,C) and a 600,000 escapement goal (B,D), with the resulting ER at different aggregate run sizes shown in grey for strict fixed escapement policy (i.e., harvest every fish above the goal, harvest is 0 below the goal). Top panel shows the corresponding harvest control rules (HCR) if ER floor is 10% (i.e., harvest 10% of run regardless of run size, increase ER as run size increases) and ER cap is 80% (i.e., never harvest more than 80%, even at very large aggregate run size). Bottom panel shows the HCR for the same two escapement goals, but with ER floor at 25% and ER cap at 60%. Even though escapement goals of 300,000 and 600,000 are very different, with the higher floor and lower cap, the target ER for the two strategies is the same for a wide range of run sizes. Differences in simulated outcomes between the two strategies are even less pronounced if aggregate-level outcome uncertainty is added to the model (e.g., a difference of 5% in the ER target has little effect if the actual ER is modelled as target ± 15%).
+(ref:FixedEscVar) Variations d’une stratégie d’objectif d’échappée fixe. Les deux graphiques comparent un objectif d’échappée de 300 000 géniteurs (A, C) et un objectif d’échappée de 600 000 géniteurs (B, D) avec le taux d’exploitation qui en découle aux différentes remontes du regroupement indiquées en gris pour une politique d’échappée fixe stricte (récolter chaque poisson au-delà de l’objectif, récolte nulle en dessous de l’objectif). Le graphique du haut montre les règles de contrôle des prises (HCR) correspondantes pour un taux d’exploitation plancher de 10 % (récolter 10 % de la remonte indépendamment de sa taille, augmenter le taux d’exploitation à mesure que la taille de la remonte augmente) et un taux d’exploitation plafond de 80 % (ne jamais récolter plus de 80 %, même pour une remonte très nombreuse du regroupement). Le graphique du bas montre les règles de contrôle des prises pour les deux mêmes objectifs d’échappée, mais avec un taux d’exploitation plancher de 25 % et un taux d’exploitation plafond de 60 %. Même si les objectifs d’échappée de 300 000 et de 600 000 géniteurs sont très différents, avec un plancher plus élevé et un plafond plus bas, le taux d’exploitation cible pour les deux stratégies est le même pour une large fourchette de tailles de remonte. Les différences dans les résultats simulés entre les deux stratégies sont encore moins prononcées si l’incertitude des résultats pour le regroupement est ajoutée au modèle (p. ex. une différence de 5 % dans le taux d’exploitation cible a peu d’effet si le taux d’exploitation réel est modélisé comme une cible de ± 15 %).
 
 
 
 ```{r FixedEscVar,   fig.cap="(ref:FixedEscVar)"}
-include_graphics("data/Sims/FixedEscRule_Illustration.png")
+include_graphics("data/1_FrenchFigs/Fig55_FixedEscRule_Illustration_FRENCH.png")
 ```
 
 
 \clearpage
-## EXPANDING AGGREGATE REFERENCE POINTS FOR WILD SKEENA SOCKEYE TO ACCOUNT FOR ENHANCED CONTRIBUTION {#SkeenaExpResults}
+## EXPANSION DES POINTS DE RÉFÉRENCE AU NIVEAU DU REGROUPEMENT POUR LE SAUMON SAUVAGE DE LA RIVIÈRE SKEENA AFIN DE TENIR COMPTE DE LA CONTRIBUTION DES POISSONS ISSUS DE LA MISE EN VALEUR {#SkeenaExpResults}
 
-### Context
+### Contexte
 
-Enhanced Pinkut and Fulton present two distinct challenges for managing the total Skeena stock aggregate: 
+Les stocks issus de la mise en valeur du ruisseau Pinkut et de la rivière Fulton présentent deux défis distincts pour la gestion du regroupement total de stocks de la rivière Skeena.
 
-* *Enhanced contribution to returns* (Figure \@ref(fig:ChannelContribution)): The contributions of Sockeye originating from the enhanced Babine tributaries to the aggregate returns of Babine and Skeena Sockeye have increased over time. Pinkut and Fulton Sockeye together accounted for about 30% of Babine returns in the 1950s and 1960s, before the start of BLDP enhancement, but consistently contribute 80% or more in recent years. Enhanced contribution to total Skeena returns has ranged from about 40% to more than 80% since the 1980s, with a median of 66%. 
+* *Contribution des saumons rouges mis en valeur aux remontes* (figure \@ref(fig:ChannelContribution)) : Les contributions des saumons rouges provenant des affluents mis en valeur de la rivière Babine aux remontes du regroupement des stocks de saumon rouge des rivières Babine et Skeena ont augmenté au fil du temps. Ensemble, les saumons rouges du ruisseau Pinkut et de la rivière Fulton représentaient environ 30 % des remontes de la rivière Babine dans les années 1950 et 1960, avant le début du PMVLB, mais leur part était toujours de 80 % ou plus ces dernières années. La contribution de la mise en valeur aux remontes totales de la rivière Skeena a varié d’environ 40 % à plus de 80 % depuis les années 1980, avec une médiane de 66 %.
 
-* *Biological surplus* (Figure \@ref(fig:SurplusProduction)): Returning Pinkut and Fulton fish that exceed the capacity of natural spawning habitat below the fence and are locked out of the channels are considered a non-spawning surplus. The method for estimating the annual surplus is described in Section \@ref(SurplusEst). The surplus amount has declined from over 400,000 fish in the 1980s and 1990s to under 200,000 in the 2000s and 2010s. However, the proportion of the surplus relative to the total Skeena Sockeye abundance has increased with decreasing returns of wild Skeena Sockeye. From 2016-2019, the surplus represented around 20 percent of the total Sockeye return and up to 50% of total escapements for the Skeena aggregate. In 2 recent years, the surplus matched or exceeded the total harvest.  
+* *Excédent biologique* (figure \@ref(fig:SurplusProduction)) : Les poissons en montaison du ruisseau Pinkut et de la rivière Fulton qui dépassent la capacité de l’habitat de fraie naturel en aval de la barrière et qui sont tenus hors des frayères sont considérés comme un excédent non reproducteur. La méthode d’estimation de l’excédent annuel est décrite à la section \@ref(SurplusEst). L’excédent a chuté de plus de 400 000 poissons dans les années 1980 et 1990 à moins de 200 000 dans les années 2000 et 2010. Cependant, la proportion de l’excédent par rapport à l’abondance totale du saumon rouge de la rivière Skeena a augmenté avec la diminution des remontes de saumon rouge sauvage de la rivière. De 2016 à 2019, l’excédent représentait environ 20 % de la remonte totale de saumon rouge et jusqu’à 50 % du total des échappées pour le regroupement de la rivière Skeena. Ces deux dernières années, l’excédent a égalé ou dépassé la récolte totale.
 
-(ref:ChannelContribution) Contribution of BLDP-enhanced Sockeye stocks (Pinkut and Fulton). Figure shows % contribution of Pinkut and Fulton to Babine returns (A) and total Skeena returns (B). Vertical red line indicates start of construction of BLDP enhancement facilities in 1965. Trend line shows the running 4-yr average. 
+
+
+
+(ref:ChannelContribution) Contribution des stocks de saumon rouge issus du PMVLB (ruisseau Pinkut et rivière Fulton). La figure illustre le pourcentage de la contribution des poissons du ruisseau Pinkut et de la rivière Fulton aux remontes de la rivière Babine (A) et au total des remontes de la rivière Skeena (B). La ligne rouge verticale indique le début de la construction des installations du PMVLB en 1965. La ligne de tendance indique la moyenne mobile sur quatre ans.
 
 ```{r ChannelContribution,  fig.cap="(ref:ChannelContribution)" }
-include_graphics("data/ChannelReview/ChannelContribution.PNG")
+include_graphics("data/1_FrenchFigs/Fig56_ChannelContribution_FRENCH.png")
 ```
 
 
-(ref:SurplusProduction) Estimates of channel surplus over time - Total Skeena. Top left panel shows the time series of estimated surplus spawners from both channel-enhanced stocks, excluding ESSR harvests. The remaining panels show the magnitude of the surplus relative to total Skeena Sockeye run size, total escapement (i.e., effective spawner abundance), and total catch including ESSR harvest. 
+(ref:SurplusProduction) Estimation de l’excédent des frayères au fil du temps – Total pour la rivière Skeena. Le graphique en haut à gauche représente la série chronologique de l’excédent estimé de géniteurs des deux stocks mis en valeur par les frayères artificielles, à l’exclusion des prises provenant du programme d’excédent de saumon par rapport aux besoins de géniteurs. Les autres graphiques montrent l’ampleur de l’excédent par rapport à la remonte totale de saumon rouge de la rivière Skeena, à l’échappée totale (abondance des géniteurs efficaces) et à la prise totale, y compris la récolte provenant du programme d’excédent de saumon par rapport aux besoins de géniteurs. 
 
 
 ```{r SurplusProduction,  fig.cap="(ref:SurplusProduction)" }
-include_graphics("data/ChannelReview/ChannelSurplus_TotalSkeena_TimeSeries.PNG")
+include_graphics("data/1_FrenchFigs/Fig57_ChannelSurplus_TotalSkeena_TimeSeries_FRENCH.PNG")
 ```
 
 \clearpage
 
 
-### Alternative Expansion Approaches 
+### Autres approches d’expansion
 
-We tested two alternative approaches for expanding a wild Skeena management reference point to a total Skeena management reference point. Both used the observed composition of the total Skeena returns from 1982 to 2019, specifically the % of wild spawners in the terminal return, and they both assume that future stock composition is similar to the range of stock compositions observed since the 1980s. 
+Nous avons mis à l’essai deux solutions de rechange pour étendre un point de référence de gestion des stocks sauvages de la rivière Skeena à un point de référence de gestion de toute la rivière Skeena. Les deux ont utilisé la composition observée des remontes totales de la rivière Skeena de 1982 à 2019, plus précisément le pourcentage de géniteurs sauvages dans la remonte en estuaire, et supposent que la composition future des stocks est semblable à l’éventail des compositions des stocks observées depuis les années 1980.
 
-However, they differ in how those data are used:
+Cependant, elles diffèrent dans la façon dont ces données sont utilisées :
 
-* *Simple expansion* (Figure \@ref(fig:SkeenaExp1)): Use the median or upper/lower quartiles for the % wild spawners as a direct scalar on the wild reference point. For example, with a median scalar of 3.58, a terminal run of a bit more than 1 million had a 50:50 chance of resulting in about 300,000 wild spawners. To increase the probability of meeting 300,000 spawners to 75% (3/4 chance), the terminal run would need to be around 1.4 million. Similarly, for a 50:50 chance of meeting a wild spawning goal of 400,000, the terminal run would need to be around 1.5 million. 
-* *Logistic regression* (Figure \@ref(fig:SkeenaExp2)): For each candidate terminal run target, calculate the probability of meeting alternative wild spawning goals. The logistic regression approach classifies the annual observations as a success (i.e., wild spawning goal was met) or failure (i.e., wild spawning goal was not met), then calculates the probability of success for different combinations of terminal return target and wild spawning goal. For example, in 1982 the terminal return was 1,447,330 and the wild spawner abundance was	303,954, so 1982 is classified as a success for a wild goal of 300,000, and as a failure for a wild goal of 400,000. The current terminal run target of 1.05 million is as likely as not to meet the current interim EG for wild Skeena Sockeye. This result is similar to the 50:50 chance identified with simple expansion in Figure \@ref(fig:SkeenaExp1). The current terminal run target of 1.05 million is unlikely to meet a wild spawning goal of 350,000 or larger.
+* *Expansion simple* (figure \@ref(fig:SkeenaExp1)) : Utiliser la médiane ou les quartiles supérieur/inférieur du pourcentage de géniteurs sauvages comme scalaire direct du point de référence du stock sauvage. Par exemple, avec un scalaire médian de 3,58, une remonte en estuaire d’un peu plus d’un million avait une probabilité de 50:50 de produire environ 300 000 géniteurs sauvages. Pour augmenter la probabilité d’atteindre 300 000 géniteurs à 75 % (3/4 de chance), la remonte en estuaire devrait être d’environ 1,4 million. De même, pour avoir une chance de 50:50 d’atteindre un objectif de fraie du stock sauvage de 400 000, la remonte en estuaire devrait être d’environ 1,5 million. 
 
-
-Both of these approaches could be applied using forecasted stock composition for a specific year. Given pre-season forecasts for the enhanced stocks and largest wild stocks, in combination with target harvests, an in-season scalar could be approximated. However, this  information is not currently part of the annual in-season planning process.
-
-Note that the % of wild *spawners* used for Figures \@ref(fig:SkeenaExp1) and \@ref(fig:SkeenaExp2) differs slightly from the % of wild *returns* plotted in Panel B of Figure \@ref(fig:ChannelContribution), due to differential in-river harvest of wild and enhanced Sockeye (e.g., timing and location of in-river fisheries below Babine fence, ESSR fisheries targeting Pinkut and Fulton in Babine Lake).
+* *Régression logistique* (figure \@ref(fig:SkeenaExp2)) : Pour chaque objectif possible de remonte en estuaire, calculer la probabilité d’atteindre d’autres objectifs de fraie du stock sauvage. L’approche de régression logistique classe les observations annuelles comme une réussite (c.-à-d. que l’objectif de fraie du stock sauvage a été atteint) ou un échec (c.-à-d. que l’objectif de fraie du stock sauvage n’a pas été atteint), puis calcule la probabilité de réussite pour différentes combinaisons de l’objectif de remonte en estuaire et de l’objectif de fraie du stock sauvage. Par exemple, en 1982, la remonte en estuaire était de 1 447 330 géniteurs et l’abondance des géniteurs sauvages était de 303 954. Par conséquent, l’année 1982 est considérée comme une réussite pour un objectif de 300 000 géniteurs sauvages et un échec pour un objectif de 400 000 géniteurs sauvages. L’objectif actuel d’une remonte en estuaire de 1,05 million de géniteurs est tout aussi probable qu’improbable de ne pas atteindre l’actuel objectif d’échappée provisoire pour le saumon rouge sauvage de la rivière Skeena. Ce résultat est semblable à la probabilité de 50:50 déterminée par une simple expansion à la figure \@ref(fig:SkeenaExp1). Il est peu probable que l’objectif actuel d’une remonte en estuaire de 1,05 million atteigne un objectif de fraie du stock sauvage de 350 000 géniteurs ou plus.
 
 
-(ref:SkeenaExp1) Simple expansion of wild Skeena management reference points. Plot shows three alternative scalars applied to wild spawning goals ranging from 250,000 to 600,000. Current interim escapement goal and terminal run management target are shown for reference. Note that the scalars are estimated from observed historical stock composition, independent of alternative SR model fits or productivity assumptions.
+On pourrait appliquer ces deux approches en utilisant la composition prévue des stocks pour une année donnée. Compte tenu des prévisions d’avant-saison pour les stocks mis en valeur et les stocks sauvages les plus grands, combinées avec les récoltes cibles, on pourrait calculer approximativement un scalaire en cours de saison. Toutefois, cette information ne fait pas actuellement partie du processus annuel de planification en cours de saison.
+
+Il convient de noter que le pourcentage de *géniteurs* sauvages utilisé pour les figures \@ref(fig:SkeenaExp1) et \@ref(fig:SkeenaExp2) diffère légèrement du pourcentage de saumons sauvages dans les *remontes* indiqué sur le graphique B de la figure Figure \@ref(fig:ChannelContribution), en raison de la différence entre la récolte en rivière de saumons rouges sauvages et de saumons rouges issus de la mise en valeur (p. ex. période et emplacement des pêches en rivière sous la barrière de la rivière Babine, pêches de poissons provenant du programme d’excédent de saumon par rapport aux besoins de géniteurs ciblant les poissons du ruisseau Pinkut et de la rivière Fulton dans le lac Babine).
+
+
+
+
+(ref:SkeenaExp1) Simple expansion des points de référence de la gestion du stock sauvage de la rivière Skeena. Le graphique montre trois scalaires de rechange appliqués à des objectifs de fraie du stock sauvage allant de 250 000 à 600 000. L’objectif actuel d’échappée provisoire et l’objectif de gestion de la remonte en estuaire sont présentés à titre de référence. Il faut noter que les scalaires sont estimés à partir de la composition historique observée des stocks, indépendamment des autres ajustements du modèle géniteurs-recrues ou des hypothèses de productivité.
 
 ```{r SkeenaExp1,   fig.cap="(ref:SkeenaExp1)"}
-include_graphics("data/SkeenaExpansions/SkeenaExpansion_ScalarPlot_For_DiscPaper_v1.png")
+include_graphics("data/1_FrenchFigs/Fig58_SkeenaExpansion_ScalarPlot_For_DiscPaper_v1_FRENCH.png")
 ```
 
 
 
 \clearpage
-(ref:SkeenaExp2) Probability of meeting wild spawning goals at different management targets for terminal run. Logistic regression was used to estimate the probability of success (i.e., wild spawning goal is met) for different combinations of terminal run target and wild spawning goal. Probabilities are categorized using the Intergovernmental Panel on Climate Change (IPCC) Likelihood Scale to facilitate interpretation of results (Table \@ref(tab:IPPCLikelihoodTab)). 
+(ref:SkeenaExp2) Probabilité d’atteindre les objectifs de fraie du stock sauvage à différents objectifs de gestion pour la remonte en estuaire. Nous avons utilisé une régression logistique pour estimer la probabilité de réussite (c.-à-d. que l’objectif de fraie du stock sauvage est atteint) pour différentes combinaisons de l’objectif de remonte en estuaire et de l’objectif de fraie du stock sauvage. Les probabilités sont classées selon l’échelle de vraisemblance du GIEC pour faciliter la discussion des résultats (tableau \@ref(tab:IPPCLikelihoodTab)). 
 
 ```{r SkeenaExp2,   fig.cap="(ref:SkeenaExp1)"}
-include_graphics("data/SkeenaExpansions/SkeenaExpansion_ProbSuccessPlot_For_DiscPaper.png")
+include_graphics("data/1_FrenchFigs/Fig59_SkeenaExpansion_ProbSuccessPlot_For_DiscPaper_FRENCH.png")
 ```
 
 
