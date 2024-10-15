@@ -88,25 +88,25 @@
 \contentsline {subsubsection}{\numberline {3.10.1}Contexte}{182}{subsubsection.0.3.10.1}%
 \contentsline {subsubsection}{\numberline {3.10.2}Autres approches d'expansion}{185}{subsubsection.0.3.10.2}%
 \contentsline {section}{\numberline {4}DISCUSSION}{188}{section.0.4}%
-\contentsline {subsection}{\numberline {4.1}KEY CONSIDERATIONS}{188}{subsection.0.4.1}%
+\contentsline {subsection}{\numberline {4.1}PRINCIPALES CONSIDÉRATIONS}{188}{subsection.0.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Enhanced Production}{188}{subsubsection.0.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Salmon Population Diversity}{189}{subsubsection.0.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2}Diversité des populations de saumon}{190}{subsubsection.0.4.1.2}%
 \contentsline {subsubsection}{\numberline {4.1.3}Time-varying Productivity}{191}{subsubsection.0.4.1.3}%
 \contentsline {subsection}{\numberline {4.2}KEY CONCLUSIONS}{193}{subsection.0.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Alternative SR Model Fits and Productivity Scenarios}{193}{subsubsection.0.4.2.1}%
 \contentsline {paragraph}{\numberline {4.2.1.1}Alternative SR Model Forms}{193}{paragraph.0.4.2.1.1}%
-\contentsline {paragraph}{\numberline {4.2.1.2}Biological Benchmarks}{193}{paragraph.0.4.2.1.2}%
-\contentsline {paragraph}{\numberline {4.2.1.3}Comparing Single-stock and Aggregate Model Fits}{194}{paragraph.0.4.2.1.3}%
-\contentsline {paragraph}{\numberline {4.2.1.4}Comparing Single-stock and Hierarchical SR Model Fits}{194}{paragraph.0.4.2.1.4}%
-\contentsline {subsubsection}{\numberline {4.2.2}Alternative Approaches for Developing Aggregate Management Reference Points}{195}{subsubsection.0.4.2.2}%
+\contentsline {paragraph}{\numberline {4.2.1.2}Biological Benchmarks}{194}{paragraph.0.4.2.1.2}%
+\contentsline {paragraph}{\numberline {4.2.1.3}Comparing Single-stock and Aggregate Model Fits}{195}{paragraph.0.4.2.1.3}%
+\contentsline {paragraph}{\numberline {4.2.1.4}Comparing Single-stock and Hierarchical SR Model Fits}{195}{paragraph.0.4.2.1.4}%
+\contentsline {subsubsection}{\numberline {4.2.2}Alternative Approaches for Developing Aggregate Management Reference Points}{196}{subsubsection.0.4.2.2}%
 \contentsline {paragraph}{\numberline {4.2.2.1}Requirements for the Escapement Goal Review}{196}{paragraph.0.4.2.2.1}%
 \contentsline {paragraph}{\numberline {4.2.2.2}Requirements for Regional Salmon Initiatives}{197}{paragraph.0.4.2.2.2}%
-\contentsline {subsection}{\numberline {4.3}PRIORITIES FOR FUTURE WORK}{197}{subsection.0.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Objectives}{197}{subsubsection.0.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Data}{198}{subsubsection.0.4.3.2}%
+\contentsline {subsection}{\numberline {4.3}PRIORITIES FOR FUTURE WORK}{198}{subsection.0.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Objectives}{198}{subsubsection.0.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Data}{199}{subsubsection.0.4.3.2}%
 \contentsline {subsubsection}{\numberline {4.3.3}Spawner-recruit Modelling and Productivity Scenarios}{199}{subsubsection.0.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.4}Enhanced Pinkut and Fulton}{199}{subsubsection.0.4.3.4}%
-\contentsline {subsubsection}{\numberline {4.3.5}Incorporating Biological Considerations in Aggregate Management Reference Points}{200}{subsubsection.0.4.3.5}%
+\contentsline {subsubsection}{\numberline {4.3.4}Enhanced Pinkut and Fulton}{200}{subsubsection.0.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.5}Incorporating Biological Considerations in Aggregate Management Reference Points}{201}{subsubsection.0.4.3.5}%
 \contentsline {section}{REFERENCES CITED}{202}{section*.5}%
 \setcounter {tocdepth}{0}
 \contentsline {chapter}{APPENDIX~A. TECHNICAL PROCESS PARTICIPANTS}{211}{section*.7}%
