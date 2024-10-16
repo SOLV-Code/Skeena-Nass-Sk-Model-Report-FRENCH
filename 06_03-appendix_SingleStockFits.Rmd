@@ -1,18 +1,19 @@
 \clearpage
-# CUSTOM R PACKAGES AND FUNCTIONS {#SingleStockSRFits}
+# PROGICIELS ET FONCTIONS PERSONNALISÉS DANS R {#SingleStockSRFits}
 
 
-## *RapidRicker* Package
+## Progiciel *RapidRicker* 
 
-### Purpose
+### But
 
-As part of this project, we started developing the R package *RapidRicker*, which runs spawner-recruit data quality checks, tests the sensitivity of standard biological benchmarks using simple Ricker fits, and implements Bayesian SR fits using the JAGS sampling engine [@Plummer03jags] via the *jags()* function from the *R2jags* package [@R2jags]. 
+Dans le cadre de ce projet, nous avons commencé à élaborer le progiciel *RapidRicker* dans R, qui effectue des vérifications de la qualité des données géniteurs-recrues, teste la sensibilité des points de référence biologiques standard à l’aide d’ajustements du modèle de Ricker simple et met en œuvre les ajustements géniteurs-recrues bayésiens à l’aide du moteur d’échantillonnage JAGS [@Plummer03jags] par l’entremise de la fonction *jags()* du progiciel *R2jags* [@R2jags].
 
-The motivation for building this package was the large number of stocks covered by the Skeena and Nass Sockeye escapement goal review. Routine aspects of data review, such as checking for potential outliers or concerns regarding contrast, presented a non-trivial challenge in an analysis covering dozens of stocks within 2 aggregates, with data continuously being updated as the data reviews progressed. With the large number of stocks, we also faced the challenge of being consistent across stocks with data treatment choices (e.g., criteria for identifying outliers).
+Nous avons construit ce progiciel en raison du nombre de stocks visés par l’examen des objectifs d’échappée des saumons rouges des rivières Skeena et Nass. Les aspects courants de l’examen des données, comme la vérification des valeurs aberrantes potentielles ou des préoccupations concernant le contraste, ont représenté un défi non négligeable dans une analyse couvrant des dizaines de stocks dans deux regroupements, les données étant continuellement mises à jour à mesure que l’examen des données progressait. Compte tenu du grand nombre de stocks, nous avons également dû assurer la cohérence entre les stocks sur le plan des choix de traitement des données (p. ex. critères pour déterminer les valeurs aberrantes).
 
-Most of the analyses in this report were implemented using the *RapidRicker* package. A basic worked example and the JAGS code follow. Package functions are available on [Github](https://github.com/SOLV-Code/RapidRicker).
+La plupart des analyses présentées dans ce rapport ont été mises en œuvre à l’aide du progiciel RapidRicker. Un exemple pratique de base et le code JAGS suivent. Les fonctions du progiciel sont disponibles sur 
+ [Github](https://github.com/SOLV-Code/RapidRicker).
 
-### Setting Up
+### Configuration
 
 
 ```{r, eval=F, echo=T}
@@ -40,7 +41,7 @@ head(SR_Sample) # shows the first few rows
 ```
 
 
-### Run the Data Check
+### Exécution de la vérification des données
 
 ```{r, eval=F, echo=T}
 
@@ -55,7 +56,7 @@ print(head(data.chk$Data))
 
 ```
 
-### Test the Simple Deterministic Ricker Fits
+### Mise à l’essai des ajustements du modèle de Ricker déterministe simple
 
 ```{r, eval=F, echo=T}
 
@@ -71,7 +72,7 @@ det.bm
 ```
 
 
-### Test the Bayesian Fits
+### Mise à l’essai des ajustements bayésiens
 
 
 ```{r, eval=F, echo=T}
@@ -108,10 +109,10 @@ head(test.basic.up$Summary)
 
 
 \clearpage
-## JAGS Code for single-stock SR model fits
+## CODE JAGS POUR LES AJUSTEMENTS DU MODÈLE GÉNITEURS-RECRUES À UN SEUL STOCK
 
 
-### JAGS Code for Basic Ricker Model
+### Code JAGS pour le modèle de Ricker de base
 
 ```{r, eval=F, echo=T}
 model{
@@ -153,7 +154,7 @@ model{
 
 \clearpage
 
-### JAGS Code for AR1 Ricker Model
+### Code JAGS pour le modèle de Ricker AR1
 
 
 ```{r, eval=F, echo=T}
@@ -215,7 +216,7 @@ ln.alpha.c <- ln.alpha + ((sigma * sigma) / (2 * (1-phi*phi)) )
 ```
 
 
-### JAGS Code for Recursive Bayes Ricker Model with Time-varying Productivity
+### Code JAGS pour le modèle de Ricker bayésien récursif avec productivité variable dans le temps
 
 ```{r, eval=F, echo=T}
 model{
@@ -272,14 +273,15 @@ model{
 
 
 
-## Benchmark calculation functions {#BMFuns}
+##  FONCTIONS DE CALCUL DES POINTS DE RÉFÉRENCE {#BMFuns}
 
-### R Code for Smsy Calculation  {#BMFunsSmsy}
+### Code R pour le calcul de Srmd {#BMFunsSmsy}
 
-*Rapid Ricker* includes four alternative options for calculating Smsy: (1) approximation from @Hilborn1985Proxies, (2) approximation from @PetermanPyperGrout2000ParEst, (3)
-explicit solution from @Scheuerell2016, using code from the [samSim Package](https://github.com/Pacific-salmon-assess/samSim), and (4) a brute force approximation.
+*RapidRicker* comprend quatre options pour calculer Srmd : (1) approximation dans @Hilborn1985Proxies, (2) approximation dans @PetermanPyperGrout2000ParEst, (3) solution explicite dans @Scheuerell2016, utilisation du code du [progiciel samSim](https://github.com/Pacific-salmon-assess/samSim) et (4) une approximation de la force brute.
 
-The main function handles inputs and specifications, and includes three of the four alternative calculation approaches:
+La fonction principale traite les intrants et les spécifications et comprend trois des quatre méthodes de calcul :
+
+
 
 ```{r, eval=F, echo=T}
 
@@ -350,7 +352,7 @@ if(out.type == "BMOnly"){return(bind_cols(Smsy = smsy.est, Umsy = umsy.est))  }
 ```
 
 \clearpage
-The brute-force approximation is implemented as a sub-routine:
+L’approximation de la force brute est mise en œuvre comme un sous-programme :
 
 ```{r, eval=F, echo=T}
 
@@ -372,11 +374,12 @@ return(s.msy)
 ```
 
 
-### R Code for Sgen Calculation   {#BMFunsSgen}
+### Code R pour le calcul de Sgen  {#BMFunsSgen}
 
-*Rapid Ricker* includes four alternative options for calculating Sgen: (1) solver function extracted from @HoltOgden2013, (2) solver function extracted from the [samSim R package](https://github.com/Pacific-salmon-assess/samSim), (3) solver function used in @Connorsetal2022 and generously shared by the lead author, and (4) a brute force approximation.
+*Rapid Ricker* comprend quatre options de calcul de Sgen : (1) fonction de solveur extraite de @HoltOgden2013, (2) fonction de solveur extraite du [progiciel samSim dans R](https://github.com/Pacific-salmon-assess/samSim), (3) fonction de solveur utilisée dans @Connorsetal2022 et généreusement partagée par l’auteur principal et (4) une approximation de la force brute.
 
-The main function handles inputs and specifications, and includes three of the four alternative calculation approaches:
+La fonction principale traite les intrants et les spécifications et comprend trois des quatre méthodes de calcul :
+
 
 ```{r, eval=F, echo=T}
 
@@ -482,8 +485,8 @@ if(out.type == "BMOnly"){return(sgen.est)  }
 } # end calcRickerSgen
 ```
 
+Sous-programme de solveur pour la mise en œuvre de @HoltOgden2013 
 
-Solver subroutine for the @HoltOgden2013 implementation
 
 ```{r, eval=F, echo=T}
 
@@ -510,7 +513,7 @@ Sgen.solver.HO <- function(a,b,sig) {
 }
 ```
 
-Solver subroutines for the samSim implementation
+Sous-programme de solveur pour la mise en œuvre de samSim
 
 ```{r, eval=F, echo=T}
 sGenSolver.samSim.wrapper <- function(ln.a, b, sigma,SMSY){
@@ -542,7 +545,7 @@ sGenSolver.samSim <- function(theta, sMSY) {
 ```
 
 
-Solver subroutines for the @Connorsetal2022 implementation
+Sous-programme de solveur pour la mise en œuvre dans @Connorsetal2022 
  
 ```{r, eval=F, echo=T}
 get_Sgen.bc <- function(a, b, int_lower, int_upper, SMSY) {
@@ -553,7 +556,7 @@ get_Sgen.bc <- function(a, b, int_lower, int_upper, SMSY) {
 ```
 
 
-The brute-force approximation is implemented as a sub-routine:
+L’approximation de la force brute est mise en œuvre comme un sous-programme :
 
 ```{r, eval=F, echo=T}
 ricker.rec  <- function(S,ricker.lna,ricker.b) {
@@ -573,11 +576,13 @@ return(s.gen)
 ```
 
 
-## ER-based equlibrium profile functions {#EquProfFuns}
+## FONCTION DU PROFIL D’ÉQUILIBRE FONDÉ SUR LE TAUX D’EXPLOITATION {#EquProfFuns}
 
-This function calculates equilibrium spawner abundance and equilibrium catch under the following assumptions: (1) There is no recruitment or age-at-return process variability (all v_{y,j} are 0); (2)  All populations are fished at equal exploitation rates; (3) The same exploitation rate is used year after year; (4) Productivity of component stocks is stable over time; (5) there are no other significant sources of mortality (e.g., no en-route mortality, no pre-spawn mortality). Function developed from code shared by Brendan Connors (DFO), implementing the approach from @SchnuteKronlund1996Equprof.
+Cette fonction calcule l’abondance des géniteurs à l’équilibre et les prises à l’équilibre selon les hypothèses suivantes : 1) aucune variabilité du processus de recrutement ou d’âge à la montaison (tous les v_{y,j} sont à 0); 2) toutes les populations sont exploitées à des taux d’exploitation égaux; 3) le même taux d’exploitation est utilisé année après année; 4) la productivité des stocks constituants est stable dans le temps; 5) il n’y a pas d’autres sources importantes de mortalité (p. ex. aucune mortalité pendant la montaison, aucune mortalité avant la fraie). Fonction élaborée à partir du code partagé par Brendan Connors (MPO), mettant en œuvre l’approche de @SchnuteKronlund1996Equprof.
 
-The main functions handles inputs, settings for the calculations, and outputs:
+La fonction principale traite les intrants, les paramètres pour les calculs et les extrants :
+
+
 
 ```{r, eval=F, echo=T}
 #' calcAggEqProf
@@ -709,7 +714,7 @@ return(list(summary.stk = out.summary.stk, summary.agg = out.summary.agg))
 }
 ```
 
-The core calculations are done in  subroutine:
+Les calculs de base sont effectués dans le sous-programme :
 
 ```{r, eval=F, echo=T}
 
