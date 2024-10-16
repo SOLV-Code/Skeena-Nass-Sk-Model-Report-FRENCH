@@ -89,113 +89,113 @@
 \contentsline {subsubsection}{\numberline {3.10.2}Autres approches d'expansion}{185}{subsubsection.0.3.10.2}%
 \contentsline {section}{\numberline {4}DISCUSSION}{188}{section.0.4}%
 \contentsline {subsection}{\numberline {4.1}PRINCIPALES CONSIDÉRATIONS}{188}{subsection.0.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Enhanced Production}{188}{subsubsection.0.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Production issue de la mise en valeur}{188}{subsubsection.0.4.1.1}%
 \contentsline {subsubsection}{\numberline {4.1.2}Diversité des populations de saumon}{190}{subsubsection.0.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Time-varying Productivity}{191}{subsubsection.0.4.1.3}%
-\contentsline {subsection}{\numberline {4.2}KEY CONCLUSIONS}{193}{subsection.0.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Alternative SR Model Fits and Productivity Scenarios}{193}{subsubsection.0.4.2.1}%
-\contentsline {paragraph}{\numberline {4.2.1.1}Alternative SR Model Forms}{193}{paragraph.0.4.2.1.1}%
-\contentsline {paragraph}{\numberline {4.2.1.2}Biological Benchmarks}{194}{paragraph.0.4.2.1.2}%
-\contentsline {paragraph}{\numberline {4.2.1.3}Comparing Single-stock and Aggregate Model Fits}{195}{paragraph.0.4.2.1.3}%
-\contentsline {paragraph}{\numberline {4.2.1.4}Comparing Single-stock and Hierarchical SR Model Fits}{195}{paragraph.0.4.2.1.4}%
-\contentsline {subsubsection}{\numberline {4.2.2}Alternative Approaches for Developing Aggregate Management Reference Points}{196}{subsubsection.0.4.2.2}%
-\contentsline {paragraph}{\numberline {4.2.2.1}Requirements for the Escapement Goal Review}{196}{paragraph.0.4.2.2.1}%
-\contentsline {paragraph}{\numberline {4.2.2.2}Requirements for Regional Salmon Initiatives}{197}{paragraph.0.4.2.2.2}%
-\contentsline {subsection}{\numberline {4.3}PRIORITIES FOR FUTURE WORK}{198}{subsection.0.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Objectives}{198}{subsubsection.0.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Data}{199}{subsubsection.0.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}Spawner-recruit Modelling and Productivity Scenarios}{199}{subsubsection.0.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.4}Enhanced Pinkut and Fulton}{200}{subsubsection.0.4.3.4}%
-\contentsline {subsubsection}{\numberline {4.3.5}Incorporating Biological Considerations in Aggregate Management Reference Points}{201}{subsubsection.0.4.3.5}%
-\contentsline {section}{REFERENCES CITED}{202}{section*.5}%
+\contentsline {subsubsection}{\numberline {4.1.3}Productivité variable dans le temps}{191}{subsubsection.0.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}PRINCIPALES CONCLUSIONS}{194}{subsection.0.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Autres ajustements du modèle géniteurs-recrues et scénarios de productivité}{194}{subsubsection.0.4.2.1}%
+\contentsline {paragraph}{\numberline {4.2.1.1}Autres formes du modèle géniteurs-recrues}{194}{paragraph.0.4.2.1.1}%
+\contentsline {paragraph}{\numberline {4.2.1.2}Points de référence biologiques}{194}{paragraph.0.4.2.1.2}%
+\contentsline {paragraph}{\numberline {4.2.1.3}Comparaison des ajustements du modèle pour un seul stock et pour les regroupements}{196}{paragraph.0.4.2.1.3}%
+\contentsline {paragraph}{\numberline {4.2.1.4}Comparaison des ajustements du modèle géniteurs-recrues à un seul stock et hiérarchique}{196}{paragraph.0.4.2.1.4}%
+\contentsline {subsubsection}{\numberline {4.2.2}Approches de rechange afin d'élaborer des points de référence biologiques pour les regroupements}{197}{subsubsection.0.4.2.2}%
+\contentsline {paragraph}{\numberline {4.2.2.1}Besoins pour l'examen des objectifs d'échappée}{198}{paragraph.0.4.2.2.1}%
+\contentsline {paragraph}{\numberline {4.2.2.2}Besoins pour les initiatives régionales relatives au saumon}{199}{paragraph.0.4.2.2.2}%
+\contentsline {subsection}{\numberline {4.3}PRIORITÉS POUR LES TRAVAUX FUTURS}{199}{subsection.0.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Objectifs}{200}{subsubsection.0.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Données}{200}{subsubsection.0.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Modélisation des géniteurs-recrues et scénarios de productivité}{201}{subsubsection.0.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Stocks mis en valeur du Ruisseau Pinkut et de la rivière Fulton}{202}{subsubsection.0.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.5}Intégration des considérations biologiques dans les points de référence de gestion pour les regroupements}{203}{subsubsection.0.4.3.5}%
+\contentsline {section}{REFERENCES CITED}{205}{section*.5}%
 \setcounter {tocdepth}{0}
-\contentsline {chapter}{APPENDIX~A. TECHNICAL PROCESS PARTICIPANTS}{211}{section*.7}%
-\contentsline {chapter}{APPENDIX~B. CHARACTERISTICS of ALTERNATIVE APPROACHES FOR DEVELOPING AGGREGATE MANAGEMENT REFERENCE POINTS}{213}{section*.9}%
-\contentsline {chapter}{APPENDIX~C. CUSTOM R PACKAGES AND FUNCTIONS}{223}{section*.11}%
-\contentsline {section}{\numberline {C.1}\emph {RapidRicker} Package}{223}{section.C.1}%
-\contentsline {subsection}{\numberline {C.1.1}Purpose}{223}{subsection.C.1.1}%
-\contentsline {subsection}{\numberline {C.1.2}Setting Up}{223}{subsection.C.1.2}%
-\contentsline {subsection}{\numberline {C.1.3}Run the Data Check}{223}{subsection.C.1.3}%
-\contentsline {subsection}{\numberline {C.1.4}Test the Simple Deterministic Ricker Fits}{224}{subsection.C.1.4}%
-\contentsline {subsection}{\numberline {C.1.5}Test the Bayesian Fits}{224}{subsection.C.1.5}%
-\contentsline {section}{\numberline {C.2}JAGS Code for single-stock SR model fits}{225}{section.C.2}%
-\contentsline {subsection}{\numberline {C.2.1}JAGS Code for Basic Ricker Model}{225}{subsection.C.2.1}%
-\contentsline {subsection}{\numberline {C.2.2}JAGS Code for AR1 Ricker Model}{226}{subsection.C.2.2}%
-\contentsline {subsection}{\numberline {C.2.3}JAGS Code for Recursive Bayes Ricker Model with Time-varying Productivity}{227}{subsection.C.2.3}%
-\contentsline {section}{\numberline {C.3}Benchmark calculation functions}{228}{section.C.3}%
-\contentsline {subsection}{\numberline {C.3.1}R Code for Smsy Calculation}{228}{subsection.C.3.1}%
-\contentsline {subsection}{\numberline {C.3.2}R Code for Sgen Calculation}{230}{subsection.C.3.2}%
-\contentsline {section}{\numberline {C.4}ER-based equlibrium profile functions}{234}{section.C.4}%
-\contentsline {chapter}{APPENDIX~D. HIERARCHICAL BAYESIAN MODEL (HBM) OF SOCKEYE SALMON STOCK-RECRUIT DATA IN THE SKEENA RIVER SYSTEMS}{238}{section*.13}%
-\contentsline {section}{\numberline {D.1}Mathematical and Statistical Formulation of the HBM}{238}{section.D.1}%
-\contentsline {section}{\numberline {D.2}Model Fitting}{241}{section.D.2}%
-\contentsline {section}{\numberline {D.3}Sensitivity Analyses}{242}{section.D.3}%
-\contentsline {section}{\numberline {D.4}Results}{243}{section.D.4}%
-\contentsline {subsection}{\numberline {D.4.1}Shrinkage in the Ricker \(a\) Parameter in Going From a Non-HBM to an HBM}{243}{subsection.D.4.1}%
-\contentsline {subsection}{\numberline {D.4.2}Common Shared Year Effect}{244}{subsection.D.4.2}%
-\contentsline {subsection}{\numberline {D.4.3}Sensitivity Run 1: Effect of Korman and English's (2013) Coding Error for their HBM}{248}{subsection.D.4.3}%
-\contentsline {subsection}{\numberline {D.4.4}Sensitivity Run 2: Same as HBM Base Case But With No Prior Lower Bound on the Ricker \(\beta \) Parameter}{249}{subsection.D.4.4}%
-\contentsline {subsection}{\numberline {D.4.5}Sensitivity Run 3: Same as HBM Base Case But Leaving Out Common Shared Year Effects}{251}{subsection.D.4.5}%
-\contentsline {subsection}{\numberline {D.4.6}Sensitivity Run 4: Non-Hierarchical Model Run With No Common Shared Year Effect But Including the Same \(S_\textrm {max}\) Prior Information As in the Base Case HBM}{253}{subsection.D.4.6}%
-\contentsline {subsection}{\numberline {D.4.7}Sensitivity Run 5: Normal Priors on Smax in the HBM Instead of the Lognormal Prior on Ricker \(\beta \)}{255}{subsection.D.4.7}%
-\contentsline {subsection}{\numberline {D.4.8}Sensitivity Run 6: Application of Vague Ricker \(\beta \) Priors in the HBM, but Including the Prior Lower Bound on \(\beta \)}{257}{subsection.D.4.8}%
-\contentsline {subsection}{\numberline {D.4.9}Sensitivity Runs 7-25. Leave Out Stock-Recruit Data in the HBM, One Stock at a Time}{259}{subsection.D.4.9}%
-\contentsline {subsection}{\numberline {D.4.10}Sensitivity Run 26: Removal of Enhanced Stocks and Vague Ricker \(\beta \) Priors for Select Stocks}{262}{subsection.D.4.10}%
-\contentsline {section}{\numberline {D.5}Summary}{263}{section.D.5}%
-\contentsline {chapter}{APPENDIX~E. SENSITIVITY TESTS: DATA TREATMENT AND BENCHMARK CALCULATIONS}{265}{section*.15}%
-\contentsline {section}{\numberline {E.1}Spawner-Recruit Data Filtering and Infilling}{265}{section.E.1}%
-\contentsline {subsection}{\numberline {E.1.1}Purpose}{265}{subsection.E.1.1}%
-\contentsline {subsection}{\numberline {E.1.2}Methods}{265}{subsection.E.1.2}%
-\contentsline {subsection}{\numberline {E.1.3}Results}{265}{subsection.E.1.3}%
-\contentsline {subsection}{\numberline {E.1.4}Conclusions}{266}{subsection.E.1.4}%
-\contentsline {section}{\numberline {E.2}Infilling with a Generic State-Space Model}{267}{section.E.2}%
-\contentsline {subsection}{\numberline {E.2.1}Purpose}{267}{subsection.E.2.1}%
-\contentsline {subsection}{\numberline {E.2.2}Methods}{268}{subsection.E.2.2}%
-\contentsline {subsection}{\numberline {E.2.3}Results}{268}{subsection.E.2.3}%
-\contentsline {subsection}{\numberline {E.2.4}Conclusions}{269}{subsection.E.2.4}%
-\contentsline {section}{\numberline {E.3}Test of Alternative Benchmark Calculation Approaches}{272}{section.E.3}%
-\contentsline {subsection}{\numberline {E.3.1}Purpose}{272}{subsection.E.3.1}%
-\contentsline {subsection}{\numberline {E.3.2}Alternative Smsy Calculations}{272}{subsection.E.3.2}%
-\contentsline {subsection}{\numberline {E.3.3}Alternative Sgen Calculations}{272}{subsection.E.3.3}%
-\contentsline {subsection}{\numberline {E.3.4}Tests}{273}{subsection.E.3.4}%
-\contentsline {subsection}{\numberline {E.3.5}Results}{273}{subsection.E.3.5}%
-\contentsline {subsection}{\numberline {E.3.6}Conclusions}{273}{subsection.E.3.6}%
-\contentsline {section}{\numberline {E.4}EFFECT OF BIAS CORRECTION ON BENCHMARK ESTIMATES}{275}{section.E.4}%
-\contentsline {subsection}{\numberline {E.4.1}Purpose}{275}{subsection.E.4.1}%
-\contentsline {subsection}{\numberline {E.4.2}Approach}{275}{subsection.E.4.2}%
-\contentsline {subsection}{\numberline {E.4.3}Results}{275}{subsection.E.4.3}%
-\contentsline {subsection}{\numberline {E.4.4}Conclusions}{275}{subsection.E.4.4}%
-\contentsline {chapter}{APPENDIX~F. SIMULATION MODEL EXTENSIONS}{280}{section*.17}%
-\contentsline {section}{\numberline {F.1}OUTCOME UNCERTAINTY}{280}{section.F.1}%
-\contentsline {subsection}{\numberline {F.1.1}Introduction}{280}{subsection.F.1.1}%
-\contentsline {subsection}{\numberline {F.1.2}Historical Patterns in Aggregate Exploitation Rate and Harvest}{280}{subsection.F.1.2}%
-\contentsline {subsection}{\numberline {F.1.3}Estimating Aggregate-level Outcome Uncertainty from Historical Patterns}{281}{subsection.F.1.3}%
-\contentsline {subsection}{\numberline {F.1.4}Historical Differences between Aggregate-level and Stock-level ER}{286}{subsection.F.1.4}%
-\contentsline {subsection}{\numberline {F.1.5}Model Implementation of Aggregate and Stock-level ER Scalars}{292}{subsection.F.1.5}%
-\contentsline {section}{\numberline {F.2}MODELLING COVARIATION IN PRODUCTIVITY}{294}{section.F.2}%
-\contentsline {subsection}{\numberline {F.2.1}Concepts}{294}{subsection.F.2.1}%
-\contentsline {subsection}{\numberline {F.2.2}Estimating Historical Covariation in Productivity}{294}{subsection.F.2.2}%
-\contentsline {subsection}{\numberline {F.2.3}Model Implementation of Covariation in Productivity}{296}{subsection.F.2.3}%
-\contentsline {chapter}{APPENDIX~G. BIAS-CORRECTED BENCHMARK ESTIMATES}{297}{section*.19}%
-\contentsline {section}{\numberline {G.1}Nass Summary Tables - Bias Corrected}{297}{section.G.1}%
-\contentsline {subsection}{\numberline {G.1.1}Nass Smsy}{297}{subsection.G.1.1}%
-\contentsline {subsection}{\numberline {G.1.2}Nass Sgen}{298}{subsection.G.1.2}%
-\contentsline {subsection}{\numberline {G.1.3}Nass Umsy}{299}{subsection.G.1.3}%
-\contentsline {section}{\numberline {G.2}Skeena Wild Summary Tables - Bias Corrected}{300}{section.G.2}%
-\contentsline {subsection}{\numberline {G.2.1}Skeena Wild Smsy}{300}{subsection.G.2.1}%
-\contentsline {subsection}{\numberline {G.2.2}Skeena Wild Sgen}{302}{subsection.G.2.2}%
-\contentsline {subsection}{\numberline {G.2.3}Skeena Wild Umsy}{304}{subsection.G.2.3}%
-\contentsline {chapter}{APPENDIX~H. REVIEW OF WILD AND BLDP-ENHANCED BABINE SOCKEYE PRODUCTION}{306}{section*.21}%
-\contentsline {section}{\numberline {H.1}Context}{306}{section.H.1}%
-\contentsline {section}{\numberline {H.2}Babine Sockeye Stocks}{306}{section.H.2}%
-\contentsline {section}{\numberline {H.3}Babine Lake Development Project}{311}{section.H.3}%
-\contentsline {subsection}{\numberline {H.3.1}History}{311}{subsection.H.3.1}%
-\contentsline {subsection}{\numberline {H.3.2}Channel Loading}{312}{subsection.H.3.2}%
-\contentsline {section}{\numberline {H.4}Available biological information for wild and enhanced Babine Sockeye}{313}{section.H.4}%
-\contentsline {subsection}{\numberline {H.4.1}Age Sampling}{313}{subsection.H.4.1}%
-\contentsline {subsection}{\numberline {H.4.2}Body Size}{313}{subsection.H.4.2}%
-\contentsline {subsection}{\numberline {H.4.3}Fecundity}{313}{subsection.H.4.3}%
-\contentsline {subsection}{\numberline {H.4.4}Egg Deposition and Fry Production}{314}{subsection.H.4.4}%
-\contentsline {subsection}{\numberline {H.4.5}Smolts}{316}{subsection.H.4.5}%
-\contentsline {subsection}{\numberline {H.4.6}Limnology of Babine Lake}{318}{subsection.H.4.6}%
-\contentsline {chapter}{APPENDIX~I. SR MODEL FITTING RESULTS AND BIOLOGICAL BENCHMARK ESTIMATES FOR ENHANCED PINKUT AND FULTON}{321}{section*.23}%
+\contentsline {chapter}{APPENDIX~A. TECHNICAL PROCESS PARTICIPANTS}{214}{section*.7}%
+\contentsline {chapter}{APPENDIX~B. CHARACTERISTICS of ALTERNATIVE APPROACHES FOR DEVELOPING AGGREGATE MANAGEMENT REFERENCE POINTS}{216}{section*.9}%
+\contentsline {chapter}{APPENDIX~C. CUSTOM R PACKAGES AND FUNCTIONS}{226}{section*.11}%
+\contentsline {section}{\numberline {C.1}\emph {RapidRicker} Package}{226}{section.C.1}%
+\contentsline {subsection}{\numberline {C.1.1}Purpose}{226}{subsection.C.1.1}%
+\contentsline {subsection}{\numberline {C.1.2}Setting Up}{226}{subsection.C.1.2}%
+\contentsline {subsection}{\numberline {C.1.3}Run the Data Check}{226}{subsection.C.1.3}%
+\contentsline {subsection}{\numberline {C.1.4}Test the Simple Deterministic Ricker Fits}{227}{subsection.C.1.4}%
+\contentsline {subsection}{\numberline {C.1.5}Test the Bayesian Fits}{227}{subsection.C.1.5}%
+\contentsline {section}{\numberline {C.2}JAGS Code for single-stock SR model fits}{228}{section.C.2}%
+\contentsline {subsection}{\numberline {C.2.1}JAGS Code for Basic Ricker Model}{228}{subsection.C.2.1}%
+\contentsline {subsection}{\numberline {C.2.2}JAGS Code for AR1 Ricker Model}{229}{subsection.C.2.2}%
+\contentsline {subsection}{\numberline {C.2.3}JAGS Code for Recursive Bayes Ricker Model with Time-varying Productivity}{230}{subsection.C.2.3}%
+\contentsline {section}{\numberline {C.3}Benchmark calculation functions}{231}{section.C.3}%
+\contentsline {subsection}{\numberline {C.3.1}R Code for Smsy Calculation}{231}{subsection.C.3.1}%
+\contentsline {subsection}{\numberline {C.3.2}R Code for Sgen Calculation}{233}{subsection.C.3.2}%
+\contentsline {section}{\numberline {C.4}ER-based equlibrium profile functions}{237}{section.C.4}%
+\contentsline {chapter}{APPENDIX~D. HIERARCHICAL BAYESIAN MODEL (HBM) OF SOCKEYE SALMON STOCK-RECRUIT DATA IN THE SKEENA RIVER SYSTEMS}{241}{section*.13}%
+\contentsline {section}{\numberline {D.1}Mathematical and Statistical Formulation of the HBM}{241}{section.D.1}%
+\contentsline {section}{\numberline {D.2}Model Fitting}{244}{section.D.2}%
+\contentsline {section}{\numberline {D.3}Sensitivity Analyses}{245}{section.D.3}%
+\contentsline {section}{\numberline {D.4}Results}{246}{section.D.4}%
+\contentsline {subsection}{\numberline {D.4.1}Shrinkage in the Ricker \(a\) Parameter in Going From a Non-HBM to an HBM}{246}{subsection.D.4.1}%
+\contentsline {subsection}{\numberline {D.4.2}Common Shared Year Effect}{247}{subsection.D.4.2}%
+\contentsline {subsection}{\numberline {D.4.3}Sensitivity Run 1: Effect of Korman and English's (2013) Coding Error for their HBM}{251}{subsection.D.4.3}%
+\contentsline {subsection}{\numberline {D.4.4}Sensitivity Run 2: Same as HBM Base Case But With No Prior Lower Bound on the Ricker \(\beta \) Parameter}{252}{subsection.D.4.4}%
+\contentsline {subsection}{\numberline {D.4.5}Sensitivity Run 3: Same as HBM Base Case But Leaving Out Common Shared Year Effects}{254}{subsection.D.4.5}%
+\contentsline {subsection}{\numberline {D.4.6}Sensitivity Run 4: Non-Hierarchical Model Run With No Common Shared Year Effect But Including the Same \(S_\textrm {max}\) Prior Information As in the Base Case HBM}{256}{subsection.D.4.6}%
+\contentsline {subsection}{\numberline {D.4.7}Sensitivity Run 5: Normal Priors on Smax in the HBM Instead of the Lognormal Prior on Ricker \(\beta \)}{258}{subsection.D.4.7}%
+\contentsline {subsection}{\numberline {D.4.8}Sensitivity Run 6: Application of Vague Ricker \(\beta \) Priors in the HBM, but Including the Prior Lower Bound on \(\beta \)}{260}{subsection.D.4.8}%
+\contentsline {subsection}{\numberline {D.4.9}Sensitivity Runs 7-25. Leave Out Stock-Recruit Data in the HBM, One Stock at a Time}{262}{subsection.D.4.9}%
+\contentsline {subsection}{\numberline {D.4.10}Sensitivity Run 26: Removal of Enhanced Stocks and Vague Ricker \(\beta \) Priors for Select Stocks}{265}{subsection.D.4.10}%
+\contentsline {section}{\numberline {D.5}Summary}{266}{section.D.5}%
+\contentsline {chapter}{APPENDIX~E. SENSITIVITY TESTS: DATA TREATMENT AND BENCHMARK CALCULATIONS}{268}{section*.15}%
+\contentsline {section}{\numberline {E.1}Spawner-Recruit Data Filtering and Infilling}{268}{section.E.1}%
+\contentsline {subsection}{\numberline {E.1.1}Purpose}{268}{subsection.E.1.1}%
+\contentsline {subsection}{\numberline {E.1.2}Methods}{268}{subsection.E.1.2}%
+\contentsline {subsection}{\numberline {E.1.3}Results}{268}{subsection.E.1.3}%
+\contentsline {subsection}{\numberline {E.1.4}Conclusions}{269}{subsection.E.1.4}%
+\contentsline {section}{\numberline {E.2}Infilling with a Generic State-Space Model}{270}{section.E.2}%
+\contentsline {subsection}{\numberline {E.2.1}Purpose}{270}{subsection.E.2.1}%
+\contentsline {subsection}{\numberline {E.2.2}Methods}{271}{subsection.E.2.2}%
+\contentsline {subsection}{\numberline {E.2.3}Results}{271}{subsection.E.2.3}%
+\contentsline {subsection}{\numberline {E.2.4}Conclusions}{272}{subsection.E.2.4}%
+\contentsline {section}{\numberline {E.3}Test of Alternative Benchmark Calculation Approaches}{275}{section.E.3}%
+\contentsline {subsection}{\numberline {E.3.1}Purpose}{275}{subsection.E.3.1}%
+\contentsline {subsection}{\numberline {E.3.2}Alternative Smsy Calculations}{275}{subsection.E.3.2}%
+\contentsline {subsection}{\numberline {E.3.3}Alternative Sgen Calculations}{275}{subsection.E.3.3}%
+\contentsline {subsection}{\numberline {E.3.4}Tests}{276}{subsection.E.3.4}%
+\contentsline {subsection}{\numberline {E.3.5}Results}{276}{subsection.E.3.5}%
+\contentsline {subsection}{\numberline {E.3.6}Conclusions}{276}{subsection.E.3.6}%
+\contentsline {section}{\numberline {E.4}EFFECT OF BIAS CORRECTION ON BENCHMARK ESTIMATES}{278}{section.E.4}%
+\contentsline {subsection}{\numberline {E.4.1}Purpose}{278}{subsection.E.4.1}%
+\contentsline {subsection}{\numberline {E.4.2}Approach}{278}{subsection.E.4.2}%
+\contentsline {subsection}{\numberline {E.4.3}Results}{278}{subsection.E.4.3}%
+\contentsline {subsection}{\numberline {E.4.4}Conclusions}{278}{subsection.E.4.4}%
+\contentsline {chapter}{APPENDIX~F. SIMULATION MODEL EXTENSIONS}{283}{section*.17}%
+\contentsline {section}{\numberline {F.1}OUTCOME UNCERTAINTY}{283}{section.F.1}%
+\contentsline {subsection}{\numberline {F.1.1}Introduction}{283}{subsection.F.1.1}%
+\contentsline {subsection}{\numberline {F.1.2}Historical Patterns in Aggregate Exploitation Rate and Harvest}{283}{subsection.F.1.2}%
+\contentsline {subsection}{\numberline {F.1.3}Estimating Aggregate-level Outcome Uncertainty from Historical Patterns}{284}{subsection.F.1.3}%
+\contentsline {subsection}{\numberline {F.1.4}Historical Differences between Aggregate-level and Stock-level ER}{289}{subsection.F.1.4}%
+\contentsline {subsection}{\numberline {F.1.5}Model Implementation of Aggregate and Stock-level ER Scalars}{295}{subsection.F.1.5}%
+\contentsline {section}{\numberline {F.2}MODELLING COVARIATION IN PRODUCTIVITY}{297}{section.F.2}%
+\contentsline {subsection}{\numberline {F.2.1}Concepts}{297}{subsection.F.2.1}%
+\contentsline {subsection}{\numberline {F.2.2}Estimating Historical Covariation in Productivity}{297}{subsection.F.2.2}%
+\contentsline {subsection}{\numberline {F.2.3}Model Implementation of Covariation in Productivity}{299}{subsection.F.2.3}%
+\contentsline {chapter}{APPENDIX~G. BIAS-CORRECTED BENCHMARK ESTIMATES}{300}{section*.19}%
+\contentsline {section}{\numberline {G.1}Nass Summary Tables - Bias Corrected}{300}{section.G.1}%
+\contentsline {subsection}{\numberline {G.1.1}Nass Smsy}{300}{subsection.G.1.1}%
+\contentsline {subsection}{\numberline {G.1.2}Nass Sgen}{301}{subsection.G.1.2}%
+\contentsline {subsection}{\numberline {G.1.3}Nass Umsy}{302}{subsection.G.1.3}%
+\contentsline {section}{\numberline {G.2}Skeena Wild Summary Tables - Bias Corrected}{303}{section.G.2}%
+\contentsline {subsection}{\numberline {G.2.1}Skeena Wild Smsy}{303}{subsection.G.2.1}%
+\contentsline {subsection}{\numberline {G.2.2}Skeena Wild Sgen}{305}{subsection.G.2.2}%
+\contentsline {subsection}{\numberline {G.2.3}Skeena Wild Umsy}{307}{subsection.G.2.3}%
+\contentsline {chapter}{APPENDIX~H. REVIEW OF WILD AND BLDP-ENHANCED BABINE SOCKEYE PRODUCTION}{309}{section*.21}%
+\contentsline {section}{\numberline {H.1}Context}{309}{section.H.1}%
+\contentsline {section}{\numberline {H.2}Babine Sockeye Stocks}{309}{section.H.2}%
+\contentsline {section}{\numberline {H.3}Babine Lake Development Project}{314}{section.H.3}%
+\contentsline {subsection}{\numberline {H.3.1}History}{314}{subsection.H.3.1}%
+\contentsline {subsection}{\numberline {H.3.2}Channel Loading}{315}{subsection.H.3.2}%
+\contentsline {section}{\numberline {H.4}Available biological information for wild and enhanced Babine Sockeye}{316}{section.H.4}%
+\contentsline {subsection}{\numberline {H.4.1}Age Sampling}{316}{subsection.H.4.1}%
+\contentsline {subsection}{\numberline {H.4.2}Body Size}{316}{subsection.H.4.2}%
+\contentsline {subsection}{\numberline {H.4.3}Fecundity}{316}{subsection.H.4.3}%
+\contentsline {subsection}{\numberline {H.4.4}Egg Deposition and Fry Production}{317}{subsection.H.4.4}%
+\contentsline {subsection}{\numberline {H.4.5}Smolts}{319}{subsection.H.4.5}%
+\contentsline {subsection}{\numberline {H.4.6}Limnology of Babine Lake}{321}{subsection.H.4.6}%
+\contentsline {chapter}{APPENDIX~I. SR MODEL FITTING RESULTS AND BIOLOGICAL BENCHMARK ESTIMATES FOR ENHANCED PINKUT AND FULTON}{324}{section*.23}%
