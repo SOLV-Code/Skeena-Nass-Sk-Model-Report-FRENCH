@@ -8,11 +8,9 @@ After that, all subsequent sections will be turned into appendices. -->
 
 
 
-# TECHNICAL PROCESS PARTICIPANTS  {#app:TWG}
+# PARTICIPANTS AU PROCESSUS TECHNIQUE {#app:TWG}
 
-
-The TWG consists of members from Fisheries and Oceans Canada, North Coast Area First Nations, Pacific Salmon Foundation, and consulting organizations (Table \@ref(tab:TWGTable)). Two independent reviewers were appointed by Canada and Alaska (Table \@ref(tab:ReviewersTable)).
-
+Le groupe de travail technique est composé de membres du MPO, des Premières Nations de la région de la côte nord, de la Fondation du saumon du Pacifique et d’organisations de consultation (tableau \@ref(tab:TWGTable)). Deux examinateurs indépendants ont été nommés par le Canada et l’Alaska (tableau \@ref(tab:ReviewersTable)).
 
 
 ```{r TWGTable, echo = FALSE, results = "asis"}
@@ -27,7 +25,7 @@ twg.df <- particpants.src %>%
 
   
 csasdown::csas_table(twg.df,
-  caption = "Members of the Technical Working Group (TWG).",
+  caption = "Membres du groupe de travail technique (GTT).",
   format = "latex",
   #landscape = FALSE,
   font_size = 10) %>%
@@ -52,7 +50,7 @@ reviewers.df <- particpants.src %>%
 
   
 csasdown::csas_table(reviewers.df ,
-  caption = "Independent reviewers for the escapement goal review.",
+  caption = "Examinateurs indépendants pour l’examen des objectifs d’échappée.",
   format = "latex",
   #landscape = FALSE,
   font_size = 10) %>%
@@ -67,20 +65,31 @@ csasdown::csas_table(reviewers.df ,
 
 
 \clearpage
-# CHARACTERISTICS of ALTERNATIVE APPROACHES FOR DEVELOPING AGGREGATE MANAGEMENT REFERENCE POINTS {#AggregationAppendix}
+# CARACTÉRISTIQUES DES APPROCHES DE RECHANGE AFIN D’ÉLABORER DES POINTS DE RÉFÉRENCE DE GESTION POUR LES REGROUPEMENTS {#AggregationAppendix}
 
-This appendix includes one table for each of the alternative aggregation methods. All tables have the same structure: for each criterion, there is a single rating in all capitals (YES/NO/MAYBE), followed by a brief rationale. Table  \@ref(tab:TableAltApproaches) describes the aggregation methods. Table \@ref(tab:TableCriteria) describes the criteria. Table \@ref(tab:TableSummary) summarizes the results across aggregation methods.
+Cette annexe contient un tableau pour chacune des méthodes de regroupement. Tous les tableaux ont la même structure : pour chaque critère, il y a une seule notation en majuscules (OUI/NON/PEUT-ÊTRE), suivie d’une brève justification. Le tableau \@ref(tab:TableAltApproaches) décrit les méthodes de regroupement. Le tableau \@ref(tab:TableCriteria) décrit les critères. Le tableau Table \@ref(tab:TableSummary) récapitule les résultats des méthodes de regroupement.
+
+
 
 
 
 \clearpage
-(ref:TableCriteriaAggSmsy) Rationale for criteria ratings – Aggregate Smsy estimate. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+(ref:TableCriteriaAggSmsy) Justification des notations des critères – Estimation de Srmd pour le regroupement. La notation sommaire de chaque critère est fondée sur la mise en œuvre actuelle de l’exemple dans le présent document de recherche. OUI signifie que l’exemple actuel répond au critère. PEUT-ÊTRE signifie que l’exemple actuel pourrait être modifié ou étendu pour répondre au critère, selon le temps et les ressources. NON signifie que cette approche de regroupement ne permet pas de satisfaire à ce critère. Pour la contrainte temporelle, COURT signifie que le processus peut être appliqué immédiatement aux estimations des paramètres géniteurs-recrues. MOYEN signifie qu’au moins six mois seront nécessaires pour élaborer le processus (p. ex. choisir les objectifs quantitatifs) ou la méthode (p. ex. en attendant la publication de lignes directrices, suivie d’un examen de la mise en œuvre). LONG signifie qu’un processus pluriannuel est probablement nécessaire pour une mise en œuvre complète.
 
 ```{r TableCriteriaAggSmsy, echo = FALSE, results = "asis"}
 
 
 
-criteria.table.src <- read_csv("data/AggregationApproachTables/AggregationTable_AppendixDetails.csv")
+#criteria.table.src <- read.csv("data/AggregationApproachTables/AggregationTable_AppendixDetails.csv",
+#						stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM")
+
+
+criteria.table.src <- read_csv("data/AggregationApproachTables/AggregationTable_AppendixDetails.csv",
+	locale=locale(encoding="latin1") )
+	
+# special fix need for one symbol	
+criteria.table.src$Critère <- str_replace_all(criteria.table.src$Critère, c( "\u009c" = "œ") )	
+criteria.table.src$Commentaire <- str_replace_all(criteria.table.src$Commentaire, c( "\u009c" = "œ") )
 
 table.in <- criteria.table.src %>% dplyr::filter(Method == "Agg Smsy") %>% select(-Method)
 
@@ -104,7 +113,7 @@ table.in  %>%
 
 
 \clearpage
-(ref:TableCriteriaSumSmsy) Rationale for criteria ratings – Sum of stock-level Smsy estimates. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+(ref:TableCriteriaSumSmsy) Justification des notations des critères – Somme des estimations de Srmd au niveau du stock. La notation sommaire de chaque critère est fondée sur la mise en œuvre actuelle de l’exemple dans le présent document de recherche. OUI signifie que l’exemple actuel répond au critère. PEUT-ÊTRE signifie que l’exemple actuel pourrait être modifié ou étendu pour répondre au critère, selon le temps et les ressources. NON signifie que cette approche de regroupement ne permet pas de satisfaire à ce critère. Pour la contrainte temporelle, COURT signifie que le processus peut être appliqué immédiatement aux estimations des paramètres géniteurs-recrues. MOYEN signifie qu’au moins six mois seront nécessaires pour élaborer le processus (p. ex. choisir les objectifs quantitatifs) ou la méthode (p. ex. en attendant la publication de lignes directrices, suivie d’un examen de la mise en œuvre). LONG signifie qu’un processus pluriannuel est probablement nécessaire pour une mise en œuvre complète.
 
 ```{r TableCriteriaSumSmsy, echo = FALSE, results = "asis"}
 
@@ -130,7 +139,7 @@ table.in  %>%
 
 
 \clearpage
-(ref:TableCriteriaUmsyComp) Rationale for criteria ratings – Comparison of stock-level Umsy estimates. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+(ref:TableCriteriaUmsyComp) Justification des notations des critères – Comparaison des estimations de Urmd au niveau du stock. La notation sommaire de chaque critère est fondée sur la mise en œuvre actuelle de l’exemple dans le présent document de recherche. OUI signifie que l’exemple actuel répond au critère. PEUT-ÊTRE signifie que l’exemple actuel pourrait être modifié ou étendu pour répondre au critère, selon le temps et les ressources. NON signifie que cette approche de regroupement ne permet pas de satisfaire à ce critère. Pour la contrainte temporelle, COURT signifie que le processus peut être appliqué immédiatement aux estimations des paramètres géniteurs-recrues. MOYEN signifie qu’au moins six mois seront nécessaires pour élaborer le processus (p. ex. choisir les objectifs quantitatifs) ou la méthode (p. ex. en attendant la publication de lignes directrices, suivie d’un examen de la mise en œuvre). LONG signifie qu’un processus pluriannuel est probablement nécessaire pour une mise en œuvre complète.
 
 ```{r TableCriteriaUmsyComp, echo = FALSE, results = "asis"}
 
@@ -157,7 +166,7 @@ table.in  %>%
 
 
 \clearpage
-(ref:TableCriteriaSpnStkEquProf) Rationale for criteria ratings – Stock-level equilibrium profiles based on fixed escapement targets. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+(ref:TableCriteriaSpnStkEquProf) Justification des notations des critères – Profils d’équilibre au niveau du stock fondés sur des objectifs d’échappée fixe. La notation sommaire de chaque critère est fondée sur la mise en œuvre actuelle de l’exemple dans le présent document de recherche. OUI signifie que l’exemple actuel répond au critère. PEUT-ÊTRE signifie que l’exemple actuel pourrait être modifié ou étendu pour répondre au critère, selon le temps et les ressources. NON signifie que cette approche de regroupement ne permet pas de satisfaire à ce critère. Pour la contrainte temporelle, COURT signifie que le processus peut être appliqué immédiatement aux estimations des paramètres géniteurs-recrues. MOYEN signifie qu’au moins six mois seront nécessaires pour élaborer le processus (p. ex. choisir les objectifs quantitatifs) ou la méthode (p. ex. en attendant la publication de lignes directrices, suivie d’un examen de la mise en œuvre). LONG signifie qu’un processus pluriannuel est probablement nécessaire pour une mise en œuvre complète.
 
 ```{r TableCriteriaSpnStkEquProf, echo = FALSE, results = "asis"}
 
@@ -183,7 +192,7 @@ table.in  %>%
 
 
 \clearpage
-(ref:TableCriteriaERAggEquProf) Rationale for criteria ratings – Aggregate-level equilibrium profiles based on fixed exploitation rate targets. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+(ref:TableCriteriaERAggEquProf) Justification des notations des critères – Profils d’équilibre au niveau du regroupement fondés sur des objectifs de taux d’exploitation fixes. La notation sommaire de chaque critère est fondée sur la mise en œuvre actuelle de l’exemple dans le présent document de recherche. OUI signifie que l’exemple actuel répond au critère. PEUT-ÊTRE signifie que l’exemple actuel pourrait être modifié ou étendu pour répondre au critère, selon le temps et les ressources. NON signifie que cette approche de regroupement ne permet pas de satisfaire à ce critère. Pour la contrainte temporelle, COURT signifie que le processus peut être appliqué immédiatement aux estimations des paramètres géniteurs-recrues. MOYEN signifie qu’au moins six mois seront nécessaires pour élaborer le processus (p. ex. choisir les objectifs quantitatifs) ou la méthode (p. ex. en attendant la publication de lignes directrices, suivie d’un examen de la mise en œuvre). LONG signifie qu’un processus pluriannuel est probablement nécessaire pour une mise en œuvre complète.
 
 ```{r TableCriteriaERAggEquProf, echo = FALSE, results = "asis"}
 
@@ -211,7 +220,7 @@ table.in  %>%
 
 
 \clearpage
-(ref:TableCriteriaStockStatus) Rationale for criteria ratings – Stock-level status considerations. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+(ref:TableCriteriaStockStatus) Justification des notations des critères – Considérations sur l’état au niveau du stock. La notation sommaire de chaque critère est fondée sur la mise en œuvre actuelle de l’exemple dans le présent document de recherche. OUI signifie que l’exemple actuel répond au critère. PEUT-ÊTRE signifie que l’exemple actuel pourrait être modifié ou étendu pour répondre au critère, selon le temps et les ressources. NON signifie que cette approche de regroupement ne permet pas de satisfaire à ce critère. Pour la contrainte temporelle, COURT signifie que le processus peut être appliqué immédiatement aux estimations des paramètres géniteurs-recrues. MOYEN signifie qu’au moins six mois seront nécessaires pour élaborer le processus (p. ex. choisir les objectifs quantitatifs) ou la méthode (p. ex. en attendant la publication de lignes directrices, suivie d’un examen de la mise en œuvre). LONG signifie qu’un processus pluriannuel est probablement nécessaire pour une mise en œuvre complète.
 
 ```{r TableCriteriaStockStatus, echo = FALSE, results = "asis"}
 
@@ -241,7 +250,7 @@ table.in  %>%
 
 
 \clearpage
-(ref:TableCriteriaLogReg) Rationale for criteria ratings – Logistic Regression. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+(ref:TableCriteriaLogReg) Justification des notations des critères – Régression logistique. La notation sommaire de chaque critère est fondée sur la mise en œuvre actuelle de l’exemple dans le présent document de recherche. OUI signifie que l’exemple actuel répond au critère. PEUT-ÊTRE signifie que l’exemple actuel pourrait être modifié ou étendu pour répondre au critère, selon le temps et les ressources. NON signifie que cette approche de regroupement ne permet pas de satisfaire à ce critère. Pour la contrainte temporelle, COURT signifie que le processus peut être appliqué immédiatement aux estimations des paramètres géniteurs-recrues. MOYEN signifie qu’au moins six mois seront nécessaires pour élaborer le processus (p. ex. choisir les objectifs quantitatifs) ou la méthode (p. ex. en attendant la publication de lignes directrices, suivie d’un examen de la mise en œuvre). LONG signifie qu’un processus pluriannuel est probablement nécessaire pour une mise en œuvre complète.
 
 ```{r TableCriteriaLogReg, echo = FALSE, results = "asis"}
 
@@ -275,7 +284,7 @@ table.in  %>%
 
 
 \clearpage
-(ref:TableCriteriaSim) Rationale for criteria ratings – Forward Simulation. Summary rating for each criterion is based on the current implementation of the example in this Research Document. YES means that the current example meets the criterion. MAYBE means that current eample could be modified or expanded to meet the criterion, depending on time and resources. NO means that the criterion cannot be met with this aggregation approach. For the time requirement, SHORT means that it can be applied immediately to the SR parameter estimates. MEDIUM means that at least 6 months will be required for either process (e.g., choice of quantitative objectives) or method developments (e.g., pending publication of guidelines, followed by review of implementation). LONG means that a multi-year process is likely needed for full implementation.
+(ref:TableCriteriaSim) Justification des notations des critères – Simulation prospective. La notation sommaire de chaque critère est fondée sur la mise en œuvre actuelle de l’exemple dans le présent document de recherche. OUI signifie que l’exemple actuel répond au critère. PEUT-ÊTRE signifie que l’exemple actuel pourrait être modifié ou étendu pour répondre au critère, selon le temps et les ressources. NON signifie que cette approche de regroupement ne permet pas de satisfaire à ce critère. Pour la contrainte temporelle, COURT signifie que le processus peut être appliqué immédiatement aux estimations des paramètres géniteurs-recrues. MOYEN signifie qu’au moins six mois seront nécessaires pour élaborer le processus (p. ex. choisir les objectifs quantitatifs) ou la méthode (p. ex. en attendant la publication de lignes directrices, suivie d’un examen de la mise en œuvre). LONG signifie qu’un processus pluriannuel est probablement nécessaire pour une mise en œuvre complète.
 
 ```{r TableCriteriaSim, echo = FALSE, results = "asis"}
 
