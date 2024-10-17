@@ -121,10 +121,10 @@ Pour les deux stocks testés dans cet exemple, l’effet du remplissage dépend 
 
 \clearpage
 
-(ref:StateSpaceComp) Estimations a posteriori d’espace d’états de l’abondance des géniteurs pour les années d’éclosion manquantes. Chaque graphique présente six différentes estimations de l’abondance des géniteurs pour un stock et une année d’éclosion, en comparant trois modèles géniteurs-recrues (de base, AR1, avec PVT) et deux autres ensembles de données (*Remplissage* = attribuer aux valeurs de remplissage la même incertitude et la même pondération que celles des valeurs observées, *Aucun remplissage* = attribuer une plus grande incertitude et une pondération plus faible aux valeurs de remplissage). Les graphiques du haut montrent deux des quatre années d’éclosion manquantes pour la rivière Kwinageese, les graphiques du bas montrent les deux années d’éclosion manquantes pour la rivière Lakelse.
+(ref:StateSpaceComp) Estimations a posteriori d’espace d’états de l’abondance des géniteurs pour les années d’éclosion manquantes. Chaque graphique présente six différentes estimations de l’abondance des géniteurs pour un stock et une année d’éclosion, en comparant trois modèles géniteurs-recrues (de base, AR1, avec PVT) et deux autres ensembles de données (*R* = Remplissage = attribuer aux valeurs de remplissage la même incertitude et la même pondération que celles des valeurs observées, *NonR* = NonRemplissage = attribuer une plus grande incertitude et une pondération plus faible aux valeurs de remplissage). Les graphiques du haut montrent deux des quatre années d’éclosion manquantes pour la rivière Kwinageese, les graphiques du bas montrent les deux années d’éclosion manquantes pour la rivière Lakelse.
 
 ```{r StateSpaceComp,  fig.cap="(ref:StateSpaceComp)" }
-include_graphics("data/StateSpaceTest/StateSpace_EstimateComparison.png")
+include_graphics("data/1_FrenchFigs/FigApp_E1_StateSpace_EstimateComparison_FRENCH.png")
 ```
 
 
