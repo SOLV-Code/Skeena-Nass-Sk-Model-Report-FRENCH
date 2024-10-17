@@ -1,11 +1,13 @@
 library(tidyverse)
 
 
-table.in   <-   read_csv("data/Sims/SimSensTest_Summary.csv",stringsAsFactors = FALSE, fileEncoding="UTF-8-BOM") %>%
-  arrange(Seq) %>% select(-Seq)
+table.in   <-  read_csv("data/StateSpaceTest/HamazakiAppOutputs_ReportTableSource.csv",
+                        locale=locale(encoding="latin1"))  %>%
+  dplyr::filter(Stock == "Kwinag") %>% select(-Stock) %>%
+  mutate_at(4:6,~ prettyNum(.x,big.mark=" "))
 
  table.in
-
+str( table.in)
 
 
 
