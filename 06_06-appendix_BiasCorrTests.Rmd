@@ -1,80 +1,86 @@
 \clearpage
-## EFFECT OF BIAS CORRECTION ON BENCHMARK ESTIMATES {#BiasCorrtest}
+## EFFET DE LA CORRECTION DU BIAIS SUR LES ESTIMATIONS DES POINTS DE RÉFÉRENCE {#BiasCorrtest}
 
-### Purpose
+### But
 
-Preliminary benchmark estimates were flagged as potentially erroneous during the TWG process. Sgen values in particular seemed too low for several of the stocks. Once we verified the benchmark calculation code (Appendix \@ref(BMCalcTest)), we explored the effect of the log-normal bias correction for the productivity parameter alpha (Table \@ref(tab:BiasCorrCalcs)) on estimates of Smsy and Sgen. Note that this section refers to both the alpha parameter and the its natural log, ln.alpha, depending on the context.
-
-
-### Approach
+Les estimations provisoires des points de référence ont été signalées comme étant potentiellement erronées pendant le processus du GTT. Les valeurs de Sgen en particulier semblaient trop faibles pour plusieurs des stocks. Une fois que nous avons vérifié le code de calcul du point de référence (annexe \@ref(BMCalcTest)), nous avons exploré l’effet de la correction du biais log-normal pour le paramètre de productivité alpha (tableau \@ref(tab:BiasCorrCalcs)) sur les estimations de Srmd et de Sgen. Il convient de noter que cette section fait référence au paramètre alpha et à son log naturel ln.alpha, selon le contexte.
 
 
-* Generated combinations of [alpha,sigma] that spanned the range of preliminary estimates for Skeena and Nass Sockeye stocks:
-   * alpha parameters from 1.4 to 20 (ln.alpha from 0.336 to 3)
-   * sigma parameters from 0.2 to 1.6
-   * beta parameter does not affect the relative values, only the absolute scale, so fixed at  0.0005.
-* Used @Scheuerell2016 method for Smsy, because it is the only exact solution. 
-* Used @Connorsetal2022 method for Sgen, because it was the only non-brute-force method that did not crash for any of the [ln.alpha, b, s] combinations tested.
-* Calculated Smsy and Sgen using either ln.alpha or ln.alpha' = ln.alpha + (sigma^2)/2
-* Calculated the % differences due to bias correction for Smsy, Sgen, and the Ratio of Smsy/Sgen 
-* Repeated the calculation with the simple deterministic parameter estimates (ln.alpha, beta, sigma) for those Skeena and Nass Sockeye stocks included in our analyses (i.e., wild stocks with at least 5 brood years of spawner-recruit data).
+### Approche
+
+* Combinaisons générées de [alpha,sigma] qui s’étendaient sur la fourchette des estimations provisoires pour les stocks de saumon rouge des rivières Skeena et Nass :
+   * paramètres alpha de 1,4 à 20 (ln.alpha de 0,336 à 3);
+   * paramètres sigma de 0,2 à 1,6;
+   * le paramètre bêta n’a pas d’incidence sur les valeurs relatives, seulement sur l’échelle absolue, il est donc fixé à 0,0005.
+* Nous avons utilisé la méthode de @Scheuerell2016  pour Srmd, car c’est la seule solution exacte.
+* Nous avons utilisé la méthode de @Connorsetal2022 pour Sgen, car c’était la seule méthode sans force brute qui n’a échoué pour aucune des combinaisons de [ln.alpha, b, s] testées.
+* Nous avons calculé Srmd et Sgen en utilisant ln.alpha ou ln.alpha’ = ln.alpha + (sigma^2)/2.
+* Nous avons calculé les différences en % dues à la correction du biais pour Srmd, Sgen et le ratio de Srmd/Sgen
+* Nous avons répété le calcul avec les estimations des paramètres déterministes simples (ln.alpha, bêta, sigma) pour les stocks de saumon rouge des rivières Skeena et Nass inclus dans nos analyses (les stocks sauvages pour lesquels il existe au moins cinq années d’éclosion de données géniteurs-recrues).
 
 
+### Résultats
 
-### Results
+Les valeurs plus grandes de sigma ont entraîné de légères augmentations de Srmd pour les stocks affichant une productivité intrinsèque plus élevée (alpha >5, ln.alpha > 1,6), mais des augmentations importantes de Srmd pour une productivité plus faible (alpha < 3, ln.alpha < 1,1). Par exemple, Srmd double environ (% de diff = 100 %) en raison de la correction de biais pour alpha = 1,5 et sigma = 1 (ln.alpha = 0,405, ln.alpha’ = 0,905). Les stocks de saumon rouge des rivières Skeena et Nass se situent sur différents gradients, la différence en % attribuable à la correction du biais variant entre ~5 % et ~60 % (figure \@ref(fig:BiasCorrSmsyEffect)). La correction du biais a fait augmenter ou baisser les valeurs de Sgen, selon la combinaison de ln.alpha et sigma (figure \@ref(fig:BiasCorrSgenEffect)). La valeur de Sgen diminue pour tous les stocks de saumon rouge des rivières Skeena et Nass, sauf un. Pour beaucoup de stocks, elle a diminué de plus de 20 %. La correction du biais a accru la distance entre Srmd et Sgen à mesure que sigma augmentait (figure \@ref(fig:BiasCorrRatioEffect)). Pour trois stocks, le ratio de Srmd/Sgen a plus que doublé sous l’effet de la correction du biais.
 
-Larger sigmas resulted in small Smsy increases for stocks with higher intrinsic productivity (alpha >5, ln.alpha > 1.6), but resulted in substantial Smsy increases for lower productivity (alpha < 3, ln.alpha < 1.1). For example, Smsy roughly doubles (Perc diff = 100%) due to the bias correction for alpha = 1.5 and sigma = 1 (ln.alpha = 0.405, ln.alpha' = 0.905). Skeena and Nass Sockeye stocks fall on different gradients, with % difference due to bias correction ranging from ~5% to ~60% (Figure \@ref(fig:BiasCorrSmsyEffect)). Bias correction increased or decreased Sgen values, depending on the combination of ln.alpha and sigma (Figure \@ref(fig:BiasCorrSgenEffect)). Sgen decreases for all but one of the Skeena and Nass Sockeye stocks. For many stocks, Sgen decreased by more than 20%. The bias correction increased the distance between Smsy and Sgen as sigma increased (Figure \@ref(fig:BiasCorrRatioEffect)). For 3 stocks, the ratio of Smsy/Sgen more than doubled due to the bias correction.
+Le tableau \@ref(tab:TableBiasCorr) présente les résultats par stock.
 
-Table \@ref(tab:TableBiasCorr) lists results by stock.
 
 
 ### Conclusions
 
-Given these observed effects, we chose to report medians and percentiles without bias correction throughout this Research Document, but included the bias-corrected version in Appendix \@ref(BiasCorrectedBM). Section \@ref(BMMethods) describes how the bias correction is linked to how management objectives are defined.
+Compte tenu de ces effets observés, nous avons choisi de présenter les médianes et les centiles sans correction du biais tout au long de ce document de recherche, mais avons inclus la version avec correction du biais à l’annexe \@ref(BiasCorrectedBM). La section \@ref(BMMethods) décrit comment la correction du biais est liée à la façon dont les objectifs de gestion sont définis.
 
 
 
 \clearpage
-(ref:BiasCorrSmsyEffect) Effect of Bias Correction on Smsy. Each line shows how, for a specific value of the alpha parameter, the difference between original and bias-corrected estimate changes as the sigma parameter increases. Uncertainty in the model fit increases from left to right, as sigma increases, resulting in a larger difference between estimates (i.e., lines curve upward). The effect of bias correction is larger at lower productivity (i.e., lower alpha parameter). Points show where each stock falls on the gradients of uncertainty and productivity, using a simple deterministic Ricker fit to all available data. The red horizontal line separates the results into the range where bias corrected estimates are larger than the original estimates (top) or lower than original estimates (bottom).
+(ref:BiasCorrSmsyEffect) Effet de la correction du biais sur Srmd. Chaque ligne montre, pour une valeur spécifique du paramètre alpha, l’évolution de la différence entre l’estimation originale et l’estimation avec correction du biais en fonction de l’augmentation du paramètre sigma. L’incertitude dans l’ajustement du modèle augmente de gauche à droite, à mesure que sigma augmente, ce qui se traduit par une plus grande différence entre les estimations (les lignes s’incurvent vers le haut). L’effet de la correction du biais est plus important à une productivité plus faible (c.-à-d. un paramètre alpha plus faible). Les points montrent la position de chaque stock sur les gradients d’incertitude et de productivité, en utilisant un modèle de Ricker déterministe simple ajusté à toutes les données accessibles. La ligne horizontale rouge sépare les résultats dans la fourchette où les estimations avec correction du biais sont plus grandes (en haut) ou plus basses que les estimations initiales (en bas).
 
 ```{r BiasCorrSmsyEffect,  fig.cap="(ref:BiasCorrSmsyEffect)" }
-include_graphics("data/BiasCorr/BiasCorr_Smsy_Effect.png")
+include_graphics("data/1_FrenchFigs/FigApp_E2_BiasCorr_Smsy_Effect_FRENCH.png")
 ```
 
 
 \clearpage
-(ref:BiasCorrSgenEffect) Effect of Bias Correction on Sgen. Layout as per Figure \@ref(fig:BiasCorrSmsyEffect).
+(ref:BiasCorrSgenEffect) Effet de la correction du biais sur Sgen. Disposition comme sur la figure  \@ref(fig:BiasCorrSmsyEffect).
 
 ```{r BiasCorrSgenEffect,  fig.cap="(ref:BiasCorrSgenEffect)" }
-include_graphics("data/BiasCorr/BiasCorr_Sgen_Effect.png")
+include_graphics("data/1_FrenchFigs/FigApp_E3_BiasCorr_Sgen_Effect.png")
 ```
 
 
 \clearpage
-(ref:BiasCorrRatioEffect) Effect of Bias Correction on Ratio of Smsy/Sgen. Layout as per Figure \@ref(fig:BiasCorrSmsyEffect).
+(ref:BiasCorrRatioEffect) Effet de la correction du biais sur le ratio Srmd/Sgen. Disposition comme sur la figure \@ref(fig:BiasCorrSmsyEffect).
 
 ```{r BiasCorrRatioEffect,  fig.cap="(ref:BiasCorrRatioEffect)" }
-include_graphics("data/BiasCorr/BiasCorr_Ratio_Effect.png")
+include_graphics("data/1_FrenchFigs/FigApp_E4_BiasCorr_Ratio_Effect_FRENCH.png")
 ```
 
 
 \clearpage
-(ref:TableBiasCorr) Effect of bias correction on estimates of Smsy, Sgen, and the ratio of Smsy/Sgen. Stocks sorted from lowest to highest productivity (ln.alpha). All results for a simple deterministic Ricker fit to all available data.
+(ref:TableBiasCorr) Effet de la correction du biais sur les estimations de Srmd, de Sgen et le ratio Srmd/Sgen. Les stocks sont classés dans l’ordre de la productivité la plus faible à la productivité la plus élevée (ln.alpha). Tous les résultats sont indiqués pour un modèle de Ricker déterministe simple ajusté à toutes les données accessibles.
 
 ```{r TableBiasCorr, echo = FALSE, results = "asis"}
 table.in <- read.csv("data/BiasCorr/BiasCorr_RickerDetFits.csv",stringsAsFactors = FALSE) %>%
           select(Stock,		ln.alpha,	sigma, Smsy.PercDiff,	Sgen.PercDiff,	Ratio.PercDiff) %>%
-          mutate(ln.alpha = round(ln.alpha,2),	sigma = round(sigma,2), Smsy.PercDiff =round(Smsy.PercDiff),	Sgen.PercDiff=round(Sgen.PercDiff),	Ratio.PercDiff=round(Ratio.PercDiff)) %>% arrange(ln.alpha)
+          mutate(ln.alpha = prettyNum(round(ln.alpha,2),decimal.mark = ","),	
+		  sigma = prettyNum(round(sigma,2),decimal.mark = ","), 
+		  Smsy.PercDiff =round(Smsy.PercDiff),	
+		  Sgen.PercDiff=round(Sgen.PercDiff),	
+		  Ratio.PercDiff=round(Ratio.PercDiff)) %>% 
+		  arrange(ln.alpha)
 
 names(table.in) <- gsub(".PercDiff","",names(table.in) )
+
+col.names.use <- c("Stock","ln.alpha","Sigma","Srmd","Sgen","Ratio")
 
 table.in %>%
    #mutate_at(1,function(x){gsub("&", "\\\\&", x)}) %>% 
    #mutate_at(1,function(x){gsub("%", "\\\\%", x)}) %>%
 csas_table(format = "latex", escape = FALSE, font_size = 9, align = c("l",rep("r",5)),
-                  caption = "(ref:TableBiasCorr)" ) %>%
+                  caption = "(ref:TableBiasCorr)", col.names = col.names.use ) %>%
    # kableExtra::row_spec(c(4,5,9,10), hline_after = TRUE)# %>%
-	add_header_above(c(" " = 3, "% Difference" = 3)) 
+	add_header_above(c(" " = 3, "% de différence" = 3)) 
 
 ```
 
