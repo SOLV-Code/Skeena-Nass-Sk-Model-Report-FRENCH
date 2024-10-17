@@ -1,22 +1,19 @@
 \clearpage
-## Test of Alternative Benchmark Calculation Approaches {#BMCalcTest}
+## ESSAI D’AUTRES APPROCHES DE CALCUL DES POINTS DE RÉFÉRENCE {#BMCalcTest}
 
 
-### Purpose
+### But
+
+Cette annexe résume les résultats des tests suivants : (1) autres approches de calcul des points de référence pour un seul ensemble de paramètres $ln.a$ et $b$ (p. ex. calculs de Srmd dans Hilborn 1985 et Scheuerell 2016); (2) autres approches de calcul des points de référence pour une grille de valeurs des paramètres $ln.a$ et $b$; (3) test de vitesse pour les autres mises en œuvre.
+
+L’annexe \@ref(BiasCorrtest) récapitule les tests liés à la correction du biais sur \@ref(BiasCorrtest)
 
 
+### Autres calculs de Srmd
 
-This appendix summarizes results for the following tests: (1) alternative benchmark calculation approaches for a single set of $ln.a$ and $b$ parameters (e.g. Hilborn 1985 vs. Scheuerell 2016 Smsy calculations), (2) alternative benchmark calculation approaches across a grid of *ln.a* and *b* parameter values, (3) speed test for the alternative implementations.
+Nous avons mis en œuvre quatre approches de calcul de Srmd (tableau \@ref(tab:SmsyCalcs)) dans le progiciel *RapidRicker* [@RapidRicker], y compris les approximations de Hilborn @Hilborn1985Proxies et @PetermanPyperGrout2000ParEst, la solution explicite de @Scheuerell2016 et un calcul de la force brute (c.-à-d. pour chaque ensemble de paramètres $[ln.a,b]$, calculer les recrues pour des tranches de 3 000 de l’abondance des géniteurs, puis sélectionner la tranche présentant la plus grande différence entre les recrues et les géniteurs). Le code R de ces quatre versions figure à l’annexe \@ref(BMFunsSmsy).
 
-Appendix \@ref(BiasCorrtest) summarizes tests related to the bias correction on $ln.a$.
-
-
-### Alternative Smsy Calculations
-
-We implemented four alternative Smsy calculation approaches (Table \@ref(tab:SmsyCalcs)) as part of the *RapidRicker* package [@RapidRicker], including the approximations from @Hilborn1985Proxies and @PetermanPyperGrout2000ParEst, the explicit solution from @Scheuerell2016, and a brute force calculation (i.e., for each parameter set $[ln.a,b]$ calculate recruits for 3,000 increments of spawner abundance, then select the increment with the largest difference between recruits and spawners)  . The R code for all four versions is included in Appendix \@ref(BMFunsSmsy).
-
-
-(ref:SmsyCalcs) *Alternative Smsy Calculation Approaches*.
+(ref:SmsyCalcs) Autres approches de calcul de Srmd.
 
 ```{r SmsyCalcs, echo = FALSE, results = "asis"}
 
@@ -38,52 +35,51 @@ table.in %>%
 
 ```
 
-### Alternative Sgen Calculations
+### Autres calculs de Sgen
 
+Nous avons mis en œuvre quatre méthodes différentes de calcul de Sgen dans le progiciel *RapidRicker* [@RapidRicker], dont trois versions du code d’optimisation [@HoltOgden2013; @samSim; @Connorsetal2022 ] et un calcul de la force brute (c.-à-d. pour chaque ensemble de paramètres $[ln.a,b]$, calculer les recrues pour des tranches de 3 000 de l’abondance des géniteurs, puis sélectionner la tranche présentant la plus faible abondance des géniteurs pour laquelle $Rec \geq Smsy$). Le code R de ces quatre versions figure à l’annexe \@ref(BMFunsSgen).
 
-We implemented four alternative Sgen calculation approaches as part of the *RapidRicker* package [@RapidRicker], including three versions of  optimization code [@HoltOgden2013; @samSim; @Connorsetal2022 ] and a brute force calculation (i.e., for each parameter set $[ln.a,b]$ calculate recruits for 3,000 increments of spawner abundance, then select the increment with the smallest spawner abundance for which $Rec \geq Smsy$). The R code for all four versions is included in Appendix \@ref(BMFunsSgen).
-
-Note that the @samSim version has been incorporated in the the [samSim package](https://github.com/Pacific-salmon-assess/samSim) and we label that option *samSim* in the *RapidRicker* functions. 
-
+Il convient de noter que la version de @samSim a été intégrée dans le [samSim package](https://github.com/Pacific-salmon-assess/samSim) et que nous utilisons l’étiquette *samSim* pour cette option dans les fonctions de *RapidRicker*.
 
 
 \clearpage
-### Tests
+### Essais
+
+* *Essai 1 – Exemple d’ensemble de paramètres* : Application des autres méthodes de calcul à un ensemble de paramètres d’échantillon avec *ln.a*=1.3 et *b*=5e-4. Les calculs de Sgen sont effectués par rapport aux valeurs de Srmd, ce qui donne 16 au total : 4 calculs différents de Srmd, puis 4 autres calculs de Sgen pour chaque valeur de Srmd.
+* *Essai 2 – Grille des paramètres ln.a et b* : Application des autres méthodes de calcul à un ensemble comportant toutes les combinaisons possibles de 100 valeurs de *ln.a*, de *ln*(1.1) à *ln*(10), et de 100 valeurs de *b* de la capacité de 100 à 1 million (b=1/Smax,  valeurs de b de 1/100 à 1/10^6), ce qui donne 16 estimations pour chacun des 10 000 ensembles de rechange de $[ln.a,b]$.
+* *Essai 3 – Vitesse de calcul* : Application des 4 méthodes de calcul de Srmd et des 4 méthodes de calcul de Sgen à 10 000 ensembles de paramètres.
 
 
-* *Test 1: Sample Parameter Set*: Applied the alternative calculation approaches to a sample parameter set with $ln.a = 1.3$ and $b = 5e-4$. Sgen calculations are relative to Smsy values, so this gives 16 total variations: 4 alternative Smsy calculations, and then 4 alternative Sgen calculations for each Smsy value.
-* *Test 2: Grid of ln.a and b parameters*: Applied the alternative calculation approaches to a set with all possible combinations of 100 $ln.a$ values from $ln(1.1)$ to $ln(10)$ and 100 $b$ values from 100 to 1 Mill capacity ($b = 1/Smax$, $b$ values from $1/100$ to $1/10^6$), resulting in 16 estimates for each of 10,000 alternative sets of $[ln.a, b]$.  
-* *Test 3: Computing Speed*: Applied the 4 Smsy calculation methods and 4 Sgen calculation methods to 10,000 parameter sets. 
+### Résultats
+Toutes les autres méthodes de calcul (4 pour Srmd et 4 pour Sgen) ont généré des valeurs des points de référence qui sont essentiellement identiques pour un ensemble de paramètres d’échantillon (tableau \@ref(tab:BMCalcTest1)).
 
+Pour 10 000 autres combinaisons de *ln.a* et *b*, les valeurs de Srmd variaient au maximum de `r paste0(prettyNum(test2.vals[1],decimal.mark = ",")," %")` entre les quatre méthodes. Les valeurs de Sgen variaient au maximum de `r paste0(prettyNum(test2.vals[2],decimal.mark = ",")," %")` entre les 16 méthodes de calcul (4 calculs de Srmd possibles par 4 calculs de Sgen possibles).
 
-### Results
-
-
-All the alternative calculation methods (4 for Smsy, 4 for Sgen) generated benchmarks values that are essentially identical for a sample parameter set (Table \@ref(tab:BMCalcTest1)).
-
-For 10,000 alternative combinations of ln.a and b, Smsy values varied by a maximum of `r paste0(test2.vals[1],"%")` across 4 alternative calculation methods. Sgen values varied by a maximum of `r paste0(test2.vals[2],"%")` across 16 alternative calculation methods (4 alternative Smsy calculations by 4 alternative Sgen calculations).
-
-Computing speed differed between calculation implementations, with brute force calculations much slower than the approximate Smsy calculations (Hilborn 1985, Peterman et al. 2000), the exact solution for Smsy (Scheuerell 2016), and the three alternative Sgen solver implementations (Table \@ref(tab:BMCalcTest3)). 
+La vitesse de calcul différait entre les mises en œuvre des calculs, les calculs de la force brute étant beaucoup plus lents que ceux des approximations de Srmd (Hilborn 1985, Peterman et al. 2000), la solution exacte pour Srmd (Scheuerell 2016) et les trois options de mise en œuvre de solveur de Sgen (tableau \@ref(tab:BMCalcTest3)).
 
 
 ### Conclusions
 
-Based on these results, we decided to use in this report:
+Sur la base de ces résultats, nous avons décidé d’utiliser dans ce document de recherche :
 
-* the @Scheuerell2016 method for Smsy, because it is the only exact solution
-* the @Connorsetal2022 version of the Sgen optimizer, because it is the only non-brute-force method that did not crash for any of the $[ln.a, b, sd]$ combinations in the bias correction tests (Appendix \@ref(BiasCorrtest)).
+* la méthode de @Scheuerell2016 pour Srmd, car c’est la seule solution exacte;
+* la version de l’optimisateur de Sgen de  @Connorsetal2022, car c’est la seule méthode sans force brute qui n’a échoué pour aucune des combinaisons de $[ln.a,b,sd]$ dans les essais de correction du biais (annexe \@ref(BiasCorrtest)).
 
 
 
 \clearpage
 
 
-(ref:BMCalcTest1) Benchmark Calculation Test 1. Estimates of biological benchmarks for $ln.a = 1.3$ and $b = 5e-4$ using 4 alternative Smsy calculations and 4 alternative Sgen calculations. Note that the @HoltOgden2013 version of the Sgen optimizer has a built-in Smsy calculation using the @Hilborn1985Proxies approximation, and therefore generates the same result for the four alternative Smsy inputs.
+(ref:BMCalcTest1) Essai 1 de calcul des points de référence. Estimations des points de référence biologiques pour $ln.a = 1,3$ et $b = 5e-4$ selon quatre différents calculs de Srmd et quatre différents calculs de Sgen. Il convient de noter que la version @HoltOgden2013 de l’optimisateur de Sgen a un calcul intégré de Srmd utilisant l’approximation de @Hilborn1985Proxies et produit donc le même résultat pour les quatre différents intrants de Srmd.
+
 
 ```{r BMCalcTest1, echo = FALSE, results = "asis"}
 
 
 table.in <- test1.table #%>% select(-ln.a,-b)
+
+
+col.names.use <- c("ln.alpha","bêta","Calcul de Srmd","Srmd","Seq","Smax","Calcul de Sgen","Sgen","Ratio")
 
    
 table.in %>% 
@@ -92,7 +88,7 @@ table.in %>%
    mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
 #   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
    csas_table(format = "latex", escape = FALSE, font_size = 10, align = c("l","r","r","r","l","r","r"),
-                  caption = "(ref:BMCalcTest1)") %>%
+                  caption = "(ref:BMCalcTest1)", col.names = col.names.use ) %>%
      kableExtra::row_spec(c(4,8,12), hline_after = TRUE) #%>%
      #kableExtra::column_spec(3, width = "10em") %>%
      #  kableExtra::row_spec(c(1:5,7:14,16:22), extra_latex_after = "\\cmidrule(l){2-8}") 
@@ -101,7 +97,7 @@ table.in %>%
 
 
 
-(ref:BMCalcTest3) Benchmark Calculation Test 3. Computing time for alternative benchmark calculation approaches over 10,000 sample values.
+(ref:BMCalcTest3) Essai 3 de calcul des points de référence. Temps de calcul pour les autres méthodes de calcul des points de référence sur plus de 10 000 valeurs d’échantillon.
 
 ```{r BMCalcTest3, echo = FALSE, results = "asis"}
 
@@ -111,14 +107,17 @@ table.in <- test3.table %>%
 	dplyr::rename(Benchmark = BM, "Time(s)" = Time_s) %>%
 	select(-n)
 
-   
+ 
+col.names.use <- c("Point de référence","Méthode","Temps")
+
+ 
 table.in %>% 
    mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
    mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
    mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
 #   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
    csas_table(format = "latex", escape = FALSE, font_size = 10, align = c("l","l","r"),
-                  caption = "(ref:BMCalcTest3)") #%>%
+                  caption = "(ref:BMCalcTest3)", col.names = col.names.use) #%>%
      #kableExtra::row_spec(c(6,15,23), hline_after = TRUE) %>%
      #kableExtra::column_spec(3, width = "10em") %>%
      #  kableExtra::row_spec(c(1:5,7:14,16:22), extra_latex_after = "\\cmidrule(l){2-8}") 
