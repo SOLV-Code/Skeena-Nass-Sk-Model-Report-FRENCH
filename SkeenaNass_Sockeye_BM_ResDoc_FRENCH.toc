@@ -165,11 +165,11 @@
 \contentsline {subsection}{\numberline {E.4.2}Approche}{287}{subsection.E.4.2}%
 \contentsline {subsection}{\numberline {E.4.3}Résultats}{287}{subsection.E.4.3}%
 \contentsline {subsection}{\numberline {E.4.4}Conclusions}{288}{subsection.E.4.4}%
-\contentsline {chapter}{APPENDIX~F. SIMULATION MODEL EXTENSIONS}{293}{section*.17}%
-\contentsline {section}{\numberline {F.1}OUTCOME UNCERTAINTY}{293}{section.F.1}%
+\contentsline {chapter}{APPENDIX~F. EXTENSIONS DU MODÈLE DE SIMULATION}{293}{section*.17}%
+\contentsline {section}{\numberline {F.1}INCERTITUDE DES RÉSULTATS}{293}{section.F.1}%
 \contentsline {subsection}{\numberline {F.1.1}Introduction}{293}{subsection.F.1.1}%
-\contentsline {subsection}{\numberline {F.1.2}Historical Patterns in Aggregate Exploitation Rate and Harvest}{293}{subsection.F.1.2}%
-\contentsline {subsection}{\numberline {F.1.3}Estimating Aggregate-level Outcome Uncertainty from Historical Patterns}{294}{subsection.F.1.3}%
+\contentsline {subsection}{\numberline {F.1.2}Profils historiques du taux d'exploitation et de la récolte pour les regroupements}{293}{subsection.F.1.2}%
+\contentsline {subsection}{\numberline {F.1.3}Estimating Aggregate-level Outcome Uncertainty from Historical Patterns}{295}{subsection.F.1.3}%
 \contentsline {subsection}{\numberline {F.1.4}Historical Differences between Aggregate-level and Stock-level ER}{299}{subsection.F.1.4}%
 \contentsline {subsection}{\numberline {F.1.5}Model Implementation of Aggregate and Stock-level ER Scalars}{305}{subsection.F.1.5}%
 \contentsline {section}{\numberline {F.2}MODELLING COVARIATION IN PRODUCTIVITY}{307}{section.F.2}%
