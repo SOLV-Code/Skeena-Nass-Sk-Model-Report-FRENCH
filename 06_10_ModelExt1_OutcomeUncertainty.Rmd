@@ -56,7 +56,7 @@ L’incertitude des résultats décrite par les coefficients de variation pour l
 (ref:OutUncPlotAggErHarv) Séries chronologiques du taux d’exploitation (TE) et de la récolte pour les deux regroupements. Les géniteurs, la récolte et la remonte ont été calculés comme la somme des reconstitutions des remontes par stock. Les séries chronologiques sont divisées en trois périodes qui correspondent à peu près aux changements majeurs apportés à l’approche de gestion.
 
 ```{r OutUncPlotAggErHarv,  out.width= 440,  fig.cap="(ref:OutUncPlotAggErHarv)"}
-include_graphics("data/OutcomeUncertainty/ERandHarvest_4Panels.png")
+include_graphics("data/1_FrenchFigs/FigApp_F1_ERandHarvest_4Panels_FRENCH.png")
 ```
 
 
@@ -69,7 +69,7 @@ include_graphics("data/OutcomeUncertainty/ERandHarvest_4Panels.png")
 (ref:OutUncPlotAggFit) Taux d’exploitation annuel du regroupement et récolte en fonction de la remonte. Ces graphiques résument le résultat global des mesures de gestion annuelles par stock et par pêche, ainsi que les conditions physiques et biologiques, et peuvent être utilisés pour approximer la stratégie de récolte sous-jacente qui était en place. Dans les graphiques A et C, on pourrait ajuster diverses formes des règles de contrôle des prises aux données observées (p. ex. une fonction curviligne comme l’équation 1 dans @HoltPetermanOutcomeUnc, un bâton de hockey ou une fonction en escalier avec des augmentations progressives du taux d’exploitation), mais il faudrait soit spécifier, soit estimer divers paramètres de forme pour les fonctions (p. ex. pentes, points d’inflexion, points de rupture). Dans les graphiques B et D, cependant, de fortes relations linéaires entre la récolte totale et la remonte totale se dessinent (le coefficient de détermination $r^2$, ajusté en fonction du nombre d’observations et du nombre de paramètres, est supérieur à 0,9 pour toutes les périodes pour les deux regroupements; tableau \@ref(tab:OutUncTabAggFit)).
 
 ```{r OutUncPlotAggFit,  out.width= 440, fig.cap="(ref:OutUncPlotAggFit)"}
-include_graphics("data/OutcomeUncertainty/OutcomeUncertainty_4Panels.png")
+include_graphics("data/1_FrenchFigs/FigApp_F2_OutcomeUncertainty_4Panels_FRENCH.png")
 ```
 
 
@@ -137,7 +137,7 @@ La figure \@ref(fig:StkERDiffMorice) illustre un exemple pour le saumon rouge de
 (ref:StkERDiffMorice) Exemple de diagnostic du taux d’exploitation – Saumon rouge de la rivière Morice (type lacustre de la moyenne Skeena). Le graphique montre les ratios et les différences, dans le temps et par rapport au taux d’exploitation du regroupement. Pour de nombreux stocks, ces profils révèlent un point de rupture au milieu des années 1990, de sorte que les données sont réparties entre les premières années, jusqu’en 1994, et les années plus récentes à partir de 1995. Avant 1995, le taux d’exploitation de la rivière Morice et celui du regroupement SkeenaSauvage étaient très semblables (ratio d’environ 1, différences d’environ 0), mais ils divergeaient de plus en plus ces dernières années. Les valeurs des taux d’exploitation dans les graphiques de droite sont exprimées en pourcentage. Par exemple, si le taux d’exploitation du regroupement était de 45 % et que celui de la rivière Morice était de 32 %, le ratio était alors de 0,71 et la différence de -13.
 
 ```{r StkERDiffMorice,  out.width= 415, fig.cap="(ref:StkERDiffMorice)"}
-include_graphics("data/OutcomeUncertainty/ER_DiagnosticPlots_Morice_3_AdjustmentDiagnostics.png")
+include_graphics("data/1_FrenchFigs/FigApp_F3_ER_DiagnosticPlots_Morice_3_AdjustmentDiagnostics_FRENCH.png")
 ```
 
 
@@ -147,7 +147,7 @@ include_graphics("data/OutcomeUncertainty/ER_DiagnosticPlots_Morice_3_Adjustment
 
 
 ```{r StkERDiffComp,  out.width= 400, fig.cap="(ref:StkERDiffComp)"}
-include_graphics("data/OutcomeUncertainty/ER_Scalars_byStock.png")
+include_graphics("data/1_FrenchFigs/FigApp_F4_ER_Scalars_byStock_FRENCH.png")
 ```
 
 
