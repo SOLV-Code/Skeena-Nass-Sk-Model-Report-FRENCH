@@ -188,14 +188,14 @@
 \contentsline {chapter}{APPENDIX~H. EXAMEN DE LA PRODUCTION DE SAUMONS SAUVAGES ET ISSUS DU PMVLB}{322}{section*.21}%
 \contentsline {section}{\numberline {H.1}CONTEXTE}{322}{section.H.1}%
 \contentsline {section}{\numberline {H.2}STOCKS DE SAUMON ROUGE DU LAC BABINE}{322}{section.H.2}%
-\contentsline {section}{\numberline {H.3}Babine Lake Development Project}{327}{section.H.3}%
-\contentsline {subsection}{\numberline {H.3.1}History}{327}{subsection.H.3.1}%
-\contentsline {subsection}{\numberline {H.3.2}Channel Loading}{328}{subsection.H.3.2}%
-\contentsline {section}{\numberline {H.4}Available biological information for wild and enhanced Babine Sockeye}{329}{section.H.4}%
-\contentsline {subsection}{\numberline {H.4.1}Age Sampling}{329}{subsection.H.4.1}%
-\contentsline {subsection}{\numberline {H.4.2}Body Size}{329}{subsection.H.4.2}%
-\contentsline {subsection}{\numberline {H.4.3}Fecundity}{329}{subsection.H.4.3}%
-\contentsline {subsection}{\numberline {H.4.4}Egg Deposition and Fry Production}{330}{subsection.H.4.4}%
-\contentsline {subsection}{\numberline {H.4.5}Smolts}{332}{subsection.H.4.5}%
-\contentsline {subsection}{\numberline {H.4.6}Limnology of Babine Lake}{334}{subsection.H.4.6}%
-\contentsline {chapter}{APPENDIX~I. SR MODEL FITTING RESULTS AND BIOLOGICAL BENCHMARK ESTIMATES FOR ENHANCED PINKUT AND FULTON}{337}{section*.23}%
+\contentsline {section}{\numberline {H.3}PROGRAMME DE MISE EN VALEUR DU LAC BABINE}{327}{section.H.3}%
+\contentsline {subsection}{\numberline {H.3.1}Historique}{327}{subsection.H.3.1}%
+\contentsline {subsection}{\numberline {H.3.2}Charge des frayères}{328}{subsection.H.3.2}%
+\contentsline {section}{\numberline {H.4}RENSEIGNEMENTS BIOLOGIQUES ACCESSIBLES SUR LES SAUMONS ROUGES SAUVAGES ET MIS EN VALEUR DE LA RIVIÈRE BABINE}{329}{section.H.4}%
+\contentsline {subsection}{\numberline {H.4.1}Échantillonnage de l'âge}{329}{subsection.H.4.1}%
+\contentsline {subsection}{\numberline {H.4.2}Taille}{330}{subsection.H.4.2}%
+\contentsline {subsection}{\numberline {H.4.3}Fécondité}{330}{subsection.H.4.3}%
+\contentsline {subsection}{\numberline {H.4.4}Ponte d'œufs et production d'alevins}{331}{subsection.H.4.4}%
+\contentsline {subsection}{\numberline {H.4.5}Smolts}{333}{subsection.H.4.5}%
+\contentsline {subsection}{\numberline {H.4.6}Limnologie du lac Babine}{335}{subsection.H.4.6}%
+\contentsline {chapter}{APPENDIX~I. RÉSULTATS DE L'AJUSTEMENT DU MODÈLE GÉNITEURS-RECRUES ET ESTIMATIONS DES POINTS RÉFÉRENCE BIOLOGIQUES POUR LES STOCKS MIS EN VALEUR DU RUISSEAU PINKUT ET DE LA RIVIÈRE FULTON}{338}{section*.23}%
