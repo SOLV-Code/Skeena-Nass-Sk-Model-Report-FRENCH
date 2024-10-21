@@ -1,4 +1,4 @@
-# SR MODEL FITTING RESULTS AND BIOLOGICAL BENCHMARK ESTIMATES FOR ENHANCED PINKUT AND FULTON {#PinkutFultonResults}
+# RÉSULTATS DE L’AJUSTEMENT DU MODÈLE GÉNITEURS-RECRUES ET ESTIMATIONS DES POINTS RÉFÉRENCE BIOLOGIQUES POUR LES STOCKS MIS EN VALEUR DU RUISSEAU PINKUT ET DE LA RIVIÈRE FULTON {#PinkutFultonResults}
 
 
 ```{r , echo = FALSE, results = "asis"}
@@ -15,53 +15,51 @@ fulton.sampled.pars <- sampled.posteriors.df %>% dplyr::filter(Stock == "Fulton"
 
 ```
 
-This Research Document focuses on SR modelling for wild Sockeye stocks (16 Skeena, 4 Nass), but corresponding SR data, parameter estimates and benchmark estimates for Pinkut and Fulton are included here as a reference. Note, however, that these should not be used given SR model fitting issues and management differences discussed in Section \@ref(AltApproachEnhanced).
+Le présent document de recherche met l’accent sur la modélisation des géniteurs-recrues pour les stocks de saumon rouge sauvages (16 stocks de la rivière Skeena, 4 stocks de la rivière Nass), mais les données sur les géniteurs-recrues, les estimations des paramètres et les estimations des points de référence correspondantes pour les stocks du ruisseau Pinkut et de la rivière Fulton sont incluses ici à titre de référence. Il convient toutefois de noter qu’elles ne doivent pas être utilisées compte tenu des problèmes d’ajustement du modèle géniteurs-recrues et des différences de gestion abordées à la section \@ref(AltApproachEnhanced).
 
-Observed productivity, in terms of ln(R/S), does not show a clear density-dependent pattern (Figures \@ref(fig:RpSPlotPinkut) and \@ref(fig:RpSPlotFulton)). This is due to a combination of spawning channel development, annual channel management, natural variation in productivity, density-dependence, and uncertain estimates of spawners and recruits, especially linked to estimating the non-spawning surplus (Section \@ref(SurplusEst)). Given this noisy data, Bayesian estimates of Ricker model parameters are highly sensitive to alternative data treatment assumptions (as illustrated for the Skeena aggregate in Figure \@ref(fig:AltFitPlotSkeena)) as well as alternative priors on productivity and capacity (i.e., the y-intercept and slope of a line fitted through the scatterplot in Figures \@ref(fig:RpSPlotPinkut) and \@ref(fig:RpSPlotFulton) is strongly affected by what we set as a plausible starting point). 
+La productivité observée, en termes de ln(R/S), ne présente pas de profil clair dépendant de la densité (figures \@ref(fig:RpSPlotPinkut) et \@ref(fig:RpSPlotFulton)), ce qui s’explique par la combinaison de l’aménagement des frayères, de la gestion annuelle des frayères, de la variation naturelle de la productivité, de la dépendance à la densité et des estimations incertaines des géniteurs et des recrues, en particulier liées à l’estimation de l’excédent non reproducteur (section \@ref(SurplusEst)). Compte tenu de ces données bruyantes, les estimations bayésiennes des paramètres du modèle de Ricker sont très sensibles aux autres hypothèses de traitement des données (comme on le voit pour le regroupement de la rivière Skeena à la figure \@ref(fig:AltFitPlotSkeena)) ainsi qu’aux autres valeurs a priori de la productivité et de la capacité (l’intersection de y et la pente d’une ligne ajustée dans le diagramme de dispersion des figures \@ref(fig:RpSPlotPinkut) et \@ref(fig:RpSPlotFulton) sont fortement influencées par le point de départ plausible que nous établissons).
 
-Biological benchmarks for Pinkut are substantially lower under the recent productivity scenario (Table \@ref(tab:BMTableLTAvgPinkut)) than  under the long-term average productivity scenario (Table \@ref(tab:BMTableNowPinkut)). For Fulton, the benchmarks are quite similar, with Smax, Smsy, and Seq a bit lower under recent productivity than under long-term average productivity, and Sgen a bit higher (Table \@ref(tab:BMTableLTAvgFulton)  vs. Table \@ref(tab:BMTableNowFulton)).
-
-
+Les points de référence biologiques pour le stock du ruisseau Pinkut sont nettement plus faibles dans le scénario de productivité récente (tableau \@ref(tab:BMTableLTAvgPinkut)) que dans le scénario de productivité moyenne à long terme (tableau \@ref(tab:BMTableNowPinkut)). Pour le stock de la rivière Fulton, les points de référence sont assez semblables, Smax, Srmd et Seq étant un peu plus bas pour la productivité récente que pour la productivité moyenne à long terme, et Sgen un peu plus élevé (tableau \@ref(tab:BMTableLTAvgFulton)  par rapport au tableau \@ref(tab:BMTableNowFulton)).
 
 
 
 
 
 \clearpage
-(ref:RpSPlotPinkut) Ln(R/S) Plot - Pinkut. Scatter plot of log productivity ln(R/S) vs. spawner abundance. Observations are colour-coded, with earlier data in fainter shading. The secondary axis illustrates the corresponding raw R/S values. Variations of the Ricker model attempt to fit a straight line through this scatter of points. The y axis intercept of the fitted line captures intrinsic productivity (i.e., R/S at very low spawner abundance) and the slope reflects the capacity (i.e., a steeper slope means more of a density-dependent reduction for each additional spawner, indicating lower capacity). 
+(ref:RpSPlotPinkut) Diagramme de Ln(R/S) – Ruisseau Pinkut. Diagramme de dispersion de la productivité logarithmique ln(R/S) par rapport à l’abondance des géniteurs. Les observations sont codées par couleur, les données antérieures étant représentées avec un ombrage moins vif. L’axe secondaire illustre les valeurs brutes R/S correspondantes. Des variantes du modèle de Ricker tentent d’ajuster une ligne droite à travers cette diffusion de points. L’intersection de l’axe des Y de la ligne ajustée représente la productivité intrinsèque (c. à-d. R/S à très faible abondance de géniteurs) et la pente reflète la capacité (c.-à-d. qu’une pente plus raide signifie une plus grande réduction dépendante de la densité pour chaque géniteur supplémentaire, dénotant une capacité plus faible). 
 
 ```{r RpSPlotPinkut,   fig.cap="(ref:RpSPlotPinkut)"}
-include_graphics("data/PinkutFultonApp/Pinkut_RpS_ScatterPlot.png")
+include_graphics("data/1_FrenchFigs/FigApp_I2_French_Pinkut_RpS_ScatterPlot.png")
 ```
 
 
 
 \clearpage
-(ref:RpSPlotFulton) Ln(R/S) Plot - Fulton. Scatter plot of log productivity ln(R/S) vs. spawner abundance. Observations are colour-coded, with earlier data in fainter shading. The secondary axis illustrates the corresponding raw R/S values. Variations of the Ricker model attempt to fit a straight line through this scatter of points. The y axis intercept of the fitted line captures intrinsic productivity (i.e., R/S at very low spawner abundance) and the slope reflects the capacity (i.e., a steeper slope means more of a density-dependent reduction for each additional spawner, indicating lower capacity). 
+(ref:RpSPlotFulton) Diagramme Ln(R/S) – Rivière Fulton. Diagramme de dispersion de la productivité logarithmique ln(R/S) par rapport à l’abondance des géniteurs. Les observations sont codées par couleur, les données antérieures étant représentées avec un ombrage moins vif. L’axe secondaire illustre les valeurs brutes R/S correspondantes. Des variantes du modèle de Ricker tentent d’ajuster une ligne droite à travers cette diffusion de points. L’intersection de l’axe des Y de la ligne ajustée représente la productivité intrinsèque (c. à-d. R/S à très faible abondance de géniteurs) et la pente reflète la capacité (c.-à-d. qu’une pente plus raide signifie une plus grande réduction dépendante de la densité pour chaque géniteur supplémentaire, dénotant une capacité plus faible).
 
 ```{r RpSPlotFulton,   fig.cap="(ref:RpSPlotFulton)"}
-include_graphics("data/PinkutFultonApp/Fulton_RpS_ScatterPlot.png")
+include_graphics("data/1_FrenchFigs/FigApp_I1_French_Fulton_RpS_ScatterPlot.png")
 ```
 
 
 
 
 \clearpage
-(ref:BMTableLTAvgPinkut) Posterior distributions for selected SR parameters and resulting biological benchmarks - Pinkut with long-term average productivity scenario. This table shows estimates using parameters sampled from the AR1 model fit with capped uniform capacity prior. Variables with the ".c" suffix are the bias corrected version (e.g., Smsy vs. Smsy.c).
+(ref:BMTableLTAvgPinkut) Distributions a posteriori de certains paramètres géniteurs-recrues et points de référence biologiques correspondants – ruisseau Pinkut avec le scénario de productivité moyenne à long terme. Ce tableau présente les estimations à l’aide des paramètres échantillonnés à partir de l’ajustement du modèle AR1 avec valeur a priori de la capacité uniforme plafonnée. Les variables avec le suffixe « .c » sont la version avec correction du biais (p. ex. Srmd et Srmd.c).
 
 ```{r BMTableLTAvgPinkut, echo = FALSE, results = "asis"}
 
-prepTableBM(bm.df = pinkut.sampled.pars %>% dplyr::filter(Scenario == "LTAvg"),
+prepTableBM.f(bm.df = pinkut.sampled.pars %>% dplyr::filter(Scenario == "LTAvg"),
             caption = "(ref:BMTableLTAvgPinkut)")
 ```
 
  
   
-(ref:BMTableNowPinkut) Posterior distributions for selected SR parameters and resulting biological benchmarks - Pinkut with recent productivity. This table shows estimates using parameters sampled from the most recent generation (i.e., last 4 brood years) of the time-varying productivity (TVP) model fit with capped uniform capacity prior. Variables with the ".c" suffix are the bias corrected version (e.g., Smsy vs. Smsy.c).
+(ref:BMTableNowPinkut) Distributions a posteriori de certains paramètres géniteurs-recrues et points de référence biologiques correspondants – ruisseau Pinkut avec le scénario de productivité moyenne à long terme. Ce tableau présente les estimations à l’aide des paramètres échantillonnés à partir de l’ajustement du modèle AR1 avec valeur a priori de la capacité uniforme plafonnée. Les variables avec le suffixe « .c » sont la version avec correction du biais (p. ex. Srmd et Srmd.c).
 
 ```{r BMTableNowPinkut, echo = FALSE, results = "asis"}
 
-prepTableBM(bm.df = pinkut.sampled.pars %>% dplyr::filter(Scenario == "Now"),
+prepTableBM.f(bm.df = pinkut.sampled.pars %>% dplyr::filter(Scenario == "Now"),
             caption = "(ref:BMTableNowPinkut)")
 ```
 
@@ -69,21 +67,21 @@ prepTableBM(bm.df = pinkut.sampled.pars %>% dplyr::filter(Scenario == "Now"),
 
 
 \clearpage
-(ref:BMTableLTAvgFulton) Posterior distributions for selected SR parameters and resulting biological benchmarks - Fulton with long-term average productivity.  This table shows estimates using the AR1 model fit with capped uniform capacity prior.  Variables with the ".c" suffix are the bias corrected version (e.g., Smsy vs. Smsy.c).
+(ref:BMTableLTAvgFulton) Distributions a posteriori de certains paramètres géniteurs-recrues et points de référence biologiques correspondants – rivière Fulton avec le scénario de productivité moyenne à long terme. Ce tableau présente les estimations utilisant l’ajustement du modèle AR1 avec valeur a priori de la capacité uniforme plafonnée. Les variables avec le suffixe « .c » sont la version avec correction du biais (p. ex. Srmd et Srmd.c).
 
 ```{r BMTableLTAvgFulton, echo = FALSE, results = "asis"}
 
-prepTableBM(bm.df = fulton.sampled.pars %>% dplyr::filter(Scenario == "LTAvg"),
+prepTableBM.f(bm.df = fulton.sampled.pars %>% dplyr::filter(Scenario == "LTAvg"),
             caption = "(ref:BMTableLTAvgFulton)")
 ```
 
  
   
-(ref:BMTableNowFulton) Posterior distributions for selected SR parameters and resulting biological benchmarks - Fulton with recent productivity. This table shows estimates using parameters sampled from the most recent generation (i.e., last 4 brood years) of the time-varying productivity (TVP) model fit with capped uniform capacity prior. Variables with the ".c" suffix are the bias corrected version (e.g., Smsy vs. Smsy.c).
+(ref:BMTableNowFulton) Distributions a posteriori de certains paramètres géniteurs-recrues et points de référence biologiques correspondants – rivière Fulton avec le scénario de productivité récente. Ce tableau présente les estimations à l’aide des paramètres échantillonnés de la génération la plus récente (c.-à-d. les quatre dernières années d’éclosion) de l’ajustement du modèle avec PVT avec valeur a priori de la capacité uniforme plafonnée. Les variables avec le suffixe « .c » sont la version avec correction du biais (p. ex. Srmd et Srmd.c).
 
 ```{r BMTableNowFulton, echo = FALSE, results = "asis"}
 
-prepTableBM(bm.df = fulton.sampled.pars %>% dplyr::filter(Scenario == "Now"),
+prepTableBM.f(bm.df = fulton.sampled.pars %>% dplyr::filter(Scenario == "Now"),
             caption = "(ref:BMTableNowFulton)")
 ```
 

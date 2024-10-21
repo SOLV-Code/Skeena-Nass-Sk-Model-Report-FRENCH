@@ -89,124 +89,6 @@ return(table.out)
 
 #-------------------------------------------------------------------------------
 
-prepTableBM <- function( stk.df,caption){
-# stk.df is the data frame with all the output summary
-# generates the table input
-
-
-
-table.in <- stk.df %>% dplyr::filter(ReportLabel == "BR" & VarType %in% c("Sgen","Smax","Seq.c","Smsy_p")) %>%
-					mutate(BrYr = "All", Label = "") %>%
-					select(ModelType,VarType,BrYr, Label,p10,p25,p50,p75,p90) %>%
-	        mutate_if(is.numeric, round,2) %>%
-					mutate_if(is.numeric, function(x){x/1000}) %>%
-	        mutate_if(is.numeric, round,0)
-
-
-if("AR1" %in% stk.df$ReportLabel){
-	
-table.in  <- table.in %>% bind_rows(stk.df	%>%
-								dplyr::filter(ReportLabel == "AR1" & VarType %in% c("Sgen","Smax","Seq.c","Smsy_p")) %>%
-					mutate(BrYr = "All",Label = "") %>%
-					select(ModelType,VarType,BrYr, Label, p10,p25,p50,p75,p90) %>%
-					mutate_if(is.numeric, function(x){x/1000}) %>%
-	        mutate_if(is.numeric, round,0)
-					)
-
-	
-}
-
-
-
-if("KF" %in% stk.df$ReportLabel){
-
-kf.tmp.lna <- stk.df	%>% dplyr::filter(ReportLabel == "KF" & VarType %in% c("ln.alpha")) 
-min.idx <- 		which(kf.tmp.lna$p50 == min(kf.tmp.lna$p50))
-max.idx <- 		which(kf.tmp.lna$p50 == max(kf.tmp.lna$p50))
-last4.idx <-  which(kf.tmp.lna$Yr %in% sort(max(kf.tmp.lna$Yr)-(0:3)))
-
-kf.tmp.seq <- stk.df	%>% dplyr::filter(ReportLabel == "KF" & VarType %in% c("Seq.c"))
-kf.tmp.seq <- kf.tmp.seq[c(min.idx,max.idx,last4.idx),] %>%
-								mutate(Label = c("Min a", "Max a", rep("Last 4",4))) %>%
-								mutate(BrYr = as.character(Yr))
-
-kf.tmp.smsy <- stk.df	%>% dplyr::filter(ReportLabel == "KF" & VarType %in% c("Smsy_p"))
-kf.tmp.smsy <- kf.tmp.smsy[c(min.idx,max.idx,last4.idx),] %>%
-								mutate(Label = c("Min a", "Max a", rep("Last 4",4))) %>%
-								mutate(BrYr = as.character(Yr))
-
-kf.tmp.sgen <- stk.df	%>% dplyr::filter(ReportLabel == "KF" & VarType %in% c("Sgen"))
-kf.tmp.sgen <- kf.tmp.sgen[c(min.idx,max.idx,last4.idx),] %>%
-								mutate(Label = c("Min a", "Max a", rep("Last 4",4))) %>%
-								mutate(BrYr = as.character(Yr))
-
-kf.tmp.smax <- stk.df	%>% dplyr::filter(ReportLabel == "KF" & VarType %in% c("Smax")) %>%
-	              mutate(BrYr = "All", Label = "")
-
-#smax
-kf.tmp <- bind_rows(kf.tmp.smax,kf.tmp.seq) %>% bind_rows(kf.tmp.smsy) %>% bind_rows(kf.tmp.sgen)
- 
-
-
-
-kf.tmp <- kf.tmp %>%
-					select(ModelType,VarType,BrYr, Label, p10,p25,p50,p75,p90) %>%
-	        mutate_if(is.numeric, round,2) %>%
-					mutate(BrYr = as.character(BrYr)) 	%>%
-					mutate_if(is.numeric, function(x){x/1000}) %>%
-	        mutate_if(is.numeric, round,0)
-
-kf.tmp$VarType[duplicated(kf.tmp$VarType)] <- ""
-
-table.in  <- table.in %>% bind_rows(kf.tmp)
-
-}
-
-table.in <- table.in %>% rename(Variable = VarType)
-table.in$Variable <- gsub("_",".",table.in$Variable)
-
-table.in$ModelType[duplicated(table.in$ModelType)] <- ""
-
-
-if((!("KF" %in% stk.df$ReportLabel & "AR1" %in% stk.df$ReportLabel))){
-
-
-table.out <- table.in %>%     
-   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
-   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
-   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
-#   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
-   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l","r","r","r","r","r","r"),
-                  caption = caption) %>%
-     kableExtra::row_spec(c(4), hline_after = TRUE) %>%
-     kableExtra::column_spec(7, bold = TRUE) 
-}
-
-if("KF" %in% stk.df$ReportLabel & "AR1" %in% stk.df$ReportLabel){
-
-
-table.out <- table.in %>%     
-   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
-   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
-   mutate_all(function(x){gsub("\\\\n","\n", x)}) %>%
-#   mutate_all(function(x){gsub("\\\\#","\#", x)}) %>%
-   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","l","l","r","r","r","r","r","r"),
-                  caption = caption) %>%
-     kableExtra::row_spec(c(4,8), hline_after = TRUE) %>%
-     kableExtra::column_spec(7, bold = TRUE) %>%
-	kableExtra::row_spec(c(9,15,21), extra_latex_after = "\\cmidrule(l){2-9}") %>%
-        kableExtra::row_spec(c(11,17,23), extra_latex_after = "\\cmidrule(l){3-9}") 
-}
-
-
-
-
-return(table.out)
-
-} # end prepTableBM
-
-
-
 #-------------------------------------------------------------------------------
 
 
@@ -823,6 +705,53 @@ table.in  %>%
    csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","r","r","r","r","r","r","r","r","r"),
                   caption = caption) %>%
    add_header_above(c(rep(" ",6), "Percentiles" = 4),bold = T) %>%
+     kableExtra::row_spec(c(5,6,9,12,14), hline_after = TRUE) #%>%
+     #kableExtra::column_spec(7, bold = TRUE) 
+
+}
+
+
+
+prepTableBM.f <- function( bm.df ,caption){
+
+
+	
+	
+bm.df <- bm.df %>% select(Variable,Mean,Median,CV,n,percNA,p10,p25,p75,p90)
+
+beta.df <- bm.df %>% dplyr::filter(Variable == "beta") %>% 
+            mutate_at(c(2:3,7:10), function(x){formatC(x, format = "e", digits = 2)} ) %>%
+            mutate(CV = format(round(CV,2),nsmall = 2))
+
+otherpars.df <- data.frame(Variable = c("sigma","phi","ln.alpha","ln.alpha.c")) %>%
+                left_join(bm.df,by="Variable") %>%
+                mutate_at(c(2:4,7:10), function(x){format(round(x,2),nsmall = 2)} ) 
+
+abdbm.df <- data.frame(Variable = c("Smax","Seq","Smsy","Sgen","Seq.c","Smsy.c","Sgen.c")) %>%
+                left_join(bm.df,by="Variable") %>%
+                mutate(CV = format(round(CV,2),nsmall = 2)) %>%
+               mutate_at(c(2:3,7:10), function(x){prettyNum(round(x),big.mark = " ")} ) 
+umsy.df <- data.frame(Variable = c("Umsy","Umsy.c")) %>%
+                left_join(bm.df,by="Variable") %>%
+                mutate_at(c(2:4,7:10), function(x){format(round(x,2),nsmall = 2)} ) 
+ratio.df <- data.frame(Variable = c("SgenRatio","SgenRatio.c")) %>%
+                left_join(bm.df,by="Variable") %>%
+                mutate_at(c(2:4,7:10), function(x){format(round(x,2),nsmall = 2)} ) 
+
+
+table.in <-    bind_rows(beta.df,otherpars.df,abdbm.df,umsy.df,ratio.df)
+   
+table.in  <- table.in  %>%
+   mutate_all(function(x){gsub("&", "\\\\&", x)}) %>% 
+   mutate_all(function(x){gsub("%", "\\\\%", x)}) %>%
+   mutate_all(function(x){gsub("\\\\n","\n", x)}) 
+
+col.names.use <- c("Variable","Moyenne","Médiane","CV","n","percNA","p10","p25","p75","p90")
+
+table.in  %>%
+   csas_table(format = "latex", escape = FALSE, font_size = 10,align = c("l","r","r","r","r","r","r","r","r","r"),
+                  caption = caption, col.names=col.names.use) %>%
+   add_header_above(c(rep(" ",6), "Centiles" = 4),bold = T) %>%
      kableExtra::row_spec(c(5,6,9,12,14), hline_after = TRUE) #%>%
      #kableExtra::column_spec(7, bold = TRUE) 
 
