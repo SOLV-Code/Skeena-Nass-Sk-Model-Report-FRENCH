@@ -151,7 +151,7 @@ include_graphics("data/1_FrenchFigs/FigApp_H4_PotentialFecundity_FRENCH.png")
 (ref:ReducedFecundity) Tendances de la fécondité apparente moyenne des saumons rouges de la rivière Babine échantillonnés à la frayère no 2 de la rivière Fulton, de 1985 à 2020.
 
 ```{r ReducedFecundity,  fig.cap="(ref:ReducedFecundity)",out.width = "80%" }
-include_graphics("data/ChannelReview/ReducedAverageFecundity.png")
+include_graphics("data/1_FrenchFigs/FigApp_H5_ReducedAverageFecundity_FRENCH.png")
 ```
 
 ### Ponte d’œufs et production d’alevins
@@ -169,22 +169,31 @@ Les taux de survie entre les stades de l’œuf et de l’alevin sont plus élev
 (ref:EggDeposition) Estimation de la ponte totale (x 10 millions) pour la rivière, le ruisseau et les frayères mis en valeur dans le cadre du PMVLB, de 1960 à 2020. Ici, les données des tronçons supérieur et inférieur du ruisseau Pinkut (y compris le transfert aérien du ruisseau Pinkut) sont combinées, tout comme celles de la frayère no 1 de la rivière Fulton et de la rivière Fulton, qui sont évaluées ensemble dans les programmes de dénombrement printanier des alevins. 
 
 ```{r EggDeposition,  fig.cap="(ref:EggDeposition)" }
-include_graphics("data/ChannelReview/TotalEggDepo.png")
+include_graphics("data/1_FrenchFigs/FigApp_H6_TotalEggDepo.png")
 ```
 
-(ref:FryProd) Survie estimée entre les stades de l’œuf et de l’alevin pour la rivière, le ruisseau et les frayères mis en valeur dans le cadre du PMVLB, de 1960 à 2020. Ici, les données des tronçons supérieur et inférieur du ruisseau Pinkut (y compris le transfert aérien du ruisseau Pinkut) sont combinées, tout comme celles de la frayère no 1 de la rivière Fulton et de la rivière Fulton, qui sont évaluées ensemble dans les programmes de dénombrement printanier des alevins.
+(ref:FryProd) Production estimée d’alevins (x 10 millions) pour les installations du PMVLB, de 1960 à 2020. Ici, les données des tronçons supérieur et inférieur du ruisseau Pinkut (y compris le transfert aérien du ruisseau Pinkut) sont combinées, tout comme celles de la frayère no 1 de la rivière Fulton et de la rivière Fulton, qui sont évaluées ensemble dans les programmes de dénombrement printanier des alevins.
 
 ```{r FryProd,  fig.cap="(ref:FryProd)" }
-include_graphics("data/ChannelReview/FryProd.png")
+include_graphics("data/1_FrenchFigs/FigApp_H8_FryProd_FRENCH.png")
 ```
 
 
-(ref:EggToFry) Production estimée d’alevins (x 10 millions) pour les installations du PMVLB, de 1960 à 2020. Ici, les données des tronçons supérieur et inférieur du ruisseau Pinkut (y compris le transfert aérien du ruisseau Pinkut) sont combinées, tout comme celles de la frayère no 1 de la rivière Fulton et de la rivière Fulton, qui sont évaluées ensemble dans les programmes de dénombrement printanier des alevins.
+(ref:EggToFry) Survie estimée entre les stades de l’œuf et de l’alevin pour la rivière, le ruisseau et les frayères mis en valeur dans le cadre du PMVLB, de 1960 à 2020. Ici, les données des tronçons supérieur et inférieur du ruisseau Pinkut (y compris le transfert aérien du ruisseau Pinkut) sont combinées, tout comme celles de la frayère no 1 de la rivière Fulton et de la rivière Fulton, qui sont évaluées ensemble dans les programmes de dénombrement printanier des alevins.
+
+
 
 ```{r EggToFry,  fig.cap="(ref:EggToFry)" }
 
-include_graphics("data/ChannelReview/EggToFry.png")
+include_graphics("data/1_FrenchFigs/FigApp_H7_EggToFry_FRENCH.png")
 ```
+
+
+
+
+
+
+
 
 
 ### Smolts
