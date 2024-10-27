@@ -1,10 +1,6 @@
 
 \clearpage
-# HIERARCHICAL BAYESIAN MODEL (HBM) OF SOCKEYE SALMON STOCK-RECRUIT DATA IN THE SKEENA RIVER SYSTEMS {#app:HBMFits}
-
-<!-- 
-**FINAL REVISIONS NEEDED: (1) FIX EQUATION THAT HAD TO BE TAKEN OUT, (2) CHECK THROUGH REVIEWS FOR EDITS** 
--->
+# MODÈLE BAYÉSIEN HIÉRARCHIQUE AVEC LES DONNÉES SUR LE STOCK-RECRUTEMENT DU SAUMON ROUGE DANS LES RÉSEAUX DE LA RIVIÈRE SKEENA {#app:HBMFits}
 
 
 
@@ -41,19 +37,17 @@ Normal draws were defined in terms of precision, does the remainder of the docum
 See equation \@ref(eq:HBMLinRick)
 -->
 
-**This appendix contributed by Murdoch McAllister and Wendell Challenger**
+**Annexe fournie par Murdoch McAllister et Wendell Challenger**
 
-*Note: This appendix is a stand-alone contribution to the Research Document. It has been included
-as a cross-check on key results (e.g., productivity scenarios), and to establish a link between
-the single-stock SR analyses present in the main report and previous work by Korman and English (2013) which used a hierarchical Bayesian approach. This appendix applies the approach of Korman and English (2013) to the updated SR data and includes extensive sensitivity testing to allow more direct comparisons with the single-stock model fits.*
+*Remarque : Cette annexe est une contribution autonome au document de recherche. Elle a été incluse comme contre-vérification des résultats clés (p. ex. scénarios de productivité) et pour établir un lien entre les analyses des géniteurs-recrues d’un seul stock présentées dans le corps du rapport et les travaux antérieurs de @KormanEnglish2013, qui ont utilisé une approche bayésienne hiérarchique. Cette annexe applique l’approche de @KormanEnglish2013 aux données sur les géniteurs-recrues mises à jour et comprend des tests de sensibilité approfondis pour permettre des comparaisons plus directes avec les ajustements du modèle à un seul stock.*
 
-A hierarchical Bayesian model (HBM) that was developed for the estimation of Ricker stock-recruit model parameters for Sockeye salmon stocks in the Skeena river system. There was insufficient time to complete an HBM for the Nass River basin.  This structuring was used because it was assumed the exchangeability in the stock productivity parameter was restricted to stocks within each basin.  Differences in the frequency distribution of life history attributes of stocks such as age composition of spawners, the relative frequency of lake rearing and non-lake rearing life history types and differences in run timings and marine migration routes exist between Sockeye salmon stocks in these two watersheds.  
+Un MBH a été élaboré pour l’estimation des paramètres du modèle stock-recrutement de Ricker pour les stocks de saumon rouge du bassin versant de la rivière Skeena. Le temps a manqué pour préparer un MBH pour les stocks du bassin versant de la rivière Nass. Cette structure a été utilisée parce qu’on a supposé que l’échangeabilité du paramètre de la productivité des stocks était limitée aux stocks dans chaque bassin versant. La distribution de la fréquence des caractéristiques du cycle biologique des stocks, comme la composition selon l’âge des géniteurs, la fréquence relative des types de cycle biologique à croissance dans les lacs et autres, les périodes de montaison et les voies de migration en milieu marin sont différentes entre les stocks de saumon rouge dans ces deux bassins versants.  
 
 
 
-## Mathematical and Statistical Formulation of the HBM {#app:HBMFits-1}
+## FORMULES MATHÉMATIQUES ET STATISTIQUES DU MBH {#app:HBMFits-1}
 
-The Skeena HBM models use a linearized form of the Ricker stock-recruit model:
+Les MBH de la rivière Skeena utilisent une forme linéarisée du modèle stock-recrutement de Ricker :
 
 
 \begin{equation}
@@ -61,16 +55,16 @@ The Skeena HBM models use a linearized form of the Ricker stock-recruit model:
 (\#eq:HBMLinRick)
 \end{equation}
 
-where $R_{s,y}$ is the observed abundance of recruits produced in stock $s$ in brood year $y$ by the corresponding abundance of spawners brood year $S_{s,y}$. The parameter $a_s$ is the natural logarithm of the maximum rate of population increase, $\beta_s$ is the stock-specific coefficient for the density-dependent effect of spawner abundance on stock productivity and $\epsilon_{s,y}$ represents stock by  year error term that is assumed to be Normally distributed. 
+où $R_{s,y}$ est l’abondance observée des recrues produites dans le stock $s$ l’année d’éclosion $y$ par l’abondance correspondante des géniteurs l’année d’éclosion $S_{s,y}$. Le paramètre $a_s$ est le logarithme naturel du taux maximal d’augmentation de la population, $\beta_s$ est le coefficient propre au stock pour l’effet dépendant de la densité de l’abondance des géniteurs sur la productivité du stock et $\epsilon_{s,y}$ représente le terme d’erreur du stock par année qui est censé avoir une distribution normale.
 
+Le cadre du MBH présenté repose sur celui formulé par @KormanEnglish2013, qui ont estimé les paramètres de stock-recrutement pour de nombreux stocks de saumon dans le réseau de la rivière Skeena. Le MBH suppose, comme @KormanEnglish2013, que le paramètre $a$ de Ricker est échangeable entre les stocks d’un réseau fluvial avec une moyenne hyper a priori et un écart-type hyper a priori :
 
-The HBM framework presented is based on that formulated by @KormanEnglish2013 who estimated stock-recruit parameters for numerous salmon stocks in the Skeena River system.  The HBM presumes, as @KormanEnglish2013 did, that the Ricker $a$ parameter is exchangeable between stocks within a river system with a hyper prior mean and hyper prior standard deviation:
 
 \begin{equation}
   a_s \sim  \ln \textrm{Normal}\left(\mu_a,\ \tau_a\right) 
 \end{equation}
 
-where $\mu_a$ is the natural logarithm of the hyper prior median of the Ricker $a$ parameter, and $\tau_a$ is the hyperprior precision of the Ricker $a$ parameter.  The following hyperpriors were assigned for $\mu_a$ and $\tau_a$:
+où $\mu_a$ est le logarithme naturel de la médiane hyper a priori du paramètre $a$ de Ricker, et $\tau_a$ est la précision hyper a priori du paramètre $a$ de Ricker. Les valeurs hyper a priori suivantes ont été attribuées à $\mu_a$ et à $\tau_a$ :
   
 \begin{equation}
   \mu_a \sim \textrm{Normal}\left({0.5,\ 10^{-6}}\right)
@@ -78,18 +72,16 @@ where $\mu_a$ is the natural logarithm of the hyper prior median of the Ricker $
   \tau_a \sim  \textrm{Gamma} \left(0.5,\ 0.5 \right).
 \end{equation}
 
-@KormanEnglish2013 choose these priors as vague priors and the same hyperpriors were retained in the current formulation.
 
+@KormanEnglish2013 ont choisi ces a priori comme des a priori vagues et nous avons repris les mêmes hyper a priori dans les formules actuelles.
 
-
-
-A informative log-normal prior was also assumed for density-dependency parameter  $\beta_s$ which follows the formulation used in @KormanEnglish2013:  
+Une valeur a priori log-normale informative a également été supposée pour le paramètre $\beta_s$ de densité-dépendance qui suit la formulation utilisée dans @KormanEnglish2013 :
 
 \begin{equation}
   \beta_s \sim \ln \textrm{Normal}\left(\mu_{\beta,s},\ \tau_{\beta,s}\right)
 \end{equation}
 
-where $\mu_{\beta,s}$  was obtained based on results from previous limnological lake productivity analyses that assessed the spawner abundance (i.e., $S_{\textrm{max},s})$ which could generate on average the maximum number of recruits for each stock. The values $\mu_{\beta,s}$  and $\tau_{\beta,s}$ were determined as:
+où $\mu_{\beta,s}$  a été tiré des résultats d’analyses limnologiques antérieures de la productivité des lacs qui ont évalué l’abondance des géniteurs (c.-à-d. $S_{\textrm{max},s})$ qui pourrait produire en moyenne le nombre maximal de recrues pour chaque stock. Les valeurs $\mu_{\beta,s}$  et $\tau_{\beta,s}$ ont été déterminées comme suit :
 
   
 \begin{equation}
@@ -98,16 +90,26 @@ where $\mu_{\beta,s}$  was obtained based on results from previous limnological 
   \tau_{\beta,s}=\left(\frac{1}{\sigma_{\textrm{max},s}}\right)^2.
 \end{equation}
   
-where $\sigma_{\textrm{max},s}$  is the prior standard deviation in the natural logarithm of $S_{\textrm{max},s}$.  Note that values for $\sigma_{\textrm{max},s}$  are nearly identical to the coefficient of variation (CV) for smaller values of $\sigma_{\textrm{max},s}$ (i.e., about 0.5 and lower) and as such we use CV and $\sigma_{\textrm{max},s}$ interchangeably when describing precision of the prior. That said, the ratio of CV to $\sigma_{\textrm{max},s}$ increases to noticeably larger than 1 (i.e., CV is larger than $\sigma_{\textrm{max},s}$) at larger values of $\sigma_{\textrm{max},s}$ meaning the true CV is larger than stated and the prior will be more diffuse. The values  of $S_{\textrm{max},s}$ and $\sigma_{\textrm{max},s}$ for each stock in the Skeena watershed are provided in Table \@ref(tab:PrSmax).
-
+  
+ où $\sigma_{\textrm{max},s}$ est l’écart type a priori dans le logarithme naturel de $S_{\textrm{max},s}$. Il faut noter que les valeurs de $\sigma_{\textrm{max},s}$ sont presque identiques au coefficient de variation pour les valeurs plus petites de $\sigma_{\textrm{max},s}$(environ 0,5 et moins) et que, par conséquent, nous utilisons le coefficient de variation et $\sigma_{\textrm{max},s}$ de façon interchangeable pour décrire la précision de la valeur a priori. Cela dit, le rapport entre le coefficient de variation et $\sigma_{\textrm{max},s}$) augmente nettement au-dessus de 1 (c.-à-d. que le coefficient de variation est plus grand que $\sigma_{\textrm{max},s}$) à des valeurs plus grandes de $\sigma_{\textrm{max},s}$, ce qui signifie que le coefficient de variation réel est plus grand que celui indiqué et que la valeur a priori sera plus diffuse. Les valeurs de $S_{\textrm{max},s}$ et de $\sigma_{\textrm{max},s}$ pour chaque stock dans le bassin versant de la rivière Skeena sont indiquées dans le tableau \@ref(tab:PrSmax). 
+  
+  
 <!-- TABLE C.1. Smax Priors -->
 ```{r PrSmax, echo=FALSE, results='asis'}
-cap <- "Prior median values for stock-specific $S_\\textrm{max}$ and the prior standard deviation in the natural logarithm of $S_\\textrm{max}$ (i.e., $\\sigma_{\\textrm{max},s}$) based on results from previous lake productivity analyses.  The two instances where three stocks are listed in the same line, the available mean $S_\\textrm{max}$ values were added since the individual rearing lakes for these stocks were geographically very close together and the stock-recruit data for these stocks were thus combined into a single time series of stock-recruit data for stock-recruit parameter estimation."
+cap <- "Médiane des valeurs a priori de $S_\\textrm{max}$  propre au stock et écart type a priori dans le logarithme naturel de $S_\\textrm{max}$ (c.-à-d. $\\sigma_{\\textrm{max},s}$) d’après les résultats d’analyses précédentes de la productivité des lacs. Dans les deux cas où trois stocks sont répertoriés sur la même ligne, les valeurs moyennes de $S_\\textrm{max}$ accessibles ont été ajoutées puisque les différents lacs de croissance de ces stocks étaient géographiquement très proches et les données sur le stock-recrutement pour ces stocks ont donc été combinées en une seule série chronologique de données sur le stock-recrutement pour l’estimation des paramètres de stock-recrutement."
+
+
 # data.frame(Yes = 1:10, No = LETTERS[11:20]) %>%
 HBM.results$Smax %>%
   filter(Basin == "Skeena") %>%
-  mutate(prSmax = round(prSmax)) %>%
+  mutate(prSmax = prettyNum(round(prSmax),big.mark=" ")) %>%
+  mutate(prCV= prettyNum(prCV,decimal.mark=",")) %>%
+  mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   rename(
+     Lac = Lake,
+	 Bassin = Basin,
     `$S_{\\textrm{max},s}$` = prSmax,
     `CV/$\\sigma_{\\textrm{max},s}$` = prCV
   ) %>%
@@ -119,86 +121,95 @@ HBM.results$Smax %>%
     caption = cap
   )
 ```
-The values for $\sigma_{\textrm{max},s}$ were obtained for most of the Skeena Sockeye salmon stocks from @KormanEnglish2013. It should be noted that a value for $\sigma_{\textrm{max},s}$ of 2.00 makes the corresponding prior for $S_{\textrm{max},s}$ vague and diffuse. For example,  relative to the median, the lower and upper 95% credible intervals would be about fifty times lower and fifty times higher than the median.  In cases where $\sigma_{\textrm{max},s}$ was set at 2.00, at least some members of the Working Group had raised concerns about the empirical basis for the values for $S_{\textrm{max},s}$ that could be obtained for those stocks.  The Babine stocks represented a stock aggregate that was divided five ways, the Asitka was based on an approximation and Morice was a two lake system where only the larger lake was measured. Due to these issues diffuse priors were used for these stocks.
 
-At the time of analysis no lake productivity estimate was available for Asitka.  As a result a crude approximation of the prior median $S_{\textrm{max},s}$ for Asitka was obtained from the product of the lake surface area for Asitka and the average $S_{\textrm{max},s}$ per unit lake area for Skeena watershed lakes for which $S_{\textrm{max},s}$ estimates for Sockeye salmon were available.  Due the large uncertainty associated with $S_{\textrm{max},s}$ for Asitka, a value of 2.00 was assumed for $\sigma_{\textrm{max},s}$ for Askita which makes this into a vague prior.   
+Les valeurs de $\sigma_{\textrm{max},s}$ ont été tirées, pour la plupart des stocks de saumon rouge de la rivière Skeena, de @KormanEnglish2013). Il convient de noter qu’une valeur de 2,00 pour $\sigma_{\textrm{max},s}$  rend la valeur a priori correspondante de $S_{\textrm{max},s}$ vague et diffuse. Par exemple, par rapport à la médiane, les limites inférieures et supérieures des intervalles de crédibilité à 95 % seraient environ cinquante fois plus basses et cinquante fois plus élevées que la médiane. Dans les cas où la valeur de  $\sigma_{\textrm{max},s}$ a été fixée à 2,00, au moins certains membres du groupe de travail ont soulevé des préoccupations au sujet de la base empirique des valeurs de $S_{\textrm{max},s}$  que l’on pourrait obtenir pour ces stocks. Les stocks du lac Babine représentaient un regroupement de stocks qui a été divisé en cinq, celui de la rivière Asitka reposait sur une approximation et celui de la rivière Morice était un réseau de deux lacs dont seul le plus grand a été mesuré. En raison de ces problèmes, nous avons utilisé des valeurs a priori diffuses pour ces stocks.
 
-For the five Babine Lake stocks there was admittedly highly uncertain over the appropriate stock-specific lake capacity due to uncertainty over how the common resource is shared between the five stocks as juveniles for at least five of the recognized Babine stocks rear in Babine Lake.  The prior median for $S_{\textrm{max},s}$ for each of the five Babine Lake stocks were obtained by dividing the total Babine lake productivity estimate by  five, providing an equal allocation of the shared resource to each Babine stock.  Because the true proportion of lake productivity used by each stock remains unknown a high level of uncertainty (i.e., a $\sigma_{\textrm{max},s}$  value 2.00) was assigned for each for each Babine Lake stock.
+Au moment de l’analyse, aucune estimation de la productivité du lac n’était disponible pour la rivière Asitka. De ce fait, une approximation brute de la médiane a priori de $S_{\textrm{max},s}$ pour la rivière Asitka a été tirée du produit de la superficie du lac pour la rivière Asitka et de la moyenne de $S_{\textrm{max},s}$ par unité de superficie du lac pour les lacs du bassin versant de la rivière Skeena pour lesquels des estimations de $S_{\textrm{max},s}$ pour le saumon rouge étaient accessibles. En raison de la grande incertitude entourant $S_{\textrm{max},s}$ pour le stock de la rivière Asitka, nous avons supposé une valeur de 2,00 pour $\sigma_{\textrm{max},s}$  de ce stock, ce qui en fait une valeur a priori vague.
 
-As in @KormanEnglish2013 a Normal likelihood function was applied in the HBM and the same prior was applied to the standard deviation in the deviations between predicted and observed productivity:
+Pour les cinq stocks du lac Babine, une grande incertitude entoure la capacité des lacs pour chaque stock en raison de l’incertitude concernant la façon dont la ressource commune est partagée entre les cinq stocks étant donné que les juvéniles d’au moins cinq des stocks reconnus du lac Babine grandissent dans le lac. La médiane a priori de $S_{\textrm{max},s}$ pour chacun des cinq stocks du lac Babine a été calculée en divisant l’estimation de la productivité totale du lac Babine par cinq, ce qui donne une répartition égale de la ressource partagée pour chaque stock du lac Babine. Étant donné que la proportion réelle de la productivité du lac utilisée par chaque stock demeure inconnue, un niveau élevé d’incertitude (c.-à-d. une valeur de 2,00 de $\sigma_{\textrm{max},s}$) a été attribué à chaque stock du lac Babine.
+
+Comme dans @KormanEnglish2013, nous avons appliqué une fonction de vraisemblance normale dans le MBH et la même valeur a priori à l’écart type des écarts entre la productivité prévue et la productivité observée :
+
 
 \begin{equation}
   \log{\left(\frac{R_{s,y}}{S_{s,y}}\right) \sim   \textrm{Normal}\left(\mu_{s,y}^{RS},\  \tau_s \right)} 
 \end{equation}
 
-where $\log(R_{s,y}/S_{s,y})$ is the observed natural logarithm of the ratio of recruits produced by spawners (i.e., productivity) in brood year $y$ for stock $s$, $\mu_{s,y}^{RS}$ is the stock-specific productivity predicted by the Ricker stock-recruit model (see equation \@ref(eq:HBMLinRick)), conditioned on parameters $a_s$ and $\beta_s$, and $\tau_s$ is the stock-specific precision used in the likelihood function and is given by:
+où $\log(R_{s,y}/S_{s,y})$ est le logarithme naturel observé du ratio des recrues produites par les géniteurs (c.-à-d. la productivité) l’année d’éclosion $y$ pour le stock $s$, $\mu_{s,y}^{RS}$ est la productivité propre au stock prévue par le modèle stock-recrutement de Ricker (voir l’équation (\@ref(eq:HBMLinRick))), conditionné par les paramètres $a_s$ et $\beta_s$, et $\tau_s$  est la précision propre au stock utilisée dans la fonction de vraisemblance et donnée par la formule 
 
 \begin{equation}
   \tau_s=\frac{1}{\sigma_s^2}
 \end{equation}
-  
-where $\sigma_s$ is the stock-specific standard deviation in the deviates between observed and predicted productivity.  The prior for $\sigma_s$ is the same as that applied by @KormanEnglish2013:
+ 
+où $\sigma_s$ est l’écart type propre au stock dans les écarts entre la productivité observée et la productivité prévue. La valeur a priori pour $\sigma_s$ est la même que celle appliquée dans @KormanEnglish2013 : 
+
 
 \begin{equation}
   \sigma_s \sim \textrm{Uniform}(0.05,\ 10).
 \end{equation}
 
-The original @KormanEnglish2013 HBM did not consider time varying changes in productivity; because this was of interest in the current investigation, the @KormanEnglish2013 HBM was extended to include a common shared year effect on stock productivity (i.e., $\log(R_{s,y}/S_{s,y})$). It is hypothesized that due to the spatial proximity of the Sockeye salmon stocks within a basin (i.e., Skeena basin) and overlap between stocks in migration pathways in freshwater and the marine environment that the annual productivity of different stocks will deviate from Ricker model predictions in the same direction and with similar magnitude in each year.   Therefore, in addition to a stock-specific deviate between the Ricker model prediction of productivity and the observed productivity, a common shared deviate or year effect was also included in the HBM.  The linearized form of the Ricker model that includes the common shared year effect $T_y$ in year $y$ is thus given by:
+Le MBH original de @KormanEnglish2013 ne tenait pas compte des variations temporelles de la productivité; comme ce point présentait un intérêt dans l’étude actuelle, nous avons étendu le MBH de @KormanEnglish2013 pour inclure un effet annuel commun sur la productivité du stock (c.-à-d. $\log(R_{s,y}/S_{s,y})$). On pose l’hypothèse qu’en raison de la proximité spatiale des stocks de saumon rouge dans un bassin versant (celui de la rivière Skeena) et le chevauchement entre les stocks dans les voies de migration en eau douce et en mer, la productivité annuelle de différents stocks s’écartera des prévisions du modèle de Ricker dans le même sens et d’une ampleur semblable chaque année. Ainsi, en plus d’un écart propre au stock entre la prévision de la productivité dans le modèle de Ricker et la productivité observée, un écart ou un effet annuel commun a également été inclus dans le MBH. La forme linéarisée du modèle de Ricker qui comprend l’effet annuel commun $T_y$ l’année $y$ est donc donnée par la formule :
 
 \begin{equation}
   \mu_{s,y}^{RS}=a_s-\beta_s\cdot S_{s,y}+T_y
 \end{equation}
   
+La valeur a priori de $T_y$ est donnée par la formule :
 
-The prior for $T_y$ is given by,
 
 \begin{equation}
   T_y \sim \textrm{Normal}\left(0,\ \tau_T\right)
 \end{equation}
   
-where $\tau_T$  is the prior precision in the common shared year effect that is computed as $\tau_T=1/\sigma_T^2$ with $\sigma_T$ representing the standard deviation in common shared year effects.  The hyperprior for $\sigma_T$  was determined as:
+ où $\tau_T$ est la précision a priori dans l’effet annuel commun, qui est calculée comme $\tau_T=1/\sigma_T^2$, avec $\sigma_T$  représentant l’écart type dans les effets annuels communs. La valeur hyper a priori pour $\sigma_T$  a été déterminée comme suit : 
+  
 
 \begin{equation}
   \sigma_T \sim \ln \textrm{Normal} \left(\log{\left(0.8\right),\ \frac{1}{{0.7}^2}}\right).
 \end{equation}
-  
-The prior for $\sigma_T$ was chosen to be mildly informative with the prior central tendency and prior precision set at values to allow the data to inform a large range of values and accommodate potentially large interannual variation in common shared year effects. 
-
-The estimated common shared year effects are expected to represent average deviations from Ricker model stock-productivity predictions across stocks in a given year.  The common shared year effect could potentially result from better than average or worse than average survival rates from natural mortality within a given year experienced by the stocks in either freshwater or saltwater.  However, it could also result from run reconstruction errors, for example, underestimation or overestimation of the total catch. 
-
-## Model Fitting
-
-The MCMC algorithms applied for posterior integration of the HBM included WinBUGS 1.4.3 and JAGS and practically identical parameter estimates were obtained between the two software packages.    Under the initial WinBUGS implementations the burn-in was achieved within about 10,000 iterations and well-pronounced posterior density functions were obtained for parameter estimates.   However, under both software packages, for some of the stocks, the MCMC chains could stray very rarely to extreme low values for the Ricker $\beta$ parameter or extreme high values for the Ricker $a$ parameter.  Extreme low values for the Ricker $\beta$ parameter map out to extreme high values, e.g., ten times the value of the posterior mode, for derived parameters such as the average unfished spawner abundance, $S_0$, or spawning stock abundance associated with the maximum sustainable yield, $S_{msy}$.  Such extreme outlier values were considered to be well outside of the support of the data and may be artifacts of the operation of the MCMC algorithms applied. 
-
-To prevent the inclusion of extreme outlier values, a minimum boundary was applied to the prior for the Ricker $\beta$ parameter.  The prior minimum value for the Ricker $\beta$ parameter was established as follows.  An upper bound on the value for $S_\textrm{max}$ was obtained for each stock as five times the prior central tendency specified for $S_\textrm{max}$ :  
 
 
+La valeur a priori de  $\sigma_T$ a été choisie de manière à être légèrement informative avec la tendance centrale a priori et la précision a priori établies à des valeurs qui permettent aux données d’informer une vaste fourchette de valeurs et de tenir compte d’une variation interannuelle potentiellement importante des effets annuels communs.
+
+L’estimation des effets annuels communs devrait représenter les écarts moyens par rapport aux prévisions de la productivité du stock par le modèle de Ricker pour l’ensemble des stocks une année donnée. L’effet annuel commun pourrait résulter de taux de survie supérieurs ou inférieurs à la moyenne en raison de la mortalité naturelle du stock une année donnée en eau douce ou en mer. Cependant, il peut également résulter d’erreurs de reconstitution des remontes, comme une sous-estimation ou une surestimation de la prise totale.
+
+
+
+
+
+
+## AJUSTEMENT DES MODÈLES
+
+Les algorithmes MCCM appliqués à l’intégration a posteriori du MBH étaient WinBUGS 1.4.3 et JAGS, et les deux progiciels ont donné des estimations des paramètres pratiquement identiques. Dans la mise en œuvre initiale de WinBUGS, le rodage a été réalisé en environ 10 000 itérations et des fonctions de densité a posteriori bien prononcées ont été obtenues pour les estimations des paramètres. Cependant, avec les deux progiciels, pour certains stocks, les chaînes MCCM pouvaient très rarement s’écarter jusqu’à des valeurs extrêmement faibles pour le paramètre $\beta$ de Ricker ou à des valeurs extrêmement élevées pour le paramètre $a$ de Ricker. Les valeurs extrêmement faibles du paramètre $\beta$ de Ricker vont jusqu’à des valeurs extrêmement élevées, par exemple dix fois la valeur du mode a posteriori, pour des paramètres dérivés comme l’abondance moyenne non exploitée des géniteurs, $S_0$, ou l’abondance du stock reproducteur associée au rendement maximal durable, $S_{rmd}$. De telles valeurs aberrantes extrêmes ont été considérées comme bien en dehors du soutien des données et peuvent être des artefacts du fonctionnement des algorithmes MCCM appliqués.
+
+
+Pour éviter l’inclusion de valeurs aberrantes extrêmes, une borne minimale a été appliquée à la valeur a priori du paramètre $\beta$ de Ricker. La valeur minimale a priori du paramètre $\beta$ de Ricker a été établie comme suit. Une borne supérieure de la valeur de $S_\textrm{max}$  a été calculée pour chaque stock, soit cinq fois la tendance centrale a priori spécifiée pour $S_\textrm{max}$ : 
 
 
 \begin{equation}
   S_{\textrm{max},\textrm{max},s} = 5 \times S_{\textrm{max},s} \textrm{ and } \beta_{\textrm{min},s}=\frac{1}{S_{\textrm{max},\textrm{max},s}}. 
 \end{equation}
 
-
-The adjusted prior for $\beta_s$ that was applied was thus:
+La valeur a priori ajustée pour $\beta_s$ qui a été appliquée était donc :
 
 \begin{equation}
   \textrm{max}\left(\beta_s \sim \ \ln \textrm{Normal}\left(\mu_{\beta,s},\ \ \tau_{\beta,s}\right),\ \beta_{\textrm{min},s}\right)
 \end{equation}
 
-The application of this modified prior for $\beta_s$ thus prevented anomalously low values for $\beta_s$ and anomalously large MCMC values for abundance reference points such as  $S_\textrm{max}$, $S_\textrm{msy}$, and $S_0$. 
+L’application de cette valeur a priori modifiée pour $\beta_s$ a ainsi empêché des valeurs anormalement faibles de $\beta_s$ et des valeurs MCCM anormalement grandes pour les points de référence fondés sur l’abondance tels que $S_\textrm{max}$ , $S_\textrm{rmd}$, and $S_0$.
 
+La distribution prédictive a posteriori du paramètre a de Ricker pour une population non échantillonnée, a_p, est donnée par la formule qui suit :
 
-The posterior predictive distribution for the Ricker $a$ parameter for an unsampled population, $a_p$, is given by:
 
 \begin{equation}
   a_p \sim\  \ln \textrm{Normal}\left(\mu_a,\ \tau_a\right)
   (\#eq:unsamp)
 \end{equation}
   
-This distribution reflects the effective prior density function for the Ricker $a$ parameter that was applied to estimate this parameter for each stock. 
 
-To provide approximations of how productivity could be varying systematically over years, representations of time varying productivity were obtained by adding the running $n = 4$ or 5 year averages of the common shared year effects to the $a$ parameter for each stock:
+Cette distribution reflète la fonction de densité a priori effective pour le paramètre $a$ de Ricker qui a été appliquée pour estimer ce paramètre pour chaque stock.
+
+Afin de fournir des approximations de la façon dont la productivité pourrait varier de façon systématique au fil des ans, nous avons obtenu des représentations de la productivité variable dans le temps en ajoutant les moyennes mobiles $n = 4$ ou 5 ans des effets annuels communs au paramètre $a$ pour chaque stock :
 
 \begin{equation}
   a_{s,y,n}=a_s+\frac{1}{n}\cdot\sum_{i=y-n+1}^{y}T_i
@@ -206,15 +217,8 @@ To provide approximations of how productivity could be varying systematically ov
 \end{equation}
 
 
-Final estimates of the posterior distributions were derive in JAGS by running six 
-independent chains with differen starting points for 100,000 MCMC iterations 
-after a burn-in of 20,000. Posterior samples were thinned keeping every 10th 
-sample in order to reduce auto-correlation in both fundamental and derived 
-parameters. Convergence was assess through a combination of diagnostic plots (e.g., traceplots, posterior distributions and Gelman-Rubin-Brooks plots) and criterion such as Rhat, Gelman and Rubin's 
-potential scale reduction factor [@GelmanRubin1992], including the multivariate version [@BrooksGelman1998], and Geweke's diagnostic [@Geweke1992]. In all cases plots showed goods sampling
-from the posterior with little to no autocorrelation and all diagnostic 
-criterion were within ranges that are generally associated with 
-convergence (i.e., Rhat < 1.05, Gelman-Rubin within [0.99, 1.01], and Geweke within [-2,2]).
+Les estimations finales des distributions a posteriori ont été dérivées dans JAGS en exécutant six chaînes indépendantes avec des points de départ différents pour 100 000 itérations MCCM après un rodage de 20 000. Les échantillons a posteriori ont été éclaircis en conservant un échantillon sur dix afin de réduire l’autocorrélation dans les paramètres fondamentaux et dérivés. La convergence a été évaluée au moyen d’une combinaison de tracés diagnostiques (p. ex. graphiques des traces, distributions a posteriori et tracés Gelman-Rubin-Brooks) et de critères comme le facteur de réduction d’échelle potentiel de Rhat, Gelman et Rubin [@GelmanRubin1992], y compris la version multivariée [@BrooksGelman1998], et le diagnostic de Geweke [@Geweke1992]. Dans tous les cas, les tracés ont montré de bons échantillonnages à partir de la valeur a posteriori avec peu ou pas d’autocorrélation et indiqué que tous les critères de diagnostic se situaient dans des fourchettes généralement associées à la convergence (c. à d. Rhat < 1,05, Gelman-Rubin dans la fourchette [0,99; 1,01] et Geweke dans la fourchette [-2; 2]).
+
 
 
 
