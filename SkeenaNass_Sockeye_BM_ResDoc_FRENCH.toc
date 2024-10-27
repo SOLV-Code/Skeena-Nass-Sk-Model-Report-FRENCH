@@ -129,73 +129,73 @@
 \contentsline {chapter}{APPENDIX~D. MODÈLE BAYÉSIEN HIÉRARCHIQUE AVEC LES DONNÉES SUR LE STOCK-RECRUTEMENT DU SAUMON ROUGE DANS LES RÉSEAUX DE LA RIVIÈRE SKEENA}{249}{section*.13}%
 \contentsline {section}{\numberline {D.1}FORMULES MATHÉMATIQUES ET STATISTIQUES DU MBH}{249}{section.D.1}%
 \contentsline {section}{\numberline {D.2}AJUSTEMENT DES MODÈLES}{252}{section.D.2}%
-\contentsline {section}{\numberline {D.3}Sensitivity Analyses}{253}{section.D.3}%
-\contentsline {section}{\numberline {D.4}Results}{254}{section.D.4}%
-\contentsline {subsection}{\numberline {D.4.1}Shrinkage in the Ricker \(a\) Parameter in Going From a Non-HBM to an HBM}{254}{subsection.D.4.1}%
-\contentsline {subsection}{\numberline {D.4.2}Common Shared Year Effect}{255}{subsection.D.4.2}%
-\contentsline {subsection}{\numberline {D.4.3}Sensitivity Run 1: Effect of Korman and English's (2013) Coding Error for their HBM}{259}{subsection.D.4.3}%
-\contentsline {subsection}{\numberline {D.4.4}Sensitivity Run 2: Same as HBM Base Case But With No Prior Lower Bound on the Ricker \(\beta \) Parameter}{260}{subsection.D.4.4}%
-\contentsline {subsection}{\numberline {D.4.5}Sensitivity Run 3: Same as HBM Base Case But Leaving Out Common Shared Year Effects}{262}{subsection.D.4.5}%
-\contentsline {subsection}{\numberline {D.4.6}Sensitivity Run 4: Non-Hierarchical Model Run With No Common Shared Year Effect But Including the Same \(S_\textrm {max}\) Prior Information As in the Base Case HBM}{264}{subsection.D.4.6}%
-\contentsline {subsection}{\numberline {D.4.7}Sensitivity Run 5: Normal Priors on Smax in the HBM Instead of the Lognormal Prior on Ricker \(\beta \)}{266}{subsection.D.4.7}%
-\contentsline {subsection}{\numberline {D.4.8}Sensitivity Run 6: Application of Vague Ricker \(\beta \) Priors in the HBM, but Including the Prior Lower Bound on \(\beta \)}{268}{subsection.D.4.8}%
-\contentsline {subsection}{\numberline {D.4.9}Sensitivity Runs 7-25. Leave Out Stock-Recruit Data in the HBM, One Stock at a Time}{270}{subsection.D.4.9}%
-\contentsline {subsection}{\numberline {D.4.10}Sensitivity Run 26: Removal of Enhanced Stocks and Vague Ricker \(\beta \) Priors for Select Stocks}{273}{subsection.D.4.10}%
-\contentsline {section}{\numberline {D.5}Summary}{274}{section.D.5}%
-\contentsline {chapter}{APPENDIX~E. TESTS DE SENSIBILITÉ~: TRAITEMENT DES DONNÉES ET CALCULS DES POINTS DE RÉFÉRENCE}{276}{section*.15}%
-\contentsline {section}{\numberline {E.1}FILTRAGE ET REMPLISSAGE DES DONNÉES SUR LES GÉNITEURS-RECRUES}{276}{section.E.1}%
-\contentsline {subsection}{\numberline {E.1.1}But}{276}{subsection.E.1.1}%
-\contentsline {subsection}{\numberline {E.1.2}Méthodes}{276}{subsection.E.1.2}%
-\contentsline {subsection}{\numberline {E.1.3}Résultats}{276}{subsection.E.1.3}%
-\contentsline {subsection}{\numberline {E.1.4}Conclusions}{277}{subsection.E.1.4}%
-\contentsline {section}{\numberline {E.2}REMPLISSAGE AU MOYEN D'UN MODÈLE GÉNÉRIQUE D'ESPACE D'ÉTATS}{279}{section.E.2}%
-\contentsline {subsection}{\numberline {E.2.1}But}{279}{subsection.E.2.1}%
-\contentsline {subsection}{\numberline {E.2.2}Méthodes}{280}{subsection.E.2.2}%
-\contentsline {subsection}{\numberline {E.2.3}Résultats}{281}{subsection.E.2.3}%
-\contentsline {subsection}{\numberline {E.2.4}Conclusions}{281}{subsection.E.2.4}%
-\contentsline {section}{\numberline {E.3}ESSAI D'AUTRES APPROCHES DE CALCUL DES POINTS DE RÉFÉRENCE}{284}{section.E.3}%
-\contentsline {subsection}{\numberline {E.3.1}But}{284}{subsection.E.3.1}%
-\contentsline {subsection}{\numberline {E.3.2}Autres calculs de Srmd}{284}{subsection.E.3.2}%
-\contentsline {subsection}{\numberline {E.3.3}Autres calculs de Sgen}{284}{subsection.E.3.3}%
-\contentsline {subsection}{\numberline {E.3.4}Essais}{285}{subsection.E.3.4}%
-\contentsline {subsection}{\numberline {E.3.5}Résultats}{285}{subsection.E.3.5}%
-\contentsline {subsection}{\numberline {E.3.6}Conclusions}{285}{subsection.E.3.6}%
-\contentsline {section}{\numberline {E.4}EFFET DE LA CORRECTION DU BIAIS SUR LES ESTIMATIONS DES POINTS DE RÉFÉRENCE}{287}{section.E.4}%
-\contentsline {subsection}{\numberline {E.4.1}But}{287}{subsection.E.4.1}%
-\contentsline {subsection}{\numberline {E.4.2}Approche}{287}{subsection.E.4.2}%
-\contentsline {subsection}{\numberline {E.4.3}Résultats}{287}{subsection.E.4.3}%
-\contentsline {subsection}{\numberline {E.4.4}Conclusions}{288}{subsection.E.4.4}%
-\contentsline {chapter}{APPENDIX~F. EXTENSIONS DU MODÈLE DE SIMULATION}{293}{section*.17}%
-\contentsline {section}{\numberline {F.1}INCERTITUDE DES RÉSULTATS}{293}{section.F.1}%
-\contentsline {subsection}{\numberline {F.1.1}Introduction}{293}{subsection.F.1.1}%
-\contentsline {subsection}{\numberline {F.1.2}Profils historiques du taux d'exploitation et de la récolte pour les regroupements}{293}{subsection.F.1.2}%
-\contentsline {subsection}{\numberline {F.1.3}Estimation de l'incertitude des résultats au niveau du regroupement à partir des profils historiques}{295}{subsection.F.1.3}%
-\contentsline {subsection}{\numberline {F.1.4}Différences historiques entre le taux d'exploitation au niveau du regroupement et au niveau du stock}{300}{subsection.F.1.4}%
-\contentsline {subsection}{\numberline {F.1.5}Mise en œuvre du modèle des scalaires du taux d'exploitation au niveau du regroupement et au niveau du stock}{307}{subsection.F.1.5}%
-\contentsline {section}{\numberline {F.2}MODÉLISATION DE LA COVARIATION DE LA PRODUCTIVITÉ}{309}{section.F.2}%
-\contentsline {subsection}{\numberline {F.2.1}Concepts}{309}{subsection.F.2.1}%
-\contentsline {subsection}{\numberline {F.2.2}Estimation de la covariance historique de la productivité}{309}{subsection.F.2.2}%
-\contentsline {subsection}{\numberline {F.2.3}Mise en œuvre dans le modèle de la covariation de la productivité}{312}{subsection.F.2.3}%
-\contentsline {chapter}{APPENDIX~G. ESTIMATIONS DES POINTS DE RÉFÉRENCE AVEC CORRECTION DU BIAIS}{313}{section*.19}%
-\contentsline {section}{\numberline {G.1}TABLEAUX SOMMAIRES POUR LA RIVIÈRE NASS -- AVEC CORRECTION DU BIAIS}{313}{section.G.1}%
-\contentsline {subsection}{\numberline {G.1.1}Srmd de la rivière Nass}{313}{subsection.G.1.1}%
-\contentsline {subsection}{\numberline {G.1.2}Sgen de la rivière Nass}{314}{subsection.G.1.2}%
-\contentsline {subsection}{\numberline {G.1.3}Urmd de la rivière Nass}{315}{subsection.G.1.3}%
-\contentsline {section}{\numberline {G.2}TABLEAUX SOMMAIRES POUR LA RIVIÈRE SKEENA -- AVEC CORRECTION DU BIAIS}{316}{section.G.2}%
-\contentsline {subsection}{\numberline {G.2.1}Srmd des stocks sauvages de la rivière Skeena}{316}{subsection.G.2.1}%
-\contentsline {subsection}{\numberline {G.2.2}Sgen des stocks sauvages de la rivière Skeena}{318}{subsection.G.2.2}%
-\contentsline {subsection}{\numberline {G.2.3}Urmd des stocks sauvages de la rivière Skeena}{320}{subsection.G.2.3}%
-\contentsline {chapter}{APPENDIX~H. EXAMEN DE LA PRODUCTION DE SAUMONS SAUVAGES ET ISSUS DU PMVLB}{322}{section*.21}%
-\contentsline {section}{\numberline {H.1}CONTEXTE}{322}{section.H.1}%
-\contentsline {section}{\numberline {H.2}STOCKS DE SAUMON ROUGE DU LAC BABINE}{322}{section.H.2}%
-\contentsline {section}{\numberline {H.3}PROGRAMME DE MISE EN VALEUR DU LAC BABINE}{327}{section.H.3}%
-\contentsline {subsection}{\numberline {H.3.1}Historique}{327}{subsection.H.3.1}%
-\contentsline {subsection}{\numberline {H.3.2}Charge des frayères}{328}{subsection.H.3.2}%
-\contentsline {section}{\numberline {H.4}RENSEIGNEMENTS BIOLOGIQUES ACCESSIBLES SUR LES SAUMONS ROUGES SAUVAGES ET MIS EN VALEUR DE LA RIVIÈRE BABINE}{329}{section.H.4}%
-\contentsline {subsection}{\numberline {H.4.1}Échantillonnage de l'âge}{329}{subsection.H.4.1}%
-\contentsline {subsection}{\numberline {H.4.2}Taille}{330}{subsection.H.4.2}%
-\contentsline {subsection}{\numberline {H.4.3}Fécondité}{330}{subsection.H.4.3}%
-\contentsline {subsection}{\numberline {H.4.4}Ponte d'œufs et production d'alevins}{331}{subsection.H.4.4}%
-\contentsline {subsection}{\numberline {H.4.5}Smolts}{333}{subsection.H.4.5}%
-\contentsline {subsection}{\numberline {H.4.6}Limnologie du lac Babine}{335}{subsection.H.4.6}%
-\contentsline {chapter}{APPENDIX~I. RÉSULTATS DE L'AJUSTEMENT DU MODÈLE GÉNITEURS-RECRUES ET ESTIMATIONS DES POINTS RÉFÉRENCE BIOLOGIQUES POUR LES STOCKS MIS EN VALEUR DU RUISSEAU PINKUT ET DE LA RIVIÈRE FULTON}{338}{section*.23}%
+\contentsline {section}{\numberline {D.3}ANALYSES DE SENSIBILITÉ}{253}{section.D.3}%
+\contentsline {section}{\numberline {D.4}RÉSULTATS}{254}{section.D.4}%
+\contentsline {subsection}{\numberline {D.4.1}Rétrécissement du paramètre a de Ricker lorsque l'on passe d'un modèle autre que le MBH au MBH}{254}{subsection.D.4.1}%
+\contentsline {subsection}{\numberline {D.4.2}Effet annuel commun}{256}{subsection.D.4.2}%
+\contentsline {subsection}{\numberline {D.4.3}Sensitivity Run 1: Effect of Korman and English's (2013) Coding Error for their HBM}{261}{subsection.D.4.3}%
+\contentsline {subsection}{\numberline {D.4.4}Sensitivity Run 2: Same as HBM Base Case But With No Prior Lower Bound on the Ricker \(\beta \) Parameter}{262}{subsection.D.4.4}%
+\contentsline {subsection}{\numberline {D.4.5}Sensitivity Run 3: Same as HBM Base Case But Leaving Out Common Shared Year Effects}{264}{subsection.D.4.5}%
+\contentsline {subsection}{\numberline {D.4.6}Sensitivity Run 4: Non-Hierarchical Model Run With No Common Shared Year Effect But Including the Same \(S_\textrm {max}\) Prior Information As in the Base Case HBM}{266}{subsection.D.4.6}%
+\contentsline {subsection}{\numberline {D.4.7}Sensitivity Run 5: Normal Priors on Smax in the HBM Instead of the Lognormal Prior on Ricker \(\beta \)}{268}{subsection.D.4.7}%
+\contentsline {subsection}{\numberline {D.4.8}Sensitivity Run 6: Application of Vague Ricker \(\beta \) Priors in the HBM, but Including the Prior Lower Bound on \(\beta \)}{270}{subsection.D.4.8}%
+\contentsline {subsection}{\numberline {D.4.9}Sensitivity Runs 7-25. Leave Out Stock-Recruit Data in the HBM, One Stock at a Time}{272}{subsection.D.4.9}%
+\contentsline {subsection}{\numberline {D.4.10}Sensitivity Run 26: Removal of Enhanced Stocks and Vague Ricker \(\beta \) Priors for Select Stocks}{275}{subsection.D.4.10}%
+\contentsline {section}{\numberline {D.5}Summary}{276}{section.D.5}%
+\contentsline {chapter}{APPENDIX~E. TESTS DE SENSIBILITÉ~: TRAITEMENT DES DONNÉES ET CALCULS DES POINTS DE RÉFÉRENCE}{278}{section*.15}%
+\contentsline {section}{\numberline {E.1}FILTRAGE ET REMPLISSAGE DES DONNÉES SUR LES GÉNITEURS-RECRUES}{278}{section.E.1}%
+\contentsline {subsection}{\numberline {E.1.1}But}{278}{subsection.E.1.1}%
+\contentsline {subsection}{\numberline {E.1.2}Méthodes}{278}{subsection.E.1.2}%
+\contentsline {subsection}{\numberline {E.1.3}Résultats}{278}{subsection.E.1.3}%
+\contentsline {subsection}{\numberline {E.1.4}Conclusions}{279}{subsection.E.1.4}%
+\contentsline {section}{\numberline {E.2}REMPLISSAGE AU MOYEN D'UN MODÈLE GÉNÉRIQUE D'ESPACE D'ÉTATS}{281}{section.E.2}%
+\contentsline {subsection}{\numberline {E.2.1}But}{281}{subsection.E.2.1}%
+\contentsline {subsection}{\numberline {E.2.2}Méthodes}{282}{subsection.E.2.2}%
+\contentsline {subsection}{\numberline {E.2.3}Résultats}{283}{subsection.E.2.3}%
+\contentsline {subsection}{\numberline {E.2.4}Conclusions}{283}{subsection.E.2.4}%
+\contentsline {section}{\numberline {E.3}ESSAI D'AUTRES APPROCHES DE CALCUL DES POINTS DE RÉFÉRENCE}{286}{section.E.3}%
+\contentsline {subsection}{\numberline {E.3.1}But}{286}{subsection.E.3.1}%
+\contentsline {subsection}{\numberline {E.3.2}Autres calculs de Srmd}{286}{subsection.E.3.2}%
+\contentsline {subsection}{\numberline {E.3.3}Autres calculs de Sgen}{286}{subsection.E.3.3}%
+\contentsline {subsection}{\numberline {E.3.4}Essais}{287}{subsection.E.3.4}%
+\contentsline {subsection}{\numberline {E.3.5}Résultats}{287}{subsection.E.3.5}%
+\contentsline {subsection}{\numberline {E.3.6}Conclusions}{287}{subsection.E.3.6}%
+\contentsline {section}{\numberline {E.4}EFFET DE LA CORRECTION DU BIAIS SUR LES ESTIMATIONS DES POINTS DE RÉFÉRENCE}{289}{section.E.4}%
+\contentsline {subsection}{\numberline {E.4.1}But}{289}{subsection.E.4.1}%
+\contentsline {subsection}{\numberline {E.4.2}Approche}{289}{subsection.E.4.2}%
+\contentsline {subsection}{\numberline {E.4.3}Résultats}{289}{subsection.E.4.3}%
+\contentsline {subsection}{\numberline {E.4.4}Conclusions}{290}{subsection.E.4.4}%
+\contentsline {chapter}{APPENDIX~F. EXTENSIONS DU MODÈLE DE SIMULATION}{295}{section*.17}%
+\contentsline {section}{\numberline {F.1}INCERTITUDE DES RÉSULTATS}{295}{section.F.1}%
+\contentsline {subsection}{\numberline {F.1.1}Introduction}{295}{subsection.F.1.1}%
+\contentsline {subsection}{\numberline {F.1.2}Profils historiques du taux d'exploitation et de la récolte pour les regroupements}{295}{subsection.F.1.2}%
+\contentsline {subsection}{\numberline {F.1.3}Estimation de l'incertitude des résultats au niveau du regroupement à partir des profils historiques}{297}{subsection.F.1.3}%
+\contentsline {subsection}{\numberline {F.1.4}Différences historiques entre le taux d'exploitation au niveau du regroupement et au niveau du stock}{302}{subsection.F.1.4}%
+\contentsline {subsection}{\numberline {F.1.5}Mise en œuvre du modèle des scalaires du taux d'exploitation au niveau du regroupement et au niveau du stock}{309}{subsection.F.1.5}%
+\contentsline {section}{\numberline {F.2}MODÉLISATION DE LA COVARIATION DE LA PRODUCTIVITÉ}{311}{section.F.2}%
+\contentsline {subsection}{\numberline {F.2.1}Concepts}{311}{subsection.F.2.1}%
+\contentsline {subsection}{\numberline {F.2.2}Estimation de la covariance historique de la productivité}{311}{subsection.F.2.2}%
+\contentsline {subsection}{\numberline {F.2.3}Mise en œuvre dans le modèle de la covariation de la productivité}{314}{subsection.F.2.3}%
+\contentsline {chapter}{APPENDIX~G. ESTIMATIONS DES POINTS DE RÉFÉRENCE AVEC CORRECTION DU BIAIS}{315}{section*.19}%
+\contentsline {section}{\numberline {G.1}TABLEAUX SOMMAIRES POUR LA RIVIÈRE NASS -- AVEC CORRECTION DU BIAIS}{315}{section.G.1}%
+\contentsline {subsection}{\numberline {G.1.1}Srmd de la rivière Nass}{315}{subsection.G.1.1}%
+\contentsline {subsection}{\numberline {G.1.2}Sgen de la rivière Nass}{316}{subsection.G.1.2}%
+\contentsline {subsection}{\numberline {G.1.3}Urmd de la rivière Nass}{317}{subsection.G.1.3}%
+\contentsline {section}{\numberline {G.2}TABLEAUX SOMMAIRES POUR LA RIVIÈRE SKEENA -- AVEC CORRECTION DU BIAIS}{318}{section.G.2}%
+\contentsline {subsection}{\numberline {G.2.1}Srmd des stocks sauvages de la rivière Skeena}{318}{subsection.G.2.1}%
+\contentsline {subsection}{\numberline {G.2.2}Sgen des stocks sauvages de la rivière Skeena}{320}{subsection.G.2.2}%
+\contentsline {subsection}{\numberline {G.2.3}Urmd des stocks sauvages de la rivière Skeena}{322}{subsection.G.2.3}%
+\contentsline {chapter}{APPENDIX~H. EXAMEN DE LA PRODUCTION DE SAUMONS SAUVAGES ET ISSUS DU PMVLB}{324}{section*.21}%
+\contentsline {section}{\numberline {H.1}CONTEXTE}{324}{section.H.1}%
+\contentsline {section}{\numberline {H.2}STOCKS DE SAUMON ROUGE DU LAC BABINE}{324}{section.H.2}%
+\contentsline {section}{\numberline {H.3}PROGRAMME DE MISE EN VALEUR DU LAC BABINE}{329}{section.H.3}%
+\contentsline {subsection}{\numberline {H.3.1}Historique}{329}{subsection.H.3.1}%
+\contentsline {subsection}{\numberline {H.3.2}Charge des frayères}{330}{subsection.H.3.2}%
+\contentsline {section}{\numberline {H.4}RENSEIGNEMENTS BIOLOGIQUES ACCESSIBLES SUR LES SAUMONS ROUGES SAUVAGES ET MIS EN VALEUR DE LA RIVIÈRE BABINE}{331}{section.H.4}%
+\contentsline {subsection}{\numberline {H.4.1}Échantillonnage de l'âge}{331}{subsection.H.4.1}%
+\contentsline {subsection}{\numberline {H.4.2}Taille}{332}{subsection.H.4.2}%
+\contentsline {subsection}{\numberline {H.4.3}Fécondité}{332}{subsection.H.4.3}%
+\contentsline {subsection}{\numberline {H.4.4}Ponte d'œufs et production d'alevins}{333}{subsection.H.4.4}%
+\contentsline {subsection}{\numberline {H.4.5}Smolts}{335}{subsection.H.4.5}%
+\contentsline {subsection}{\numberline {H.4.6}Limnologie du lac Babine}{337}{subsection.H.4.6}%
+\contentsline {chapter}{APPENDIX~I. RÉSULTATS DE L'AJUSTEMENT DU MODÈLE GÉNITEURS-RECRUES ET ESTIMATIONS DES POINTS RÉFÉRENCE BIOLOGIQUES POUR LES STOCKS MIS EN VALEUR DU RUISSEAU PINKUT ET DE LA RIVIÈRE FULTON}{340}{section*.23}%
