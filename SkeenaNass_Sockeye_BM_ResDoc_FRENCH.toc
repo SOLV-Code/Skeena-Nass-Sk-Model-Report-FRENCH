@@ -126,9 +126,9 @@
 \contentsline {subsection}{\numberline {C.3.1}Code R pour le calcul de Srmd}{239}{subsection.C.3.1}%
 \contentsline {subsection}{\numberline {C.3.2}Code R pour le calcul de Sgen}{241}{subsection.C.3.2}%
 \contentsline {section}{\numberline {C.4}FONCTION DU PROFIL D'ÉQUILIBRE FONDÉ SUR LE TAUX D'EXPLOITATION}{245}{section.C.4}%
-\contentsline {chapter}{APPENDIX~D. HIERARCHICAL BAYESIAN MODEL (HBM) OF SOCKEYE SALMON STOCK-RECRUIT DATA IN THE SKEENA RIVER SYSTEMS}{249}{section*.13}%
-\contentsline {section}{\numberline {D.1}Mathematical and Statistical Formulation of the HBM}{249}{section.D.1}%
-\contentsline {section}{\numberline {D.2}Model Fitting}{252}{section.D.2}%
+\contentsline {chapter}{APPENDIX~D. MODÈLE BAYÉSIEN HIÉRARCHIQUE AVEC LES DONNÉES SUR LE STOCK-RECRUTEMENT DU SAUMON ROUGE DANS LES RÉSEAUX DE LA RIVIÈRE SKEENA}{249}{section*.13}%
+\contentsline {section}{\numberline {D.1}FORMULES MATHÉMATIQUES ET STATISTIQUES DU MBH}{249}{section.D.1}%
+\contentsline {section}{\numberline {D.2}AJUSTEMENT DES MODÈLES}{252}{section.D.2}%
 \contentsline {section}{\numberline {D.3}Sensitivity Analyses}{253}{section.D.3}%
 \contentsline {section}{\numberline {D.4}Results}{254}{section.D.4}%
 \contentsline {subsection}{\numberline {D.4.1}Shrinkage in the Ricker \(a\) Parameter in Going From a Non-HBM to an HBM}{254}{subsection.D.4.1}%
