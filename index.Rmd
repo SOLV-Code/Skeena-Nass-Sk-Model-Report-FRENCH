@@ -23,6 +23,7 @@ abstract: |
 header: "" # or "" to omit
 output:
  csasdown::resdoc_pdf:
+   keep_md: true
    french: true
    copy_sty: true
    line_nums: false

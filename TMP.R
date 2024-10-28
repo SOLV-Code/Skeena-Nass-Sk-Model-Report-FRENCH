@@ -67,3 +67,11 @@ data.frame(
 
 c(seq(1,6), "7-24", "25", "26")
 
+
+
+library(tidyverse)
+tbl.test <- read_csv("data/Reference Tables/Acronyms.csv")#
+tbl.test |> kableExtra::kbl()
+
+
+
