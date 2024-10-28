@@ -11,7 +11,7 @@ Le travail présenté dans ce document s’inscrit dans une initiative plus vast
 ```{r TableAcronyms, echo = FALSE, results = "asis"}
 
 
-table.in <- read_csv("data/Reference Tables/Acronyms.csv")# %>% select
+table.in <- read.csv("data/Reference Tables/Acronyms.csv")# %>% select
 
 table.in[,1:2]  %>%     
    #mutate_all(function(x){x = as.character(x)}) %>%

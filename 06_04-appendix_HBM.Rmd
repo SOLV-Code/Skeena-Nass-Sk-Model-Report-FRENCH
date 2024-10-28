@@ -223,28 +223,28 @@ Les estimations finales des distributions a posteriori ont été dérivées dans
 
 
 
-## Sensitivity Analyses {#app:HBMFits-2}
+## ANALYSES DE SENSIBILITÉ {#app:HBMFits-2}
 
-Some additional model runs were implemented to evaluate some different features of the HBM.  See Table \@ref(tab:SensitivityRuns) for brief descriptions of these additional model runs. We term the model run using above described specifications for the HBM the ''base case''.  Note that the results reported below were obtained from earlier WinBUGS 1.4.3 code versions of the HBM which included a simpler approximation for computing $S_\textrm{MSY}$ [i.e., from Table 7.2 of @HilbornWalters1992] than was used in the main body of the report.  The results from these additional runs are summarized further below.   
 
+Des exécutions supplémentaires du modèle ont été mises en œuvre pour évaluer certaines caractéristiques différentes du MBH. Voir une brève description de ces exécutions supplémentaires dans le tableau \@ref(tab:SensitivityRuns). Nous désignons l’exécution du modèle en utilisant les spécifications décrites ci-dessus pour le « scénario de référence » du MBH. Il faut noter que les résultats présentés ci-dessous ont été obtenus à partir de versions antérieures du code WinBUGS 1.4.3 du MBH, qui comprenaient une approximation plus simple pour calculer $S_\textrm{RMD}$  (à partir du tableau 7.2 de @HilbornWalters1992 que celle utilisée dans le corps du document. Les résultats de ces exécutions supplémentaires sont résumés ci-dessous.
 
   
 <!-- TABLE C.2. Sensitivity Analyses -->
 ```{r SensitivityRuns, echo=FALSE, results='asis'}
-cap <- "Description of sensitivity runs to evalute the sensitivity of estimation results to model structure and some key inputs."
+cap <- "Description des analyses de sensibilité pour évaluer la sensibilité des résultats de l’estimation à la structure du modèle et à certains intrants clés."
 
 data.frame(
-  `Run` = c(seq(1,6), "7-24", "25", "26"), 
+  `Exécution` = c(seq(1,6), "7-24", "25", "26"), 
   Description = c(
-    "HBM base case but including Korman and English’s (2013) coding in computing precision in the likelihood function from $\\sigma$",
-    "Same as HBM base case but with no prior lower bounds on $\\beta$.",
-    "Same as HBM base case but leaving out common shared year effects.",
-    "Non-hierarchical model run with no common shared year effect but including the same  $S_\\textrm{max}$ prior information as in the base case HBM.",
-    "Same as HBM base case but normal priors on  $S_\\textrm{max}$ instead of the base case lognormal prior on Ricker $\\beta$.",
-    "Same as HBM base case but with vague Ricker $\\beta$ priors, but including the prior lower bound on Ricker $\\beta$.",
-    "Leave out stock-recruit data in the HBM, one stock at a time.",
-    "Leave out stock-recruit data for the Babine Enhanced stocks in the HBM (i.e., Pinkut and Fulton).",
-    "Same as HBM base case but leave out Babine Enhanced stocks (i.e., Pinkut and Fulton) and apply vague  $S_\\textrm{max}$ priors to Bear, Kitwanga, and Sustut."
+    "Scénario de référence du MBH, mais incluant le codage de Korman et English (2013) dans la précision de calcul de la fonction de vraisemblance de $\\sigma$",
+    "Identique au scénario de référence du MBH, mais sans borne inférieure a priori sur $\\beta$.",
+    "Identique au scénario de référence du MBH, mais sans tenir compte des effets annuels communs.",
+    "Exécution de modèle non hiérarchique sans effet annuel commun, mais incluant les mêmes informations a priori de $S_\\textrm{max}$ que dans le scénario de référence du MBH.",
+    "Identique au scénario de référence du MBH, mais valeurs a priori normales de $S_\\textrm{max}$ au lieu de la valeur a priori log-normale du scénario de référence sur le $\\beta$ de Ricker.",
+	"Identique au scénario de référence du MBH, mais valeurs vague a priori sur le $\\beta$ de Ricker, mais incluant le limite inférieure antérieure sur le $\\beta$ de Ricker.",
+    "Omettre les données sur le stock-recrutement dans le MBH, un stock à la fois.",
+	"Omettre les données sur le stock-recrutement pour les stocks mis en valeur du lac Babine dans le MBH (ruisseau Pinkut et rivière Fulton).",
+    "Identique au scénario de référence du MBH, mais omettre les stocks mis en valeur du lac Babine (ruisseau Pinkut et rivière Fulton) et appliquer des valeurs a priori vagues de $S_\\textrm{max}$ aux stocks des rivières Bear, Kitwanga et Sustut."
   ),
   check.names = FALSE
 ) %>%
@@ -261,9 +261,9 @@ data.frame(
 ```
 
 
-## Results
+## RÉSULTATS
 
-### Shrinkage in the Ricker $a$ Parameter in Going From a Non-HBM to an HBM  {#HBMShrinkage}
+### Rétrécissement du paramètre a de Ricker lorsque l’on passe d’un modèle autre que le MBH au MBH  {#HBMShrinkage}
 
 ```{r, echo=FALSE}
 shrink <- (HBM.results$Shrinkage$Shrinkage * 100) %>% range() %>% round
@@ -275,17 +275,20 @@ other <-round(other*100,1)
 sig.sd <- (HBM.results$Shrinkage$`Diff.SD` * -100) %>% range() %>% round(digits = 1)  # % reduction
 ```
 
-In both the non-HBM and HBM models a common shared year effect was estimated to make the shrinkage analysis valid.  Under the non-HBM the prior for the Ricker $a$ parameter for each stock was similarly lognormal, had $a$ prior median of $\log(0.5)$ and precision of 1.  Compared to the non-HBM a moderate amount of shrinkage can be seen seen for the HBM estimates (Figure \@ref(fig:HBMShrinkage)). For example the Asitka stock which had the highest posterior median value for the Ricker $a$ parameter under both models showed a `r -shrink[1]`% decrease in the Ricker $a$ parameter (Table \@ref(tab:HBMShrinkageVal)).  This was the largest percentage decrease among the Skeena Sockeye salmon stocks included in the HBM.  In contrast the Kitwanga stock which had the second lowest posterior median for the Ricker $a$ parameter under the non-HBM showed the largest increase of `r kitwanga`% when going from the non-HBM to the HBM.  In contrast the Pinkut and Fulton stocks which had posterior medians for Ricker $a$ under the non-HBM close to the middle range of the Posterior median estimates showed very little shrinkage, i.e., `r pinkut`% and `r fulton`%, respectively (Figure \@ref(fig:HBMShrinkage), Table \@ref(tab:HBMShrinkageVal)).  For all of the 18 Skeena Sockeye salmon stocks the posterior standard deviation (SD) for Ricker $a$ parameter estimates were all smaller, i.e., `r sig.sd[1]`% to `r sig.sd[2]`% smaller, under the HBM than under the non-HBM (Table \@ref(tab:HBMShrinkageVal)).
+Dans les deux modèles, l’effet annuel commun a été estimé pour valider l’analyse de rétrécissement. Dans le modèle autre que le MBH, la valeur a priori du paramètre $a$ de Ricker pour chaque stock était log-normale de la même manière, avait une médiane a priori a de $\log(0.5)$  et une précision de 1. Comparativement au modèle autre que le MBH, on observe un rétrécissement modéré pour les estimations du MBH (figure \@ref(fig:HBMShrinkage)). Par exemple, le stock de la rivière Asitka, qui avait la valeur médiane a posteriori la plus élevée pour le paramètre $a$ de Ricker dans les deux modèles, affichait une diminution de `r -shrink[1]` % du paramètre a de Ricker (tableau \@ref(tab:HBMShrinkageVal)). Il s’agit de la plus forte diminution en pourcentage parmi les stocks de saumon rouge de la rivière Skeena inclus dans le MBH. Par contraste, le stock de la rivière Kitwanga, qui avait la deuxième médiane a posteriori la plus faible pour le paramètre $a$  de Ricker dans le modèle autre que le MBH, affichait la plus forte augmentation, de `r kitwanga` %, en passant du modèle autre que le MBH au MBH. En revanche, les stocks du ruisseau Pinkut et de la rivière Fulton dont les médianes a posteriori étaient proches du milieu de la fourchette de la médiane des estimations a posteriori pour le $a$ de Ricker dans le modèle autre que le MBH, présentaient un rétrécissement très faible, soit `r pinkut` % and `r fulton` %, respectivement (figure \@ref(fig:HBMShrinkage), tableau \@ref(tab:HBMShrinkageVal)). Pour les 18 stocks de saumon rouge de la rivière Skeena, l’écart type a posteriori pour les estimations du paramètre $a$ de Ricker était plus petit, soit de `r sig.sd[1]` % a `r sig.sd[2]` % plus bas, dans le MBH que dans le modèle autre que le MBH (tableau \@ref(tab:HBMShrinkageVal)).
 
 
 <!-- Figure C.1. Shrinkage Plot -->
 ```{r, echo=FALSE}
-cap <- "Shrinkage plot for posterior median values for the Ricker $a$ parameter obtained under non-HBM and HBM models of stock-recruit data for 18 Skeena River Sockeye salmon stocks."
+cap <- "Graphique de rétrécissement de la médiane des valeurs a posteriori pour le paramètre $a$ de Ricker obtenu à l’aide des données sur le stock-recrutement du modèle autre que le MBH et du MBH pour 18 stocks de saumon rouge de la rivière Skeena."
 ```
 ```{r HBMShrinkage, echo=FALSE, fig.width=7, fig.cap=cap}
 HBM.results$Shrinkage %>%
   select(Stock, ends_with("median")) %>%
   gather(key=Model, value = Median, ends_with("median")) %>%
+    mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   mutate(
     Model = str_replace(Model, "[\\.[:space:]]median", "") %>% factor(levels = c("nonHBM", "HBM"))
   ) %>%
@@ -295,29 +298,34 @@ HBM.results$Shrinkage %>%
   theme_classic(14) +
   theme(legend.title = element_blank()) +
   labs(
-    y = "Posterior Median"
+  x= "Modèle",
+    y = "Valeur a posteriori médiane"
   )
 ```
 
 <!-- TABLE C.3. Ricker a shrinkage -->
 ```{r HBMShrinkageVal, echo=FALSE, results='asis'}
-cap <- "Posterior median estimates and standard deviations (SD) for the Ricker $a$ parameter for the 18 Skeena River Sockeye salmon stocks under non-HBM and HBM models  The percentage change shows the percentage change in the parameter estimate in going from the non-HBM to the HBM implementation.  "
+cap <- "Médiane des estimations a posteriori et écarts types pour le paramètre $a$ de Ricker pour les 18 stocks de saumon rouge de la rivière Skeena dans le MBH et l’autre modèle. La variation en pourcentage montre la variation en pourcentage de l’estimation du paramètre quand on passe de la mise en œuvre du modèle autre que le MBH à celle du MBH. "
 
 HBM.results[['Shrinkage']] %>%
   mutate(
-    nonHBM.median = round(nonHBM.median, 3),
-    HBM.median= round(HBM.median, 3),
-    nonHBM.SD = round(nonHBM.SD, 3),
-    HBM.SD = round(HBM.SD, 3),
-    Shrinkage = paste0(round(Shrinkage * 100,1), "\\%"),
-    Diff.SD = paste0(round(Diff.SD * 100,1), "\\%")
+    nonHBM.median = prettyNum(round(nonHBM.median, 3),decimal.mark=","),
+    HBM.median= prettyNum(round(HBM.median, 3),decimal.mark=","),
+    nonHBM.SD = prettyNum(round(nonHBM.SD, 3),decimal.mark=","),
+    HBM.SD = prettyNum(round(HBM.SD, 3),decimal.mark=","),
+    Shrinkage = paste0(round(Shrinkage * 100,1), " \\%"),
+    Diff.SD = paste0(round(Diff.SD * 100,1), " \\%")
   ) %>%
+      mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   rename(
-    `nonHBM Median` = nonHBM.median,
-    `HBM Median` = HBM.median,
-    `nonHBM SD` = nonHBM.SD,
-    `HBM SD` = HBM.SD,
-    `SD \\% Diff` = Diff.SD,
+    `Médiane dans l’autre modèle` = nonHBM.median,
+    `Médiane dans le MBH` = HBM.median,
+    `ET dans l’autre modèle` = nonHBM.SD,
+    `ET dans le MBH` = HBM.SD,
+	 `Rétré\ncissement` = Shrinkage,
+    `Différence en pourcentage de l’ET` = Diff.SD,
   ) %>%
   csas_table(
     format = "latex",
@@ -329,49 +337,56 @@ HBM.results[['Shrinkage']] %>%
   kableExtra::column_spec(2:7, width = "1.5cm")
 ```
 
-### Common Shared Year Effect
+### Effet annuel commun
 
-The common shared year effects represent average deviations from Ricker model stock-productivity predictions across stocks in a given year (Figure \@ref(fig:HBMYrEff)). Estimates varied from year to year with many years being close to the Ricker model predictions, while other years showing notable positive and negative deviations The 1994 common shared year effect represented the largest deviation from Ricker stock-productivity predictions, with a strong reduction in productivity. The 4-year and 5-year rolling means provide smoothed representations of estimated common shared year effects within four and five year blocks and make it easier to visualize potential common shared trends in stock productivity than plots of annual estimates.  The common shared year effects derive from the average of stock productivity deviates across the stocks where stock-recruit data are available in a given year and acquire credibility through commonality in annual productivity deviates across several of the stocks.  In contrast, Kalman filter representations of time varying productivity rely on apparent time series of deviates from Ricker-model predictions of long-term average productivity based on data from a single stock.  The Kalman filter approach does not allow any potential statistical representation of common patterns in productivity deviates between stocks in larger watershed. Also in contrast to the common-shared year effect approach the Kalman filter approach cannot be applied to stock-recruit data time series where there are one or more missing years of data within a time series.
+Les effets annuels communs représentent les écarts moyens par rapport aux prévisions de la productivité du stock par le modèle de Ricker parmi les stocks une année donnée (figure \@ref(fig:HBMYrEff)). Les estimations variaient d’une année à l’autre, de nombreuses années se rapprochant des prévisions du modèle de Ricker, tandis que d’autres affichaient des écarts positifs et négatifs sensibles. L’effet annuel commun de 1994 représentait le plus grand écart par rapport aux prévisions de la productivité du stock par le modèle de Ricker, avec une forte baisse de productivité. Les moyennes mobiles sur 4 et 5 ans fournissent des représentations lissées des effets annuels communs estimés dans des blocs de quatre et cinq ans et facilitent la visualisation des tendances communes possibles de la productivité des stocks par rapport aux graphiques des estimations annuelles. Les effets annuels communs découlent de la moyenne des écarts de productivité des stocks entre les stocks pour lesquels des données sur le stock-recrutement sont disponibles une année donnée et acquièrent de la crédibilité grâce à des écarts de productivité annuels communs à plusieurs des stocks. En revanche, les représentations de la productivité variable dans le temps par le filtre de Kalman reposent sur des séries chronologiques apparentes d’écarts par rapport aux prévisions par le modèle de Ricker de la productivité moyenne à long terme fondées sur les données d’un seul stock. L’approche du filtre de Kalman ne permet pas de représentation statistique potentielle des profils communs des écarts de productivité entre les stocks dans un bassin versant plus vaste. De plus, contrairement à l’approche de l’effet annuel commun, l’approche du filtre de Kalman ne peut pas être appliquée aux séries chronologiques de données sur le stock-recrutement lorsqu’il manque une ou plusieurs années de données dans une série chronologique.
 
 <!-- FIGURE C.2. Common Shared Year Effect -->
 ```{r, echo=FALSE}
-cap <- "Estimated common shared year effect shared across the 18 Skeena stocks with a 4-year rolling mean (A) and a 5-year rolling mean (B) overlaid. Points indicate mean with error bars indicating the 95\\% credible intervals, while line and shading indicates the mean and 95\\% credible intervals for the rolling mean."
+cap <- "Estimation de l’effet annuel commun aux 18 stocks de la rivière Skeena avec les moyennes mobiles sur 4 ans (A) et sur 5 ans (B) superposées. Les points indiquent la moyenne avec les barres d’erreur représentant les intervalles de crédibilité à 95 \\%, tandis que la ligne et l’ombrage dénotent la moyenne et les intervalles de crédibilité à 95 \\% pour la moyenne mobile."
 ```
 ```{r HBMYrEff, fig.width=7.5, fig.cap=cap}
-include_graphics("data/HBM/Appendix-HBM-common_year_eff.pdf")
+include_graphics("data/1_FrenchFigs/FigApp_D2_Appendix-HBM-common_year_eff_FRENCH_Final.png")
 ```
 
-While these yearly deviations, whether from common shared year effects or Kalman filter, could represent improved or diminished survival in the fresh or saltwater system, they could also represent an under or overestimation in total catch, and there is currently no way to distinguish between authentic shared survival rate effects and run reconstruction error effects. As such, negative or positive year effects cannot be directly attributed to either an environmental or run reconstruction effect as the two will be confounded. 
+Bien que ces écarts annuels, qu’ils découlent des effets annuels communs ou du filtre de Kalman, puissent représenter une amélioration ou une diminution de la survie dans le réseau dulcicole ou marin, ils peuvent aussi représenter une sous-estimation ou une surestimation de la prise totale, et il n’existe actuellement aucun moyen de faire la distinction entre l’effet authentique du taux de survie commun et les effets de l’erreur de reconstitution des remontes. Ainsi, il n’est pas possible d’attribuer les effets annuels négatifs ou positifs directement à un effet environnemental ou à la reconstitution des remontes, car les deux seront confondus.
 
-As such, time varying productivity should be viewed as a method to improve model fitting, but does not provide objective criteria that can be used to set or judge management responses.   For example, where there were runs of strongly positive or negative common shared year effects in recent years, this could reflect either runs of either high or low stock productivity shared between stocks.  Alternatively, it could reflect a run of years in which fishery catches for all or most stocks were systematically under-reported or over-reported.  If the latter hypothesis were correct, then any adjustments to harvest control rules, e.g., adjustments to escapement targets, to attempt to respond to apparent productivity changes, could have unintended consequences in achieving fishery and salmon population conservation objectives.
+Il faut donc considérer la productivité variable dans le temps comme une méthode d’amélioration de l’ajustement du modèle, mais qui ne fournit pas de critères objectifs qui peuvent être utilisés pour établir ou juger les réponses de gestion. Par exemple, lorsqu’il y avait des séries d’effets annuels communs fortement positifs ou négatifs les dernières années, elle pourrait refléter des séries de productivité élevée ou faible commune aux stocks. Il pourrait aussi s’agir d’une série d’années au cours desquelles les prises dans les pêches, pour la totalité ou la plupart des stocks, étaient systématiquement sous-déclarées ou surdéclarées. Si cette dernière hypothèse était correcte, les ajustements des règles de contrôle des prises, comme les ajustements des objectifs d’échappée, qui tentent de réagir aux changements de productivité apparents, pourraient alors avoir des conséquences imprévues sur l’atteinte des objectifs pour les pêches et la conservation des populations de saumon.
 
-To evaluate the sensitivity of reference points to estimated changes in productivity, high and low productivity periods were identified and the posterior predictive distributions for $S_{msy}$ and \Umsy were computed based on the common shared year effects in these blocks of years based on estimates of time varying productivity by stock (see equation \@ref(eq:timevarprod)).  The years showing the largest mostly positive common shared year effects included 1980-1992 (Fig. \@ref(fig:HBMYrEff)).  The years showing the lowest mostly negative common shared year effects included 1999-2014 (Fig. \@ref(fig:HBMYrEff)).  $S_{msy}$ and \Umsy estimates were significantly lower in the latter block of years with the posterior means for \Smsy and also \Umsy ranging between 21% and 50% lower than those estimates in the high productivity period from 1980-1992 (Tables \@ref(tab:SmsyProd) and \@ref(tab:UmsyProd)).  The 95% credible intervals for the percentage differences for both \Smsy and \Umsy included only negative values (Tables \@ref(tab:SmsyProd) and \@ref(tab:UmsyProd)).  These results suggest that systematic reductions in stock productivity could result in estimates of both \Umsy and \Smsy being lowered.  Should \Smsy be used in forming escapement targets and reference points for fishery management and conservation, lowered productivity could result in lower escapement targets.  Because the \Umsy estimates are highly correlated with the \Smsy estimates, the \Umsy estimates could also be expected to decrease with decreases in \Smsy estimates and it would be appropriate also to reduce harvest rates to accommodate lowered productivity.  However, if only changes in estimates of \Smsy were considered in responses to apparent changes in stock productivity and reductions in harvest rates were not implemented, this could also lead to unintended consequences in meeting stock conservation and fishery objectives.
+Afin d’évaluer la sensibilité des points de référence aux changements estimés de la productivité, les périodes de productivité élevée et faible ont été déterminées et les distributions prédictives a posteriori pour $S_{RMD}$ et $U_{RMD}$ ont été calculées en fonction des effets annuels communs dans ces blocs d’années à partir des estimations de la productivité variable dans le temps par stock (voir l’équation \@ref(eq:timevarprod)). Les années présentant les plus importants effets annuels communs, principalement positifs, allaient de 1980 à 1992 (figure \@ref(fig:HBMYrEff)). Les années présentant les plus faibles effets annuels communs, principalement négatifs, allaient de 1999 à 2014 (figure \@ref(fig:HBMYrEff)). Les estimations de $S_{RMD}$ et $U_{RMD}$ étaient nettement plus faibles dans le dernier bloc d’années, les moyennes a posteriori étant de 21 à 50 % plus basses que celles de la période de productivité élevée de 1980 à 1992 (tableaux \@ref(tab:SmsyProd) et \@ref(tab:UmsyProd)). Les intervalles de crédibilité à 95 % pour les différences en pourcentage pour $S_{RMD}$ et $U_{RMD}$ ne comprenaient que des valeurs négatives (tableaux \@ref(tab:SmsyProd) and \@ref(tab:UmsyProd)). Ces résultats permettent de penser que des réductions systématiques de la productivité des stocks pourraient donner des estimations réduites des deux. Si $S_{RMD}$ était utilisé pour établir des objectifs d’échappée et des points de référence pour la gestion des pêches et la conservation, une baisse de la productivité pourrait entraîner des objectifs d’échappée plus faibles. Étant donné que les estimations de $U_{RMD}$ sont fortement corrélées avec les estimations de $S_{RMD}$ , on pourrait également s’attendre à ce que les estimations de $U_{RMD}$ diminuent avec les estimations de $S_{RMD}$, et il serait également approprié de réduire les taux de récolte pour tenir compte de la baisse de la productivité. Toutefois, si seuls les changements des estimations de $S_{RMD}$ étaient pris en compte en réponse à des changements apparents de la productivité des stocks et si des réductions des taux de récolte n’étaient pas mises en œuvre, cela pourrait également avoir des conséquences imprévues sur l’atteinte des objectifs pour les pêches et la conservation des stocks.
+
+\clearpage
+
 
 <!-- TABLE C.4. Smsy in high/low years -->
 ```{r SmsyProd, echo=FALSE}
-cap <- "Comparison of stock-specific $S_\\textrm{MSY}$ in high (i.e., 1980-1992) and low (i.e., 1999-2014) periods of productivity and the percentage differnce between periods."
+cap <- "Comparaison de $S_\\textrm{MSY}$ par stock pour les périodes de productivité élevée (de 1980 à 1992) et faible (de 1999 à 2014) et différence en pourcentage entre les périodes."
 
 HBM.results[['Smsy Productivity']] %>%
   mutate(
-    High = round(High),
-    Low = round(Low),
-    Diff      = ifelse(is.na(Diff), NA, paste0(round(Diff*100), "\\%")),
-    Diff_2.5  = ifelse(is.na(Diff), NA, paste0(round(Diff_2.5*100), "\\%")),
-    Diff_97.5 = ifelse(is.na(Diff), NA, paste0(round(Diff_97.5*100), "\\%"))
+    High = prettyNum(round(High),big.mark=" "),
+    Low = prettyNum(round(Low),big.mark=" "),
+    Diff      = ifelse(is.na(Diff), NA, paste0(round(Diff*100), " \\%")),
+    Diff_2.5  = ifelse(is.na(Diff), NA, paste0(round(Diff_2.5*100), " \\%")),
+    Diff_97.5 = ifelse(is.na(Diff), NA, paste0(round(Diff_97.5*100), " \\%"))
   ) %>%
+        mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   # select(Low, High, Diff, Diff_2.5, Diff_97.5) %>%
   rename(
-    `High` = High,
-    `Low` = Low,
+    Bassin = Basin,
+    `Élevée` = High,
+    `Faible` = Low,
     `\\% Diff` = Diff,
-    `Lower CI` = Diff_2.5,
-    `Upper CI` =Diff_97.5
+    `Limite\ninférieure\n– IC` = Diff_2.5,
+    `Limite\nsupérieure\n– IC` =Diff_97.5
   ) %>%
   csas_table(
     format = "latex",
     escape = FALSE, 
     font_size = 10,
-    align = c("l", rep("r", 5)),
+    align = c("l", rep("l", 6)),
     caption = cap #paste("(ref:tabSenRun1)", cap)
   ) %>%
   kableExtra::column_spec(2:5, width = "1.5cm")
@@ -380,29 +395,33 @@ HBM.results[['Smsy Productivity']] %>%
 \clearpage
 <!-- TABLE C.5. Umsy in high/low years -->
 ```{r UmsyProd, echo=FALSE}
-cap <- "Comparison of stock-specific $U_\\textrm{MSY}$ in high (i.e., 1980-1992) and low (i.e., 1999-2014) periods of productivity and the percentage differnce between periods."
+cap <- "Comparaison de $U_\\textrm{MSY}$ par stock pour les périodes de productivité élevée (de 1980 à 1992) et faible (de 1999 à 2014) et différence en pourcentage entre les périodes."
 
 HBM.results[['Umsy Productivity']] %>%
   mutate(
-    High = round(High),
-    Low = round(Low),
+    High = round(High,2),
+    Low = round(Low,2),
     Diff      = ifelse(is.na(Diff), NA, paste0(round(Diff*100), "\\%")),
     Diff_2.5  = ifelse(is.na(Diff), NA, paste0(round(Diff_2.5*100), "\\%")),
     Diff_97.5 = ifelse(is.na(Diff), NA, paste0(round(Diff_97.5*100), "\\%"))
   ) %>%
+        mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   # select(Low, High, Diff, Diff_2.5, Diff_97.5) %>%
   rename(
-    `High` = High,
-    `Low` = Low,
+    Bassin = Basin,
+    `Élevée` = High,
+    `Faible` = Low,
     `\\% Diff` = Diff,
-    `Lower CI` = Diff_2.5,
-    `Upper CI` =Diff_97.5
+    `Limite\ninférieure\n– IC` = Diff_2.5,
+    `Limite\nsupérieure\n– IC` =Diff_97.5
   ) %>%
   csas_table(
     format = "latex",
     escape = FALSE, 
     font_size = 10,
-    align = c("l", rep("r", 5)),
+    align = c("l", rep("l", 6)),
     caption = cap #paste("(ref:tabSenRun1)", cap)
   ) %>%
   kableExtra::column_spec(2:5, width = "1.5cm")
