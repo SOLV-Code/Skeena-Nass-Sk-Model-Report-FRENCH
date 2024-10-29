@@ -428,34 +428,37 @@ HBM.results[['Umsy Productivity']] %>%
 ```
 
 \newpage
-### Sensitivity Run 1:  Effect of Korman and English’s (2013) Coding Error for their HBM {#app:HBMFits-2-1}
+### Analyse de sensibilité 1 : Effet de l’erreur de codage de Korman et English (2013) pour leur MBH {#app:HBMFits-2-1}
 ```{r, echo=FALSE}
 sig.mean <- (HBM.results$`Run 1`$Diff.mean * 100) %>% range() %>% round
 sig.sd <- (HBM.results$`Run 1`$Diff.SD * 100) %>% range() %>% round
 ```
 
+Il y avait une erreur de codage dans le modèle utilisé par @KormanEnglish2013; leur code a transformé incorrectement le paramètre $\sigma_i$ en $\tau_i$ en utilisant le mauvais code,  \texttt{tau[i]<-pow(sd[i],-0.5)}, qui aurait dû être \texttt{tau[i]<-pow(sd[i],-2)}. Cette erreur de codage a très peu modifié les résultats a posteriori du MBH pour les paramètres $a$ et $\beta$ de Ricker des 18 stocks (tableau \@ref(tab:SenRun1)). Cependant, les estimations du paramètre $\sigma_i$ se situaient entre -72 et 229 % de celles obtenues dans le scénario de référence du MBH. Les écarts-types a posteriori pour $\sigma_i$ variaient entre 24 et 889 % de plus que ceux obtenus dans le scénario de référence. La borne inférieure ou supérieure de la valeur a priori de $\sigma_i$ a été atteinte pour certains stocks. Si l’erreur de codage avait persisté, les simulations des données sur le stock-recrutement réalisées à l’aide des valeurs estimées pour $\sigma_i$ auraient pu donner des résultats présentant une variabilité excessive. Il est donc essentiel de corriger cette erreur de codage dans les futures mises en œuvre du MBH de @KormanEnglish2013.
 
-There was a coding error in the model used by @KormanEnglish2013; their code incorrectly transformed the parameter $\sigma_i$ to $\tau_i$ using the incorrect code:  \texttt{tau[i]<-pow(sd[i],-0.5)} which instead should have been \texttt{tau[i]<-pow(sd[i],-2)}. This coding error changed very little the HBM posterior results for the Ricker $a$ and $\beta$ parameters for the 18 stocks (Table \@ref(tab:SenRun1)).  However, the estimates of the $\sigma_i$ parameter were between `r sig.mean[1]`% and `r sig.mean[2]`%  of those obtained under the HBM base case.   The posterior SDs for $\sigma_i$ ranged between `r sig.sd[1]`% and `r sig.sd[2]`%  larger than those obtained under the base case.  Either the lower or upper boundary point on the prior for $\sigma_i$ was hit for some of the stocks.    If the coding error had persisted, any simulations of stock-recruit data using the estimated values for $\sigma_i$ may have led to results with excessive variability.  It is thus essential for this coding error to be corrected in any further implementations of Korman and English’s (2013) HBM.
 
 <!-- TABLE C.6 Sensitivity Run 1 -->
 ```{r SenRun1, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $\\sigma$ from the base case (coding error removed) and model run that included Korman and English’s (2013) coding error."
+cap <- "Moyennes a posteriori et écarts types a posteriori pour $\\sigma$ dans le scénario de référence (erreur de codage supprimée) et l’exécution du modèle qui incluait l’erreur de codage de Korman et English (2013)."
 
 HBM.results[['Run 1']] %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean, 3),
-    Code.Error.mean = round(Code.Error.mean, 3),
-    Base.Case.SD = round(Base.Case.SD, 3),
-    Code.Error.SD = round(Code.Error.SD, 3),
+    Base.Case.mean = prettyNum(round(Base.Case.mean, 3),decimal.mark = ","),
+    Code.Error.mean = prettyNum(round(Code.Error.mean, 3),decimal.mark = ","),
+    Base.Case.SD = prettyNum(round(Base.Case.SD, 3),decimal.mark = ","),
+    Code.Error.SD = prettyNum(round(Code.Error.SD, 3),decimal.mark = ","),
     Diff.mean = paste0(round(Diff.mean*100), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100), "\\%")
   ) %>%
+     mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   rename(
-    `Base Case mean $\\sigma$` = Base.Case.mean,
-    `Code Error mean $\\sigma$` = Code.Error.mean,
+    `Moyenne de $\\sigma$\ndans le scénario\nde référence` = Base.Case.mean,
+    `Moyenne de $\\sigma$\navec l’erreur\nde code` = Code.Error.mean,
     `\\% Diff` = Diff.mean,
-    `Base Case SD($\\sigma$)` = Base.Case.SD,
-    `Code Error SD($\\sigma$)` = Code.Error.SD,
+    `ET ($\\sigma$) dans le\nscénario de référence` = Base.Case.SD,
+    `ET ($\\sigma$) avec\nl’erreur\nde code` = Code.Error.SD,
     `\\% Diff ` = Diff.SD,
   ) %>%
   csas_table(
@@ -471,34 +474,36 @@ HBM.results[['Run 1']] %>%
 
 
 \clearpage
-### Sensitivity Run 2:  Same as HBM Base Case But With No Prior Lower Bound on the Ricker $\beta$ Parameter
+### Analyse de sensibilité 2 : Identique au scénario de référence du MBH, mais avec borne inférieure a priori sur le paramètre $\beta$ de Ricker 
 
+Lorsqu’aucune borne inférieure a priori n’incluait le paramètre $\beta$ de Ricker par stock, les estimations de $S_\textrm{max}$  et des points de référence fondés sur le RMD comprenaient certaines valeurs extrêmement élevées de la chaîne MCCM qui étaient très loin dans les queues des chaînes de Markov et très éloignées de la fourchette des valeurs confirmées par les données; pour ces stocks, les moyennes a posteriori, les médianes et les valeurs de l’intervalle de probabilité étaient très sensibles à l’inclusion de ces valeurs aberrantes extrêmes dans les chaînes (voir des exemples de résultats pour $S_\textrm{RMD}$  dans le tableau \@ref(tab:SenRun2)). Il est courant dans les mises en œuvre MCCM, comme WinBUGS, d’établir des bornes pour les variables clés du modèle afin d’empêcher que des valeurs aberrantes extrêmes dans les chaînes n’aient une incidence sur les calculs a posteriori [p. ex. @MeyerMillar1999; @MichielsensMcAllister2004]. Il est donc recommandé de mettre en œuvre des bornes inférieures a priori sur le paramètre $\beta$ de Ricker pour chaque stock afin d’éliminer cette source de biais.
 
-
-When there was no prior lower bound included the Ricker $\beta$ parameter by stock, the estimates of $S_\textrm{max}$ and MSY-based reference points included some extremely high MCMC chain values that were way out in the tails of the Markov chains and very far removed from the range of values with support from the data; for these stocks, posterior means, medians, and probability interval values were highly sensitive to the inclusion of these extreme outlier values in the chains (see Table \@ref(tab:SenRun2) for some example results for $S_\textrm{MSY}$).  It is common in implementations of MCMC implementations such as WinBUGS to set bounds on key variables in the model to prevent extreme outlier values in the chains from affecting the posterior calculations [e.g., @MeyerMillar1999; @MichielsensMcAllister2004].  It is thus recommended that prior lower bounds on the Ricker $\beta$ parameter be implemented for each stock to eliminate this source of bias.
-
-The $U_\textrm{MSY}$ estimates from the HBM were relatively insensitive to lifting the prior maximum bound on $S_\textrm{max}$ (Table \@ref(tab:SenRun2Umsy)).   While posterior means differed by less than a few percent for all stocks, posterior standard deviation values were up to 13\% larger when the prior maximum bound on \Smax was lifted.  
+Les estimations de $U_\textrm{RMD}$  dans le MBH étaient relativement insensibles à l’élimination de la borne maximale a priori sur $S_\textrm{max}$   (tableau \@ref(tab:SenRun2Umsy)). Alors que les moyennes a posteriori différaient de moins de quelques points de pourcentage pour l’ensemble des stocks, les valeurs de l’écart type a posteriori étaient jusqu’à 13 \%  plus élevées lorsque l’on a éliminé la borne maximale a priori.
 
 
 <!-- TABLE C.7 Sensitivity Run 2 -->
 ```{r SenRun2, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $S_\\textrm{MSY}$  from the HBM base case and model run where no prior upper bounds were placed on \\Smax."
+cap <- "Moyennes a posteriori et écarts types a posteriori pour $S_\\textrm{MSY}$ dans le scénario de référence du MBH et l’exécution du modèle où aucune borne maximale a priori n’a été placée sur \\Smax."
 
 HBM.results[['Run 2 Smsy']] %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean),
-    No.Bound.mean = round(No.Bound.mean),
-    Base.Case.SD = round(Base.Case.SD),
-    No.Bound.SD = round(No.Bound.SD),
+    Base.Case.mean = prettyNum(round(Base.Case.mean),big.mark = " "),
+    No.Bound.mean = prettyNum(round(No.Bound.mean),big.mark = " "),
+    Base.Case.SD = prettyNum(round(Base.Case.SD),big.mark = " "),
+    No.Bound.SD = prettyNum(round(No.Bound.SD),big.mark = " "),
     Diff.mean = paste0(round(Diff.mean*100,1), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 1), "\\%")
   ) %>%
+   mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
+    mutate(Stock = gsub( "Sum Smsy across stocks", "Somme de SRMD entre les stocks" ,Stock)) %>% 
   rename(
-    `Base Case mean $S_\\textrm{MSY}$` = Base.Case.mean,
-    `No Bound mean $S_\\textrm{MSY}$` = No.Bound.mean,
+    `Moyenne de $S_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+    `Moyenne de $S_\\textrm{RMD}$ sans borne` = No.Bound.mean,
     `\\% Diff` = Diff.mean,
-    `Base Case SD($S_\\textrm{MSY}$)` = Base.Case.SD,
-    `No Bound SD($S_\\textrm{MSY}$)` = No.Bound.SD,
+    `ET($S_\\textrm{MSY}$) dans le scénario de référence` = Base.Case.SD,
+    `ET($S_\\textrm{MSY}$) sans borne` = No.Bound.SD,
     `\\% Diff ` = Diff.SD
   ) %>%
   csas_table(
@@ -518,13 +523,16 @@ cap <- "Posterior means and posterior standard deviations for $U_\\textrm{MSY}$ 
 
 HBM.results[['Run 2 Umsy']] %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean,3),
-    No.Bound.mean = round(No.Bound.mean,3),
-    Base.Case.SD = round(Base.Case.SD,3),
-    No.Bound.SD = round(No.Bound.SD,3),
+    Base.Case.mean = prettyNum(round(Base.Case.mean,3),decimal.mark = ","),
+    No.Bound.mean = prettyNum(round(No.Bound.mean,3),decimal.mark = ","),
+    Base.Case.SD = prettyNum(round(Base.Case.SD,3),decimal.mark = ","),
+    No.Bound.SD = prettyNum(round(No.Bound.SD,3),decimal.mark = ","),
     Diff.mean = paste0(round(Diff.mean*100,1), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 1), "\\%")
   ) %>%
+     mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   rename(
     `Base Case mean $U_\\textrm{MSY}$` = Base.Case.mean,
     `No Bound mean $U_\\textrm{MSY}$` = No.Bound.mean,
