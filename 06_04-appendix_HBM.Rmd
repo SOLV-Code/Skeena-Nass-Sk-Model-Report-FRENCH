@@ -260,7 +260,7 @@ data.frame(
   kableExtra::column_spec(2, width = "12cm")
 ```
 
-
+\clearpage
 ## RÉSULTATS
 
 ### Rétrécissement du paramètre a de Ricker lorsque l’on passe d’un modèle autre que le MBH au MBH  {#HBMShrinkage}
@@ -303,6 +303,8 @@ HBM.results$Shrinkage %>%
   )
 ```
 
+
+\clearpage
 <!-- TABLE C.3. Ricker a shrinkage -->
 ```{r HBMShrinkageVal, echo=FALSE, results='asis'}
 cap <- "Médiane des estimations a posteriori et écarts types pour le paramètre $a$ de Ricker pour les 18 stocks de saumon rouge de la rivière Skeena dans le MBH et l’autre modèle. La variation en pourcentage montre la variation en pourcentage de l’estimation du paramètre quand on passe de la mise en œuvre du modèle autre que le MBH à celle du MBH. "
@@ -480,6 +482,7 @@ Lorsqu’aucune borne inférieure a priori n’incluait le paramètre $\beta$ de
 
 Les estimations de $U_\textrm{RMD}$  dans le MBH étaient relativement insensibles à l’élimination de la borne maximale a priori sur $S_\textrm{max}$   (tableau \@ref(tab:SenRun2Umsy)). Alors que les moyennes a posteriori différaient de moins de quelques points de pourcentage pour l’ensemble des stocks, les valeurs de l’écart type a posteriori étaient jusqu’à 13 \%  plus élevées lorsque l’on a éliminé la borne maximale a priori.
 
+\clearpage
 
 <!-- TABLE C.7 Sensitivity Run 2 -->
 ```{r SenRun2, echo=FALSE, results='asis'}
@@ -497,13 +500,13 @@ HBM.results[['Run 2 Smsy']] %>%
    mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
    mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
     mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
-    mutate(Stock = gsub( "Sum Smsy across stocks", "Somme de SRMD entre les stocks" ,Stock)) %>% 
+    mutate(Stock = gsub( "Sum Smsy across stocks", "Somme de $S_\\textrm{RMD}$ entre les stocks" ,Stock)) %>% 
   rename(
     `Moyenne de $S_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
     `Moyenne de $S_\\textrm{RMD}$ sans borne` = No.Bound.mean,
     `\\% Diff` = Diff.mean,
-    `ET($S_\\textrm{MSY}$) dans le scénario de référence` = Base.Case.SD,
-    `ET($S_\\textrm{MSY}$) sans borne` = No.Bound.SD,
+    `ET($S_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+    `ET($S_\\textrm{RMD}$) sans borne` = No.Bound.SD,
     `\\% Diff ` = Diff.SD
   ) %>%
   csas_table(
@@ -517,9 +520,11 @@ HBM.results[['Run 2 Smsy']] %>%
   kableExtra::column_spec(2:7, width = "1.5cm")
 ```
 
+\clearpage
+
 <!-- TABLE C.8 Sensitivity Run 2 -->
 ```{r SenRun2Umsy, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $U_\\textrm{MSY}$ from the HBM base case and model run where no prior upper bounds were placed on \\Smax."
+cap <- "Moyennes a posteriori et écarts types a posteriori pour $U_\\textrm{MSY}$ dans le scénario de référence du MBH et l’exécution du modèle où aucune borne maximale a priori n’a été placée sur \\Smax."
 
 HBM.results[['Run 2 Umsy']] %>%
   mutate(
@@ -534,11 +539,11 @@ HBM.results[['Run 2 Umsy']] %>%
    mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
     mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   rename(
-    `Base Case mean $U_\\textrm{MSY}$` = Base.Case.mean,
-    `No Bound mean $U_\\textrm{MSY}$` = No.Bound.mean,
+    `Moyenne de $U_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+    `Moyenne de $U_\\textrm{RMD}$ sans borne` = No.Bound.mean,
     `\\% Diff` = Diff.mean,
-    `Base Case SD($U_\\textrm{MSY}$)` = Base.Case.SD,
-    `No Bound SD($U_\\textrm{MSY}$)` = No.Bound.SD,
+    `ET($U_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+    `ET($U_\\textrm{RMD}$) sans borne` = No.Bound.SD,
     `\\% Diff ` = Diff.SD
   ) %>%
   csas_table(
@@ -552,36 +557,41 @@ HBM.results[['Run 2 Umsy']] %>%
 ```
 
 \clearpage
-### Sensitivity Run 3: Same as HBM Base Case But Leaving Out Common Shared Year Effects
+### Analyse de sensibilité 3 : Identique au scénario de référence du MBH, sans tenir compte des effets annuels communs
 
 ```{r, echo=FALSE}
 sig.mean <- (HBM.results[['Run 3 Smsy']]$Diff.mean * 100)  %>% range() %>% round
 sig.sd <- (HBM.results[['Run 3 Smsy']]$Diff.SD * 100) %>% range()  %>% round
 ```
 
-Significant, strong common shared year effects were estimated for numerous years in the 1960-2014 brood year time series.  Separating out this effect provided more precise estimates of Ricker stock recruit parameters for several of the stocks and more precise estimates of management quantities of interest.  This also allowed for common shared systematic change in stock productivity to be estimated.  The posterior means for the Smsy reference point by stock for example were between about `r sig.mean[1]`% and `r sig.mean[2]`% different between runs when common shared year effects were excluded versus accounted for (Table \@ref(tab:SenRun3)).  When no common shared year effect was included in the HBM, estimates of Ricker stock-recruit parameters and associated management parameters for several of the stocks were on average less precisely estimated with posterior SDs being up to about `r sig.sd[2]`% larger for $S_\textrm{msy}$ for several of the stocks.
+Dans la série chronologique des années d’éclosion 1960 à 2014, on a estimé des effets annuels communs importants et prononcés pour de nombreuses années. L’élimination de cet effet a permis d’obtenir des estimations plus précises des paramètres stock-recrutement de Ricker pour plusieurs des stocks et des estimations plus précises des quantités de gestion d’intérêt. Elle a également permis d’estimer la variation systématique commune de la productivité des stocks. Les moyennes a posteriori pour le point de référence $S_\textrm{max}$  par stock, par exemple, présentaient une différence comprise entre -11 et 45 % entre les analyses lorsque les effets annuels communs étaient exclus ou pris en compte (tableau \@ref(tab:SenRun3)). Lorsqu’aucun effet annuel commun n’était inclus dans le MBH, les estimations des paramètres de stock-recrutement de Ricker et des paramètres de gestion connexes pour plusieurs des stocks étaient en moyenne moins précises, avec des écarts-types a posteriori jusqu’à environ 68 % plus élevés pour $S_\textrm{max}$  pour plusieurs des stocks.
 
-The $U_\textrm{MSY}$ estimates from the HBM were relatively insensitive to removing common shared year effects from the HBM (Table \@ref(tab:SenRun3Umsy)).  
+Les estimations de $U_\textrm{RMD}$  dans le MBH étaient relativement insensibles à l’élimination des effets annuels communs dans le MBH (tableau \@ref(tab:SenRun3Umsy)).
+ 
 
 <!-- TABLE C.9 Sensitivity Run 3 -->
 ```{r SenRun3, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $S_\\textrm{MSY}$ from the HBM base case and model run where no prior upper bounds were placed on \\Smax."
+cap <- "Moyennes a posteriori et écarts types a posteriori pour $S_\\textrm{RMD}$ dans le scénario de référence du MBH et l’exécution du modèle où aucune borne maximale a priori n’a été placée sur \\Smax."
 
 HBM.results[['Run 3 Smsy']] %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean),
-    No.TE.mean = round(No.TE.mean),
-    Base.Case.SD = round(Base.Case.SD),
-    No.TE.SD = round(No.TE.SD),
+    Base.Case.mean = prettyNum(round(Base.Case.mean),big.mark=" "),
+    No.TE.mean = prettyNum(round(No.TE.mean),big.mark=" "),
+    Base.Case.SD = prettyNum(round(Base.Case.SD),big.mark=" "),
+    No.TE.SD = prettyNum(round(No.TE.SD),big.mark=" "),
     Diff.mean = paste0(round(Diff.mean*100,0), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 0), "\\%")
   ) %>%
+       mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
+	 mutate(Stock = gsub( "Sum Smsy across stocks", "Somme de $S_\\textrm{RMD}$ entre les stocks" ,Stock)) %>% 
   rename(
-  	`Base Case mean $S_\\textrm{MSY}$` = Base.Case.mean,
-  	`No \\newline $T_y$ \\newline mean $S_\\textrm{MSY}$` = No.TE.mean,
+  	`Moyenne de $S_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+  	`Moyenne de $S_\\textrm{RMD}$ sans $T_y$` = No.TE.mean,
   	`\\% Diff` = Diff.mean,
-  	`Base Case SD($S_\\textrm{MSY}$)` = Base.Case.SD,
-  	`No \\newline $T_y$ \\newline SD($S_\\textrm{MSY}$)` = No.TE.SD,
+  	`ET($S_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+  	`ET($S_\\textrm{RMD}$) sans $T_y$` = No.TE.SD,
   	`\\% Diff ` = Diff.SD
   ) %>%
   csas_table(
@@ -601,19 +611,22 @@ cap <- "Posterior means and posterior standard deviations for $U_\\textrm{MSY}$ 
 
 HBM.results[['Run 3 Umsy']] %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean, 3),
-    No.TE.mean = round(No.TE.mean, 3),
-    Base.Case.SD = round(Base.Case.SD, 3),
-    No.TE.SD = round(No.TE.SD, 3),
+    Base.Case.mean = prettyNum(round(Base.Case.mean, 3),decimal.mark=","),
+    No.TE.mean = prettyNum(round(No.TE.mean, 3),decimal.mark=","),
+    Base.Case.SD = prettyNum(round(Base.Case.SD, 3),decimal.mark=","),
+    No.TE.SD = prettyNum(round(No.TE.SD, 3),decimal.mark=","),
     Diff.mean = paste0(round(Diff.mean*100,0), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 0), "\\%")
   ) %>%
+    mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   rename(
-  	`Base Case mean $U_\\textrm{MSY}$` = Base.Case.mean,
-  	`No \\newline $T_y$ \\newline mean $U_\\textrm{MSY}$` = No.TE.mean,
+  	`Moyenne de $U_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+  	`Moyenne de $U_\\textrm{RMD}$ sans $T_y$` = No.TE.mean,
   	`\\% Diff` = Diff.mean,
-  	`Base Case SD($U_\\textrm{MSY}$)` = Base.Case.SD,
-  	`No \\newline $T_y$ \\newline SD($U_\\textrm{MSY}$)` = No.TE.SD,
+  	`ET($U_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+  	`ET($U_\\textrm{RMD}$) sans $T_y$` = No.TE.SD,
   	`\\% Diff ` = Diff.SD
   ) %>%
   csas_table(
