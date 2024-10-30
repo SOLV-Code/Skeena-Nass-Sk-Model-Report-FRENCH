@@ -640,7 +640,7 @@ HBM.results[['Run 3 Umsy']] %>%
 ```
 
 \clearpage
-### Sensitivity Run 4: Non-Hierarchical Model Run With No Common Shared Year Effect But Including the Same $S_\textrm{max}$ Prior Information As in the Base Case HBM
+### Analyse de sensibilité 4 : Exécution d’un modèle non hiérarchique sans effet annuel commun, mais incluant les mêmes informations a priori de $S_\textrm{max}$  que dans le scénario de référence du MBH 
 
 ```{r, echo=FALSE}
 sig.mean <- (HBM.results[['Run 4 Smsy']]$Diff.mean * 100) %>% range()  %>% round
@@ -652,30 +652,35 @@ umsy.diff <- HBM.results[['Run 4 Umsy']] %>% select(Diff.SD) %>% unlist %>% max
 umsy.diff <- round(umsy.diff*100)
 ```
 
+Lorsqu’un modèle bayésien non hiérarchique (autre modèle) sans effet annuel commun a été exécuté, les estimations des paramètres de stock-recrutement de Ricker et des paramètres de gestion associés pour plusieurs des stocks étaient en moyenne moins précises, avec par exemple un écart type a posteriori dans $S_\textrm{RMD}$  présentant une différence d’environ -28 à 174 % en moyenne entre les analyses par le MBH et l’autre modèle (tableau \@ref(tab:SenRun4)). Les différences en pourcentage entre les valeurs du MBH et de l’autre modèle pour la moyenne des estimations a posteriori pour les paramètres de $S_\textrm{RMD}$  variaient selon le stock entre -21 et 45 %. Ces résultats indiquent qu’en moyenne, les estimations des paramètres de Ricker et des paramètres fondés sur le rendement maximal durable sont plus précises avec le MBH et que les résultats pour certaines quantités de certains stocks peuvent différer considérablement. Cependant, la somme des estimations de $S_\textrm{RMD}$ pour l’ensemble des stocks n’était que d’environ 8 % plus grande dans l’autre modèle, mais l’écart type a posteriori dans les valeurs de $S_\textrm{RMD}$  additionnées pour les stocks de la rivière Skeena était supérieur de 31 % à celui calculé dans le MBH (tableau \@ref(tab:SenRun4)).
 
-When a nonhierarchical Bayesian model(nonHBM) with no common shared year effects was run, estimates of Ricker stock-recruit parameters and associated management parameters for several of the stocks were on average less precisely estimated with posterior SD in Smsy for example on average being about `r sig.sd[1]`% to `r sig.sd[2]`% different between the nonHBM and HBM runs (Table \@ref(tab:SenRun4)).  Percentage differences between the nonHBM and HBM for posterior mean estimates for Smsy parameters ranged by stock between `r sig.mean[1]`% and `r sig.mean[2]`%.  These results indicate that on average Ricker and msy-based parameter estimates are more precisely estimated with the HBM and results for some quantities for some stocks can differ considerably.  However, the sum of the $S_\textrm{MSY}$ estimates across stocks was only about `r round(smsy.diff['Diff.mean'])`% larger under the non-hierarchical model but the posterior SD in the $S_\textrm{MSY}$ values summed over the Skeena River stocks was `r round(smsy.diff['Diff.SD'])`% larger than that for the HBM (Table \@ref(tab:SenRun4)).
+Les moyennes a posteriori pour $U_\textrm{RMD}$  étaient relativement insensibles à l’ajustement de l’autre modèle, mais les écarts-types a posteriori pour $U_\textrm{RMD}$  ont pour la plupart augmenté de 40 % par rapport à ceux du MBH (tableau \@ref(tab:SenRun4Umsy)).
 
-The posterior means for  $U_\textrm{MSY}$ were relatively insensitive to fitting a nonHBM, but the posterior SDs for $U_\textrm{MSY}$ mostly increased by up to `r umsy.diff`% larger than those under the HBM  (Table \@ref(tab:SenRun4Umsy)).  
+
 
 <!-- TABLE C.11 - Sensitivity Run 4 -->
 ```{r SenRun4, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $S_\\textrm{MSY}$ from the base case HBM and nonHBM run."
+cap <- "Moyennes a posteriori et écarts types a posteriori pour $S_\\textrm{RMD}$ dans l’analyse du scénario de référence du MBH et l’analyse fondée sur l’autre modèle."
 
 HBM.results[['Run 4 Smsy']] %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean),
-    nonHBM.mean = round(nonHBM.mean),
-    Base.Case.SD = round(Base.Case.SD),
-    nonHBM.SD = round(nonHBM.SD),
+    Base.Case.mean = prettyNum(round(Base.Case.mean),big.mark=" "),
+    nonHBM.mean = prettyNum(round(nonHBM.mean),big.mark=" "),
+    Base.Case.SD = prettyNum(round(Base.Case.SD),big.mark=" "),
+    nonHBM.SD = prettyNum(round(nonHBM.SD),big.mark=" "),
     Diff.mean = paste0(round(Diff.mean*100,0), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 0), "\\%")
   ) %>%
+   mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
+	 mutate(Stock = gsub( "Sum Smsy across stocks", "Somme de $S_\\textrm{RMD}$ entre les stocks", Stock ))%>%
   rename(
-  	`Base Case mean $S_\\textrm{MSY}$` = Base.Case.mean,
-  	`nonHBM \\newline mean $S_\\textrm{MSY}$` = nonHBM.mean,
-  	`\\% Diff` = Diff.mean,
-  	`Base Case SD($S_\\textrm{MSY}$)` = Base.Case.SD,
-  	`nonHBM \\newline SD($S_\\textrm{MSY}$)` = nonHBM.SD,
+      `Moyenne de $S_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+    `Moyenne de $S_\\textrm{RMD}$ dans l’autre modèle` = nonHBM.mean,
+    `\\% Diff` = Diff.mean,
+    `ET($S_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+    `ET($S_\\textrm{RMD}$) dans l’autre modèle` = nonHBM.SD,
   	`\\% Diff ` = Diff.SD
   ) %>%
   csas_table(
@@ -691,23 +696,26 @@ HBM.results[['Run 4 Smsy']] %>%
 
 <!-- TABLE C.12 - Sensitivity Run 4 -->
 ```{r SenRun4Umsy, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $U_\\textrm{MSY}$ from the base case HBM and nonHBM run."
+cap <- "Moyennes a posteriori et écarts types a posteriori pour $U_\textrm{RMD}$ dans l’analyse du scénario de référence du MBH et l’analyse fondée sur l’autre modèle."
 
 HBM.results[['Run 4 Umsy']] %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean, 3),
-    nonHBM.mean = round(nonHBM.mean, 3),
-    Base.Case.SD = round(Base.Case.SD, 3),
-    nonHBM.SD = round(nonHBM.SD, 3),
+    Base.Case.mean = prettyNum(round(Base.Case.mean, 3),decimal.mark=","),
+    nonHBM.mean = prettyNum(round(nonHBM.mean, 3),decimal.mark=","),
+    Base.Case.SD = prettyNum(round(Base.Case.SD, 3),decimal.mark=","),
+    nonHBM.SD = prettyNum(round(nonHBM.SD, 3),decimal.mark=","),
     Diff.mean = paste0(round(Diff.mean*100,0), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 0), "\\%")
   ) %>%
+     mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   rename(
-  	`Base Case mean $U_\\textrm{MSY}$` = Base.Case.mean,
-  	`nonHBM \\newline mean $U_\\textrm{MSY}$` = nonHBM.mean,
-  	`\\% Diff` = Diff.mean,
-  	`Base Case SD($U_\\textrm{MSY}$)` = Base.Case.SD,
-  	`nonHBM \\newline SD($U_\\textrm{MSY}$)` = nonHBM.SD,
+     `Moyenne de $U_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+    `Moyenne de $U_\\textrm{RMD}$ dans l’autre modèle` = nonHBM.mean,
+    `\\% Diff` = Diff.mean,
+    `ET($U_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+    `ET($U_\\textrm{RMD}$) dans l’autre modèle` = nonHBM.SD,
   	`\\% Diff ` = Diff.SD
   ) %>%
   csas_table(
@@ -721,36 +729,42 @@ HBM.results[['Run 4 Umsy']] %>%
 ```
 
 \clearpage
-### Sensitivity Run 5: Normal Priors on Smax in the HBM Instead of the Lognormal Prior on Ricker $\beta$
+### Analyse de sensibilité 5 : Valeurs a priori normales sur Smax dans le MBH au lieu de la valeur a priori log-normale sur $\beta$ de Ricker
 
 ```{r, echo=FALSE}
 sig.mean <- (HBM.results[['Run 5 Smsy']]$Diff.mean * 100) %>% range()  %>% round
 sig.sd <- (HBM.results[['Run 5 Smsy']]$Diff.SD * 100) %>% range()  %>% round
 ```
 
-When a normal prior for $S_\textrm{max}$ was applied instead of a lognormal prior on the Ricker $\beta$ parameter in the HBM, but otherwise using the same input information from the lake productivity analyses, the posterior estimates for several of the quantities became less precise and posterior estimates differed markedly for some of the quantities.  Posterior SDs for $S_\textrm{MSY}$ were for example much larger on average, e.g., between about `r sig.sd[1]`% and `r sig.sd[2]`% larger (Table \@ref(tab:SenRun5)).  Posterior mean estimates for $S_\textrm{MSY}$ differed between the two model runs by `r sig.mean[1]`% to `r sig.mean[2]`%.  Though it appears the same information is used in a normal prior for $S_\textrm{max}$, this prior on average loses information about the Ricker $\beta$ parameter compared to a prior for the Ricker $\beta$ parameter that uses the same $S_\textrm{max}$ information. 
 
-The $U_\textrm{MSY}$ estimates from the HBM were relatively insensitive to replacing the lognormal prior for the Ricker $\beta$ parameter with a normal prior for  $S_\textrm{max}$ (Table \@ref(tab:SenRun5Umsy)). 
+Lorsqu’une valeur a priori normale pour $S_\textrm{max}$  a été appliquée au lieu d’une valeur a priori log-normale sur le paramètre $\beta$ de Ricker dans le MBH, mais qu’on a autrement utilisé les mêmes données d’entrée provenant des analyses de la productivité des lacs, les estimations a posteriori de plusieurs quantités sont devenues moins précises et les estimations a posteriori différaient nettement pour certaines des quantités. Les écarts-types a posteriori pour $S_\textrm{RMD}$ étaient, par exemple, beaucoup plus grands en moyenne, par exemple avec une différence comprise entre -24 et 62 % (tableau \@ref(tab:SenRun5)). Les estimations de la moyenne a posteriori de différaient nettement pour certaines des quantités. Les écarts-types a posteriori pour $S_\textrm{RMD}$ différaient entre les deux modèles de -36 à 20 %. Bien qu’il semble que les mêmes informations soient utilisées dans une valeur a priori normale pour $S_\textrm{max}$ , cette valeur a priori perd en moyenne des informations sur le paramètre $\beta$ de Ricker par rapport à une valeur a priori pour le paramètre $\beta$ de Ricker qui utilise les mêmes informations sur $S_\textrm{max}$ .
+
+Les estimations de $U_\textrm{RMD}$  dans le MBH étaient relativement peu sensibles au remplacement de la valeur a priori log-normale du paramètre $\beta$  de Ricker par une valeur a priori normale de $S_\textrm{max}$ (tableau \@ref(tab:SenRun5Umsy)). 
+
 
 <!-- TABLE C.13 - Sensitivity Run 5 -->
 ```{r SenRun5, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $S_\\textrm{MSY}$ from the HBM base case and model run with a Normal priors on $S_\\textrm{max}$."
+cap <- "Moyennes a posteriori et écarts types a posteriori pour $S_\\textrm{MSY}$ dans le scénario de référence du MBH et l’exécution du modèle avec une valeur a priori normale de $S_\\textrm{max}$."
 
 HBM.results[['Run 5 Smsy']] %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean),
-    Normal.Prior.mean = round(Normal.Prior.mean),
-    Base.Case.SD = round(Base.Case.SD),
-    Normal.Prior.SD = round(Normal.Prior.SD),
+    Base.Case.mean = prettyNum(round(Base.Case.mean),big.mark=" "),
+    Normal.Prior.mean = prettyNum(round(Normal.Prior.mean),big.mark=" "),
+    Base.Case.SD = prettyNum(round(Base.Case.SD),big.mark=" "),
+    Normal.Prior.SD = prettyNum(round(Normal.Prior.SD),big.mark=" "),
     Diff.mean = paste0(round(Diff.mean*100,0), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 0), "\\%")
   ) %>%
+     mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
+	 mutate(Stock = gsub( "Sum Smsy across stocks", "Somme de $S_\\textrm{RMD}$ entre les stocks", Stock ))%>%
   rename(
-  	`Base Case mean $S_\\textrm{MSY}$` = Base.Case.mean,
-  	`Normal Prior mean $S_\\textrm{MSY}$` = Normal.Prior.mean,
+  	`Moyenne de $S_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+  	`Moyenne de $S_\\textrm{RMD}$ avec valeur a priori normale` = Normal.Prior.mean,
   	`\\% Diff` = Diff.mean,
-  	`Base Case SD($S_\\textrm{MSY}$)` = Base.Case.SD,
-  	`Normal Prior SD($S_\\textrm{MSY}$)` = Normal.Prior.SD,
+  	`ET($S_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+  	`ET($S_\\textrm{RMD}$) avec valeur a priori normale ` = Normal.Prior.SD,
   	`\\% Diff ` = Diff.SD
   )  %>%
   csas_table(
@@ -767,23 +781,26 @@ HBM.results[['Run 5 Smsy']] %>%
 \clearpage
 <!-- TABLE C.14 - Sensitivity Run 5 -->
 ```{r SenRun5Umsy, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $U_\\textrm{MSY}$ from the HBM base case and model run with a Normal priors on $S_\\textrm{max}$."
+cap <- "Moyennes a posteriori et écarts types a posteriori pour $U_\\textrm{RMD}$  dans le scénario de référence du MBH et l’exécution du modèle avec une valeur a priori normale de $S_\\textrm{max}$."
 
 HBM.results[['Run 5 Umsy']] %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean, 3),
-    Normal.Prior.mean = round(Normal.Prior.mean, 3),
-    Base.Case.SD = round(Base.Case.SD, 3),
-    Normal.Prior.SD = round(Normal.Prior.SD, 3),
+    Base.Case.mean = prettyNum(round(Base.Case.mean, 3),decimal.mark=","),
+    Normal.Prior.mean = prettyNum(round(Normal.Prior.mean, 3),decimal.mark=","),
+    Base.Case.SD = prettyNum(round(Base.Case.SD, 3),decimal.mark=","),
+    Normal.Prior.SD = prettyNum(round(Normal.Prior.SD, 3),decimal.mark=","),
     Diff.mean = paste0(round(Diff.mean*100,0), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 0), "\\%")
   ) %>%
+     mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   rename(
-  	`Base Case mean $U_\\textrm{MSY}$` = Base.Case.mean,
-  	`Normal Prior mean $U_\\textrm{MSY}$` = Normal.Prior.mean,
+  	`Moyenne de $U_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+  	`Moyenne de $U_\\textrm{RMD}$ avec valeur a priori normale` = Normal.Prior.mean,
   	`\\% Diff` = Diff.mean,
-  	`Base Case SD($U_\\textrm{MSY}$)` = Base.Case.SD,
-  	`Normal Prior SD($U_\\textrm{MSY}$)` = Normal.Prior.SD,
+  	`ET($U_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+  	`ET($U_\\textrm{RMD}$) avec valeur a priori normale ` = Normal.Prior.SD,
   	`\\% Diff ` = Diff.SD
   )  %>%
   csas_table(
