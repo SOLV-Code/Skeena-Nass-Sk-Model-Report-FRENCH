@@ -814,7 +814,7 @@ HBM.results[['Run 5 Umsy']] %>%
 ```
 
 \clearpage
-### Sensitivity Run 6: Application of Vague Ricker $\beta$ Priors in the HBM, but Including the Prior Lower Bound on $\beta$
+### Analyse de sensibilité 6 : Application de valeurs a priori vagues du  $\beta$ de Ricker dans le MBH, mais incluant la borne inférieure a priori sur  $\beta$
 ```{r, echo=FALSE}
 sig.mean <- (HBM.results[['Run 6 Smsy']]$Diff.mean * 100) %>% range() %>% round
 sig.sd <- (HBM.results[['Run 6 Smsy']]$Diff.SD * 100) %>% range() %>% round
@@ -823,30 +823,34 @@ umsy.diff <- HBM.results[['Run 6 Umsy']] %>% select(Diff.mean) %>% unlist %>% ma
 umsy.diff <- round(umsy.diff*100)
 ```
 
-When a vague prior was applied for the Ricker $\beta$ prior for all 18 Skeena Sockeye salmon stocks in the HBM, posterior estimates for the abundance-based management quantities were less precise on average with posterior SDs, e.g., for \Smsy ranging between `r sig.sd[1]`% to `r sig.sd[2]`% larger under the vague priors (Table \@ref(tab:SenRun6)).  Posterior means for $S_\textrm{MSY}$ estimates in the HBM that used vague priors for the Ricker $\beta$ parameter were between about `r sig.mean[1]`% and `r sig.mean[2]`% different from those obtained under the mixture of informed and vague priors in the base case HBM.  The use of informative priors for the Ricker $\beta$ parameter based on prior information on $S_\textrm{max}$ via the lake productivity analyses thus combined with the data to provide more precise stock-recruit parameter estimates that in some cases differed from the less precise estimates given by the stock-recruit data.  
+Lorsqu’une valeur a priori vague a été appliquée pour la valeur a priori du $\beta$ de Ricker pour les 18 stocks de saumon rouge de la rivière Skeena dans le MBH, les estimations a posteriori des quantités de gestion fondées sur l’abondance étaient moins précises en moyenne, avec des écarts-types a posteriori présentant p. ex. des différences comprises entre -58 et 167 % avec les valeurs a priori vagues (tableau \@ref(tab:SenRun6)). Les moyennes a posteriori des estimations de $S_\textrm{RMD}$  dans le MBH qui utilisaient des valeurs a priori vagues du paramètre $\beta$ de Ricker présentaient des différences comprises entre -63 et 41 % par rapport à celles obtenues dans le mélange de valeurs a priori informées et vagues dans le scénario de référence du MBH. L’utilisation de valeurs a priori informatives pour le paramètre $\beta$ de Ricker, fondées sur l’information a priori sur $S_\textrm{max}$  tirée des analyses de la productivité des lacs, a ainsi été combinée aux données pour produire des estimations plus précises des paramètres stock-recrutement qui, dans certains cas, différaient des estimations moins précises fournies par les données sur le stock-recrutement.
 
+Les estimations de $U_\textrm{RMD}$  dans le MBH étaient relativement insensibles aux valeurs a priori pour toutes les valeurs a priori vagues du paramètre $\beta$ de Ricker, mais les moyennes a posteriori étaient jusqu’à 30 % plus élevées pour quelques stocks (tableau \@ref(tab:SenRun6Umsy)).
 
-The $U_\textrm{MSY}$ estimates from the HBM were relatively insensitive to prior for all Ricker $\beta$ parameter vague priors though for a few of the stocks the posterior means were up to `r umsy.diff`% larger (Table \@ref(tab:SenRun6Umsy)). 
 
 <!-- TABLE C.15 - Sensitivity Run 6 -->
 ```{r SenRun6, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $S_\\textrm{MSY}$ from the HBM base case and model run with a Normal priors on $S_\\textrm{max}$."
+cap <- "Moyennes a posteriori et écarts types a posteriori pour $S_\\textrm{MSY}$ dans le scénario de référence du MBH et l’exécution du modèle avec une valeur a priori normale de $S_\\textrm{max}$."
 
 HBM.results[['Run 6 Smsy']] %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean),
-    Vague.Prior.mean = round(Vague.Prior.mean),
-    Base.Case.SD = round(Base.Case.SD),
-    Vague.Prior.SD = round(Vague.Prior.SD),
+    Base.Case.mean = prettyNum(round(Base.Case.mean),big.mark=" "),
+    Vague.Prior.mean = prettyNum(round(Vague.Prior.mean),big.mark=" "),
+    Base.Case.SD = prettyNum(round(Base.Case.SD),big.mark=" "),
+    Vague.Prior.SD = prettyNum(round(Vague.Prior.SD),big.mark=" "),
     Diff.mean = paste0(round(Diff.mean*100,0), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 0), "\\%")
   ) %>%
+       mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
+	 mutate(Stock = gsub( "Sum Smsy across stocks", "Somme de $S_\\textrm{RMD}$ entre les stocks", Stock ))%>%
   rename(
-  	`Base Case mean $S_\\textrm{MSY}$` = Base.Case.mean,
-  	`Vague $\\beta$ Prior mean $S_\\textrm{MSY}$` = Vague.Prior.mean,
+  	`Moyenne de $S_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+  	`Moyenne de $S_\\textrm{RMD}$  avec valeur a priori vague de $\\beta$` = Vague.Prior.mean,
   	`\\% Diff` = Diff.mean,
-  	`Base Case SD($S_\\textrm{MSY}$)` = Base.Case.SD,
-  	`Vague $\\beta$ Prior SD($S_\\textrm{MSY}$)` = Vague.Prior.SD,
+  	`ET($S_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+  	`ET($S_\\textrm{RMD}$) avec valeur a priori vague de $\\beta$` = Vague.Prior.SD,
   	`\\% Diff ` = Diff.SD
   )  %>%
   csas_table(
@@ -862,23 +866,26 @@ HBM.results[['Run 6 Smsy']] %>%
 
 <!-- TABLE C.16 - Sensitivity Run 6 -->
 ```{r SenRun6Umsy, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $U_\\textrm{MSY}$ from the HBM base case and model run with a Normal priors on $S_\\textrm{max}$."
+cap <- "Moyennes a posteriori et écarts types a posteriori pour $U_\\textrm{MSY}$ dans le scénario de référence du MBH et l’exécution du modèle avec une valeur a priori normale de $S_\\textrm{max}$."
 
 HBM.results[['Run 6 Umsy']] %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean, 3),
-    Vague.Prior.mean = round(Vague.Prior.mean, 3),
-    Base.Case.SD = round(Base.Case.SD, 3),
-    Vague.Prior.SD = round(Vague.Prior.SD, 3),
+    Base.Case.mean = prettyNum(round(Base.Case.mean, 3),decimal.mark=","),
+    Vague.Prior.mean = prettyNum(round(Vague.Prior.mean, 3),decimal.mark=","),
+    Base.Case.SD = prettyNum(round(Base.Case.SD, 3),decimal.mark=","),
+    Vague.Prior.SD = prettyNum(round(Vague.Prior.SD, 3),decimal.mark=","),
     Diff.mean = paste0(round(Diff.mean*100,0), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 0), "\\%")
   ) %>%
+       mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   rename(
-  	`Base Case mean $U_\\textrm{MSY}$` = Base.Case.mean,
-  	`Vague $\\beta$ Prior mean $U_\\textrm{MSY}$` = Vague.Prior.mean,
+  	`Moyenne de $U_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+  	`Moyenne de $U_\\textrm{RMD}$  avec valeur a priori vague de $\\beta$` = Vague.Prior.mean,
   	`\\% Diff` = Diff.mean,
-  	`Base Case SD($U_\\textrm{MSY}$)` = Base.Case.SD,
-  	`Vague $\\beta$ Prior SD($U_\\textrm{MSY}$)` = Vague.Prior.SD,
+  	`ET($U_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+  	`ET($U_\\textrm{RMD}$) avec valeur a priori vague de $\\beta$` = Vague.Prior.SD,
   	`\\% Diff ` = Diff.SD
   )  %>%
   csas_table(
