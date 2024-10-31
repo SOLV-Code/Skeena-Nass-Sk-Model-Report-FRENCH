@@ -138,7 +138,7 @@
 \contentsline {subsection}{\numberline {D.4.5}Analyse de sensibilité 3~: Identique au scénario de référence du MBH, sans tenir compte des effets annuels communs}{259}{subsection.D.4.5}%
 \contentsline {subsection}{\numberline {D.4.6}Analyse de sensibilité 4~: Exécution d'un modèle non hiérarchique sans effet annuel commun, mais incluant les mêmes informations a priori de \(S_\textrm {max}\) que dans le scénario de référence du MBH}{261}{subsection.D.4.6}%
 \contentsline {subsection}{\numberline {D.4.7}Analyse de sensibilité 5~: Valeurs a priori normales sur Smax dans le MBH au lieu de la valeur a priori log-normale sur \(\beta \) de Ricker}{263}{subsection.D.4.7}%
-\contentsline {subsection}{\numberline {D.4.8}Sensitivity Run 6: Application of Vague Ricker \(\beta \) Priors in the HBM, but Including the Prior Lower Bound on \(\beta \)}{265}{subsection.D.4.8}%
+\contentsline {subsection}{\numberline {D.4.8}Analyse de sensibilité 6~: Application de valeurs a priori vagues du \(\beta \) de Ricker dans le MBH, mais incluant la borne inférieure a priori sur \(\beta \)}{265}{subsection.D.4.8}%
 \contentsline {subsection}{\numberline {D.4.9}Sensitivity Runs 7-25. Leave Out Stock-Recruit Data in the HBM, One Stock at a Time}{267}{subsection.D.4.9}%
 \contentsline {subsection}{\numberline {D.4.10}Sensitivity Run 26: Removal of Enhanced Stocks and Vague Ricker \(\beta \) Priors for Select Stocks}{270}{subsection.D.4.10}%
 \contentsline {section}{\numberline {D.5}Summary}{271}{section.D.5}%
