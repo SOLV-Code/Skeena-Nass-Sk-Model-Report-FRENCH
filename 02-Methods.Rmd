@@ -614,8 +614,6 @@ Les ajustements du modèle géniteurs-recrues n’ont été appliqués qu’aux 
 include_graphics("data/1_FrenchFigs/Fig4_Diagram_CandidateModels_REV_French.PNG")
 ```
 
-\clearpage
-
 
 Nous avons effectué deux séries de tests de sensibilité pour l’ajustement du modèle de Ricker de base.
 
