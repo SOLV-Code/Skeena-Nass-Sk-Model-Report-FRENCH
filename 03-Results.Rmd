@@ -197,7 +197,7 @@ include_graphics("data/1_FrenchFigs/Fig15_French_Meziadin_RpS_ScatterPlot.png")
 
 (ref:JoinPostMezidian) Distributions a posteriori communes pour le paramètre de productivité ln(alpha) et le paramètre de capacité Smax (1/b) : Meziadin, avec les valeurs a priori de la capacité fondées sur le rendement photosynthétique. Chaque graphique montre la dispersion des échantillons MCCM, les lignes de contour pour la distribution commune et deux représentations des distributions marginales pour chaque paramètre : un diagramme de quartiles avec la médiane, les quartiles et les moustaches à 80 % et un diagramme de densité de noyau. Les lignes de référence en pointillés représentent les médianes des distributions marginales. La figure comprend un graphique pour l’ajustement du modèle de Ricker de base (en haut à gauche), un graphique pour l’ajustement du modèle de Ricker AR1 (en haut à droite) et deux graphiques montrant les années d’éclosion ayant la productivité la plus faible et la plus élevée (médiane de ln.alpha) pour l’ajustement du modèle avec PVT (graphiques du bas). Les échantillons de paramètres pour le modèle avec PVT ont un ensemble d’échantillons a posteriori pour Smax et un ensemble d’échantillons a posteriori de ln.alpha pour chaque année d’éclosion. Les graphiques du bas montrent la distribution commune de Smax et ln.alpha pour deux années d’éclosion, sélectionnées pour avoir la médiane la plus faible et la médiane la plus élevée de ln.alpha.
 
-```{r JoinPostMezidian,   fig.cap="(ref:JoinPostMezidian)"}
+```{r JoinPostMezidian,   out.width = "83%", fig.cap="(ref:JoinPostMezidian)"}
 include_graphics("data/1_FrenchFigs/Fig16_French_Meziadin_SR_Par_JointPosterior_3Modelcu.png")
 ```
 
@@ -212,7 +212,7 @@ include_graphics("data/1_FrenchFigs/Fig17_French_BabLW_RpS_ScatterPlot.png")
 
 (ref:JoinPostBabLW) Distributions a posteriori communes pour ln.a et b : Stock sauvage à montaison tardive de la rivière Babine. Chaque graphique montre la dispersion des échantillons MCCM, les lignes de contour pour la distribution commune et deux représentations des distributions marginales pour chaque paramètre : un diagramme de quartiles avec la médiane, les quartiles et les moustaches à 80 % et un diagramme de densité de noyau. Les lignes de référence en pointillés représentent les médianes des distributions marginales. La figure comprend un graphique pour l’ajustement du modèle de Ricker de base (en haut à gauche), un graphique pour l’ajustement du modèle de Ricker AR1 (en haut à droite) et deux graphiques montrant les années d’éclosion ayant la productivité la plus faible et la plus élevée (médiane de ln.alpha) pour l’ajustement du modèle avec PVT (graphiques du bas). Les échantillons de paramètres pour le modèle avec PVT ont un ensemble d’échantillons a posteriori pour Smax et un ensemble d’échantillons a posteriori de ln.alpha pour chaque année d’éclosion. Les graphiques du bas montrent la distribution commune de Smax et ln.alpha pour deux années d’éclosion, sélectionnées pour avoir la médiane la plus faible et la médiane la plus élevée de ln.alpha.
 
-```{r JoinPostBabLW,   fig.cap="(ref:JoinPostBabLW)"}
+```{r JoinPostBabLW,  out.width = "83%", fig.cap="(ref:JoinPostBabLW)"}
 include_graphics("data/1_FrenchFigs/Fig18_French_Bab-LW_SR_Par_JointPosterior_3Modelcu.png")
 ```
 
