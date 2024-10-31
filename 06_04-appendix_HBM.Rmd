@@ -899,32 +899,35 @@ HBM.results[['Run 6 Umsy']] %>%
 ```
 
 \clearpage
-### Sensitivity Runs 7-25.  Leave Out Stock-Recruit Data in the HBM, One Stock at a Time
+### Analyses de sensibilité 7 à 25. Omettre les données sur le stock-recrutement dans le MBH, un stock à la fois
 
-To evaluate the relative influence of each stock-recruit data set from each stock, the HBM was run dropping out the stock-recruit data for one stock at a time.  In run 25 the stock-recruit data for both of the Babine Enhanced stocks (i.e., Fulton and Pinkut) were left out of the HBM.  The posterior predictive distribution for the Ricker $a$ parameter for an “unsampled” stock was computed for each of these runs (see equation \@ref(eq:unsamp)).  The posterior predictive distributions were plotted under each of the HBM runs 7-25 and under the base case HBM shows that the posterior predictive distributions were very similar between all HBM runs 7-25 and the base case HBM run (Figure \@ref(fig:jackProd)).  The posterior mean estimates of the time series of common shared year effects also did not change their sign or markedly change in magnitude when the stock-recruit data from one of the stocks or both of the Babine enhanced stocks were removed from the HBM (Figure \@ref(fig:jackTE)).  These results indicate that no one stock, nor the enhanced Babine Sockeye salmon stocks, had a substantive influence on the HBM results.  Furthermore results indicate that regardless of whether Pinkut and Fulton channel data were included or excluded, very similar among stocks posterior distribution of the Ricker $a$ parameter (Figure \@ref(fig:jackProd)) and shared year-effects on productivity (Figure \@ref(fig:jackTE)) were produced.  
+Pour évaluer l’influence relative de chaque ensemble de données sur le stock-recrutement de chaque stock, on a exécuté le MBH en omettant les données sur le stock-recrutement pour un stock à la fois. Dans l’analyse 25, les données sur le stock-recrutement pour les deux stocks mis en valeur du lac Babine (rivière Fulton et ruisseau Pinkut) ont été omises du MBH. La distribution prédictive a posteriori du paramètre $a$ de Ricker pour un stock « non échantillonné » a été calculée pour chacune de ces analyses (voir l’équation \@ref(eq:unsamp)). Les distributions prédictives a posteriori ont été tracées pour chacune des analyses 7 à 25 du MBH et, dans le scénario de référence, le MBH montre que les distributions prédictives a posteriori étaient très semblables entre toutes les analyses 7 à 25 du MBH et l’analyse du scénario de référence du MBH (figure \@ref(fig:jackProd)). La moyenne des estimations a posteriori de la série chronologique des effets annuels communs n’a pas changé non plus leur signe ou leur ampleur de façon marquée lorsqu’on a retiré les données sur le stock-recrutement de l’un des stocks ou des deux stocks mis en valeur du lac Babine du MBH (figure \@ref(fig:jackTE)D.4). Ces résultats indiquent qu’aucun stock, y compris les stocks mis en valeur de saumon rouge du lac Babine, n’a eu une influence importante sur les résultats du MBH. De plus, les résultats montrent que, avec ou sans les données des frayères du ruisseau Pinkut et de la rivière Fulton, on a obtenu une distribution a posteriori du paramètre $a$ de Ricker (figure \@ref(fig:jackProd)) et des effets annuels communs sur la productivité (figure \@ref(fig:jackTE)) très semblables entre les stocks.
 
-The temporal variation in shared year effect estimates represent the combined effects of potential changes in both freshwater and marine processes (Figure \@ref(fig:jackTE)).  The combined effects of spawning channels on recruits/spawner are clearly similar to those of nearby natural spawning streams (Figure \@ref(fig:jackTE)).  However, by providing more spawning gravel, the channels have increased the total abundance of adult recruits and spawners in the Skeena system (Randall Peterman, pers. comm.).
+
+La variation temporelle des estimations de l’effet annuel commun représente les effets combinés des changements potentiels dans les processus en eau douce et en mer (figure \@ref(fig:jackTE)). Les effets combinés des frayères artificielles sur les recrues/géniteur sont clairement semblables à ceux des frayères naturelles proches (figure \@ref(fig:jackTE)). Cependant, en fournissant plus de gravier de fraie, les frayères artificielles ont accru l’abondance totale de recrues et de géniteurs adultes dans le réseau de la rivière Skeena (Randall Peterman, comm. pers.).
+
 
 <!-- Figure C.3 - Sensitivity Run 7-25 -->
 ```{r, echo=FALSE}
-cap <- "Posterior predictive distributions for the Ricker $a$ parameter when the Sockeye salmon stock-recruit data from one stock at a time was dropped from the HBM for the Skeena watershed (runs 7-24) and the stock-recruit data were dropped for both of the Babine Enhanced Sockeye salmon stocks, i.e., both Pinkut and Fulton (run 25). Base case posterior predictive distribution is coloured dark grey, with colours used for runs 7-25."
+cap <- "Distributions prédictives a posteriori pour le paramètre $a$ de Ricker lorsqu’on a retiré les données sur le stock-recrutement d’un stock à la fois du MBH pour le bassin versant de la rivière Skeena (analyses 7 à 24) et que l’on a retiré les données sur le stock-recrutement des deux stocks de saumon rouge mis en valeur du lac Babine, soit les stocks du ruisseau Pinkut et de la rivière Fulton (analyse 25). La distribution prédictive a posteriori du scénario de référence est en gris foncé, avec les couleurs utilisées pour les analyses 7 à 25."
 ```
 ```{r jackProd,   fig.cap=cap}
-include_graphics("data/HBM/Appendix-HBM-Productivity-jackknife.pdf")
+include_graphics("data/1_FrenchFigs/FigApp_D3_Appendix-HBM-productivity-jackknife_FRENCH_Final.png")
 ```
 
 <!-- Figure C.4 - Sensitivity Run 7-25 -->
 ```{r, echo=FALSE}
-cap <- "Posterior mean estimates for the common shared year effect when the Sockeye salmon stock-recruit data from one stock at a time was dropped from the HBM for the Skeena watershed (runs 7-24) and the stock-recruit data were dropped for both of the Babine Enhanced Sockeye salmon stocks, i.e., both Pinkut and Fulton (run 25). Base case posterior predictive distribution is coloured dark grey, with colours used for runs 7-25."
+cap <- "Estimations de la moyenne a posteriori pour l’effet annuel commun lorsqu’on a retiré les données sur le stock-recrutement d’un stock à la fois du MBH pour le bassin versant de la rivière Skeena (analyses 7 à 24) et que l’on a retiré les données sur le stock-recrutement des deux stocks de saumon rouge mis en valeur du lac Babine, soit les stocks du ruisseau Pinkut et de la rivière Fulton (analyse 25). La distribution prédictive a posteriori du scénario de référence est en gris foncé, avec les couleurs utilisées pour les analyses 7 à 25"
 ```
 ```{r jackTE,   fig.cap=cap}
-include_graphics("data/HBM/Appendix-HBM-yeareffect-jackknife.pdf")
+include_graphics("data/1_FrenchFigs/FigApp_D4_Appendix-HBM-yeareffect-jackknife_FRENCH_Final.png")
 ```
 
 
 
 \clearpage
-### Sensitivity Run 26: Removal of Enhanced Stocks and Vague Ricker $\beta$ Priors for Select Stocks
+### Analyse de sensibilité 26 : Retrait des stocks mis en valeur et des valeurs a priori vagues du $\beta$ de Ricker pour certains stocks
+
 ```{r, echo=FALSE}
 sig.mean <- (HBM.results[['Run 26 Smsy']]$Diff.mean * 100) %>% range() %>% round
 sig.sd <- (HBM.results[['Run 26 Smsy']]$Diff.SD * 100) %>% range() %>% round
@@ -947,31 +950,38 @@ umsy.diff <- HBM.results[['Run 26 Umsy']] %>% select(Stock, Diff.mean) %>%
 # umsy.diff <- round(umsy.diff*100)
 ```
 
-For the final sensitivity run (hereafter, 'run 26') the enhanced stocks were removed and vague priors were applied to the Ricker $\beta$ prior for Bear, Kitwanga and Sustut, which were stocks highlighted as stocks of interest when the HBM results were compared to results form single stock models.  Estimates of the posterior mean for the abundance-based management quantity \Smsy were generally similar to the base case (i.e., less than 10% change) for stocks where the \Smax prior was not changed relative to the base case. The exception was Babine Late Wild, which had a `r filter(smsy.diff, Stock %in% c("Babine Late Wild"))$Perc.Diff`% reduction in the \Smsy estimate, however Babine Late Wild also had the highest posterior SD estimate of all stocks with a CV of `r filter(smsy.diff, Stock %in% c("Babine Late Wild"))$Base.Case.CV`% and `r filter(smsy.diff, Stock %in% c("Babine Late Wild"))$Run.26.CV`% for  base case and run 26 respectively. For Bear, Kitwanga, and Sustut applying a vague prior resulted in declines in the posterior mean of \Smsy  from `r max(smsy.diff2$Perc.Diff)`% to `r min(smsy.diff2$Perc.Diff)`% relative to the base case. Precision in \Smsy estimates varied from stock to stock ranging from a `r -sig.sd[1]`% reduction in the posterior SD to an increase of  `r sig.sd[2]`% relative to the base case (Table \@ref(tab:SenRun26)). For Bear, and Sustut the posterior SD was reduced (`r pasteList(-filter(smsy.diff, Stock %in% c("Bear", "Sustut"))$Perc.SD, "\\%")` respectively), while for Kitwanga the Posterior SD was increased by `r filter(smsy.diff, Stock %in% c("Kitwanga"))$Perc.SD`%. For stocks where changes were not applied to the \Smax  prior changes to the posterior SD ranged from  `r filter(smsy.diff, Stock %in% c("Bear", "Sustut", "Kitwanga") == FALSE)$Perc.SD %>% min`% to `r filter(smsy.diff, Stock %in% c("Bear", "Sustut", "Kitwanga") == FALSE)$Perc.SD %>% max`%.
+Pour la dernière analyse de sensibilité (« analyse 26 » ci-après), on a retiré les stocks mis en valeur et appliqué des valeurs a priori vagues à la valeur a priori du  $\beta$ de Ricker pour les stocks des rivières Bear, Kitwanga et Sustut, qui étaient apparues comme des stocks d’intérêt lorsqu’on a comparé les résultats du MBH aux résultats des modèles à un seul stock. Les estimations de la moyenne a posteriori pour la quantité de gestion fondée sur l’abondance étaient généralement semblables à celles du scénario de référence (variation de moins de 10 %) pour les stocks dont la valeur a priori n’avait pas été modifiée par rapport au scénario de référence. L’exception était le stock sauvage à montaison tardive de la rivière Babine, qui a été réduit de 20 % dans l’estimation, mais qui avait également l’estimation de l’écart type a posteriori la plus élevée de tous les stocks, avec un coefficient de variation de 26 et de 34 % pour le scénario de référence et l’analyse 26, respectivement. Dans le cas des stocks des rivières Bear, Kitwanga et Sustut, l’application d’une valeur a priori vague a entraîné une diminution de la moyenne a posteriori de -30 à -66 % par rapport au scénario de référence. La précision des estimations variait d’un stock à l’autre, allant d’une réduction de 74 % de l’écart type a posteriori à une augmentation de 88 % par rapport au scénario de référence (tableau \@ref(tab:SenRun26). Pour les stocks des rivières Bear et Sustut, l’écart type a posteriori a diminué (74 % et 20 % respectivement), mais il a augmenté de 60 % pour la rivière Kitwanga. Dans le cas des stocks pour lesquels on n’a pas modifié les valeurs a priori, les variations de l’écart type a posteriori allaient de -26 à 88 %.
 
 
-The \Umsy posterior estimates  were relatively insensitive to these changes implemented in run 26 (i.e., under 10% change in the posterior mean), the exceptions were `r pasteList(umsy.diff$Stock[1:2])` which had posterior means that were   `r pasteList(umsy.diff$Perc[1:2], "\\%")` larger (Table \@ref(tab:SenRun26Umsy)). 
+
+Les estimations a posteriori étaient relativement insensibles à ces changements mis en œuvre dans l’analyse 26 (variation de moins de 10 % de la moyenne a posteriori), les exceptions étant les stocks des rivières Bear et Sustut, dont les moyennes a posteriori étaient de 33 % et de 12 % supérieures (tableau  \@ref(tab:SenRun26Umsy)). 
+
+\clearpage
 
 <!-- TABLE C.17 - Sensitivity Run 26 -->
 ```{r SenRun26, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $S_\\textrm{MSY}$ from the HBM base case and model run where enhanced stocks were removed and vague $S_\\textrm{max}$ priors  were used for Bear, Kitwanga, and Sustut."
+cap <- "Moyennes a posteriori et écarts types a posteriori de $S_\\textrm{RMD}$  dans le scénario de base du MBH et l’analyse du modèle où les stocks mis en valeur ont été retirés et où on a utilisé des valeurs a priori vagues de $S_\\textrm{max}$ pour les stocks des rivières Bear, Kitwanga et Sustut."
 
 HBM.results[['Run 26 Smsy']] %>%
   filter(Stock %in% c("Pinkut","Fulton") == FALSE) %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean),
-    Run.26.mean = round(Run.26.mean),
-    Base.Case.SD = round(Base.Case.SD),
-    Run.26.SD = round(Run.26.SD),
+    Base.Case.mean = prettyNum(round(Base.Case.mean),big.mark=" "),
+    Run.26.mean = prettyNum(round(Run.26.mean),big.mark=" "),
+    Base.Case.SD = prettyNum(round(Base.Case.SD),big.mark=" "),
+    Run.26.SD = prettyNum(round(Run.26.SD),big.mark=" "),
     Diff.mean = paste0(round(Diff.mean*100,0), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 0), "\\%")
   ) %>%
+         mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
+	 mutate(Stock = gsub( "Sum Smsy across stocks", "Somme de $S_\\textrm{RMD}$ entre les stocks", Stock ))%>%
   rename(
-  	`Base Case mean \\Smsy` = Base.Case.mean,
-  	`Run 26 mean \\Smsy` = Run.26.mean,
+  	`Moyenne de $S_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+  	`Moyenne de $S_\\textrm{RMD}$ dans l’analyse 26` = Run.26.mean,
   	`\\% Diff` = Diff.mean,
-  	`Base Case SD(\\Smsy)` = Base.Case.SD,
-  	`Run 26 SD(\\Smsy)` = Run.26.SD,
+  	`ET($S_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+  	`ET($S_\\textrm{RMD}$) dans l’analyse 26` = Run.26.SD,
   	`\\% Diff ` = Diff.SD
   )  %>%
   csas_table(
@@ -985,26 +995,30 @@ HBM.results[['Run 26 Smsy']] %>%
   kableExtra::column_spec(2:7, width = "1.5cm")
 ```
 
+\clearpage
 <!-- TABLE C.18 - Sensitivity Run 26 -->
 ```{r SenRun26Umsy, echo=FALSE, results='asis'}
-cap <- "Posterior means and posterior standard deviations for $U_\\textrm{MSY}$ from the HBM base case and model run where enhanced stocks were removed and vague  $S_\\textrm{max}$ priors were used for Bear, Kitwanga, and Sustut."
+cap <- "Moyennes a posteriori et écarts types a posteriori de $U_\\textrm{MSY}$ dans le scénario de base du MBH et l’analyse du modèle où les stocks mis en valeur ont été retirés et où on a utilisé des valeurs a priori vagues de $S_\\textrm{max}$ pour les stocks des rivières Bear, Kitwanga et Sustut."
 
 HBM.results[['Run 26 Umsy']] %>%
   filter(Stock %in% c("Pinkut","Fulton") == FALSE) %>%
   mutate(
-    Base.Case.mean = round(Base.Case.mean, 3),
-    Run.26.mean = round(Run.26.mean, 3),
-    Base.Case.SD = round(Base.Case.SD, 3),
-    Run.26.SD = round(Run.26.SD, 3),
+    Base.Case.mean = prettyNum(round(Base.Case.mean, 3),decimal.mark=","),
+    Run.26.mean = prettyNum(round(Run.26.mean, 3),decimal.mark=","),
+    Base.Case.SD = prettyNum(round(Base.Case.SD, 3),decimal.mark=","),
+    Run.26.SD = prettyNum(round(Run.26.SD, 3),decimal.mark=","),
     Diff.mean = paste0(round(Diff.mean*100,0), "\\%"),
     Diff.SD = paste0(round(Diff.SD * 100, 0), "\\%")
   ) %>%
+         mutate(Stock = gsub( "Babine Early Wild", "Babine sauvage hâtive" ,Stock)) %>%
+   mutate(Stock = gsub( "Babine Late Wild", "Babine sauvage tardive" ,Stock)) %>%
+    mutate(Stock = gsub( "Babine Mid Wild", "Babine sauvage moyenne" ,Stock)) %>%
   rename(
-  	`Base Case mean \\Umsy` = Base.Case.mean,
-  	`Run 26 mean \\Umsy` = Run.26.mean,
+  	`Moyenne de $U_\\textrm{RMD}$ dans le scénario de référence` = Base.Case.mean,
+  	`Moyenne de $U_\\textrm{RMD}$ dans l’analyse 26` = Run.26.mean,
   	`\\% Diff` = Diff.mean,
-  	`Base Case SD(\\Umsy)` = Base.Case.SD,
-  	`Run 26 SD(\\Umsy)` = Run.26.SD,
+  	`ET($U_\\textrm{RMD}$) dans le scénario de référence` = Base.Case.SD,
+  	`ET($U_\\textrm{RMD}$) dans l’analyse 26` = Run.26.SD,
   	`\\% Diff ` = Diff.SD
   )  %>%
   csas_table(
@@ -1018,14 +1032,16 @@ HBM.results[['Run 26 Umsy']] %>%
 ```
 
 
-## Summary
+## RÉSUMÉ
 
-HBM analysis provides an effective approach to formulating priors for key parameters in Bayesian ecological models and has often been applied to estimate productivity parameters for Pacific and Atlantic salmon and other fish species populations [@PrevostOthers2003; @MichielsensMcAllister2004; @SuPetermanHaeseker2004; @Clark2004; @ForestOthers2010; @PulkkinenOthers2011].  The diagnostics shown in this appendix which are routine to HBM analysis [e.g., @GelmanOthers2004; @MichielsensMcAllister2004; @ForestOthers2010] support the basic HBM assumption of exchangeability of the datasets from all 18 stocks with regards to the Ricker  $a$ parameter.  We did not find evidence to support the notion that the two enhanced stocks have consistently different productivity than the non-enhanced stocks.  This is for example based on results (1) from both HBM and non-HBM runs shown in Table \@ref(tab:HBMShrinkageVal) where the posterior means for the Ricker $a$ parameter for the two enhanced stocks were neither consistently higher nor lower than estimates from the 16 non-enhanced stocks, and (2) from the jackknife analysis which showed that the posterior predictive distribution for Ricker $a$ was highly insensitive to leaving out the two enhanced stocks, either one at a time or both at the same time (Figure \@ref(fig:jackProd)).  
+L’analyse du MBH constitue une approche efficace pour formuler les valeurs a priori pour les paramètres clés des modèles écologiques bayésiens et a souvent été appliquée pour estimer les paramètres de productivité des populations de saumon du Pacifique et de l’Atlantique et d’autres espèces de poissons [@PrevostOthers2003; @MichielsensMcAllister2004; @SuPetermanHaeseker2004; @Clark2004; @ForestOthers2010; @PulkkinenOthers2011]. Les diagnostics présentés dans cette annexe, qui sont des diagnostics de routine pour l’analyse du MBH [p.ex. @GelmanOthers2004; @MichielsensMcAllister2004; @ForestOthers2010], confirment l’hypothèse de base du MBH sur l’échangeabilité des ensembles de données des 18 stocks en ce qui concerne le paramètre $a$ de Ricker. Nous n’avons pas trouvé de preuves à l’appui de l’idée que les deux stocks mis en valeur ont constamment une productivité différente de celle des autres stocks. Par exemple, cette notion est fondée sur les résultats (1) des analyses fondées sur le MBH et un autre modèle présentées dans le tableau \@ref(tab:HBMShrinkageVal), où les moyennes a posteriori du paramètre $a$  de Ricker pour les deux stocks mis en valeur n’étaient constamment ni plus élevées, ni plus basses que les estimations des 16 autres stocks; et (2) de l’analyse fondée sur la méthode du jackknife, qui a montré que la distribution prédictive a posteriori du $a$ de Ricker était très peu sensible à l’exclusion des deux stocks mis en valeur, soit un à la fois, soit les deux en même temps (figure \@ref(fig:jackProd)).
 
-Comparisons from the non-HBM and HBM also show that there was a moderate but not extreme amount of shrinkage in Ricker $a$ parameter estimates, where the maximum percentage change in Ricker $a$ was no more than 20% and less than 10% in 13 of the 18 stocks when going from the non-HBM to the HBM.  Shrinkage is to be expected in HBM analysis and the amount of shrinkage found here was not excessive and not so for the two enhanced stocks.  The posterior SDs of the Ricker $a$ parameter for the two enhanced stocks from the non-HBM and HBM (Table \@ref(tab:HBMShrinkageVal)) were also neither consistently larger nor smaller than the posterior SDs for this parameter for the 16 wild stocks.  The estimates of derived parameters such as \Smsy for the two enhanced stocks were also not excessively imprecise with posterior CVs for \Smsy being 0.56 for Pinkut and 0.37 for Fulton (Table \@ref(tab:SenRun2)).  These posterior CVs are well within the range of posterior CVs for fish stock parameters commonly estimated using Bayesian methods. <!--These results thus also refute the notion that due to lack of contrast in the spawner data from the practice of channel loading, the parameter estimates obtained from fitting a Ricker model to their stock recruit data will be excessively imprecise.  -->
+Les comparaisons entre le MBH et l’autre modèle indiquent également qu’il y a eu un rétrécissement modéré, mais non extrême, dans les estimations du paramètre a de Ricker, et que la variation maximale en pourcentage du $a$ de Ricker n’était pas supérieure à 20 % et inférieure à 10 % pour 13 des 18 stocks lorsqu’on passe du modèle autre que le MBH au MBH. Il faut s’attendre à un rétrécissement dans l’analyse du MBH et le rétrécissement constaté ici n’était pas excessif, ni pour les deux stocks mis en valeur. Les écarts-types a posteriori du paramètre $a$ de Ricker pour les deux stocks mis en valeur dans le MBH et l’autre modèle (tableau \@ref(tab:HBMShrinkageVal)) n’étaient pas non plus systématiquement plus grands ou plus petits que les écarts-types a posteriori pour ce paramètre des 16 stocks sauvages. Les estimations des paramètres dérivés, comme pour les deux stocks mis en valeur, n’étaient pas non plus excessivement imprécises par rapport aux coefficients de variation a posteriori, à 0,56 pour le ruisseau Pinkut et 0,37 pour la rivière Fulton (tableau \@ref(tab:SenRun2)). Ces coefficients de variation a posteriori se situent largement dans la fourchette des coefficients de variation a posteriori pour les paramètres des stocks de poissons généralement estimés à l’aide de méthodes bayésiennes.
 
-Estimation of common shared year effects showed that the estimated effects were statistically significant with 95% PIs not overlapping with zero for 18 of the 55 years.  The estimated effects were highly pronounced in some years, and could change abruptly and considerably in relatively few years.  For example, the estimated effects went from the absolute minimum to the absolute maximum extreme in three years, i.e., -1.37 in 1994 to +1.02 in 1997.  And the most pronounced year effect of all could be linked to epizootic disease event, e.g., in 1994, indicating that at least some of the estimated effects could be attributed to ecological events and the notion that the estimated effects were all due to stock assessment errors is unlikely.  
+L’estimation des effets annuels communs a montré que les effets estimés étaient statistiquement significatifs, les intervalles de probabilité à 95 % ne chevauchant pas zéro pendant 18 des 55 années. Les effets estimés étaient très prononcés certaines années et pouvaient changer brusquement et considérablement en relativement peu d’années. Par exemple, les effets estimés sont passés du minimum absolu au maximum absolu extrême en trois ans : -1,37 en 1994 et +1,02 en 1997. L’effet annuel le plus prononcé de tous pourrait être lié à un épisode de maladie épizootique, comme en 1994, montrant qu’au moins certains des effets estimés pourraient être attribués à des événements écologiques et que la notion selon laquelle les effets estimés étaient tous attribuables à des erreurs d’évaluation des stocks est peu probable.
 
-The above results on common shared year effects suggest that caution is needed should it be of interest to implement random walk models for the Ricker $a$ parameter.  Random walk models typically assume that there exists positive correlation between adjacent years, e.g., for the Ricker $a$ parameter, and tend to provide smoothed trajectories of parameter estimates.  When estimates of common shared year effects from models that exclude random walk jump abruptly been years and shift from minimum to maximum value in only a few years, bias in annual estimates of the Ricker $a$ parameter could thus be expected from random walk models for this parameter.  The common shared year effect also suggested, despite frequent extreme variation between years, extended periods of on average potentially higher productivity in the 1980s to early 1990s and lower than average productivity from 2003-2014.  Estimates of quantities of interest such as \Smsy were also moderately sensitive to the inclusion and exclusion of common shared year effects in the HBM (Table \@ref(tab:SenRun3))).  
+Les résultats ci-dessus concernant les effets annuels communs indiquent qu’il faut faire preuve de prudence s’il est intéressant de mettre en œuvre des modèles de marche aléatoire pour le paramètre $a$ de Ricker. Les modèles de marche aléatoire supposent généralement qu’il existe une corrélation positive entre les années adjacentes, par exemple pour le paramètre a de Ricker, et tendent à fournir des trajectoires lissées des estimations des paramètres. Lorsque les estimations des effets annuels communs dans les modèles qui excluent la marche aléatoire sautent abruptement entre les années et passent de la valeur minimale à la valeur maximale en quelques années seulement, on peut s’attendre à un biais dans les estimations annuelles du paramètre a de Ricker dans les modèles de marche aléatoire pour ce paramètre. L’effet annuel commun suggérait aussi, malgré de fréquentes variations extrêmes entre les années, des périodes prolongées de productivité potentiellement plus élevée en moyenne entre les années 1980 et le début des années 1990 et une productivité inférieure à la moyenne de 2003 à 2014. Les estimations des quantités d’intérêt, notamment, étaient modérément sensibles à l’inclusion et à l’exclusion des effets annuels communs dans le MBH (tableau \@ref(tab:SenRun3)).
 
-Careful attention to how the prior for \Smax was applied in MCMC was also an important consideration in the analysis.  In MCMC integration, values for estimated parameters in Markov Chains even after burn in can wander considerably and occasionally jump to extreme values well outside of the area of support of the data when no constraints are imposed.  The presence of extreme values in approximations of posteriors from MCMC can potentially cause pronounced bias in the estimated parameters.  We found that this was the case in the application of the non-HBM and HBM and extreme parameter values and the incidence in MCMC chains of quantities of interest such as Smsy could be eliminated by implementation of upper and lower bounds for key parameters such as \Smax or Ricker $\beta$.  It is thus appropriate to apply upper and lower bounds for key parameters in MCMC code to prevent these rare but extreme values from occurring and biasing posterior results.  
+Il était également important de porter une attention particulière dans l’analyse à la façon dont la valeur a priori était appliquée dans les MCCM. Dans l’intégration MCCM, les valeurs des paramètres estimés dans les chaînes de Markov, même après le rodage, peuvent s’écarter considérablement et, à l’occasion, passer à des valeurs extrêmes nettement en dehors de la zone confirmée par les données lorsqu’aucune contrainte n’est imposée. La présence de valeurs extrêmes dans les approximations des valeurs a posteriori par les MCCM peut causer un biais prononcé dans les paramètres estimés. Nous avons constaté que c’était le cas pour l’application des valeurs du MBH et de l’autre modèle et des valeurs extrêmes des paramètres et que l’incidence dans les chaînes MCCM de quantités d’intérêt comme SRMD pourrait être éliminée par la mise en œuvre de bornes supérieures et inférieures pour des paramètres clés comme $\beta$ de Ricker. Il convient donc d’appliquer des bornes supérieure et inférieure pour les paramètres clés dans le code MCCM afin d’éviter que ces valeurs rares, mais extrêmes, ne se produisent et ne biaisent les résultats a posteriori.
+
+
