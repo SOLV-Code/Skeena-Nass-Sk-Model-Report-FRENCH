@@ -11,7 +11,7 @@ Dans le cadre de ce projet, nous avons commencé à élaborer le progiciel *Rapi
 Nous avons construit ce progiciel en raison du nombre de stocks visés par l’examen des objectifs d’échappée des saumons rouges des rivières Skeena et Nass. Les aspects courants de l’examen des données, comme la vérification des valeurs aberrantes potentielles ou des préoccupations concernant le contraste, ont représenté un défi non négligeable dans une analyse couvrant des dizaines de stocks dans deux regroupements, les données étant continuellement mises à jour à mesure que l’examen des données progressait. Compte tenu du grand nombre de stocks, nous avons également dû assurer la cohérence entre les stocks sur le plan des choix de traitement des données (p. ex. critères pour déterminer les valeurs aberrantes).
 
 La plupart des analyses présentées dans ce rapport ont été mises en œuvre à l’aide du progiciel RapidRicker. Un exemple pratique de base et le code JAGS suivent. Les fonctions du progiciel sont disponibles sur 
- [Github](https://github.com/SOLV-Code/RapidRicker).
+ [Zenodo](https://doi.org/10.5281/zenodo.14635888).
 
 ### Configuration
 
@@ -277,7 +277,7 @@ model{
 
 ### Code R pour le calcul de Srmd {#BMFunsSmsy}
 
-*RapidRicker* comprend quatre options pour calculer Srmd : (1) approximation dans @Hilborn1985Proxies, (2) approximation dans @PetermanPyperGrout2000ParEst, (3) solution explicite dans @Scheuerell2016, utilisation du code du [progiciel samSim](https://github.com/Pacific-salmon-assess/samSim) et (4) une approximation de la force brute.
+*RapidRicker* comprend quatre options pour calculer Srmd : (1) approximation dans @Hilborn1985Proxies, (2) approximation dans @PetermanPyperGrout2000ParEst, (3) solution explicite dans @Scheuerell2016, utilisation du code du progiciel *samSim* [@samSimPackage] et (4) une approximation de la force brute.
 
 La fonction principale traite les intrants et les spécifications et comprend trois des quatre méthodes de calcul :
 
@@ -376,7 +376,7 @@ return(s.msy)
 
 ### Code R pour le calcul de Sgen  {#BMFunsSgen}
 
-*Rapid Ricker* comprend quatre options de calcul de Sgen : (1) fonction de solveur extraite de @HoltOgden2013, (2) fonction de solveur extraite du [progiciel samSim dans R](https://github.com/Pacific-salmon-assess/samSim), (3) fonction de solveur utilisée dans @Connorsetal2022 et généreusement partagée par l’auteur principal et (4) une approximation de la force brute.
+*Rapid Ricker* comprend quatre options de calcul de Sgen : (1) fonction de solveur extraite de @HoltOgden2013, (2) fonction de solveur extraite du progiciel *samSim* [@samSimPackage], (3) fonction de solveur utilisée dans @Connorsetal2022 et généreusement partagée par l’auteur principal et (4) une approximation de la force brute.
 
 La fonction principale traite les intrants et les spécifications et comprend trois des quatre méthodes de calcul :
 
