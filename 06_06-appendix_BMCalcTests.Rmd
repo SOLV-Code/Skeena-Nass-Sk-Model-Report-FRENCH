@@ -39,7 +39,7 @@ table.in %>%
 
 Nous avons mis en œuvre quatre méthodes différentes de calcul de Sgen dans le progiciel *RapidRicker* [@RapidRicker], dont trois versions du code d’optimisation [@HoltOgden2013; @samSim; @Connorsetal2022 ] et un calcul de la force brute (c.-à-d. pour chaque ensemble de paramètres $[ln.a,b]$, calculer les recrues pour des tranches de 3 000 de l’abondance des géniteurs, puis sélectionner la tranche présentant la plus faible abondance des géniteurs pour laquelle $Rec \geq Smsy$). Le code R de ces quatre versions figure à l’annexe \@ref(BMFunsSgen).
 
-Il convient de noter que la version de @samSim a été intégrée dans le [samSim package](https://github.com/Pacific-salmon-assess/samSim) et que nous utilisons l’étiquette *samSim* pour cette option dans les fonctions de *RapidRicker*.
+Il convient de noter que la version de @samSim a été intégrée dans le progiciel *samSim* [@samSimPackage] et que nous utilisons l’étiquette *samSim* pour cette option dans les fonctions de *RapidRicker*.
 
 
 \clearpage
